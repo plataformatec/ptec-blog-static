@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Decision making « Plataformatec Blog</title>
+	<atom:link href="/tag/decision-making/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 07 Aug 2017 21:19:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Calculating Cost of Delay for software projects</title>
+		<link>/2016/11/calculating-cost-of-delay-for-software-projects/</link>
+					<comments>/2016/11/calculating-cost-of-delay-for-software-projects/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 03 Nov 2016 22:01:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[Decision making]]></category>
+		<category><![CDATA[metrics]]></category>
+		<guid isPermaLink="false">/?p=5778</guid>
+
+					<description><![CDATA[<p>Motivation One of the most common challenges that you will face in your career, or even in your life, is to choose one thing over another. It could be a decision between going out to eat at a sushi place and a pizzeria, or it could be between a 2-month-long software project that costs $1M ... <a class="read-more-link" href="/2016/11/calculating-cost-of-delay-for-software-projects/">»</a></p>
+<p>The post <a href="/2016/11/calculating-cost-of-delay-for-software-projects/">Calculating Cost of Delay for software projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h2>Motivation</h2>
+<p>One of the most common challenges that you will face in your career, or even in your life, is to choose one thing over another. It could be a decision between going out to eat at a sushi place and a pizzeria, or it could be between a 2-month-long software project that costs $1M and a 10-day-long project that costs $10K. The fact is: we spend a long time deciding the best path.</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2016/11/cost-of-choice.png" alt="Cost of Choice" width="329" height="214" /> source: <a href="http://xkcd.com/1445/">xkcd</a></p>
+<h2>What is cost of delay</h2>
+<p><strong>Cost of Delay (CoD) is the economic impact of a project&#8217;s delay.</strong> In other words, it is how much you will fail to make if the product, or feature, is not ready on a certain date. The benefit of using it is to be able to make more-informed and better decisions because you&#8217;re taking into account the economic impact.</p>
+<h2>How to calculate cost of delay</h2>
+<p>To calculate CoD you can just estimate how much profit is expected from the software project&#8217;s result after a period of time.</p>
+<p>Let’s say you expect that the software product you are developing, once finished, will give the company a return of US$ 10,000 per week. In that context, the cost of delay is US$ 10,000/week. In other words, for every week that the project is delayed, the company would be losing US$ 10,000. Not that good, uh?</p>
+<p>Another metric related to cost of delay is CD3 (Cost of Delay Divided by Duration). The difference between both is that in CD3, we divide CoD by the duration of the project. That can be a good metric for prioritization. Here’s how to calculate it:</p>
+<ul>
+<li>Calculate the expected project&#8217;s weekly profit (CoD);</li>
+<li>Calculate, approximately, how much time it would take to implement it;</li>
+<li>Divide the profit by the estimated project duration;</li>
+</ul>
+<p>The higher the CD3 value is, more important it is, since the return on the investment will be faster.</p>
+<h2>Types of cost of delay</h2>
+<h3>Standard Curve</h3>
+<p><img decoding="async" src="/wp-content/uploads/2016/11/standard-curve.png" alt="Standard Curve" width="335" height="277" /></p>
+<p>In standard curves, the CoD of the project grows almost linearly with time. This is the simplest CoD to calculate, since it does not change with time.</p>
+<h3>Urgent Curve</h3>
+<p><img decoding="async" src="/wp-content/uploads/2016/11/urgent-curve.png" alt="Urgent Curve" width="373" height="283" /></p>
+<p>In urgent curves the project needs to be delivered really fast in order to generate value to the company, otherwise a lot is lost. This happens, for example, when you know of a competitor&#8217;s big launch and there is not much time to react and compete in the market. The CoD will probably be extremely high starting on the deadline week and increase just a little over time.</p>
+<h3>Fixed date curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/fixed-date-curve.png" alt="Fixed Date Curve" width="343" height="284" /></p>
+<p>Fixed date curve is the classic example of a project in which the deadline is immutable. In this case, the CoD is highly linked to a specific date. The urgent curve example is also valid here if you know of a competitor&#8217;s launch beforehand. Another example is when there is a national TV advertisement scheduled for a certain date, or even the implementation of new legislation that will affect the project. In this case, the CoD calculation will be a little bit more complex. In the first weeks the CoD will be growing at a moderate rate, however, after a certain week, the cost receives a huge increase, and after that, it returns to have a small growth rate.</p>
+<h3>Intangible curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/intangible-curve.png" alt="Intangible Curve" width="339" height="269" /></p>
+<p>The intangible curve covers those projects that have a low CoD. In this case, the projects usually have low priority inside the company, because they cause little or no impact on its results. The CoD in these cases is almost static, since there is not enough risk on delaying the project.</p>
+<h2>How to use it</h2>
+<p>Besides the obvious outcome of using CoD, that is the knowledge of how much you will lose weekly if the project gets delayed, it is possible to use it as a decision-making tool to prioritize projects.</p>
+<h3>Example</h3>
+<p>Let&#8217;s say you have two software projects: A and B. Both with standard-curve CoDs.</p>
+<table cellpadding="0" cellspacing="0" style=" border-collapse:collapse; border: solid 1px #999;">
+<tr>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Project</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Weekly Profit</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Predicted Duration</th>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$10,000</td>
+<td style="padding:8px 20px;border: solid 1px #999;">72 weeks</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$400</td>
+<td style="padding:8px 20px;border: solid 1px #999;">2 weeks</td>
+</tr>
+</table>
+<p>One may think, based on the projects&#8217; details, that project A is more important than project B. However, if you calculate the CD3, you will see that CD3_A = 138.8 while CD3_B = 200.</p>
+<p>But what does that mean? It means that if you work on software B first, you will anticipate revenue generation when compared to starting with software A. Don&#8217;t believe it yet? Here is a 75-week simulation:</p>
+<table cellpadding="0" cellspacing="0" style=" border-collapse:collapse; border: solid 1px #999;">
+<tr>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Week Number</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Revenue if A is Finished First</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Revenue if B is Finished first</th>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">1</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Start project A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Start project B</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">2</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Finish project B</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">3</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$400 &#8211; Start project A</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">30</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$11,200</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">72</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Finish project A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,000</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">73</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$10,000 &#8211; Start project B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,400</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">74</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$20,000 &#8211; Finish project B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,800 &#8211; Finish project A</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">75</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$30,400</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$39,200</td>
+</tr>
+</table>
+<h3>Attention Point</h3>
+<p>It is important to notice that the CoD curve that a project follows may change with time. To illustrate that, let&#8217;s say that a software that will bring a never-seen-before product to the market is running. Since there is no competition, it follows a standard curve. However, after a year of development, some news arrives and the team discovers that a competitor is now developing something with the same features, and will launch it on day X. From now on, the project&#8217;s curve will probably follow the fixed-date, with the steep line being on day X.</p>
+<h2>Conclusion</h2>
+<p>You can, and should, use CoD every time you are in doubt on how to prioritize two or more projects. It is an easy to calculate method and, by thinking about all those details, it may give you even more insights about the projects.</p>
+<p>If you discover that you need to launch your product sooner, after calculating the CoD, and you don&#8217;t have enough time or people, <a href="http://plataformatec.com.br/contact">contact us</a> to learn more about how we&#8217;ve been helping our clients on developing high-quality custom software, written in either Elixir or Ruby, and what we can do for you.</p>
+<p>What about you? What do you think about using cost of delay to help you prioritize projects? Leave your comments below!</p>
+<div style="height:20px;"></div>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2016/11/calculating-cost-of-delay-for-software-projects/">Calculating Cost of Delay for software projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/11/calculating-cost-of-delay-for-software-projects/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

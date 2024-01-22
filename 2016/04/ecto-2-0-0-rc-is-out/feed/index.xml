@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ecto 2.0.0-rc is out!	</title>
+	<atom:link href="/2016/04/ecto-2-0-0-rc-is-out/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/04/ecto-2-0-0-rc-is-out/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 30 Apr 2016 13:33:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: ewh		</title>
+		<link>/2016/04/ecto-2-0-0-rc-is-out/comment-page-1/#comment-1601</link>
+
+		<dc:creator><![CDATA[ewh]]></dc:creator>
+		<pubDate>Sat, 30 Apr 2016 13:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5315#comment-1601</guid>
+
+					<description><![CDATA[Congrats on the release. We&#039;ve been using Ecto 2.0 beta for a few weeks now and the new changes have been very welcome. Keep up the great work!]]></description>
+			<content:encoded><![CDATA[<p>Congrats on the release. We&#8217;ve been using Ecto 2.0 beta for a few weeks now and the new changes have been very welcome. Keep up the great work!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ricardo García Vega		</title>
+		<link>/2016/04/ecto-2-0-0-rc-is-out/comment-page-1/#comment-1596</link>
+
+		<dc:creator><![CDATA[Ricardo García Vega]]></dc:creator>
+		<pubDate>Fri, 22 Apr 2016 08:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5315#comment-1596</guid>
+
+					<description><![CDATA[Great news, this is getting better and better!]]></description>
+			<content:encoded><![CDATA[<p>Great news, this is getting better and better!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: David Antaramian		</title>
+		<link>/2016/04/ecto-2-0-0-rc-is-out/comment-page-1/#comment-1595</link>
+
+		<dc:creator><![CDATA[David Antaramian]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 17:03:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5315#comment-1595</guid>
+
+					<description><![CDATA[Congratulations, and many thanks to you and the rest of the Ecto team and contributors!]]></description>
+			<content:encoded><![CDATA[<p>Congratulations, and many thanks to you and the rest of the Ecto team and contributors!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

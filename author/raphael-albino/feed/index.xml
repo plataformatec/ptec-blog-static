@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Raphael Albino « Plataformatec Blog</title>
+	<atom:link href="/author/raphael-albino/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 18 Dec 2019 17:43:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</title>
+		<link>/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 18 Dec 2019 16:46:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[OKR]]></category>
+		<guid isPermaLink="false">/?p=9570</guid>
+
+					<description><![CDATA[<p>Depois do sucesso do livro&#160;Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs&#160;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados. Assim como qualquer modelo,&#160;framework&#160;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato ... <a class="read-more-link" href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">»</a></p>
+<p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Depois do sucesso do livro&nbsp;<a href="https://www.amazon.com/Measure-What-Matters-Google-Foundation/dp/0525536221">Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs</a>&nbsp;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados.</p>
+
+
+
+<p>Assim como qualquer modelo,&nbsp;<em>framework</em>&nbsp;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato resolverá os problemas organizacionais simplesmente por estar sendo aplicado. A partir das minhas andanças como consultor, me deparei com diversas situações onde as pessoas disseram que tentaram aplicar os OKRs e não obtiveram sucesso.</p>
+
+
+
+<p>No texto a seguir, compartilharei um compilado de aprendizados e dicas para quem já lida com o&nbsp;<em>framework</em>&nbsp;ou para quem está considerando levá-lo para o seu dia a dia.</p>
+
+
+
+<p></p>
+
+
+
+<h2 class="wp-block-heading">1) Qual a relação entre OKR e pensamento estratégico?</h2>
+
+
+
+<p>Um grande desafio nas organizações diz respeito a como decompor sua estratégia. Tudo começa com a construção de um pensamento estratégico que, em linhas gerais, passa por três grandes etapas: (1) coleta de informações; (2) formulação de ideias; (3) planejamento das ações (essas diretrizes e mais dicas podem ser vistas em&nbsp;<a href="https://www.amazon.com/Strategic-Thinking-Step-step-Leadership-ebook/dp/B00AXDJJ38">Strategic Thinking: A Step-by-step Approach to Strategy and Leadership</a>).</p>
+
+
+
+<p>É fundamental que a organização entenda o que está mudando no mercado em que ela atua, como a concorrência tem se posicionado diante de tais mudanças e como a organização está operando hoje.</p>
+
+
+
+<p>Passada a etapa de entendimento do contexto, o próximo passo de um pensamento estratégico é o levantamento de desejos, hipóteses e necessidades. É importante que a organização crie uma visão futura inspiradora e que garanta a sustentabilidade do negócio diante dos desafios que ela enfrentará.</p>
+
+
+
+<p>O último passo é o planejamento daquilo que será feito. A organização precisa compreender quais são as opções de ações e, com muita clareza, deverá escolher o que será feito e o que não será. Neste momento, é essencial que haja uma clareza do que é prioridade dentro de uma perspectiva de curto, médio e longo prazo. Costumo dizer que prioridade é uma palavra que não deveria ser colocada no plural porque quando tudo é prioridade, nada é prioridade.<br></p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="652" height="444" src="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png" alt="" class="wp-image-9566" srcset="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png 652w, /wp-content/uploads/2019/12/imagem_pensamento_estrategico-300x204.png 300w" sizes="(max-width: 652px) 100vw, 652px" /></figure>
+
+
+
+<p><strong>Pois bem, então o que OKR tem a ver com o pensamento estratégico exposto acima?</strong><br></p>
+
+
+
+<p>Quando falamos que o OKR é a composição do que desejo alcançar (objetivo) e como vou medir o progresso (conjunto de resultados-chave), precisamos partir de uma referência, que no caso do pensamento estratégico se dá através da coleta de informações. Se eu não conheço meu contexto atual, como eu posso definir onde eu quero chegar?</p>
+
+
+
+<p>Além do mais, uma visão clara é necessária para orientar o processo de criação dos OKRs. Quando a organização não consegue estabelecer seu norte, qualquer caminho (ou no caso OKR) servirá. O problema dessa condição é que ela gera desperdício de dinheiro, esforço e energia.</p>
+
+
+
+<p>Por fim, os OKRs nos forçam a fazer escolhas quando precisamos pensar no que será o foco de um trimestre, por exemplo. Ao definir poucos objetivos, estamos garantindo que a organização estará voltada naquilo que é o mais importante para o horizonte de tempo determinado.</p>
+
+
+
+<p><strong>Portanto, lembre-se:</strong>&nbsp;sem estratégia, não faz sentido a aplicação de OKR.</p>
+
+
+
+<h2 class="wp-block-heading">2) Quais problemas você pode resolver com OKRs?</h2>
+
+
+
+<p>Se você deseja comunicar a estratégia da organização, melhorar a transparência, trazer senso de propósito para as equipes e conectar o trabalho das pessoas com os resultados do negócio, OKR pode ser uma boa forma de você chegar lá.</p>
+
+
+
+<p><strong>2.1 &#8211; Comunicação da estratégia</strong></p>
+
+
+
+<p>A partir do momento em que a organização tem a sua estratégia estabelecida, os OKRs que serão desenhados pelas equipes deverão se comunicar com a mesma. Em outras palavras, caso existam OKRs que não estão conectados com as diretrizes estratégicas do negócio, eles deveriam ser descartados.</p>
+
+
+
+<p><strong>2.2 Transparência</strong></p>
+
+
+
+<p>Ao acompanhar semanalmente o progresso dos resultados-chave, validar e comunicar mensalmente os resultados dos OKRs e refinar trimestralmente os avanços em um momento de inspeção e adaptação, a organização reduzirá uma natural assimetria de informação que existe nas hierarquias e nos silos departamentais. Ficou na dúvida de como aumentar a transparência? Siga o fluxo abaixo.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img decoding="async" width="960" height="720" src="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" alt="" data-id="9568" data-full-url="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" data-link="/imagem_fluxo_cadencia_okr/" class="wp-image-9568" srcset="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png 960w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-300x225.png 300w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-768x576.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></figure></li></ul></figure>
+
+
+
+<p>Ao atingirmos as cadências mencionadas na imagem acima, aumentamos a visibilidade do que está acontecendo no negócio e deixamos os problemas palpáveis para serem tratados.</p>
+
+
+
+<p><strong>2.3 Conexão do trabalho com os resultados</strong></p>
+
+
+
+<p>Ao atrelar as iniciativas (ex: projetos, evoluções de um produto) com os resultados do negócio, trazemos um senso de propósito que pode motivar e engajar as pessoas no trabalho que está sendo feito.</p>
+
+
+
+<p>Como exercício, tenho proposto uma amarração onde toda iniciativa trabalhada por uma equipe (ex: projeto, história de usuário etc.) deve ter um objetivo e uma clareza do impacto no negócio, além da sua descrição e critério de término.</p>
+
+
+
+<p>O exemplo abaixo é uma situação de uma equipe que, a priori, tinha recebido a “demanda” de contratar uma solução de força de vendas. Ao conectar tal demanda com o objetivo do negócio e com os resultados-chave, a equipe conseguiu ter maior entendimento da importância do trabalho que seria feito.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img decoding="async" width="774" height="474" src="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" alt="" data-id="9569" data-full-url="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" data-link="/imagem_exemplo_aplicacao_okr_iniciativa/" class="wp-image-9569" srcset="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png 774w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-300x184.png 300w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-768x470.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></figure></li></ul></figure>
+
+
+
+<p>Ao unir a entrega com o resultado, você garantirá a necessidade das pessoas olharem os números e os dados da organização. Além disso, você evitará que a equipe invista tempo e esforço para atender uma demanda que não gera impacto nos objetivos do negócio. E em último caso, mas nem por isso menos importante, você forçará a equipe se questionar o porquê de estarem fazendo algo que não impacta diretamente nos objetivos do negócio.</p>
+
+
+
+<h2 class="wp-block-heading">3) Qual a importância das métricas na definição dos OKRs?</h2>
+
+
+
+<p>Indicadores de negócio são as melhores medidas para avaliar o progresso em direção aos objetivos. Se você está em busca de sair de um modelo onde há uma cobrança por entregas (<em>output</em>) e deseja ser cobrado por resultado (<em>outcome</em>), defina resultados-chave (<em>key results</em>) que se acoplem com os&nbsp;<a href="https://www.klipfolio.com/resources/articles/what-is-a-key-performance-indicator">indicadores de performance (KPI)</a>&nbsp;da organização.</p>
+
+
+
+<p>Lembrando que a sigla OKR é composta de duas partes (objetivos e resultados-chave), um KPI que precisa ser melhorado será um excelente ponto de partida para criar um OKR e se tornará um resultado-chave para um objetivo.</p>
+
+
+
+<p><strong>Lembre-se:</strong>&nbsp;OKR e KPI funcionarão perfeitamente juntos dado que os KPIs ajudam a monitorar o desempenho e a identificar problemas e áreas de melhoria no modo atual de operar da organização. Já os OKRs, contribuem na resolução de problemas, na melhoria de processos e no impulsionamento de inovações.</p>
+
+
+
+<p>Para exemplificar, gostaria de compartilhar um caso real de uma organização que tinha como objetivo “Expandir os talentos da área de produto” e possuía como indicadores de performance o tempo médio de contratação, o número de vagas ocupadas e a pesquisa de satisfação. Depois de uma sessão de definição, saímos com o seguinte OKR:</p>
+
+
+
+<p><strong>Objetivo:</strong>&nbsp;Expandir os talentos da área de produto.</p>
+
+
+
+<p><strong>Resultados-chave:</strong></p>
+
+
+
+<ul><li>Contratar 4 novas pessoas de desenvolvimento para aumentar a senioridade da equipe.</li><li>Aumentar o resultado da pesquisa de satisfação de 75% (resultado no último trimestre) para 85%.</li><li>Reduzir o tempo médio de contratação de 45 dias para 30 dias.</li></ul>
+
+
+
+<h2 class="wp-block-heading">4) Dicas práticas</h2>
+
+
+
+<p>Antes de finalizar o texto gostaria, de compartilhar 6 dicas práticas para você revisar sua estratégia de adoção de OKR:</p>
+
+
+
+<ol><li><strong>Tenha o apoio executivo:</strong>&nbsp;OKR, assim como qualquer outra mudança organizacional precisa do suporte executivo para acontecer. Acreditar que apenas movimentos locais (debaixo para cima) farão com que a transformação aconteça é começar o jogo perdendo. Portanto, é fundamental que os OKRs da empresa se desdobrem para os times.</li><li><strong>Não defina muitos objetivos:</strong>&nbsp;independente do contexto (empresa, equipe, tribo etc.), tenha de 2 até 3 objetivos para garantir que as pessoas estejam focadas naquilo que importa durante o trimestre.</li><li><strong>Tenha resultados-chave mensuráveis:</strong>&nbsp;se você não consegue medir, você não saberá se está alcançado o seu objetivo. Não criei resultados-chave para métricas que não existem. Se você quer ter bons OKRs, coloque um esforço para ter as métricas disponíveis.</li><li><strong>Não tenha mais do que 3 resultados-chave por objetivo:</strong>&nbsp;se é muito difícil de medir um objetivo talvez ela possa ser repensando, reescrito ou reestruturado.</li><li><strong>Deixe os resultados visíveis para todas as pessoas da organização:</strong>&nbsp;visibilidade é alma para um melhor alinhamento e para que os problemas que surgirem de fato sejam resolvidos.</li><li><strong>Evite resultados-chave orientados por tarefas (ex: entrega de projetos):</strong>&nbsp;foque em resultados orientados ao negócio porque isso ajudará a organização a traduzir os benefícios de uma nova abordagem de trabalho e suportará a ideia de equipes multidisciplinares.</li></ol>
+
+
+
+<h2 class="wp-block-heading">Conclusão<br><a href="https://github.com/plataformatec/blog-posts/blob/master/2019-12-OKR-licoes-aprendidas.md#conclus%C3%A3o"></a></h2>
+
+
+
+<p>OKR é uma ótima forma de pensar de forma estratégica e fazer com que as pessoas colaborem na execução daquilo que a organização busca conquistar. O&nbsp;<em>framework</em>&nbsp;em si é bem simples, porém sua adoção, nem tanto.</p>
+
+
+
+<p>Pensando em sistematizar a mensagem deste <em>post</em>, resolvi criar um Canvas que te ajudará no momento de desenvolver os OKRs na sua organização.</p>
+
+
+
+<p>Basta seguir os passos sinalizados pelas setas e responder às perguntas necessárias em cada um dos quadrantes. Comece pela estratégia, defina os objetivos, crie os resultados-chave, priorize as iniciativas e defina as áreas que precisarão colaborar com aquele OKR. Cada linha do quadro representará um OKR.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="662" height="422" src="/wp-content/uploads/2019/12/imagem_okr_canvas.png" alt="" class="wp-image-9567" srcset="/wp-content/uploads/2019/12/imagem_okr_canvas.png 662w, /wp-content/uploads/2019/12/imagem_okr_canvas-300x191.png 300w" sizes="(max-width: 662px) 100vw, 662px" /></figure>
+
+
+
+<p>E você, quais têm sido os desafios e os principais aprendizados com OKRs? O que achou do OKR Canvas?</p>
+
+
+
+<p>Compartilhe comigo sua opinião nos comentários abaixo!</p>
+
+
+
+<p>Referências:</p>
+
+
+
+<ul><li><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Como definir OKRs em equipes ágeis?</a></li><li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li><li><a href="https://felipecastro.com/en/blog/">Blog do Felipe Castro</a></li></ul><p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Desenvolvendo um olhar de produto na organização</title>
+		<link>/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 09 Sep 2019 18:57:01 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9301</guid>
+
+					<description><![CDATA[<p>É possível observar um interesse das empresas em migrar seu modelo de gestão para uma perspectiva de entrega de produto ou serviço digital. Inspiradas por estruturas orgânicas e multidisciplinares que vão contra as práticas que padronizam e especializam o trabalho, as empresas estão em busca de entregar novas formas de proposta de valor aos clientes, ... <a class="read-more-link" href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">»</a></p>
+<p>The post <a href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">Desenvolvendo um olhar de produto na organização</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>É possível observar um interesse das empresas em migrar seu modelo de gestão para uma perspectiva de entrega de produto ou serviço digital.</p>
+
+
+
+<p>Inspiradas por estruturas orgânicas e multidisciplinares que vão contra as práticas que padronizam e especializam o trabalho, as empresas estão em busca de entregar novas formas de proposta de valor aos clientes, utilizando de maneira efetiva os meios digitais e mantendo sua vantagem competitiva em um mercado que exige uma reconfiguração constante das suas práticas, dos seus processos, dos recursos tecnológicos, dos papéis e das suas equipes.</p>
+
+
+
+<p>Se você atua em uma empresa que já nasceu digital, é provável que alguns conceitos modernos já façam parte da sua rotina, tais como jornada de usuário, desenvolvimento de soluções centradas nas pessoas clientes, ciclos constantes de feedback, colaboração entre as diferentes especialidades do negócio para melhorar os resultados da empresa, modelos de bonificação que privilegiem o todo e entregas contínuas de software.</p>
+
+
+
+<p>Contudo, existem empresas que estão inseridas em um cenário onde o sucesso é medido por projetos entregues dentro do prazo, custo e escopo. Além disso, os ciclos de entrega de software acabam sendo anuais, tamanha a complexidade na arquitetura tecnológica. Já o modelo de bonificação fica limitado aos silos criados pelos diferentes departamentos, o que pode produzir resultados locais positivos, porém, com perdas quando há uma consolidação da visão global. Por fim, a opinião das pessoas clientes torna-se algo distante do cotidiano de quem está na operação do negócio.</p>
+
+
+
+<p>A seguir, gostaria de compartilhar 5 dicas de como você pode promover uma gestão por produtos digitais na sua empresa.</p>
+
+
+
+<h2 class="wp-block-heading" id="entenda-a-estrutura-de-governança-da-empresa">1) Entenda a estrutura de governança da empresa</h2>
+
+
+
+<p>Antes de pensar em começar um processo de transformação, tenha em mente qual é o estilo de governança que prevalece no seu ambiente. Para isso, sugiro a leitura do trabalho publicado por Grandori e Furnari (artigo original disponível&nbsp;<a href="http://openaccess.city.ac.uk/id/eprint/3064/1/Grandori&amp;Furnari%202008%20OST%20-%20A%20Chemistry%20of%20Organization.pdf" target="_blank" rel="noreferrer noopener" aria-label="aqui (opens in a new tab)">aqui</a>).</p>
+
+
+
+<p>Em linhas gerais, o artigo apresenta que os negócios inovadores combinam diferentes tipos de estruturas de governança interna caracterizadas por:</p>
+
+
+
+<ul><li><strong>Mercado (incentivos monetários):</strong>&nbsp;pagamento por desempenho (individual ou coletivo);</li><li><strong>Burocrático (autoridade):</strong>&nbsp;ambientes que cultivam processos bem definidos, o uso de boas práticas, estruturas delimitadas e políticas explícitas;</li><li><strong>Comunitário (divisão de conhecimento, valores e cultura):</strong>&nbsp;espaço que valoriza o compartilhamento de informações, o trabalho em equipe e a participação das pessoas no processo de decisão/escolhas;</li><li><strong>Democrático (responsabilidade, decisão e direitos representados):</strong>&nbsp;distribuição das responsabilidades, enriquecimento das atividades das pessoas colaboradoras e empoderamento das pessoas.</li></ul>
+
+
+
+<p>Se as práticas da sua organização têm como foco o resultado (mercado), provavelmente você terá dificuldades em desenvolver uma base de colaboração.</p>
+
+
+
+<p>Se há um excesso de burocracia, a eficiência das ações será prejudicada e a agilidade necessária ficará limitada.</p>
+
+
+
+<p>Se não existe uma cultura de trabalho em equipe e distribuição das responsabilidades, os silos e as camadas hierárquicas serão fatores limitantes para a inovação e a construção de uma visão sistêmica da cadeia de valor.</p>
+
+
+
+<p>Nem todas as organizações terão um estilo de governança propício para combinar inovação, cooperação e geração de resultado.</p>
+
+
+
+<p>Agora que você conhece os diferentes estilos de governança, algumas reflexões podem ser interessantes como:</p>
+
+
+
+<ol><li>Como os estilos presentes na empresa que estou podem ser potencializados de forma positiva para que a mudança aconteça?</li><li>Dado o estilo de governança existente, faz sentido forçar a mudança?</li></ol>
+
+
+
+<h2 class="wp-block-heading" id="utilize-a-camada-média-como-uma-promotora-da-mudança">2) Utilize a camada média como uma promotora da mudança</h2>
+
+
+
+<p>Provavelmente ao fazer qualquer tipo de mudança você se deparará com alguma resistência de pessoas que estão nas camadas intermediárias da organização (gestão, coordenação e afins).</p>
+
+
+
+<p>Em grande parte dos casos, a diretoria e a equipe operacional estarão compradas de que mudar a mentalidade para trabalhar de forma mais digital é necessária a fim de garantir a sustentabilidade da empresa. No entanto, pessoas que se encontram no meio da cadeia hierárquica se sentirão ameaçadas e poderão não apoiar a transformação.</p>
+
+
+
+<p>Ao invés de julgar e ignorar essas pessoas, identifique as que estão interessadas em favorecer a mudança, utilize os canais gerenciados por elas para promover um senso de urgência e utilize o capital social delas para reforçar as motivações da transição que acontecerá.</p>
+
+
+
+<p>Há situações em que a resistência é tão grande que a pessoa realmente não consegue dar uma oportunidade à mudança e infelizmente ela pode passar a não fazer mais parte da empresa, por não conseguir se adaptar ao momento atual. Isso faz parte do processo. Mas em linhas gerais, procure embarcar a camada média no propósito da mudança e utilize-a como promotora da transformação.</p>
+
+
+
+<h2 class="wp-block-heading" id="gerencie-os-domínios-de-uma-cultura-de-produto-digital">3) Gerencie os domínios de uma cultura de produto digital</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" decoding="async" width="365" height="473" src="/wp-content/uploads/2019/09/dominios_transformacao_digital.png" alt="" class="wp-image-9306" srcset="/wp-content/uploads/2019/09/dominios_transformacao_digital.png 365w, /wp-content/uploads/2019/09/dominios_transformacao_digital-232x300.png 232w" sizes="(max-width: 365px) 100vw, 365px" /></figure></div>
+
+
+
+<p>Tenho observado nas empresas que uma mudança para a mentalidade de produto digital depende da combinação do alinhamento e da direção construídas com a robustez da estrutura organizacional.</p>
+
+
+
+<p>Para garantir o alinhamento e a construção de objetivos consistentes é importante que exista uma clareza no modelo de negócio da empresa, sua estratégia esteja clara e que haja visibilidade dos indicadores de performance utilizados para guiar a saúde do negócio. Sem um norte que combine estes elementos, a visão da empresa ficará perdida.</p>
+
+
+
+<p><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/" target="_blank" rel="noreferrer noopener" aria-label="As pessoas e as equipes precisam entender que o trabalho delas está conectado diretamente com a sustentabilidade do negócio (opens in a new tab)">As pessoas e as equipes precisam entender que o trabalho delas está conectado diretamente com a sustentabilidade do negócio</a>. Além do mais, a alta gestão precisa trazer foco e um senso de priorização para as iniciativas que são demandadas.</p>
+
+
+
+<p>Sem alinhamento e direcionamento, as pessoas ficarão presas ao modelo de reconhecimento pela entrega ao invés de focar no resultado que está sendo gerado para o todo.</p>
+
+
+
+<p>Para que os objetivos sejam entregues em um universo digital em constante mudança, a empresa precisa desenvolver uma capacidade de execução que é sustentada por pessoas habilitadas, processos enxutos e uma arquitetura de software flexível.</p>
+
+
+
+<p>Se a empresa não cria mecanismos para formar as pessoas, não simplifica os processos de desenvolvimento de software e não enxerga a tecnologia como um ativo estratégico que precisa ser constantemente evoluído, ela dificilmente criará resultados de negócio de forma assertiva através do meio digital.</p>
+
+
+
+<p>Costumo dizer que não existe entrega de produto no contexto digital sem práticas de engenharia de software e sem processos que privilegiam uma cultura de aprendizagem e resolução de problemas.</p>
+
+
+
+<h2 class="wp-block-heading" id="construa-uma-visão-sistêmica-e-promova-equipes-multidisciplinares">4) Construa uma visão sistêmica e promova equipes multidisciplinares</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" decoding="async" width="613" height="473" src="/wp-content/uploads/2019/09/visao_sistemica_jornada.png" alt="" class="wp-image-9307" srcset="/wp-content/uploads/2019/09/visao_sistemica_jornada.png 613w, /wp-content/uploads/2019/09/visao_sistemica_jornada-300x231.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></figure></div>
+
+
+
+<p>Conhecer a jornada com que as pessoas clientes interagem com os produtos e serviços da organização é a base para a construção de soluções digitais que possibilitem melhores experiências.</p>
+
+
+
+<p>Captar o que é sucesso para as pessoas consumidoras e traduzir tais critérios em produtos digitais incríveis é um dos grandes desafios de um processo de mudança.</p>
+
+
+
+<p>Algumas técnicas que tenho recomendado para as pessoas aplicarem quando desejam construir uma visão orientada ao resultado são:</p>
+
+
+
+<ul><li>Construção de uma jornada de usuário para a compreensão das dores e as insatisfações ao longo do uso do produto oferecido pela empresa.</li><li>Mapeamento de processos para a identificação de gargalos e pontos de melhoria.</li><li>Entrevistas com as pessoas que utilizam o produto da empresa para coletar&nbsp;<em>insights</em>&nbsp;de aperfeiçoamentos da solução e para saber se elas valorizam critérios como tempo, qualidade dos atributos do produto ou conformidade dos requisitos.</li></ul>
+
+
+
+<p>Sem uma visão sistêmica (<strong>modo de irônia ativado</strong>) não há raio&nbsp;<em>squaditizador</em>&nbsp;que crie produtos que serão úteis para as pessoas.</p>
+
+
+
+<p>Se você é um departamento de Tecnologia da Informação e não tem autonomia para influenciar o fluxo de aquisição do serviço que a sua empresa oferece, você não deveria ser chamado de&nbsp;<em>squad</em>. O mesmo se aplica se você é uma área de canais digitais que planeja o projeto perfeito de desenvolvimento de um aplicativo móvel, espera 12 meses para receber a solução que alguém fez e depois não tem ideia de como evoluir o artefato entregue.</p>
+
+
+
+<p>Nos casos citados acima, a departamentalização gera barreiras para a criação de uma visão sistêmica e inibe a colaboração necessária para o desenvolvimento de produtos.</p>
+
+
+
+<p>Desenvolver e preservar equipes que combinem todas as disciplinas necessárias para solucionar os problemas das pessoas que são clientes garantirá produtos em constante conexão com as necessidades do negócio (ex: novas receitas, aumento na satisfação das pessoas clientes, redução dos custos etc.) e com o propósito de melhorar a experiência de quem usa.</p>
+
+
+
+<h2 class="wp-block-heading" id="as-três-disciplinas-necessárias-para-uma-boa-gestão-de-produto">5) As três disciplinas necessárias para uma boa gestão de produto</h2>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="578" height="389" src="/wp-content/uploads/2019/09/product_management_product_marketing_product_development.png" alt="" class="wp-image-9308" srcset="/wp-content/uploads/2019/09/product_management_product_marketing_product_development.png 578w, /wp-content/uploads/2019/09/product_management_product_marketing_product_development-300x202.png 300w" sizes="(max-width: 578px) 100vw, 578px" /></figure>
+
+
+
+<p>Seguindo a sugestão do método de gestão Kanban que diz para começarmos com o que fazemos hoje e respeitarmos os papéis existentes, deixo como última dica a busca pela aplicação das três disciplinas que estão por trás da construção de produtos digitais ao invés de uma abordagem revolucionária de mudança organizacional.</p>
+
+
+
+<p>A primeira disciplina é o&nbsp;<strong>marketing de produto</strong>&nbsp;que tem como foco desenvolver processos para promover e vender produtos para as pessoas clientes. Além disso, é uma função intermediária entre a criação de produtos e o aumento do reconhecimento da marca.</p>
+
+
+
+<p>Pensando no movimento de criação de produtos digitais, ter um bom marketing de produto ajudará na aquisição e retenção de clientes, bem como na promoção da empresa como marca provedora de soluções.</p>
+
+
+
+<p>A segunda disciplina é a&nbsp;<strong>gestão de produto</strong>&nbsp;que pode ser resumida como o processo que se concentra em criar ou promover produtos/serviços.</p>
+
+
+
+<p>Conforme definido pelo&nbsp;<a href="http://www.guiadastartup.com.br/o-que-e-gestao-de-produtos/" target="_blank" rel="noreferrer noopener" aria-label="Joaquim Torres - Joca (opens in a new tab)">Joaquim Torres &#8211; Joca</a>, a gestão de produto é uma função que cuida da conexão entre os objetivos estratégicos e a experiência das pessoas clientes, além de relacionar as ações do produto com uma visão global da empresa.</p>
+
+
+
+<p>Uma boa gestão de produtos ajudará a empresa na construção de um portfólio saudável de soluções (<a href="/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/" target="_blank" rel="noreferrer noopener" aria-label="deixo aqui a referência de um texto que escrevi sobre como avaliar os estágios de um portfólio de produtos (opens in a new tab)">deixo aqui a referência de um texto que escrevi sobre como avaliar os estágios de um portfólio de produtos</a>).</p>
+
+
+
+<p>A última, mas nem por isso menos importante disciplina é a de&nbsp;<strong>desenvolvimento de produto</strong>, que representa a forma como construímos as soluções. Práticas ágeis de gestão de projetos são excelentes aliadas na busca de promovermos ambientes colaborativos, com alta visibilidade e com entregas que permitam feedbacks constantes.</p>
+
+
+
+<p>Dado que estamos tratando de produtos digitais, não devemos ignorar práticas de engenharia de software como integração contínua, entregas automatizadas e uma base de código bem gerida. Tais mecanismos permitirão uma otimização no fluxo de entrega e garantirão um resultado final de qualidade.</p>
+
+
+
+<p>Ao dominar Marketing, gestão e desenvolvimento de produto, sua empresa conceberá soluções digitais eficazes nas resoluções dos problemas, conectadas com as necessidades de quem usa e de forma eficiente.</p>
+
+
+
+<h2 class="wp-block-heading" id="conclusão">Conclusão</h2>
+
+
+
+<p>Segundo uma matéria recente da&nbsp;<a href="https://www.gartner.com/smarterwithgartner/fuel-digital-business-with-product-management/" target="_blank" rel="noreferrer noopener" aria-label="Gartner (opens in a new tab)">Gartner</a>, até 2020, as organizações que adotarem um modelo de gerenciamento de produtos superarão as que não o fizerem.</p>
+
+
+
+<p>A transformação digital tem exigido que as empresas saibam incorporar novas tecnologias na oferta de seus produtos/serviços, mudem a forma como criam valor para os clientes através de canais digitais, revejam constantemente seu modelo de negócios para usufruírem dos artefatos digitais e repensem suas estruturas para reduzir os custos de coordenação. Diante deste cenário, uma das formas de sobreviver passa por enxergar sua empresa com a lente de produtos digitais.</p>
+
+
+
+<p>Qual a sua opinião sobre o que compartilhei neste texto? Quais estão sendo os desafios neste processo de mudança para produtos no seu ambiente? Não deixe de comentar abaixo ou enviar um e-mail para&nbsp;<a href="https://stackedit.io/contagil@plataformatec.com.br" target="_blank" rel="noreferrer noopener" aria-label="contagil@plataformatec.com.br (opens in a new tab)">contagil@plataformatec.com.br</a>!</p><p>The post <a href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">Desenvolvendo um olhar de produto na organização</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>5 dicas essenciais de como olhar para a transformação digital da sua empresa</title>
+		<link>/2019/03/5-dicas-essenciais-de-como-olhar-para-a-transformacao-digital-da-sua-empresa/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 06 Mar 2019 15:44:17 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=8831</guid>
+
+					<description><![CDATA[<p>Com o surgimento e o amadurecimento das tecnologias digitais (exemplo: telefonia móvel, big data, inteligência artificial etc.), as empresas têm realizado uma série de iniciativas para explorar seus benefícios. Acompanhar o processo de transformação digital da economia tem sido um grande aprendizado. Costumo compartilhar que sou privilegiado por vivenciar um momento na história onde é ... <a class="read-more-link" href="/2019/03/5-dicas-essenciais-de-como-olhar-para-a-transformacao-digital-da-sua-empresa/">»</a></p>
+<p>The post <a href="/2019/03/5-dicas-essenciais-de-como-olhar-para-a-transformacao-digital-da-sua-empresa/">5 dicas essenciais de como olhar para a transformação digital da sua empresa</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Com o surgimento e o amadurecimento das tecnologias digitais (exemplo: telefonia móvel, big data, inteligência artificial etc.), as empresas têm realizado uma série de iniciativas para explorar seus benefícios.</p>
+<p>Acompanhar o processo de transformação digital da economia tem sido um grande aprendizado. Costumo compartilhar que sou privilegiado por vivenciar um momento na história onde é possível, de forma acelerada, criar e repensar a entrega de produtos ou serviços.</p>
+<p>Dada a concorrência oriunda da globalização e o aumento do foco no cliente, as empresas estão sendo pressionadas a se tornarem digitais antes das outras pela simples necessidade de sobreviver e obter vantagem competitiva. Antigas configurações de concorrência estão sendo desestruturadas pela entrada de empresas que já nasceram digitais.</p>
+<p>Tais transformações exigem alterações na forma como os negócios enxergam sua proposta de valor, seus processos, o perfil dos seus clientes e sua sustentabilidade econômica. Além disso, as já tradicionais organizações passam a ser questionadas, visto a urgência em estabelecer novas práticas de gestão para lidar com as complexas mudanças e com o perfil de profissional do futuro.</p>
+<p>Em 2018 tive a oportunidade de acompanhar o processo de transformação digital em empresas dos ramos de energia, de gás e de seguros. Tais organizações nasceram em um mundo analógico e estão enfrentando o desafio de mudar a forma como interagem com um mundo <em>high tech</em>. Se você se identifica com este cenário ou tem interesse em saber mais sobre a tal transformação digital, compartilharei neste texto 5 dicas de como analisar esta evolução.</p>
+<h2>1. Tenha clareza do propósito por trás da transformação</h2>
+<p>Para mim, transformação digital é o uso de novas tecnologias digitais, como mídias sociais, dispositivos móveis, plataformas analíticas ou dispositivos embarcados, que permitam grandes evoluções nos negócios, melhorando a experiência do cliente, agilizando as operações e concebendo novos modelos de negócios. Tal transição vai além da mera digitalização de recursos e resulta em repensar como gerar novas receitas ou economizar a partir de ativos digitais.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8705 size-full" src="/wp-content/uploads/2019/02/pilares_transformacao_digital.png" alt="" width="401" height="324" srcset="/wp-content/uploads/2019/02/pilares_transformacao_digital.png 401w, /wp-content/uploads/2019/02/pilares_transformacao_digital-300x242.png 300w" sizes="(max-width: 401px) 100vw, 401px" /></p>
+<p>O primeiro passo para as pessoas entenderem uma transformação se consiste pela definição de um propósito. Conversando com clientes e analisando processos em empresas do Brasil e no mundo, tenho observado que o propósito de uma transformação pode se dividir em 4 perspectivas:</p>
+<p><strong>1. Eficiência operacional:</strong> entregar melhor, mais rápido e mais barato aquilo que o cliente espera. Se você é uma empresa do setor de seguros, seria como se você estivesse preocupada em ter um fluxo de contratação de um seguro de automóvel em formato digital, permitindo assim que o cliente disponha de autosserviço, ou a automatização de algum processo que é crítico para o negócio (exemplo: aviso de sinistro, acompanhamento de um assistência etc.).</p>
+<p><strong>2. Cultura digital:</strong> revisar o desenho organizacional a fim de promover estruturas orgânicas que combinem diferentes habilidades, sejam atrativas para novos talentos e tragam mais agilidade na construção de soluções. Caso você esteja no departamento de RH de uma empresa do setor energético e tenha o desafio de inovar o modelo de negócio da organização, seria como se você promovesse a criação de equipes multidisciplinares que reunissem talentos com diferentes competências (exemplo: visão do negócio, capacidade de construção de artefatos tecnológicos, entendimento sistêmico da operação da empresa etc.) a fim de gerar soluções para tal missão.</p>
+<p><strong>3. Geração de novas receitas:</strong> repensar a forma como o negócio cria receita e que ele tenha um modelo de negócio sustentável no longo prazo. Se você é uma empresa do varejo, é importante que você desenvolva estratégias para digitalizar seu processo de vendas, aumentando assim a capilaridade do seu atendimento e gerando receita em mercados que até então não eram explorados.</p>
+<p><strong>4. Presença digital:</strong> criar conteúdos relevantes, ter um bom relacionamento com pessoas interessadas nos produtos ou serviços da empresa, oferecer canais de fácil uso e ter um discurso coerente com a sua audiência a fim de se tornar uma marca reconhecida digitalmente. Se a sua empresa atua no setor financeiro, seria como se a estrutura de marketing oferecesse um bom serviço de autoatendimento que sane as dores dos clientes que desejam abrir uma conta corrente sem depender de outros canais que não sejam o digital.</p>
+<h2>2. Transformação digital é uma integração de dados, tecnologia e cliente no centro</h2>
+<p>Um processo de transformação digital passa pelo desenvolvimento de uma cultura orientada à dados, com uma base tecnológica que permita experimentação e centrada na criação de soluções que coloquem o cliente no centro.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8708 size-full" src="/wp-content/uploads/2019/02/dados_tecnologia_clientenocentro.png" alt="" width="355" height="263" srcset="/wp-content/uploads/2019/02/dados_tecnologia_clientenocentro.png 355w, /wp-content/uploads/2019/02/dados_tecnologia_clientenocentro-300x222.png 300w" sizes="(max-width: 355px) 100vw, 355px" /></p>
+<p>Se a organização não dispõe de <strong>dados</strong> consistentes para análise ou não toma decisões baseadas em fatos, dificilmente ela enxergará oportunidades de mudança. Criar a cultura orientada aos dados é o sonho de qualquer pessoa que está no nível diretivo.</p>
+<p>Um turbilhão de dados é gerado a partir de fontes como transações digitais, interações nas mídias sociais, sensores e dispositivos móveis. No entanto, para trazer significado para este emaranhado de registros é necessário um processo consistente de integração.</p>
+<p>Muitos aplicativos, como sistemas de recomendação ou análise preditiva, não apenas exigem a integração e a disponibilidade, mas também uma alta qualidade dos dados. Tenha cuidado e trate os dados como um importante ativo do negócio.</p>
+<p>Outro ponto que deve ser destacado quanto aos dados diz respeito as pessoas. É fundamental ter uma equipe de intelegiência que esteja focada tanto na entrega de informações relevantes ao negócio, quanto na proposição de novos <em>insights</em>.</p>
+<p>Pensar em uma infraestrutura <strong>tecnológica</strong> flexível, leve e que permita evoluções constantes é o desejo de qualquer área de Tecnologia da Informação, porém, a realidade nas empresas envolve lidar com sistemas rígidos (os famosos legados), que demandam um alto custo de manutenção e que impactam em larga escala o negócio quando ficam indisponíveis.</p>
+<p>Para que a organização possa aprender rápido e testar novos artefatos, mudanças estruturais serão necessárias. Não negligencie a revisão e a evolução da arquitetura das suas aplicações, pois ela será uma vantagem ou uma dor de cabeça em um futuro não tão distante.</p>
+<p>Quanto maior a empresa, mais centrada em seus processos ela se torna. Já é clichê dizer que nos dias de hoje o <strong>cliente</strong> tem uma voz ativa no que tange a reputação de uma marca ou de um produto.</p>
+<p>Para que uma empresa saiba se posicionar frente a um consumidor cada vez mais digital é importante que ela entenda suas necessidades, aprenda com os seus feedbacks e crie soluções inteligentes.</p>
+<p>Tomar decisões que foquem apenas em processos eficientes e que não considerem os interesses dos clientes, fará com que a empresa perca competitividade.</p>
+<p>Em outras palavras, vá para a rua e conheça o cliente do seu negócio através de grupos focais, entrevistas e testes do seu produto.</p>
+<h2>3. Entenda os canais digitais e como os seus clientes os avaliam</h2>
+<p>Uma boa diretriz para o processo de transformação digital em uma empresa pode se dar quando ela opta por desenvolver seus canais digitais.</p>
+<p>Algumas empresas tradicionais do Brasil escolheram começar sua caminhada de evolução fortalecendo as vendas online, criando soluções móveis otimizadas, aumentando o número de autosserviços na <em>web</em> e dispositivos móveis.</p>
+<p>Se a sua empresa estiver buscando uma transformação que comece pelos canais, é bem provável que você tenha que responder: como está nossa maturidade digital?</p>
+<p>Um dos modelos que tenho utilizado para responder essa pergunta combina no eixo horizontal excelência operacional digital (quão bem a empresa oferece seus serviços nos canais digitais) e no eixo vertical experiência do cliente digital (quão bem a empresa se preocupa em solucionar os problemas do cliente através dos canais digitais).</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8709 size-full" src="/wp-content/uploads/2019/02/matriz_experienciacliente_eficienciaoperacional.png" alt="" width="720" height="540" srcset="/wp-content/uploads/2019/02/matriz_experienciacliente_eficienciaoperacional.png 720w, /wp-content/uploads/2019/02/matriz_experienciacliente_eficienciaoperacional-300x225.png 300w" sizes="(max-width: 720px) 100vw, 720px" /></p>
+<p>O modelo acima poderá apoiar você e a sua empresa a definirem como iniciar o processo de transformação.</p>
+<p>Pode ser que o negócio precise se concentrar em melhorar a experiência do cliente, aumentar o engajamento com o mundo exterior e alcançar novos clientes de novas formas. Em contrapartida, talvez o negócio esteja em busca de otimizar os processos internos a fim de reduzir custos e gerar um ganho de eficiência organizacional.</p>
+<p>Independente do caminho que será seguido, é necessário descobrir onde a empresa se encontra e qual será o foco de atuação. Lembre-se: quando tudo é prioridade, nada é prioridade.</p>
+<h2>4. Não negligencie o caráter cultural e o apoio da alta liderança</h2>
+<p>Como diria Peter Drucker: <em>&#8220;a cultura come a estratégia no café da manhã&#8221;</em>. A transformação digital só será bem sucedida em uma ambiente dinâmico e que fomente a colaboração.</p>
+<p>As lideranças da organização e suas equipes precisam ser capazes de trabalhar além das fronteiras delimitadas por departamentos e explorar novas ideias. O que tenho observado é que a maioria das organizações está presa em silos e hierarquias resistentes às mudanças (como sugestão de leitura valhe a pena conferir o livro <a href="https://www.amazon.com/Leading-Change-New-Preface-Author/dp/1422186431" target="_blank" rel="noopener">Leading Change do John P. Kotter</a>).</p>
+<p>Sabendo deste desafio, listo algumas dicas de ouro:</p>
+<p><strong>1) Defina o significado da transformação</strong></p>
+<p>Qual mudança cultural precisará ocorrer na organização para dar vida ao processo de transformação? Como as lideranças estão comunicando o significado da transformação digital para o restante da empresa?</p>
+<p>É fundamental que a alta liderança da organização explicite porque os ajustes na cultura são importantes. Se a empresa espera ver pessoas adotando uma nova cultura, é importante que elas saibam o porquê.</p>
+<p><strong>2) Tenha um promotor da transformação</strong></p>
+<p>Nem sempre as lideranças atuais da empresa terão a capacidade para conduzir a mudança e reconhecer isso não é algo tão trivial.</p>
+<p>Dentro do contexto de transformação digital, tem surgido a figura do <em>Chief Digital Officer</em> (CDO). Em geral, tal papel está empenhado em desenvolver capacidades digitais em domínios relevantes e usar com sucesso várias tecnologias para gerar novas receitas e aumentar a eficiência operacional.</p>
+<p>É importante que as pessoas enxerguem que alguém na alta hierarquia da organização está conduzindo a transformação, porque reflete a relevância do tema. Sem um apoio no alto escalão, dificilmente haverá engajamento, força política e capital social para que a mudança aconteça.</p>
+<p>Além da direção estratégica, as pessoas que estão no dia a dia da operação precisam acreditar e promover a transformação, caso contrário, a mudança não terá a força necessária para acontecer.</p>
+<p><strong>3) Crie rotinas para educar as pessoas sobre o impacto da transformação</strong></p>
+<p>As pessoas precisam ser estimuladas a saberem que a organização está passando por modificações. Comunicar e criar instrumentos para reforçar as alterações nas estruturas e rotinas é um dos tópicos que deve estar na agenda de quem estiver conduzindo a transformação.</p>
+<p>Outro tema importante está relacionado com a educação. Formações continuadas são importantes para a disseminação e a assimilação de novos temas como: agilidade no negócio; métodos e práticas de gestão ágil; equipes celulares; trabalho colaborativo; o papel da pessoa como profissional do futuro; formas de desenvolver soluções a partir da perspectiva do cliente etc.</p>
+<p>Mudanças no comportamento e nos padrões de pensamento das pessoas funcionárias serão cada vez mais importantes para enfrentar os problemas gerados pela economia atual.</p>
+<p>Reconhecer que nem todo mundo estará apto para encarar tal cenário e definir estratégias para lidar com isso é um dos desafios de uma transformação digital.</p>
+<p><strong>4) Cuidado com os sistemas de recompensa</strong></p>
+<p>Se você deseja fazer com que as pessoass atuem de forma colaborativa é necessário repensar a forma como elas são recompensadas. Antigos modelos de análise de performance que estimulam ações individuais precisarão ser questionados.</p>
+<p>A recomendação que tenho feito sobre este assunto é: <strong>gere uma maneira de analisar a performance que combine avaliações das pessoas pares e da gestão direta. Além disso, crie meios onde a bonificação pelo resultado leve em consideração a performance individual e a meta alcançada pelo grupo</strong>.</p>
+<p>Trazendo para uma aplicação prática, seria como se as pessoas de uma equipe multidisciplinar formada por diferentes áreas de uma empresa para desenvolver um novo aplicativo de vendas <em>online</em>, trimestralmente, se avaliassem, fossem avaliadas pela gestão funcional direta e pela liderança do desafio que estivessem trabalhando. Além disto, para cada resultado alcançado pelo desafio, elas receberiam uma bonificação pelo bom trabalho em grupo.</p>
+<h2>5. Trabalhe com pilotos</h2>
+<p>A última dica é a mais simples: inicie a transformação digital com um objetivo claro e que demande baixo esforço.</p>
+<p>Quando as empresas tomam a decisão de iniciarem um processo de mudança, naturalmente surge uma expectativa pelos resultados nas diferentes esferas.</p>
+<p>A diretoria estará interessada em tangibilizar as ações nos resultados financeiros da empresa, as equipes estarão motivadas em trabalhar com um novo formato e as áreas de negócio estarão atraídas para serem as primeiras a se beneficiarem dos produtos digitais.</p>
+<p>Quanto mais simples for a iniciativa trabalhada, menor será o risco e menos recurso (leia-se dinheiro) será gasto.</p>
+<p>Ao priorizar um <em>&#8220;lote pequeno&#8221;</em>, você estará em busca de retornos rápidos para a organização, terá feedback mais curto das pessoas clientes e reduzirá as chances do processo de transformação cair em descrédito.</p>
+<h2>Considerações finais</h2>
+<p>Conforme pôde ser observado no texto, os principais desafios para a implementação da transformação digital são pessoas, cultura, liderança, tecnologia e clientes.</p>
+<p>Os resultados obtidos com o modelo de negócio atual geram uma falsa sensação de tranquilidade para as empresas e incentivam a continuidade da estratégia atual.</p>
+<p>Explorar novos modelos, que incluem a transformação digital, torna-se uma necessidade de sobrevivência. O sucesso no passado não é garantia de um futuro e o mundo digital que vivemos tem nos mostrado isso diariamente. Como tem sido a condução da transformação digital da sua empresa? Deixe seu comentário abaixo!</p><p>The post <a href="/2019/03/5-dicas-essenciais-de-como-olhar-para-a-transformacao-digital-da-sua-empresa/">5 dicas essenciais de como olhar para a transformação digital da sua empresa</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>An Agilist&#8217;s Guide: Analyzing Process health</title>
+		<link>/2019/01/an-agilists-guide-analyzing-process-health/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2019 13:04:11 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=8204</guid>
+
+					<description><![CDATA[<p>Regardless of whether you are an experienced or recent agilist, there are challenges that are part of the daily routine of any team that is seeking to create a quality software with a predictable deadline for delivering a demand (e.g., new functionality, fixing a bug, technical improvement, etc.). Developing a vision that enables seeing and ... <a class="read-more-link" href="/2019/01/an-agilists-guide-analyzing-process-health/">»</a></p>
+<p>The post <a href="/2019/01/an-agilists-guide-analyzing-process-health/">An Agilist’s Guide: Analyzing Process health</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Regardless of whether you are an experienced or recent agilist, there are challenges that are part of the daily routine of any team that is seeking to create a quality software with a predictable deadline for delivering a demand (e.g., new functionality, fixing a bug, technical improvement, etc.).</p>
+<p>Developing a vision that enables seeing and understanding the whole by analyzing the parts that form it is a great challenge when dealing with uncertain environments.</p>
+<p>One of the ways to understand and analyze the work system of an agile team is through process metrics (there is a collection of cool content on the subject here on Ptec&#8217;s blog).</p>
+<p>Understanding the flow from data is a pragmatic way to incorporate transparently a continuous improvement philosophy without abrupt and chaotic changes for everyone involved in the context (team, stakeholders, product area, managers, etc.). To paraphrase the Kanban community, measuring is a tool that will help the evolution and not revolution of an existing process.</p>
+<p>Personally, I like to quantify the process when I am mapping the reality of a team, as I expose facts (data) for discussion and analysis. In my experience with software development teams, I have realized that having this type of behavior helps to reduce a subjective load that may exist on the team and is a way of confronting beliefs like &#8220;we don&#8217;t need to improve&#8221;, &#8220;we don&#8217;t have problems in the process&#8221; and &#8220;we work collaboratively&#8221;.</p>
+<p>In today&#8217;s blog post, I&#8217;ll share a collection of metrics that will help you diagnose the health of an agile team process.</p>
+<p><strong>Assumptions</strong></p>
+<p>First of all, I need to list some reservations about using metrics.</p>
+<p><strong>Metrics should be used to evolve the process, not to generate destructive demands and comparisons.</strong></p>
+<p>Don&#8217;t be tempted to compare teams and measure an individual&#8217;s performance. If you or the company where you work are interested in rewarding individual results, engineer a method that proposes evaluating the person&#8217;s performance from the opinion of managers, peers and customers who have interacted with the results of the individual&#8217;s work. In the event of individually rewarding teams for their results, avoid metrics that are not directly related to business results (e.g. what is the value of the team delivering a number of features in the semester if product revenue has not increased?).</p>
+<p>I share this assumption so that you and your team don&#8217;t behave according to how they are being measured. After all, as Goldratt would say: &#8220;<a href="https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt" target="_blank" rel="noopener">Tell me how you measure me, and I will tell you how I will behave</a>&#8220;.</p>
+<p><strong>Numbers without context are dangerous.</strong></p>
+<p>Any analysis done without understanding the variables that form a scenario becomes superficial, skewed and poor. If someone tells you that the number of features delivered in one team is 10 items per week, is it possible to reach any conclusion? Is this metric good or bad? What is the meaning of delivered for that team? Is it software in production or delivery in a QA environment? Well, from the previous questions it is possible to conclude that a loose number is nothing more than a symbol deprived of any meaning.</p>
+<p><strong>Look for trends and run away from accuracy. Given the complexity of creating a software product, do not seek to be deterministic in a world that is receptive by nature to a probabilistic reality.</strong></p>
+<p>The logic behind the last assumption is: we live in an environment where there is risk, that is, there is a probability of failure due to some uncertain event whose occurrence does not depend exclusively on the team&#8217;s will. Therefore, it is unlikely that the team knows for certain the delivery deadline for a demand or project. Rather than fooling ourselves with deadlines that ratify that deliveries will always happen on the same date and in the same way, let&#8217;s analyze the team&#8217;s data history to project the chance of delivering something.</p>
+<p>These assumptions that I shared will help you use metrics effectively. <a href="https://twitter.com/lucasrcolucci1" target="_blank" rel="noopener">Lucas Colucci</a> wrote a very important article that presents some <a href="/2017/10/12-common-mistakes-when-using-process-metrics/" target="_blank" rel="noopener">common mistakes when using process metrics</a>.</p>
+<p><strong>Process diagnostics</strong></p>
+<p>Given the assumptions shared above, let&#8217;s go to what really matters. The metrics listed below will assist you in mapping the health of a team process. As an agilist, I consider that the views below form a workflow cockpit and should be available for teams to use as material for promoting process improvements (e.g., use of metrics in retrospectives, process analysis in daily meetings, etc.).</p>
+<p><strong>Work in progress</strong></p>
+<p>Monitoring the work in progress will help the team become aware of the work volume that the process has supported over time. I like this kind of view as it shows, for example, if teams are respecting a policy regarding limits to work in progress.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8240 size-full" src="/wp-content/uploads/2019/01/wip_history_en.png" alt="" width="1665" height="763" srcset="/wp-content/uploads/2019/01/wip_history_en.png 1665w, /wp-content/uploads/2019/01/wip_history_en-300x137.png 300w, /wp-content/uploads/2019/01/wip_history_en-768x352.png 768w, /wp-content/uploads/2019/01/wip_history_en-1024x469.png 1024w" sizes="(max-width: 1665px) 100vw, 1665px" /></p>
+<p>In the example above, we have a situation where the team had close to 10 items in progress a week, until at some point there was a reconfiguration in the number of people, which caused the amount of work in progress to decrease. An insight here is that this view presents an interesting history of the team, helping to identify moments when changes occurred in team structure, changes of direction (the famous pivots), obstacles, etc.</p>
+<p>In order to stabilize the process from the productive capacity, it is important that there isn&#8217;t a growth trend for the number of items in WIP. If this is happening, the team is likely to need optimizations to reduce WIP. As an agilist, monitoring WIP will support you to reverberate the following mantra with the team: &#8220;Let&#8217;s stop starting and let&#8217;s start finishing&#8221;.</p>
+<p>Another WIP analysis I have started is related to the lifespan of items that are in WIP within a given week. Essentially, the view considers the items that are in progress that week and accounts for how long they have been in the workflow. For an easier reading of the chart, I group the data by category where I consider the following ranges: (1) 1 day in WIP; (2) up to one week in WIP; (3) from 1 to 2 weeks in WIP; (4) from 2 to 3 weeks in WIP; (5) from 3 to 4 weeks in WIP; (6) over 4 weeks on WIP.</p>
+<p>Still on how the view is structured, for the weeks that have passed, items that are in WIP at the end of the period are accounted for and classified. For the current week, items currently in WIP are analyzed.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8242 size-full" src="/wp-content/uploads/2019/01/wip_age_en.png" alt="" width="1847" height="774" srcset="/wp-content/uploads/2019/01/wip_age_en.png 1847w, /wp-content/uploads/2019/01/wip_age_en-300x126.png 300w, /wp-content/uploads/2019/01/wip_age_en-768x322.png 768w, /wp-content/uploads/2019/01/wip_age_en-1024x429.png 1024w" sizes="(max-width: 1847px) 100vw, 1847px" /></p>
+<p>Applying it to one example, you can see that in the fifth week of WIP lifespan tracking of the team above, there were two items that were over a month in the flow. If the team, by systematically tracking their workflow, realizes that the older categories are growing, it is very likely that a bottleneck is being produced at some stage in the process and an intervention will be needed.</p>
+<p>Keep in mind that WIP represents effort and energy that has not yet been validated and the longer the team spends carrying it, the less feedback will be received, the slower the process of validating the assumptions behind the initiatives that originate the work, and the greater the risk of the company missing on a market opportunity.</p>
+<p><strong>Lead time</strong></p>
+<p>Lead time is an important metric for teams to develop the ability to understand how long they have taken to complete a work item. In addition, teams that develop the skill to analyze such metrics can identify situations that have generated variability in the process (e.g. environment issues, exit of team members, lack of clear acceptance criteria for demands).</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png" /></p>
+<p>The first view that should be available for the team is the lead time scatter plot chart. It will provide an idea if the time for delivering the items is decreasing or not over time.</p>
+<p>As shown in the chart above, I like to combine the following information in this view: completed items (represented in the chart by the blue dots) and item in progress (represented in the chart by the red dots); the moving average that considers the last 5 delivered items (this is a completely arbitrary parameter); and the information for 50th percentile (median), 75th percentile and 95th percentile.</p>
+<p>Such reference measures are useful because, from the example, they bring to light findings such as:</p>
+<ul>
+<li>The moving average has varied over time.</li>
+<li>Based on the history of completed items, 50% of them were completed within 10 days, 75% took up to 16 days to complete and 95% were completed within 34 days.</li>
+</ul>
+<p>In addition, the scatter plot chart can generate answers to questions such as:</p>
+<ul>
+<li>What is the team doing to handle items in progress that are becoming extreme lead time cases?</li>
+<li>What can be improved in the process to reduce lead time?</li>
+</ul>
+<p>Another beneficial view to understand lead time is the histogram chart, because, when considering each lead time as a category, it presents data more concisely and allows extracting information about distribution behavior.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8244 size-full" src="/wp-content/uploads/2019/01/leadtime_histogram_en.png" alt="" width="1865" height="777" srcset="/wp-content/uploads/2019/01/leadtime_histogram_en.png 1865w, /wp-content/uploads/2019/01/leadtime_histogram_en-300x125.png 300w, /wp-content/uploads/2019/01/leadtime_histogram_en-768x320.png 768w, /wp-content/uploads/2019/01/leadtime_histogram_en-1024x427.png 1024w" sizes="(max-width: 1865px) 100vw, 1865px" /></p>
+<p>As shown in the example above, the histogram enables the team to respond to queries such as:</p>
+<ul>
+<li>What has been the most frequent lead time?</li>
+<li>Are extreme lead time cases very common?</li>
+<li>What is the distribution format? Is there a lead time concentration to the left or right of the distribution? Is there more than one mode? Usually bimodal distributions represent flows of teams that deal with more than one type of demand in their process, because they have similar concentrations in different lead time categories.</li>
+</ul>
+<p><strong>Delivery pace</strong></p>
+<p>Measuring and visualizing <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/" target="_blank" rel="noopener">throughput</a> is important for the team to understand what amount of work has been delivered over a period of time (example: week, two weeks, month), as well as helping it identify if there is an upward trend in the number of deliveries. When realizing that throughput is falling, the team can try to understand which factors are affecting the process throughput.</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/throughput_variation-1024x436.png" /></p>
+<p>I recommend whenever possible breaking the throughput view by demand type. Thus, it is clear to everyone if the team is able to:</p>
+<ul>
+<li>Balance the number of valuable deliveries (e.g. features) with failure demands (e.g. bugs).</li>
+<li>Deal with urgent demands in a sustainable manner. I often find teams that classify every demand that enters the workflow as urgent and work on them, leaving aside items that will be important to the business in the medium term.</li>
+</ul>
+<p>In the example above, the team managed to balance during most weeks user story deliveries with bug fixes. In weeks marked with red arrows, the team had to act and deliver critical issues that were affecting the company&#8217;s operation, therefore, it delivered only bug fixes.</p>
+<p><strong>Analysis of flow input and output rate</strong></p>
+<p>In addition to using the CFD chart <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" target="_blank" rel="noopener">(I wrote a full blog post to talk about this view</a>), I would like to present an analysis that I have not seen many agilists do: the relationship between workflow input and output rates. Basically this view compares the amount of items that the team has committed to deliver with the number of items delivered over time.</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/throughput_break6-1024x443.png" /></p>
+<p>What insight can be provided by can this type of view? Let&#8217;s look at an example.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8238 size-full" src="/wp-content/uploads/2019/01/arrival_throughput_rate_en.png" alt="" width="1817" height="769" srcset="/wp-content/uploads/2019/01/arrival_throughput_rate_en.png 1817w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-300x127.png 300w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-768x325.png 768w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-1024x433.png 1024w" sizes="(max-width: 1817px) 100vw, 1817px" /></p>
+<p>Based on the image above you can make some deductions:</p>
+<ul>
+<li>Of the 27 weeks analyzed, 10 of them had an input rate (items the team committed to delivering) greater than the number of delivered items.</li>
+<li>In week 17 the team had a peak of items committed to being delivered. This happened because the team&#8217;s PO was about to go on vacation. Speaking of inventories, I suggest reading <a href="/2017/12/estoques-no-desenvolvimento-de-software/" target="_blank" rel="noopener">Guilherme Fré&#8217;s blog post on the subject</a>.</li>
+</ul>
+<p>Analyzing the process input and output rate will support the team in understanding whether the delivery pace is tracking the number of committed items. I have seen teams making commitments that are over their actual capacity. This type of behavior leads to lack of trust by stakeholders because the team delivers less than requested, as well as frustration in the team for never being able to deliver &#8220;everything&#8221;.</p>
+<p>In a perfectly stable system, the input and output rate should be the same. If you and your team can develop a process where most weeks these rates are equivalent (e.g., for every 4 weeks, 3 have equal input and output rates), this will demonstrate workflow maturity and represent a highly predictable context.</p>
+<p><strong>Conclusion</strong></p>
+<p>Incorporating a culture that brings data to your team will enable you to monitor a process that has an essentially complex nature (software) providing progress visibility to anyone interested in what is being built or maintained.</p>
+<p>Furthermore, proposing data-driven improvements and evolutions is an excellent way for removing subjective and, to some extent, empty analysis. Basically, I hope that this blog post helps you, agilist, on encouraging people to use less feeling and more facts when they are analyzing a team&#8217;s workflow behavior.</p>
+<p>If you are looking for advanced material on metrics, I recommend the book I have written <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis" target="_blank" rel="noopener">Agile Metrics &#8211; Get better results in your team</a>. Check out the<a href="https://www.goodreads.com/book/show/35341623-m-tricas-geis" target="_blank" rel="noopener"> reviews</a> posted by those who have read it <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60f.png" alt="😏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>And you? What metrics have you used to track process health? Share your experiences in the comments below!<br />
+What challenges do you face to track the health of your process?<br />
+Schedule a 30-minute conversation with one of our experts. A consultant will help you map out your biggest challenges in the development process.</p><p>The post <a href="/2019/01/an-agilists-guide-analyzing-process-health/">An Agilist’s Guide: Analyzing Process health</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Uma discussão sobre aprendizado em equipes</title>
+		<link>/2018/07/uma-discussao-sobre-aprendizado-em-equipes/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 23 Jul 2018 19:02:29 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[learning theories]]></category>
+		<guid isPermaLink="false">/?p=7707</guid>
+
+					<description><![CDATA[<p>Caso você tenha assistido alguma palestra sobre ágil na sua vida ou tenha participado de algum treinamento sobre o assunto, é bem provável que você tenha interagido com o conceito de Shu Ha Ri. Para quem não conhece, o nome tem origem no Aikido e foi introduzido no ambiente de desenvolvimento de software por Alistair ... <a class="read-more-link" href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">»</a></p>
+<p>The post <a href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">Uma discussão sobre aprendizado em equipes</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Caso você tenha assistido alguma palestra sobre ágil na sua vida ou tenha participado de algum treinamento sobre o assunto, é bem provável que você tenha interagido com o conceito de Shu Ha Ri. Para quem não conhece, o nome tem origem no Aikido e foi introduzido no ambiente de desenvolvimento de software por Alistair Cockburn como uma forma de explicitar o grau de domínio em determinada técnica ou método. Assim como o aprendizado da arte marcial, Cockburn propõe que uma pessoa passará por 3 estágios até tornar-se proficiente. As etapas são:</p>
+<ul>
+<li><strong>Shu:</strong> No estágio inicial, a pessoa estudante segue os ensinamentos de um tema de forma precisa. A pessoa concentra-se em como fazer a tarefa, sem se preocupar em compreender a teoria por trás. Se existirem múltiplas variações de como fazer a tarefa, a pessoa se atém a realizá-la da forma como o(a) mestre ensinou.</li>
+<li><strong>Ha:</strong> Neste ponto, a pessoa estudante começa a se desgarrar do(a) mestre. A partir do momento em que as práticas do tema estão em funcionamento, a pessoa começa a aprender os princípios e teorias por trás da técnica. Além disso, a pessoa aprende com outros mestres (referências) e integra o aprendizado à sua prática.</li>
+<li><strong>Ri:</strong> No estágio final, a pessoa estudante não aprende com outras pessoas, mas através da sua própria prática. Ele cria a sua forma de conduzir e adaptar o que aprendeu a partir do seu ponto de vista.</li>
+</ul>
+<p>A partir de uma interpretação livre do que o autor propõe, é como se disséssemos que as organizações estariam aptas a fazer adaptações em técnicas ou metodologias a partir do momento em que elas transcendessem os três estágios. Tal abordagem não difere do que foi proposto pelo psicólogo Benjamin Bloom em 1958. Segundo o <a href="https://pt.wikipedia.org/wiki/Taxonomia_dos_objetivos_educacionais" rel="nofollow">domínio cognitivo descrito na teoria</a>, a pessoa estudante só consegue adquirir uma nova competência se ele tiver dominado e adquirido a competência do nível anterior. Nomeada pelo psicólogo como Taxonomia dos Objetivos Educacionais, os níveis de habilidade elencados são:</p>
+<ul>
+<li><strong>Conhecimento:</strong> recordar, definir, reconhecer ou identificar uma informação específica a partir de situações de aprendizagem anteriores;</li>
+<li><strong>Compreensão:</strong> demonstrar compreensão pela informação, sendo capaz de reproduzi-la por ideias e palavras próprias;</li>
+<li><strong>Aplicação:</strong> recolher e aplicar a informação em situações ou problemas concretos;</li>
+<li><strong>Análise:</strong> subdividir a informação em partes menores com a finalidade de entender a estrutura final;</li>
+<li><strong>Síntese:</strong> recolher e relacionar informações de várias fontes, formando um produto novo;</li>
+<li><strong>Avaliação:</strong> fazer julgamentos sobre o valor de algo (produtos, ideias, etc.) tendo em consideração critérios conhecidos.</li>
+</ul>
+<p>Ao categorizar os indivíduos e organizações em níveis dependentes dos anteriores, desenvolvemos um pensamento linear para um cenário que evolui em um formato geralmente desestruturado e que carrega um passivo de conhecimento antecedente. A partir de tal afirmação, te convido a responder: será que faz sentido uma organização utilizar tudo o que é descrito no <a href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf" rel="nofollow">Scrum Guide</a>? Será que ao seguir o checklist do <a href="https://www.scaledagileframework.com/what-is-safe/" rel="nofollow">SAFe</a> o ágil será escalado no seu negócio? Será que faz sentido utilizar uma abordagem evolucionária como o <a href="https://www.youtube.com/watch?v=cTdJgdQmlr4" rel="nofollow">modelo de maturidade do Kanban</a> para avaliar o quão ágil meu negócio está se tornando?</p>
+<p>Ao estudar sobre teorias de aprendizagem e atuar em empresas &#8220;ágeis&#8221; (sugiro a leitura do artigo sobre como analisar a <a href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/" rel="nofollow">maturidade da agilidade no negócio</a>) ou em &#8220;processo de transformação&#8221; (tem um texto bacana sobre dicas para encarar <a href="/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/" rel="nofollow">os desafios de uma transformação ágil</a>), percebi que rótulos (categorias ou níveis) não respondem como as organizações e as pessoas aprendem a serem ágeis.</p>
+<h2><a id="user-content-teorias-de-aprendizagem" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/a3b43e001257fd5774d3285d06b24c2ab5611bac/2018-06-learning-theories-shu-ha-ri.md#teorias-de-aprendizagem" aria-hidden="true"></a>Teorias de aprendizagem</h2>
+<p>A pedagogia apresenta três possíveis formas dos indivíduos aprenderem. A seguir, descreverei um paralelo de tais teorias com o que tenho observado em ambientes que buscam desenvolver a capacidade de ser ágil.</p>
+<p><strong>O que é o Behavorismo?</strong></p>
+<p>O behaviorismo (ou comportamentalismo) é uma visão de mundo que opera sobre um princípio de estímulo e resposta. Todo comportamento é causado por estímulos externos e pode ser explicado sem a necessidade de considerar estados mentais internos ou a consciência.</p>
+<p>A pessoa estudante começa como uma caixa vazia e o comportamento é moldado através do reforço positivo ou negativo. Tanto o reforço positivo quanto o reforço negativo aumentam a probabilidade de que o comportamento antecedente aconteça novamente. Em contraste, a punição (tanto positiva quanto negativa) diminui a probabilidade de que o comportamento antecedente aconteça novamente. A aprendizagem é, portanto, definida como uma mudança de comportamento no aprendiz (deixo aqui um <a href="https://www.youtube.com/watch?v=_8zA18LkPR4" rel="nofollow">vídeo</a> para ilustrar a explicação).</p>
+<p>Minha crítica para esta corrente teórica se dá na premissa de ignorar o passado cognitivo das pessoas. Em minha opinião, a pessoa aprende a partir do momento em que ela critica aquilo que ela já sabe a fim de gerar novas conexões.</p>
+<p>Fazendo um paralelo com disseminar uma cultura ágil, tal abordagem é utilizada quando desejamos que as pessoas mantenham o que está ocorrendo bem e mudem de comportamento ao interagirem com resultados que não são tão interessantes (ciclos de feedback observados em retrospectivas, revisões de OKRs, operations review do Kanban etc.).</p>
+<p>O lado negativo deste paradigma se dá quando há o reforço de comportamentos pouco efetivos para o negócio pelo simples fato de estarem atrelados a punições ou metas. Alguns exemplos seriam:</p>
+<ul>
+<li>Para mantermos um patamar de velocidade na entrega, devemos reduzir o tempo de análise de código, refinamento, planejamento e testes.</li>
+<li>Para continuarmos com 100% dos itens de um Sprint concluídos, não demonstraremos todo o funcionamento em uma reunião de revisão para não corrermos o risco de termos uma funcionalidade reprovada.</li>
+<li>Para continuarmos com o lead time com baixa variabilidade, vamos retirar os casos extremos do relatório apresentado aos stakeholders, assim eles verão o quão estável nossa equipe é.</li>
+</ul>
+<p><strong>O que é o Cognitivismo?</strong></p>
+<p>O paradigma cognitivista argumenta que a &#8220;caixa preta&#8221; da mente deve ser aberta e compreendida. A mente do aprendiz é como um computador: a informação entra, é processada e gera certos resultados.</p>
+<p>O aprendizado é definido como uma mudança nos esquemas mentais de um aprendiz. Diferentemente do behavorismo, as pessoas não são programadas como animais que respondem ao estímulo externo. As pessoas são seres racionais que já possuem um saber e precisam de uma participação ativa para aprender. Neste sentido, um bom feedback é fundamental para guiar e dar orientação para que ocorram as conexões mentais (<a href="https://www.slideshare.net/MarianaGraf/trabalhando-a-cultura-do-feedback-por-onde-comear-64485895" rel="nofollow">deixo como dica uma palestra maravilhosa da Mari Graf sobre feedback</a>).</p>
+<p>Esse tipo de forma de aprendizado leva em consideração que não há <em>bala de prata</em> ao ensinar alguém. A mensagem que fica por trás deste estilo é: para aprender é importante desenvolver um pensamento crítico.</p>
+<p>Conectando tal teoria com o universo ágil, chegamos à conclusão que você ou sua organização não serão ágeis por aplicarem ou repetirem o que está descrito em treinamentos ou manuais Kanban, Scrum, SAFe ou de qualquer outro método.</p>
+<p>O negócio só entregará mais valor, de forma incremental, centrada no usuário e com feedbacks mais rápidos a partir do momento que as pessoas:</p>
+<ul>
+<li>Racionalizarem o que há por trás dos métodos;</li>
+<li>Avaliarem seus pontos positivos e imperfeições;</li>
+<li>Analisarem um conjunto de opções por meio das conexões geradas com o aprendizado presente e com as experiências passadas;</li>
+<li>Tomarem decisões que considerem o contexto do negócio e resolverem problemas reais.</li>
+</ul>
+<p>Por fim, essa abordagem nos faz gerar questionamentos como:</p>
+<ul>
+<li>Por que preciso escalar o ágil em um contexto de poucas equipes?</li>
+<li>Qual é o custo de coordenação de uma reunião que ocupa metade da empresa para gerar alinhamento?</li>
+<li>Será que todas as decisões precisam ser tomadas em um formato de gestão compartilhada?</li>
+<li>Como estimular a colaboração de forma saudável?</li>
+<li>Por que a equipe deve realizar reuniões de planejamento, reuniões diárias, retrospectivas etc.?</li>
+<li>Como o limite do trabalho em progresso pode ajudar na produtividade da equipe?</li>
+</ul>
+<p><strong>O que é o Construtivismo?</strong></p>
+<p>O paradigma construtivista define que o conhecimento é produzido com base em experiências pessoais e hipóteses do ambiente. Cada pessoa tem uma interpretação e construção diferente do processo do conhecimento. A pessoa estudante não é uma caixa vazia, mas traz experiências passadas e fatores culturais para uma situação.</p>
+<p>Esta linha pedagógica entende que o aprendizado se dá a partir de uma pesssoa mediadora e o detentor de um conhecimento prévio (a pessoa estudante). Assim, o mediador deve criar condições para que o detentor do saber vivencie situações e atividades interativas, nas quais ele próprio construa novas competências.</p>
+<p>Conectado com tal definição, o livro <a href="https://www.amazon.com/How-Creative-Workers-Learn-creativity-ebook/dp/B013K8K1CU" rel="nofollow">How Creative Workers Learn: Improving creativity and learning in order to build successful careers during the XXI century</a> de Alexandre Magno nos faz refletir sobre a responsabilidade do indivíduo no aprender. Sabendo que somos seres em busca de conhecimento, a obra apresenta três modelos de aprendizado onde somos receptores de conteúdo (1.0) ou esperamos respostas de um especialista a partir de nossas dúvidas (2.0) ou quando somos protagonistas do aprendizado (3.0). Sobre o modelo 3.0, a obra traz que o fluxo de aprendizado passa pelas etapas de problematização, pesquisa, conexão, prática e compartilhamento.</p>
+<p>Interligando tal conceito com agilidade nas organizações, defendemos que para se aprender, é necessário fazer. Nesta lógica, a filosofia de construir, medir e aprender permitirá que os ambientes criem robustez para lidar com as adversidades e a competição inerente ao mercado. Tal paradigma me faz refletir sobre alguns questionamentos:</p>
+<ul>
+<li>Do que vale conteúdo (leia-se certificações) sem prática?</li>
+<li>O que são hipóteses para melhorar o negócio sem a construção de um produto? Desilusão das lideranças e clientes?</li>
+<li>Pensando em transformações, por que o estado atual nunca é bom e só o que o que proponho serve? No meu ponto de vista, este tem sido um dos principais motivos das organizações desperdiçarem dinheiro com &#8220;adoções de ágil&#8221; que geram cada vez menos resultados.</li>
+</ul>
+<p><strong>Conclusão</strong></p>
+<p>Este texto foi um convite para refletirmos que existem diferentes formas de aprendermos e não será uma sequência lógica que nos transformará em uma pessoa mestre do saber. E você, como sua organização tem aprendido a desenvolver agilidade no negócio?</p>
+<p><strong>Deixo aqui algumas dicas aos interessados em se aprofundar mais nos temas abordados neste blog post:</strong></p>
+<ul>
+<li><a href="https://martinfowler.com/bliki/ShuHaRi.html" rel="nofollow">ShuHaRi</a></li>
+<li><a href="https://www.learning-theories.com/" rel="nofollow">Learning theories</a></li>
+<li><a href="https://teacherofsci.com/learning-theories-in-education/">15 Learning Theories in Education (A Complete Summary)</a></li>
+</ul><p>The post <a href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">Uma discussão sobre aprendizado em equipes</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dicas para enfrentar os desafios de uma transformação ágil</title>
+		<link>/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 30 May 2018 16:30:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<guid isPermaLink="false">/?p=7567</guid>
+
+					<description><![CDATA[<p>Desenvolver uma estrutura ágil está na agenda de muitas empresas. A promessa de que uma organização assim será mais eficiente e responderá melhor às mudanças no mercado é algo que faz brilhar os olhos de qualquer pessoa que exerça o papel executivo de uma companhia. O grande problema que venho observando no mercado é um ... <a class="read-more-link" href="/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/">»</a></p>
+<p>The post <a href="/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/">Dicas para enfrentar os desafios de uma transformação ágil</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Desenvolver uma estrutura ágil está na agenda de muitas empresas. A promessa de que uma organização assim será mais eficiente e responderá melhor às mudanças no mercado é algo que faz brilhar os olhos de qualquer pessoa que exerça o papel executivo de uma companhia.</p>
+<p>O grande problema que venho observando no mercado é um certo sentimento de frustração na adoção do ágil no dia a dia, bem como uma série de dúvidas de como realizar tal mudança em um ambiente com uma cultura hierárquica forte e onde há uma rede política complexa.</p>
+<p>Buscando entender as empresas e o papel da liderança dentro de um processo de mudança, compartilho neste blog post dois modelos que tenho adotado para compreender contextos que queiram adotar o ágil.</p>
+<h2><a id="user-content-uma-breve-opinião-sobre-transformação-ágil" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/367864d28c738875eadb62efd256281db6a7907c/2018-05-cultura-agil.md#uma-breve-opini%C3%A3o-sobre-transforma%C3%A7%C3%A3o-%C3%A1gil"></a>Uma breve opinião sobre transformação ágil</h2>
+<p>Uma transformação ágil ocorre quando a empresa desenvolve uma visão sistêmica e organizacional dos aspectos que envolvem tal mudança, de maneira que não haja um olhar meramente metodológico de um assunto que tocará todas as áreas da sua estrutura.</p>
+<p>Adotar um novo modelo de trabalho demanda uma modificação na forma como as pessoas enxergam o contexto da organização, o que vai além de um mero treinamento ou de um conjunto de palavras bonitas jogadas em uma apresentação cheia de estilo.</p>
+<p>A aceitação de qualquer modelo como o Scrum, o SAFe, o LeSS, o Nexus, o Spotify ou mesmo o método Kanban com sua abordagem evolucionária, sofrerá com o famigerado <em>mindset organizacional</em>, o que para mim, nada mais é do que a coleção de instituições que definem e limitam as escolhas dos indivíduos dentro de uma empresa.</p>
+<p>No meu ponto de vista, as empresas possuem dois tipos de instituições, as formais e as informais. As primeiras são regras, departamentos e cargos formalizados e escritos, em geral impostos pela direção. Já as informais, são normas ou códigos de conduta, formadas em geral pelas relações entre os indivíduos.</p>
+<p>Conhecer os dois tipos de instituições e saber o poder político de cada uma delas fará com que o processo de mudança aconteça de forma objetiva e com uma boa gestão das expectativas. Recentemente, escutei do <a href="https://twitter.com/mhaddad" rel="nofollow">Matheus Haddad</a> que o jogo político existe e é importante você conhecê-lo para saber jogá-lo. A seguir, apresentarei duas teorias que poderão ser úteis para você entender esse jogo.</p>
+<h2><a id="user-content-estruturas-de-governança" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/367864d28c738875eadb62efd256281db6a7907c/2018-05-cultura-agil.md#estruturas-de-governan%C3%A7a"></a>Estruturas de governança</h2>
+<p>Quando o assunto agilidade vem à tona, provavelmente a sua empresa deve estar em busca de um modelo de trabalho que combine práticas como:</p>
+<ul>
+<li>Estruturas mais flexíveis;</li>
+<li>Otimização na coordenação do trabalho;</li>
+<li>Equipes multifuncionais;</li>
+<li>Comunicação horizontal e vertical;</li>
+<li>Poder de decisão descentralizado e difuso.</li>
+</ul>
+<p>Pensando em entender como as organizações configuram-se para criar uma estrutura que promova os benefícios listados acima, me deparei com o trabalho de Anna Grandori e Santi Furnari (artigo original disponível <a href="http://journals.sagepub.com/doi/pdf/10.1177/0170840607088023" rel="nofollow">aqui</a>). As autoras observaram que as empresas italianas mais inovadoras combinam diferentes tipos de estruturas de governança interna, caracterizadas por:</p>
+<ul>
+<li><strong>Mercado (incentivos monetários):</strong> pagamento por desempenho (individual ou coletivo);</li>
+<li><strong>Burocrático (autoridade):</strong> plano de carreira, planejamento estratégico, sistema de avaliação de desempenho, programa e processo de controle de qualidade;</li>
+<li><strong>Comunitário (divisão de conhecimento, valores e cultura):</strong> compartilhamento de informações, canal de comunicação com stakeholders (clientes, colaboradores etc.), trabalho em equipe, participação no processo de decisão/escolhas;</li>
+<li><strong>Democrático (responsabilidade, decisão e direitos representados):</strong> distribuição das responsabilidades, enriquecimento das atividades dos colaboradores e empoderamento dos colaboradores.</li>
+</ul>
+<p>O estudo realizado pelas autoras demonstrou que as empresas que combinam estruturas de mercado, burocrática e comunitária (plurais) apresentam alto desempenho para inovação e eficiência.</p>
+<p>Alguns insights importantes do estudo são:</p>
+<ul>
+<li>Estruturas de mercado e as comunitárias não são mutuamente exclusivas nem obrigatoriamente complementares para incentivar a inovação. Portanto, uma empresa pode combinar resultado e colaboração para gerar inovação;</li>
+<li>As estruturas burocráticas apresentaram maior relevância para os resultados que visam a eficiência;</li>
+<li>A combinação entre as estruturas de mercado e burocrática é capaz de gerar alto desempenho de inovação em contextos onde há baixa complexidade e baixa incerteza. Sendo assim, ambientes essencialmente rígidos e competitivos podem gerar inovações menos disruptivas;</li>
+<li>A combinação entre as estruturas de mercado e comunitária é uma forma eficaz para alcançar, simultaneamente, a eficiência e a inovação em grandes empresas.</li>
+</ul>
+<p>Você deve estar se perguntando: afinal, o que isso tem a ver com desenvolver uma cultura ágil?</p>
+<p>Se você atua em uma empresa onde o foco está no resultado (<strong>mercado</strong>), provavelmente você terá dificuldades em desenvolver uma base de colaboração, a não ser que exista uma estrutura já <strong>comunitária</strong> estabelecida. Agora, se você está em uma empresa que possui uma estrutura de colaboração (<strong>comunitária</strong>), mas que não dispõe de controle (<strong>burocrática</strong>), é bem provável que você lide com um ambiente ineficiente.</p>
+<p>Observo que as organizações que combinam resultado, gestão baseada em processos, colaboração e visão sistêmica, estabelecem ambientes verdadeiramente ágeis, onde há eficiência, inovação e eficácia.</p>
+<h2><a id="user-content-ciclo-de-vida-da-liderança" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/367864d28c738875eadb62efd256281db6a7907c/2018-05-cultura-agil.md#ciclo-de-vida-da-lideran%C3%A7a"></a>Ciclo de vida da liderança</h2>
+<p>Você já ouviu falar da &#8220;life cycle theory of leadership&#8221; ou &#8220;liderança situacional&#8221;? Essa é uma teoria criada em 1969 por dois psicólogos chamados Paul Hersey e Ken Blanchard. Os autores defendem a existência de quatro estágios distintos de maturidade dentro de uma organização, sendo que estes influenciam diretamente no estilo de agir do líder para alcançar o sucesso na gestão das pessoas:</p>
+<p><strong>Nível 1 &#8211; Determinar:</strong> os liderados não possuem muita maturidade para executar determinadas tarefas, seja pelo fato dos mesmos não se sentirem seguros ou pela ausência de vontade em executá-las. Para que o trabalho seja feito, o líder deve delegar e acompanhar de perto a execução (foco em direção).</p>
+<p><strong>Nível 2 &#8211; Persuadir:</strong> os liderados possuem uma maturidade moderada e suficiente para executarem as tarefas, porém não contam com todas as habilidades necessárias para exercê-las em sua plenitude. Aqui, o líder além de direcionar o trabalho, deve apoiar e incentivar os liderados para que os mesmos alcancem a autoconfiança e a motivação necessárias para agir (foco em aconselhar).</p>
+<p><strong>Nível 3 &#8211; Compartilhar:</strong> os liderados possuem a maturidade entre moderada e alta, e as habilidades para executarem as tarefas, porém falta confiança ou vontade de assumir responsabilidade no trabalho. Neste momento, o papel do líder é o de buscar a participação e a colaboração dos liderados no processo de tomada das decisões.</p>
+<p><strong>Nível 4 &#8211; Delegar:</strong> neste estágio os liderados encontram-se com a maturidade alta e com as habilidades e a disposição que a tarefa exige. Neste nível, o líder não precisa apoiar e direcionar efetivamente o trabalho, uma vez que os liderados possuem a autonomia e a confiança do líder para criar as melhores soluções e executá-las, independente de seu acompanhamento.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-7568" src="/wp-content/uploads/2018/05/687474703a2f2f736974756174696f6e616c2d63646e2e32396b63646e2e6e65742f77702d636f6e74656e742f75706c6f6164732f323031342f30312f417070726f7665645f5369744c6561645f4d6f64656c2e706e67.png" alt="" width="292" height="434" srcset="/wp-content/uploads/2018/05/687474703a2f2f736974756174696f6e616c2d63646e2e32396b63646e2e6e65742f77702d636f6e74656e742f75706c6f6164732f323031342f30312f417070726f7665645f5369744c6561645f4d6f64656c2e706e67.png 292w, /wp-content/uploads/2018/05/687474703a2f2f736974756174696f6e616c2d63646e2e32396b63646e2e6e65742f77702d636f6e74656e742f75706c6f6164732f323031342f30312f417070726f7665645f5369744c6561645f4d6f64656c2e706e67-202x300.png 202w" sizes="(max-width: 292px) 100vw, 292px" /></p>
+<p>Fazendo um paralelo com a adoção do ágil, é possível perceber que uma empresa no nível 1 precisará de uma liderança que ofereça direções claras e que esteja apta a supervisionar a mudança. Neste estágio é importante que os papéis e as responsabilidades estejam bem definidos, bem como uma direção do que, como, quando e onde executar as tarefas. Empresas que estão neste ponto precisam de lideranças que possuam experiência na adoção do ágil.</p>
+<p>No estágio 2, a empresa precisará de uma liderança que forneça orientação, afinal, a capacidade de execução das pessoas ainda será baixa. Além disso, a liderança deve estar engajada e entusiasmada com a mudança, fornecendo um comportamento de apoio para as equipes. Empresas nesse nível devem garantir que as iniciativas de adoção não morram por questões políticas ou pelo desejo de resultados imediatos.</p>
+<p>No terceiro estágio, o papel da liderança será de apoio incondicional. Ações facilitadoras, como escuta ativa e compartilhamento na tomada de decisões devem ser enfatizadas. Empresas que estão neste ponto já desenvolveram células de agilidade que estão em pleno funcionamento e gerando resultado, portanto, a liderança deve utilizar tais casos de sucesso como inspiração para as novas estruturas que estiverem surgindo.</p>
+<p>No último estágio, pouca direção ou suporte se faz necessária. As equipes já encontram-se auto-organizadas e são capazes de tomar suas próprias decisões. Devido ao seu alto nível de motivação, as equipes também não precisam de apoio. Empresas que atingem este grau de maturidade estão no ápice de uma estrutura onde existem células independentes e autossustentáveis (fica a dica de um texto que fala sobre a <a href="https://corporate-rebels.com/guest-post-semco/" rel="nofollow">SEMCO</a>, case nacional sobre estruturas celulares).</p>
+<h2><a id="user-content-conclusão" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/367864d28c738875eadb62efd256281db6a7907c/2018-05-cultura-agil.md#conclus%C3%A3o"></a>Conclusão</h2>
+<p>As ferramentas que compartilhei acima estão me ajudando a entender melhor as estruturas das empresas e como compreender o papel das lideranças na elaboração de um modelo ágil de trabalho.</p>
+<p>Espero que a partir do que compartilhei, você possa encontrar respostas para perguntas como:</p>
+<ol>
+<li>Por que está difícil vender a adoção do ágil na minha empresa?</li>
+<li>Será que a liderança da minha empresa está pronta para suportar a adoção do ágil?</li>
+<li>Será que o ágil faz sentido no ambiente que estou?</li>
+<li>Adotar ágil significa abrir mão de regras, processos e resultados?</li>
+</ol>
+<p>E como você tem acompanhado e participado da adoção do ágil no seu contexto? Quais são os desafios? Deixe sua opinião nos comentários abaixo.</p><p>The post <a href="/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/">Dicas para enfrentar os desafios de uma transformação ágil</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Lançamos mais um livro! \o/ &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;	</title>
+	<atom:link href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 06 Aug 2012 02:07:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Renatoks07		</title>
+		<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/comment-page-1/#comment-1272</link>
+
+		<dc:creator><![CDATA[Renatoks07]]></dc:creator>
+		<pubDate>Mon, 06 Aug 2012 02:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3013#comment-1272</guid>
+
+					<description><![CDATA[Fantástico, Lucas! Parabéns!]]></description>
+			<content:encoded><![CDATA[<p>Fantástico, Lucas! Parabéns!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Cássio Marques		</title>
+		<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/comment-page-1/#comment-1269</link>
+
+		<dc:creator><![CDATA[Cássio Marques]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 19:38:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3013#comment-1269</guid>
+
+					<description><![CDATA[Parabéns pelo livro, Lucas!]]></description>
+			<content:encoded><![CDATA[<p>Parabéns pelo livro, Lucas!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

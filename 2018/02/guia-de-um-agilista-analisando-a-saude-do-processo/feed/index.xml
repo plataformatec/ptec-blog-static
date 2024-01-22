@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Guia de um Agilista: Analisando a saúde do Processo	</title>
+	<atom:link href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/feed/" rel="self" type="application/rss+xml" />
+	<link>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 12 Jun 2019 22:51:28 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Raphael		</title>
+		<link>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/comment-page-1/#comment-1781</link>
+
+		<dc:creator><![CDATA[Raphael]]></dc:creator>
+		<pubDate>Mon, 26 Feb 2018 20:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7210#comment-1781</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/comment-page-1/#comment-1780&quot;&gt;Andre Okazaki&lt;/a&gt;.
+
+Obrigado pelo toque, Andre!
+Abraço]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/comment-page-1/#comment-1780">Andre Okazaki</a>.</p>
+<p>Obrigado pelo toque, Andre!<br />
+Abraço</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andre Okazaki		</title>
+		<link>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/comment-page-1/#comment-1780</link>
+
+		<dc:creator><![CDATA[Andre Okazaki]]></dc:creator>
+		<pubDate>Mon, 26 Feb 2018 17:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7210#comment-1780</guid>
+
+					<description><![CDATA[Ótimo artigo, obrigado por dividir esse conteúdo! Só uma observação, o parágrafo do trecho &quot;Tenha em mente que WIP representa esforço e energia...&quot; está triplicado. Abraço!!]]></description>
+			<content:encoded><![CDATA[<p>Ótimo artigo, obrigado por dividir esse conteúdo! Só uma observação, o parágrafo do trecho &#8220;Tenha em mente que WIP representa esforço e energia&#8230;&#8221; está triplicado. Abraço!!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

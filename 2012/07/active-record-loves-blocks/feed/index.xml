@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Active Record loves blocks	</title>
+	<atom:link href="/2012/07/active-record-loves-blocks/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/07/active-record-loves-blocks/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 31 Jul 2012 22:45:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1271</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 22:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1271</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/active-record-loves-blocks/comment-page-1/#comment-1270&quot;&gt;jrochkind&lt;/a&gt;.
+
+Some of these methods are documented inside the Active Record API, like here: http://api.rubyonrails.org/classes/ActiveRecord/Base.html, but I&#039;m afraid not all possibilites are covered - which leaves us with some source diving to figure out all of them. Of course, since you know that the basic ones are documented, similar methods should just work the same.
+
+Anyway, a pull request (or committing to lifo/docrails) improving the docs where necessary would be more than welcome :). Thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/active-record-loves-blocks/comment-page-1/#comment-1270">jrochkind</a>.</p>
+<p>Some of these methods are documented inside the Active Record API, like here: http://api.rubyonrails.org/classes/ActiveRecord/Base.html, but I&#8217;m afraid not all possibilites are covered &#8211; which leaves us with some source diving to figure out all of them. Of course, since you know that the basic ones are documented, similar methods should just work the same.</p>
+<p>Anyway, a pull request (or committing to lifo/docrails) improving the docs where necessary would be more than welcome :). Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jrochkind		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1270</link>
+
+		<dc:creator><![CDATA[jrochkind]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 22:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1270</guid>
+
+					<description><![CDATA[would one find it mentioned in the docs anywhere that these methods take blocks? How&#039;d you figure it out?  If I remember in the future &quot;oh yeah, some AR methods take blocks but I forget which ones and how&quot;, is there a way to look this up in the docs, or am I reduced to googling for your blog post?]]></description>
+			<content:encoded><![CDATA[<p>would one find it mentioned in the docs anywhere that these methods take blocks? How&#8217;d you figure it out?  If I remember in the future &#8220;oh yeah, some AR methods take blocks but I forget which ones and how&#8221;, is there a way to look this up in the docs, or am I reduced to googling for your blog post?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: googya		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1259</link>
+
+		<dc:creator><![CDATA[googya]]></dc:creator>
+		<pubDate>Wed, 25 Jul 2012 01:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1259</guid>
+
+					<description><![CDATA[thanks for sharing! I used the tap method all the time, now can write less code!  ]]></description>
+			<content:encoded><![CDATA[<p>thanks for sharing! I used the tap method all the time, now can write less code!  </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vinicius Baggio Fuentes		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1258</link>
+
+		<dc:creator><![CDATA[Vinicius Baggio Fuentes]]></dc:creator>
+		<pubDate>Tue, 24 Jul 2012 06:28:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1258</guid>
+
+					<description><![CDATA[Cool, didn&#039;t know that. Thanks Charles!]]></description>
+			<content:encoded><![CDATA[<p>Cool, didn&#8217;t know that. Thanks Charles!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Robbie Clutton		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1256</link>
+
+		<dc:creator><![CDATA[Robbie Clutton]]></dc:creator>
+		<pubDate>Thu, 19 Jul 2012 19:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1256</guid>
+
+					<description><![CDATA[Here&#039;s how I tested the above: http://pivotallabs.com/users/rclutton/blog/articles/2203-testing-within-an-activerecord-block]]></description>
+			<content:encoded><![CDATA[<p>Here&#8217;s how I tested the above: http://pivotallabs.com/users/rclutton/blog/articles/2203-testing-within-an-activerecord-block</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2012/07/active-record-loves-blocks/comment-page-1/#comment-1255</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Thu, 19 Jul 2012 12:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2949#comment-1255</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/active-record-loves-blocks/comment-page-1/#comment-1253&quot;&gt;Shemerey&lt;/a&gt;.
+
+Nice, thanks for sharing.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/active-record-loves-blocks/comment-page-1/#comment-1253">Shemerey</a>.</p>
+<p>Nice, thanks for sharing.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

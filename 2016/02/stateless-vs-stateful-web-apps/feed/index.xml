@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Stateless vs stateful web apps	</title>
+	<atom:link href="/2016/02/stateless-vs-stateful-web-apps/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/02/stateless-vs-stateful-web-apps/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 03 Mar 2019 20:52:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Andrew MacKenzie		</title>
+		<link>/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1562</link>
+
+		<dc:creator><![CDATA[Andrew MacKenzie]]></dc:creator>
+		<pubDate>Wed, 10 Feb 2016 09:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5052#comment-1562</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1561&quot;&gt;josevalim&lt;/a&gt;.
+
+np, the semantics are maybe more noticeable to me because I recently worked in the pay tv space where the distinctions between broadcast, multicast and unicast/stream were quite important ;)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1561">josevalim</a>.</p>
+<p>np, the semantics are maybe more noticeable to me because I recently worked in the pay tv space where the distinctions between broadcast, multicast and unicast/stream were quite important 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1561</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 10 Feb 2016 08:55:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5052#comment-1561</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1560&quot;&gt;Andrew MacKenzie&lt;/a&gt;.
+
+Perfect. I will amend that section, thank you!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1560">Andrew MacKenzie</a>.</p>
+<p>Perfect. I will amend that section, thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew MacKenzie		</title>
+		<link>/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1560</link>
+
+		<dc:creator><![CDATA[Andrew MacKenzie]]></dc:creator>
+		<pubDate>Wed, 10 Feb 2016 07:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5052#comment-1560</guid>
+
+					<description><![CDATA[When describing the workflows, please note that &quot;broadcast&quot; != &quot;transmit&quot;. The only message that is truly &quot;broadcast&quot; is the one from the pubsub system out to all clients. ]]></description>
+			<content:encoded><![CDATA[<p>When describing the workflows, please note that &#8220;broadcast&#8221; != &#8220;transmit&#8221;. The only message that is truly &#8220;broadcast&#8221; is the one from the pubsub system out to all clients. </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Renan Ranelli		</title>
+		<link>/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1558</link>
+
+		<dc:creator><![CDATA[Renan Ranelli]]></dc:creator>
+		<pubDate>Thu, 04 Feb 2016 18:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5052#comment-1558</guid>
+
+					<description><![CDATA[&quot;Deployment teams need to manage extra tooling, both in terms of storage, web servers and monitoring.&quot;
+
+Its very nice to see such warning. Software engineers often ignore the costs of handling such complex cases in production.
+
+In non-software engineering, if you wan&#039;t some piece of equipment to be reliable you really strive to minimize the number of components. Fire safety equipment is a great example of such cases.
+
+Also, the preempted nature of the Erlang renders the whole &quot;avoid to block the channel&quot; problem inexistent. A process will never hang the whole VM even if it takes 5 minutes to complete its task.]]></description>
+			<content:encoded><![CDATA[<p>&#8220;Deployment teams need to manage extra tooling, both in terms of storage, web servers and monitoring.&#8221;</p>
+<p>Its very nice to see such warning. Software engineers often ignore the costs of handling such complex cases in production.</p>
+<p>In non-software engineering, if you wan&#8217;t some piece of equipment to be reliable you really strive to minimize the number of components. Fire safety equipment is a great example of such cases.</p>
+<p>Also, the preempted nature of the Erlang renders the whole &#8220;avoid to block the channel&#8221; problem inexistent. A process will never hang the whole VM even if it takes 5 minutes to complete its task.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

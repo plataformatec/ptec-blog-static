@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Rails 4 and PostgreSQL Arrays	</title>
+	<atom:link href="/2014/07/rails-4-and-postgresql-arrays/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/07/rails-4-and-postgresql-arrays/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 23 Jul 2014 16:46:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Bernardo Chaves		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1420</link>
+
+		<dc:creator><![CDATA[Bernardo Chaves]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 16:46:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1420</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1418&quot;&gt;Jim Nasby&lt;/a&gt;.
+
+Great tip about citext! And it&#039;s cool to use only plSQL in this case, I&#039;m not sure about the speed difference though but might be worth a benchmark. Thanks for sharing!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1418">Jim Nasby</a>.</p>
+<p>Great tip about citext! And it&#8217;s cool to use only plSQL in this case, I&#8217;m not sure about the speed difference though but might be worth a benchmark. Thanks for sharing!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bernardo Chaves		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1419</link>
+
+		<dc:creator><![CDATA[Bernardo Chaves]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 16:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1419</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1417&quot;&gt;Jim Nasby&lt;/a&gt;.
+
+That&#039;s a really cool idea and maybe it&#039;s possible to use a custom type for this, but it&#039;s something I still need to explore. Here is the doc: http://www.postgresql.org/docs/current/static/sql-createtype.html]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1417">Jim Nasby</a>.</p>
+<p>That&#8217;s a really cool idea and maybe it&#8217;s possible to use a custom type for this, but it&#8217;s something I still need to explore. Here is the doc: <a href="http://www.postgresql.org/docs/current/static/sql-createtype.html" rel="nofollow ugc">http://www.postgresql.org/docs/current/static/sql-createtype.html</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jim Nasby		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1418</link>
+
+		<dc:creator><![CDATA[Jim Nasby]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 15:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1418</guid>
+
+					<description><![CDATA[If you want case-insensitive, just use citext: http://www.postgresql.org/docs/9.4/static/citext.html
+
+You can do the same thing in plSQL, which will probably be faster than plpgsql:
+
+CREATE OR REPLACE FUNCTION array_sort(anyarray) RETURNS TABLE( sorted_array anyarray ) LANGUAGE sql AS $body$
+SELECT ARRAY_AGG(val) AS sorted_array
+    FROM (
+        SELECT UNNEST( $1 ) AS val
+        ORDER BY val
+    ) AS sorted_vals
+$body$;]]></description>
+			<content:encoded><![CDATA[<p>If you want case-insensitive, just use citext: <a href="http://www.postgresql.org/docs/9.4/static/citext.html" rel="nofollow ugc">http://www.postgresql.org/docs/9.4/static/citext.html</a></p>
+<p>You can do the same thing in plSQL, which will probably be faster than plpgsql:</p>
+<p>CREATE OR REPLACE FUNCTION array_sort(anyarray) RETURNS TABLE( sorted_array anyarray ) LANGUAGE sql AS $body$<br />
+SELECT ARRAY_AGG(val) AS sorted_array<br />
+    FROM (<br />
+        SELECT UNNEST( $1 ) AS val<br />
+        ORDER BY val<br />
+    ) AS sorted_vals<br />
+$body$;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jim Nasby		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1417</link>
+
+		<dc:creator><![CDATA[Jim Nasby]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 15:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1417</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1414&quot;&gt;Bernardo Chaves&lt;/a&gt;.
+
+Yeah, it really sucks that Postgres doesn&#039;t have the concept of a class. I suspect that normally when you do a separate model then you&#039;d end up with a single tags table in the database and a many-many. That&#039;s going to suck performance-wise.
+
+
+What we&#039;d really want is the ability to tell Postgres in one place &quot;Hey, here&#039;s how you handle tags&quot; and then you could just instantiate that in whataver table you want.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1414">Bernardo Chaves</a>.</p>
+<p>Yeah, it really sucks that Postgres doesn&#8217;t have the concept of a class. I suspect that normally when you do a separate model then you&#8217;d end up with a single tags table in the database and a many-many. That&#8217;s going to suck performance-wise.</p>
+<p>What we&#8217;d really want is the ability to tell Postgres in one place &#8220;Hey, here&#8217;s how you handle tags&#8221; and then you could just instantiate that in whataver table you want.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bernardo Chaves		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1416</link>
+
+		<dc:creator><![CDATA[Bernardo Chaves]]></dc:creator>
+		<pubDate>Tue, 15 Jul 2014 19:54:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1416</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1415&quot;&gt;Petteri Räty&lt;/a&gt;.
+
+Cool gem, didn&#039;t know about it. That&#039;s an interesting approach to the problem, thanks for sharing!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1415">Petteri Räty</a>.</p>
+<p>Cool gem, didn&#8217;t know about it. That&#8217;s an interesting approach to the problem, thanks for sharing!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Petteri Räty		</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1415</link>
+
+		<dc:creator><![CDATA[Petteri Räty]]></dc:creator>
+		<pubDate>Tue, 15 Jul 2014 19:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4115#comment-1415</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1414&quot;&gt;Bernardo Chaves&lt;/a&gt;.
+
+For the uniqueness a standard unique index over the foreign key and tag name will suffice, if it can be case sensitive. For the case insensitivity with a tag model I would use the schema_plus gem https://github.com/lomba/schema_plus to allow expressions for the index. With this gem the schema format can be kept ruby.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/rails-4-and-postgresql-arrays/comment-page-1/#comment-1414">Bernardo Chaves</a>.</p>
+<p>For the uniqueness a standard unique index over the foreign key and tag name will suffice, if it can be case sensitive. For the case insensitivity with a tag model I would use the schema_plus gem <a href="https://github.com/lomba/schema_plus" rel="nofollow ugc">https://github.com/lomba/schema_plus</a> to allow expressions for the index. With this gem the schema format can be kept ruby.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

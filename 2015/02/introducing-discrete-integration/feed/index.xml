@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Introducing Discrete Integration	</title>
+	<atom:link href="/2015/02/introducing-discrete-integration/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/02/introducing-discrete-integration/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:26:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Danilo Caetano		</title>
+		<link>/2015/02/introducing-discrete-integration/comment-page-1/#comment-1470</link>
+
+		<dc:creator><![CDATA[Danilo Caetano]]></dc:creator>
+		<pubDate>Wed, 11 Feb 2015 16:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4420#comment-1470</guid>
+
+					<description><![CDATA[I really like about mechanisms that improves communication among the teams and people. Most initiatives like that should be used more inside the community.]]></description>
+			<content:encoded><![CDATA[<p>I really like about mechanisms that improves communication among the teams and people. Most initiatives like that should be used more inside the community.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: matheusml		</title>
+		<link>/2015/02/introducing-discrete-integration/comment-page-1/#comment-1469</link>
+
+		<dc:creator><![CDATA[matheusml]]></dc:creator>
+		<pubDate>Wed, 11 Feb 2015 00:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4420#comment-1469</guid>
+
+					<description><![CDATA[Awesome post. Really good approach for a common problem.]]></description>
+			<content:encoded><![CDATA[<p>Awesome post. Really good approach for a common problem.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rcillo		</title>
+		<link>/2015/02/introducing-discrete-integration/comment-page-1/#comment-1467</link>
+
+		<dc:creator><![CDATA[rcillo]]></dc:creator>
+		<pubDate>Tue, 10 Feb 2015 15:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4420#comment-1467</guid>
+
+					<description><![CDATA[Great post, Gustavo :clap: 
+
+I agree that improved communication, better branching management and smaller stories are a viable alternative to continuous integration. But there is still one case when feature toggle does seems to make sense. Other than the business toggle you provided as example. If building a whole new section inside an existing project, with multiple pages that only deliver value when a certain flow is complete, it&#039;s still a good idea to frenquently merge each &quot;100% developed page&quot; of the flow into master and keep then hidden by a single routing toggle.
+
+Otherwise we would be deploying features that do not deliver value. In my experience, not every feature is easily broken into incremental deliveries. Or we would keep an &quot;epic branch&quot; for quite sometime before merging into master.]]></description>
+			<content:encoded><![CDATA[<p>Great post, Gustavo :clap: </p>
+<p>I agree that improved communication, better branching management and smaller stories are a viable alternative to continuous integration. But there is still one case when feature toggle does seems to make sense. Other than the business toggle you provided as example. If building a whole new section inside an existing project, with multiple pages that only deliver value when a certain flow is complete, it&#8217;s still a good idea to frenquently merge each &#8220;100% developed page&#8221; of the flow into master and keep then hidden by a single routing toggle.</p>
+<p>Otherwise we would be deploying features that do not deliver value. In my experience, not every feature is easily broken into incremental deliveries. Or we would keep an &#8220;epic branch&#8221; for quite sometime before merging into master.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

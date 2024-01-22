@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Calculating Cost of Delay for software projects	</title>
+	<atom:link href="/2016/11/calculating-cost-of-delay-for-software-projects/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/11/calculating-cost-of-delay-for-software-projects/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 07 Aug 2017 21:19:28 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Hugo Baraúna		</title>
+		<link>/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1661</link>
+
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 15:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5778#comment-1661</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1660&quot;&gt;Lucas Colucci&lt;/a&gt;.
+
+Approv]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1660">Lucas Colucci</a>.</p>
+<p>Approv</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1660</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Tue, 08 Nov 2016 12:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5778#comment-1660</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1658&quot;&gt;rcillo&lt;/a&gt;.
+
+Hey nice hearing from you!
+
+So, opportunity cost (OC) is indeed related to cost of delay (CoD), actually, CoD is the quantification of the opportunity cost. :)
+
+But let me go a little bit further here... from the http://www.businessdictionary.com/definition/opportunity-cost.html , we have that &quot;every action, choice, or decision has an associated opportunity cost&quot;
+
+Therefore CoD and OC will not always converge.
+
+Imagine that you have a delayed project that will surpass a deadline. In this case, the CoD will not be exactly a quantification of the OC, because you do not have a choice, it is only a quantification of your delay (as the name already suggests it), not an opportunity. It is a fact.
+
+But when we have to choose between two projects, like in the blog post&#039;s example, both CoD and OC will converge.
+
+Is it clearer now? I hope it helped :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1658">rcillo</a>.</p>
+<p>Hey nice hearing from you!</p>
+<p>So, opportunity cost (OC) is indeed related to cost of delay (CoD), actually, CoD is the quantification of the opportunity cost. 🙂</p>
+<p>But let me go a little bit further here&#8230; from the <a href="http://www.businessdictionary.com/definition/opportunity-cost.html" rel="nofollow ugc">http://www.businessdictionary.com/definition/opportunity-cost.html</a> , we have that &#8220;every action, choice, or decision has an associated opportunity cost&#8221;</p>
+<p>Therefore CoD and OC will not always converge.</p>
+<p>Imagine that you have a delayed project that will surpass a deadline. In this case, the CoD will not be exactly a quantification of the OC, because you do not have a choice, it is only a quantification of your delay (as the name already suggests it), not an opportunity. It is a fact.</p>
+<p>But when we have to choose between two projects, like in the blog post&#8217;s example, both CoD and OC will converge.</p>
+<p>Is it clearer now? I hope it helped 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rcillo		</title>
+		<link>/2016/11/calculating-cost-of-delay-for-software-projects/comment-page-1/#comment-1658</link>
+
+		<dc:creator><![CDATA[rcillo]]></dc:creator>
+		<pubDate>Fri, 04 Nov 2016 11:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5778#comment-1658</guid>
+
+					<description><![CDATA[I worked at Plataformatec some years ago and I remember that besides delivering great software, we were also taking bigger and bigger responsibilities when helping clients to make better business and product decisions (in the scope of projects and features priorities).
+
+Is this approach somehow related to opportunity cost? https://en.wikipedia.org/wiki/Opportunity_cost]]></description>
+			<content:encoded><![CDATA[<p>I worked at Plataformatec some years ago and I remember that besides delivering great software, we were also taking bigger and bigger responsibilities when helping clients to make better business and product decisions (in the scope of projects and features priorities).</p>
+<p>Is this approach somehow related to opportunity cost? <a href="https://en.wikipedia.org/wiki/Opportunity_cost" rel="nofollow ugc">https://en.wikipedia.org/wiki/Opportunity_cost</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

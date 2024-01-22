@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Bare-bone, stripped-down Devise	</title>
+	<atom:link href="/2011/09/bare-bone-stripped-down-devise/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/09/bare-bone-stripped-down-devise/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 13 Oct 2011 17:38:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Alexander Thornade		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1161</link>
+
+		<dc:creator><![CDATA[Alexander Thornade]]></dc:creator>
+		<pubDate>Thu, 13 Oct 2011 17:38:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1161</guid>
+
+					<description><![CDATA[THANK YOU!!! I so appreciate this site.This is news I need to know.]]></description>
+			<content:encoded><![CDATA[<p>THANK YOU!!! I so appreciate this site.This is news I need to know.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Phil C		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1160</link>
+
+		<dc:creator><![CDATA[Phil C]]></dc:creator>
+		<pubDate>Wed, 12 Oct 2011 09:03:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1160</guid>
+
+					<description><![CDATA[This is great.  just wish we had a generator for the controllers. Good job on Devise!]]></description>
+			<content:encoded><![CDATA[<p>This is great.  just wish we had a generator for the controllers. Good job on Devise!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Ward		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1158</link>
+
+		<dc:creator><![CDATA[Michael Ward]]></dc:creator>
+		<pubDate>Thu, 29 Sep 2011 10:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1158</guid>
+
+					<description><![CDATA[I love information like this - explaining the intentions and goals behind a project like devise is great. Following it up with practical examples is even better.
+
+I&#039;m trying to understand Devise so I can understand its relationship to Refinery CMS. This has helped me take another couple of steps along the route.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>I love information like this &#8211; explaining the intentions and goals behind a project like devise is great. Following it up with practical examples is even better.</p>
+<p>I&#8217;m trying to understand Devise so I can understand its relationship to Refinery CMS. This has helped me take another couple of steps along the route.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Ward		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1159</link>
+
+		<dc:creator><![CDATA[Michael Ward]]></dc:creator>
+		<pubDate>Thu, 29 Sep 2011 10:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1159</guid>
+
+					<description><![CDATA[I love information like this - explaining the intentions and goals behind a project like devise is great. Following it up with practical examples is even better.
+
+I&#039;m trying to understand Devise so I can understand its relationship to Refinery CMS. This has helped me take another couple of steps along the route.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>I love information like this &#8211; explaining the intentions and goals behind a project like devise is great. Following it up with practical examples is even better.</p>
+<p>I&#8217;m trying to understand Devise so I can understand its relationship to Refinery CMS. This has helped me take another couple of steps along the route.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1157</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 21 Sep 2011 19:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1157</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1155&quot;&gt;Joel Parker Henderson&lt;/a&gt;.
+
+Hey Joel, you can already roll out your own confirmation settings as well by simply removing the validatable from your model. Then you can validate on the controller as you wish!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1155">Joel Parker Henderson</a>.</p>
+<p>Hey Joel, you can already roll out your own confirmation settings as well by simply removing the validatable from your model. Then you can validate on the controller as you wish!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1156</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 21 Sep 2011 19:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2263#comment-1156</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1155&quot;&gt;Joel Parker Henderson&lt;/a&gt;.
+
+Hey Joel, you can already roll out your own confirmation settings as well by simply removing the validatable from your model. Then you can validate on the controller as you wish!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/09/bare-bone-stripped-down-devise/comment-page-1/#comment-1155">Joel Parker Henderson</a>.</p>
+<p>Hey Joel, you can already roll out your own confirmation settings as well by simply removing the validatable from your model. Then you can validate on the controller as you wish!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

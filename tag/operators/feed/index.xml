@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>operators « Plataformatec Blog</title>
+	<atom:link href="/tag/operators/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 08 Jan 2010 07:54:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>def ~; end</title>
+		<link>/2009/12/def-til-end/</link>
+					<comments>/2009/12/def-til-end/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 30 Dec 2009 13:10:55 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[operators]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[unary]]></category>
+		<guid isPermaLink="false">/?p=555</guid>
+
+					<description><![CDATA[<p>Pratik lately is doing a great work refactoring ActiveRecord to make a full use of relations. Speaking in code language, this means that in Rails 3 you will be able to do: User.where(:name => "Jose").order("birthday") And it will return a relation. The relation can be further manipulated and the query is only triggered when you ... <a class="read-more-link" href="/2009/12/def-til-end/">»</a></p>
+<p>The post <a href="/2009/12/def-til-end/">def ~; end</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://m.onkey.org/">Pratik</a> lately is doing a great work refactoring ActiveRecord to make a full use of <a href="http://github.com/rails/arel" target="_blank">relations</a>. Speaking in code language, this means that in Rails 3 you will be able to do:</p>
+<pre lang="ruby">
+  User.where(:name => "Jose").order("birthday")
+</pre>
+<p>And it will return a <a href="http://github.com/rails/arel" target="_blank">relation</a>. The relation can be further manipulated and the query is only triggered when you call <code>all</code>, <code>first</code>, <code>to_a</code> or some <code>Enumerator</code> method.</p>
+<p>Besides that, he&#8217;s also doing some <a href="http://gist.github.com/265308">crazy experiments</a>, which will probably become a plugin later. While discussing with Pratik some ways to implement equality and inequality, I discovered a neat ruby trick. Open up an irb session and do:</p>
+<div style="display:none">MD7M9TSHSAJY</div>
+<pre lang="ruby">
+~2  #=> -3
+~42 #=> -43
+</pre>
+<p>And this method is actually <a href="http://ruby-doc.org/core/classes/Fixnum.html#M001071">documented</a>.</p>
+<p>The nice thing though, is that you can define this method in other classes as well. In the querying scenario for example, we could add this behavior:</p>
+<pre lang="ruby">
+class Symbol
+  def ~
+    :"LOWER(#{self})"
+  end
+end
+</pre>
+<p>And now we could actually do:</p>
+<pre lang="ruby">
+User.where(~:email => "jose@plataformatec.com.br")
+#=> SELECT * WHERE LOWER(email) = "jose@plataformatec.com.br"
+</pre>
+<h3>Unary operators</h3>
+<p><a href="http://yehudakatz.com/">Yehuda Katz</a> later pointed to me that this can actually be done with any of the three unary operators in Ruby: +, &#8211; and ~.</p>
+<p>So we could also do:</p>
+<pre lang="ruby">
+class String
+  def +@
+    upcase
+  end
+
+  def -@
+    downcase
+  end
+end
+</pre>
+<p>And now:</p>
+<pre lang="ruby">
++"jose" #=> "JOSE"
+-"JOSE" #=> "jose"
+</pre>
+<p>You could even &#8220;go crazy&#8221; and append several unary operators:</p>
+<pre lang="ruby">
++-+"jose" #=> "JOSE"
+</pre>
+<p>And you? Did you know such behavior in Ruby? Do you have any good use case for it?</p><p>The post <a href="/2009/12/def-til-end/">def ~; end</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/12/def-til-end/feed/</wfw:commentRss>
+			<slash:comments>10</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

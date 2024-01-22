@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: New Active Record scoping syntax	</title>
+	<atom:link href="/2010/07/new-active-record-scoping-syntax/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/07/new-active-record-scoping-syntax/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 21 Feb 2011 12:35:01 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Daniel Huckstep		</title>
+		<link>/2010/07/new-active-record-scoping-syntax/comment-page-1/#comment-765</link>
+
+		<dc:creator><![CDATA[Daniel Huckstep]]></dc:creator>
+		<pubDate>Tue, 13 Jul 2010 22:05:56 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1181#comment-765</guid>
+
+					<description><![CDATA[Very nice. This stuff has been bugging/biting me for a while.]]></description>
+			<content:encoded><![CDATA[<p>Very nice. This stuff has been bugging/biting me for a while.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Elliot Winkler		</title>
+		<link>/2010/07/new-active-record-scoping-syntax/comment-page-1/#comment-759</link>
+
+		<dc:creator><![CDATA[Elliot Winkler]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 23:58:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1181#comment-759</guid>
+
+					<description><![CDATA[I guess we&#039;ll will find out once everyone really starts using with this stuff, but all of that sounds like a natural progression, so, I like it.]]></description>
+			<content:encoded><![CDATA[<p>I guess we&#39;ll will find out once everyone really starts using with this stuff, but all of that sounds like a natural progression, so, I like it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nicolás Sanguinetti		</title>
+		<link>/2010/07/new-active-record-scoping-syntax/comment-page-1/#comment-757</link>
+
+		<dc:creator><![CDATA[Nicolás Sanguinetti]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 23:05:20 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1181#comment-757</guid>
+
+					<description><![CDATA[Awesome! Thanks José :)]]></description>
+			<content:encoded><![CDATA[<p>Awesome! Thanks José 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jacek Becela		</title>
+		<link>/2010/07/new-active-record-scoping-syntax/comment-page-1/#comment-756</link>
+
+		<dc:creator><![CDATA[Jacek Becela]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 22:19:25 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1181#comment-756</guid>
+
+					<description><![CDATA[This whole un-hashing to method-chaining changes fit really well in ActiveRelation, yet I kinda don&#039;t like RSpec syntax (after using it for one year)...&lt;br&gt;&lt;br&gt;Great article Jose!]]></description>
+			<content:encoded><![CDATA[<p>This whole un-hashing to method-chaining changes fit really well in ActiveRelation, yet I kinda don&#39;t like RSpec syntax (after using it for one year)&#8230;</p>
+<p>Great article Jose!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sohan		</title>
+		<link>/2010/07/new-active-record-scoping-syntax/comment-page-1/#comment-1031</link>
+
+		<dc:creator><![CDATA[Sohan]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 15:59:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1181#comment-1031</guid>
+
+					<description><![CDATA[DrinkRails.com linked to your post as one of the top ruby on rails related blogs of the day.]]></description>
+			<content:encoded><![CDATA[<p>DrinkRails.com linked to your post as one of the top ruby on rails related blogs of the day.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

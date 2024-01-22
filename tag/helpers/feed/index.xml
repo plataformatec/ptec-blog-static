@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>helpers « Plataformatec Blog</title>
+	<atom:link href="/tag/helpers/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 18 Aug 2017 14:56:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Sanitize to the rescue!</title>
+		<link>/2010/09/sanitize-to-the-rescue/</link>
+					<comments>/2010/09/sanitize-to-the-rescue/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 21 Sep 2010 20:14:59 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[helpers]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[sanitize]]></category>
+		<guid isPermaLink="false">/?p=1450</guid>
+
+					<description><![CDATA[<p>Most of the applications we create these days usually have an admin interface where an user with necessary privileges is able to manage the application content, respecting some business rules. Thus it is required that part of this content is easily manageable, which means the user needs to be able to add some formatting to ... <a class="read-more-link" href="/2010/09/sanitize-to-the-rescue/">»</a></p>
+<p>The post <a href="/2010/09/sanitize-to-the-rescue/">Sanitize to the rescue!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Most of the applications we create these days usually have an admin interface where an user with necessary privileges is able to manage the application content, respecting some business rules. Thus it is required that part of this content is easily manageable, which means the user needs to be able to add some formatting to the content. For us, it usually means that the user has to input HTML tags. And it also means that the user can do things that might break our application.</p>
+<p>Luckily, Rails can help us since it has some helpers to sanitize and strip unwanted tags or attributes from the markup.</p>
+<h3>Strip links</h3>
+<p>If you just want to remove all links from the text you want to show, you can use the following method:</p>
+<pre><code class="ruby">&lt;%= strip_links 'Send e-mail to &lt;a href="mailto:me@example.com"&gt;Me&lt;/a&gt;.' %&gt;
+
+Send e-mail to Me.
+</code></pre>
+<h3>Strip tags</h3>
+<p>This might be a bit famous: it removes all html tags from the given markup, using html-tokenizer:</p>
+<pre><code class="ruby">&lt;%= strip_tags '&lt;p class="foo"&gt;Send e-mail to &lt;a href="mailto:me@example.com"&gt;Me&lt;/a&gt;.&lt;/p&gt;' %&gt;
+
+Send e-mail to Me.
+</code></pre>
+<h3>Sanitize</h3>
+<p>The sanitize helper encodes all html tags and strips all attributes that are not allowed, specially script tags.</p>
+<pre><code class="ruby">&lt;%= sanitize '&lt;p id="bar" class="foo"&gt;foo bar &lt;script&gt;alert("I am a hacker!")&lt;/script&gt; baz&lt;/p&gt;' %&gt;
+
+&lt;p class="foo"&gt;foo bar  baz&lt;/p&gt;
+</code></pre>
+<p>For instance here the script tag was removed, and also de id attribute from the paragraph tag.</p>
+<h3>Simple format</h3>
+<p>Together with sanitize we have the simple_format helper. Besides sanitizing the given content, it automatically converts one new line into a br tag, and two or more new lines into a p tag. Lets see how it works:</p>
+<pre><code class="erb">&lt;%= simple_format "I am a text \n and I want to be formatted \n\n by &lt;strong&gt;simple_format&lt;/strong&gt;", :class =&gt; 'foo' %&gt;
+
+&lt;p class="foo"&gt;I am a text 
+&lt;br /&gt; and I want to be formatted &lt;/p&gt; 
+&lt;p class="foo"&gt; by &lt;strong&gt;simple_format&lt;/strong&gt;&lt;/p&gt;
+</code></pre>
+<h3>So I want to change this stuff, and now, what happens?</h3>
+<p>Rails gives you the ability to configure most of what is allowed and what is not when sanitizing content. Lets see the available options:</p>
+<ul>
+<li>sanitized_uri_attributes</li>
+<li>sanitized_bad_tags</li>
+<li>sanitized_allowed_tags</li>
+<li>sanitized_allowed_attributes</li>
+<li>sanitized_allowed_css_properties</li>
+<li>sanitized_allowed_css_keywords</li>
+<li>sanitized_shorthand_css_properties</li>
+<li>sanitized_allowed_protocols</li>
+</ul>
+<p>I believe these configs are pretty straightforward, but in case you have any doubt, check the docs in the source code. You can change any of these configs in your application file:</p>
+<pre><code class="ruby">class Application &lt; Rails::Application
+  config.action_view.sanitized_allowed_tags = %w(table tr th td thead tbody tfoot)
+  config.action_view.sanitized_allowed_protocols = %w(tel)
+end
+</code></pre>
+<h3>Wrapping up!</h3>
+<p>These simple helpers can make our life really easier when dealing with content coming from an admin interface, allowing specific tags and attributes to be shown, and doing the most they can to remove unwanted tags.</p>
+<p>You can see more about them in the docs:<br />
+http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html<br />
+http://api.rubyonrails.org/classes/ActionView/Helpers/TextHelper.html</p>
+<p>What about you, do you use some Rails helper that might be in the dark? We would love to bring it to the light side, share with us!</p><p>The post <a href="/2010/09/sanitize-to-the-rescue/">Sanitize to the rescue!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/09/sanitize-to-the-rescue/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

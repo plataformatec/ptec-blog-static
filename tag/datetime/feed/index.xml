@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>datetime « Plataformatec Blog</title>
+	<atom:link href="/tag/datetime/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:21:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How to serialize Date and DateTime to JSON without losing information</title>
+		<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/</link>
+					<comments>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/#comments</comments>
+		
+		<dc:creator><![CDATA[Fabio Yamate]]></dc:creator>
+		<pubDate>Wed, 05 Nov 2014 11:00:36 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[api]]></category>
+		<category><![CDATA[datetime]]></category>
+		<category><![CDATA[json]]></category>
+		<category><![CDATA[timezone]]></category>
+		<guid isPermaLink="false">/?p=4289</guid>
+
+					<description><![CDATA[<p>When building APIs, it is pretty common to use JSON as a serialization format. JSON defines serialization for boolean, number and string, but not for date/datetime values. What most serializers do with Date and DateTime values is to use the ISO8601 standard. For example: # Date format 2011-07-14 # DateTime format 2011-07-14T19:43:37+0100 However, you should ... <a class="read-more-link" href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/">»</a></p>
+<p>The post <a href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/">How to serialize Date and DateTime to JSON without losing information</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When building APIs, it is pretty common to use JSON as a serialization format. JSON defines serialization for boolean, number and string, but not for date/datetime values.</p>
+<p>What most serializers do with Date and DateTime values is to use the ISO8601 standard. For example:</p>
+<pre>
+# Date format
+2011-07-14
+
+# DateTime format
+2011-07-14T19:43:37+0100
+</pre>
+<p>However, you should be aware that information is lost when you use the Date format. That happens because a Date value might differ between different timezones. Let me give you an example:</p>
+<ul>
+<li>a request was issued at <code>2011-07-14 T01:00:00Z</code> (UTC) from Brazil (UTC-0300) to a service in UTC</li>
+<li>if the time the request was created is exposed as a Date, it would return the value as <code>2011-07-14</code></li>
+<li>but from the client&#8217;s perspective in Brazil, the correct date is <code>2011-07-13</code>, since at the moment of that request was issued, the local time in Brazil was <code>2011-07-13 T22:00:00-0300</code></li>
+</ul>
+<p>If this information is used only inside your app, within the same timezone, you would have no problems. But, if you need to make this information available through a public API, one of your API&#8217;s consumers might recover an incorrect value.</p>
+<p>So, from this experience, <strong>any date value that will be shared and consumed by different clients should be represented as date time with explicit timezone or using the Unix time format</strong>. That way, it is up to the client to treat the data properly.</p>
+<p>Here is an example of an API that returns a subscription period in the right way:</p>
+<pre><code class="ruby">{
+  period_start_date: 1409175049, # Unix time
+  period_end_date: 2014-09-27T18:30:49-0300 # ISO8601
+}
+
+# Time.at(1409175049)
+# DateTime.parse(“2014-09-27T18:30:49-0300”)
+</code></pre>
+<p>The options above have the advantage that both are unambiguous and sortable. You may choose between one or another based on the fact that the timezone option is easier for human comprehension. But remember that <a href="http://unix4lyfe.org/time/">Timezones are a presentation-layer problem</a>, so if you just need to pass data around, Unix time is preferable.</p>
+<p><em>Have you ever had this serialization problem or any other that caused information to be lost? If you have questions or any experience to share, please, leave a comment below.</em></p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/">How to serialize Date and DateTime to JSON without losing information</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

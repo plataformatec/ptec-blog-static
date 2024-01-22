@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: 2010 &#8211; A year in review	</title>
+	<atom:link href="/2010/12/2010-a-year-in-review/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/12/2010-a-year-in-review/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 31 Dec 2010 01:13:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Santiago Pastorino		</title>
+		<link>/2010/12/2010-a-year-in-review/comment-page-1/#comment-1073</link>
+
+		<dc:creator><![CDATA[Santiago Pastorino]]></dc:creator>
+		<pubDate>Fri, 31 Dec 2010 01:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1612#comment-1073</guid>
+
+					<description><![CDATA[Cool to hear that things are going great for you my friends ;)]]></description>
+			<content:encoded><![CDATA[<p>Cool to hear that things are going great for you my friends 😉</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

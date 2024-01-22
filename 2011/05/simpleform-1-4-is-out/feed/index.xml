@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: SimpleForm 1.4 is out	</title>
+	<atom:link href="/2011/05/simpleform-1-4-is-out/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/05/simpleform-1-4-is-out/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 19 May 2011 16:07:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Roger Leite		</title>
+		<link>/2011/05/simpleform-1-4-is-out/comment-page-1/#comment-1144</link>
+
+		<dc:creator><![CDATA[Roger Leite]]></dc:creator>
+		<pubDate>Thu, 19 May 2011 16:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2051#comment-1144</guid>
+
+					<description><![CDATA[ Great job guys!]]></description>
+			<content:encoded><![CDATA[<p> Great job guys!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jack Dempsey		</title>
+		<link>/2011/05/simpleform-1-4-is-out/comment-page-1/#comment-1143</link>
+
+		<dc:creator><![CDATA[Jack Dempsey]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 20:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2051#comment-1143</guid>
+
+					<description><![CDATA[ Excellent! Love SimpleForm. Been working on doing something cool with it, Modernizr, YepNope, and H5F.js. Basic goal is to make it very easy to polyfill HTML 5 features. Hope to get it out soon, but been a bit busy. 
+
+Anyway, love the lib, thanks so much for all the work and the recent updates that make it so easy to customize it. ]]></description>
+			<content:encoded><![CDATA[<p> Excellent! Love SimpleForm. Been working on doing something cool with it, Modernizr, YepNope, and H5F.js. Basic goal is to make it very easy to polyfill HTML 5 features. Hope to get it out soon, but been a bit busy. </p>
+<p>Anyway, love the lib, thanks so much for all the work and the recent updates that make it so easy to customize it. </p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

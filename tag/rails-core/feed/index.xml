@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rails core « Plataformatec Blog</title>
+	<atom:link href="/tag/rails-core/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 03 Jan 2013 09:02:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Carlos Antonio da Silva joins the Rails Core team \o/</title>
+		<link>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/</link>
+					<comments>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 03 Jan 2013 09:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails core]]></category>
+		<guid isPermaLink="false">/?p=3250</guid>
+
+					<description><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael's achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we'd only dream of, but in 2012 it became reality. I must say that it didn't happen by chance, not at all.</p>
+<p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael&#8217;s achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we&#8217;d only dream of, but in 2012 it became reality. I must say that it didn&#8217;t happen by chance, not at all.</p>
+<div id="attachment_3251" style="width: 160px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3251" class="size-full wp-image-3251" alt="Carlos Antonio da Silva Rails Core team member" src="/wp-content/uploads/2013/01/carlos-antonio.jpeg" width="150" height="175" /><p id="caption-attachment-3251" class="wp-caption-text">@cantoniodasilva</p></div>
+<p>Carlos has always been an outstanding software developer and a great teammate. He is someone we all deeply trust to solve hard problems and deliver mission critical projects. We&#8217;ve always watched Carlos working really hard and we must say that he deserved every bit of such achievement. You can check out his contributions into many other open source projects at <a href="http://github.com/carlosantoniodasilva">http://github.com/carlosantoniodasilva</a></p>
+<p>Kudos to our friend @cantoniodasilva!!! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p><p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

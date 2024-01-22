@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Continuous communication	</title>
+	<atom:link href="/2015/03/continuous-communication/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/03/continuous-communication/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 12 Mar 2015 14:14:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Kassio Borges		</title>
+		<link>/2015/03/continuous-communication/comment-page-1/#comment-1473</link>
+
+		<dc:creator><![CDATA[Kassio Borges]]></dc:creator>
+		<pubDate>Thu, 12 Mar 2015 14:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4443#comment-1473</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/03/continuous-communication/comment-page-1/#comment-1471&quot;&gt;jhanggi&lt;/a&gt;.
+
+@jhanggi:disqus first of all, thank you for the comments! :)
+
+I really liked those practices you are using at Table XI! 
+
+It&#039;s very nice to see how other companies evolves their practices. We use something similar with your &quot;Story Time&quot; here. Few days before our planning meetings we do a &quot;Grooming&quot; meeting, to clarify what the stories really means and put all the team on the same page. It makes the planning meetings more smooth and fast!! I&#039;m really glad to know that at Table XI you are doing this too.
+
+I&#039;ve never tried this standup practice, but it seems to be very valuable since it gives focus to the work in progress instead of the traditional &quot;daily report&quot;. I&#039;ll suggest this in my current project and maybe write another post about how it goes.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/03/continuous-communication/comment-page-1/#comment-1471">jhanggi</a>.</p>
+<p>@jhanggi:disqus first of all, thank you for the comments! 🙂</p>
+<p>I really liked those practices you are using at Table XI! </p>
+<p>It&#8217;s very nice to see how other companies evolves their practices. We use something similar with your &#8220;Story Time&#8221; here. Few days before our planning meetings we do a &#8220;Grooming&#8221; meeting, to clarify what the stories really means and put all the team on the same page. It makes the planning meetings more smooth and fast!! I&#8217;m really glad to know that at Table XI you are doing this too.</p>
+<p>I&#8217;ve never tried this standup practice, but it seems to be very valuable since it gives focus to the work in progress instead of the traditional &#8220;daily report&#8221;. I&#8217;ll suggest this in my current project and maybe write another post about how it goes.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jhanggi		</title>
+		<link>/2015/03/continuous-communication/comment-page-1/#comment-1472</link>
+
+		<dc:creator><![CDATA[jhanggi]]></dc:creator>
+		<pubDate>Thu, 12 Mar 2015 04:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4443#comment-1472</guid>
+
+					<description><![CDATA[I also had a comment on the previous post, /2015/02/introducing-discrete-integration/ but the discussion is closed there.
+
+
+Something that&#039;s been incredibly valuable for us regarding &quot;continuous integration&quot; is that many of our projects are set up to have our CI server run on all pull requests. We no longer commit directly to master (we actually use a `develop` branch--that&#039;s what on our staging server, `master` is what&#039;s on production). Everything goes through a PR. That way, we know that everything should work just fine once we merge it in. 
+
+
+We&#039;ll often use Work in Progress (WIP) PRs for longer running or more complicated features. We&#039;ll still use feature flags when necessary, but if the feature really is big enough to warrant it, usually the overhead and effort of implementing the flag--and eventually removing it--becomes small enough within the context of the feature.]]></description>
+			<content:encoded><![CDATA[<p>I also had a comment on the previous post, <a href="/2015/02/introducing-discrete-integration/" rel="ugc">/2015/02/introducing-discrete-integration/</a> but the discussion is closed there.</p>
+<p>Something that&#8217;s been incredibly valuable for us regarding &#8220;continuous integration&#8221; is that many of our projects are set up to have our CI server run on all pull requests. We no longer commit directly to master (we actually use a `develop` branch&#8211;that&#8217;s what on our staging server, `master` is what&#8217;s on production). Everything goes through a PR. That way, we know that everything should work just fine once we merge it in. </p>
+<p>We&#8217;ll often use Work in Progress (WIP) PRs for longer running or more complicated features. We&#8217;ll still use feature flags when necessary, but if the feature really is big enough to warrant it, usually the overhead and effort of implementing the flag&#8211;and eventually removing it&#8211;becomes small enough within the context of the feature.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jhanggi		</title>
+		<link>/2015/03/continuous-communication/comment-page-1/#comment-1471</link>
+
+		<dc:creator><![CDATA[jhanggi]]></dc:creator>
+		<pubDate>Thu, 12 Mar 2015 04:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4443#comment-1471</guid>
+
+					<description><![CDATA[Great post. 
+
+
+One of the things within projects that we&#039;ve recently introduced at Table XI is affectionately named &quot;Story Time&quot;. All the devs on the project get together in a room and go through a few of the in progress and upcoming stories. We go through and discuss the story, make sure everyone understands what the story means, and develop a plan of attack. Sometimes it&#039;s as simple as reading the story, and everyone saying &quot;yes, we all agree on what this means&quot;. Sometimes it goes into deeper discussion and we make known the unknowns and risks within the story. We don&#039;t start on any story that hasn&#039;t been story timed recently. This is especially valuable for stories that were written a while ago and are possibly ambiguous or vague.
+
+
+On my current project we often roll this up into our standups, so it&#039;s much more of &quot;What is the status of this story&quot; vs the traditional &quot;What am I working on today&quot;. It also allows us to say that a story is no longer valid, doesn&#039;t provide sufficient value vs amount of effort, needs additional analysis, or requires feedback from the client. These are things that could be part of the traditional IPM, but is much more focused on the actual implementation details.]]></description>
+			<content:encoded><![CDATA[<p>Great post. </p>
+<p>One of the things within projects that we&#8217;ve recently introduced at Table XI is affectionately named &#8220;Story Time&#8221;. All the devs on the project get together in a room and go through a few of the in progress and upcoming stories. We go through and discuss the story, make sure everyone understands what the story means, and develop a plan of attack. Sometimes it&#8217;s as simple as reading the story, and everyone saying &#8220;yes, we all agree on what this means&#8221;. Sometimes it goes into deeper discussion and we make known the unknowns and risks within the story. We don&#8217;t start on any story that hasn&#8217;t been story timed recently. This is especially valuable for stories that were written a while ago and are possibly ambiguous or vague.</p>
+<p>On my current project we often roll this up into our standups, so it&#8217;s much more of &#8220;What is the status of this story&#8221; vs the traditional &#8220;What am I working on today&#8221;. It also allows us to say that a story is no longer valid, doesn&#8217;t provide sufficient value vs amount of effort, needs additional analysis, or requires feedback from the client. These are things that could be part of the traditional IPM, but is much more focused on the actual implementation details.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>adopting elixir « Plataformatec Blog</title>
+	<atom:link href="/tag/adopting-elixir/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 12 Jun 2018 20:00:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Adopting Elixir: the book and beyond!</title>
+		<link>/2018/06/adopting-elixir-the-book-and-beyond-2/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 12 Jun 2018 17:58:33 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[adopting elixir]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=7612</guid>
+
+					<description><![CDATA[<p>Adopting Elixir is a new book from PragProg, written by Ben Marx, José Valim and Bruce Tate, with the goal of exploring the Elixir adoption life-cycle from concept, to development and into production. After all, adopting a new technology is more than programming. Although a relatively young language, Elixir has plenty of learning resources available. ... <a class="read-more-link" href="/2018/06/adopting-elixir-the-book-and-beyond-2/">»</a></p>
+<p>The post <a href="/2018/06/adopting-elixir-the-book-and-beyond-2/">Adopting Elixir: the book and beyond!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="https://pragprog.com/book/tvmelixir/adopting-elixir">Adopting Elixir</a> is a new book from PragProg, written by Ben Marx, José Valim and Bruce Tate, with the goal of exploring the Elixir adoption life-cycle from concept, to development and into production. After all, adopting a new technology is more than programming.</p>
+<p>Although a relatively young language, Elixir has plenty of learning resources available. You can learn about functional programming, concurrency and distribution, but that may still leave gaps when trying to apply all this knowledge to building production systems. And when it is finally time to deploy your application, questions about performance, monitoring and best-practices start to pop up.</p>
+<p>We, Plataformatec, as the company behind Elixir, have heard this story too many times from companies and clients we have worked together over the last years.</p>
+<p>As we helped different companies, we noticed that many of the topics, questions and misconceptions about Elixir adoption were the same. It then became clear we had to do something about it and we put two plans into motion.</p>
+<p>The first plan was to <strong>minimize friction by documenting the questions, hurdles and challenges in the Elixir adoption</strong>. And, as it turned out, we were not the only ones thinking about tackling this problem. That&#8217;s why Ben Marx from Bleacher Report, José Valim from Plataformatec, and Bruce Tate from icanmakeitbetter.com decided to team up and write the &#8220;Adopting Elixir&#8221; book, published by the Pragmatic Programmers. To learn more, v<a href="https://pragprog.com/book/tvmelixir/adopting-elixir">isit the PragProg bookstore</a> or <a href="http://pages.plataformatec.com.br/chapter-three-adoption-stories">read the first chapter which we have made available for free</a>.</p>
+<p>The second plan was to create <strong>a new service by Plataformatec that helps companies build Elixir applications with speed and confidence</strong>. This service is called <strong>Elixir Development Subscription</strong> and its main goal is to allow companies to reach Plataformatec&#8217;s engineering team for support and assistance.</p>
+<p>We have spent the last months improving and honing the service with our existing clients as well as new ones. Now we are ready to take the next step and support more companies adopt Elixir using our expertise and assistance. If you want to learn more about this service, please fill in the form below, and we will reach out to you as new spots become available!</p>
+<div role="main" id="elixir-development-subscription-ce5dbf074cb453546755"></div>
+<p><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script></p>
+<p><script type="text/javascript">
+jQuery(document).ready(function() {
+  var css = '#conversion-elixir-development-subscription-ce5dbf074cb453546755 div.field > label { font-weight: bold !important; padding: 10px 0 !important; };';
+  var style = document.createElement('style');
+  style.type = 'text/css';
+  style.appendChild(document.createTextNode(css));
+  document.head.appendChild(style);
+  new RDStationForms('elixir-development-subscription-ce5dbf074cb453546755-html', 'UA-8268430-1').createForm();
+});
+</script></p>
+<p>We are excited about what the community has achieved over the last years and we look forward to continuing working together on what comes next!</p><p>The post <a href="/2018/06/adopting-elixir-the-book-and-beyond-2/">Adopting Elixir: the book and beyond!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

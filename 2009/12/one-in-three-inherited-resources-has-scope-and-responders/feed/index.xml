@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: One in Three: Inherited Resources, Has Scope and Responders	</title>
+	<atom:link href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:57:12 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jerod Santo		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-443</link>
+
+		<dc:creator><![CDATA[Jerod Santo]]></dc:creator>
+		<pubDate>Sun, 03 Jan 2010 02:10:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-443</guid>
+
+					<description><![CDATA[HasScopes looks hot. Thanks for releasing it as a separate project!]]></description>
+			<content:encoded><![CDATA[<p>HasScopes looks hot. Thanks for releasing it as a separate project!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jerod Santo		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-910</link>
+
+		<dc:creator><![CDATA[Jerod Santo]]></dc:creator>
+		<pubDate>Sun, 03 Jan 2010 02:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-910</guid>
+
+					<description><![CDATA[HasScopes looks hot. Thanks for releasing it as a separate project!]]></description>
+			<content:encoded><![CDATA[<p>HasScopes looks hot. Thanks for releasing it as a separate project!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: crispycode &#187; CC Links - 6 - crispycode		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-423</link>
+
+		<dc:creator><![CDATA[crispycode &#187; CC Links - 6 - crispycode]]></dc:creator>
+		<pubDate>Sat, 26 Dec 2009 23:10:44 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-423</guid>
+
+					<description><![CDATA[[...] to your Rails applications- Installing Nginx with Passenger on Snow Leopard Using MacPorts- One in Three: Inherited Resources, Has Scope and Responders- Statistics: An ActiveRecord plugin that makes it [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] to your Rails applications- Installing Nginx with Passenger on Snow Leopard Using MacPorts- One in Three: Inherited Resources, Has Scope and Responders- Statistics: An ActiveRecord plugin that makes it [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-422</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Thu, 24 Dec 2009 06:18:01 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-422</guid>
+
+					<description><![CDATA[Very, very cool. Thank you!]]></description>
+			<content:encoded><![CDATA[<p>Very, very cool. Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-909</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Thu, 24 Dec 2009 06:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-909</guid>
+
+					<description><![CDATA[Very, very cool. Thank you!]]></description>
+			<content:encoded><![CDATA[<p>Very, very cool. Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan Pickett		</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/comment-page-1/#comment-420</link>
+
+		<dc:creator><![CDATA[Dan Pickett]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 13:49:02 +0000</pubDate>
+		<guid isPermaLink="false">/?p=525#comment-420</guid>
+
+					<description><![CDATA[I love that you separated out the I18n handling for flashes and I can definitely see using has_scope independently as well. Definitely very cool! For those that don&#039;t like to delegate a lot of control around processing actions, these two gems can be a nice compromise.
+
+Congrats on a 1.0 release! Keep up the great work!]]></description>
+			<content:encoded><![CDATA[<p>I love that you separated out the I18n handling for flashes and I can definitely see using has_scope independently as well. Definitely very cool! For those that don&#8217;t like to delegate a lot of control around processing actions, these two gems can be a nice compromise.</p>
+<p>Congrats on a 1.0 release! Keep up the great work!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

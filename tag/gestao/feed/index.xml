@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>gestão « Plataformatec Blog</title>
+	<atom:link href="/tag/gestao/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 21 Feb 2018 17:07:59 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>A Confiança Como Aspecto De Valorização Das Pessoas</title>
+		<link>/2018/02/a-confianca-como-aspecto-de-valorizacao-das-pessoas/</link>
+		
+		<dc:creator><![CDATA[Henrique A. de Oliveira]]></dc:creator>
+		<pubDate>Mon, 19 Feb 2018 13:50:33 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[contagil]]></category>
+		<category><![CDATA[gerenciamento de pessoas]]></category>
+		<category><![CDATA[gestão]]></category>
+		<guid isPermaLink="false">/?p=7192</guid>
+
+					<description><![CDATA[<p>Imagine que você faz parte de um time de desenvolvimento de software. Até aqui, muito fácil! Agora, pense que esse mesmo time trabalha sob forte supervisão, com cobranças contínuas e frequentes, horário de trabalho rígido e vivencia as famosas frases “o que você está fazendo neste site?”, “preciso disso agora!”, entre tantas outras. Há confiança ... <a class="read-more-link" href="/2018/02/a-confianca-como-aspecto-de-valorizacao-das-pessoas/">»</a></p>
+<p>The post <a href="/2018/02/a-confianca-como-aspecto-de-valorizacao-das-pessoas/">A Confiança Como Aspecto De Valorização Das Pessoas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Imagine que você faz parte de um time de desenvolvimento de software. Até aqui, muito fácil! Agora, pense que esse mesmo time trabalha sob forte supervisão, com cobranças contínuas e frequentes, horário de trabalho rígido e vivencia as famosas frases “o que você está fazendo neste site?”, “preciso disso agora!”, entre tantas outras. Há confiança nas pessoas neste cenário? Pode até existir, mas será que não há formas mais produtivas de gerenciamento?</span></p>
+<p><span style="font-weight: 400;">Resgatando a raiz do ágil, no final de seu </span><a href="http://www.manifestoagil.com.br/principios.html"><span style="font-weight: 400;">5º princípio</span></a><span style="font-weight: 400;">, há o termo de confiar que os indivíduos (pessoas) farão seus respectivos trabalhos, contanto que estejam em ambientes apropriados. Não faz sentido acreditar que a valorização deste time está &#8211; também &#8211; relacionada com a confiança que a empresa deposita nele?</span></p>
+<h2><b>Trabalhando a questão nos projetos de software</b></h2>
+<p><span style="font-weight: 400;">Vivemos em uma época em que um dos principais diferenciais competitivos das organizações (e provavelmente o mais relevante deles) </span><b>são as pessoas</b><span style="font-weight: 400;">. Logo, é fundamental fomentar a colaboração entre elas, disponibilizando mecanismos de comunicação adequados e um ambiente propício para o trabalho (seguro e com todos os itens necessários), bem como, seguindo no tema desta newsletter, prover confiança.</span></p>
+<p><span style="font-weight: 400;">No texto </span><a href="http://cio.com.br/opiniao/2013/10/28/cresce-a-adesao-aos-metodos-ageis/"><span style="font-weight: 400;">Cresce a adesão aos métodos ágeis</span></a><span style="font-weight: 400;">, Luca Bastos argumenta que “As metodologias ágeis também têm como princípio básico a valorização das pessoas”. Ele também lembra que isso está explícito no Manifesto Ágil, em sua primeira proposição, onde encontramos o trecho indivíduos e interações mais que processos e ferramentas.</span></p>
+<p><b>Confiar </b><span style="font-weight: 400;">que os membros do time do projeto são responsáveis, sabem da necessidade do cliente e da empresa, possuem maestria e que conhecem os objetivos do projeto são fatores que motivam a equipe e, além disso, </span><b>são formas de valorização</b><span style="font-weight: 400;">. Isso não significa largar o projeto para as pessoas, muito menos ausência de direcionamentos. O ponto é: o representante no papel de liderança deve estar sempre presente para conceder apoio e suporte para toda a equipe, bem como apresentar os objetivos do projeto, construindo o caminho do desenvolvimento da solução de forma conjunta. Por outro lado, não precisa se preocupar demasiadamente com pontos que não são relevantes para o projeto, seguindo o exemplo apresentado no início deste texto.</span></p>
+<p><span style="font-weight: 400;">O artigo (em Inglês) </span><a href="/2016/11/how-to-improve-trust-among-team-members/"><span style="font-weight: 400;">Como melhorar a confiança entre os membros da equipe</span></a><span style="font-weight: 400;">, escrito por Lucas Colucci, aborda o aspecto da confiança de forma mais aprofundada. Ele, que atua como Agile Consultant na Ptec, cita que “Equipes com deficiência de confiança tendem a demorar mais tempo para entregar suas tarefas”. Trabalhar nas esferas da transparência, carga de trabalho e individualidade são complementos da confiança existente na equipe, todas abordadas no artigo (vale a leitura!).</span></p>
+<h2><b>A colaboração como meio de alcançar a confiança</b></h2>
+<p><span style="font-weight: 400;">Disponibilizar meios de colaboração para a equipe (ferramentas, ambiente de trabalho adequado, etc.), e deixar que ela própria se organize para trabalhar da melhor maneira possível para o projeto, são maneiras de demonstrar confiança e, dessa forma, valorizar os colaboradores do time por suas capacidades (no caso de software, muito relacionadas com intelecto e criatividade).</span></p>
+<p><span style="font-weight: 400;">Times auto-organizados precisam que seus membros colaborem em todos os aspectos do projeto, e muito! Pensando no desenvolvimento, onde as entradas são transformadas em saídas através de um processo, a colaboração deve estar fortemente presente em todo o percurso. Uma forma de trabalhar este ponto é promovendo a colaboração nos três níveis (entradas, processos e saídas), como explicado por Wesley Zapellini no texto </span><a href="/2016/08/5-strategies-to-improve-software-development-workflow/"><span style="font-weight: 400;">5 estratégias para melhorar o fluxo de trabalho de desenvolvimento de software</span></a><span style="font-weight: 400;"> (em Inglês).</span></p>
+<h2><b>E como os projetos de sua empresa estão caminhando?</b></h2>
+<p><span style="font-weight: 400;">A confiança no time, seja ela incentivada, ou não, pela colaboração em todo o processo de desenvolvimento, não é o único meio de alcançar a valorização das pessoas em projetos. É, no ponto de vista deste artigo, um complemento relevante e indispensável em meio a vários outros aspectos (salário, carreira, desafios, segurança, entre outros). Mas vale a pergunta: em seu projeto, há plena confiança nas pessoas? Se a resposta for não, é importante repensar este aspecto, pois ele provavelmente irá refletir nos resultados esperados do projeto.</span></p>
+<p>&nbsp;</p>
+<p><em>Este texto também faz parte da ContÁgil, nossa newsletter mensal com curadoria de conteúdo pela equipe da Plataformatec sobre gerenciamento de projetos, metodologias e cultura ágil. Se você ainda não é assinante, assine agora! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></em></p>
+<p><a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura"><img fetchpriority="high" decoding="async" class="alignnone size-full wp-image-6110" src="/wp-content/uploads/2017/02/blog-cta-assinar-contagil.png" alt="" width="831" height="147" srcset="/wp-content/uploads/2017/02/blog-cta-assinar-contagil.png 831w, /wp-content/uploads/2017/02/blog-cta-assinar-contagil-300x53.png 300w, /wp-content/uploads/2017/02/blog-cta-assinar-contagil-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/02/a-confianca-como-aspecto-de-valorizacao-das-pessoas/">A Confiança Como Aspecto De Valorização Das Pessoas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Estamos patrocinando o Lean Kanban Brazil 2017</title>
+		<link>/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/</link>
+		
+		<dc:creator><![CDATA[Sheila Chang]]></dc:creator>
+		<pubDate>Fri, 13 Oct 2017 16:13:18 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[kanban]]></category>
+		<guid isPermaLink="false">/?p=6774</guid>
+
+					<description><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência aqui no blog e no conteúdo dos nossos materiais. Tudo grátis! 😉 Nossa contribuição se expandiu. Palestras e workshops em eventos agile ... <a class="read-more-link" href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">»</a></p>
+<p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência <a href="/tag/agile/">aqui no blog</a> e no conteúdo dos <a href="/materiais-de-metodologias-ageis/">nossos materiais</a>. Tudo grátis! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Nossa contribuição se expandiu. Palestras e workshops em eventos agile tornaram-se parte das atividades do nosso time, e para firmar nosso compromisso com a comunidade ágil, estamos patrocinando o <a href="http://leankanban.com.br/">Lean Kanban Brazil 2017</a>. \o/</p>
+<p><img decoding="async" class="alignleft size-full wp-image-6778" src="/wp-content/uploads/2017/10/logo-lean-kanban-brazil.png" alt="Lean Kanban Brazil" width="250" height="77" /></p>
+<h2>Lean Kanban Conferences</h2>
+<p>A <em><a href="http://leankanban.com/events/">Lean Kanban Conferences Internacional</a></em> apoia conferências em diversos países, e Brasil está na lista. Com temas relacionados a <strong>gestão</strong>, a <a href="http://leankanban.com.br/programa/">programação da segunda edição brasileira</a> está dividida em três.</p>
+<h3>1. Webinars</h3>
+<p>Democrático e inclusivo, a organização preocupou-se em eliminar a restrição geográfica. Quem não pode participar do evento em São Paulo, tem opção de webinars pré-conferência.</p>
+<p><img decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/breno-campos.png" alt="Breno Campos" width="110" height="110" /> No dia <strong>17/10</strong>, nosso carismático <em>agile consultant</em>, <strong>Breno Campos</strong> falará sobre priorização de backlog e desenvolvimento de produtos/plataformas digitais no webinar <em><strong>Cost of Delay &#8211; Você perde por esperar</strong></em>. Ele vai mostrar que atrasos de projetos significam perda de grana $$$. Você levará um choque de realidade. o.O</p>
+<h3 style="clear: both;">2. Workshops</h3>
+<p>6 workshops focados em gestão, com duração de 4 horas, ocuparão salas no Espaço Franklin Covey (<a href="https://goo.gl/maps/oC6M4wLgwgs">mapa</a>).</p>
+<p><img loading="lazy" decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/raphael-albino.png" alt="Raphael Albino" width="110" height="110" />Claro que o <strong>Raphael Albino</strong> &#8212; professor, mestre, doutorando, <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">autor de livro</a> e nosso <em>agile consultant</em> &#8212; estará lá no dia <strong>27/10</strong> promovendo o workshop <em><strong>Vamos falar sobre Métricas de Processo?</strong></em> Você não terá moleza. Vai por a mão na massa, praticar de verdade! Se conhecimento é poder, você será poderoso(a) depois dessa aula. :bulb:</p>
+<h3 style="clear: both;">3. Palestras</h3>
+<p>Estão dividas em 2 tracks, marcadas para o dia <strong>28/10</strong>, no Grand Mercure Ibirapuera (<a href="https://goo.gl/maps/RqGJaxax8Ls">mapa</a>). Você terá oportunidade para networking nos coffee-breaks e almoço.</p>
+<p>Pensa que acabou? Tem mais!</p>
+<h2>Nosso estande</h2>
+<p>Vamos compartilhar mais conhecimento nas <strong><em>Coaching Sessions</em></strong> que teremos no nosso estande.</p>
+<p>Sério! Será imperdível! Sabe por quê? Porque não são <em>coaching sessions</em> sobre o que queremos ensinar. Abordaremos O QUE VOCÊ QUER APRENDER!</p>
+<p>Para isso, você precisa nos ajudar a te ajudar <small>(Tropa de Elite, caveiraaa!)</small>. Como? Basta responder <a href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=link">neste formulário</a> o tema do seu interesse.</p>
+<p>Você quer o &#8220;faz-me rir&#8221; <small>(faca na caveira)</small>? Que tal 20% de desconto na compra da entrada?</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; font: bold 12px arial; line-height: 1.8; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;" href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=button" target="_blank" rel="noopener">Clique aqui e responda o que você quer ver nas Coaching Sessions</a></p>
+<div style="height: 60px;"></div><p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

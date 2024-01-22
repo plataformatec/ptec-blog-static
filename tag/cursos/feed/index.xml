@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>cursos « Plataformatec Blog</title>
+	<atom:link href="/tag/cursos/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 08 Oct 2012 14:29:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Curso de Ruby on Rails online</title>
+		<link>/2012/10/curso-de-ruby-on-rails-online/</link>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Mon, 08 Oct 2012 14:29:13 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[cursos]]></category>
+		<category><![CDATA[cursos online]]></category>
+		<guid isPermaLink="false">/?p=3121</guid>
+
+					<description><![CDATA[<p>Pré-lançamento do Curso online de Ruby on Rails, parte 2 - http://rubyonrailsonline.com.br/</p>
+<p>O público alvo dos dois cursos são desenvolvedores que estão iniciando em Ruby on Rails mas que já possuem algum conhecimento em desenvolvimento web. Esperamos que vocês gostem. :D</p>
+<p>The post <a href="/2012/10/curso-de-ruby-on-rails-online/">Curso de Ruby on Rails online</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Primeiramente, gostaríamos de enviar nossos sinceros agradecimentos aos elogios e comentários sobre as nossas palestras e adesivos durante a RubyConf. Foi muito bacana receber o feedback de todos vocês. Em nome de todo time da Plataformatec, agradeço pelo reconhecimento do nosso esforço e trabalho.</p>
+<p>Foi também durante a RubyConf que lançamos o nosso primeiro curso online de Ruby on Rails em parceria com a Caelum. Trabalhar com eles foi uma experiência muito legal. Nos dedicamos bastante mas, ao mesmo tempo, foi muito divertido.</p>
+<p style="text-align: center;"><a href="http://rubyonrailsonline.com.br/"><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-3127" title="Curso-online-de-Ruby-on-Rails" src="/wp-content/uploads/2012/10/Curso-online-de-Ruby-on-Rails.jpg" alt="Curso online de Ruby on Rails - Plataformatec e Caelum" width="577" height="338" srcset="/wp-content/uploads/2012/10/Curso-online-de-Ruby-on-Rails.jpg 577w, /wp-content/uploads/2012/10/Curso-online-de-Ruby-on-Rails-300x175.jpg 300w" sizes="(max-width: 577px) 100vw, 577px" /></a></p>
+<p style="text-align: center;"><strong><a title="Curso online de Ruby on Rails - Plataformatec e Caelum" href="http://rubyonrailsonline.com.br/  ">http://rubyonrailsonline.com.br/</a></strong></p>
+<p>E é com muita empolgação que nós estamos fazendo o pré-lançamento do nosso segundo curso hoje!</p>
+<p>Público alvo dos dois cursos:</p>
+<p>&#8211; O público alvo dos dois cursos são desenvolvedores que estão iniciando em Ruby on Rails mas que já possuem algum conhecimento em desenvolvimento web.</p>
+<p>Fiquem a vontade para comentar e enviar qualquer feedback pelos comentários. Esperamos que vocês gostem. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p style="text-align: center;"><p>The post <a href="/2012/10/curso-de-ruby-on-rails-online/">Curso de Ruby on Rails online</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

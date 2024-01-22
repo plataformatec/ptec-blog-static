@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>git « Plataformatec Blog</title>
+	<atom:link href="/tag/git/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 01 Nov 2019 19:52:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Organizing microservices in a single git repository</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/</link>
+					<comments>/2015/01/organizing-microservices-in-a-single-git-repository/#comments</comments>
+		
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 10:44:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[architecture]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[microservices]]></category>
+		<guid isPermaLink="false">/?p=4397</guid>
+
+					<description><![CDATA[<p>Microservices has gained popularity recently and some projects I&#8217;ve worked on had followed this approach. Basically, it&#8217;s an approach of software architecture that allows breaking monolithic applications into smaller decoupled, business-oriented and isolated deployable applications. Each microservice normally is hosted in its own git repository, since it has very defined business boundaries and the code ... <a class="read-more-link" href="/2015/01/organizing-microservices-in-a-single-git-repository/">»</a></p>
+<p>The post <a href="/2015/01/organizing-microservices-in-a-single-git-repository/">Organizing microservices in a single git repository</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Microservices has gained popularity recently and some projects I&#8217;ve worked on had followed this approach. Basically, it&#8217;s an approach of software architecture that allows breaking monolithic applications into smaller decoupled, business-oriented and isolated deployable applications.</p>
+<p>Each microservice normally is hosted in its own git repository, since it has very defined business boundaries and the code must be isolated from other microservices to ensure decoupling and deploy independance.</p>
+<p>It may work greatly if you organize a team by each microservice. So, if a team is responsible for a given microservice and won&#8217;t work on other microservices, this organization may be good enough.</p>
+<p>During project developments, we at Plataformatec understood that it is not so productive to focus on specific parts of a feature. Instead, we design and develop features by perceiving it as a whole, as it would be perceived by the end user. We don&#8217;t work with application specialists, we work with generalists and a lot of communication through pull requests.</p>
+<p>So the best fit for the way we work, as our experience has shown us, is to put all the microservices and the clients that consume them into a single git repository. It may sound weird or semantically wrong for some, but after all, those microservices are small parts of a whole, something bigger, that is called <a href="http://en.wikipedia.org/wiki/Software_ecosystem">software ecosystem</a>. Since they share or exchange information among them, they&#8217;re somehow connected to each other.</p>
+<p>This pragmatic approach is not exclusively ours, many people out there apply it. Two very nice examples are <a href="http://www.quora.com/Why-does-Facebook-have-so-much-of-their-source-code-in-1-giant-git-repo-did-they-not-think-that-this-approach-wont-scale">Facebook</a> and <a href="https://news.ycombinator.com/item?id=7020584">Google</a>. Of course their codebase is far larger than a normal application. They&#8217;re an exception. Google&#8217;s codebase, for instance, keeps really low level information like operating system configurations.</p>
+<p>Using a single repository has proven to be a very good practice for us, because we can keep track of relevant pull requests easier; we can refactor, create and test new features throughout all the microservices faster; and test its integration without leaving the current context. Also, project gardening is way simpler: upgrading Ruby, Rails version, gem updates, using shared paths as gems, tests and deploy all of them can be automated and run across all microservices.</p>
+<p>Have you worked with a single or multiple repositories? Please share your thoughts about it in the comments below!</p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2015/01/organizing-microservices-in-a-single-git-repository/">Organizing microservices in a single git repository</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/01/organizing-microservices-in-a-single-git-repository/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to properly mirror a git repository</title>
+		<link>/2013/05/how-to-properly-mirror-a-git-repository/</link>
+					<comments>/2013/05/how-to-properly-mirror-a-git-repository/#comments</comments>
+		
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Tue, 21 May 2013 22:46:52 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[mirror]]></category>
+		<guid isPermaLink="false">/?p=3463</guid>
+
+					<description><![CDATA[<p>When people talk about mirroring a git repository, usually we have a simple answer in mind: Just git clone the repo and you&#8217;re set!! However, what we want with mirroring is to replicate the state of an origin repository (or upstream repository). By state, we mean all the branches (including master) and all the tags ... <a class="read-more-link" href="/2013/05/how-to-properly-mirror-a-git-repository/">»</a></p>
+<p>The post <a href="/2013/05/how-to-properly-mirror-a-git-repository/">How to properly mirror a git repository</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When people talk about mirroring a git repository, usually we have a simple answer in mind:</p>
+<blockquote><p>
+  Just git clone the repo and you&#8217;re set!!</p></blockquote>
+<p>However, what we want with mirroring is to replicate the state of an origin repository (or upstream repository). By state, we mean all the branches (including <code>master</code>) and all the tags as well.</p>
+<p>You&#8217;ll need to do this when migrating your upstream repository to a new &#8220;home&#8221;, like when switching services like GitHub.</p>
+<p>As with most tools, there&#8217;s a lot of ways to accomplish that, but I&#8217;ll be focusing on two of them. The difference lays on whether you already have a working copy of that repository or not.</p>
+<h2>Mirroring a git repository without a local copy</h2>
+<p>If you haven&#8217;t cloned the repository before, you can mirror it to a new home by</p>
+<pre lang="bash">$ git clone --mirror git@example.com/upstream-repository.git
+$ cd upstream-repository.git
+$ git push --mirror git@example.com/new-location.git
+</pre>
+<p>This will get all the branches and tags that are available in the upstream repository and will replicate those into the new location.</p>
+<h3>Warning</h3>
+<p>Don&#8217;t use <code>git push --mirror</code> in repositories that weren&#8217;t cloned by <code>--mirror</code> as well. It&#8217;ll overwrite the remote repository with your local references (and your local branches). This is not what we want. Read the next section to discover what to do in these cases.</p>
+<p>Also <code>git clone --mirror</code> is prefered over <code>git clone --bare</code> because the former also clones git notes and some other attributes.</p>
+<h2>Mirroring a git repository if you already have a local working copy</h2>
+<p>By working copy, we mean a &#8220;normal&#8221; repository, in which you have the files that are being tracked into git and where you perform commands like <code>git add</code> and so on.</p>
+<p>In this case, you may have a lot of local branches and tags that you don&#8217;t want to copy to the new location. But you do have references to remote branches. You can view them with <code>git branches -r</code>. If you pay attention to that list, tough, you may notice that you have a lot of branches that were already deleted in the upstream repository. Why?</p>
+<h3>Cleaning old references to remote branches</h3>
+<p>By default, when you do a <code>git fetch</code> or <code>git pull</code>, git will not delete the references to branches that were deleted in the upstream repository (you may view them in your <code>.git/refs/remotes</code> dir). We need to clean those old references before mirroring them to a new location.</p>
+<p>To do so, run</p>
+<pre lang="bash">$ git fetch --prune
+</pre>
+<p>This will update your references to the origin repository and also clean the stale branches reported by <code>git branch -r</code>.</p>
+<h3>Finally, mirroring the repository to a new location</h3>
+<p>Now we&#8217;re ready to send those updated references back to the <code>origin</code> repository:</p>
+<pre lang="bash">$ git push --prune git@example.com:/new-location.git +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
+</pre>
+<p>Ok, what just happened here?!</p>
+<p>We want those references inside the <code>.git/refs/remotes/origin</code> to be the LOCAL references in the new location. The local references there will be stored in the <code>refs/heads</code> dir. Same thing happens to tags.</p>
+<p>The <code>+</code> sign indicates that we want to <strong>overwrite</strong> any reference there may already exist.</p>
+<p><code>--prune</code> means we want to delete any reference that may exist there if we don&#8217;t have such reference in our <code>refs/remotes/origin/*</code> (and tags) references.</p>
+<h2>Conclusion</h2>
+<p>Git is certainly not an easy tool to learn. Although when you do, it turns into a very powerful and flexible tool.</p>
+<p>If you want to learn more about it, please see the <a href="http://git-scm.com/book">excelent book written by Scott Chacon and available for free</a>.</p>
+<p>What about you? Have any tips on git you want to share?</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt=""></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2013/05/how-to-properly-mirror-a-git-repository/">How to properly mirror a git repository</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/how-to-properly-mirror-a-git-repository/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A (successful) git branching model</title>
+		<link>/2011/04/a-successful-git-branching-model/</link>
+					<comments>/2011/04/a-successful-git-branching-model/#comments</comments>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2011 19:31:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[project]]></category>
+		<category><![CDATA[workflow]]></category>
+		<guid isPermaLink="false">/?p=1985</guid>
+
+					<description><![CDATA[<p>*This blog post tells about how we improved a VCS workflow to another one that suited our and the consumer needs. It was a great result: we minimized the chances of occurring one of the worst problems for a developer in a project: big integration while we maintained an &#8216;almost releasable branch&#8217; all the time ... <a class="read-more-link" href="/2011/04/a-successful-git-branching-model/">»</a></p>
+<p>The post <a href="/2011/04/a-successful-git-branching-model/">A (successful) git branching model</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em>*This blog post tells about how we improved a VCS workflow to another one that suited our and the consumer needs. It was a great result: we minimized the chances of occurring one of the worst problems for a developer in a project: big integration while we maintained an &#8216;almost releasable branch&#8217; all the time</em></p>
+<p>In the last months we&#8217;ve been working on a project with a mixed development team (Plataformatec&#8217;s team and the customer&#8217;s team). We, of course, used a version control system (specifically git) and we set up a nice git branching model for our team. As agilists, we know that we should not use anything that requires a lot of bureaucracy (things like opening a ticket to integrate a branch into the trunk).</p>
+<p>Using <a href="http://nvie.com/posts/a-successful-git-branching-model/">nvie guide</a> as base, we developed a git workflow. First of all, we had three main branches:</p>
+<ul>
+<li><strong>production</strong>: contains the code that is currently on production. We also have a production server that contains, obviously, the production code up and running.</li>
+<li><strong>staging</strong>: contains the code that is being tested before going to production (we used this branch to deploy to a production-like environment that worked as a final test until production, this environment is also called staging)</li>
+<li><strong>master</strong>: contains the already accepted features. To consider a feature as &#8220;accepted&#8221; we deployed to another environment (called &#8220;dev&#8221;) and asked a QA analyst to test it. Once approved we merged the commits. This &#8220;dev&#8221; environment is used for this kind of approval and also for general purposes like when we say: &#8220;take a look at this new awesome feature we&#8217;re developing&#8221;.</li>
+</ul>
+<p>For each feature that we developed, we created a git branch (almost all of them we pushed it to the remote server to facilitate code review and to deploy to the &#8220;dev&#8221; environment). Everyday, we ran <code>git rebase master</code>, to update our branch code (except for features developed by more than one developer). Once the feature is complete, we rebased master into it, and merge it using &#8211;no-ff (to create a merge commit). For the branches that more than one developer worked on, we usually talked and set up a &#8220;rebase period&#8221; where one does the rebase, forces the push (because you changed your local tree so git does not accept it as a non forced push) and updates the remote branch.</p>
+<p>Close to the production deploy, we merged (always using &#8211;no-ff) master branch into staging branch and deploy to staging. Once approved, we merged to production, and created a tag telling the current version of the application and then we do the deploy. When we deployed to production we also removed the merged branches from the remote repository.</p>
+<p>One of the great advantages of this schema is: Master is always &#8220;almost&#8221; ready for a release. Yeah, some features really deserves to be validated right before the deploy, because another feature can break them, but we kept the master as an &#8220;always releasable stable&#8221; branch (and also we used a continuous integration tool in order to enforce all tests passing). Another great advantage is: as we updated our code everyday, it was very unusual for us to face big integration scenarios.</p>
+<p>For the &#8220;dev&#8221; environment deploy we also set up a capistrano task that asks which branch we want to deploy to be possible to deploy something from any branch.</p>
+<p>This workflow has worked really well for us and maybe it is useful to you (maybe for you to adapt it to something that works better for you as we did with the workflow suggested on <a href="http://nvie.com/posts/a-successful-git-branching-model/">nvie</a>).</p>
+<p>To summarize, this is our git workflow in commands (supposing that we are on master branch):<br />
+<code><br />
+git checkout -b my-awesome-feature</p>
+<h1>(... you do some code and some commits and you go home to have some sleep or maybe play some starcraft 2 ...)</code></h1>
+<p><code>#(arrived at the office on the next day)<br />
+git rebase master</code></p>
+<p><code>#(... continue working and commiting and sleeping (or maybe playing some starcraft 2 ...)<br />
+git rebase master</code></p>
+<p><code># (... some commits ... and voila ... you've finished...)<br />
+git push origin my-awesome-feature<br />
+cap dev deploy<br />
+</code></p>
+<p><code># (...YAY!  QA analyst just approved it ...)<br />
+git pull origin master<br />
+git rebase master<br />
+</code></p>
+<p><code># (run the tests to ensure all of them pass)<br />
+git checkout master<br />
+git pull --rebase origin master<br />
+git merge --no-ff my-awesome-branch<br />
+git push origin master</code></p>
+<p><code>#(... it is time to validate on staging)<br />
+git checkout staging<br />
+git pull origin staging<br />
+git merge --no-ff master<br />
+git push origin staging<br />
+cap staging deploy</code></p>
+<p><code>#(... QA analysts validate the staging ...)<br />
+git checkout production<br />
+git merge --no-ff staging<br />
+git tag -a v1.4.2 -m "Releasing on 13th February"<br />
+git push origin production<br />
+git push --tags origin production<br />
+cap production deploy<br />
+</code></p>
+<p>Well, this is how we improved a git workflow based in another one. As almost everything, there is no bullet proof for it, but we found interesting to share this experience with you as it was a success (every developer on the team enjoyed it). But please, we would like to receive some feedback about it :-). Have you used something similar in your team? Do you have any ideas on how we can improve it?</p><p>The post <a href="/2011/04/a-successful-git-branching-model/">A (successful) git branching model</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/a-successful-git-branching-model/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

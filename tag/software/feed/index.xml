@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>software « Plataformatec Blog</title>
+	<atom:link href="/tag/software/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 17:48:23 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>The user story in development was deprioritized, what now?</title>
+		<link>/2017/05/the-user-story-in-development-was-deprioritized-what-now/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 04 May 2017 22:30:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[project manager]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6308</guid>
+
+					<description><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following: Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized ... <a class="read-more-link" href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">»</a></p>
+<p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following:</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2017/05/card-flow-e1493907975371.png" alt="Kanban" width="400" height="268" class="aligncenter size-full wp-image-6286" style="border:none;"/></p>
+<p>Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized in the middle of its development. But now that it was deprioritized, what happens to story C?</p>
+<p>Well, to answer that, let me make a parallel with an alcohol-based perfume company.</p>
+<p>In the backlog column, the company has the bottle ready to be filled but no fluid yet. When the bottle starts to be filled, the card goes to &#8220;in progress&#8221;. When the bottle is totally filled, the bottle is closed and the card goes to done.</p>
+<p><img decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-e1493908094223.png" alt="Perfume flow" width="400" height="275" class="aligncenter size-full wp-image-6287" style="border:none;" /></p>
+<p>So what happens if another perfume suddenly receives a priority greater than the priority of the bottle being filled? Well, as we all know, alcohol-based fluids are volatile and, with time, they will completely evaporate, requiring them to be refilled.</p>
+<p><img decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-volatile-e1493908131534.png" alt="Perfume flow volatile" width="400" height="567" class="aligncenter size-full wp-image-6288" style="border:none;" /></p>
+<p>The same happens with the story and its code. With time, the code that is inside the story gets obsolete and unnecessary, losing its value. What to do with the story depends on the following rationales:</p>
+<ul>
+<li><strong>How long will the story C stay in the same stage?</strong>
+<ul>
+<li>If the story stays too long in the same stage, some part of the work may get useless, therefore, you could just remove it from the board and put it back on backlog, since some refining might be needed when this story is chosen gain.</li>
+<li>If the story will stay there for a short time, you may want to leave it there and, when it can be worked on, you may still use what was already developed.</li>
+</ul>
+</li>
+<li><strong>What is the value story C will generate after being done?</strong><br />
+Let&#8217;s say that the return on the development of that feature is small. Is it worth to pause its development and run the risk of investing even more money on the development later? Will the return on its development be greater than the development time?</p>
+</li>
+</ul>
+<p>For this to be true, the following needs to happen (visualized in the chart below):</p>
+<ul>
+<li>$ spent with initial development + $ spent with rest of the development &lt; story C $ return
+<ul>
+<li>The amount spent with rest of the development will increase with time, since the initial development starts to lose value.</li>
+</ul>
+</li>
+<li>If the amount spent is greater than the return, it is better to ignore the functionality. However, this math is not as easy as it seems&#8230; You need to account for risks, increased revenue, increase the number of users of your product, etc. So be careful!</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/chart-1024x768.png" alt="Gráficos" width="1024" height="768" class="aligncenter size-large wp-image-6289" style="border:none;max-width: 99%;" /></p>
+<p>Therefore, based on those, you can possibly do four things:</p>
+<ul>
+<li><strong>Leave it on the column and restart it when its priority arrives</strong><br />
+The pause will be fast and will not harm the development of the card. In this case, it is important to flag the story somehow so that the whole team can see that the story is &#8220;blocked&#8221; by the P.O. due to its prioritization.</p>
+</li>
+<li>
+<p><strong>Take it back to the backlog, and restart it when its priority arrives</strong><br />
+The pause will be long and the card will need more refinement.</p>
+</li>
+<li>
+<p><strong>Finish it first, before getting another card</strong><br />
+The card is almost done, and if you stop it, it will not generate value anymore.</p>
+</li>
+<li>
+<p><strong>Cancel the card</strong><br />
+The card is a long way from being finished, and its value is too small to pay for the time it will be paused.</p>
+</li>
+</ul>
+<p>It is also important to notice that this should NOT be a common thing in your process. If it is happening too often, you may need to work on your prioritizations!</p>
+<p>What are your thoughts on the topic? Leave your comments below <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A user story em desenvolvimento foi despriorizada, e agora?</title>
+		<link>/2017/05/user-story-em-desenvolvimento-foi-despriorizada/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 04 May 2017 14:35:44 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6285</guid>
+
+					<description><![CDATA[<p>Digamos que você tenha um quadro kanban como o seguinte: Então, no meio do seu sprint, o P.O. descobre que as features D e E foram lançadas por um concorrente e que vocês estão perdendo usuários por isso. Pensando nisso, a P.O. decide despriorizar a história C. Isso seria apenas um exemplo de como um ... <a class="read-more-link" href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">»</a></p>
+<p>The post <a href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">A user story em desenvolvimento foi despriorizada, e agora?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Digamos que você tenha um quadro kanban como o seguinte:</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/card-flow-e1493907975371.png" alt="Kanban" width="400" height="268" class="aligncenter size-full wp-image-6286" style="border:none;" /></p>
+<p>Então, no meio do seu sprint, o P.O. descobre que as features D e E foram lançadas por um concorrente e que vocês estão perdendo usuários por isso. Pensando nisso, a P.O. decide despriorizar a história C. Isso seria apenas um exemplo de como um card pode ser despriorizado no meio do seu desenvolvimento. Mas, e agora, o que acontece com a história C?</p>
+<p>Para responder isso, deixe-me fazer um paralelo com uma companhia de perfumes a base de álcool.</p>
+<p>Na coluna de backlog, a companhia tem a garrafa pronta mas sem fluído algum. Quando a garrafa começa a ser enchida, o card é passado para &#8220;in progress&#8221;. Após a garrafa estar cheia, ela é lacrada e o card vai para &#8220;done&#8221;.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-e1493908094223.png" alt="Perfume flow" width="400" height="275" class="aligncenter size-full wp-image-6287" style="border:none;" /></p>
+<p>O que acontece então se outro perfume tem sua prioridade elevada a um nível maior do que o que está sendo abastecido? Bom, como sabemos, fluídos com base em álcool são voláteis e, com o tempo, evamporam totalmente, sendo necessário que se reabasteça o recipiente.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-volatile-e1493908131534.png" alt="Perfume flow volatile" width="400" height="567" class="aligncenter size-full wp-image-6288" style="border:none;" /></p>
+<p>O mesmo acontece com uma história e seu código. Com o tempo, o código que compõe tal história se torna obsoleto e desnecessário, perdendo o valor que tinha outrora. Neste caso, o que fazer com a história despriorizada depende dos seguintes pontos:</p>
+<ul>
+<li><strong>Quanto tempo a história C continuará no mesmo estágio?</strong>
+<ul>
+<li>Se a história permanece muito tempo no mesmo estágio, alguma parte do trabalho já feito pode se tornar desnecessário, portanto, você poderia apenas removê-la da coluna e colocá-la de volta ao backlog, já que algum refinamento pode ser necessário para que essa história seja desenvolvida novamente.</li>
+<li>Se a história vai ficar por um curto período de tempo em tal coluna, você pode optar por deixá-la lá e, quando sua hora chegar, pode continuar aproveitando o que já havia sido desenvolvido.</li>
+</ul>
+</li>
+<li><strong>Qual o valor que a história C vai gerar quando pronta?</strong><br />
+Digamos que o retorno gerado pelo desenvolvimento de tal feature seja pequeno. Será que vale a pena pausar seu desenvolvimento e ter o risco de investir ainda mais dinheiro no seu desenvolvimento em outro momento? O retorno gerado será maior do que o tempo total de desenvolvimento gasto?</p>
+</li>
+</ul>
+<p>Para que isso seja verdade, o seguinte precisa acontecer (observado na imagem abaixo):</p>
+<ul>
+<li>$ gasto com o desenvolvimento inicial + $ gasto com o resto do desenvolvimento &lt; retorno da história C
+<ul>
+<li>A quantia gasta com o resto do desenvolvimento aumentará com o tempo, já que o desenvolvimento feito anteriormente vai perdendo valor.</li>
+</ul>
+</li>
+<li>Caso o retorno seja menor do que o gasto, é melhor ignorar a funcionalidade. No entanto estes cálculos não são tão simples como parecem&#8230; Você precisa levar em conta riscos, aumento na receita, aumento no número de usuários, etc&#8230; Então tenha cuidado com essa ação.</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/chart-1024x768.png" alt="Gráficos" width="1024" height="768" class="aligncenter size-large wp-image-6289" style="border:none;max-width: 99%;" /></p>
+<p>Portanto, baseado no que já foi dito, você pode ter as seguintes ações a respeito do card C:</p>
+<ul>
+<li><strong>Mantenha-o na coluna &#8220;in progress&#8221; e recomece o trabalho quando sua prioridade for retomada</strong><br />
+Essa pausa será rápida e não afetará o desenvolvimento da feature. Neste caso é importante deixar visível de alguma forma no quadro que essa história está &#8220;bloqueada&#8221; por motivos de priorização.</p>
+</li>
+<li>
+<p><strong>Ponha-o na coluna de backlog novamente, e recomece quando necessário</strong><br />
+A pausa será longa e o card precisará de um novo refinamento.</p>
+</li>
+<li>
+<p><strong>Termine-o primeiro, antes de começar outra história</strong><br />
+O card está quase pronto e, caso você pare seu desenvolvimento, quando pronto, seu valor será menor do que o gasto no seu desenvolvimento.</p>
+</li>
+<li>
+<p><strong>Cancele o seu desenvolvimento</strong><br />
+A história está muito longe de ser terminada, e seu valor final é muito pequeno para pagar o tempo que ela ficará pausada.</p>
+</li>
+</ul>
+<p>É importante também notar que isso NÃO deve ser algo comum em seu processo. Se coisas como essa estão acontecendo frequentemente, você pode precisar melhorar suas priorizações!</p>
+<p>O que acha do que foi discutido aqui? Deixe seus comentários abaixo! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-bottom" target=_blank""><br />
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="Como lidar com prazo em projetos de software [e-book gratuito]" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">A user story em desenvolvimento foi despriorizada, e agora?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: priorizar features e projetar entregas</title>
+		<link>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/</link>
+					<comments>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 20 Apr 2017 18:43:37 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6241</guid>
+
+					<description><![CDATA[<p>Se você gerencia um produto de software que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação: Como priorizá-las? Quando elas serão entregues? Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos ... <a class="read-more-link" href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">»</a></p>
+<p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Se você gerencia um produto de <em>software</em> que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação:</p>
+<ul>
+<li>Como priorizá-las?</li>
+<li>Quando elas serão entregues?</li>
+</ul>
+<p>Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos (neste ano, falarei mais sobre o assunto aqui no blog).</p>
+<p>Tenho observado um movimento de gestão de produtos que vem concretizando os princípios por trás do <em>Lean Startup</em> que diziam: construa, meça e aprenda. A partir da ótica de <strong>medir</strong> e <strong>aprender</strong>, é perceptível que gestoras e gestores de produto começam a levantar hipóteses de negócio a partir de métricas como taxa de conversão, recorrência mensal, taxa de evasão, análise da interação dos usuários nos fluxos críticos da aplicação, etc.</p>
+<p>Voltando para a primeira pergunta que abriu o texto, nos deparamos com atributos quantitativos que nos permitem priorizar o que precisamos construir. Tal ferramental sustenta a ideia de que estamos interessados em melhorar os resultados do produto a partir de números.</p>
+<p>Antes que alguém me crucifique, nem só baseados em números devem ser os fatores para a priorização de novas <em>features</em> dos produtos que trabalhamos. Caso você tenha a possibilidade de se aproximar do seu usuário para perguntá-lo o que ele deseja, você também estará aumentando a probabilidade de construir algo que traga valor para ele. Dados qualitativos podem ser coletados através de questionários <em>online</em>, pesquisas de campo, análises de interação a partir de protótipos, etc.</p>
+<p>Ao priorizarmos uma funcionalidade, estamos em busca de gerarmos uma solução que traga valor para nossos usuários, clientes, acionistas e empresa. Em outras palavras, podemos dizer que estamos em busca de encontrarmos uma relação positiva na equação de valor que nada mais é do que a diferença entre o valor criado pela solução menos o preço pago por ela #maisvalorporfavor.</p>
+<div id="attachment_6242" style="width: 506px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6242" class="wp-image-6242 size-full" src="/wp-content/uploads/2017/04/blog_quadro_metodos.png" alt="" width="496" height="168" srcset="/wp-content/uploads/2017/04/blog_quadro_metodos.png 496w, /wp-content/uploads/2017/04/blog_quadro_metodos-300x102.png 300w" sizes="(max-width: 496px) 100vw, 496px" /><p id="caption-attachment-6242" class="wp-caption-text">Quadro de abordagens quali e quantitativa</p></div>
+<p>Dado que priorizamos aquilo que é mais importante para a saúde do produto e para os usuários, um segundo questionamento que por vezes fica na cabeça é: quanto tempo levaremos para entregar essa nova <em>feature</em>?</p>
+<p>Partindo do pressuposto que vivemos em um contexto incerto (sim, acredite, desenvolver <em>softwar</em>e não é algo determinístico), trabalhar com cenários de entrega passa a ser uma abordagem mais confiável. Ao utilizar projeções você passa a calcular ou predizer um evento futuro a partir da análise dos dados disponíveis (passado).</p>
+<p>Para que isso seja possível, sugiro que você e a sua equipe passem a monitorar uma métrica de processo: lead time (número de dias entre o início e o fim do processo de entrega de uma história do usuário, um bug, etc.).</p>
+<p>Em outras oportunidades tivemos a chance de discutir formas de analisar o lead time (<a href="/2016/03/looking-at-lead-time-in-a-different-way/">“Looking at Lead Time in a different way”</a> e <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">“Why we love metrics? Learning with Lead time”</a>), porém, gostaria de compartilhar como o percentil pode ser uma referência útil para desenhar cenários futuros a partir de referências do passado.</p>
+<p>Se você não conhece, percentil é uma medida que divide a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual. Traduzindo e relacionando com uma distribuição de <em>lead time</em>, é como se analisássemos o <em>lead time</em> das demandas que foram entregues e discutíssemos qual o percentual de chances de um determinado valor ser atingido a partir do percentil.</p>
+<p>Em um projeto recente utilizamos a informação de percentil para projetar possíveis prazos de entrega de uma demanda de negócio que havia sido priorizada pelo Product Owner (PO) da célula em que trabalhamos.</p>
+<div id="attachment_6244" style="width: 1034px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6244" class="wp-image-6244 size-large" src="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png" alt="" width="1024" height="353" srcset="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png 1024w, /wp-content/uploads/2017/04/blog_post_exemplo-300x103.png 300w, /wp-content/uploads/2017/04/blog_post_exemplo-768x265.png 768w, /wp-content/uploads/2017/04/blog_post_exemplo.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" /><p id="caption-attachment-6244" class="wp-caption-text">Histograma de lead time</p></div>
+<p>A equipe utilizou o histograma acima e passou a seguinte análise do cenário ao PO:</p>
+<ul>
+<li>50% das demandas levaram até 6 dias para serem concluídas (mediana).</li>
+<li>75% das demandas levaram até 12 dias para serem concluídas ou seja apenas 25% levaram mais do que tal limite para serem concluídas (percentil 75).</li>
+<li>95% das demandas levaram até 18 dias para serem concluídas, o que nos leva a afirmar que apenas 5% delas levaram mais tempo do que isso para serem finalizadas (percentil 95).</li>
+</ul>
+<p>A partir dos dados acima, o time demonstrou confiança de entregar a demanda entre 6 e 12 dias. Com tal informação em mãos, o PO traçou o plano de comunicação e promoção do novo recurso do produto. Se você ficou curioso em saber, a demanda foi entregue em 8 dias.</p>
+<p>Ao utilizar tal abordagem de projeção, o time e o PO se sentiram mais confortáveis e confiantes. Caso o PO tivesse imposto para o time que a nova demanda deveria ser entregue em 3 dias, com posse das informações de percentil, o time teria insumos para dizer que seria muito difícil entregá-la pelo simples fato de que apenas 25% das demandas entregues foram concluídas no prazo determinado (percentil 25).</p>
+<p>Fecho esse texto com algumas sugestões:</p>
+<ol>
+<li>Crie hipóteses através de fatos que podem ser originados por dados quanti ou qualitativos.</li>
+<li>Projete cenários de entrega a partir de uma referência (histórico do time).</li>
+<li>Desenvolva pequenas entregas de valor, pois elas permitirão que você mude de direção mais rápido.</li>
+<li>Não acredite que métrica de produto ou processo é algo burocrático, pois elas servem como uma base para você construir um futuro melhor.</li>
+</ol>
+<p>E você? Como tem priorizado e projetado suas entregas? Quais métricas e abordagens tem utilizado? Compartilhe sua opinião nos comentários abaixo. Estou curioso para aprender com o seu exemplo.</p>
+<p>Se está interessado saber mais como lidar com prazos de projetos de <em>software</em> não deixe de conferir nosso <a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-middle">e-book gratuito sobre o assunto</a>.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-bottom" target="_blank&quot;&quot;"><br />
+<img loading="lazy" decoding="async" class="aligncenter size-full wp-image-6158" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="" width="831" height="147" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Key points to consider when doing a software rewrite</title>
+		<link>/2016/07/key-points-to-consider-when-doing-a-software-rewrite/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2016 20:20:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=5532</guid>
+
+					<description><![CDATA[<p>The third post of Low Internal Software Quality series. As well as a big software refactor, a rewrite is not a simple thing either. After many years, we have gotten experience enough to point what you had better consider when planning and executing a rewrite process. Will the two platforms live together for some time ... <a class="read-more-link" href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">»</a></p>
+<p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="text-align: center; font-size: .8em; color: #999; font-style: italic; margin-top: 15px;">The third post of Low Internal Software Quality series.</div>
+<p>As well as a <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">big software refactor</a>, a rewrite is not a simple thing either. After many years, we have gotten experience enough to point what you had better consider when planning and executing a rewrite process.</p>
+<h3>Will the two platforms live together for some time or not?</h3>
+<p>Are you planning to maintain the legacy and the new version in production? If so, for how long? You should avoid maintaining two versions in production for too long because of opportunity and operating costs.</p>
+<h3>Who will work on the rewrite and who will work on the legacy version?</h3>
+<p>Developers usually prefer to work on green field projects. You should take that into account when planning who will maintain the legacy version and who will work on the new one.</p>
+<h3>It&#8217;s not viable to rewrite every single feature at once</h3>
+<p>It&#8217;s not viable to have a 1 to 1 feature mapping between the legacy version and the new one. That said, what features should you start rewriting?</p>
+<p>Take into account how current clients will be impacted by a product with fewer features.</p>
+<h3>A rewrite will slow down or stop the launch of new features in the legacy version</h3>
+<p>Chances are you won&#8217;t launch new features for the legacy version during the rewrite process. Not only will end-users not get new features, but neither will internal clients (commercial and product departments). Your internal clients and stakeholders will pressure you to deliver new features.</p>
+<p>Make sure that the communication before and during the rewrite is clear, and that every stakeholder is aligned with the end goals.</p>
+<h3>Keep it secret or public?</h3>
+<p>Imagine you are a potential customer of a software product. You&#8217;re planning to buy it, but you just found out that a completely new version will be launched in three months. Would you buy the legacy version or wait for three months? Multiply that by dozens or hundreds of potential buyers. The provider could lose a lot of money.</p>
+<p>That&#8217;s why if you&#8217;re the provider, you should think carefully about how and when you&#8217;re going to publicize the launch of a brand new version.</p>
+<h3>Data migration</h3>
+<p>A rewrite process is not just shipping features. You also need to plan the data migration. People usually underestimate the complexity and effort needed to migrate data from the legacy version to the new version. That activity should not be just one task on your board called &#8220;data migration.&#8221;</p>
+<p>For example, imagine that you need to migrate your users&#8217; accounts. If your legacy version is managed by a third-party, chances are you won&#8217;t have access to the users&#8217; encrypted passwords, so you won&#8217;t be able to migrate them. You&#8217;ll have to ask every single user to reset their passwords in the new version. That&#8217;s part of the data migration process, too.</p>
+<h3>Prepare for a possible decrease in conversion rates</h3>
+<p>You&#8217;ll launch a new version with fewer features. Who guarantees that the conversion rates will stay the same? Conversion rates are vital in some domains, like in e-commerce.</p>
+<p>Ideally, you should be able to keep both the legacy and the new version running for a while so that you have a backup plan in case there&#8217;s a huge decrease in conversion rates.</p>
+<h3>Plan time to train internal users</h3>
+<p>This is another overlooked subject. The rewrite plan needs to have a phase of internal user training before taking your new product to production. Don&#8217;t underestimate that, either. It can take a long time since your internal users will give you feedback about stuff that might need to be changed.</p>
+<p>Internal users can be found in a variety of areas, such as help desk and inside sales.</p>
+<p><em>What about you? Do you have any more tips on what to worry about when doing a rewrite? Share with us!</em></p>
+<div style="padding: 0 15px 15px; border: dotted 1px #ccc; font-size: .8em; background-color: #f5f5f5;">
+<h4 style="text-align: center; margin-bottom: 2px; color: #666;">Posts of the Low Internal Software Quality series</h4>
+<ol>
+<li><a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a></li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a></li>
+<li>Key points to consider when doing a software rewrite</li>
+</ol>
+</div>
+<hr />
+<div style="margin: 30px auto;"></div><p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Key points to consider when doing a big software refactoring</title>
+		<link>/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 13 Jul 2016 22:35:57 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refactoring]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=4085</guid>
+
+					<description><![CDATA[<p>The second post of Low Internal Software Quality series. Doing a big software refactor1 is not a simple thing. There are lots of points that you should think about, from planning and prioritizing to team motivation and execution. Understanding these points in a structured and clear way is part of the job. The good news ... <a class="read-more-link" href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">»</a></p>
+<p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="text-align:center;font-size:.8em;color:#999;font-style:italic;margin-top:15px;">
+The second post of Low Internal Software Quality series.
+</div>
+<p>Doing a big software refactor<sup id="fnref-refactor"><a href="#fn-refactor" rel="footnote">1</a></sup> is not a simple thing. There are lots of points that you should think about, from planning and prioritizing to team motivation and execution. Understanding these points in a structured and clear way is part of the job. The good news is that we’ve been in that situation before and have learned the key points you should worry about.</p>
+<p>Here are the main points you should consider when planning and executing a big refactoring process.</p>
+<h3>Define your business goals</h3>
+<p>A big software refactoring process should not be started without clear business goals, otherwise it can suffer from a lack of commitment by your stakeholders. Here are some examples of goals:</p>
+<ul>
+<li>We&#8217;re doing a refactor so that we can plug in multiple payment gateways.</li>
+<li>We&#8217;re doing a refactor so that we can improve velocity.</li>
+<li>We&#8217;re doing a refactor so that we can have a multi-tenant architecture in order to simplify our infrastructure operations.</li>
+</ul>
+<h3>Measure progress</h3>
+<p>By its very nature, a software refactoring process is a technical effort, which is why it&#8217;s common for people not to measure its progress in the same structured way that they measure progress on development of new features. Don&#8217;t fall into that trap.</p>
+<p>As with every task in a project, a refactor should always be planned and <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">measured</a>.</p>
+<h3>Pay attention to your team&#8217;s motivation</h3>
+<p>Working on a legacy codebase can be demotivating for developers, especially if they don&#8217;t have a feeling of progress, or if they don&#8217;t know when it&#8217;s going to end. When going with a refactoring process, you should keep this in mind.</p>
+<p>Show your team they&#8217;re moving forward. Plan for small deliverables, so that you can continually ship stuff and celebrate the good work done. Also, think about developer rotation, which can help by maintaining motivation and keeping fresh eyes on the task.</p>
+<h3>Define your approach: pull or push?</h3>
+<p>Are you going to improve your codebase only when touching some bad part of it, or are you going to proactively choose which parts you&#8217;re going to improve?</p>
+<h3>Prioritizing</h3>
+<p>If you have a clear business goal, it&#8217;s easier to proactively choose which parts need to be improved to make that goal a reality. With the parts listed, you can apply your usual prioritization techniques.</p>
+<p>But if you&#8217;re going to do a constant and big software refactor because you know the whole codebase needs to be improved, it&#8217;s more difficult to prioritize. This is because there are not just one or two main parts that need improvement, but lots of them. It&#8217;s difficult to know where to start.</p>
+<p>One way to prioritize in that situation is to instruct your team to evaluate which parts need to be refactored based on their complexity and churn. By that we mean, whenever they are evaluating if some part of the code should or should not be refactored, they should ask themselves:</p>
+<ul>
+<li>&#8220;Is the complexity of that class too high compared to the others?&#8221;</li>
+<li>&#8220;Do we constantly need to make changes on that file?&#8221;</li>
+</ul>
+<p>If the answers are both yes, that part is a good candidate for refactoring. Plot a chart of &#8220;class complexity X churn&#8221; and prioritize the parts that are too complex and that you&#8217;re changing every time.</p>
+<p>The parts that have big complexity but don&#8217;t need to change constantly are not good candidates to be refactored because they&#8217;re parts that are ugly but usually work, and nobody needs to change them to do their everyday job.</p>
+<h3>Know when you&#8217;re done</h3>
+<p>A software refactoring process can turn into an endless endeavor if you don&#8217;t plan, prioritize and measure progress. You should treat it as a project. It should have a beginning, a middle and an end.</p>
+<h3>Test suite coverage</h3>
+<p>Your refactoring process should improve stuff that is already working without breaking anything. Make sure you have good test coverage, otherwise the process can generate more bugs than quality improvements.</p>
+<h3>Test suite performance</h3>
+<p>If your test suite is too slow, it will slow down the refactoring process since a software refactor is greatly based on continuously running the tests. Make sure the test suite performance is not a bottleneck.</p>
+<h3>Sponsors commitment</h3>
+<p>A refactoring process can take a long time: weeks, months. During that time the velocity in which new features are delivered will be compromised. Make sure that every business stakeholder understands the goals and the nature of that kind of work, so that they don&#8217;t give up in the middle of it.</p>
+<p>What about you? Do you have any more tips on what to worry about when doing a big software refactor? Share with us!</p>
+<div style="padding: 0 15px 15px;border:dotted 1px #ccc;font-size:.8em;background-color:#f5f5f5;">
+<h4 style="text-align:center;margin-bottom:2px;color:#666">Posts of the Low Internal Software Quality series</h4>
+<ol>
+<li><a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a></li>
+<li>Key points to consider when doing a big software refactoring</li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a></li>
+</ol>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn-refactor">
+<em>I prefer the term &#8220;code refurbishment,&#8221; but people aren’t generally used to it. So I’m using &#8220;refactor&#8221; in this blog post for the sake of clarity.&#160;<a href="#fnref-refactor" rev="footnote">&#8617;</a></em>
+</li>
+</ol>
+</div>
+<hr><p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The Symptoms of Low Internal Software Quality</title>
+		<link>/2014/06/the-symptoms-of-low-internal-software-quality/</link>
+					<comments>/2014/06/the-symptoms-of-low-internal-software-quality/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2014 12:00:14 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refactoring]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=3934</guid>
+
+					<description><![CDATA[<p>The first post of Low Internal Software Quality series. Not only physical matter deteriorates, software does too It&#8217;s known that physical matter deteriorates. People accept that and have always dealt with it. What people don&#8217;t accept so easily is that software &#8220;deteriorates&#8221; too. Unlike physical matter, it doesn&#8217;t happen due to some physical or chemical ... <a class="read-more-link" href="/2014/06/the-symptoms-of-low-internal-software-quality/">»</a></p>
+<p>The post <a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="text-align:center;font-size:.8em;color:#999;font-style:italic;margin-top:15px;">
+The first post of Low Internal Software Quality series.
+</div>
+<h3>Not only physical matter deteriorates, software does too</h3>
+<p>It&#8217;s known that physical matter deteriorates. People accept that and have always dealt with it. What people don&#8217;t accept so easily is that software &#8220;deteriorates&#8221; too. Unlike physical matter, it doesn&#8217;t happen due to some physical or chemical phenomenon. It usually happens because of some business change or people change. Let me give you an example.</p>
+<p>Imagine you&#8217;re leading the tech or product team of a startup; you&#8217;re the CTO. You already launched your product&#8217;s first version, and it was a success. Your business model was validated, and now you&#8217;re in a growth stage. That&#8217;s awesome! But it has its costs, and it brings a new set of challenges.</p>
+<p>The first version of your product is working, but the codebase is not in the shape you&#8217;ll need from now on. Maybe your team&#8217;s velocity is not as good as it used be. Your team keeps complaining about the code quality. The CEO and the product director want new features, and your current projections will not meet the business needs.</p>
+<p>It&#8217;s not uncommon that one of the main sources of all these problems is the poor quality of your product&#8217;s codebase. You may need a <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">refactoring</a> <sup id="fnref-refactor"><a href="#fn-refactor" rel="footnote">1</a></sup> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>.</p>
+<h3>When the codebase is not in good shape, everyone can get frustrated</h3>
+<p>If the internal quality of your product is not good, everyone becomes frustrated.</p>
+<p>Your whole team, including developers, will get frustrated because they would like to ship features faster, but the current code quality and architecture are not helping.</p>
+<p>The IT, product, and software departments suffer because they&#8217;re not able to meet the expectations of the other departments.</p>
+<p>The customer also suffers because of frequent bugs, how long it takes for them to be resolved, and how long it takes new features to be launched.</p>
+<p>You get the picture.</p>
+<h3>Identifying the symptoms</h3>
+<p>It&#8217;s the leader&#8217;s job (let&#8217;s say the CTO) to identify when a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a> is needed. In order to do that, he or she can look around for some symptoms, like the ones below:</p>
+<ul>
+<li><strong>Everything is hard:</strong> Almost every feature or bug fix your team needs to do is hard. It was not always like that. You remember the good old days when your team was fast and everything ran smoothly.</li>
+<li><strong>Slow velocity:</strong> Your team&#8217;s velocity decreased or is decreasing. When you were building the first version of your product, it was fast to develop a new feature, and your team used to build lots of them every iteration. Now it&#8217;s different.</li>
+<li><strong>Slow test suite:</strong> Your test suite takes 10x, 20x, 30x more time to run than before.</li>
+<li><strong>Bugs that don&#8217;t go away:</strong> Your team fixes a bug, then in a week or so it appears again. Every now and then your team is fixing a regression bug.</li>
+<li><strong>Your team is demotivated:</strong> Your team keeps complaining that working in the project is not as productive as it was in the past. A single person can&#8217;t build one feature alone; there are too many moving parts.</li>
+<li><strong>Knowledge silos:</strong> There are some parts of the software that only a single developer knows well enough to maintain. It&#8217;s difficult for the rest of the team to work with that specific code.</li>
+<li><strong>New developer ramp-up time is taking too long:</strong> When new developers join the team, it takes too much time for them to be fully productive.</li>
+</ul>
+<p>The reason you got into one of these situations is probably not a technical one. Maybe you needed to deliver too much, too fast while you were building the first version of your product. Maybe your team didn&#8217;t have the maturity and experience in the past they have now. Analyzing the root cause is important too, but you need to do something else. You need to solve your problem.</p>
+<p>If you&#8217;re experiencing the symptoms above, <strong>you probably have a low internal software quality problem</strong>. Recognizing the symptoms is already a big step. The next step is to think of solutions. Some solutions you may take include <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">refactoring</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a> process.</p>
+<h3>Refactor or rewrite?</h3>
+<p>There&#8217;s no definitive guide about when you should do a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">big refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>, because it depends on a lot on your context. That said, there are some rules of thumb that you should consider when evaluating which solution to go with:</p>
+<p><strong>When to rewrite</strong></p>
+<ul>
+<li>The technology you use is outdated, and it&#8217;s not maintained anymore.</li>
+<li>Your software is really slow, and changing the architecture is not enough or is not viable.</li>
+<li>The supply of software developers that know the technology you use is low and decreasing.</li>
+<li>There are new technologies that offer a significant advantage compared to what you&#8217;re using.</li>
+</ul>
+<p><strong>When to refactor</strong></p>
+<ul>
+<li>The technology you use is still maintained and relevant.</li>
+<li>It&#8217;s viable to improve your application in an incremental fashion.</li>
+<li>The problem you&#8217;re solving is just technical and not a business one.</li>
+</ul>
+<p>Choosing one of these options is not an easy decision, and once you go with one of them, there will be an entire new set of concerns you&#8217;ll encounter. Stay tuned, in our next blog posts we&#8217;ll talk about what to consider when doing a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">big refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>.</p>
+<p>Now I would like to know about your experiences. Have you ever been in a similar situation? How did you identify that your problem was low internal software quality? Please share with us!</p>
+<div style="padding: 0 15px 15px;border:dotted 1px #ccc;font-size:.8em;background-color:#f5f5f5;">
+<h4 style="text-align:center;margin-bottom:2px;color:#666">Posts of the Low Internal Software Quality series</h4>
+<ol>
+<li>The Symptoms of Low Internal Software Quality</li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a></li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a></li>
+</ol>
+</div>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-refactor">
+      <em>I prefer the term &#8220;code refurbishment,&#8221; but people aren’t generally used to it. So I’m using &#8220;refactoring&#8221; in this blog post for the sake of clarity.&nbsp;<a href="#fnref-refactor" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a></em>
+    </li>
+</ol>
+</div>
+<hr><p>The post <a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/06/the-symptoms-of-low-internal-software-quality/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

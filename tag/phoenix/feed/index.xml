@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>phoenix « Plataformatec Blog</title>
+	<atom:link href="/tag/phoenix/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 17 May 2018 19:50:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Nested Layouts With Phoenix</title>
+		<link>/2018/05/nested-layouts-with-phoenix/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Wed, 16 May 2018 20:53:04 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=7515</guid>
+
+					<description><![CDATA[<p>Over the last few weeks, we have been building a web application in one of our clients and ended up duplicating some template code. These new pages had something in common between them, but not with the rest of the application. We needed an inner layout to reuse the template code between these pages, however, ... <a class="read-more-link" href="/2018/05/nested-layouts-with-phoenix/">»</a></p>
+<p>The post <a href="/2018/05/nested-layouts-with-phoenix/">Nested Layouts With Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Over the last few weeks, we have been building a web application in one of our clients and ended up duplicating some template code. These new pages had something in common between them, but not with the rest of the application. We needed an inner layout to reuse the template code between these pages, however, Phoenix doesn&#8217;t come with this feature. In this post, you&#8217;ll learn how you can build nested layouts in Phoenix and when you should use them.</p>
+<h2>Why are they useful?</h2>
+<p>Inner (or nested) layouts are useful to reuse template code when you have subsections on your website. Usually, in Phoenix applications, we have <code>/templates/layout/app.html.eex</code> that shares template code between all pages. For example:</p>
+<p><img fetchpriority="high" decoding="async" class=" wp-image-7517" src="/wp-content/uploads/2018/05/layout1.png" alt="Example of Layout" width="842" height="603" srcset="/wp-content/uploads/2018/05/layout1.png 793w, /wp-content/uploads/2018/05/layout1-300x215.png 300w, /wp-content/uploads/2018/05/layout1-768x550.png 768w" sizes="(max-width: 842px) 100vw, 842px" /></p>
+<p>&nbsp;</p>
+<p>In the example above, we want to reuse the application logo, title, and navigation menu across all pages. We can solve that by using the Phoenix default layout and it works great. However, sometimes you need to create a new website section inside the parent layout. For example, imagine we want to add a help section to our Phoenix website. Look at the image below:</p>
+<p><img decoding="async" class="aligncenter wp-image-7518" src="/wp-content/uploads/2018/05/innerlayout2.png" alt="Inner Layout" width="885" height="475" srcset="/wp-content/uploads/2018/05/innerlayout2.png 767w, /wp-content/uploads/2018/05/innerlayout2-300x161.png 300w" sizes="(max-width: 885px) 100vw, 885px" /></p>
+<p>We still want to reuse the layout header across all pages, but we also want to reuse the left navigation and main content layout in all pages inside the help section. Let&#8217;s see how we can do that using Phoenix.</p>
+<h2>The Inner Layout Solution</h2>
+<p>I tried some solutions by looking at some examples online. After discussing with the Plataformatec team, we came up with an approach that&#8217;s very simple and extensible, thanks to Phoenix explicit layout rendering. The solution works like this:</p>
+<p><img decoding="async" class="aligncenter wp-image-7519" src="/wp-content/uploads/2018/05/diagram3.png" alt="layout template" width="693" height="422" srcset="/wp-content/uploads/2018/05/diagram3.png 539w, /wp-content/uploads/2018/05/diagram3-300x183.png 300w" sizes="(max-width: 693px) 100vw, 693px" /></p>
+<ul>
+<li>You create the nested layout template.</li>
+<li>In the nested layout, you set the parent template by calling a function.</li>
+<li>The parent layout is aware that is possible to have an inner layout and will render it.</li>
+<li>You can invoke your nested layout by using the Phoenix `put_layout/2` function.</li>
+</ul>
+<p>The main goal here is to make the nested layout work like any Phoenix layout. This will make it familiar to any Phoenix developer.</p>
+<h2> Preparing The Parent Template</h2>
+<p>First, let&#8217;s add a function that allows a template to render the parent layout:</p>
+<pre><code class="elixir"># views/layout_view.ex
+defmodule YourAppWeb.LayoutView do
+  use YourAppWeb, :view
+
+  def render_layout(layout, assigns, do: content) do
+    render(layout, Map.put(assigns, :inner_layout, content))
+  end
+end
+</code></pre>
+<p>The <code>render_layout/3</code> will render the given layout by assigning the contents of the inner layout given in the <code>do</code> argument. Now, in the parent layout, we need to render the inner layout contents or the controller view contents. Look at how you can do it:</p>
+<pre><code class="eex">&lt;%# templates/layout/app.html.eex %&gt;
+
+&lt;%# ... %&gt;
+
+  &lt;%= Map.get(assigns, :inner_layout) || render @view_module, @view_template, assigns %&gt;
+
+&lt;%# ... %&gt;
+</code></pre>
+<p>With the code above, our parent layout is aware that there may be an inner layout and it should render its contents when available. That&#8217;s it! Now let&#8217;s see how we can use it.</p>
+<h2>Using the Nested Layout</h2>
+<p>You can create a nested layout template in the <code>layouts</code> folder and use it like this:</p>
+<pre><code class="eex">&lt;%# templates/layout/nested_layout.html.eex %&gt;
+
+&lt;%= render_layout "app.html", assigns do %&gt;
+  &lt;%# Your HTML markup here %&gt;
+  &lt;%= render @view_module, @view_template, assigns %&gt;
+  &lt;%# More HTML markup here %&gt;
+&lt;% end %&gt;
+</code></pre>
+<p>We render the parent and put the inner content in the <code>do/end</code> blocks in our nested layout template. Any content outside of the <code>do/end</code> blocks will not be rendered. Don&#8217;t forget to call <code>render @view_module, @view_template, assigns</code>, or the contents of your controller&#8217;s action template will not be rendered.</p>
+<p>Now you can use our nested layout by invoking the plug <code>put_layout/2</code> in your controller or router. For example:</p>
+<pre><code class="elixir">defmodule YourAppWeb.NestedContentController do
+  use YourAppWeb, :controller
+
+  plug :put_layout, :nested_layout
+
+  def index(conn, params) do
+    # stuff
+  end
+end
+</code></pre>
+<p>You can organize your nested layout files in a different way. For example, imagine you have a help section in your website and you want to keep the nested layout file in the <code>help</code> folder. In your <code>HelpView</code> you&#8217;ll need to import the <code>render_layout/3</code> function, like this:</p>
+<pre><code class="elixir"># views/help_view.ex
+
+defmodule YourAppWeb.HelpView do
+  use YourAppWeb, :view
+  import YourAppWeb.LayoutView, only: [render_layout: 3]
+end
+</code></pre>
+<p>After that, you can put your nested layout template in <code>templates/help/layout.html.eex</code>. In the controller or router, you can invoke the nested layout like this:</p>
+<pre><code class="elixir">plug :put_layout, {YourAppWeb.HelpView, "layout.html"}
+</code></pre>
+<p>The code above will render your <code>layout.html.eex</code> template in <code>views/help</code> directory using <code>YourAppWeb.HelpView</code> module.</p>
+<h2>Wrapping Up</h2>
+<p>Inner layouts come in handy to reuse template code of subsections of your web application. You learned how simple it is to build that in Phoenix. Just be aware of not creating inner layouts of inner layouts. If you do that, your codebase will start to be very hard to maintain. You can see and try by yourself a sample <a href="https://github.com/ulissesalmeida/nested_layout">Phoenix app</a> running the inner layout example.</p>
+<p>Have you implemented inner layout in a different way? Do you have any feature that you would like to see how we can build it in Phoenix? Let us know in your comments.</p><p>The post <a href="/2018/05/nested-layouts-with-phoenix/">Nested Layouts With Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dynamic forms with Phoenix</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/</link>
+					<comments>/2016/09/dynamic-forms-with-phoenix/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 29 Sep 2016 12:15:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5709</guid>
+
+					<description><![CDATA[<p>Today we will learn how to build forms in Phoenix that use our schema information to dynamically show the proper input fields with validations, errors and so on. We aim to support the following API in our templates: &#60;%= input f, :name %&#62; &#60;%= input f, :address %&#62; &#60;%= input f, :date_of_birth %&#62; &#60;%= input ... <a class="read-more-link" href="/2016/09/dynamic-forms-with-phoenix/">»</a></p>
+<p>The post <a href="/2016/09/dynamic-forms-with-phoenix/">Dynamic forms with Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we will learn how to build forms in Phoenix that use our schema information to dynamically show the proper input fields with validations, errors and so on. We aim to support the following API in our templates:</p>
+<pre><code class="eex">&lt;%= input f, :name %&gt;
+&lt;%= input f, :address %&gt;
+&lt;%= input f, :date_of_birth %&gt;
+&lt;%= input f, :number_of_children %&gt;
+&lt;%= input f, :notifications_enabled %&gt;
+</code></pre>
+<p>Each generated input will have the proper markup and classes (we will use <a href="http://getbootstrap.com/">Bootstrap</a> in this example), include the proper HTML attributes, such as <code>required</code> for required fields and validations, and show any input error.</p>
+<p>The goal is to build this foundation in our own applications in very few lines of code, without 3rd party dependencies, allowing us to customize and extend it as desired as our application changes.</p>
+<h2>Setting up</h2>
+<p>Before building our <code>input</code> helper, let&#8217;s first generate a new resource which we will use as a template for experimentation (if you don&#8217;t have a Phoenix application handy, run <code>mix phoenix.new your_app</code> before the command below):</p>
+<pre><code>mix phoenix.gen.html User users name address date_of_birth:datetime number_of_children:integer notifications_enabled:boolean
+</code></pre>
+<p>Follow the instructions after the command above runs and then open the form template at &#8220;web/templates/user/form.html.eex&#8221;. We should see a list of inputs such as:</p>
+<pre><code class="eex">&lt;div class="form-group"&gt;
+  &lt;%= label f, :address, class: "control-label" %&gt;
+  &lt;%= text_input f, :address, class: "form-control" %&gt;
+  &lt;%= error_tag f, :address %&gt;
+&lt;/div&gt;
+</code></pre>
+<p>The goal is to replace each group above by a single <code>&lt;%= input f, field %&gt;</code> line.</p>
+<h3>Adding changeset validations</h3>
+<p>Still in the &#8220;form.html.eex&#8221; template, we can see that a Phoenix form operates on Ecto changesets:</p>
+<pre><code class="eex">&lt;%= form_for @changeset, @action, fn f -&gt; %&gt;
+</code></pre>
+<p>Therefore, if we want to automatically show validations in our forms, the first step is to declare those validations in our changeset. Open up &#8220;web/models/user.ex&#8221; and let&#8217;s add a couple new validations at the end of the <code>changeset</code> function:</p>
+<pre><code class="elixir">|&gt; validate_length(:address, min: 3)
+|&gt; validate_number(:number_of_children, greater_than_or_equal_to: 0)
+</code></pre>
+<p>Also, before we do any changes to our form, let&#8217;s start the server with <code>mix phoenix.server</code> and access <code>http://localhost:4000/users/new</code> to see the default form at work.</p>
+<h2>Writing the <code>input</code> function</h2>
+<p>Now that we have set up the codebase, we are ready to implement the <code>input</code> function.</p>
+<h3>The <code>YourApp.InputHelpers</code> module</h3>
+<p>Our <code>input</code> function will be defined in a module named <code>YourApp.InputHelpers</code> (where <code>YourApp</code> is the name of your application) which we will place in a new file at &#8220;web/views/input_helpers.ex&#8221;. Let&#8217;s define it:</p>
+<pre><code class="elixir">defmodule YourApp.InputHelpers do
+  use Phoenix.HTML
+
+  def input(form, field) do
+    "Not yet implemented"
+  end
+end
+</code></pre>
+<p>Note we used <code>Phoenix.HTML</code> at the top of the module to import the functions from <a href="https://hexdocs.pm/phoenix_html">the <code>Phoenix.HTML</code> project</a>. We will rely on those functions to build the markup later on.</p>
+<p>If we want our <code>input</code> function to be automatically available in all views, we need to explicitly add it to the list of imports in the &#8220;def view&#8221; section of our &#8220;web/web.ex&#8221; file:</p>
+<pre><code class="elixir">import YourApp.Router.Helpers
+import YourApp.ErrorHelpers
+import YourApp.InputHelpers # Let's add this one
+import YourApp.Gettext
+</code></pre>
+<p>With the module defined and properly imported, let&#8217;s change our &#8220;form.html.eex&#8221; function to use the new <code>input</code> functions. Instead of 5 &#8220;form-group&#8221; divs:</p>
+<pre><code class="eex">&lt;div class="form-group"&gt;
+  &lt;%= label f, :address, class: "control-label" %&gt;
+  &lt;%= text_input f, :address, class: "form-control" %&gt;
+  &lt;%= error_tag f, :address %&gt;
+&lt;/div&gt;
+</code></pre>
+<p>We should have 5 input calls:</p>
+<pre><code class="eex">&lt;%= input f, :name %&gt;
+&lt;%= input f, :address %&gt;
+&lt;%= input f, :date_of_birth %&gt;
+&lt;%= input f, :number_of_children %&gt;
+&lt;%= input f, :notifications_enabled %&gt;
+</code></pre>
+<p>Phoenix live-reload should automatically reload the page and we should see &#8220;Not yet implemented&#8221; appear 5 times.</p>
+<h3>Showing the input</h3>
+<p>The first functionality we will implement is to render the proper inputs as before. To do so, we will use <a href="https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#input_type/3">the <code>Phoenix.HTML.Form.input_type</code> function</a>, that receives a form and a field name and returns which input type we should use. For example, for <code>:name</code>, it will return <code>:text_input</code>. For <code>:date_of_birth</code>, it will yield <code>:datetime_select</code>. We can use the returned atom to dispatch to <code>Phoenix.HTML.Form</code> and build our input:</p>
+<pre><code class="elixir">def input(form, field) do
+  type = Phoenix.HTML.Form.input_type(form, field)
+  apply(Phoenix.HTML.Form, type, [form, field])
+end
+</code></pre>
+<p>Save the file and watch the inputs appear on the page!</p>
+<h3>Wrappers, labels and errors</h3>
+<p>Now let&#8217;s take the next step and show the label and error messages, all wrapped in a div:</p>
+<pre><code class="elixir">def input(form, field) do
+  type = Phoenix.HTML.Form.input_type(form, field)
+
+  content_tag :div do
+    label = label(form, field, humanize(field))
+    input = apply(Phoenix.HTML.Form, type, [form, field])
+    error = YourApp.ErrorHelpers.error_tag(form, field) || ""
+    [label, input, error]
+  end
+end
+</code></pre>
+<p>We used <code>content_tag</code> to build the wrapping <code>div</code> and the existing <code>YourApp.ErrorHelpers.error_tag</code> function that Phoenix generates for every new application that builds an error tag with proper markup.</p>
+<h3>Adding Bootstrap classes</h3>
+<p>Finally, let&#8217;s add some HTML classes to mirror the generated Bootstrap markup:</p>
+<pre><code class="elixir">def input(form, field) do
+  type = Phoenix.HTML.Form.input_type(form, field)
+
+  wrapper_opts = [class: "form-group"]
+  label_opts = [class: "control-label"]
+  input_opts = [class: "form-control"]
+
+  content_tag :div, wrapper_opts do
+    label = label(form, field, humanize(field), label_opts)
+    input = apply(Phoenix.HTML.Form, type, [form, field, input_opts])
+    error = YourApp.ErrorHelpers.error_tag(form, field)
+    [label, input, error || ""]
+  end
+end
+</code></pre>
+<p>And that&#8217;s it! We are now generating the same markup that Phoenix originally generated. All in 14 lines of code. But we are not done yet, let&#8217;s take things to the next level by further customizing our input function.</p>
+<h2>Customizing inputs</h2>
+<p>Now that we have achieved parity with the markup code that Phoenix generates, we can further extend it and customize it according to our application needs.</p>
+<h3>Colorized wrapper</h3>
+<p>One useful UX improvement is to, if a form has errors, automatically wrap each field in a success or error state accordingly. Let&#8217;s rewrite the <code>wrapper_opts</code> to the following:</p>
+<pre><code class="elixir">wrapper_opts = [class: "form-group #{state_class(form, field)}"]
+</code></pre>
+<p>And define the private <code>state_class</code> function as follows:</p>
+<pre><code class="elixir">defp state_class(form, field) do
+  cond do
+    # The form was not yet submitted
+    !form.source.action -&gt; ""
+    form.errors[field] -&gt; "has-error"
+    true -&gt; "has-success"
+  end
+end
+</code></pre>
+<p>Now submit the form with errors and you should see every label and input wrapped in green (in case of success) or red (in case of input error).</p>
+<h3>Input validations</h3>
+<p>We can use <a href="https://hexdocs.pm/phoenix_html/Phoenix.HTML.Form.html#input_validations">the <code>Phoenix.HTML.Form.input_validations</code> function</a> to retrieve the validations in our changesets as input attributes and then merge it into our <code>input_opts</code>. Add the following two lines after the <code>input_opts</code> variable is defined (and before the <code>content_tag</code> call):</p>
+<pre><code class="elixir">validations = Phoenix.HTML.Form.input_validations(form, field)
+input_opts = Keyword.merge(validations, input_opts)
+</code></pre>
+<p>After the changes above, if you attempt to submit the form without filling the &#8220;Address&#8221; field, which we imposed a length of 3 characters, the browser won&#8217;t allow the form to be submitted. Not everyone is a fan of browser validations and, in this case, you have direct control if you want to include them or not.</p>
+<p>At this point it is worth mentioning both <code>Phoenix.HTML.Form.input_type</code> and <code>Phoenix.HTML.Form.input_validations</code> are defined as part of the <code>Phoenix.HTML.FormData</code> protocol. This means if you decide to use something else besides Ecto changesets to cast and validate incoming data, all of the functionality we have built so far will still work. For those interested in learning more, I recommend checking out <a href="https://github.com/phoenixframework/phoenix_ecto">the <code>Phoenix.Ecto</code> project</a> and learn how the integration between Ecto and Phoenix is done by simply implementing protocols exposed by Phoenix.</p>
+<h3>Per input options</h3>
+<p>The last change we will add to our <code>input</code> function is the ability to pass options per input. For example, for a given input, we may not want to use the type inflected by <code>input_type</code>. We can add options to handle those cases:</p>
+<pre><code class="elixir">def input(form, field, opts \\ []) do
+  type = opts[:using] || Phoenix.HTML.Form.input_type(form, field)
+</code></pre>
+<p>This means we can now control which function to use from <code>Phoenix.HTML.Form</code> to build our input:</p>
+<pre><code class="eex">&lt;%= input f, :new_password, using: :password_input %&gt;
+</code></pre>
+<p>We also don&#8217;t need to be restricted to the inputs supported by <code>Phoenix.HTML.Form</code>. For example, if you want to replace the <code>:datetime_select</code> input that ships with Phoenix by a custom datepicker, you can wrap the input creation into an function and pattern match on the inputs you want to customize.</p>
+<p>Let&#8217;s see how our <code>input</code> functions look like with all the features so far, including support for custom inputs (input validations have been left out):</p>
+<pre><code class="elixir">defmodule YourApp.InputHelpers do
+  use Phoenix.HTML
+
+  def input(form, field, opts \\ []) do
+    type = opts[:using] || Phoenix.HTML.Form.input_type(form, field)
+
+    wrapper_opts = [class: "form-group #{state_class(form, field)}"]
+    label_opts = [class: "control-label"]
+    input_opts = [class: "form-control"]
+
+    content_tag :div, wrapper_opts do
+      label = label(form, field, humanize(field), label_opts)
+      input = input(type, form, field, input_opts)
+      error = YourApp.ErrorHelpers.error_tag(form, field)
+      [label, input, error || ""]
+    end
+  end
+
+  defp state_class(form, field) do
+    cond do
+      # The form was not yet submitted
+      !form.source.action -&gt; ""
+      form.errors[field] -&gt; "has-error"
+      true -&gt; "has-success"
+    end
+  end
+
+  # Implement clauses below for custom inputs.
+  # defp input(:datepicker, form, field, input_opts) do
+  #   raise "not yet implemented"
+  # end
+
+  defp input(type, form, field, input_opts) do
+    apply(Phoenix.HTML.Form, type, [form, field, input_opts])
+  end
+end
+</code></pre>
+<p>And then, once you implement your own <code>:datepicker</code>, just add to your template:</p>
+<pre><code class="eex">&lt;%= input f, :date_of_birth, using: :datepicker %&gt;
+</code></pre>
+<p>Since your application owns the code, you will always have control over the inputs types and how they are customized. Luckily Phoenix ships with enough functionality to give us a head start, without compromising our ability to refine our presentation layer later on.</p>
+<h2>Summing up</h2>
+<p>This article showed how we can leverage the conveniences exposed in <code>Phoenix.HTML</code> to dynamically build forms using the information we have already specified in our schemas. Although the example above used the User schema, which directly maps to a database table, <a href="/2016/05/ectos-insert_all-and-schemaless-queries/">Ecto 2.0 allows us to use schemas to map to any data source</a>, so the <code>input</code> function can be used for validating search forms, login pages, and so on without changes.</p>
+<p>While we have developed <a href="http://github.com/plataformatec/simple_form">projects such as Simple Form</a> to tackle those problems in our Rails projects, with Phoenix we can get really far using the minimal abstractions that ship as part of the framework, allowing us to get most of the functionality while having full control over the generated markup.</p>
+<div style="margin:20px 0 60px;">
+<a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lauching-elixir-radar-channel&amp;utm_content=cta-blog-post-bottom"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/09/blog-cta-elixir-radar-channel.jpg" alt="Elixir Radar" width="831" height="147" class="aligncenter size-full wp-image-5701" srcset="/wp-content/uploads/2016/09/blog-cta-elixir-radar-channel.jpg 831w, /wp-content/uploads/2016/09/blog-cta-elixir-radar-channel-300x53.jpg 300w, /wp-content/uploads/2016/09/blog-cta-elixir-radar-channel-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2016/09/dynamic-forms-with-phoenix/">Dynamic forms with Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/09/dynamic-forms-with-phoenix/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Understanding deps and applications in your Mixfile</title>
+		<link>/2016/07/understanding-deps-and-applications-in-your-mixfile/</link>
+		
+		<dc:creator><![CDATA[João Britto]]></dc:creator>
+		<pubDate>Wed, 06 Jul 2016 20:02:33 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5493</guid>
+
+					<description><![CDATA[<p>Note: Elixir v1.4 has been released and improves on many points touched by this article. From v1.4, Elixir will automatically infer the list of applications based on your dependencies. For more information, read the official announcement. In my journey as a curious Elixir developer, I&#8217;ve come across this seemingly simple question a few times: which ... <a class="read-more-link" href="/2016/07/understanding-deps-and-applications-in-your-mixfile/">»</a></p>
+<p>The post <a href="/2016/07/understanding-deps-and-applications-in-your-mixfile/">Understanding deps and applications in your Mixfile</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong>Note</strong>: Elixir v1.4 has been released and improves on many points touched by this article. From v1.4, Elixir will automatically infer the list of applications based on your dependencies. For more information, <a href="http://elixir-lang.org/blog/2017/01/05/elixir-v1-4-0-released/">read the official announcement</a>.</p>
+<p>In my journey as a curious Elixir developer, I&#8217;ve come across this seemingly simple question a few times: which <code>applications</code> from third-party libraries do I need to declare in my <code>mix.exs</code> file?</p>
+<p>Before we get down to the nitty-gritty of application dependencies, let&#8217;s first recap some basics of the initialization process in Elixir OTP applications.</p>
+<p>In its essence, an OTP application is a reusable software component, consisting of multiple modules of its own and it can also depend on third-party code. These dependencies can be either <em>library applications</em> — a collection of standalone modules and functions, with no processes involved — or <em>active applications</em>, with their own life cycles and supervision trees. This distinction is quite subtle, it took me a while to fully grasp its implications.</p>
+<p>Applications are defined with an <em>application resource file</em>, like <code>my_app.app</code>, which is a metadata file comprised of a single Erlang term. It includes all the information needed to start our application and is managed by Mix. If you want to dig deeper into that topic you can take a look at its <a href="http://erlang.org/doc/design_principles/applications.html" target="_blank">documentation</a>. Once we create a new application with <code>mix new my_app</code> a brand new <code>mix.exs</code> file is generated. This is the file that customizes how <code>my_app.app</code> will be assembled by Mix and it is the file we&#8217;ll be dealing with in the Elixir world. Here is what it looks like:</p>
+<pre><code class="elixir">defmodule MyApp.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :my_app,
+     version: "0.1.0",
+     elixir: "~&gt; 1.3",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     deps: deps()]
+  end
+
+  # Configuration for the OTP application
+  #
+  # Type "mix help compile.app" for more information
+  def application do
+    [applications: [:logger]]
+  end
+
+  # Dependencies can be Hex packages:
+  #
+  #   {:mydep, "~&gt; 0.3.0"}
+  #
+  # Or git/path repositories:
+  #
+  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
+  #
+  # Type "mix help deps" for more examples and options
+  defp deps do
+    []
+  end
+end
+</code></pre>
+<p>As we can see, there are some important pieces of information in it, such as the app name, version, Elixir version requirements and so on. In addition, the <code>application</code> function lets us explain what is required to boot our application: which other applications need to be started before ours, locally registered processes, which module represents the starting point of our application and also some default values for the application environment. By running <code>mix help compile.app</code> we can get more information about that function. The <a href="http://elixir-lang.org/docs/stable/elixir/Application.html" target="_blank">docs</a>  available for the <code>Application</code> behavior — which abstracts the initialization process <em>per se</em> — are pretty extensive and helpful as well.</p>
+<p>So far, so good. Now things start to get interesting. Let&#8217;s take a look at the <code>mix.exs</code> file of a new Phoenix project. First we generate an application skeleton with <code>mix phoenix.new hello</code>, then we add <code>{:exrm, "~&gt; 1.0"}</code> to our <code>deps</code>, including the <a href="https://github.com/bitwalker/exrm" target="_blank">Exrm</a> tool for generating our releases.</p>
+<pre><code class="elixir">defmodule Hello.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :hello,
+     version: "0.0.1",
+     elixir: "~&gt; 1.3",
+     # ...
+     deps: deps()]
+  end
+
+  # Configuration for the OTP application.
+  #
+  # Type `mix help compile.app` for more information.
+  def application do
+    [mod: {Hello, []},
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex]]
+  end
+
+  # ...
+
+  defp deps do
+    [{:phoenix, "~&gt; 1.2.0"},
+     {:phoenix_pubsub, "~&gt; 1.0"},
+     {:phoenix_ecto, "~&gt; 3.0"},
+     {:postgrex, "&gt;= 0.0.0"},
+     {:phoenix_html, "~&gt; 2.6"},
+     {:phoenix_live_reload, "~&gt; 1.0", only: :dev},
+     {:gettext, "~&gt; 0.11"},
+     {:cowboy, "~&gt; 1.0"},
+     {:exrm, "~&gt; 1.0"}]
+  end
+
+  # ...
+end
+</code></pre>
+<p>Along with the <code>:logger</code> application we&#8217;ve seen before in our vanilla Elixir app, now we have a few other applications we depend upon: some from Phoenix itself, an HTTP server, some <em>i18n</em> utilities and a database driver too. If we pay close attention to the <code>deps</code> and the <code>applications</code> lists, we can see it is almost a 1 to 1 ratio. Every <code>application</code> relates to its <code>dep</code> counterpart, like <code>cowboy</code>, <code>phoenix_pubsub</code>, <code>postgrex</code> and others. The exceptions are <code>:logger</code>, which is <a href="http://elixir-lang.org/docs/stable/logger/Logger.html" target="_blank">pre-built as part of Elixir</a>, <code>exrm</code> and <code>phoenix_live_reload</code>.</p>
+<p>That mismatch confused me. I wondered if I wasn&#8217;t mixing them up (pun intended).</p>
+<h3>Library applications must be included too</h3>
+<p>Why should library-only applications like <code>phoenix_html</code> and <code>gettext</code> be included in my <code>application</code> function then? It&#8217;s not that they need to be booted up and start spawning processes or something. It turns out that our <code>application</code> function has more to do with <em>Releases</em> and runtime than with supervision trees. Yes, listing <em>active applications</em> ensures they are started before our application, but including <em>library applications</em> will also <strong>make sure they will be included</strong> in our installable release packages.</p>
+<p>To support that claim, we can see that even <code>exrm</code> warns us when we forget to do so. Let&#8217;s try removing <code>phoenix_html</code> and <code>cowboy</code> from our <code>applications</code>:</p>
+<pre><code class="elixir">defmodule Hello.Mixfile do
+  # ...
+  def application do
+    [mod: {Hello, []},
+     applications: [:phoenix, :phoenix_pubsub, :logger, :gettext, :phoenix_ecto, :postgrex]]
+  end
+end
+</code></pre>
+<p>Then make a new release:</p>
+<pre><code>mix deps.get
+Running dependency resolution
+* Getting phoenix (Hex package)
+  Checking package (https://repo.hex.pm/tarballs/phoenix-1.2.0.tar)
+  Using locally cached package
+...
+
+MIX_ENV=prod mix release
+Building release with MIX_ENV=prod.
+
+You have dependencies (direct/transitive) which are not in :applications!
+The following apps should be added to :applications in mix.exs:
+
+        phoenix_html =&gt; phoenix_html is missing from hello
+        cowboy       =&gt; cowboy is missing from hello
+
+Continue anyway? Your release may not work as expected if these dependencies are required! [Yn]:
+</code></pre>
+<p>Both dependencies would be missing from the final package :bomb:. We certainly don&#8217;t want that.</p>
+<h3>Development, test, docs and optional dependencies stay out</h3>
+<p>You might still ask, shouldn&#8217;t <code>cowboy</code> and <code>phoenix_html</code> be out of my control and get required automatically by <code>phoenix</code>? That way I&#8217;d just need to worry about <code>phoenix</code> as a single, rich dependency.</p>
+<p>Actually, no. From the Phoenix framework standpoint, none of these applications are actually required. Cowboy isn&#8217;t a strict runtime dependency; we can freely run our Phoenix app on another compatible web server of our choice. As for Phoenix HTML and even Gettext, they are not strictly required either. We can totally build our Phoenix app without any HTML output or localization at all, consider an API-only app for example. It&#8217;s all up to us.</p>
+<p>As we can see in <a href="https://github.com/phoenixframework/phoenix/blob/v1.2.0/mix.exs#L41-L55" target="_blank">Phoenix&#8217;s own <code>mix.exs</code> file</a>, <code>cowboy</code> is declared as <code>optional: true</code> and <code>phoenix_html</code> as <code>only: :test</code>, <code>gettext</code> likewise is <code>only: :test</code>. The reason these dependencies are declared is that if we eventually need them in <strong>our</strong> app, they must be at least compatible with the Phoenix version currently in use.</p>
+<p>That also explains why <code>exrm</code> and <code>phoenix_live_reload</code> can be kept out of the applications list. We don&#8217;t want <code>phoenix_live_reload</code> running in production, since there will be no live code reloading. As for <code>exrm</code>, it is a tool used exclusively to package our application, our business code has no need to know anything about it.</p>
+<p>Cool. How come <code>phoenix_live_reload</code> works in development though? Well, when we start our application — with <code>mix phoenix.start</code>, for example — the code is available in the load path, but the <code>phoenix_live_reload</code> application is not started yet; it only starts when <a href="https://github.com/phoenixframework/phoenix_live_reload/blob/v1.0.5/lib/phoenix_live_reload/channel.ex#L10" target="_blank">we connect to its channel</a>. We can try it out by starting up our little Phoenix app and checking which applications get loaded.</p>
+<pre><code>iex -S mix phoenix.start
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+[info] Running Hello.Endpoint with Cowboy using http://localhost:4000/
+Interactive Elixir (1.3.0) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; Application.loaded_applications
+[
+  {:plug, 'A specification and conveniences for composable modules between web applications', '1.1.6'},
+  {:hex, 'hex', '0.12.1'},
+  ...
+]
+</code></pre>
+<p>A list of all the applications currently loaded is returned when we call <code>Application.loaded_applications</code>. Now, after we make our first request by opening <code>http://localhost:4000/</code> then calling <code>Application.loaded_applications</code> once again, we can see two new applications on that list: <code>fs</code> and <code>phoenix_live_reload</code>.</p>
+<pre><code>iex(2)&gt; Application.loaded_applications
+[
+  {:plug, 'A specification and conveniences for composable modules between web applications', '1.1.6'},
+  {:hex, 'hex', '0.12.1'},
+  ...
+  {:fs, 'VXZ FS Listener', '0.9.1'},
+  ...
+  {:phoenix_live_reload, 'Provides live-reload functionality for Phoenix',  '1.0.5'}
+  ...
+]
+</code></pre>
+<h3>Declare your applications, even when you&#8217;re not using releases</h3>
+<p>I am deploying to Heroku and my application requires no release packaging whatsoever, should I still worry about my list of applications? Yes, definitely. Suppose we need to upgrade some dependencies, one of them used to be just a <em>library application</em> but now has become an <em>active application</em>, e.g. a cache library which now has to keep a reaper process to clean up stale data. Once we upgrade the <code>dep</code> for that undeclared <code>application</code>, a runtime bug is potentially introduced, given we have no guarantee our new dependencies&#8217; applications will get started properly.</p>
+<h3>As a library author, you should take extra care</h3>
+<p>The same goes for libraries, regardless of open sourcing them or not. Remember that runtime application dependencies are transitive. Let&#8217;s say an application <code>A</code> depends on <code>B</code>, which in turn depends on <code>C</code>, the application responsible for ensuring <code>C</code> is started is <code>B</code>, unless <code>C</code> is an optional dependency. In that case, the author of <code>B</code> should document the pluggable nature of that optional dependency appropriately, or even provide code generators if applicable — as Phoenix does with <code>cowboy</code>.</p>
+<h3>Elixir tooling is our friend</h3>
+<p>One of the most noticeable benefits of Elixir is all the tools-support built around it. Not only in runtime, <a href="http://erlang.org/doc/man/runtime_tools_app.html" target="_blank">standing</a> on the <a href="http://erlang.org/doc/man/Observer_app.html" target="_blank">shoulders</a> of Erlang, but primarily in development and build time. In case you overlooked the <a href="http://elixir-lang.org/blog/2016/06/21/elixir-v1-3-0-released/#mix-apptree-and-depstree" target="_blank">announcement of Elixir v1.3</a> recently released, you should definitely check it out. Among the improvements in dependency tracking are two new built-in mix tasks: <code>app.tree</code> and <code>deps.tree</code>. They are priceless timesavers in this routine task of keeping up with our dependencies.</p>
+<h3>Summing up</h3>
+<p>So, when we are evaluating these dependency issues individually, it all boils down to a few simple criteria.</p>
+<p>For the <code>deps</code> function in our Mixfile:</p>
+<ul>
+<li>Always add it to <code>deps</code> if it is a <strong>direct</strong> dependency.</li>
+<li>Don&#8217;t forget the <code>only: [...]</code> option if not every environment needs it.</li>
+<li>Optional dependencies must be set as <code>optional: true</code>. It is always good to document and explain how they are supposed to be included.</li>
+</ul>
+<p>For the <code>applications</code> key in our <code>application</code> function:</p>
+<ul>
+<li>Add it to <code>applications</code> if it is required at <strong>runtime</strong> in <strong>production</strong>.</li>
+</ul>
+<p>All said and done, where can we go from here? Well, I&#8217;d say start at home, <strong>review your <code>mix.exs</code></strong>. Is there anything important missing? Any unused dependency? Then you can start taking a closer look at your external dependencies&#8217; Mixfiles. Are all runtime dependencies properly required? What about their environments? Once you&#8217;re there, take your time to contribute, give back. These tiny bits might seem worthless at first, but rest assured, as some clever man used to say, “success is in the details”.</p>
+<div style="height:30px;"></div>
+<hr>
+<div style="margin:20px 0 60px;">
+<p style="text-align:center; margin-bottom:0; padding-bottom:0; font-weight:bold; font-size:1em; color:#444;">If you are into Elixir-Phoenix, you may also like&#8230;</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom-with-title" target="_blank"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0.jpg" alt="What&#039;s new in Ecto 2.0 -- Download your copy" width="831" height="147" class="aligncenter size-full wp-image-5997" /</a srcset="/wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0.jpg 831w, /wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0-300x53.jpg 300w, /wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" />
+</div><p>The post <a href="/2016/07/understanding-deps-and-applications-in-your-mixfile/">Understanding deps and applications in your Mixfile</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Deploying Elixir applications with Edeliver</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/</link>
+					<comments>/2016/06/deploying-elixir-applications-with-edeliver/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 07 Jun 2016 20:32:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5457</guid>
+
+					<description><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like how to run migrations on top of a release or how to deal with environment variables. Now it&#8217;s time to discover another tool that can help us release our Elixir application. After practicing deploy and tracing through nodes with Exrm, we got more comfortable ... <a class="read-more-link" href="/2016/06/deploying-elixir-applications-with-edeliver/">»</a></p>
+<p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like <a href="/2016/04/running-migration-in-an-exrm-release/">how to run migrations on top of a release</a> or <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">how to deal with environment variables</a>. Now it&#8217;s time to discover another tool that can help us release our Elixir application.</p>
+<p>After practicing deploy and <a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/">tracing through nodes</a> with <a href="https://github.com/bitwalker/exrm" target="_blank">Exrm</a>, we got more comfortable knowing that there is a tool we can count on for managing production releases. Our next biggest concern was how could we make the deploy process more manageable. We couldn&#8217;t stop thinking about Capistrano, which we normally use for our Rails projects, then we found <a href="https://github.com/boldpoker/edeliver" target="_blank">Edeliver</a>. From Edeliver&#8217;s README description:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>edeliver is based on deliver and provides a bash script to build and deploy Elixir and Erlang applications and perform hot-code upgrades.</p></blockquote>
+<p>Trying the whole deploy process manually was a bit harsh with some repetitive tasks. Using Edeliver for our first <code>script/deploy</code> was awkwardly easy! In the end, the whole manual process was simplified to:</p>
+<pre><code class="bash">    #!/bin/bash -ex
+
+    BRANCH=${1:-master};
+
+    mix edeliver build release --branch=BRANCH --verbose
+    mix edeliver deploy release to production --verbose
+    mix edeliver start production --verbose
+    mix edeliver migrate production up --verbose
+</code></pre>
+<p>You&#8217;re probably going to need to customize this script, adapting it for your needs. In this case, we&#8217;re using this script only for production deploys, but you can customize it for staging servers pretty easily. We&#8217;ll explain how environments work further along.</p>
+<h2>How it works</h2>
+<p>As we saw before in the README quote, Edeliver makes pretty much everything with bash scripts. The Mix tasks we saw above will be executed with Elixir, but they&#8217;ll result in bash script instructions. Part of the instructions are executed in the scripts locally, which will build new instructions that will run remotely via RPC (Remote procedure call).</p>
+<p>Let&#8217;s go deeper in some aspects of the lib.</p>
+<h2>Environments</h2>
+<p>Edeliver is a cool option for launching and distributing releases in multiple environments. It has a concept of three environments: build, staging and production. Among these, only the build environment should get a bit more of attention.</p>
+<p>For a release to work in a server, it must have been built in a machine with the same architecture where the release will run. That&#8217;s because Edeliver uses Exrm for building its releases. Exrm will internally use its local <a href="http://erlang.org/doc/tutorial/nif.html" target="_blank">NIFs</a> (C functions used by Erlang) which may vary in a different architecture, thus causing, for example, an OSX release not working on Linux. You can read more about it in <a href="https://github.com/phoenixframework/phoenix_guides/issues/254" target="_blank">this Phoenix issue</a> where people are discussing cross-compiling issues and there are some other <a href="https://github.com/bitwalker/exrm/issues?utf8=%E2%9C%93&#038;q=is%3Aissue+cross+compiling+" target="_blank">issues in Exrm</a> as well.</p>
+<p>In order to use the build environment in our own development machine, it needs to use the same architecture of our staging and production servers, otherwise it won&#8217;t work.</p>
+<p>To configure our environments, we&#8217;ll need to create a <code>.deliver</code> directory in our project and add a <code>config</code> file. Let&#8217;s see the suggested configs from Edeliver&#8217;s README for this file:</p>
+<pre><code class="bash">#!/usr/bin/env bash
+
+APP="your-erlang-app" # name of your release
+
+BUILD_HOST="build-system.acme.org" # host where to build the release
+BUILD_USER="build" # local user at build host
+BUILD_AT="/tmp/erlang/my-app/builds" # build directory on build host
+
+STAGING_HOSTS="test1.acme.org test2.acme.org" # staging / test hosts separated by space
+STAGING_USER="test" # local user at staging hosts
+TEST_AT="/test/my-erlang-app" # deploy directory on staging hosts. default is DELIVER_TO
+
+PRODUCTION_HOSTS="deploy1.acme.org deploy2.acme.org" # deploy / production hosts separated by space
+PRODUCTION_USER="production" # local user at deploy hosts
+DELIVER_TO="/opt/my-erlang-app" # deploy directory on production hosts
+</code></pre>
+<p>It&#8217;s pretty easy to configure our environments, we only need to make sure we have <code>ssh</code> permission for these servers specified. A cool thing about this whole configuration, as mentioned before, is that it&#8217;s possible to distribute the releases through several servers.</p>
+<h2>How can I include extra tasks to my deploy process?</h2>
+<p>What Edeliver does is generic for Elixir and Erlang applications. When we&#8217;re using Phoenix, for example, we need to run some tasks before generating the release. The most important tasks are <code>brunch build --production</code> and <code>mix phoenix.digest</code> so we can have our assets working on our release.</p>
+<p>To make these work, we&#8217;ll need to define a hook in our <code>.deliver/config</code> file:</p>
+<pre><code class="bash">pre_erlang_clean_compile() {
+  status "Preparing assets with: brunch build and phoenix.digest"
+  __sync_remote "
+    # runs the commands on the build host
+    [ -f ~/.profile ] &amp;&amp; source ~/.profile # load profile (optional)
+
+    # fail if any command fails (recommended)
+    set -e
+
+    # enter the build directory on the build host (required)
+    cd '$BUILD_AT'
+
+    mkdir -p priv/static # required by the phoenix.digest task
+
+    # installing npm dependencies
+    npm install
+
+    # building brunch
+    brunch build --production
+
+    # run your custom task
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+  "
+} 
+</code></pre>
+<p>This was extracted from an Edeliver doc sample, which explains all the possibilities of hooks.</p>
+<h2>What about my environment variables?</h2>
+<p>We shared a tip on <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">dealing with environment variables with Exrm</a> in order to avoid exporting them in our build environment and it&#8217;s still up! Although, there&#8217;s an important detail we&#8217;ll need to pay attention.</p>
+<p>In order to make the environments replaceable we needed to set <code>RELX_REPLACE_OS_VARS=true</code> before our start command. But that&#8217;s not possible with Edeliver because the start task runs locally.</p>
+<p><code>mix edeliver start production</code></p>
+<p>Then a possible solution is to export the <code>RELX_REPLACE_OS_VARS</code> in your production environment.</p>
+<h2>Considerations</h2>
+<p>Edeliver seems like a cool option for dealing with our releases and deploy process, I found it really easy to use. I didn&#8217;t enter in implementation details in this post, so make sure to read its <a href="https://github.com/boldpoker/edeliver" target="_blank">README</a> and docs, they&#8217;re very useful and well-explained.</p>
+<p>This was a solution we found to ease our deploy process. How have you been managing your process? Did this post help you?</p>
+<hr>
+<div style="margin:30px 0 60px;">
+<p style="text-align:center; margin-bottom:0; padding-bottom:0; font-weight:bold; font-size:1em; color:#444;">If you are into Elixir-Phoenix, you may also like&#8230;</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom-with-title" target="_blank"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/06/deploying-elixir-applications-with-edeliver/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to config environment variables with Elixir and Exrm</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/</link>
+					<comments>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 19:02:05 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5417</guid>
+
+					<description><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using ENV vars (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it on its Configuration section: The twelve-factor app stores config in environment variables ... <a class="read-more-link" href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">»</a></p>
+<p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using <strong>ENV vars</strong> (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it <a href="http://12factor.net/config" target="_blank">on its Configuration section</a>:</p>
+<blockquote style="font-size: 1.1em; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p><em>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.</em></p></blockquote>
+<p>In an Elixir project, the config goes in <code>Mix.Config</code> files. Some examples are: <code>config.exs</code> and environment config files (<code>dev.exs</code>, <code>test.exs</code> and <code>prod.exs</code>). These files are generally used by frameworks and libraries, but they have already proven useful for <a href="/2015/10/mocks-and-explicit-contracts/" target="_blank">using mocks in our tests</a>.</p>
+<p>Let&#8217;s take an <a href="https://github.com/elixir-lang/ecto" target="_blank"><strong>Ecto</strong></a> config as example:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: "postgres",
+password: "postgres",
+database: "myapp_dev",
+hostname: "localhost",
+pool_size: 10
+</code></pre>
+<p>A well-known approach is using <a href="https://en.wikipedia.org/wiki/Environment_variable" target="_blank"><strong>Environment variables</strong></a> to hide and scope these values through different environments. To use it, we just need to have a configured variable and get it in our application. In Elixir we do this easily with <a href="http://elixir-lang.org/docs/stable/elixir/System.html#get_env/1" target="_blank"><code>System.get_env("ENV_VAR")</code></a>.</p>
+<p>We could configure our last example with this approach:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: System.get_env("DB_USER"),
+password: System.get_env("DB_PASSWORD"),
+database: System.get_env("DB_NAME"),
+hostname: System.get_env("DB_HOST"),
+pool_size: 10
+</code></pre>
+<p>This way you won&#8217;t expose your database configs and will actually make things more dynamic. In development this is useful because the developers won&#8217;t need to make changes on this file, they&#8217;ll just need to export these vars.</p>
+<p>So far this isn&#8217;t much different from what we do in other languages. However, things start to happen differently when we try to generate an Exrm release to deploy our app in production.</p>
+<h2>ENV vars need to be present during compile time</h2>
+<p>We all already know that Elixir is a compiled language. And in order to deploy or generate a release we need to compile our application. So everything is compiled, even our config files! Then, there&#8217;s an interesting behavior while compiling our config files.</p>
+<p>Our <code>System.get_env()</code> calls will be evaluated during the compilation, so the binaries will be generated with the current value of the ENV var. Because of this, we need all of our environment variables to be exported during compiling. When we don&#8217;t have them, their value will be <code>nil</code> and we won&#8217;t be able to connect to our database, for example. This way, to build a release we&#8217;d need all our environment variables where we&#8217;re building it (our own machine or a build server).</p>
+<p>If we&#8217;re <strong>working with Phoenix</strong>, there is an exception. Phoenix has a special way of configuring an HTTP port with ENV vars that evaluates it during runtime.</p>
+<pre><code class="elixir">config :myapp, MyApp.Endpoint,
+http: [port: {:system, "PORT"}],
+# ...
+</code></pre>
+<p>It works great and data won&#8217;t be fixed in the release, but it&#8217;s <a href="https://github.com/phoenixframework/phoenix/blob/v1.1.4/lib/phoenix/endpoint/server.ex#L45" target="_blank">specific for this Phoenix config</a>. But don&#8217;t be sad! There are already some <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">mature discussions</a> around this in the Exrm repo, take a look, you may be able to help!</p>
+<h2>There&#8217;s a way when using Exrm release</h2>
+<p>I was chatting around <a href="https://elixir-lang.slack.com/" target="_blank">Elixir Slack channel</a><a href=""></a> when our friend <a href="https://twitter.com/renanranelli" target="_blank">Ranelli</a> mentioned that there was a simple technique that we could use to solve this when we build an Exrm release. Instead of using <code>System.get_env</code> in our configs, we must use <code>"${ENV_VAR}"</code>. Then, we just need to run our release with <code>RELX_REPLACE_OS_VARS=true</code>.</p>
+<p><code>RELX_REPLACE_OS_VARS=true rel/myapp/bin/myapp start</code></p>
+<p>This will make our release to use the values represented by these special strings. I&#8217;ll explain.</p>
+<p>An Exrm release has two important files: <code>sys.config</code> and <code>vm.args</code>. These files are responsible by the data used in production (usually what&#8217;s in <code>config.exs</code> and <code>prod.exs</code>) and specific configs that we can make of the Erlang VM respectively.</p>
+<h3>sys.config</h3>
+<pre><code class="erlang">[{sasl,[{errlog_type,error}]},
+{logger,
+[{console,
+[{format,&lt;&lt;"$time $metadata[$level] $message\n"&gt;&gt;},
+{metadata,[request_id]}]},
+{level,info}]},
+{myapp,
+[{'Elixir.MyApp.Endpoint',
+[{root,&lt;&lt;"/Users/igorffs/src/myapp"&gt;&gt;},
+{render_errors,[{accepts,[&lt;&lt;"html"&gt;&gt;,&lt;&lt;"json"&gt;&gt;]}]},
+{pubsub,
+[{name,'Elixir.MyApp.PubSub'},
+{adapter,'Elixir.Phoenix.PubSub.PG2'}]},
+{http,[{port,&lt;&lt;"${PORT}"&gt;&gt;}]},
+{url,[{host,&lt;&lt;"localhost"&gt;&gt;}]},
+{cache_static_manifest,&lt;&lt;"priv/static/manifest.json"&gt;&gt;},
+{server,true},
+{secret_key_base,
+&lt;&lt;"${SECRET_KEYBASE}"&gt;&gt;}]},
+{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}]},
+{phoenix,[{generators,[{migration,true},{binary_id,false}]}]}].
+</code></pre>
+<h3>vm.args</h3>
+<pre><code class="erlang">## Name of the node
+-sname myapp
+
+## Cookie for distributed erlang
+-setcookie myapp
+
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+##-heart
+
+## Enable kernel poll and a few async threads
+##+K true
+##+A 5
+
+## Increase number of concurrent ports/sockets
+##-env ERL_MAX_PORTS 4096
+
+## Tweak GC to run more often
+##-env ERL_FULLSWEEP_AFTER 10
+</code></pre>
+<p>Exrm is using a lib called <a href="https://github.com/erlware/relx" target="_blank"><strong>relx</strong></a> under the hood to build its releases. When we exported <code>RELX_REPLACE_OS_VARS=true</code> <code>relx</code> will make a replace of the strings by their correspondent ENV var values in the config files.</p>
+<pre><code class="erlang">{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}
+</code></pre>
+<p>You&#8217;ve noticed where our special strings are in the <code>sys.config</code>, and if you guessed that this process can be done manually, you got it! But this replace really makes things easier for us. Otherwise, we would have to edit every option in the file. It&#8217;s very important to mention, if you change those files, you&#8217;ll have to reboot your application.</p>
+<h2>Considerations</h2>
+<p>This subject is very important if we&#8217;re going on production. It concerned us a bit when we&#8217;ve noticed that we couldn&#8217;t have more dynamic configs. This replacement solution was a relief. Make sure to keep following <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">the discussion I mentioned before</a>, things are probably going to change after it.</p>
+<p>Have you already been in trouble dealing with ENV vars? How did you solve it?</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom" target="_blank"><br />
+<img loading="lazy" decoding="async" class="aligncenter size-full wp-image-5371" style="max-width: 100%;" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/feed/</wfw:commentRss>
+			<slash:comments>10</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tracing and observing your remote node</title>
+		<link>/2016/05/tracing-and-observing-your-remote-node/</link>
+					<comments>/2016/05/tracing-and-observing-your-remote-node/#comments</comments>
+		
+		<dc:creator><![CDATA[Erich Kist]]></dc:creator>
+		<pubDate>Tue, 10 May 2016 22:41:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5387</guid>
+
+					<description><![CDATA[<p>Today we will continue exploring techniques for debugging and tracing Elixir code that are so important for running and understanding production systems. In the past, we have discussed: how to debug your application how to trace systems with Erlyberly how to use the observer to introspect applications. The examples above always connected to systems running ... <a class="read-more-link" href="/2016/05/tracing-and-observing-your-remote-node/">»</a></p>
+<p>The post <a href="/2016/05/tracing-and-observing-your-remote-node/">Tracing and observing your remote node</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we will continue exploring techniques for debugging and tracing Elixir code that are so important for running and understanding production systems.</p>
+<p>In the past, we have discussed:</p>
+<ol>
+<li><a href="/2016/04/debugging-techniques-in-elixir-lang/">how to debug your application</a></li>
+<li><a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/">how to trace systems with Erlyberly</a></li>
+<li><a href="/2015/06/elixir-in-times-of-microservices/">how to use the observer to introspect applications</a>.</li>
+</ol>
+<p>The examples above always connected to systems running locally. Given Elixir&#8217;s and the Erlang VM focus on distributed systems, you may have wondered: can we use the VM capabilities to trace and observe remote nodes?</p>
+<p>Certainly!</p>
+<p>Your application runs as part of the Erlang Runtime System, which is often called a node, as it may connect to other machines. Before we establish such connections, let&#8217;s get to know some concepts and then configure our applications.</p>
+<h2>EPMD</h2>
+<p><strong>Erlang Port Mapper Daemon</strong>, EPMD, acts as a name server on all hosts involved in distributed Erlang communications. When an Erlang node starts, the node has a name and it obtains an address from the host OS kernel. The default port the daemon runs on is 4369 but you can change it with the <a href="http://erlang.org/doc/man/epmd.html#environment_variables"><code>ERL_EPMD_PORT</code> environment variable </a>.</p>
+<p>You can run <code>epmd -names</code> to check the port and the nodes connected:</p>
+<pre><code class="elixir">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 43316
+</code></pre>
+<h2>SSH Port Forwarding</h2>
+<p>Depending on your firewall configuration, the port 4369 from EPMD is blocked by default. We will use port forwarding to redirect our local EPMD port to the remote EPMD with <code>ssh</code>: <code>ssh user@myapp.com -L4369:localhost:4369</code>.</p>
+<p>Therefore, when we start a node locally, it will attempt to register itself to the EPMD running on port 4369, which is effectively forwarded to the remote EPMD. Once our local node registers itself to the remote EPMD, it will be able to find all remote nodes running on the remote EPMD.</p>
+<h2>Configuring the Phoenix application</h2>
+<p>Imagine we want to trace or observe a Phoenix project. In our case, our project was released using <a href="https://github.com/bitwalker/exrm">exrm</a> and our release path in production has a directory called <code>running-config</code>. In this directory we can find the files <code>sys.config</code> and <code>vm.args</code>.</p>
+<p>The file <code>vm.args</code> is responsible for configuring our application when it starts. Let&#8217;s change it as follows:</p>
+<pre><code class="elixir">## Name of the node
+-name myapp@127.0.0.1
+-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001
+
+## Cookie for distributed erlang (you want a really long cookie)
+-setcookie my_cookie
+</code></pre>
+<p>We added a name to your application, set a port range where remote nodes may connect to and chose a cookie secret. If your server was already running, you will need to restart it after changing <code>vm.args</code>.</p>
+<p>After restarting our application, we should see it registered in the remote EPMD:</p>
+<pre><code class="bash">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 9001
+</code></pre>
+<h2>Tracing application</h2>
+<p>After our application is started, we need to change our <code>ssh</code> command to forward to EPMD and our application ports: <code>ssh user@myapp.com -L4369:localhost:4369 -L9001:localhost:9001</code>.</p>
+<p>Now let&#8217;s start the tracing tool locally with the proper cookie options. The tracing tool will register itself to the remote EPMD, via port forwarding, and find our remote application. Once the Erlyberly is started, you should see the following in the remote EPMD:</p>
+<pre><code class="bash">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 9001
+name erlyberly-1460466831146 at port 54420
+</code></pre>
+<h2>Observing application</h2>
+<p>We can also observe a remote system using ssh port forwarding. One option is to establish a remote shell, as explained in the <a href="http://elixir-lang.org/docs/stable/iex/IEx.html">IEx documentation</a>:</p>
+<pre><code class="elixir">$ iex --name mylocalmachine@127.0.0.1 --cookie my_cookie --remsh myapp@127.0.0.1
+</code></pre>
+<p>Now you are connected directly to a remote node and you can introspect it as well as start tools like Observer.</p>
+<p>Alternatively, you can start a new local shell with the same cookie as the remote node:</p>
+<pre><code class="elixir">$ iex --name mylocalmachine@127.0.0.1 --cookie my_cookie
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(mylocalmachine@127.0.0.1)1&gt; :observer.start()
+:ok
+</code></pre>
+<p>The local shell should be registered in the remote EPMD alongside the remote system:</p>
+<pre><code>user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name mylocalmachine at port 50055
+name myapp at port 9001
+</code></pre>
+<p>With Observer open, we can now change the inspected node using the menu &#8216;Nodes > Connect node&#8217;. In the prompt we can fill in the node name. In our example the node is <code>myapp@127.0.0.1</code>.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/05/observer.png" alt="Observer" width="1200" height="974" class="aligncenter size-full wp-image-5392" srcset="/wp-content/uploads/2016/05/observer.png 1200w, /wp-content/uploads/2016/05/observer-300x244.png 300w, /wp-content/uploads/2016/05/observer-768x623.png 768w, /wp-content/uploads/2016/05/observer-1024x831.png 1024w" sizes="(max-width: 1200px) 100vw, 1200px" /></p>
+<h3>Troubleshooting</h3>
+<p>You may receive an error similar to the one below when you try to connect through Observer:</p>
+<pre><code class="elixir">16:38:44.278 [error] [node: :"mylocalmachine@127.0.0.1", call: {:observer_backend, :sys_info, []}, reason: {:badrpc, {:EXIT, {:undef, [{:observer_backend, :sys_info, [], []}, {:rpc, :"-handle_call_call/6-fun-0-", 5, [file: 'rpc.erl', line: 206]}]}}}]
+</code></pre>
+<p>This occurs because the <code>:observer_backend</code> is disabled. You can enable it by adding the <code>:runtime_tools</code> to your application <code>mix.exs</code> file. You can get more details in the <a href="http://erlang.org/doc/man/runtime_tools_app.html">Runtime tools documentation</a>.</p>
+<p>Do you use other techniques to connect to remote nodes? Share your tips with a comment below.</p>
+<hr style="margin-top:30px" />
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-ecto-2-0&#038;utm_content=cta-blog-post-bottom" target="_blank"><br />
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What&#039;s new in Ecto 2.0 -- Reserve your copy" width="831" height="147" class="aligncenter size-full wp-image-5371" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2016/05/tracing-and-observing-your-remote-node/">Tracing and observing your remote node</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/tracing-and-observing-your-remote-node/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

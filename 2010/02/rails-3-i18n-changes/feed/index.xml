@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Rails 3 I18n changes	</title>
+	<atom:link href="/2010/02/rails-3-i18n-changes/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/02/rails-3-i18n-changes/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 07 Feb 2010 13:51:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jon Atack		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-478</link>
+
+		<dc:creator><![CDATA[Jon Atack]]></dc:creator>
+		<pubDate>Sun, 07 Feb 2010 13:51:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-478</guid>
+
+					<description><![CDATA[Very helpful, thanks José.]]></description>
+			<content:encoded><![CDATA[<p>Very helpful, thanks José.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jon Atack		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-932</link>
+
+		<dc:creator><![CDATA[Jon Atack]]></dc:creator>
+		<pubDate>Sun, 07 Feb 2010 13:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-932</guid>
+
+					<description><![CDATA[Very helpful, thanks José.]]></description>
+			<content:encoded><![CDATA[<p>Very helpful, thanks José.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rails 3.0 Beta - 36 Links e artigos para você começar		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-475</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta - 36 Links e artigos para você começar]]></dc:creator>
+		<pubDate>Sat, 06 Feb 2010 18:26:31 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-475</guid>
+
+					<description><![CDATA[[...] Mudanças no I18N do Rails 3 - José Valim mostra as alterações no sistema de internacionalização do (i18n) do Rails 3.0 em relação ao 2.x, mostrando alguns exemplos básicos. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Mudanças no I18N do Rails 3 &#8211; José Valim mostra as alterações no sistema de internacionalização do (i18n) do Rails 3.0 em relação ao 2.x, mostrando alguns exemplos básicos. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rails 3.0 Beta: 36 Links and Resources To Get You Going		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-473</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta: 36 Links and Resources To Get You Going]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2010 23:36:35 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-473</guid>
+
+					<description><![CDATA[[...] Rails 3 I18N Changes - José Valim looks at some internationalization (i18n) changes in Rails 3.0 over 2.x - along with basic examples. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Rails 3 I18N Changes &#8211; José Valim looks at some internationalization (i18n) changes in Rails 3.0 over 2.x &#8211; along with basic examples. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-471</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2010 15:17:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-471</guid>
+
+					<description><![CDATA[Thanks ABT. It was in fact a typo, it was supposed to &quot;are now agnostic&quot; instead of &quot;are not agnostic&quot;. :)]]></description>
+			<content:encoded><![CDATA[<p>Thanks ABT. It was in fact a typo, it was supposed to &#8220;are now agnostic&#8221; instead of &#8220;are not agnostic&#8221;. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/02/rails-3-i18n-changes/comment-page-1/#comment-931</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2010 15:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=669#comment-931</guid>
+
+					<description><![CDATA[Thanks ABT. It was in fact a typo, it was supposed to &quot;are now agnostic&quot; instead of &quot;are not agnostic&quot;. :)]]></description>
+			<content:encoded><![CDATA[<p>Thanks ABT. It was in fact a typo, it was supposed to &#8220;are now agnostic&#8221; instead of &#8220;are not agnostic&#8221;. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

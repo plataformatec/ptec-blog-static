@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>project management « Plataformatec Blog</title>
+	<atom:link href="/tag/project-management/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 18 Oct 2018 23:19:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Two motives why your team is feeling pressured</title>
+		<link>/2018/03/two-motives-why-your-team-is-feeling-pressured/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 09 Mar 2018 13:27:01 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=7274</guid>
+
+					<description><![CDATA[<p>Adding pressure to your team is like adding salt to your food: if you add a little bit, everything will be fine, and the result will be better; if you add more, the result might be better, but your health will suffer; if you add even more, you&#8217;ve just ruined everything, and you need to ... <a class="read-more-link" href="/2018/03/two-motives-why-your-team-is-feeling-pressured/">»</a></p>
+<p>The post <a href="/2018/03/two-motives-why-your-team-is-feeling-pressured/">Two motives why your team is feeling pressured</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Adding pressure to your team is like adding salt to your food: if you add a little bit, everything will be fine, and the result will be better; if you add more, the result might be better, but your health will suffer; if you add even more, you&#8217;ve just ruined everything, and you need to start again (for foods, you can just add potatoes and fix it).</span></p>
+<p><span style="font-weight: 400;"><img fetchpriority="high" decoding="async" class="alignnone wp-image-7275 size-full" src="/wp-content/uploads/2018/03/salt.gif" alt="chef adding salt to food" width="365" height="365" /></span></p>
+<p><span style="font-weight: 400;">From my experience, the two main reasons a team gets stressed and pressured are lack of visibility and lack of predictability.</span></p>
+<h2><strong>Visibility</strong></h2>
+<p><span style="font-weight: 400;">First of all, what is visibility? Visibility is the transparency of your team&#8217;s process. It means allowing all stakeholders to know what you are doing, how you are doing and why you are doing. It doesn&#8217;t mean giving every smallest detail of your process, but they need to have all necessary information to drive their goals according to your team&#8217;s progress.</span></p>
+<p><span style="font-weight: 400;">When stakeholders don&#8217;t have the appropriate visibility, they might underestimate the team&#8217;s capacity and input pressure to see more results. On the other hand, when they have it, it is easier to agree on a sustainable development</span></p>
+<p><span style="font-weight: 400;">To improve visibility on your team, you can:</span></p>
+<ul>
+<li><span style="font-weight: 400;">Have your kanban board always updated.</span></li>
+<li><span style="font-weight: 400;">Retrieve <strong><a href="/?s=metrics">process metrics</a></strong>, so you have numbers when talking to a stakeholder.</span></li>
+<li><span style="font-weight: 400;">Build <strong><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Cumulative Flow </a><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Diagrams</a></strong> so you can show where your team lacks efficiency and stop pressuring the wrong people.</span></li>
+<li><span style="font-weight: 400;">Avoid<strong> <a href="/2017/10/12-common-mistakes-when-using-process-metrics/">common errors when using metrics</a>.</strong></span></li>
+<li><span style="font-weight: 400;">Try to keep your work items as similar as possible regarding size and complexity.</span></li>
+<li><span style="font-weight: 400;">When the latter is not possible or when complexity changes due to discoveries during development (or blocks, as well), make sure this information is somehow visible.</span></li>
+</ul>
+<h2><strong>Predictability</strong></h2>
+<p><span style="font-weight: 400;">Predictability is knowing when you are going to finish a demand, or what you&#8217;ll produce until a specific date. Without that information, you might find yourself always running against time, because you&#8217;ll never know if you are on the right track or not.</span></p>
+<p><span style="font-weight: 400;">Fear of missing a deadline is the most famous cause of pressure in a team, but if you gather the right information throughout the process, you can negotiate:</span></p>
+<ul>
+<li><span style="font-weight: 400;">More time, and you&#8217;ll have the numbers to say how much time you need;</span></li>
+<li><span style="font-weight: 400;">Less scope, and you&#8217;ll have the numbers to say how many stories you can actually deliver by the deadline;</span></li>
+<li><span style="font-weight: 400;">A larger team, and you&#8217;ll have the numbers to say how many people (and their roles) you need to match the deadline. (Disclaimer: this should be your last resource. Changing the team size has different impacts, such as increasing cooperation complexity. I explain some of it on this <strong><a href="/2017/01/the-law-of-diminishing-returns-and-its-impact-on-projects/">blog post about the Law of Diminishing Returns</a></strong>)</span></li>
+</ul>
+<p><span style="font-weight: 400;">In order to achieve that level of predictability, you will need a very good process in place:</span></p>
+<ul>
+<li><span style="font-weight: 400;">Have an efficient <strong><a href="https://www.thoughtworks.com/insights/blog/story-mapping-visual-way-building-product-backlog">Story Mapping</a></strong> to know your backlog.</span></li>
+<li><span style="font-weight: 400;">Break the epics in similar-size stories, using <strong><a href="/2017/01/agile-requirements-talking-about-uncertainty-and-complexity/">complexity and uncertainty analysis</a></strong>.</span></li>
+<li><span style="font-weight: 400;">Start measuring the<strong><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/"> Lead Time</a> </strong>of your team, and do it <strong><a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">from the very beginning of the process until the end</a>,</strong> also registering the amount of time spent in each step of the process.</span></li>
+<li><span style="font-weight: 400;">Start measuring your team&#8217;s throughput and try to have a cadence of delivery, through <strong><a href="/2018/01/wip-limit-a-further-study/">managing</a></strong> or <strong><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">limiting</a></strong> WIP.</span></li>
+<li><span style="font-weight: 400;">Build useful predictions based on the metrics you gathered using <strong><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">statistical analysis and Monte Carlo Simulations</a>.</strong></span></li>
+</ul>
+<h2><strong>Conclusion</strong></h2>
+<p><span style="font-weight: 400;">If you have visibility and predictability in your process, the pressure is easily tunable. You can adjust it in order to improve the overall and long-term performance of the team, without having to deal with hypertension in the future.</span></p>
+<p><span style="font-weight: 400;">Can you say you have a predictable and visible process? Leave your comments below!</span></p>
+<p><a href="/subscribe/"><img decoding="async" class="alignnone size-full wp-image-5259" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" width="831" height="147" srcset="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png 831w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-300x53.png 300w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/03/two-motives-why-your-team-is-feeling-pressured/">Two motives why your team is feeling pressured</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>12 Common mistakes when using Process Metrics</title>
+		<link>/2017/10/12-common-mistakes-when-using-process-metrics/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 26 Oct 2017 15:15:52 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6882</guid>
+
+					<description><![CDATA[<p>We&#8217;ve been advocating in favor of using metrics for a while now, and we have built a lot of content about them. However, we have seen teams that are actively using metrics and not having the desired results. Here I compile the most common mistakes that teams are committing when using metrics, so you&#8217;ll know ... <a class="read-more-link" href="/2017/10/12-common-mistakes-when-using-process-metrics/">»</a></p>
+<p>The post <a href="/2017/10/12-common-mistakes-when-using-process-metrics/">12 Common mistakes when using Process Metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been advocating in favor of using metrics for a while now, and we have built a lot of <a href="/tag/metrics/">content about them</a>. However, we have seen teams that are actively using metrics and not having the desired results.</p>
+<p>Here I compile the most common mistakes that teams are committing when using metrics, so you&#8217;ll know what not to do when adopting them.</p>
+<h2>#1 &#8211; Being reactionless</h2>
+<p>If you collect metrics, you <strong>need</strong> to use them somehow. Therefore, one of the most common mistakes is doing nothing about the metrics you are seeing. Metrics can give you process improvement insights and, to react, you need to understand how they work and what they mean.</p>
+<p>For more information on how to use them, check these blog posts:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Cumulative Flow Diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Throughput and Burn-up Charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Lead Time</a></li>
+</ul>
+<h2>#2 &#8211; Using metrics with few data</h2>
+<p>Another mistake is to use metrics without enough data to support them. At the beginning of a project, or when you just started using metrics, we are often anxious to start gathering results from them. However, with a low amount of data, metrics aren&#8217;t that trustworthy. A good hint is seeing if they are still changing over time or if they are steadier&#8230; When the latter happens, you are probably ready to start analyzing them and act based on results. More on how to act can be found on our <a href="blog.plataformatec.com.br/tag/metrics">metrics blog posts</a>.</p>
+<p>Another hint would be to try daily metrics, check our blog post on them: <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">Pros and cons of using daily metrics</a></p>
+<h2>#3 &#8211; Using metrics without considering their context</h2>
+<p>This is a very common mistake, not only in software development but with every statistically built conclusion. Numbers alone are used just for algebra or calculus. You need the context in which they are inserted to understand them. With that in mind, to say if your throughput is healthy or not, to understand if your lead time variance is big or not, look. at. the. context.</p>
+<h2>#4 &#8211; Comparing metrics between teams</h2>
+<p>This problem is related to number 3. It doesn&#8217;t make any sense to say something like &#8220;team A is doing better than team B because they have a greater throughput&#8221;. What if team A has 10 people and team B has 3? What if team A is working in an easy website development while team B is working with complex deep learning stuff? Be careful.</p>
+<h2>#5 &#8211; Having individual metrics</h2>
+<p>This is a micromanaging problem. People, when trying to improve as much as possible the process, end up measuring individual metrics. This problem is related to #3 and #4. You cannot compare different people. Just don&#8217;t. If you do it, you&#8217;ll be harming your team&#8217;s environment and will even decrease their productivity. Moreover, the process&#8217; metrics should be used to understand the health of the <strong>process</strong>.</p>
+<h2>#6 &#8211; Simplifying metrics reading too much</h2>
+<p>Still related to context, but now the numbers context. If you tell other people that a team delivers on average 4 stories a week, you are saying nothing. Maybe its delivery data is {0, 0, 0, 0, 0, 24}, maybe is {4, 4, 4, 4, 4, 4}. So, be sure that you are not simplifying your metrics reading. Make sure the whole toolset builds the image that you are trying to draw.</p>
+<h2>#7 &#8211; Using only the metrics you want</h2>
+<p>Related to the error before, sometimes we see people having to report their metrics to higher management showing only &#8220;good numbers&#8221;. So, if your throughput increases, you only show your throughput increase. If your backlog decreases, you just show that. Be transparent. Otherwise, they will be living a lie and, when the truth comes up, you won&#8217;t be able to explain yourself.</p>
+<h2>#8 &#8211; Using only the data you want</h2>
+<p>Another related problem is using metrics with only the data you want. Cropping your data to get only relevant results, like in a 10-month project consider only the last 2 months, may make sense since the context of the project changes with time and you wanna make sure you are getting the right context in your results. However, be very careful when doing that because you may actually hide a lot of useful information from yourself.</p>
+<h2>#9 &#8211; &#8220;Cooking&#8221; metrics</h2>
+<p>This is by far the most common thing I see. People are afraid of showing bottlenecks or problems and end up masking their results. People group stories into one to diminish their backlog, break stories into more to increase their throughput or even change story points to keep their velocity. With that, you are only fooling yourself and not improving your process.</p>
+<h2>#10 &#8211; Having metrics-based goals</h2>
+<p>This is a controversial topic. Metrics weren&#8217;t made to be goals. They were created to help the team understand the process and try to improve its flow. Metrics-related goals may put too much pressure on the team and have the opposite effect on them, making one metric reach the desired goal but affecting others. Therefore, before defining a metric-based goal, consider if it needs to be that &#8220;low-level&#8221; and, if it does, confirm with the team if it is actually possible to reach that goal or if there&#8217;s some process inherent impediment to it.</p>
+<h2>#11 &#8211; Trying to decrease lead time at all costs</h2>
+<p>Lead time (LT) is a metric used to understand how long an item takes to pass through your process. So, there are two different questions you can ask the data:</p>
+<ul>
+<li>Is the LT too big?</li>
+<li>Is the LT variance too big?</li>
+</ul>
+<p>The second is often much more important to a team than the first. Having an LT distribution of {0, 5, 2, 8} is usually worse than having one like {4, 4, 4, 4}. That because, in the first, your data is not reliable enough to make predictions, while in the second you have a better probability of getting it right. However, don&#8217;t forget to look at your context.</p>
+<h2>#12 &#8211; Trying to increase throughput instead of being more efficacious</h2>
+<p>Being efficacious is doing the right thing. Throughput is not important if you are not doing the right thing. So, focus on your product, on what is best for it, before caring about how fast you will deliver it.</p>
+<p>What do you think of these mistakes? Have you ever made one of them? Leave your comments below!</p>
+<div style="padding: 40px 0 60px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog"></a></div><p>The post <a href="/2017/10/12-common-mistakes-when-using-process-metrics/">12 Common mistakes when using Process Metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Hard skills on project management</title>
+		<link>/2017/05/hard-skills-on-project-management/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 15 May 2017 18:08:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6343</guid>
+
+					<description><![CDATA[<p>If you are an Agile devotee (capital A, see We are not necessarily Agile… but we are certainly agile!), keep an open mind to read what is coming next. Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill Before we start, if you are ... <a class="read-more-link" href="/2017/05/hard-skills-on-project-management/">»</a></p>
+<p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>If you are an Agile devotee (capital A, see <a href="/2016/12/we-are-not-necessarily-agile-but-we-are-certainly-agile/">We are not necessarily Agile… but we are certainly agile!</a>), keep an open mind to read what is coming next.</p>
+<blockquote><p>
+  Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill
+</p></blockquote>
+<p>Before we start, if you are not familiarized with the terminology, here is a short explanation:</p>
+<ul>
+<li><strong>Soft Skills</strong>: personal attributes that enable someone to interact effectively and harmoniously with other people (<a href="https://www.google.com.br/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=soft+skills">Google</a>).</li>
+<li><strong>Hard Skills</strong>: specific, teachable abilities that can be defined and measured, such as typing, writing, math, reading and the ability to use software programs (<a href="http://www.investopedia.com/terms/h/hard-skills.asp">Investopedia</a>). In this case, we are using the analytical part of it.</li>
+</ul>
+<h2>The rise</h2>
+<p>Before the agile mindset, project managers used to apply the classical engineering style to handle software projects. The PMBOK (Project Management Body of Knowledge) was, and still is, the source of very good practices and tools for project management. And most of them work in regular industries, the ones that are not as organic as the software area.</p>
+<p>However, the software industry misused the PMBOK. They thought all the practices that are mentioned in it were too hard-skilled and wouldn&#8217;t work in a fast-paced environment as the software industry. And yes, it has all those hard-skilled practices (and some of them do not work with software development), but they were all glued together by team-building actions that people ignored at the time (some of which can be seen in the <a href="https://4squareviews.com/2013/06/13/5th-edition-pmbok-guide-chapter-8-human-resources-management-knowledge-area/">Human Resources chapter</a>). But, as I presented in the aforementioned blog, a revolution took place, and made the industry crucify and bury those practices, without even look if they were all really that bad. As a result, they saw themselves tool-less and decided to react and build their own tools.</p>
+<h2>The death</h2>
+<p>With that, came all the Agile methodologies and their toolsets. Moreover, since the industry lacked soft skills at that time (the trend was to act like bosses: telling other people what, when and how to do stuff), a natural path for the revolution was clear: improving soft skills.</p>
+<p>And it happened! At least the new practices facilitate that&#8230; if people apply it or not on a daily basis, it&#8217;s another story. With that mindset in place, the boss image was abandoned and leader figures were created. Focusing on the code quality and not so much on documenting everything. Letting developers get much closer to product stakeholders than before because that communication between them needs to be proxy-less (in a perfect world at least).</p>
+<p>But things were still not smooth. Most companies started using Scrum, improved their process, but reached a stagnation point in which something was wrong, but they didn&#8217;t know what. The team felt better, working this way, but it was more difficult to spot problems in the process. Talking about deadlines with clients became taboo. And scrum masters would basically annoy the business area of the companies, which wanted predictions to improve their plans.</p>
+<p>Basically, the process improved inward: the development team was happier and more effective. But they forgot to improve the technical communication outward: with other areas, with business, marketing, clients, etc. These areas need more data about the software in order to build their plans. And with that in mind, some hard skills, that got lost years ago, came back.</p>
+<h2>The rebirth</h2>
+<p>At Plataformatec we embraced hard skills, as most of our <a href="/tag/metrics/">agile blog posts</a> show it. We think that having good and advanced hard skills is not a sin, we can and should have as many metrics as possible. However, with metrics, comes great responsibility (this is somehow familiar&#8230; <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" />).</p>
+<p>Metrics serve as a way to ease the conversation between areas (or with an external client) and to improve our processes inside the team as well. For both, we need to be cautious and not present loose metrics (showing them without the proper explanation and contextualization). If that happens, they can become a way to demand more work and to micromanage the team&#8217;s deliveries, which, usually, is not healthy. (Another post on the common mistakes when using metrics is on its way&#8230;)</p>
+<p>If you wanna take a step further and improve your hard skills toolset, you can take a look at our <a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=post-hard-skills">free Monte Carlo spreadsheet</a>, which uses Monte Carlo simulations to inform you the probability of finishing your project in each of the next weeks!</p>
+<h2>So&#8230; Which one is more important?</h2>
+<p>Both are extremely important. Soft skills without hard skills make the team happy at work but probably inefficient. Hard skills with no soft skills make the team aware of their problems but with no motivation to change. We need to balance both. I’ve already heard questions like: <em>Oh but should it be like, 50/50? 80/20?</em> And I answer with this question: <em>How would you even measure how much soft skills and hard skills you have?!</em></p>
+<p>So, the conclusion is: have both, improve both, care for both. If you think you already have enough of each, you are likely wrong. This should be the mantra of all project managers/Agile coaches out there&#8230; You must have a motivated team and enough data to facilitate communication and improvement.</p>
+<p>What about you? Do you prefer one skill over the other? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The user story in development was deprioritized, what now?</title>
+		<link>/2017/05/the-user-story-in-development-was-deprioritized-what-now/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 04 May 2017 22:30:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[project manager]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6308</guid>
+
+					<description><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following: Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized ... <a class="read-more-link" href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">»</a></p>
+<p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following:</p>
+<p><img decoding="async" src="/wp-content/uploads/2017/05/card-flow-e1493907975371.png" alt="Kanban" width="400" height="268" class="aligncenter size-full wp-image-6286" style="border:none;"/></p>
+<p>Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized in the middle of its development. But now that it was deprioritized, what happens to story C?</p>
+<p>Well, to answer that, let me make a parallel with an alcohol-based perfume company.</p>
+<p>In the backlog column, the company has the bottle ready to be filled but no fluid yet. When the bottle starts to be filled, the card goes to &#8220;in progress&#8221;. When the bottle is totally filled, the bottle is closed and the card goes to done.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-e1493908094223.png" alt="Perfume flow" width="400" height="275" class="aligncenter size-full wp-image-6287" style="border:none;" /></p>
+<p>So what happens if another perfume suddenly receives a priority greater than the priority of the bottle being filled? Well, as we all know, alcohol-based fluids are volatile and, with time, they will completely evaporate, requiring them to be refilled.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-volatile-e1493908131534.png" alt="Perfume flow volatile" width="400" height="567" class="aligncenter size-full wp-image-6288" style="border:none;" /></p>
+<p>The same happens with the story and its code. With time, the code that is inside the story gets obsolete and unnecessary, losing its value. What to do with the story depends on the following rationales:</p>
+<ul>
+<li><strong>How long will the story C stay in the same stage?</strong>
+<ul>
+<li>If the story stays too long in the same stage, some part of the work may get useless, therefore, you could just remove it from the board and put it back on backlog, since some refining might be needed when this story is chosen gain.</li>
+<li>If the story will stay there for a short time, you may want to leave it there and, when it can be worked on, you may still use what was already developed.</li>
+</ul>
+</li>
+<li><strong>What is the value story C will generate after being done?</strong><br />
+Let&#8217;s say that the return on the development of that feature is small. Is it worth to pause its development and run the risk of investing even more money on the development later? Will the return on its development be greater than the development time?</p>
+</li>
+</ul>
+<p>For this to be true, the following needs to happen (visualized in the chart below):</p>
+<ul>
+<li>$ spent with initial development + $ spent with rest of the development &lt; story C $ return
+<ul>
+<li>The amount spent with rest of the development will increase with time, since the initial development starts to lose value.</li>
+</ul>
+</li>
+<li>If the amount spent is greater than the return, it is better to ignore the functionality. However, this math is not as easy as it seems&#8230; You need to account for risks, increased revenue, increase the number of users of your product, etc. So be careful!</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/chart-1024x768.png" alt="Gráficos" width="1024" height="768" class="aligncenter size-large wp-image-6289" style="border:none;max-width: 99%;" /></p>
+<p>Therefore, based on those, you can possibly do four things:</p>
+<ul>
+<li><strong>Leave it on the column and restart it when its priority arrives</strong><br />
+The pause will be fast and will not harm the development of the card. In this case, it is important to flag the story somehow so that the whole team can see that the story is &#8220;blocked&#8221; by the P.O. due to its prioritization.</p>
+</li>
+<li>
+<p><strong>Take it back to the backlog, and restart it when its priority arrives</strong><br />
+The pause will be long and the card will need more refinement.</p>
+</li>
+<li>
+<p><strong>Finish it first, before getting another card</strong><br />
+The card is almost done, and if you stop it, it will not generate value anymore.</p>
+</li>
+<li>
+<p><strong>Cancel the card</strong><br />
+The card is a long way from being finished, and its value is too small to pay for the time it will be paused.</p>
+</li>
+</ul>
+<p>It is also important to notice that this should NOT be a common thing in your process. If it is happening too often, you may need to work on your prioritizations!</p>
+<p>What are your thoughts on the topic? Leave your comments below <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Bringing continuous improvements into your agile process: A different Daily Meeting</title>
+		<link>/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 24 Mar 2017 15:45:58 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=6213</guid>
+
+					<description><![CDATA[<p>Congratulations on holding the Reality Check ceremony! You never had the same problem again and now your business plan changes faster according to the nuances of your development plan. (To check what I&#8217;m talking about, check the first blog post of this series: Bringing continuous improvements into your agile process: The Reality Check Ceremony). Your ... <a class="read-more-link" href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">»</a></p>
+<p>The post <a href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">Bringing continuous improvements into your agile process: A different Daily Meeting</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Congratulations on holding the Reality Check ceremony! You never had the same problem again and now your business plan changes faster according to the nuances of your development plan. (To check what I&#8217;m talking about, check the first blog post of this series: <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/">Bringing continuous improvements into your agile process: The Reality Check Ceremony</a>).</p>
+<p>Your product starts to get fancier, and your clients begin to subscribe&#8230; That is just amazing! However, your team is feeling a little unmotivated. You start participating on their retrospectives to check how you can help and you see a pattern: people are complaining, in other words, the Agile Specialist is micromanaging everyone.</p>
+<p>You decide to closely follow the team during a month, investigating what are the things happening there that are discouraging them. Suddenly, you see yourself in a daily meeting, in which everyone talks about what they did and what they&#8217;ll do. Soon enough you spot the problem: they are using the daily meeting to report work instead of spreading knowledge and removing blocks. But what now? How to achieve those goals without the reporting feeling?</p>
+<hr />
+<p>The feeling of a micromanaging daily ceremony always caught me while working in the industry as a developer. I always thought people wanted me to report what I was doing, with the intention of knowing exactly how efficient I was. That caused different kinds of behaviors, the most common was to do more things at once, to show I was working more.</p>
+<p>However, doing more tasks at the same time might slow everything down, make your work less valuable and affect the rest of the team. More on that subject can be found in these blog posts:<br />
+* <a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a><br />
+* <a href="/2017/02/the-hero-syndrome-and-how-to-deal-with-it/">The Hero Syndrome and how to deal with it</a></p>
+<p>Therefore, to overcome that situation, we at Plataformatec started using a different approach in the daily meeting. We saw that the problem of the &#8220;old way&#8221; was that teams were focusing on what <strong>each person</strong> did instead of on the progress of the project itself. With that in mind, we just changed the focus. Instead of asking people what they did, we started asking cards.</p>
+<p>No, we are not going mad (I guess)&#8230; And of course, we didn&#8217;t talk to a post-it either (even though talking to inanimate objects may help on development, like <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber ducks</a>). However, we changed the way we asked things. Here is how we do it:</p>
+<p>We go over the board, from right to left, asking the whole team how is each card&#8217;s development:</p>
+<ul>
+<li>How is its development? Any technical difficulties?</li>
+<li>Is there anything blocking its development?</li>
+</ul>
+<p>You may say that it is not that different from what a usual Daily Meeting looks like. However, let me point out the differences and their importance:</p>
+<ul>
+<li><strong>We look at the cards on the board, from right to left.</strong> By looking at the card further in the process, we are looking at the feature that will most likely bring value in the short term.</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/kanban-en.png" alt="Kanban" width="961" height="462" class="aligncenter size-full wp-image-6216" srcset="/wp-content/uploads/2017/03/kanban-en.png 961w, /wp-content/uploads/2017/03/kanban-en-300x144.png 300w, /wp-content/uploads/2017/03/kanban-en-768x369.png 768w" sizes="(max-width: 961px) 100vw, 961px" /></p>
+<ul>
+<li><strong>The questions are directed to the team, not to a person.</strong> Asking the whole team about a card brings back the team sense that we lose asking individuals. It shows that we don’t care about who is working on it, and how much. We care about that project&#8217;s development.</p>
+</li>
+<li>
+<p><strong>The questions&#8217; subject is not &#8220;you&#8221; anymore, it is &#8220;it&#8221;.</strong> We used to ask things like &#8220;What have <strong>you</strong> done the past day? What are the blocks that <strong>you</strong> had?&#8221; etc. By changing the subject, you reinforce that the focus is on the feature development, and you also make the team talk only about what is important to the project, and not about peripheral topics.</p>
+</li>
+<li>
+<p><strong>Extra: We simply look more at the board.</strong> Yes, that simple. You probably experienced that, with time, people start to not spend as much time as they did at the beginning of the project looking at the board. The simple fact that we are using it to run the ceremony, brings attention to it and we can easily spot when someone is overworking, when a card has been at the same column for too long or other related issues.</p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<p>What we suggest here is not a big change, actually, is pretty subtle. Instead of focusing on what people did, focus on what is being developed. You&#8217;ll see great improvements in people&#8217;s feelings, everyone will be in touch with the process everyday through the board and, as the famous Lean quote states, people will <em>stop starting tasks and start finishing them</em>.</p>
+<p>What do you think? Would you use this method? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"></a>
+</div><p>The post <a href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">Bringing continuous improvements into your agile process: A different Daily Meeting</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Definição de prazo em projetos de software</title>
+		<link>/2017/03/definicao-de-prazo-em-projetos-de-software/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 09 Mar 2017 21:04:35 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[process monitoring]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[software development practices]]></category>
+		<guid isPermaLink="false">/?p=6149</guid>
+
+					<description><![CDATA[<p>Este é um dos capítulos do nosso mais novo ebook &#8220;Como lidar com prazos em projetos de software&#8221;. Faça o download agora. É grátis! . Esta ação é mais indicada antes de começar um projeto ou nas primeiras semanas de desenvolvimento, pois é quando normalmente há mais flexibilidade para mudanças de prazos. Na nossa experiência, ... <a class="read-more-link" href="/2017/03/definicao-de-prazo-em-projetos-de-software/">»</a></p>
+<p>The post <a href="/2017/03/definicao-de-prazo-em-projetos-de-software/">Definição de prazo em projetos de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="border:solid 1px #FFE041; background-color:#FFF9CA; padding:10px 15px; font:13px Gotham, Helvetica Neue, Helvetica, Arial,' sans-serif';line-height:1.8em;">Este é um dos capítulos do nosso mais novo ebook &#8220;Como lidar com prazos em projetos de software&#8221;. <a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=link" target="_blank">Faça o download agora. <strong>É grátis!</strong></a> .</div>
+<p>Esta ação é mais indicada antes de começar um projeto ou nas primeiras semanas de desenvolvimento, pois é quando normalmente há mais flexibilidade para mudanças de prazos.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/definicao-prazo-projetos-software.png" alt="" width="892" height="440" class="aligncenter size-full wp-image-6150" style="border:none;" srcset="/wp-content/uploads/2017/03/definicao-prazo-projetos-software.png 892w, /wp-content/uploads/2017/03/definicao-prazo-projetos-software-300x148.png 300w, /wp-content/uploads/2017/03/definicao-prazo-projetos-software-768x379.png 768w" sizes="(max-width: 892px) 100vw, 892px" /></p>
+<p>Na nossa experiência, já vimos diversos motivos para uma definição de prazo imprópria em um projeto, no entanto a mais recorrente é a falta ou falha de comunicação entre o CTO e o CEO. Com isso, vamos focar em como melhorar essa comunicação para que seja possível alinhar as decisões de negócio com as decisões de tecnologia.</p>
+<p>Sabe-se que a área de desenvolvimento de software segue processos que diferem não só do resto da indústria mas muitas vezes difere também das outras áreas na mesma empresa. A quantidade de incertezas são, geralmente, maiores e faz com que o tempo para terminar um projeto seja altamente variável mesmo quando, aparentemente, tenha natureza conhecida. E essa diferença precisa ser entendida por ambos CTO e CEO.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-middle" target=_blank""><br />
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p>
+<p>As causas desse desalinhamento podem ser:</p>
+<ol>
+<li><strong>Falta de comunicação</strong> quando decisões de negócio e tecnologia são tomadas. Essas duas decisões precisam estar em constante harmonia pois uma é o que impulsiona a outra.</li>
+<li><strong>Falta de priorização</strong> das demandas. Às vezes existem muitas features para serem desenvolvidas de uma vez, sem qualquer priorização. Isso faz com que o processo de desenvolvimento fique saturado e demore para dar vazão a toda essa demanda.</li>
+<li><strong>Conflito de mentalidade</strong>. Devido aos diferentes backgrounds dos envolvidos e, portanto, diferentes visões sobre a empresa, a relação entre CTO e CEO pode se tornar deficiente e conflitante. Isso impede a evolução do processo por não haver acordos.</li>
+</ol>
+<p>Por mais que seja possível dar um manual com um passo-a-passo do que se deve fazer para melhorar essa relação, tudo se resumiria a uma ação: melhorar a comunicação.</p>
+<p>Quando você se encontra em posições de alta responsabilidade, você precisa ter um entendimento maior dos seus pares e o trabalho que estes exercem para que consigam, juntos, traçar o futuro da empresa. Por isso, para melhorar a comunicação, é necessário entender melhor como funciona a tomada de decisões do CEO, quais são as estratégias da empresa para os próximos meses e anos e porque elas são importantes.</p>
+<p>Com isso feito, é necessária a explicação de como um processo de desenvolvimento de software difere de outros processos, e como lidar com isso da melhor maneira possível. Com ambas as partes a par dos caminhos que precisam ser tomados, é possível alinhar prazos de modo mais fácil.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-bottom" target=_blank""><br />
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="Como lidar com prazo em projetos de software [e-book gratuito]" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/03/definicao-de-prazo-em-projetos-de-software/">Definição de prazo em projetos de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

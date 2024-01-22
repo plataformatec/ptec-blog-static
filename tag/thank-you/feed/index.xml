@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>thank you « Plataformatec Blog</title>
+	<atom:link href="/tag/thank-you/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 15 Aug 2014 16:34:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Thank you, Carlos Antonio!</title>
+		<link>/2014/08/thank-you-carlos-antonio/</link>
+					<comments>/2014/08/thank-you-carlos-antonio/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 15 Aug 2014 12:40:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[thank you]]></category>
+		<guid isPermaLink="false">/?p=4159</guid>
+
+					<description><![CDATA[<p>Carlos Antônio, our first employee, is moving forward after 5 years at Plataformatec. In this blog post, we share a bit about our story, open source projects, and what Carlos is leaving as legacy to us.</p>
+<p>The post <a href="/2014/08/thank-you-carlos-antonio/">Thank you, Carlos Antonio!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we reach the end of a trip. <a href="https://twitter.com/cantoniodasilva">Carlos Antonio</a>, our first employee, is moving forward after 5 years at Plataformatec.</p>
+<p>During this time, we have learned a lot, made some mistakes, grew together as people and as a company. In this blog post, we would like to share a bit of this story and what Carlos is leaving as legacy to us.</p>
+<h3>A story about Open Source</h3>
+<p>Carlos&#8217; relationship with Plataformatec started with Open Source. When Carlos joined our team, back in August 2009, Plataformatec existed as a company only for 6 months and we were very excited to have him aboard. After all, he was the #1 employee.</p>
+<p>At the time, the choice was really clear: Carlos had done many contributions to our only Open Source project at that point, <a href="http://github.com/josevalim/inherited_resources">Inherited Resources</a>, and from his contributions we observed many of the traits that he exhibited throughout his stay at Plataformatec: tidy code, excellent communication skills and a great ability to evaluate trade-offs.</p>
+<p>Being our first employee, Carlos helped us perpetuate those qualities as part of Plataformatec&#8217;s culture.</p>
+<h3>Focused</h3>
+<p>We often promote feedback between our team members and one word that was frequently used to describe Carlos is: focused.</p>
+<p>Focus, on its own, can be a dangerous trait. Some people can focus and, as a consequence, lose the ability to understand how all components fit together. However, that was not Carlos&#8217; case, as he aimed at having a holistic view of his environment and tasks, their causes and consequences. For example:</p>
+<ul>
+<li>
+<p>As the company grew, Carlos was always interested in understanding and participating in its diverse activities</p>
+</li>
+<li>
+<p>At every project he worked, he was attentive to what makes the project important to the client. This often showed up when prioritizing features as Carlos would ask: &#8220;which one brings more value to the client?&#8221;</p>
+</li>
+<li>
+<p>At the code level, Carlos sees how every piece of the application fits the whole design</p>
+</li>
+</ul>
+<p>Then, as a consequence of knowing how the involved components work, Carlos could always focus and reach a particular component to improve, fix or discuss it with precision.</p>
+<h3>Discussing trade-offs</h3>
+<p>My favorite quality in Carlos is his ability to understand and evaluate trade-offs.</p>
+<p>When working together on a project, if I was unsure which solution would be the best to take, I could always call Carlos and have a quick discussion. I would expose the options I had evaluated so far, Carlos would help me expand them, maybe add some options of his own, and we would debate which one would suit best the current project.</p>
+<p>In those discussions, I never had to worry about proposing something silly nor have I heard Carlos saying &#8220;we don&#8217;t do X&#8221;. If something was a bad fit, Carlos often guided me to understand why that was a bad option on my own.</p>
+<p>Of course, this always worked both ways. When Carlos had to call someone to discuss a possible solution, he was always open to the team feedback, suggestions and so on.</p>
+<h3>Farewell?</h3>
+<p>Most of all, Carlos is a great Open Source partner.</p>
+<p>After Carlos joined us, we started a great partnership towards Open Source. Carlos and I were the ones behind the conception of both <a href="https://github.com/plataformatec/devise">Devise</a> and <a href="https://github.com/plataformatec/simple_form">Simple Form</a> which would become the biggest Open Source projects from Plataformatec inside the Rails community.</p>
+<p>Carlos is also a member of the Rails Core Team which means there are still plenty of opportunity for us to work together on Devise, Simple Form, and many other Open Source projects to come.</p>
+<p>This is the end of a trip but definitely not the end of the journey.</p>
+<p>We&#8217;ll see you around, Carlos!</p><p>The post <a href="/2014/08/thank-you-carlos-antonio/">Thank you, Carlos Antonio!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/08/thank-you-carlos-antonio/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

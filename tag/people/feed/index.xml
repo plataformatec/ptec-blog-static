@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>people « Plataformatec Blog</title>
+	<atom:link href="/tag/people/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 01 Mar 2018 13:30:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Meetings Are Not Sacred</title>
+		<link>/2018/02/meetings-are-not-sacred/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 28 Feb 2018 20:12:58 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[people]]></category>
+		<guid isPermaLink="false">/?p=7236</guid>
+
+					<description><![CDATA[<p>I&#8217;ve seen people juggle time to be able to schedule all meetings that they were supposed to have. But is that necessary? Is it a sin to have a sprint with no retrospective? A day without a standup meeting? Or a process with no meetings at all? In this post, I&#8217;ll discuss the possibilities that ... <a class="read-more-link" href="/2018/02/meetings-are-not-sacred/">»</a></p>
+<p>The post <a href="/2018/02/meetings-are-not-sacred/">Meetings Are Not Sacred</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">I&#8217;ve seen people juggle time to be able to schedule all meetings that they were supposed to have. But is that necessary? Is it a sin to have a sprint with no retrospective? A day without a standup meeting? Or a process with no meetings at all?</span></p>
+<p><span style="font-weight: 400;">In this post, I&#8217;ll discuss the possibilities that exist when we talk about changing a schedule. As a summary, you can reach out to the following table:</span></p>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-7237" src="/wp-content/uploads/2018/02/table-1024x406.png" alt="" width="1024" height="406" srcset="/wp-content/uploads/2018/02/table-1024x406.png 1024w, /wp-content/uploads/2018/02/table-300x119.png 300w, /wp-content/uploads/2018/02/table-768x305.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<h2><strong>Intentional x Unintentional</strong></h2>
+<p><span style="font-weight: 400;">So, there are typically two different types of motives that make you change the schedule: intentional and unintentional. With unintentional motives, such as holidays, you don’t have much to do with it. On the other hand, if the reason is intentional, such as a tight deadline, you should be more careful.</span></p>
+<p><span style="font-weight: 400;">Meetings are not sacred, but they are there for a reason. So, if you are changing your schedule intentionally, based on deadlines or whatever motive, think twice if that is the best option. When you have a tight deadline, you might be pressured to avoid retrospectives, for example. But will those 2 hours really save you? They might, but make sure of that. And if you are changing the schedule often, maybe you should look at why you are doing that.</span></p>
+<p><span style="font-weight: 400;">Either way, if you decided to change the team meetings schedule, here are some tips related to the available options.</span></p>
+<h2><strong>Rescheduling</strong></h2>
+<p><span style="font-weight: 400;">Rescheduling a meeting is the most usual option. A team might postpone it until next week, for example. And that is fine, but think about the best days and times for having it.</span></p>
+<p><span style="font-weight: 400;">Some points to consider are:</span></p>
+<p><span style="font-weight: 400;">* Avoid scheduling too many meetings on the same day.</span></p>
+<p><span style="font-weight: 400;">* Prefer scheduling meetings at the beginning/end of the day, so people have more &#8220;uninterrupted time&#8221; to work.</span></p>
+<p><span style="font-weight: 400;">* Be sure that only the people who are important to the meeting are being invited.</span></p>
+<h2><strong>Canceling</strong></h2>
+<p><span style="font-weight: 400;">If you don&#8217;t find a good time slot to reschedule, maybe you should cancel that meeting and wait for the next one. Canceling a meeting doesn&#8217;t suggest weakness. It doesn&#8217;t imply you are not agile. In fact, it may just suggest the opposite.</span></p>
+<h2><strong>Combining</strong></h2>
+<p><span style="font-weight: 400;">An option that I&#8217;ve seen people choose is to combine meetings. Imagine a team that wants to improve their efficiency, therefore, they joined the planning and retrospective meetings so that they would have just one time slot reserved for meetings during the week. So, either you end up with a long meeting, in which people will rapidly lose interest and you won&#8217;t achieve the objectives, or you&#8217;ll end up with a meeting that has too many objectives for a small amount of time.</span></p>
+<p><span style="font-weight: 400;">Combining usually harms one of the two meetings. It is already hard to leave a room with one objective fulfilled, imagine having to leave with two or more?</span></p>
+<h2><strong>Remember! Analyze the necessity of a meeting!</strong></h2>
+<p><span style="font-weight: 400;">I said before that meetings are there for a reason. And sometimes you need to look at the reason. Do you really need a retrospective on your process? Do you really need a daily meeting?</span></p>
+<p><span style="font-weight: 400;">That should not be a taboo around your team! Discuss the necessity of every single meeting. If your peers think they will do ok without a retrospective, try it. If they think the daily meeting is dull, try changing its cadence. It is not a crime to do so. Customize your process.</span></p>
+<p><span style="font-weight: 400;">How about you? Are meetings sacred for you? Leave a comment below!</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><a href="/subscribe/"><img decoding="async" class="alignnone size-full wp-image-5259" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" width="831" height="147" srcset="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png 831w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-300x53.png 300w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/02/meetings-are-not-sacred/">Meetings Are Not Sacred</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

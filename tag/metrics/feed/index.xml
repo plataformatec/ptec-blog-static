@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>metrics « Plataformatec Blog</title>
+	<atom:link href="/tag/metrics/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 18 Oct 2018 23:19:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How to report metrics to C-level executives</title>
+		<link>/2018/03/how-to-report-metrics-to-c-level-executives/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 21 Mar 2018 20:29:11 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<guid isPermaLink="false">/?p=7350</guid>
+
+					<description><![CDATA[<p>One common mistake when passing information to C-level executives is overwhelming them with details that they don&#8217;t understand or that they just don&#8217;t care. The lack of alignment on what to send them may give you a hard time when adopting new techniques, such as process metrics analysis. In this blog post, I&#8217;ll explain how ... <a class="read-more-link" href="/2018/03/how-to-report-metrics-to-c-level-executives/">»</a></p>
+<p>The post <a href="/2018/03/how-to-report-metrics-to-c-level-executives/">How to report metrics to C-level executives</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">One common mistake when passing information to C-level executives is overwhelming them with details that they don&#8217;t understand or that they just don&#8217;t care. The lack of alignment on what to send them may give you a hard time when adopting new techniques, such as process metrics analysis. In this blog post, I&#8217;ll explain how we usually present that kind of information in a way that doesn&#8217;t confuse the reader and, at the same time, contains all essential information.</span></p>
+<p><span style="font-weight: 400;">*As a disclaimer, when I mention &#8220;CTO&#8221;, I want to talk about whoever is in charge of technology, &#8220;CPO&#8221; as the head of products and &#8220;CEO&#8221; as the strategy person. Depending on the size and culture of your company, one person might have more than one of those roles.</span></p>
+<h2><strong>CEO and the burnup-chart</strong></h2>
+<p><span style="font-weight: 400;">The CEO will probably not have time to read all of your metrics and understand them. However, they need enough information to plan for the future.</span></p>
+<p><span style="font-weight: 400;">We usually present the <a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts">burn-up chart</a>. It contains a good summary of the team&#8217;s progress and, more important than that, it displays forecasts for each planned release.</span></p>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-7351" src="/wp-content/uploads/2018/03/burnup-1024x431.png" alt="" width="1024" height="431" srcset="/wp-content/uploads/2018/03/burnup-1024x431.png 1024w, /wp-content/uploads/2018/03/burnup-300x126.png 300w, /wp-content/uploads/2018/03/burnup-768x323.png 768w, /wp-content/uploads/2018/03/burnup.png 1870w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<h2><strong>CTO and failure demand</strong></h2>
+<p><span style="font-weight: 400;">To your CTO, I believe that, other than clear information on how many stories the team is delivering, the most critical metric is the percentage of time/throughput spent with bugs and chores. With it, he/she can evaluate the codebase quality and act upon it.</span></p>
+<p><img decoding="async" class="size-large wp-image-7352" src="/wp-content/uploads/2018/03/throughput-1024x463.png" alt="throughput chart showing data" width="1024" height="463" srcset="/wp-content/uploads/2018/03/throughput-1024x463.png 1024w, /wp-content/uploads/2018/03/throughput-300x136.png 300w, /wp-content/uploads/2018/03/throughput-768x347.png 768w, /wp-content/uploads/2018/03/throughput.png 1793w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<h2><strong>CPO and lead time</strong></h2>
+<p><span style="font-weight: 400;">Another relevant piece of information that you may need to share is <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">lead time statistics</a>, not with the CEO/CTO, but with the CPO. That person needs to know how long it takes to implement and deploy a new feature. Otherwise, the company might live under constant pressure and with the familiar feeling that the technology department never meets the product goals.</span></p>
+<p><img decoding="async" class="alignnone size-large wp-image-7353" src="/wp-content/uploads/2018/03/leadtime-1024x435.png" alt="lead time chart" width="1024" height="435" srcset="/wp-content/uploads/2018/03/leadtime-1024x435.png 1024w, /wp-content/uploads/2018/03/leadtime-300x127.png 300w, /wp-content/uploads/2018/03/leadtime-768x326.png 768w, /wp-content/uploads/2018/03/leadtime.png 1866w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<h2><strong>General reports</strong></h2>
+<p><span style="font-weight: 400;">Sometimes, we&#8217;ll find ourselves having to report what we&#8217;ve done. Maybe stakeholders haven&#8217;t seen many changes in the last weeks, or perhaps that&#8217;s just how things work in your company. It may happen due to many backend tasks, because you had to refactor something, etc. Either way, what I always try to do in those cases is to explain the task goals business-wise. Here are some examples:</span></p>
+<p><span style="font-weight: 400;">Update rails ~&gt; We had to update our rails version to improve the security of our app and guarantee that our customers&#8217; information is not threatened.</span></p>
+<p><span style="font-weight: 400;">Refactor bad_code.rb ~&gt; We had to use some time rewriting and dividing this file because it was common to have to change things in it, and each time we had to do so, we spent days trying to understand it and being careful not to break anything. Therefore, doing this, we expect to improve our development efficiency and deploy future features faster.</span></p>
+<h2><strong>Conclusion</strong></h2>
+<p><span style="font-weight: 400;">Different roles need different information to accomplish their goals. Don&#8217;t overwhelm people with data they don&#8217;t need. In the end, even though it may seem counter-intuitive, you can increase the visibility by decreasing the amount of information you give.</span></p>
+<p><span style="font-weight: 400;">What do you think? Do you agree with us? Leave your comments below!</span></p>
+<p><a href="/subscribe/"><img loading="lazy" decoding="async" class="alignnone size-full wp-image-5259" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" width="831" height="147" srcset="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png 831w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-300x53.png 300w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/03/how-to-report-metrics-to-c-level-executives/">How to report metrics to C-level executives</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>12 Common mistakes when using Process Metrics</title>
+		<link>/2017/10/12-common-mistakes-when-using-process-metrics/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 26 Oct 2017 15:15:52 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6882</guid>
+
+					<description><![CDATA[<p>We&#8217;ve been advocating in favor of using metrics for a while now, and we have built a lot of content about them. However, we have seen teams that are actively using metrics and not having the desired results. Here I compile the most common mistakes that teams are committing when using metrics, so you&#8217;ll know ... <a class="read-more-link" href="/2017/10/12-common-mistakes-when-using-process-metrics/">»</a></p>
+<p>The post <a href="/2017/10/12-common-mistakes-when-using-process-metrics/">12 Common mistakes when using Process Metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been advocating in favor of using metrics for a while now, and we have built a lot of <a href="/tag/metrics/">content about them</a>. However, we have seen teams that are actively using metrics and not having the desired results.</p>
+<p>Here I compile the most common mistakes that teams are committing when using metrics, so you&#8217;ll know what not to do when adopting them.</p>
+<h2>#1 &#8211; Being reactionless</h2>
+<p>If you collect metrics, you <strong>need</strong> to use them somehow. Therefore, one of the most common mistakes is doing nothing about the metrics you are seeing. Metrics can give you process improvement insights and, to react, you need to understand how they work and what they mean.</p>
+<p>For more information on how to use them, check these blog posts:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Cumulative Flow Diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Throughput and Burn-up Charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Lead Time</a></li>
+</ul>
+<h2>#2 &#8211; Using metrics with few data</h2>
+<p>Another mistake is to use metrics without enough data to support them. At the beginning of a project, or when you just started using metrics, we are often anxious to start gathering results from them. However, with a low amount of data, metrics aren&#8217;t that trustworthy. A good hint is seeing if they are still changing over time or if they are steadier&#8230; When the latter happens, you are probably ready to start analyzing them and act based on results. More on how to act can be found on our <a href="blog.plataformatec.com.br/tag/metrics">metrics blog posts</a>.</p>
+<p>Another hint would be to try daily metrics, check our blog post on them: <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">Pros and cons of using daily metrics</a></p>
+<h2>#3 &#8211; Using metrics without considering their context</h2>
+<p>This is a very common mistake, not only in software development but with every statistically built conclusion. Numbers alone are used just for algebra or calculus. You need the context in which they are inserted to understand them. With that in mind, to say if your throughput is healthy or not, to understand if your lead time variance is big or not, look. at. the. context.</p>
+<h2>#4 &#8211; Comparing metrics between teams</h2>
+<p>This problem is related to number 3. It doesn&#8217;t make any sense to say something like &#8220;team A is doing better than team B because they have a greater throughput&#8221;. What if team A has 10 people and team B has 3? What if team A is working in an easy website development while team B is working with complex deep learning stuff? Be careful.</p>
+<h2>#5 &#8211; Having individual metrics</h2>
+<p>This is a micromanaging problem. People, when trying to improve as much as possible the process, end up measuring individual metrics. This problem is related to #3 and #4. You cannot compare different people. Just don&#8217;t. If you do it, you&#8217;ll be harming your team&#8217;s environment and will even decrease their productivity. Moreover, the process&#8217; metrics should be used to understand the health of the <strong>process</strong>.</p>
+<h2>#6 &#8211; Simplifying metrics reading too much</h2>
+<p>Still related to context, but now the numbers context. If you tell other people that a team delivers on average 4 stories a week, you are saying nothing. Maybe its delivery data is {0, 0, 0, 0, 0, 24}, maybe is {4, 4, 4, 4, 4, 4}. So, be sure that you are not simplifying your metrics reading. Make sure the whole toolset builds the image that you are trying to draw.</p>
+<h2>#7 &#8211; Using only the metrics you want</h2>
+<p>Related to the error before, sometimes we see people having to report their metrics to higher management showing only &#8220;good numbers&#8221;. So, if your throughput increases, you only show your throughput increase. If your backlog decreases, you just show that. Be transparent. Otherwise, they will be living a lie and, when the truth comes up, you won&#8217;t be able to explain yourself.</p>
+<h2>#8 &#8211; Using only the data you want</h2>
+<p>Another related problem is using metrics with only the data you want. Cropping your data to get only relevant results, like in a 10-month project consider only the last 2 months, may make sense since the context of the project changes with time and you wanna make sure you are getting the right context in your results. However, be very careful when doing that because you may actually hide a lot of useful information from yourself.</p>
+<h2>#9 &#8211; &#8220;Cooking&#8221; metrics</h2>
+<p>This is by far the most common thing I see. People are afraid of showing bottlenecks or problems and end up masking their results. People group stories into one to diminish their backlog, break stories into more to increase their throughput or even change story points to keep their velocity. With that, you are only fooling yourself and not improving your process.</p>
+<h2>#10 &#8211; Having metrics-based goals</h2>
+<p>This is a controversial topic. Metrics weren&#8217;t made to be goals. They were created to help the team understand the process and try to improve its flow. Metrics-related goals may put too much pressure on the team and have the opposite effect on them, making one metric reach the desired goal but affecting others. Therefore, before defining a metric-based goal, consider if it needs to be that &#8220;low-level&#8221; and, if it does, confirm with the team if it is actually possible to reach that goal or if there&#8217;s some process inherent impediment to it.</p>
+<h2>#11 &#8211; Trying to decrease lead time at all costs</h2>
+<p>Lead time (LT) is a metric used to understand how long an item takes to pass through your process. So, there are two different questions you can ask the data:</p>
+<ul>
+<li>Is the LT too big?</li>
+<li>Is the LT variance too big?</li>
+</ul>
+<p>The second is often much more important to a team than the first. Having an LT distribution of {0, 5, 2, 8} is usually worse than having one like {4, 4, 4, 4}. That because, in the first, your data is not reliable enough to make predictions, while in the second you have a better probability of getting it right. However, don&#8217;t forget to look at your context.</p>
+<h2>#12 &#8211; Trying to increase throughput instead of being more efficacious</h2>
+<p>Being efficacious is doing the right thing. Throughput is not important if you are not doing the right thing. So, focus on your product, on what is best for it, before caring about how fast you will deliver it.</p>
+<p>What do you think of these mistakes? Have you ever made one of them? Leave your comments below!</p>
+<div style="padding: 40px 0 60px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog"></a></div><p>The post <a href="/2017/10/12-common-mistakes-when-using-process-metrics/">12 Common mistakes when using Process Metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Hard skills on project management</title>
+		<link>/2017/05/hard-skills-on-project-management/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 15 May 2017 18:08:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6343</guid>
+
+					<description><![CDATA[<p>If you are an Agile devotee (capital A, see We are not necessarily Agile… but we are certainly agile!), keep an open mind to read what is coming next. Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill Before we start, if you are ... <a class="read-more-link" href="/2017/05/hard-skills-on-project-management/">»</a></p>
+<p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>If you are an Agile devotee (capital A, see <a href="/2016/12/we-are-not-necessarily-agile-but-we-are-certainly-agile/">We are not necessarily Agile… but we are certainly agile!</a>), keep an open mind to read what is coming next.</p>
+<blockquote><p>
+  Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill
+</p></blockquote>
+<p>Before we start, if you are not familiarized with the terminology, here is a short explanation:</p>
+<ul>
+<li><strong>Soft Skills</strong>: personal attributes that enable someone to interact effectively and harmoniously with other people (<a href="https://www.google.com.br/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=soft+skills">Google</a>).</li>
+<li><strong>Hard Skills</strong>: specific, teachable abilities that can be defined and measured, such as typing, writing, math, reading and the ability to use software programs (<a href="http://www.investopedia.com/terms/h/hard-skills.asp">Investopedia</a>). In this case, we are using the analytical part of it.</li>
+</ul>
+<h2>The rise</h2>
+<p>Before the agile mindset, project managers used to apply the classical engineering style to handle software projects. The PMBOK (Project Management Body of Knowledge) was, and still is, the source of very good practices and tools for project management. And most of them work in regular industries, the ones that are not as organic as the software area.</p>
+<p>However, the software industry misused the PMBOK. They thought all the practices that are mentioned in it were too hard-skilled and wouldn&#8217;t work in a fast-paced environment as the software industry. And yes, it has all those hard-skilled practices (and some of them do not work with software development), but they were all glued together by team-building actions that people ignored at the time (some of which can be seen in the <a href="https://4squareviews.com/2013/06/13/5th-edition-pmbok-guide-chapter-8-human-resources-management-knowledge-area/">Human Resources chapter</a>). But, as I presented in the aforementioned blog, a revolution took place, and made the industry crucify and bury those practices, without even look if they were all really that bad. As a result, they saw themselves tool-less and decided to react and build their own tools.</p>
+<h2>The death</h2>
+<p>With that, came all the Agile methodologies and their toolsets. Moreover, since the industry lacked soft skills at that time (the trend was to act like bosses: telling other people what, when and how to do stuff), a natural path for the revolution was clear: improving soft skills.</p>
+<p>And it happened! At least the new practices facilitate that&#8230; if people apply it or not on a daily basis, it&#8217;s another story. With that mindset in place, the boss image was abandoned and leader figures were created. Focusing on the code quality and not so much on documenting everything. Letting developers get much closer to product stakeholders than before because that communication between them needs to be proxy-less (in a perfect world at least).</p>
+<p>But things were still not smooth. Most companies started using Scrum, improved their process, but reached a stagnation point in which something was wrong, but they didn&#8217;t know what. The team felt better, working this way, but it was more difficult to spot problems in the process. Talking about deadlines with clients became taboo. And scrum masters would basically annoy the business area of the companies, which wanted predictions to improve their plans.</p>
+<p>Basically, the process improved inward: the development team was happier and more effective. But they forgot to improve the technical communication outward: with other areas, with business, marketing, clients, etc. These areas need more data about the software in order to build their plans. And with that in mind, some hard skills, that got lost years ago, came back.</p>
+<h2>The rebirth</h2>
+<p>At Plataformatec we embraced hard skills, as most of our <a href="/tag/metrics/">agile blog posts</a> show it. We think that having good and advanced hard skills is not a sin, we can and should have as many metrics as possible. However, with metrics, comes great responsibility (this is somehow familiar&#8230; <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" />).</p>
+<p>Metrics serve as a way to ease the conversation between areas (or with an external client) and to improve our processes inside the team as well. For both, we need to be cautious and not present loose metrics (showing them without the proper explanation and contextualization). If that happens, they can become a way to demand more work and to micromanage the team&#8217;s deliveries, which, usually, is not healthy. (Another post on the common mistakes when using metrics is on its way&#8230;)</p>
+<p>If you wanna take a step further and improve your hard skills toolset, you can take a look at our <a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=post-hard-skills">free Monte Carlo spreadsheet</a>, which uses Monte Carlo simulations to inform you the probability of finishing your project in each of the next weeks!</p>
+<h2>So&#8230; Which one is more important?</h2>
+<p>Both are extremely important. Soft skills without hard skills make the team happy at work but probably inefficient. Hard skills with no soft skills make the team aware of their problems but with no motivation to change. We need to balance both. I’ve already heard questions like: <em>Oh but should it be like, 50/50? 80/20?</em> And I answer with this question: <em>How would you even measure how much soft skills and hard skills you have?!</em></p>
+<p>So, the conclusion is: have both, improve both, care for both. If you think you already have enough of each, you are likely wrong. This should be the mantra of all project managers/Agile coaches out there&#8230; You must have a motivated team and enough data to facilitate communication and improvement.</p>
+<p>What about you? Do you prefer one skill over the other? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The pros and cons of using daily metrics</title>
+		<link>/2016/12/the-pros-and-cons-of-using-daily-metrics/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 09 Dec 2016 14:28:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=5983</guid>
+
+					<description><![CDATA[<p>As you may have noticed, we took advantage of the new Elixir Radar channel development to run some project management experiments, so we could improve our methods and toolset. Some of those can be found in these blog posts: Forecasting software project’s completion date through Monte Carlo Simulation Lead Time Experiment: Calculating Lead Time of ... <a class="read-more-link" href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">»</a></p>
+<p>The post <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">The pros and cons of using daily metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As you may have noticed, we took advantage of the <a href="http://plataformatec.com.br/elixir-radar/" target="_blank">new Elixir Radar channel</a> development to run some project management experiments, so we could improve our methods and toolset. Some of those can be found in these blog posts:</p>
+<ul>
+<li><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a></li>
+<li><a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">Lead Time Experiment: Calculating Lead Time of the whole process</a></li>
+<li><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a></li>
+</ul>
+<p>Another experiment that we did was to analyze the metrics that we generally use, however, instead of tracking them on a weekly basis, doing it daily. The project was supposed to be very short and weekly metrics would have shown us the problems when it was already too late to act. The intention here was to see if with a shorter feedback cycle, the metrics would make us notice problems faster: like bottlenecks, queues etc.</p>
+<p>If you are not aware of the metrics we use, here are some blog posts about them:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and Burnup charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with Lead time</a></li>
+</ul>
+<p>We will present next our opinion on the effectiveness of using each one of those metrics on a daily basis.</p>
+<h2>Cumulative Flow Diagram (CFD)</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/cumulative-flow-diagram.png" alt="Cumulative Flow Diagram" width="1034" height="640" class="aligncenter size-full wp-image-5954" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/cumulative-flow-diagram.png 1034w, /wp-content/uploads/2016/12/cumulative-flow-diagram-300x186.png 300w, /wp-content/uploads/2016/12/cumulative-flow-diagram-768x475.png 768w, /wp-content/uploads/2016/12/cumulative-flow-diagram-1024x634.png 1024w" sizes="(max-width: 1034px) 100vw, 1034px" /></p>
+<p>The daily CFD was the most used daily metric for us. In the first weeks, it was too difficult to find bottlenecks only by seeing the weekly metrics. But as you can see on our daily CFD chart, we spotted some queue growth throughout our project and could act on them on a daily basis to avoid losses.</p>
+<h2>Burnup chart</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/burnup.png" alt="Burnup" width="1379" height="618" class="aligncenter size-full wp-image-5961" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/burnup.png 1379w, /wp-content/uploads/2016/12/burnup-300x134.png 300w, /wp-content/uploads/2016/12/burnup-768x344.png 768w, /wp-content/uploads/2016/12/burnup-1024x459.png 1024w" sizes="(max-width: 1379px) 100vw, 1379px" /></p>
+<p>We didn&#8217;t use much the daily burnup chart, but we believe that it can be very helpful in case your client and/or product owner want faster feedbacks on how the project health is.</p>
+<p>It is possible to see that the backlog changed on a daily basis in the beginning of the project, that information could help the stakeholders take faster actions to mitigate possible delays.</p>
+<h2>Throughput and Predictions</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/throughput-histogram.png" alt="Throughput Histogram" width="1402" height="708" class="aligncenter size-full wp-image-5956" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/throughput-histogram.png 1402w, /wp-content/uploads/2016/12/throughput-histogram-300x151.png 300w, /wp-content/uploads/2016/12/throughput-histogram-768x388.png 768w, /wp-content/uploads/2016/12/throughput-histogram-1024x517.png 1024w" sizes="(max-width: 1402px) 100vw, 1402px" /></p>
+<p>Our Monte Carlo simulation didn&#8217;t work well with &#8220;daily throughputs&#8221;, that are actually the number of deployed stories per day. That happened because, if you remember how we use Monte Carlo from our blog post <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a>, we base our simulation on our throughput history. Moreover, if you see our throughput histogram, you&#8217;ll be able to notice that on most of the days there weren’t deploys, which means that the simulation would be extremely pessimistic and skewed to zero.</p>
+<h2>Conclusion</h2>
+<p>At the beginning of projects, we usually feel we don&#8217;t have enough data to make decisions, but if you start gathering data on a daily basis you might have enough information to perform fast changes on your process and guarantee an even better cadence to your deliveries.</p>
+<p>At the end of the project, after we already had enough weekly input, we abandoned the idea of a daily metric. We did that because with the progress of the project, the daily data became more noisy than helpful, and the weekly data was already reliable enough. Therefore, this approach seems to work best at the beginning of a project.</p>
+<p>What do you think of daily metrics? Would you use them? Leave your comments below! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">The pros and cons of using daily metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Os prós e contras de usar métricas diárias</title>
+		<link>/2016/12/os-pros-e-contras-de-usar-metricas-diarias/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 09 Dec 2016 13:22:57 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=5951</guid>
+
+					<description><![CDATA[<p>Como você pode ter percebido, nós aproveitamos o desenvolvimento do nosso novo canal, a Elixir Radar, para realizar alguns experimentos com o intuito de melhorar nossos métodos e ferramentas. Alguns destes experimentos podem ser encontrados nos seguintes blog posts: Forecasting software project’s completion date through Monte Carlo Simulation Lead Time Experiment: Calculating Lead Time of ... <a class="read-more-link" href="/2016/12/os-pros-e-contras-de-usar-metricas-diarias/">»</a></p>
+<p>The post <a href="/2016/12/os-pros-e-contras-de-usar-metricas-diarias/">Os prós e contras de usar métricas diárias</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Como você pode ter percebido, nós aproveitamos o desenvolvimento do <a href="http://plataformatec.com.br/elixir-radar/" target="_blank">nosso novo canal, a Elixir Radar</a>, para realizar alguns experimentos com o intuito de melhorar nossos métodos e ferramentas. Alguns destes experimentos podem ser encontrados nos seguintes blog posts:</p>
+<ul>
+<li><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a></li>
+<li><a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">Lead Time Experiment: Calculating Lead Time of the whole process</a></li>
+<li><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a></li>
+</ul>
+<p>Outro experimento que fizemos foi registrar algumas das métricas que usamos normalmente mas, ao invés de fazer o registro semanalmente, registrá-las também diariamente. A intenção era ver se uma atualização mais rápida das métricas nos faria perceber problemas mais rapidamente também, como gargalos, filas e etc.</p>
+<p>Se você ainda não conhece nossas métricas, aqui estão alguns dos nossos blog posts que explicam-nas:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and Burnup charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with Lead time</a></li>
+</ul>
+<p>A seguir, apresentamos nossa opinião sobre a eficiência e eficácia de usar cada uma dessas métricas diariamente, através das visualizações que utilizamos.</p>
+<h2>Diagrama de fluxo cumulativo (Cumulative Flow Diagram &#8211; CFD)</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/cumulative-flow-diagram.png" alt="Cumulative Flow Diagram" width="1034" height="640" class="aligncenter size-full wp-image-5954" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/cumulative-flow-diagram.png 1034w, /wp-content/uploads/2016/12/cumulative-flow-diagram-300x186.png 300w, /wp-content/uploads/2016/12/cumulative-flow-diagram-768x475.png 768w, /wp-content/uploads/2016/12/cumulative-flow-diagram-1024x634.png 1024w" sizes="(max-width: 1034px) 100vw, 1034px" /></p>
+<p>O CFD diário foi a visualização diária mais usada. Nas primeiras semanas era muito difícil de acharmos gargalos apenas analisando as métricas semanais. Mas como você pode ver em nosso gráfico de CFD diário, nós avistamos algumas filas se formando ao longo do projeto e conseguimos mitigá-las para aumentar nossa eficiência de processo.</p>
+<h2>Gráfico Burnup</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/burnup.png" alt="Burnup" width="1379" height="618" class="aligncenter size-full wp-image-5961" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/burnup.png 1379w, /wp-content/uploads/2016/12/burnup-300x134.png 300w, /wp-content/uploads/2016/12/burnup-768x344.png 768w, /wp-content/uploads/2016/12/burnup-1024x459.png 1024w" sizes="(max-width: 1379px) 100vw, 1379px" /></p>
+<p>Nós não usamos muito o burnup diário, mas acreditamos que seu uso pode ser interessante quando seu cliente ou P.O. necessitar de feedbacks mais rápidos em relação à saúde de seu projeto.</p>
+<p>É possível observar que o backlog mudou diariamente no começo do projeto. Tal informação poderia ajudar stakeholders a tomar ações mais rapidamente para mitigar possíveis atrasos de entrega.</p>
+<h2>Vazão e Predições</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/throughput-histogram.png" alt="Throughput Histogram" width="1402" height="708" class="aligncenter size-full wp-image-5956" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/throughput-histogram.png 1402w, /wp-content/uploads/2016/12/throughput-histogram-300x151.png 300w, /wp-content/uploads/2016/12/throughput-histogram-768x388.png 768w, /wp-content/uploads/2016/12/throughput-histogram-1024x517.png 1024w" sizes="(max-width: 1402px) 100vw, 1402px" /></p>
+<p>Nossa simulação de Monte Carlo não funcionou muito bem com a vazão diária, ou seja com o número de histórias finalizadas por dia. Isso aconteceu porque baseamos nossa simulação no histórico de vazão semanal (mais detalhes podem ser vistos em <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a>). Além disso, ao observar o histograma de vazão, perceberá que na maioria dos dias não ocorreram entregas, o que significa que a simulação seria extremamente pessimista e enviesada para zero.</p>
+<h2>Conclusão</h2>
+<p>Sabendo que o início de um time ou projeto é naturalmente um período de estabilização do processo, é comum a falta de dados para a tomada de decisão. No entanto, se começarmos a colher dados diariamente, podemos ter informação suficiente para aplicarmos mudanças rápidas em nossos processos e garantir uma melhor cadência nas entregas.</p>
+<p>O que você achou das métricas diárias? Você as usaria? Deixe seu comentário abaixo! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=curso-metricas-agile&#038;utm_content=cta-blog-post-bottom" target="_blank"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png" alt="Métricas para Projetos Agile em 7 e-mails" width="831" height="147" class="aligncenter size-full wp-image-5972" srcset="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png 831w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-300x53.png 300w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2016/12/os-pros-e-contras-de-usar-metricas-diarias/">Os prós e contras de usar métricas diárias</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Calculating Cost of Delay for software projects</title>
+		<link>/2016/11/calculating-cost-of-delay-for-software-projects/</link>
+					<comments>/2016/11/calculating-cost-of-delay-for-software-projects/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 03 Nov 2016 22:01:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[Decision making]]></category>
+		<category><![CDATA[metrics]]></category>
+		<guid isPermaLink="false">/?p=5778</guid>
+
+					<description><![CDATA[<p>Motivation One of the most common challenges that you will face in your career, or even in your life, is to choose one thing over another. It could be a decision between going out to eat at a sushi place and a pizzeria, or it could be between a 2-month-long software project that costs $1M ... <a class="read-more-link" href="/2016/11/calculating-cost-of-delay-for-software-projects/">»</a></p>
+<p>The post <a href="/2016/11/calculating-cost-of-delay-for-software-projects/">Calculating Cost of Delay for software projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h2>Motivation</h2>
+<p>One of the most common challenges that you will face in your career, or even in your life, is to choose one thing over another. It could be a decision between going out to eat at a sushi place and a pizzeria, or it could be between a 2-month-long software project that costs $1M and a 10-day-long project that costs $10K. The fact is: we spend a long time deciding the best path.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/cost-of-choice.png" alt="Cost of Choice" width="329" height="214" /> source: <a href="http://xkcd.com/1445/">xkcd</a></p>
+<h2>What is cost of delay</h2>
+<p><strong>Cost of Delay (CoD) is the economic impact of a project&#8217;s delay.</strong> In other words, it is how much you will fail to make if the product, or feature, is not ready on a certain date. The benefit of using it is to be able to make more-informed and better decisions because you&#8217;re taking into account the economic impact.</p>
+<h2>How to calculate cost of delay</h2>
+<p>To calculate CoD you can just estimate how much profit is expected from the software project&#8217;s result after a period of time.</p>
+<p>Let’s say you expect that the software product you are developing, once finished, will give the company a return of US$ 10,000 per week. In that context, the cost of delay is US$ 10,000/week. In other words, for every week that the project is delayed, the company would be losing US$ 10,000. Not that good, uh?</p>
+<p>Another metric related to cost of delay is CD3 (Cost of Delay Divided by Duration). The difference between both is that in CD3, we divide CoD by the duration of the project. That can be a good metric for prioritization. Here’s how to calculate it:</p>
+<ul>
+<li>Calculate the expected project&#8217;s weekly profit (CoD);</li>
+<li>Calculate, approximately, how much time it would take to implement it;</li>
+<li>Divide the profit by the estimated project duration;</li>
+</ul>
+<p>The higher the CD3 value is, more important it is, since the return on the investment will be faster.</p>
+<h2>Types of cost of delay</h2>
+<h3>Standard Curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/standard-curve.png" alt="Standard Curve" width="335" height="277" /></p>
+<p>In standard curves, the CoD of the project grows almost linearly with time. This is the simplest CoD to calculate, since it does not change with time.</p>
+<h3>Urgent Curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/urgent-curve.png" alt="Urgent Curve" width="373" height="283" /></p>
+<p>In urgent curves the project needs to be delivered really fast in order to generate value to the company, otherwise a lot is lost. This happens, for example, when you know of a competitor&#8217;s big launch and there is not much time to react and compete in the market. The CoD will probably be extremely high starting on the deadline week and increase just a little over time.</p>
+<h3>Fixed date curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/fixed-date-curve.png" alt="Fixed Date Curve" width="343" height="284" /></p>
+<p>Fixed date curve is the classic example of a project in which the deadline is immutable. In this case, the CoD is highly linked to a specific date. The urgent curve example is also valid here if you know of a competitor&#8217;s launch beforehand. Another example is when there is a national TV advertisement scheduled for a certain date, or even the implementation of new legislation that will affect the project. In this case, the CoD calculation will be a little bit more complex. In the first weeks the CoD will be growing at a moderate rate, however, after a certain week, the cost receives a huge increase, and after that, it returns to have a small growth rate.</p>
+<h3>Intangible curve</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/intangible-curve.png" alt="Intangible Curve" width="339" height="269" /></p>
+<p>The intangible curve covers those projects that have a low CoD. In this case, the projects usually have low priority inside the company, because they cause little or no impact on its results. The CoD in these cases is almost static, since there is not enough risk on delaying the project.</p>
+<h2>How to use it</h2>
+<p>Besides the obvious outcome of using CoD, that is the knowledge of how much you will lose weekly if the project gets delayed, it is possible to use it as a decision-making tool to prioritize projects.</p>
+<h3>Example</h3>
+<p>Let&#8217;s say you have two software projects: A and B. Both with standard-curve CoDs.</p>
+<table cellpadding="0" cellspacing="0" style=" border-collapse:collapse; border: solid 1px #999;">
+<tr>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Project</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Weekly Profit</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Predicted Duration</th>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$10,000</td>
+<td style="padding:8px 20px;border: solid 1px #999;">72 weeks</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$400</td>
+<td style="padding:8px 20px;border: solid 1px #999;">2 weeks</td>
+</tr>
+</table>
+<p>One may think, based on the projects&#8217; details, that project A is more important than project B. However, if you calculate the CD3, you will see that CD3_A = 138.8 while CD3_B = 200.</p>
+<p>But what does that mean? It means that if you work on software B first, you will anticipate revenue generation when compared to starting with software A. Don&#8217;t believe it yet? Here is a 75-week simulation:</p>
+<table cellpadding="0" cellspacing="0" style=" border-collapse:collapse; border: solid 1px #999;">
+<tr>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Week Number</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Revenue if A is Finished First</th>
+<th style="background-color:#ccc;padding:8px 20px;border: solid 1px #999;">Revenue if B is Finished first</th>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">1</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Start project A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Start project B</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">2</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Finish project B</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">3</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$400 &#8211; Start project A</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">30</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$11,200</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">72</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$0 &#8211; Finish project A</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,000</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">73</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$10,000 &#8211; Start project B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,400</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">74</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$20,000 &#8211; Finish project B</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$28,800 &#8211; Finish project A</td>
+</tr>
+<tr>
+<td style="padding:8px 20px;border: solid 1px #999;">75</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$30,400</td>
+<td style="padding:8px 20px;border: solid 1px #999;">$39,200</td>
+</tr>
+</table>
+<h3>Attention Point</h3>
+<p>It is important to notice that the CoD curve that a project follows may change with time. To illustrate that, let&#8217;s say that a software that will bring a never-seen-before product to the market is running. Since there is no competition, it follows a standard curve. However, after a year of development, some news arrives and the team discovers that a competitor is now developing something with the same features, and will launch it on day X. From now on, the project&#8217;s curve will probably follow the fixed-date, with the steep line being on day X.</p>
+<h2>Conclusion</h2>
+<p>You can, and should, use CoD every time you are in doubt on how to prioritize two or more projects. It is an easy to calculate method and, by thinking about all those details, it may give you even more insights about the projects.</p>
+<p>If you discover that you need to launch your product sooner, after calculating the CoD, and you don&#8217;t have enough time or people, <a href="http://plataformatec.com.br/contact">contact us</a> to learn more about how we&#8217;ve been helping our clients on developing high-quality custom software, written in either Elixir or Ruby, and what we can do for you.</p>
+<p>What about you? What do you think about using cost of delay to help you prioritize projects? Leave your comments below!</p>
+<div style="height:20px;"></div>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2016/11/calculating-cost-of-delay-for-software-projects/">Calculating Cost of Delay for software projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/11/calculating-cost-of-delay-for-software-projects/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

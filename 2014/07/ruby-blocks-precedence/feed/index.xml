@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ruby blocks precedence	</title>
+	<atom:link href="/2014/07/ruby-blocks-precedence/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/07/ruby-blocks-precedence/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 24 Jul 2014 15:06:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: João Lucas Pereira de Santana		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1423</link>
+
+		<dc:creator><![CDATA[João Lucas Pereira de Santana]]></dc:creator>
+		<pubDate>Thu, 24 Jul 2014 15:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1423</guid>
+
+					<description><![CDATA[Nice, really interesting.
+The issue on Github helps to understand how this problem may occur on real projects.]]></description>
+			<content:encoded><![CDATA[<p>Nice, really interesting.<br />
+The issue on Github helps to understand how this problem may occur on real projects.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1422</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 23:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1422</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1421&quot;&gt;Fuad Saud&lt;/a&gt;.
+
+Thanks for sharing. We don&#039;t particularly follow that as a convention, but it&#039;s good for people to know that it exists and have it in mind :).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1421">Fuad Saud</a>.</p>
+<p>Thanks for sharing. We don&#8217;t particularly follow that as a convention, but it&#8217;s good for people to know that it exists and have it in mind :).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Fuad Saud		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1421</link>
+
+		<dc:creator><![CDATA[Fuad Saud]]></dc:creator>
+		<pubDate>Wed, 23 Jul 2014 22:44:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1421</guid>
+
+					<description><![CDATA[Also worth noting about block conventions: https://github.com/bbatsov/ruby-style-guide/issues/162]]></description>
+			<content:encoded><![CDATA[<p>Also worth noting about block conventions: <a href="https://github.com/bbatsov/ruby-style-guide/issues/162" rel="nofollow ugc">https://github.com/bbatsov/ruby-style-guide/issues/162</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1412</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Fri, 11 Jul 2014 17:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1412</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1411&quot;&gt;Diogo Scudelletti&lt;/a&gt;.
+
+Nice, thank you for your feedback and for sharing the gist! :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1411">Diogo Scudelletti</a>.</p>
+<p>Nice, thank you for your feedback and for sharing the gist! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Diogo Scudelletti		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1411</link>
+
+		<dc:creator><![CDATA[Diogo Scudelletti]]></dc:creator>
+		<pubDate>Fri, 11 Jul 2014 17:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1411</guid>
+
+					<description><![CDATA[Awesome article/example! I wrote a similar example to keep it save in my mind. :D
+
+Thanks!
+https://gist.github.com/scudelletti/d74a85cdd7b39a735ff6]]></description>
+			<content:encoded><![CDATA[<p>Awesome article/example! I wrote a similar example to keep it save in my mind. 😀</p>
+<p>Thanks!<br />
+<a href="https://gist.github.com/scudelletti/d74a85cdd7b39a735ff6" rel="nofollow ugc">https://gist.github.com/scudelletti/d74a85cdd7b39a735ff6</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: preeti		</title>
+		<link>/2014/07/ruby-blocks-precedence/comment-page-1/#comment-1406</link>
+
+		<dc:creator><![CDATA[preeti]]></dc:creator>
+		<pubDate>Wed, 02 Jul 2014 10:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4102#comment-1406</guid>
+
+					<description><![CDATA[Thanks for providing information of Ruby blocks precedence in&lt;a href=&quot;http://www.probytes.net/services/ruby-on-rails/&quot; rel=&quot;nofollow&quot;&gt;ruby on rails outsourcing&lt;/a&gt;.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for providing information of Ruby blocks precedence in<a href="http://www.probytes.net/services/ruby-on-rails/" rel="nofollow">ruby on rails outsourcing</a>.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

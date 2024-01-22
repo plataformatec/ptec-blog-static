@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>changesets « Plataformatec Blog</title>
+	<atom:link href="/tag/changesets/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 15 Dec 2015 13:18:19 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Ecto v1.1 released and Ecto v2.0 plans</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/</link>
+					<comments>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 15 Dec 2015 13:20:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[changesets]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[queries]]></category>
+		<guid isPermaLink="false">/?p=4944</guid>
+
+					<description><![CDATA[<p>Ecto v1.1 has been released. Ecto v1.1 brings improvements and bug fixes to Ecto but, more importantly, paves the way for the upcoming Ecto v2.0 release by deprecating functionality that has been said to be error prone or confusing by developers. This article will highlight both improvements and what to expect by Ecto 2.0. For ... <a class="read-more-link" href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/">»</a></p>
+<p>The post <a href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/">Ecto v1.1 released and Ecto v2.0 plans</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Ecto v1.1 has been released. Ecto v1.1 brings improvements and bug fixes to Ecto but, more importantly, paves the way for the upcoming Ecto v2.0 release by deprecating functionality that has been said to be error prone or confusing by developers. This article will highlight both improvements and what to expect by Ecto 2.0.</p>
+<p>For detailed information on the release, please <a href="https://github.com/elixir-lang/ecto/blob/v1.1/CHANGELOG.md">check the CHANGELOG</a>.</p>
+<p>Let&#8217;s get started!</p>
+<h2>Better pipelines</h2>
+<p>The pipeline operator in Elixir is a great way to express a series of computations on top of a data structure. Given Ecto queries are just data structures, they are a perfect fit to be modified as part of pipelines.</p>
+<p><a href="http://hexdocs.pm/ecto/Ecto.Query.html">Ecto has always supported both keyword and function queries</a>. Let&#8217;s start with a keyword query:</p>
+<pre><code class="elixir">from p in Post,
+  where: p.author == "José",
+  order_by: [desc: p.published_at],
+  limit: 5
+</code></pre>
+<p>In Ecto v1.0, it could have be written using pipelines as follows:</p>
+<pre><code class="elixir">Post
+|&gt; where([p], p.author == "José")
+|&gt; order_by([p], desc: p.published_at)
+|&gt; limit(5)
+</code></pre>
+<p>Ecto v1.1 improve pipelines by making the binding argument required only when working with associations and by allowing dynamic data to be given on more places. In v1.1, we can rewrite the example above as:</p>
+<pre><code class="elixir">Post
+|&gt; where(author: "José")
+|&gt; order_by(desc: :published_at)
+|&gt; limit(5)
+</code></pre>
+<p>Most query operations like <code>where</code>, <code>distinct</code>, <code>having</code> support the syntax above. The only exceptions are <code>select</code> and <code>group_by</code> which will be tackled on Ecto v2.0.</p>
+<h2>No more models</h2>
+<p><code>Ecto.Model</code> is being deprecated on Ecto v1.1. This aims to solve both conceptual and practical issues. Let&#8217;s discuss them.</p>
+<h3>What are models?</h3>
+<p>The big question imposed by <code>Ecto.Model</code> is: what is a model?</p>
+<p>One thing is clear, Ecto did not provide models in the &#8220;traditional&#8221; sense. In OO languages, you would say a model can be instantiated and it would have methods that contain business logic. However, the data that comes from the database in Ecto is just data. It is an Elixir struct. It is not an Ecto model.</p>
+<p>Working closely on Phoenix applications and on the <a href="https://pragprog.com/book/phoenix/programming-phoenix">Programming Phoenix</a> book made it clear that, similar to controllers and views, models are not an entity. A model, a controller or a view (from the MVC pattern) are just group of functions that share similar responsibilities. They are just guidelines on how to group code towards a common purpose.</p>
+<p>For those reasons, <code>Ecto.Model</code> is being deprecated in Ecto. At first, this implies Ecto data structures are now defined directly with <code>Ecto.Schema</code>. In Ecto v1.0:</p>
+<pre><code class="elixir">defmodule MyApp.Post do
+  use Ecto.Model
+
+  schema "posts" do
+    # ...
+  end
+end
+</code></pre>
+<p>From Ecto v1.1:</p>
+<pre><code class="elixir">defmodule MyApp.Post do
+  use Ecto.Schema
+
+  schema "posts" do
+    # ...
+  end
+end
+</code></pre>
+<p>Not only that, many of the functions in the <a href="http://hexdocs.pm/ecto/Ecto.Model.html"><code>Ecto.Model</code></a> module have been moved to <a href="http://hexdocs.pm/ecto/Ecto.html"><code>Ecto</code></a>.</p>
+<p>However, the biggest change with the deprecation of models is that <strong>model callbacks are being removed</strong>. To understand why this matters, let&#8217;s look at one Ecto feature that relied on callbacks and was rewritten to be a simple function.</p>
+<h3>Optimistic lock</h3>
+<p>Ecto provides optimistic locks on top of your schema. A simple implementation of optimistic lock uses an integer column, usually named <code>lock_version</code>, to store the current version of a given row. On update, Ecto would do a &#8220;compare and increase&#8221; operation. If the entry being updated had the same <code>lock_version</code> as in the database, the update operation succeeds and the <code>lock_version</code> is incremented. Otherwise, the update fails because the entry is stale.</p>
+<p>On Ecto v1.0, <code>optimistic_lock</code> was enabled for the whole model:</p>
+<pre><code class="elixir">defmodule MyApp.Post do
+  use Ecto.Model
+
+  schema "posts" do
+    # ...
+  end
+
+  optimistic_lock :lock_version
+end
+</code></pre>
+<p>This reveals the awkwardness behind callbacks. We are suddenly adding &#8220;behaviour&#8221; to our data structures. Not only that, because callbacks are enabled on all operations, we have no control over its use.</p>
+<p>For example, what if you also provide an admin interface. Do you want the admin to be under the same lock constraints as regular users? More importantly, what if you want to trigger the lock only if some fields are changing? The only way to add this functionality is by growing the complexity of the <code>optimistic_lock</code> implementation by providing an ever growing set of complex options.</p>
+<p>It happens Ecto has the perfect solution to this problem: <a href="http://hexdocs.pm/ecto/Ecto.Changeset.html">changesets</a>. For example, instead of defining validations in the model, you define per changeset:</p>
+<pre><code class="elixir">@required_params [:title, :body]
+@optional_params [:metadata]
+
+def changeset(post, params \\ :empty) do
+  post
+  |&gt; cast(params, @required_params, @optional_params)
+  |&gt; validate_length(:title, min: 3)
+  |&gt; validate_length(:metadata, min: 3)
+end
+</code></pre>
+<p>In other words, a changeset is a data structure that controls the changes being sent to the database. This means that, if you have different roles in your application that work on different facets of the same data, you define different changesets for every operation.</p>
+<p>Ecto v1.1 has replaced the <code>optimistic_lock/1</code> macro implementation by a simple function that works on the changeset. If you want to add optimistic locking, just pipe your changeset in the <code>optimistic_lock/2</code> with the lock column name:</p>
+<pre><code class="elixir">def changeset(post, params \\ :empty) do
+  post
+  |&gt; cast(params, @required_params, @optional_params)
+  |&gt; validate_length(:title, min: 3)
+  |&gt; validate_length(:metadata, min: 3)
+  |&gt; optimistic_lock(:lock_version)
+end
+</code></pre>
+<p>Because it is only a function call, you have control of exactly when and where you can apply the lock. And ultimately that&#8217;s the fundamental problem with callbacks: it makes developers write functionality that is hard to compose.</p>
+<h3>Goodbye callbacks</h3>
+<p>After a quick search on GitHub, we quickly noticed that many developers relied on callbacks in many cases where changesets would suffice, introducing exactly the same problems we saw with <code>optimistic_lock</code>.</p>
+<p>Furthermore, <code>after_*</code> callbacks provide their own set of issues. Because <code>after_insert</code> and <code>after_update</code> callbacks would still run inside a transaction, there is no guarantee the transaction that wraps both <code>insert</code> and <code>update</code> would actually commit. So someone would rely on such callbacks to index data or write to the filesystem while the transaction could rollback afterwards. Those mistakes are always bound to happen with callbacks because the execution flow is hidden from developers.</p>
+<p>For all the reasons mentioned above, callbacks are deprecated in Ecto and will be removed by Ecto v2.0. Meanwhile <a href="https://github.com/elixir-lang/ecto/issues/1114">we are working on solutions like <code>Ecto.Multi</code></a> that will give developers a data-driven approach to work with transactions.</p>
+<h2>Looking forward to 2.0</h2>
+<p>Besides the improvements already listed above, we are looking forward to many exciting new features on Ecto v2.0:</p>
+<ul>
+<li>Streamlined syntax for <code>select</code> and <code>group_by</code></li>
+<li>A more efficient way of working with transactions via <code>Ecto.Multi</code></li>
+<li>Many to many associations</li>
+<li>Automatic handling of associations and embeds on insert</li>
+<li>Automatic handling of both <code>belongs_to</code> and the upcoming <code>many_to_many</code> associations in insert and update</li>
+<li>An ownership system that allow tests that rely on the database to run concurrently by managing connection access</li>
+</ul>
+<p>Furthermore, James Fish is working on a project called <a href="http://github.com/fishcakez/db_connection">db_connection</a> that will simplify adapter implementations and speed-up many operations by removing the amount of process communication and by providing client-side decoding. Early experiments showed performance improvements of ~25% when loading data. Such changes will also lead the way for running queries in parallel. For example, we will be able to preload associations in parallel instead of sequentially like today.</p>
+<p>The best news is that we expect Ecto v2.0 to be simpler and smaller in size than Ecto v1.1 thanks to the removal of callbacks and the support being brought by <code>db_connection</code>.</p>
+<p>We are really excited about future versions of Ecto and the improvements it will bring to everyday applications!</p>
+<p><a href="http://plataformatec.com.br/elixir-radar"><br />
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br />
+</a></p><p>The post <a href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/">Ecto v1.1 released and Ecto v2.0 plans</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

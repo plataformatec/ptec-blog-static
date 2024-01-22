@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: CSS at Plataformatec	</title>
+	<atom:link href="/2014/08/css-at-plataformatec/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/08/css-at-plataformatec/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 13 Aug 2014 13:50:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Daniel Filho		</title>
+		<link>/2014/08/css-at-plataformatec/comment-page-1/#comment-1431</link>
+
+		<dc:creator><![CDATA[Daniel Filho]]></dc:creator>
+		<pubDate>Wed, 13 Aug 2014 13:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4149#comment-1431</guid>
+
+					<description><![CDATA[We talked about CSS yesterday at FEMUG-SP, and spriteful. Glad to see this post, even richer experiences shared. Thanks :)]]></description>
+			<content:encoded><![CDATA[<p>We talked about CSS yesterday at FEMUG-SP, and spriteful. Glad to see this post, even richer experiences shared. Thanks 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: AgtLucas		</title>
+		<link>/2014/08/css-at-plataformatec/comment-page-1/#comment-1430</link>
+
+		<dc:creator><![CDATA[AgtLucas]]></dc:creator>
+		<pubDate>Wed, 13 Aug 2014 13:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4149#comment-1430</guid>
+
+					<description><![CDATA[Didn&#039;t know about Spriteful, good to know!]]></description>
+			<content:encoded><![CDATA[<p>Didn&#8217;t know about Spriteful, good to know!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

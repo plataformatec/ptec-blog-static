@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Mocks and explicit contracts	</title>
+	<atom:link href="/2015/10/mocks-and-explicit-contracts/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/10/mocks-and-explicit-contracts/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 21 Nov 2019 19:44:44 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Andrew Bruce		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1536</link>
+
+		<dc:creator><![CDATA[Andrew Bruce]]></dc:creator>
+		<pubDate>Tue, 05 Jan 2016 12:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1536</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1535&quot;&gt;josevalim&lt;/a&gt;.
+
+Great, I chose (1), as it&#039;s a bit more explicit. This also removed the need for the &lt;code&gt;Code.load_file&lt;/code&gt;. Thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1535">josevalim</a>.</p>
+<p>Great, I chose (1), as it&#8217;s a bit more explicit. This also removed the need for the <code>Code.load_file</code>. Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1535</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 05 Jan 2016 11:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1535</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1534&quot;&gt;Andrew Bruce&lt;/a&gt;.
+
+Excellent question! I am assuming you are using Elixir v1.2 as since this version Elixir consolidate protocols by default during compilation, which means that any protocol defined during tests won&#039;t be part of the consolidation. You have two options here.
+
+1. The first is to include &quot;test/support&quot; in your compilation paths for the test environment. Phoenix for examples does it for new applications: https://github.com/phoenixframework/phoenix/blob/master/installer/templates/new/mix.exs#L30-L31
+
+
+
+2. The second option is to disable protocol consolidation for tests. Just set &quot;consolidate_protocols: Mix.env != :test&quot; in def project in your mix.exs.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1534">Andrew Bruce</a>.</p>
+<p>Excellent question! I am assuming you are using Elixir v1.2 as since this version Elixir consolidate protocols by default during compilation, which means that any protocol defined during tests won&#8217;t be part of the consolidation. You have two options here.</p>
+<p>1. The first is to include &#8220;test/support&#8221; in your compilation paths for the test environment. Phoenix for examples does it for new applications: <a href="https://github.com/phoenixframework/phoenix/blob/master/installer/templates/new/mix.exs#L30-L31" rel="nofollow ugc">https://github.com/phoenixframework/phoenix/blob/master/installer/templates/new/mix.exs#L30-L31</a></p>
+<p>2. The second option is to disable protocol consolidation for tests. Just set &#8220;consolidate_protocols: Mix.env != :test&#8221; in def project in your mix.exs.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Bruce		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1534</link>
+
+		<dc:creator><![CDATA[Andrew Bruce]]></dc:creator>
+		<pubDate>Tue, 05 Jan 2016 09:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1534</guid>
+
+					<description><![CDATA[Hi José,
+
+You mention using data structures and defining protocols. On day one of learning Elixir this was what I reached for, but ran into a problem loading the fake implementation in test.
+
+I created my project with &#039;mix new&#039;. It has a protocol named &lt;code&gt;RemoteCaller&lt;/code&gt;, and I&#039;m passing in a &lt;code&gt;%FakeRemoteCaller{}&lt;/code&gt; to a function. That fake looks like this:
+
+&lt;code&gt;
+defmodule FakeRpcCaller do
+  defstruct []
+end
+
+defimpl RemoteCaller, for: FakeRpcCaller do
+  def call(node, mod, fun, args) do
+    [0, [:something], nil]
+  end
+end
+&lt;/code&gt;
+
+The test is doing &lt;code&gt;Code.load_file(&quot;test/fake_remote_caller.ex&quot;)&lt;/code&gt;. With fake_remote_caller.ex (or .exs) in the test/ dir, I get:
+
+** (Protocol.UndefinedError) protocol RemoteCaller not implemented for %FakeRpcCaller{}
+
+However, when it&#039;s in the lib/ dir, all works fine. What&#039;s going on here? Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Hi José,</p>
+<p>You mention using data structures and defining protocols. On day one of learning Elixir this was what I reached for, but ran into a problem loading the fake implementation in test.</p>
+<p>I created my project with &#8216;mix new&#8217;. It has a protocol named <code>RemoteCaller</code>, and I&#8217;m passing in a <code>%FakeRemoteCaller{}</code> to a function. That fake looks like this:</p>
+<p><code><br />
+defmodule FakeRpcCaller do<br />
+  defstruct []<br />
+end</p>
+<p>defimpl RemoteCaller, for: FakeRpcCaller do<br />
+  def call(node, mod, fun, args) do<br />
+    [0, [:something], nil]<br />
+  end<br />
+end<br />
+</code></p>
+<p>The test is doing <code>Code.load_file("test/fake_remote_caller.ex")</code>. With fake_remote_caller.ex (or .exs) in the test/ dir, I get:</p>
+<p>** (Protocol.UndefinedError) protocol RemoteCaller not implemented for %FakeRpcCaller{}</p>
+<p>However, when it&#8217;s in the lib/ dir, all works fine. What&#8217;s going on here? Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: TheFirstAvenger		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1533</link>
+
+		<dc:creator><![CDATA[TheFirstAvenger]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2015 16:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1533</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1532&quot;&gt;josevalim&lt;/a&gt;.
+
+How exactly would the pipeline definition look in the Phoenix Router. For example, I have the following two pipelines defined which functioned correctly before adding in this test mock config:
+
+
+&lt;code&gt;  pipeline :secure do
+    plug :fetch_access_token
+    plug :authenticate_user
+    plug :fetch_user
+    plug :validate_permission, [level: :user, action: :edit]
+    plug :validate_permission, [level: :user, action: :view]
+  end
+
+
+  pipeline :admin_edit do
+    plug :validate_permission, [level: :admin, action: :edit]
+  end&lt;/code&gt;]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1532">josevalim</a>.</p>
+<p>How exactly would the pipeline definition look in the Phoenix Router. For example, I have the following two pipelines defined which functioned correctly before adding in this test mock config:</p>
+<p><code>  pipeline :secure do<br />
+    plug :fetch_access_token<br />
+    plug :authenticate_user<br />
+    plug :fetch_user<br />
+    plug :validate_permission, [level: :user, action: :edit]<br />
+    plug :validate_permission, [level: :user, action: :view]<br />
+  end</p>
+<p>  pipeline :admin_edit do<br />
+    plug :validate_permission, [level: :admin, action: :edit]<br />
+  end</code></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1532</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 24 Dec 2015 23:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1532</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1531&quot;&gt;TheFirstAvenger&lt;/a&gt;.
+
+That&#039;s because import works at expansion/compile time and the Application.get_env is performed at runtime. You won&#039;t be able to use import. You will need to use the `module.function(args)` syntax.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1531">TheFirstAvenger</a>.</p>
+<p>That&#8217;s because import works at expansion/compile time and the Application.get_env is performed at runtime. You won&#8217;t be able to use import. You will need to use the `module.function(args)` syntax.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: TheFirstAvenger		</title>
+		<link>/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1531</link>
+
+		<dc:creator><![CDATA[TheFirstAvenger]]></dc:creator>
+		<pubDate>Thu, 24 Dec 2015 17:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4914#comment-1531</guid>
+
+					<description><![CDATA[If I wanted to use a different auth plug for test, and I defined the module in my config, how would I go about using that plug in a phoenix router? My first attempt was this, which failed:
+&lt;code&gt;  import Application.get_env(:server_commander, :auth_plug)&lt;/code&gt;]]></description>
+			<content:encoded><![CDATA[<p>If I wanted to use a different auth plug for test, and I defined the module in my config, how would I go about using that plug in a phoenix router? My first attempt was this, which failed:<br />
+<code>  import Application.get_env(:server_commander, :auth_plug)</code></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

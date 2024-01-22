@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Improving your tests with Capybara custom selectors	</title>
+	<atom:link href="/2011/02/improving-your-tests-with-capybara-custom-selectors/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 16:38:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1093</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Sun, 13 Feb 2011 06:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1093</guid>
+
+					<description><![CDATA[This post really me helped out when trying to set my user agent for mobile view specs with Capybara.
+http://aflatter.de/2010/06/testing-headers-and-ssl-with-cucumber-and-capybara/]]></description>
+			<content:encoded><![CDATA[<p>This post really me helped out when trying to set my user agent for mobile view specs with Capybara.<br />
+<a href="http://aflatter.de/2010/06/testing-headers-and-ssl-with-cucumber-and-capybara/" rel="nofollow ugc">http://aflatter.de/2010/06/testing-headers-and-ssl-with-cucumber-and-capybara/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1092</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Thu, 10 Feb 2011 10:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1092</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1091&quot;&gt;josevalim&lt;/a&gt;.
+
+Actually guys, the first example:
+
+find(&quot;li&quot;).text.should 
+
+Would return the first &quot;li&quot; in the page. The second one:
+
+find(&quot;li&quot;)[0].text.should
+
+Would probably raise an error, as José pointed, the [] method is used to retrieve arguments. What should work is something like:
+
+lis = all(&quot;li&quot;)
+lis[0].text.should...
+lis[1].text.should...
+lis[2].text.should...
+
+The all method will return all &quot;li&quot; elements as an array in this case. 
+But I think that using the selectors is pretty cool and makes the syntax clearer.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1091">josevalim</a>.</p>
+<p>Actually guys, the first example:</p>
+<p>find(&#8220;li&#8221;).text.should </p>
+<p>Would return the first &#8220;li&#8221; in the page. The second one:</p>
+<p>find(&#8220;li&#8221;)[0].text.should</p>
+<p>Would probably raise an error, as José pointed, the [] method is used to retrieve arguments. What should work is something like:</p>
+<p>lis = all(&#8220;li&#8221;)<br />
+lis[0].text.should&#8230;<br />
+lis[1].text.should&#8230;<br />
+lis[2].text.should&#8230;</p>
+<p>The all method will return all &#8220;li&#8221; elements as an array in this case.<br />
+But I think that using the selectors is pretty cool and makes the syntax clearer.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1091</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 10 Feb 2011 09:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1091</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1090&quot;&gt;Anonymous&lt;/a&gt;.
+
+The first one would not give the same result. You are merging all li texts into one and it happens that asserting the order is important (it is an ordered ranking after all). The second one does not work on capybara afaik, the [] method is used to retrieve attributes of a given element.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1090">Anonymous</a>.</p>
+<p>The first one would not give the same result. You are merging all li texts into one and it happens that asserting the order is important (it is an ordered ranking after all). The second one does not work on capybara afaik, the [] method is used to retrieve attributes of a given element.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1090</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 20:29:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1090</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1089&quot;&gt;josevalim&lt;/a&gt;.
+
+I think you can do something like this:
+
+  find(&quot;li&quot;).text.should ...
+
+In the case of multiple elements, maybe this is possible:
+
+  find(&quot;li&quot;)[0].text.should ...]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1089">josevalim</a>.</p>
+<p>I think you can do something like this:</p>
+<p>  find(&#8220;li&#8221;).text.should &#8230;</p>
+<p>In the case of multiple elements, maybe this is possible:</p>
+<p>  find(&#8220;li&#8221;)[0].text.should &#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1089</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 18:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1089</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1088&quot;&gt;Anonymous&lt;/a&gt;.
+
+It would be even uglier with CSS selectors, wouldn&#039;t it?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1088">Anonymous</a>.</p>
+<p>It would be even uglier with CSS selectors, wouldn&#8217;t it?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/comment-page-1/#comment-1088</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 17:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1754#comment-1088</guid>
+
+					<description><![CDATA[If you think XPath is too ugly, why don&#039;t you use the default CSS selectors?]]></description>
+			<content:encoded><![CDATA[<p>If you think XPath is too ugly, why don&#8217;t you use the default CSS selectors?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

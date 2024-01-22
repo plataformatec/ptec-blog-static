@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>hiring « Plataformatec Blog</title>
+	<atom:link href="/tag/hiring/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 24 Mar 2016 19:08:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>6 dicas para mandar bem no código do processo seletivo da Plataformatec</title>
+		<link>/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2016 16:17:33 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[equipe]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=5228</guid>
+
+					<description><![CDATA[<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com vagas abertas na Plataformatec! Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia. Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto ... <a class="read-more-link" href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">»</a></p>
+<p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><img decoding="async" style="border: 0; max-width:100% !important;" src="/wp-content/uploads/2016/03/show-me-the-code-plataformatec.png" alt="Etapa: Show me the code" /></p>
+<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com <strong><a href="https://goo.gl/xvFz6i" target="_blank">vagas abertas na Plataformatec</a></strong>!</p>
+<p>Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia.</p>
+<p>Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto por 5 etapas:</p>
+<li>Bate papo inicial</li>
+<li>Entrevista técnica</li>
+<li>Show me the code</li>
+<li>Pair Programming</li>
+<li>Proposta Financeira</li>
+<p>No <strong>Bate papo inicial</strong>, o objetivo é conhecermos melhor os candidatos e apresentarmos quem nós somos; a <strong>Entrevista técnica</strong> tem por meta avaliar o conhecimento sobre desenvolvimento web (em especial, utilizando Ruby e Rails);  já na etapa de <strong>Show me the code</strong> queremos ver seu código; no <strong>Pair programming</strong> avaliamos como os candidatos pensam e se portam ao escreverem seu código. E finalmente, com todas essas informações em mãos, conseguimos fazer a <strong>Proposta financeira</strong>.</p>
+<p>O objetivo desse post é dar dicas sobre como ir bem na terceira etapa. Como já mencionado, a etapa <strong>Show me the code</strong> é o momento que as candidatas ou os candidatos têm para demonstrarem na prática o conhecimento avaliado durante a <strong>Entrevista técnica</strong>. A pessoa precisará desenvolver um aplicativo web de escopo reduzido que deve ser feito no prazo de uma semana.</p>
+<p>Depois de entregue, o aplicativo será revisado por nosso time que buscará as boas práticas de desenvolvimento.</p>
+<p>Vou citar algumas dicas que podem te ajudar a escrever um código com mais confiança e atingir um bom resultado:</p>
+<ul>
+<li>Familiarize-se com a ferramenta</li>
+<li>Comunique-se</li>
+<li>Reflita sobre a segurança</li>
+<li>Busque a simplicidade</li>
+<li>Valorize seu frontend</li>
+<li>Dê atenção a usabilidade</li>
+</ul>
+<h2>Familiarize-se com a ferramenta</h2>
+<p>Somos uma consultoria de Ruby e Ruby On Rails e esperamos que o candidato tenha familiaridade com a tecnologia. Mesmo que você venha de outra linguagem, esperamos que você saiba desenvolver usando as funcionalidades mais comuns do framework. Recomendo ler <a href="http://guides.rubyonrails.org/" target="_blank">Ruby On Rails Guides</a> e fazer o tutorial do livro online <a href="https://www.railstutorial.org/book" target="_blank">Ruby On Rails Tutorial</a>.</p>
+<h2>Comunique-se</h2>
+<p>Comunicação é muito importante para o nosso time. Durante o desenvolvimento, pense nas pessoas que vão revisar seu aplicativo e testá-lo. Pense nelas como se elas estivessem trabalhando junto com você. Valorize suas mensagens de <em>commit</em>, diga o quê e o porquê das mudanças. Uma boa ferramenta de consulta é o <strong>GitHub</strong>, inspire-se em projetos open source que você gosta.</p>
+<h2>Reflita sobre a segurança</h2>
+<p>Um app seguro é essencial para os usuários e conta como pontos positivos. Dê uma lida no <a href="http://guides.rubyonrails.org/security.html" target="_blank">guide sobre segurança do Ruby on Rails</a> e certifique-se se as actions do seu controller estão com as permissões corretas.</p>
+<h2>Busque a simplicidade</h2>
+<p>Sabemos que o tempo para produzir o código para nossa revisão é curto, mas o escopo também não é grande. Portanto, tente não se complicar adicionando muita complexidade. Não deixe de mostrar seus pontos fortes, porém o faça de maneira simples. Por exemplo, se você não domina muito Javascript, não precisa fazer uma single page app, com um framework grande de frontend, integrado com backend Rails conectado em diversos microserviços. Faça o simples que vai dar tudo certo.</p>
+<h2>Valorize seu frontend</h2>
+<p>Nosso foco é desenvolvimento web, portanto conhecimento de HTML, CSS e Javascript são muito importantes. Esperamos que o mesmo carinho que você tem no seu código Ruby tenha também no seu código de frontend.</p>
+<p>Se você manja de HTML e CSS, aproveite essa chance. Como muitas pessoas acabam escolhendo utilizar Bootstrap, essa é a oportunidade de mostrar seu diferencial.</p>
+<h2>Dê atenção a Usabilidade</h2>
+<p>Pense nos usuários que vão usar o aplicativo que você fez. Como a pessoa irá navegar e fazer as tarefas? Está intuitivo? É bom repassar os fluxos da aplicação manualmente para ter certeza de que as pessoas que usarem o aplicativo não irão encontrar erros ou ficarão perdidas.</p>
+<p>Vale lembrar ainda que, pelo sim ou pelo não, sempre te daremos um feedback. Se por algum motivo você não for aprovada(o), te enviaremos uma lista com os pontos onde você poderia ter ido melhor e as respectivas recomendações de estudo. Trabalhe esses pontos e, quando julgar que conseguiu evoluir, se <a href="https://goo.gl/xvFz6i" target="_blank">candidate novamente no nosso processo seletivo</a>. Por curiosidade, algumas pessoas do nosso time participaram do processo seletivo mais de uma vez. Se você for aprovada(o), prometemos muitos desafios e aprendizado.</p>
+<p>Para saber mais como serão seus primeiros meses de trabalho, indico dois posts para você: <em><a href="/2014/05/1-year-working-at-plataformatec/">One year working at plataformatec</a></em> (escrito também por <a href="https://twitter.com/ulissesalmeida" target="_blank">mim</a>) e <em><a href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">What I have learned in my first three months at plataformatec</a></em> (escrito por <a href="https://twitter.com/igorflorianfs" target="_blank">Igor Florian</a>).</p>
+<p>Espero que tenha gostado dessas dicas. Se você gostou e acha que elas se relacionam com a maneira que você gosta de trabalhar, inscreva-se no nosso <a href="https://goo.gl/xvFz6i" target="_blank">processo seletivo</a>.</p>
+<p>Para outras dicas de como mandar bem no desenvolvimento de software, recomendo também dar uma olhada nas palestras <a href="https://speakerdeck.com/flaviafortes/learn-from-my-mistakes" target="_blank">Learn From My Mistakes</a> da <a href="https://twitter.com/FlaFortes" target="_blank">Flavia Fortes</a> e <a href="https://speakerdeck.com/lucas/10-coisas-que-eu-gostaria-de-ter-aprendido-mais-cedo" target="_blank">10 Coisas Que Eu Gostaria de Ter aprendido Mais Cedo</a> do <a href="https://twitter.com/lucasmazza" target="_blank">Lucas Mazza</a>.</p>
+<p>Espero ver seu código em breve <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p style="margin-bottom:5px; margin-top:50px;"><a style="cursor: pointer;" href="https://goo.gl/xvFz6i" target="_blank"><img decoding="async" style="border: 0;" src="/wp-content/uploads/2016/03/estamos-contratando-developers-plataformatec.png" alt="Participar do processo seletivo" target="_blank" /></a></p>
+<div style="text-align:center; margin-bottom:60px;font:13px arial, sans-serif; color:#999;">Quer receber mais informações sobre nossas vagas, <a href="http://eepurl.com/bS0BJr" style="color:#999; text-decoration:underline;" target="_blank">inscreva-se em nossa mailing list</a>.</div><p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Estamos contratando gerentes de projetos</title>
+		<link>/2014/12/estamos-contratando-gerentes-de-projeto/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 19 Dec 2014 11:00:48 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=4345</guid>
+
+					<description><![CDATA[<p>Você tem perfil para lidar com pessoas e gosta de ágil? Gosta de metodologia ágeis como Scrum, Kanban e Lean? Temos uma oportunidade para você. Veja abaixo como é ser um gerente de projetos na Plataformatec, e também como é a cultura da nossa empresa. Sobre a Plataformatec A Plataformatec é uma empresa de consultoria ... <a class="read-more-link" href="/2014/12/estamos-contratando-gerentes-de-projeto/">»</a></p>
+<p>The post <a href="/2014/12/estamos-contratando-gerentes-de-projeto/">Estamos contratando gerentes de projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Você tem perfil para lidar com pessoas e gosta de ágil? Gosta de metodologia ágeis como Scrum, Kanban e Lean?</p>
+<p>Temos uma oportunidade para você. Veja abaixo como é ser um gerente de projetos na Plataformatec, e também como é a cultura da nossa empresa.</p>
+<p><iframe src="//fast.wistia.net/embed/iframe/xp3x8wzcie?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe></p>
+<p><script src="//fast.wistia.net/assets/external/iframe-api-v1.js"></script></p>
+<h2>Sobre a Plataformatec</h2>
+<p>A Plataformatec é uma empresa de consultoria em desenvolvimento de projetos de software customizado. Usamos Agile, Ruby, Rails, Elixir e métodos de análise estratégica de negócios para ajudar nossos clientes a alcançarem seus objetivos. Nosso time é organizado em equipes compostas por um gerente de projetos e de dois a seis desenvolvedores que encaram os seguintes desafios:</p>
+<ul>
+<li>entender como um projeto de software se encaixa na estratégia de um cliente e como esse projeto fará com que o cliente alcance seus objetivos</li>
+<li>ajudar o cliente a definir e esclarecer os objetivos de negócio</li>
+<li>criar um roadmap em formato de release backlog, pronto para ser transformado em software</li>
+<li>desenvolver software de modo iterativo, incremental e colaborativo</li>
+</ul>
+<p>Por entendermos que a entrega de resultados é de responsabilidade da equipe inteira, não existe hierarquia dentro de uma equipe. Cada pessoa cumpre seu papel da melhor maneira possível para atingir os objetivos do cliente. Não queremos apenas clientes, nosso objetivo é termos fãs.</p>
+<p>Como empresa, adoramos compartilhar nosso trabalho e a produção de conhecimento. Mantemos vários <a href="https://github.com/plataformatec">projetos open-source</a>, criamos <a href="http://elixir-lang.org/">nossa própria linguagem de programação</a>, escrevemos <a href="http://www.amazon.com/Crafting-Rails-Applications-Practices-Development/dp/1937785556/ref=sr_1_1?ie=UTF8&amp;qid=1418331529&amp;sr=8-1&amp;keywords=crafting+rails+applications">três</a> <a href="http://www.amazon.com/HTML5-CSS3-Domine-futuro-Portuguese-ebook/dp/B00JQYJB60/ref=sr_1_1?ie=UTF8&amp;qid=1418331546&amp;sr=8-1&amp;keywords=html+5+e+css+3">livros</a> sobre <a href="http://www.amazon.com/Cucumber-RSpec-aplica%C3%A7%C3%B5es-especifica%C3%A7%C3%B5es-Portuguese-ebook/dp/B00JQYJD5Y/ref=sr_1_1?ie=UTF8&amp;qid=1418331536&amp;sr=8-1&amp;keywords=cucumber+e+rspec">desenvolvimento de software</a> e palestramos em dezenas de eventos de desenvolvimento e agile. Além disso, somos referência mundial na comunidade de Ruby on Rails.</p>
+<p>Melhoria contínua sempre esteve presente em nosso DNA. Atuamos no mercado há quase seis anos e desde sempre aplicamos a filosofia agile na empresa inteira, do time de projetos ao RH, do time de vendas ao administrativo.</p>
+<p>Nós amamos nosso trabalho.</p>
+<h2>Sobre a vaga</h2>
+<p><strong>O que um gerente de projetos faz na Plataformatec</strong></p>
+<p>Nossos gerentes de projetos não seguem a chamada linha tradicional. O principal objetivo do nosso GP é potencializar o trabalho do restante da equipe. Para isso, ele mistura atividades de um gerente de projetos, mas também de scrum master, analista de requisitos e proxy de PO.</p>
+<p>Algumas atividades típicas do nosso gerente de projetos são:</p>
+<ul>
+<li>participar do entendimento dos objetivos de negócio do cliente</li>
+<li>ajudar o cliente a transformar suas ideias em requisitos de software</li>
+<li>facilitar a comunicação do time com o cliente</li>
+<li>organizar e acompanhar as releases do projeto</li>
+<li>ajudar o cliente a otimizar o escopo do projeto para maximizar o valor de negócio no período do projeto</li>
+<li>planejar e conduzir as cerimônias do agile: planning, daily, grooming, review e retrospectiva</li>
+<li>monitorar a velocidade de entrega e indicadores de sucesso do projeto</li>
+<li>retirar impedimentos da equipe</li>
+</ul>
+<p><strong>Requisitos para a vaga</strong></p>
+<ul>
+<li>Educação
+<ul>
+<li>ensino superior completo em curso da área de computação</li>
+<li>inglês intermediário (oral e escrito)</li>
+</ul>
+</li>
+<li>Experiência
+<ul>
+<li>1 ano em gestão de projetos de software</li>
+<li>1 ano em gestão de projetos com metodologias ágeis (Scrum, Kanban, Lean etc)</li>
+</ul>
+</li>
+<li>Skills
+<ul>
+<li>apresentar habilidade analítica</li>
+<li>ser orientado a resultados</li>
+<li>gostar de aprender</li>
+<li>ter boa comunicação (verbal e escrita)</li>
+<li>ser capaz de comunicar informações técnicas para pessoas não técnicas</li>
+</ul>
+</li>
+<li>
+<p>Disponibilidade para trabalhar em SP</p>
+</li>
+</ul>
+<h2>Como participar do processo seletivo</h2>
+<p>Para participar no processo seletivo visite <a href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers</a> e envie seu curriculum. Veja também nossa página no <a href="https://www.facebook.com/plataformatec.com.br">Facebook</a> para conhecer mais sobre o nosso time e <a href="https://www.facebook.com/media/set/?set=a.624574547608807.1073741828.270287263037539&amp;type=1">nosso escritório</a>.</p>
+<p>Nós queremos pessoas que compartilhem dos <a href="http://plataformatec.com.br/playbook">nossos valores</a>, que se importem com o que fazem e que não cansem de aprender e de se superarem.</p>
+<p>Se você compartilha da nossa visão, participe do processo seletivo. Se você conhece alguém que possa se interessar, <a href="mailto:email.do.seu.amigo@email.com?Subject=Vaga%20legal%20para%20gerente%20de%20projeto&amp;Body=Ola%2C%0A%0AA%20Plataformatec%20esta%20procurando%20novos%20gerentes%20de%20projeto%20e%20acho%20que%20vale%20a%20pena%20voce%20dar%20uma%20olhada.%0A%0ASegue%20o%20blog%20post%20falando%20da%20empresa%2C%20da%20cultura%20deles%20e%20da%20vaga%3A%20http%3A//blog.plataformatec.com.br/2014/12/estamos-contratando-gerentes-de-projeto/">indique para seu amigo</a>.</p><p>The post <a href="/2014/12/estamos-contratando-gerentes-de-projeto/">Estamos contratando gerentes de projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Estamos contratando mais desenvolvedores!</title>
+		<link>/2014/10/estamos-contratando-mais-desenvolvedores/</link>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Wed, 22 Oct 2014 11:00:38 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[hiring]]></category>
+		<guid isPermaLink="false">/?p=4253</guid>
+
+					<description><![CDATA[<p>&#160; Neste ano a Plataformatec completou apenas 5 anos, mas olhando para tudo que nós conseguimos conquistar, parece que se passou muito mais tempo. É fato que nós cometemos alguns erros, mas é uma enorme certeza de que aprendemos muito mais. E agora, que nós estamos olhando para os próximos anos, queremos convidar mais pessoas ... <a class="read-more-link" href="/2014/10/estamos-contratando-mais-desenvolvedores/">»</a></p>
+<p>The post <a href="/2014/10/estamos-contratando-mais-desenvolvedores/">Estamos contratando mais desenvolvedores!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>&nbsp;</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2014/10/plataformatec-team1.jpg" alt="Plataformatec team" width="1092" height="556" /></p>
+<p>Neste ano a Plataformatec completou apenas 5 anos, mas olhando para tudo que nós conseguimos conquistar, parece que se passou muito mais tempo. É fato que nós cometemos alguns erros, mas é uma enorme certeza de que aprendemos muito mais.</p>
+<p>E agora, que nós estamos olhando para os próximos anos, queremos convidar mais pessoas a juntarem-se ao nosso time. Nós queremos pessoas que compartilhem <a href="http://plataformatec.com.br/playbook">dos nossos valores</a>, que se importem com o que fazem e que não cansem de aprender e de se superarem.</p>
+<p>Se você está interessado em trabalhar em um ambiente que exige colaboração e que estimula as pessoas a se desenvolverem, então queremos te convidar para participar do nosso processo seletivo.</p>
+<p>Estamos contratando mais desenvolvedores e os requisitos da vaga são:</p>
+<ul>
+<li>Inglês intermediário</li>
+<li>Experiência com desenvolvimento de aplicativos web em qualquer linguagem (pelo menos 1 ano)</li>
+<li>Experiência com Ruby e Rails (pelo menos 6 meses)</li>
+<li>Disponibilidade integral</li>
+<li>Local: São Paulo (nosso escritório)</li>
+</ul>
+<p>Para participar do processo seletivo visite <a title="http://plataformatec.com.br/careers" href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers</a>. Veja também nossa <a title="Plataformatec no Facebook" href="http://www.facebook.com/plataformatec.com.br">página no Facebook</a> para conhecer mais sobre o nosso time.</p>
+<p>Estamos esperando por você!</p><p>The post <a href="/2014/10/estamos-contratando-mais-desenvolvedores/">Estamos contratando mais desenvolvedores!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Tips for hiring great software engineers</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/</link>
+					<comments>/2014/03/tips-for-hiring-great-software-engineers/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Tue, 25 Mar 2014 13:45:04 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[non-tech]]></category>
+		<category><![CDATA[playbook]]></category>
+		<category><![CDATA[ptec way]]></category>
+		<guid isPermaLink="false">/?p=3694</guid>
+
+					<description><![CDATA[<p>Every once in a while people ask us how we hire and interview software developers at Plataformatec. In this post, we share the key things we do when looking for and interviewing job candidates. We focused the post on actionable hints, from the basic tips up to some specific characteristics to the hiring process at Plataformatec. This is ... <a class="read-more-link" href="/2014/03/tips-for-hiring-great-software-engineers/">»</a></p>
+<p>The post <a href="/2014/03/tips-for-hiring-great-software-engineers/">Tips for hiring great software engineers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="padding-left: 30px;">Every once in a while people ask us how we hire and interview software developers at Plataformatec. In this post, we share the key things we do when looking for and interviewing job candidates. We focused the post on actionable hints, from the basic tips up to some specific characteristics to the hiring process at Plataformatec. This is what has been working for us and we hope it is useful for you too.</p>
+<div id="attachment_3736" style="width: 522px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3736" class=" wp-image-3736 " alt="how to interview software engineers" src="/wp-content/uploads/2014/03/patricia_and_hugo.jpg" width="512" height="384" srcset="/wp-content/uploads/2014/03/patricia_and_hugo.jpg 640w, /wp-content/uploads/2014/03/patricia_and_hugo-300x225.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /><p id="caption-attachment-3736" class="wp-caption-text">Pair-Interviewing: Patricia (HR Responsible) and Hugo (co-founder)</p></div>
+<h3>Part One &#8211; define your Candidate Profile</h3>
+<p>Having a well defined candidate profile can save a lot of your time and is fairly simple to put together. A Candidate Profile makes easy for a non-technical person (an HR colleague for example) to help you find and identify potential candidates. These are some examples of what could be in your profile description:</p>
+<ul>
+<li>common &#8220;job titles&#8221; (specially if you are using LinkedIn Search to find candidates. ex.: software engineer, software craftsman, ruby developer, and so on)</li>
+<li>the most common skills</li>
+<li>their degrees and/or the universities the candidates went to</li>
+<li>their graduation year (if you&#8217;re looking for recent grads)</li>
+<li>companies they have worked for in the past</li>
+<li>also, it helps a lot to describe the things you are NOT looking for</li>
+</ul>
+<p>But be careful not to make this list too long, it is supposed to be something simple to use. Our experience says that 4 to 5 characteristics are enough. If you want, you can <strong><a href="#download-form">download a Candidate Profile template</a></strong> at the end of this post.</p>
+<h3>Part Two &#8211; preparing your interview questions</h3>
+<p>The interview is a great opportunity for you to detect evidences (strong signals) that a candidate would be a great match with your team and that he/she is able to do the job&#8230; but you&#8217;ve got only 60min to do it. Wow, that&#8217;s hard! Where to start?</p>
+<p>We&#8217;d suggest that you follow these steps:</p>
+<p><strong>1) Think about your company Culture and Values</strong></p>
+<ul>
+<li>identify which behaviours&#8230;
+<ul>
+<li>&#8230;reinforce your company culture</li>
+<li>&#8230;are definitely against your company culture</li>
+</ul>
+</li>
+</ul>
+<p><strong> 2) Think about the challenges of being in the role/job</strong></p>
+<ul>
+<li>make a list of the key skills that the candidate must have to perform it&#8217;s activities
+<ul>
+<li>describe a typical day of a person in this position</li>
+<li>think about the most difficult tasks this position requires</li>
+</ul>
+</li>
+</ul>
+<p><strong>3) Focus on &#8216;how the candidate solves a problem&#8217; rather than &#8216;the right answer&#8217;</strong></p>
+<ul>
+<li>So, when building technical questions:
+<ul>
+<li>avoid technical questions that are &#8220;right or wrong&#8221; type</li>
+<li>prefer questions where the candidate has to compare X and Y and present you good arguments (the pros and cons), ex.:
+<ul>
+<li><em>&#8220;When would you recommend using X and when you would use Y?&#8221;</em></li>
+</ul>
+</li>
+<li>we usually ask the candidates to criticize something that they really like, e.g.:
+<ul>
+<li><em>&#8220;Tell me three things you don&#8217;t like about Ruby on Rails.&#8221;</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>4) Test your questions</strong></p>
+<ul>
+<li>once you have finished writing your questions, ask them to yourself, to your colleagues or friends. Take notes about the type of answers you&#8217;re getting.</li>
+<li>remember, your job during the interview is to look for EVIDENCES, so if the answers you are getting are not providing you any evidences, then you need to refactor your questions.</li>
+</ul>
+<h3>Part Three &#8211; the interview</h3>
+<p>All right, you are about to finally meet with the candidate face to face. And if you&#8217;re using Skype or Google Hangouts please turn on your camera and ask the candidate to do the same. For the interview here are a few notes and reminders:</p>
+<ol>
+<li><strong>Ice-breaking is important, and so is being nice. </strong>There&#8217;s high probability that the candidates will be nervous when the interview starts. So, the first step is to make them feel comfortable. This is good for them and for you too. If they feel comfortable, they will be able to be more authentic, show their real personalities. So, it is your job to turn the interview into a pleasant conversation. If the candidate is stressed during the whole interview you probably won&#8217;t be able to find any of your evidences.</li>
+<li><strong>Pair-Interviewing.</strong> At Plataformatec, we like to interview candidates in pairs because we believe that two people can detect evidences better than just one. Usually one of us conduces most of the interview while the other pays close attention and takes notes. But try to avoid more than two interviewers as it could increase the stress level for the candidate and that wouldn&#8217;t help at all.</li>
+<li><strong>The candidate should interview you too.</strong> Remember to spare a reasonable amount of time (preferably after you have asked your questions) to present your company to the candidate and to answer her/his questions. It is a respectful gesture. They have saved a few hours preparing and answering your questions and the least you can do is to return the gesture. And don&#8217;t forget that they are choosing where they want to work with you too. At Plataformatec, we feel that we had a good interview if the candidates leaves our office with more admiration and appraisal to our company&#8217;s culture, even if they are not moving on to the next steps of the hiring process.</li>
+<li><strong>Look for for Cultural Fit evidences.</strong> As an interviewer, your job is to detect if there is a fit between the candidates and your company. Sometimes we hear from others interviewers comments like &#8220;We scared the sh#@ out of the candidate!&#8221;. That is a very corrosive attitude. Besides making candidates uncomfortable and being disrespectful, it is unlikely they will suggest your company to their colleagues.</li>
+</ol>
+<p>Well, that&#8217;s it. I would love to hear your experiences in this topic and I wish you good luck in finding great teammates for your company! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<div id="download-form" style="margin-top: 50px; padding: 10px; background-color: #eee; border-radius: 10px;">
+<h3>Download the Candidate Profile template</h3>
+<p>Fill in the form below so that we can send you a link for downloading the template. That document can help you on defining your candidate profile.</p>
+<form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST" id="conversion-form">
+<fieldset style="max-width:500px;font:700 .8em Helvetica, Arial, sans-serif;color:#414141;border:none;"> <input type="hidden" name="token_rdstation" value="b667ebeff260eade64b64dc989992095"/> <input type="hidden" name="identificador" value="Candidates Profile Template - blog post"/> <input type="hidden" name="redirect_to" value="/thank-you-for-downloading-candidate-profile-template"/> </p>
+<div style="float:left;width:49%;"> <label for="first-name" style="display:block;margin-bottom:4px;">First name<span style="color:red;font-size:.8em;"> * </span></label> <input id="first-name" type="text" required="required" name="First Name" style=" width:95%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="float:right;width:49%;"> <label for="last-name" style="display:block;margin-bottom:4px;">Last name<span style="color:red;font-size:.8em;"> * </span></label> <input id="last-name" type="text" required="required" name="Last Name" style=" width:96%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="clear:both;"></div>
+<div style="margin-top:15px;"> <label for="email" style="display:block;margin-bottom:4px;">Email<span style="color:red;font-size:.8em;"> * </span></label> </p>
+<div style="display:block;margin: 0 0 1px;color:#aaa;font-size:11px;font-weight:normal;">Don&#8217;t worry, we won&#8217;t share your email with third parties</div>
+<p><input id="email "type="email" required="required" name="email" style="width:98%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="margin-top:15px;"> <label for="job-role" style="display:block;margin-bottom:4px;">Job role<span style="color:red;font-size:.8em;"> * </span></label> <select id="job-role" name="cargo" required style="width:100%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 27px;padding: 4px;font-weight:100;"><option value="">&#8211; Please Select &#8211;</option><option value="CTO / CIO / IT Director / VP Technology">CTO / CIO / IT Director / VP Technology</option><option value="CEO / CxO">CEO / CxO</option><option value="Developer / Software Architect">Developer / Software Architect</option><option value="Project manager / Scrum master / Agile coach">Project manager / Scrum master / Agile coach</option><option value="IT professional">IT professional</option><option value="Executive">Executive</option><option value="Other">Other</option></select> </div>
+<div style="margin-top:20px;"> <input type="submit" value="Send the template to my email" style="color: #fff;text-shadow: 0 -1px 0 #3574E3;background-color: #3574E3;background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…dpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==);background-size: 100%;background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#7ec8f4),color-stop(100%,#3574e3));background-image: -moz-linear-gradient(top,#7ec8f4,#3574e3);background-image: -webkit-linear-gradient(top,#7ec8f4,#3574e3);background-image: linear-gradient(to bottom,#7ec8f4,#3574e3);box-shadow: inset 0 1px 0 rgba(255,255,255,.5);border-top: 1px solid #64BAF0;border-bottom: 1px solid #1C4ED5;border-right: 1px solid #468EE6;border-left: 1px solid #468EE6;border-radius: 4px;-moz-transition: opacity .15s linear;-o-transition: opacity .15s linear;-webkit-transition: opacity .15s linear;transition: opacity .15s linear;-moz-user-select: none;-webkit-user-select: none;user-select: none;font-size: 12px;font-weight: 700;line-height: 12px;padding: 7px 18px;"> </div>
+<p><input type="hidden" name="c_utmz" id="c_utmz" value=""/> <input type="hidden" name="Nome" id="name"/> </fieldset>
+</p></form>
+</div>
+<p><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    function read_cookie(a) {
+      var b = a + "=";
+      var c = document.cookie.split(";");
+      for (var d = 0; d < c.length; d++) {
+        var e = c[d];
+        while (e.charAt(0) == " ") e = e.substring(1, e.length);
+        if (e.indexOf(b) == 0) {
+          return e.substring(b.length, e.length)
+        }
+      }
+      return null
+    }
+    try {
+      document.getElementById("c_utmz").value = read_cookie("__utmz");
+    } catch (err) {};
+    (function(window, document, undefined) {
+      var form = document.querySelectorAll('#conversion-form')[0];
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          var nameInput = document.getElementById('name'),
+          firstName = document.getElementById('first-name').value,
+          lastName = document.getElementById('last-name').value;
+          nameInput.value = firstName + ' ' + lastName;
+        }, true);
+      }
+    })(window, document);
+  });
+</script></p><p>The post <a href="/2014/03/tips-for-hiring-great-software-engineers/">Tips for hiring great software engineers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/03/tips-for-hiring-great-software-engineers/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Estamos contratando! E o nosso melhor job description é a nossa história.</title>
+		<link>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/</link>
+					<comments>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 10 Jan 2013 09:00:45 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[hiring]]></category>
+		<guid isPermaLink="false">/?p=3272</guid>
+
+					<description><![CDATA[<p>Se você acredita em colaboração, tem alta capacidade de aprendizado e tem vontade de trabalhar com um time com histórico de sucesso comprovado, participe do nosso processo seletivo. Você pode ser o nosso próximo integrante do nosso time. :)</p>
+<p>Como participar do processo seletivo<br />
+Para participar do processo seletivo visite http://plataformatec.com.br/careers ou também veja http://www.facebook.com/plataformatec.com.br para conhecer mais sobre o nosso time.</p>
+<p>The post <a href="/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/">Estamos contratando! E o nosso melhor job description é a nossa história.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Em 2009, quando fundamos a Plataformatec, havia muita incerteza e desafios pela frente. Por outro lado havia pontos claros para nós fundadores, principalmente quando o assunto eram as contratações do nosso time. Era unânime que não contrataríamos &#8220;recursos&#8221; e sim pessoas com as quais nós teríamos prazer e confiança em trabalhar juntos. Afinal de contas, o nosso modelo de negócios sempre foi lastreado na construção da nossa marca através da qualidade dos serviços que prestamos. Sendo assim, faz total sentido investir nossos esforços na retenção e desenvolvimento do nosso time.</p>
+<p>Quatro anos depois aqui estamos, com um considerável histórico de projetos bem sucedidos e algo que consideramos muito valioso: o nosso Time. Quem conhece um pouco sobre empresas de &#8220;Outsourcing de TI&#8221; sabe que o <a href="https://www.google.com.br/search?q=turnover+em+TI">turnover é altíssimo</a>, mais que o triplo da média de outros setores. Honestamente, é uma lógica que nunca entendemos. Aqui na Plataformatec, não tivemos nenhum desligamento em 2012 e em nossos quatro anos de existência, somente um dos nossos engenheiros optou em sair da Plataformatec (aliás, ele é um grande amigo nosso e sempre que está no Brasil aparece para comer uma pizza conosco). Já houve pessoas que nos perguntaram qual é a mágica. A resposta é óbvia: não tem mágica. Nós somente convidamos pessoas a juntarem-se ao nosso time quando sentimos que há um grande fit cultural.</p>
+<p style="text-align: center;"><img loading="lazy" decoding="async" class="aligncenter  wp-image-3274" title="Time Plataformatec" alt="Plataformatec_team" src="/wp-content/uploads/2013/01/Plataformatec_team.jpg" width="518" height="289" srcset="/wp-content/uploads/2013/01/Plataformatec_team.jpg 647w, /wp-content/uploads/2013/01/Plataformatec_team-300x167.jpg 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Portanto se você acredita em colaboração, tem alta capacidade de aprendizado e tem vontade de trabalhar com um time com histórico de sucesso comprovado, continue lendo. Você pode ser o próximo integrante do nosso time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><strong>Como participar do processo seletivo</strong><br />
+Para participar do processo seletivo visite <strong><a title="Plataformatec Careers" href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers</a></strong> ou também veja <strong><a title="Plataformatec Facebook page" href="http://www.facebook.com/plataformatec.com.br">http://www.facebook.com/plataformatec.com.br</a></strong> para conhecer mais sobre o nosso time.</p>
+<p><strong>Vagas abertas</strong><br />
+Estamos à procura de:</p>
+<ul>
+<li>Desenvolvedores de Software (Ruby e Rails)</li>
+<li>Front-end Developers</li>
+<li>Scrum Masters / Gerente de Projetos</li>
+<li>Business Analysts (extração de requisitos)</li>
+</ul>
+<p><strong>Requisitos para candidatar-se (todas as vagas)</strong></p>
+<p>Para qualquer uma das vagas:<br />
+&#8211; Inglês Intermediário<br />
+&#8211; Local de trabalho: São Paulo, bairro Vila Madalena<br />
+&#8211; Pelo menos um ano de experiência na sua área</p>
+<p><strong>Requisitos complementares para candidatos a Desenvolvedores de Software</strong><br />
+&#8211; Background em programação orientada a objetos<br />
+&#8211; Pelo menos um ano de experiência com desenvolvimento de aplicativos web em qualquer linguagem<br />
+&#8211; Pelo menos seis meses de experiência com Ruby e Rails<br />
+&#8211; OS Linux ou Mac<br />
+Mesmo que você não tenha todos os requisitos acima, mas realmente quer trabalhar conosco e ama programação, você está convidado a participar do nosso processo seletivo.</p>
+<p>Estamos esperando por você!</p>
+<p>Processo seletivo &#8211; <a title="Plataformatec Careers" href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers<br />
+</a>Facebook page &#8211; <a title="Plataformatec Facebook page" href="http://www.facebook.com/plataformatec.com.br">http://www.facebook.com/plataformatec.com.br</a>.</p>
+<p>[curiosidade] No <a href="/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/">blog post de dois anos atrás</a> ainda dava para enxergar o sofá nas fotos. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/">Estamos contratando! E o nosso melhor job description é a nossa história.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

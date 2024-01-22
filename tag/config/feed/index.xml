@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>config « Plataformatec Blog</title>
+	<atom:link href="/tag/config/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 31 Oct 2016 18:57:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Deploying Elixir applications with Edeliver</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/</link>
+					<comments>/2016/06/deploying-elixir-applications-with-edeliver/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 07 Jun 2016 20:32:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5457</guid>
+
+					<description><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like how to run migrations on top of a release or how to deal with environment variables. Now it&#8217;s time to discover another tool that can help us release our Elixir application. After practicing deploy and tracing through nodes with Exrm, we got more comfortable ... <a class="read-more-link" href="/2016/06/deploying-elixir-applications-with-edeliver/">»</a></p>
+<p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like <a href="/2016/04/running-migration-in-an-exrm-release/">how to run migrations on top of a release</a> or <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">how to deal with environment variables</a>. Now it&#8217;s time to discover another tool that can help us release our Elixir application.</p>
+<p>After practicing deploy and <a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/">tracing through nodes</a> with <a href="https://github.com/bitwalker/exrm" target="_blank">Exrm</a>, we got more comfortable knowing that there is a tool we can count on for managing production releases. Our next biggest concern was how could we make the deploy process more manageable. We couldn&#8217;t stop thinking about Capistrano, which we normally use for our Rails projects, then we found <a href="https://github.com/boldpoker/edeliver" target="_blank">Edeliver</a>. From Edeliver&#8217;s README description:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>edeliver is based on deliver and provides a bash script to build and deploy Elixir and Erlang applications and perform hot-code upgrades.</p></blockquote>
+<p>Trying the whole deploy process manually was a bit harsh with some repetitive tasks. Using Edeliver for our first <code>script/deploy</code> was awkwardly easy! In the end, the whole manual process was simplified to:</p>
+<pre><code class="bash">    #!/bin/bash -ex
+
+    BRANCH=${1:-master};
+
+    mix edeliver build release --branch=BRANCH --verbose
+    mix edeliver deploy release to production --verbose
+    mix edeliver start production --verbose
+    mix edeliver migrate production up --verbose
+</code></pre>
+<p>You&#8217;re probably going to need to customize this script, adapting it for your needs. In this case, we&#8217;re using this script only for production deploys, but you can customize it for staging servers pretty easily. We&#8217;ll explain how environments work further along.</p>
+<h2>How it works</h2>
+<p>As we saw before in the README quote, Edeliver makes pretty much everything with bash scripts. The Mix tasks we saw above will be executed with Elixir, but they&#8217;ll result in bash script instructions. Part of the instructions are executed in the scripts locally, which will build new instructions that will run remotely via RPC (Remote procedure call).</p>
+<p>Let&#8217;s go deeper in some aspects of the lib.</p>
+<h2>Environments</h2>
+<p>Edeliver is a cool option for launching and distributing releases in multiple environments. It has a concept of three environments: build, staging and production. Among these, only the build environment should get a bit more of attention.</p>
+<p>For a release to work in a server, it must have been built in a machine with the same architecture where the release will run. That&#8217;s because Edeliver uses Exrm for building its releases. Exrm will internally use its local <a href="http://erlang.org/doc/tutorial/nif.html" target="_blank">NIFs</a> (C functions used by Erlang) which may vary in a different architecture, thus causing, for example, an OSX release not working on Linux. You can read more about it in <a href="https://github.com/phoenixframework/phoenix_guides/issues/254" target="_blank">this Phoenix issue</a> where people are discussing cross-compiling issues and there are some other <a href="https://github.com/bitwalker/exrm/issues?utf8=%E2%9C%93&#038;q=is%3Aissue+cross+compiling+" target="_blank">issues in Exrm</a> as well.</p>
+<p>In order to use the build environment in our own development machine, it needs to use the same architecture of our staging and production servers, otherwise it won&#8217;t work.</p>
+<p>To configure our environments, we&#8217;ll need to create a <code>.deliver</code> directory in our project and add a <code>config</code> file. Let&#8217;s see the suggested configs from Edeliver&#8217;s README for this file:</p>
+<pre><code class="bash">#!/usr/bin/env bash
+
+APP="your-erlang-app" # name of your release
+
+BUILD_HOST="build-system.acme.org" # host where to build the release
+BUILD_USER="build" # local user at build host
+BUILD_AT="/tmp/erlang/my-app/builds" # build directory on build host
+
+STAGING_HOSTS="test1.acme.org test2.acme.org" # staging / test hosts separated by space
+STAGING_USER="test" # local user at staging hosts
+TEST_AT="/test/my-erlang-app" # deploy directory on staging hosts. default is DELIVER_TO
+
+PRODUCTION_HOSTS="deploy1.acme.org deploy2.acme.org" # deploy / production hosts separated by space
+PRODUCTION_USER="production" # local user at deploy hosts
+DELIVER_TO="/opt/my-erlang-app" # deploy directory on production hosts
+</code></pre>
+<p>It&#8217;s pretty easy to configure our environments, we only need to make sure we have <code>ssh</code> permission for these servers specified. A cool thing about this whole configuration, as mentioned before, is that it&#8217;s possible to distribute the releases through several servers.</p>
+<h2>How can I include extra tasks to my deploy process?</h2>
+<p>What Edeliver does is generic for Elixir and Erlang applications. When we&#8217;re using Phoenix, for example, we need to run some tasks before generating the release. The most important tasks are <code>brunch build --production</code> and <code>mix phoenix.digest</code> so we can have our assets working on our release.</p>
+<p>To make these work, we&#8217;ll need to define a hook in our <code>.deliver/config</code> file:</p>
+<pre><code class="bash">pre_erlang_clean_compile() {
+  status "Preparing assets with: brunch build and phoenix.digest"
+  __sync_remote "
+    # runs the commands on the build host
+    [ -f ~/.profile ] &amp;&amp; source ~/.profile # load profile (optional)
+
+    # fail if any command fails (recommended)
+    set -e
+
+    # enter the build directory on the build host (required)
+    cd '$BUILD_AT'
+
+    mkdir -p priv/static # required by the phoenix.digest task
+
+    # installing npm dependencies
+    npm install
+
+    # building brunch
+    brunch build --production
+
+    # run your custom task
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+  "
+} 
+</code></pre>
+<p>This was extracted from an Edeliver doc sample, which explains all the possibilities of hooks.</p>
+<h2>What about my environment variables?</h2>
+<p>We shared a tip on <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">dealing with environment variables with Exrm</a> in order to avoid exporting them in our build environment and it&#8217;s still up! Although, there&#8217;s an important detail we&#8217;ll need to pay attention.</p>
+<p>In order to make the environments replaceable we needed to set <code>RELX_REPLACE_OS_VARS=true</code> before our start command. But that&#8217;s not possible with Edeliver because the start task runs locally.</p>
+<p><code>mix edeliver start production</code></p>
+<p>Then a possible solution is to export the <code>RELX_REPLACE_OS_VARS</code> in your production environment.</p>
+<h2>Considerations</h2>
+<p>Edeliver seems like a cool option for dealing with our releases and deploy process, I found it really easy to use. I didn&#8217;t enter in implementation details in this post, so make sure to read its <a href="https://github.com/boldpoker/edeliver" target="_blank">README</a> and docs, they&#8217;re very useful and well-explained.</p>
+<p>This was a solution we found to ease our deploy process. How have you been managing your process? Did this post help you?</p>
+<hr>
+<div style="margin:30px 0 60px;">
+<p style="text-align:center; margin-bottom:0; padding-bottom:0; font-weight:bold; font-size:1em; color:#444;">If you are into Elixir-Phoenix, you may also like&#8230;</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom-with-title" target="_blank"><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/06/deploying-elixir-applications-with-edeliver/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to config environment variables with Elixir and Exrm</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/</link>
+					<comments>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 19:02:05 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5417</guid>
+
+					<description><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using ENV vars (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it on its Configuration section: The twelve-factor app stores config in environment variables ... <a class="read-more-link" href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">»</a></p>
+<p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using <strong>ENV vars</strong> (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it <a href="http://12factor.net/config" target="_blank">on its Configuration section</a>:</p>
+<blockquote style="font-size: 1.1em; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p><em>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.</em></p></blockquote>
+<p>In an Elixir project, the config goes in <code>Mix.Config</code> files. Some examples are: <code>config.exs</code> and environment config files (<code>dev.exs</code>, <code>test.exs</code> and <code>prod.exs</code>). These files are generally used by frameworks and libraries, but they have already proven useful for <a href="/2015/10/mocks-and-explicit-contracts/" target="_blank">using mocks in our tests</a>.</p>
+<p>Let&#8217;s take an <a href="https://github.com/elixir-lang/ecto" target="_blank"><strong>Ecto</strong></a> config as example:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: "postgres",
+password: "postgres",
+database: "myapp_dev",
+hostname: "localhost",
+pool_size: 10
+</code></pre>
+<p>A well-known approach is using <a href="https://en.wikipedia.org/wiki/Environment_variable" target="_blank"><strong>Environment variables</strong></a> to hide and scope these values through different environments. To use it, we just need to have a configured variable and get it in our application. In Elixir we do this easily with <a href="http://elixir-lang.org/docs/stable/elixir/System.html#get_env/1" target="_blank"><code>System.get_env("ENV_VAR")</code></a>.</p>
+<p>We could configure our last example with this approach:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: System.get_env("DB_USER"),
+password: System.get_env("DB_PASSWORD"),
+database: System.get_env("DB_NAME"),
+hostname: System.get_env("DB_HOST"),
+pool_size: 10
+</code></pre>
+<p>This way you won&#8217;t expose your database configs and will actually make things more dynamic. In development this is useful because the developers won&#8217;t need to make changes on this file, they&#8217;ll just need to export these vars.</p>
+<p>So far this isn&#8217;t much different from what we do in other languages. However, things start to happen differently when we try to generate an Exrm release to deploy our app in production.</p>
+<h2>ENV vars need to be present during compile time</h2>
+<p>We all already know that Elixir is a compiled language. And in order to deploy or generate a release we need to compile our application. So everything is compiled, even our config files! Then, there&#8217;s an interesting behavior while compiling our config files.</p>
+<p>Our <code>System.get_env()</code> calls will be evaluated during the compilation, so the binaries will be generated with the current value of the ENV var. Because of this, we need all of our environment variables to be exported during compiling. When we don&#8217;t have them, their value will be <code>nil</code> and we won&#8217;t be able to connect to our database, for example. This way, to build a release we&#8217;d need all our environment variables where we&#8217;re building it (our own machine or a build server).</p>
+<p>If we&#8217;re <strong>working with Phoenix</strong>, there is an exception. Phoenix has a special way of configuring an HTTP port with ENV vars that evaluates it during runtime.</p>
+<pre><code class="elixir">config :myapp, MyApp.Endpoint,
+http: [port: {:system, "PORT"}],
+# ...
+</code></pre>
+<p>It works great and data won&#8217;t be fixed in the release, but it&#8217;s <a href="https://github.com/phoenixframework/phoenix/blob/v1.1.4/lib/phoenix/endpoint/server.ex#L45" target="_blank">specific for this Phoenix config</a>. But don&#8217;t be sad! There are already some <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">mature discussions</a> around this in the Exrm repo, take a look, you may be able to help!</p>
+<h2>There&#8217;s a way when using Exrm release</h2>
+<p>I was chatting around <a href="https://elixir-lang.slack.com/" target="_blank">Elixir Slack channel</a><a href=""></a> when our friend <a href="https://twitter.com/renanranelli" target="_blank">Ranelli</a> mentioned that there was a simple technique that we could use to solve this when we build an Exrm release. Instead of using <code>System.get_env</code> in our configs, we must use <code>"${ENV_VAR}"</code>. Then, we just need to run our release with <code>RELX_REPLACE_OS_VARS=true</code>.</p>
+<p><code>RELX_REPLACE_OS_VARS=true rel/myapp/bin/myapp start</code></p>
+<p>This will make our release to use the values represented by these special strings. I&#8217;ll explain.</p>
+<p>An Exrm release has two important files: <code>sys.config</code> and <code>vm.args</code>. These files are responsible by the data used in production (usually what&#8217;s in <code>config.exs</code> and <code>prod.exs</code>) and specific configs that we can make of the Erlang VM respectively.</p>
+<h3>sys.config</h3>
+<pre><code class="erlang">[{sasl,[{errlog_type,error}]},
+{logger,
+[{console,
+[{format,&lt;&lt;"$time $metadata[$level] $message\n"&gt;&gt;},
+{metadata,[request_id]}]},
+{level,info}]},
+{myapp,
+[{'Elixir.MyApp.Endpoint',
+[{root,&lt;&lt;"/Users/igorffs/src/myapp"&gt;&gt;},
+{render_errors,[{accepts,[&lt;&lt;"html"&gt;&gt;,&lt;&lt;"json"&gt;&gt;]}]},
+{pubsub,
+[{name,'Elixir.MyApp.PubSub'},
+{adapter,'Elixir.Phoenix.PubSub.PG2'}]},
+{http,[{port,&lt;&lt;"${PORT}"&gt;&gt;}]},
+{url,[{host,&lt;&lt;"localhost"&gt;&gt;}]},
+{cache_static_manifest,&lt;&lt;"priv/static/manifest.json"&gt;&gt;},
+{server,true},
+{secret_key_base,
+&lt;&lt;"${SECRET_KEYBASE}"&gt;&gt;}]},
+{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}]},
+{phoenix,[{generators,[{migration,true},{binary_id,false}]}]}].
+</code></pre>
+<h3>vm.args</h3>
+<pre><code class="erlang">## Name of the node
+-sname myapp
+
+## Cookie for distributed erlang
+-setcookie myapp
+
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+##-heart
+
+## Enable kernel poll and a few async threads
+##+K true
+##+A 5
+
+## Increase number of concurrent ports/sockets
+##-env ERL_MAX_PORTS 4096
+
+## Tweak GC to run more often
+##-env ERL_FULLSWEEP_AFTER 10
+</code></pre>
+<p>Exrm is using a lib called <a href="https://github.com/erlware/relx" target="_blank"><strong>relx</strong></a> under the hood to build its releases. When we exported <code>RELX_REPLACE_OS_VARS=true</code> <code>relx</code> will make a replace of the strings by their correspondent ENV var values in the config files.</p>
+<pre><code class="erlang">{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}
+</code></pre>
+<p>You&#8217;ve noticed where our special strings are in the <code>sys.config</code>, and if you guessed that this process can be done manually, you got it! But this replace really makes things easier for us. Otherwise, we would have to edit every option in the file. It&#8217;s very important to mention, if you change those files, you&#8217;ll have to reboot your application.</p>
+<h2>Considerations</h2>
+<p>This subject is very important if we&#8217;re going on production. It concerned us a bit when we&#8217;ve noticed that we couldn&#8217;t have more dynamic configs. This replacement solution was a relief. Make sure to keep following <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">the discussion I mentioned before</a>, things are probably going to change after it.</p>
+<p>Have you already been in trouble dealing with ENV vars? How did you solve it?</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom" target="_blank"><br />
+<img decoding="async" class="aligncenter size-full wp-image-5371" style="max-width: 100%;" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/feed/</wfw:commentRss>
+			<slash:comments>10</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

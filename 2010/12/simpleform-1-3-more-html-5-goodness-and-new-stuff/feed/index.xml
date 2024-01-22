@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: SimpleForm 1.3: more HTML 5 goodness and new stuff	</title>
+	<atom:link href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 30 Dec 2010 12:41:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: dpickett		</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1072</link>
+
+		<dc:creator><![CDATA[dpickett]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 12:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1529#comment-1072</guid>
+
+					<description><![CDATA[I&#039;m a huge fan of this library. I recently switched over from Formtastic to it because I felt it was less opininated about markup and had better i18n support. You achieve a nice balance on how heavily the utility can be configured as well.
+
+Nice work! I&#039;m looking forward to its continued development!]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m a huge fan of this library. I recently switched over from Formtastic to it because I felt it was less opininated about markup and had better i18n support. You achieve a nice balance on how heavily the utility can be configured as well.</p>
+<p>Nice work! I&#8217;m looking forward to its continued development!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1069</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Thu, 23 Dec 2010 10:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1529#comment-1069</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1068&quot;&gt;Anonymous&lt;/a&gt;.
+
+Hello mate, thanks for your feedback.
+
+Just to clarify, the :tel option, besides adding the css classes, also changes the input type of the field in question (input[type=tel]), which is a new HTML5 option.
+
+Now about the lack of docs on how to add new form element types, you are right. We are planning to write a new blog post on that subject soon, so stay tunned =).
+Thanks for the tip.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1068">Anonymous</a>.</p>
+<p>Hello mate, thanks for your feedback.</p>
+<p>Just to clarify, the :tel option, besides adding the css classes, also changes the input type of the field in question (input[type=tel]), which is a new HTML5 option.</p>
+<p>Now about the lack of docs on how to add new form element types, you are right. We are planning to write a new blog post on that subject soon, so stay tunned =).<br />
+Thanks for the tip.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1068</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Wed, 22 Dec 2010 23:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1529#comment-1068</guid>
+
+					<description><![CDATA[Great library, very lightweight, and I am implementing it throughout all my projects.  Almost all of my integration tests still passed after dropping this in for formtastic (after &#039;semantic&#039; -&#062; &#039;simple&#039;).
+
+The only thing that is really lacking is documentation about adding new form element types.  Basically I say this only because:
+
+The :tel option seems to be nothing more than adding a class of tel to the input field.  Is the intention for js to come in and customize the text inputs based on their css classes?  I realize that phone numbers are *massively* complicated with internationalization, so having a phone element be too flexible is probably a pain for you guys to do.  So on my end I want to add the phone element I made for formtastic so I&#039;m searching for a *clean* way to do that.
+
+If there was even a simple example of doing this sort of thing it would be awesome.  As it is I am cobbling a solution together that works via monkeypatching, but since that&#039;s not very Rails-3-ish I was wondering what the &quot;official&quot; plataforma technique is for extending simple_form.
+
+Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Great library, very lightweight, and I am implementing it throughout all my projects.  Almost all of my integration tests still passed after dropping this in for formtastic (after &#8216;semantic&#8217; -&gt; &#8216;simple&#8217;).</p>
+<p>The only thing that is really lacking is documentation about adding new form element types.  Basically I say this only because:</p>
+<p>The :tel option seems to be nothing more than adding a class of tel to the input field.  Is the intention for js to come in and customize the text inputs based on their css classes?  I realize that phone numbers are *massively* complicated with internationalization, so having a phone element be too flexible is probably a pain for you guys to do.  So on my end I want to add the phone element I made for formtastic so I&#8217;m searching for a *clean* way to do that.</p>
+<p>If there was even a simple example of doing this sort of thing it would be awesome.  As it is I am cobbling a solution together that works via monkeypatching, but since that&#8217;s not very Rails-3-ish I was wondering what the &#8220;official&#8221; plataforma technique is for extending simple_form.</p>
+<p>Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Daniel Salmerón Amselem		</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1051</link>
+
+		<dc:creator><![CDATA[Daniel Salmerón Amselem]]></dc:creator>
+		<pubDate>Mon, 13 Dec 2010 10:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1529#comment-1051</guid>
+
+					<description><![CDATA[The placeholder options it&#039;s a nice addition to the library. Thanks!]]></description>
+			<content:encoded><![CDATA[<p>The placeholder options it&#8217;s a nice addition to the library. Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/comment-page-1/#comment-1050</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Wed, 08 Dec 2010 22:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1529#comment-1050</guid>
+
+					<description><![CDATA[Nice! Keep up the good work guys!]]></description>
+			<content:encoded><![CDATA[<p>Nice! Keep up the good work guys!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>inherited_resources « Plataformatec Blog</title>
+	<atom:link href="/tag/inherited_resources/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:57:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>One in Three: Inherited Resources, Has Scope and Responders</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/</link>
+					<comments>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 14:06:04 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[inherited_resources]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[respond_with]]></category>
+		<category><![CDATA[responders]]></category>
+		<guid isPermaLink="false">/?p=525</guid>
+
+					<description><![CDATA[<p>Inherited Resources always had a hate/love history with Rails Edge. Just after DHH posted about respond_with, it was already there in Inherited Resources. This initial implementation provided a nice test suite and several use cases for a improved Rails&#8217; implementation, based in Responders, which encapsulates all the behavior in one class, and can be added, ... <a class="read-more-link" href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">»</a></p>
+<p>The post <a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">One in Three: Inherited Resources, Has Scope and Responders</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> always had a hate/love history with <a href="http://github.com/rails/rails">Rails Edge</a>. Just after <a href="http://www.loudthinking.com/posts/37">DHH posted about respond_with</a>, it was already there in Inherited Resources. This initial implementation provided a nice test suite and several use cases for a <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">improved Rails&#8217; implementation</a>, based in <a href="http://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/responder.rb" target="_blank">Responders</a>, which encapsulates all the behavior in one class</a>, and can be added, modified or updated.</p>
+<p>After that, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> was outdated and envy. It needed to be updated and it was: <a href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/">responders has been available in Inherited Resources</a> for more than four months, and consequently in Rails 2.3.</p>
+<p>Everything looked great until we started to develop a fresh Rails 3 application. The main purpose of this fresh application is to be a sample of Rails 3 features, including generators and responders. Based on that, it doesn&#8217;t make sense to use a tool like <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a>, since it would abstract almost all controllers away and the application would no longer fit as an example.</p>
+<p>So we were there, building an application based on scaffold, and as we saw duplicated code we started to realize <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> contains a lot of tools that could be used outside its context. And this is what is happening right now, two new gems are being launched: <a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> and <a href="http://github.com/plataformatec/has_scope" target="_blank">HasScope</a>.</p>
+<h3>Responders</h3>
+<p><a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> is a repository of Rails 3 <a href="http://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/responder.rb" target="_blank">responders</a>, mainly based <a href="http://weblog.rubyonrails.org/2009/8/31/three-reasons-love-responder">on this post on Ruby on Rails weblog</a>. And as a proof of concept, we wrote two Responders: <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/flash_responder.rb" target="_blank">FlashResponder</a> and <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/http_cache_responder.rb" target="_blank">HttpCacheResponder</a>.</p>
+<p><a href="http://github.com/plataformatec/responders/blob/master/lib/responders/flash_responder.rb" target="_blank">FlashResponder</a> uses I18n to automatically look up flash messages for you, even allowing you to set generic messages. In other words, your old create action:</p>
+<pre lang="ruby" line="1">
+  def create
+    @post = Post.new(params[:post])
+    flash[:notice] = "Post was successfully created" if @post.save
+    respond_with(@post)
+  end
+</pre>
+<p>Can now be written as:</p>
+<pre lang="ruby" line="1">
+  def create
+    @post = Post.new(params[:post])
+    @post.save
+    respond_with(@post)
+  end
+</pre>
+<p>Your locale just needs to have the following configuration:</p>
+<pre lang="yaml">
+  flash:
+    actions:
+      create:
+        notice: "{resource_name} was successfully created"
+      update:
+        notice: "{resource_name} was successfully updated"
+      destroy:
+        notice: "{resource_name} was successfully destroyed"
+        alert: "{resource_name} could not be destroyed"
+</pre>
+<p>If you want to change a message, let&#8217;s say, the success message when creating a post, there are several ways to achieve that. You can give :notice to <em>respond_with</em> or even update your I18n under the key: <em>&#8220;flash.posts.create.notice&#8221;</em>.</p>
+<p>For us it came as a nice tool to provide I18n by default in our controllers and decouple messages from code.</p>
+<p>The <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/http_cache_responder.rb" target="_blank">HttpCacheResponder</a> automatically adds a Last-Modified header to API requests without any extra configuration. This allows clients to easily query the server if a resource changed and also replies with 304 (Not Modified) status.</p>
+<p>As usual, the code for both implementations came from <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a>. And since it contains a Rails 3.0 Responders shim, those responders can already be used in <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> and they are!</p>
+<p>In other words, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> code got simplified and such features can now be used by any Rails 3 application without a need to load all <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> stack. Besides, as more Responders appears, they can be added to <a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> repository and be used in <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> easily.</p>
+<h3>HasScope</h3>
+<p>The other tool extracted from <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> is <a href="http://github.com/plataformatec/has_scope">HasScope</a>. </p>
+<p>Let&#8217;s suppose that we have a ProjectsController and at some point you want to add some filters on the index action like showing just featured projects, selecting projects by methodology or even let the user choose how many projects he can see per page. The first thing to do? Add named scopes to your model:</p>
+<pre lang="ruby" line="1">
+class Project < ActiveRecord::Base
+  named_scope :featured, :conditions => { :featured => true }
+  named_scope :by_methodology, proc {|methodology| { :conditions => { :methodology => methodology } } }
+  named_scope :limit, proc{|limit| :limit => limit.to_i }
+end
+</pre>
+<p>The next step would be to add a lot of code in your controllers that check which named scopes you should call, based on the parameters sent right? Well, not anymore. Your controller can be as simple as:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < ApplicationController
+  has_scope :featured, :type => :boolean
+  has_scope :by_methodology
+  has_scope :limit, :default => 10, :only => :index
+
+  def index
+    @projects = apply_scopes(Project).all
+  end
+end
+</pre>
+<p>Then for each request:</p>
+<pre>
+/projects
+#=> acts like a normal request, but returning only 10 projects
+
+/projects?featured=true
+#=> calls the featured named scope and bring 10 featured projects
+
+/projects?featured=true&by_methodology=agile&limit=20
+#=> brings 20 featured projects with methodology agile
+</pre>
+<p>If you configure your routes, you could even have pretty urls with it:</p>
+<pre>
+/projects/agile/featured
+#=> brings 10 featured projects with methodology agile
+</pre>
+<p>All in all, you can now call has_scope in any controller  and in case you are using it inside an Inherited Resources controller, everything gets handled automatically, so enjoy!</p>
+<h3>So Inherited Resources finally reaches 1.0</h3>
+<p>After this refactoring and a complete clean up of <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> issues, it finally reaches 1.0! When you install it, responders and has_scope gems should be installed as well. Responders is always loaded, since it&#8217;s a dependency, but if you want to use has_scope you will need to add it to your environment as well.</p>
+<p>After you install the gem, the upgrade process in any application can be handled in three steps:</p>
+<p>1) Add config.gem <em>&#8220;has_scope&#8221;</em> to your <em>&#8220;config/environment.rb&#8221;</em>.</p>
+<p>2) Configure which flash keys are used by your application. At first, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> used :notice and :error. Then we changed to :success and :failure, but just after this DHH established :notice and :alert as Rails default.</p>
+<p>From 1.0 on, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> will be using :notice and :alert, but it allows you to change it:</p>
+<pre lang="ruby">
+  InheritedResources.flash_keys = [ :success, :failure ]
+</pre>
+<p>3) Finally, you may need to do a final change in your application due to how responders work. The default way a resource tells a responder if it was created/updated/destroyed with success or not, is through errors. If the errors are empty, it assumes it succeeded, otherwise it failed.</p>
+<p>This will be true in all create/update scenarios, but not in destroy. In other words, if you have a code with similar structure in your model (please don&#8217;t!):</p>
+<pre lang="ruby">
+  def before_destroy
+    if some_condition_is_not_valid?
+      false
+    else
+      true
+    end
+  end
+</pre>
+<p>It won&#8217;t work anymore. You need to add an error to your model to really invalidate it:</p>
+<pre lang="ruby">
+  def before_destroy
+    if some_condition_is_not_valid?
+      errors.add(fault_attribute, :invalid)
+      false
+    else
+      true
+    end
+  end
+</pre>
+<p>Now you should be ready to go. Enjoy!</p><p>The post <a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">One in Three: Inherited Resources, Has Scope and Responders</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Inherited Resources is scopes and responder fluent</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/</link>
+					<comments>/2009/08/inherited-resources-is-scopes-and-responder-fluent/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 28 Aug 2009 14:08:57 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[inherited_resources]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=127</guid>
+
+					<description><![CDATA[<p>First, what is Inherited Resources? Inherited Resources is a gem/plugin that allows you to speed up development by making your controllers inherit all restful actions so you just have to focus on what is important. A Rails scaffold controller which responds to html, xml and json is as simple as: class ProjectsController < InheritedResources::Base respond_to ... <a class="read-more-link" href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/">»</a></p>
+<p>The post <a href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/">Inherited Resources is scopes and responder fluent</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h3>First, what is Inherited Resources?</h3>
+<p><a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> is a gem/plugin that allows you to speed up development by making your controllers inherit all restful actions so you just have to focus on what is important. A Rails scaffold controller which responds to html, xml and json is as simple as:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResources::Base
+  respond_to :html, :xml, :json
+end
+</pre>
+<p>However all actions are still customizable! For example, you can change the behavior of the create action on success just doing:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResouces::Base
+  respond_to :html, :xml, :json
+
+  def create
+    create! do |success, failure|
+      success.html { redirect_to edit_project_url(@project) }
+    end
+  end
+end
+</pre>
+<p>It also supports I18n (all flash messages are set with I18n), belongs to association (like a task belongs to project), nested belongs to (task belongs to project which belongs to company), polymorphic belongs to (comments belong to task or file or message) and optional belongs to (the same as previously, but you can request the resource with or without parents).</p>
+<p>As you noticed, besides simplifying your controllers, InheritedResouces makes easy to reproduce your models behavior and relationship in controllers. And right now, it's also scopes and responder fluent!</p>
+<h3>has_scope: named_scope twin brother</h3>
+<p>Let's suppose that we have a ProjectsController and at some point you want to add some filters on the index action like showing just featured projects, selecting projects by methodology or even let the user choose how many projects he can see per page. The first thing to do? Add named scopes to your model:</p>
+<pre lang="ruby" line="1">
+class Project < ActiveRecord::Base
+  named_scope :featured, :conditions => { :featured => true }
+  named_scope :by_methodology, proc {|methodology| { :conditions => { :methodology => methodology } } }
+  named_scope :limit, proc{|limit| :limit => limit.to_i }
+end
+</pre>
+<p>The next step would be to add a lot of code in your controllers that check which named scopes you should call, based on the parameters sent right? Well, not anymore. Your controller can be as simple as:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResources::Base
+  has_scope :featured, :boolean => true
+  has_scope :by_methodology
+  has_scope :limit, :default => 10, :only => :index
+end
+</pre>
+<p>Then for each request:</p>
+<pre>
+/projects
+#=> acts like a normal request, but returning only 10 projects
+
+/projects?featured=true
+#=> calls the featured named scope and bring 10 featured projects
+
+/projects?featured=true&by_methodology=agile&limit=20
+#=> brings 20 featured projects with methodology agile
+</pre>
+<p>If you configure your routes, you could even have pretty urls with it:</p>
+<pre>
+/projects/agile/featured
+#=> brings 10 featured projects with methodology agile
+</pre>
+<p>Yay!</p>
+<h3>Responder</h3>
+<p>A couple weeks ago, we wrote about <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">ActionController::Responder</a>. But you don't have to wait Rails 3 to be released to play with it, you can start now by using Inherited Resources.</p>
+<h3>Quick redirect</h3>
+<p>After using Inherited Resouces, I realized that most of the times I overwrite a create, update or destroy actions is to change the redirect destination. In our ProjectsController above, if we want to redirect to the edit page after create, we would have to do:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResouces::Base
+  respond_to :html, :xml, :json
+
+  def create
+    create! do |success, failure|
+      success.html { redirect_to edit_project_url(@project) }
+    end
+  end
+end
+</pre>
+<p>It wouldn't be cool if it have a shortcut? Now it has:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResouces::Base
+  respond_to :html, :xml, :json
+
+  def create
+    create! { edit_project_url(@project) }
+  end
+end
+</pre>
+<p>That simple, just give the url as a proc and since the proc does not expect any parameters, it assumes that you want to overwrite the redirect url.</p>
+<h3>Finally some DSL?</h3>
+<p>Last weeks, there was <a href="http://groups.google.com/group/boston-rubygroup/browse_thread/thread/40dd26a59dc5065c">a discussion on Boston.rb group</a> about different resource controllers gems. Reading some of the feedback there, I've decided to stab a DSL to Inherited Resources. It will mainly remove the duplication when you have to give a block, the previous example above could be written as:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResouces::Base
+  respond_to :html, :xml, :json
+
+  create! do |success, failure|
+    success.html { redirect_to edit_project_url(@project) }
+  end
+end
+</pre>
+<p>Or even in the compact form:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < InheritedResouces::Base
+  respond_to :html, :xml, :json
+  create! { redirect_to edit_project_url(@project) }
+end
+</pre>
+<p>Those changes were not applied yet, it depends mainly on you. If you like or not, let us know in the comments!</p><p>The post <a href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/">Inherited Resources is scopes and responder fluent</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/08/inherited-resources-is-scopes-and-responder-fluent/feed/</wfw:commentRss>
+			<slash:comments>52</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

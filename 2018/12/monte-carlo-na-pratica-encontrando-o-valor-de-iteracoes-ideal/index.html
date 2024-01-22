@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Monte Carlo na Prática: Encontrando o valor de iterações ideal « Plataformatec Blog</title>
+		<meta name="description" content="Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos. O atraso de uma semana em um projeto, gera dois custos diferentes: O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana. Já o segundo, trata-se">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Monte Carlo na Prática: Encontrando o valor de iterações ideal « Plataformatec Blog">
+		<meta property="og:description" content="Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos. O atraso de uma semana em um projeto, gera dois custos diferentes: O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana. Já o segundo, trata-se">
+		<meta property="og:url" content="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/">
+		<meta property="article:published_time" content="2018-12-18T15:44:39+00:00">
+		<meta property="article:modified_time" content="2019-10-28T14:38:44+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Monte Carlo na Prática: Encontrando o valor de iterações ideal « Plataformatec Blog">
+		<meta name="twitter:description" content="Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos. O atraso de uma semana em um projeto, gera dois custos diferentes: O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana. Já o segundo, trata-se">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#article","name":"Monte Carlo na Prática: Encontrando o valor de iterações ideal « Plataformatec Blog","headline":"Monte Carlo na Prática: Encontrando o valor de iterações ideal","author":{"@id":"\/author\/gabriel-lopes\/#author"},"publisher":{"@id":"\/#organization"},"image":{"@type":"ImageObject","url":"\/wp-content\/uploads\/2019\/10\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal.png","width":1554,"height":688},"datePublished":"2018-12-18T13:44:39-02:00","dateModified":"2019-10-28T11:38:44-03:00","inLanguage":"en-US","mainEntityOfPage":{"@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#webpage"},"isPartOf":{"@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#webpage"},"articleSection":"Português, Agile, métricas"},{"@type":"BreadcrumbList","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2018\/#listItem"},{"@type":"ListItem","@id":"\/2018\/#listItem","position":2,"name":"2018","item":"\/2018\/","nextItem":"\/2018\/12\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2018\/12\/#listItem","position":3,"name":"December","item":"\/2018\/12\/","nextItem":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#listItem","previousItem":"\/2018\/#listItem"},{"@type":"ListItem","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#listItem","position":4,"name":"Monte Carlo na Prática: Encontrando o valor de iterações ideal","previousItem":"\/2018\/12\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/gabriel-lopes\/#author","url":"\/author\/gabriel-lopes\/","name":"Gabriel Lopes","image":{"@type":"ImageObject","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/37d404b8647c430c9bef1026546ff3b7?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Gabriel Lopes"}},{"@type":"WebPage","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#webpage","url":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/","name":"Monte Carlo na Prática: Encontrando o valor de iterações ideal « Plataformatec Blog","description":"Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos. O atraso de uma semana em um projeto, gera dois custos diferentes: O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana. Já o segundo, trata-se","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#breadcrumblist"},"author":{"@id":"\/author\/gabriel-lopes\/#author"},"creator":{"@id":"\/author\/gabriel-lopes\/#author"},"image":{"@type":"ImageObject","url":"\/wp-content\/uploads\/2019\/10\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal.png","@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#mainImage","width":1554,"height":688},"primaryImageOfPage":{"@id":"\/2018\/12\/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal\/#mainImage"},"datePublished":"2018-12-18T13:44:39-02:00","dateModified":"2019-10-28T11:38:44-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/8262">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=8262">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2018%2F12%2Fmonte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2018%2F12%2Fmonte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal%2F#038;format=xml">
+                                                                        </head>
+  <body class="post-template-default single single-post postid-8262 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/" rel="bookmark">Monte Carlo na Prática: Encontrando o valor de iterações ideal</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2018-12-18T13:44:39-02:00">Dec 18, 2018</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/37d404b8647c430c9bef1026546ff3b7?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/37d404b8647c430c9bef1026546ff3b7?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=69" title="Posts by Gabriel Lopes">Gabriel Lopes</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos.</p>
+<p>O atraso de uma semana em um projeto, gera dois custos diferentes:</p>
+<ul>
+<li>O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana.</li>
+<li>Já o segundo, trata-se do custo de atraso (normalmente chamado de <em>cost of delay</em>) que por sua vez é a receita que deixa-se de receber pelo atraso, por exemplo: supondo que um novo produto tenha uma receita diária de 100 reais, o custo de atraso seria de 700 reais (100 reais x 7 dias), aqui no blog temos um <a href="/2016/11/calculating-cost-of-delay-for-software-projects/" target="_blank" rel="noopener noreferrer">post muito interessante sobre o assunto</a>.</li>
+</ul>
+<p>Como esses custos podem ser altos, é preciso utilizar ferramentas que possam dar visibilidade para as datas de entrega. Uma das formas encontradas para dar visibilidade a estes potenciais problemas, foi através da adoção do Diagrama de Gantt, para gerenciamento de projetos, nele é possível identificar os pontos mais delicados do projeto (os caminhos críticos) em que deve-se dar maior esforço para que não atrasem, visto que ao atrasar nesses pontos o projeto inteiro também irá atrasar.</p>
+<p>Embora essa ferramenta seja ótima para alguns tipos de projetos (normalmente onde existe um grau de incerteza baixo), ela não é a ideal para projetos com previsibilidade baixa devido a <a href="https://pt.wikipedia.org/wiki/Vari%C3%A2ncia" target="_blank" rel="noopener noreferrer">variância</a> de entregas, como ocorre em projetos que lidam com o campo do conhecimento (redigir um livro ou desenvolver software, como exemplos).</p>
+<p>Aqui na Plataformatec temos sempre feito o máximo para que todas as nossas previsões de entregas sejam embasadas em dados e sigam métodos científicos comprovados. Os dois métodos que mais utilizamos são:</p>
+<ul>
+<li>Progressão linear</li>
+<li>Simulação de Monte Carlo</li>
+</ul>
+<h2>PROGRESSÃO LINEAR</h2>
+<p>Na progressão linear, fazemos uma análise dos dados de itens de trabalho entregues durante algum período (normalmente trabalhamos com periodicidade semanal) e através de uma análise destes valores elegemos quais são os melhores valores a serem alocados na progressão. Por exemplo: supondo que tenhamos os valores de histórico de itens de trabalho entregues por semana (throughput), conforme o gráfico abaixo:</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8134 size-full" src="/wp-content/uploads/2018/12/tabela_de_tp.png" alt="" width="1554" height="688" srcset="/wp-content/uploads/2018/12/tabela_de_tp.png 1554w, /wp-content/uploads/2018/12/tabela_de_tp-300x133.png 300w, /wp-content/uploads/2018/12/tabela_de_tp-768x340.png 768w, /wp-content/uploads/2018/12/tabela_de_tp-1024x453.png 1024w" sizes="(max-width: 1554px) 100vw, 1554px"></p>
+<p>Um valor que faz sentido para a progressão <strong>pessimista</strong> será de que a cada semana iremos entregar <strong>1</strong> item de trabalho por semana, visto que tivemos 5 casos em que a entrega foi de <strong>1</strong> ou <strong>0</strong>, para a estimativa <strong>otimista</strong> podemos utilizar o valor <strong>3</strong> ou <strong>4</strong> ou até mesmo <strong>3,5</strong> visto que tivemos 4 casos em que o valor foi 3 ou mais, por fim para a progressão <strong>provável</strong> o melhor valor seria o de <strong>2</strong> visto que é o valor da mediana do <em>dataset</em> e é o valor que mais aparece (a moda).</p>
+<p>O maior problema da progressão linear é de que estamos informando os valores a serem utilizados para cada cenário, algo que pode ser perigoso caso a pessoa que está fazendo a progressão não tenha um bom domínio de análise de dados. Além disso, a progressão linear também ignora a variância. Desta forma, em sistemas com uma variância de entrega muito elevada, a progressão linear pode não fazer tanto sentido.</p>
+<h2>MONTE CARLO</h2>
+<p>Outra técnica que utilizamos chama-se <strong>Monte Carlo</strong>, para entender melhor como o método funciona, bem como ter uma inferência do que ele faz, recomendo <a href="/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/" target="_blank" rel="noopener noreferrer">esse blogpost que é bem completo</a>.</p>
+<p>Tenho utilizado o método desde que entrei na Plataformatec com grande sucesso, porém uma coisa sempre ficava na minha mente era: &#8220;Quantas iterações são necessárias para que eu possa ter um bom grau de confiabilidade no método?&#8221;. Para responder essa pergunta eu fiz muitas pesquisas em livros estatísticos e pela internet e não consegui encontrar nenhum tipo de informação que me auxiliasse.</p>
+<p>Dessa forma resolvi fazer um estudo desse assunto. O objetivo do Monte Carlo é de inferir a probabilidade de algum evento, &#8220;forçando&#8221; que o evento ocorra tantas vezes que o resultado me dê a probabilidade da ocorrência do evento. Por exemplo, ao lançar uma moeda mil vezes se eu contar quantas vezes a moeda cai em &#8220;cara&#8221; e dividir esse valor pelas mil vezes que a moeda foi lançada, obterei uma inferência da probabilidade da moeda cair em &#8220;cara&#8221;.</p>
+<p>Para conseguir saber a qualidade do método eu realizei testes nos quais eu já sabia o resultado esperado, e fui fazendo com que o problema fosse cada vez mais complexo, de forma a ver se existe alguma relação entre a dificuldade do problema e a quantidade de iterações necessárias para que o valor inferido pelo método seja o mais próximo possível do valor calculado.</p>
+<p>O objetivo é verificar quantas iterações são necessárias para que o erro entre o valor inferido pelo método e o valor calculado seja mínimo (para previsões de probabilidade de entrega um erro a partir da segunda ou terceira casa decimal é bem aceitável). Gostaria de ressaltar que esse <em>blogpost</em> não é um estudo científico acerca do assunto, e seu objetivo é entender através de inferência qual é um valor de iterações bom para ser utilizado em predições para projetos.</p>
+<h2>OS TESTES</h2>
+<p>Os testes foram todos realizado utilizando a linguagem de programação <strong>R</strong>, que pode ser baixado neste <a href="https://www.r-project.org/" target="_blank" rel="noopener noreferrer">link</a>. Caso prefira utilizar um IDE, recomendo o <a href="https://www.rstudio.com/" target="_blank" rel="noopener noreferrer">RStudio</a>.</p>
+<p>Em todos os testes eu rodei o sistema por 100 vezes utilizando as seguintes quantidades de iterações: <strong>100</strong> (cem), <strong>1000</strong> (mil), <strong>10000</strong> (dez mil), <strong>100000</strong> (cem mil), <strong>1000000</strong> (um milhão), <strong>10000000</strong> (dez milhões), <strong>100000000</strong> (cem milhões) e <strong>200000000</strong> (duzentos milhões). Os resultados são os consolidados dessas 100 &#8220;rodadas&#8221;, em cada iteração.</p>
+<h3>A MOEDA</h3>
+<p>O primeiro teste que fiz foi em cima de um lançamento de moeda. Uma moeda tem <strong>50%</strong> de chance de cair em qualquer um de seus lados e este é o valor que queremos que seja inferido pelo Monte Carlo. Para isso utilizei o seguinte código em R:</p>
+<pre><code class="R">LancaMoeda &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para a moeda 1 = Cara e 0 = Coroa
+moeda = c(0,1)
+resultado = 0
+
+# Soma todos os resultados em que a moeda foi "Cara"
+resultado = sum(sample(moeda, iteracoes, replace=T))
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while (controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, LancaMoeda(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Alterando os valores da variável <em>iterações</em> e compilando os resultados obtive a seguinte tabela:</p>
+
+<table id="tablepress-1" class="tablepress tablepress-id-1">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th>
+<th class="column-2">Resultado Min</th>
+<th class="column-3">Resultado Max</th>
+<th class="column-4">Resultado Esperado</th>
+<th class="column-5">Resultado Médio</th>
+<th class="column-6">Resultado Médio - Resultado Esperado </th>
+<th class="column-7"> Mediana do Resultado</th>
+<th class="column-8"> Mediana Resultado - Resultado Esperado</th>
+<th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td>
+<td class="column-2">33.00000</td>
+<td class="column-3">67.00000</td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">50.02000 </td>
+<td class="column-6">0.02000 </td>
+<td class="column-7">50.00000 </td>
+<td class="column-8">0.00000 </td>
+<td class="column-9">5.09368 </td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td>
+<td class="column-2">43.60000</td>
+<td class="column-3">56.20000 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">49.99440 </td>
+<td class="column-6">0.00560 </td>
+<td class="column-7">50.00000 </td>
+<td class="column-8">0.00000 </td>
+<td class="column-9">1.59105 </td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td>
+<td class="column-2">48.35000</td>
+<td class="column-3">51.78000 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">50.01263 </td>
+<td class="column-6">0.01263 </td>
+<td class="column-7">50.02000 </td>
+<td class="column-8">0.02000 </td>
+<td class="column-9">0.51001 </td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td>
+<td class="column-2">49.58000</td>
+<td class="column-3">51.78000 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">49.99110 </td>
+<td class="column-6">0.00890 </td>
+<td class="column-7">49.99350 </td>
+<td class="column-8">0.00650 </td>
+<td class="column-9">0.15805 </td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td>
+<td class="column-2">49.85170</td>
+<td class="column-3">50.15090 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">49.99883 </td>
+<td class="column-6">0.00117 </td>
+<td class="column-7">49.99785 </td>
+<td class="column-8">0.00215 </td>
+<td class="column-9">0.04811 </td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td>
+<td class="column-2">49.95433 </td>
+<td class="column-3">50.05807 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">50.00013 </td>
+<td class="column-6">0.00013 </td>
+<td class="column-7">50.00010 </td>
+<td class="column-8">0.00010 </td>
+<td class="column-9">0.01564 </td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td>
+<td class="column-2">49.98435 </td>
+<td class="column-3">50.01637 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">50.00004 </td>
+<td class="column-6">0.00004 </td>
+<td class="column-7">49.99989 </td>
+<td class="column-8">0.00011 </td>
+<td class="column-9">0.00516 </td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td>
+<td class="column-2">49.98890</td>
+<td class="column-3">50.01195 </td>
+<td class="column-4">50.00000 </td>
+<td class="column-5">49.99981 </td>
+<td class="column-6">0.00019 </td>
+<td class="column-7">49.99987 </td>
+<td class="column-8">0.00013 </td>
+<td class="column-9">0.00345 </td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-1 from cache -->
+<p>No caso de um problema simples, como o lançamento de uma moeda, podemos ver que a quantidade ideal de iterações seria algo entre 10 e 100 milhões de vezes. Visto que é nessa faixa em que o desvio padrão dos resultados começa a ser na ordem da terceira casa decimal, outro ponto interessante é que se você deseja mostrar apenas a primeira casa decimal um valor de 1 milhão de iterações já atenderia.</p>
+<h3>O DADO</h3>
+<p>Com o teste da moeda podemos ter uma idéia de quantas iterações são necessárias, para cada grau de confiabilidade desejado. Porém uma pergunta que fica é se esse comportamento é o mesmo para sistemas mais complexos. Por este motivo fiz um teste parecido, porém agora rodando um dado de 6 lados, que tem <strong>16,67%</strong> de chances de cair em qualquer face.</p>
+<pre><code class="R">RolaDado &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens do dado
+resultado = sample(dado,iteracoes,replace=T)
+
+# Soma todos os valores que tiverem sigo iguais a 6
+resultado = sum(resultado == 6)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaDado(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Alterando os valores da variável <em>iterações</em> e compilando os resultados obtive a seguinte tabela:</p>
+
+<table id="tablepress-2" class="tablepress tablepress-id-2">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th>
+<th class="column-2">Resultado Min</th>
+<th class="column-3">Resultado Max</th>
+<th class="column-4">Resultado Esperado</th>
+<th class="column-5">Resultado Médio</th>
+<th class="column-6">Resultado Médio - Resultado Esperado </th>
+<th class="column-7"> Mediana do Resultado</th>
+<th class="column-8"> Mediana Resultado - Resultado Esperado</th>
+<th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td>
+<td class="column-2">6.00000</td>
+<td class="column-3">28.00000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.58100</td>
+<td class="column-6">-0.08567</td>
+<td class="column-7">16.00000</td>
+<td class="column-8">-0.66667</td>
+<td class="column-9">3.64372</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td>
+<td class="column-2">13.20000</td>
+<td class="column-3">20.40000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.68500</td>
+<td class="column-6">0.01833</td>
+<td class="column-7">16.60000</td>
+<td class="column-8">-0.06667</td>
+<td class="column-9">1.16949</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td>
+<td class="column-2">15.60000</td>
+<td class="column-3">17.94000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.65962</td>
+<td class="column-6">-0.00705</td>
+<td class="column-7">16.67000</td>
+<td class="column-8">0.00333</td>
+<td class="column-9">0.38072</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td>
+<td class="column-2">16.22200</td>
+<td class="column-3">17.06200</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66109</td>
+<td class="column-6">-0.00557</td>
+<td class="column-7">16.66500</td>
+<td class="column-8">-0.00167</td>
+<td class="column-9">0.11356</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td>
+<td class="column-2">16.54960</td>
+<td class="column-3">16.54960</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66616</td>
+<td class="column-6">-0.00050</td>
+<td class="column-7">16.66790</td>
+<td class="column-8">0.00123</td>
+<td class="column-9">0.03650</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td>
+<td class="column-2">16.63294</td>
+<td class="column-3">16.70266</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66607</td>
+<td class="column-6">-0.00060</td>
+<td class="column-7">16.66577</td>
+<td class="column-8">-0.00090</td>
+<td class="column-9">0.01220</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td>
+<td class="column-2">16.65592</td>
+<td class="column-3">16.67948</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66670</td>
+<td class="column-6">0.00004</td>
+<td class="column-7">16.66679</td>
+<td class="column-8">0.00012</td>
+<td class="column-9">0.00372</td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td>
+<td class="column-2">16.65787</td>
+<td class="column-3">16.67476</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66671</td>
+<td class="column-6">0.00004</td>
+<td class="column-7">16.66671</td>
+<td class="column-8">0.00004</td>
+<td class="column-9">0.00267</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-2 from cache -->
+<p>Podemos ver que neste caso também temos que a quantidade ideal de iterações seria algo entre 10 e 100 milhões de vezes, para termos um erro a partir da segunda ou terceira casa decimal. Esse resultado mostra que, ou a complexidade do problema não tem influência na quantidade de iterações ou de que o problema da moeda e do dado têm complexidades parecidas. Analisando os tempos de execuções da moeda e do dado verifica-se que eles demoram tempos parecidos de execução, o que corrobora a hipótese de que os problemas tem complexidades próximas.</p>
+<h3>DOIS DADOS</h3>
+<p>Para saber se a complexidade era muito próxima e por isso que os valores de iterações ideais ficaram iguais, decidi dobrar a complexidade do problema ao rodar <strong>dois</strong> dados em vez de <strong>um</strong> (entendo que nem sempre ao dobrar a quantidade de funções teremos mais complexidade por conta da ordem de complexidade ou <a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank" rel="noopener noreferrer">Big-O Notation</a>, porém fiz o teste para ter certeza se isso se aplicava). A maior probabilidade de resultado encontrada ao rolar dois dados é o valor <strong>7</strong>, tendo <strong>16,67%</strong> de chances de ocorrer.</p>
+<pre><code class="R">RolaDoisDados &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens dos dados
+primeira_rolagem = sample(dado,iteracoes,replace=T)
+segunda_rolagem = sample(dado,iteracoes,replace=T)
+
+# Soma os vetores, item a item
+resultado = primeira_rolagem + segunda_rolagem
+
+# Soma todos os valores que tiverem sigo iguais a 7
+resultado = sum(resultado == 7)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaDoisDados(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Novamente alterando os valores da variável <em>iterações</em> e compilando os resultados:</p>
+
+<table id="tablepress-4" class="tablepress tablepress-id-4">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th>
+<th class="column-2">Resultado Min</th>
+<th class="column-3">Resultado Max</th>
+<th class="column-4">Resultado Esperado</th>
+<th class="column-5">Resultado Médio</th>
+<th class="column-6">Resultado Médio - Resultado Esperado </th>
+<th class="column-7"> Mediana do Resultado</th>
+<th class="column-8"> Mediana Resultado - Resultado Esperado</th>
+<th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td>
+<td class="column-2">5.00000</td>
+<td class="column-3">31.00000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.37100</td>
+<td class="column-6">-0.29567</td>
+<td class="column-7">16.00000</td>
+<td class="column-8">-0.66667</td>
+<td class="column-9">3.77487</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td>
+<td class="column-2">13.40000</td>
+<td class="column-3">21.80000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.64710</td>
+<td class="column-6">-0.01957</td>
+<td class="column-7">16.60000</td>
+<td class="column-8">-0.06667</td>
+<td class="column-9">1.18550</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td>
+<td class="column-2">15.33000</td>
+<td class="column-3">17.77000</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.68307</td>
+<td class="column-6">0.01640</td>
+<td class="column-7">16.68500</td>
+<td class="column-8">0.01833</td>
+<td class="column-9">0.38059</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td>
+<td class="column-2">16.23100</td>
+<td class="column-3">17.06600</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66546</td>
+<td class="column-6">-0.00120</td>
+<td class="column-7">16.66800</td>
+<td class="column-8">0.00133</td>
+<td class="column-9">0.11597</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td>
+<td class="column-2">16.54450</td>
+<td class="column-3">16.81170</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66657</td>
+<td class="column-6">-0.00010</td>
+<td class="column-7">16.66860</td>
+<td class="column-8">0.00193</td>
+<td class="column-9">0.03798</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td>
+<td class="column-2">16.62888</td>
+<td class="column-3">16.70282</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66683</td>
+<td class="column-6"> 0.00016</td>
+<td class="column-7">16.66705</td>
+<td class="column-8">0.00038</td>
+<td class="column-9">0.01155</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td>
+<td class="column-2">16.65408</td>
+<td class="column-3">16.67899</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66669</td>
+<td class="column-6">0.00002</td>
+<td class="column-7">16.66673</td>
+<td class="column-8">0.00007</td>
+<td class="column-9">0.00382</td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td>
+<td class="column-2">16.65881</td>
+<td class="column-3">16.67455</td>
+<td class="column-4">16.66667</td>
+<td class="column-5">16.66675</td>
+<td class="column-6">0.00009</td>
+<td class="column-7">16.66682</td>
+<td class="column-8">0.00015</td>
+<td class="column-9">0.00258</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-4 from cache -->
+<p>Novamente verificamos que uma quantidade de iterações entre 10 e 100 milhões traz uma variação baixa o suficiente para ser confiável. E nesse caso pude identificar que o problema era sim mais complexo, visto que o tempo de execução para 200 milhões de vezes levou em média <strong>7,47 segundos a mais</strong> que o problema de um único dado.</p>
+<h3>CINCO DADOS</h3>
+<p>A inferência que tive até este momento é de que a complexidade do problema influi muito pouco na quantidade de iterações a serem realizadas, mas para ter certeza eu fiz o teste com 5 dados. A maior probabilidade de resultado encontrada ao rolar cinco dados são os valores <strong>17</strong> e <strong>18</strong>, tendo <strong>10,03%</strong> de chances de ocorrer.</p>
+<pre><code class="R">RolaCincoDados &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens dos dados
+primeira_rolagem = sample(dado,iteracoes,replace=T)
+segunda_rolagem = sample(dado,iteracoes,replace=T)
+terceira_rolagem = sample(dado,iteracoes,replace=T)
+quarta_rolagem = sample(dado,iteracoes,replace=T)
+quinta_rolagem = sample(dado,iteracoes,replace=T)
+
+# Soma os vetores, item a item
+resultado = primeira_rolagem + segunda_rolagem + terceira_rolagem + quarta_rolagem + quinta_rolagem
+
+# Soma todos os valores que tiverem sigo iguais a 18
+resultado = sum(resultado == 18)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 10
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaCincoDados(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Compilando os resultados:</p>
+
+<table id="tablepress-10" class="tablepress tablepress-id-10">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th>
+<th class="column-2">Resultado Min</th>
+<th class="column-3">Resultado Max</th>
+<th class="column-4">Resultado Esperado</th>
+<th class="column-5">Resultado Médio</th>
+<th class="column-6">Resultado Médio - Resultado Esperado </th>
+<th class="column-7"> Mediana do Resultado</th>
+<th class="column-8"> Mediana Resultado - Resultado Esperado</th>
+<th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td>
+<td class="column-2">2.00000</td>
+<td class="column-3">20.00000</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.04300</td>
+<td class="column-6">0.01214</td>
+<td class="column-7">10.00000</td>
+<td class="column-8">-0.03086	</td>
+<td class="column-9">3.01268</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td>
+<td class="column-2">6.80000</td>
+<td class="column-3">13.40000</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.04160</td>
+<td class="column-6">0.01074</td>
+<td class="column-7">10.00000</td>
+<td class="column-8">-0.03086	</td>
+<td class="column-9">0.96373</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td>
+<td class="column-2">9.07000</td>
+<td class="column-3">11.03000</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.04600</td>
+<td class="column-6">0.01514	</td>
+<td class="column-7">10.04500</td>
+<td class="column-8">0.01414</td>
+<td class="column-9">0.30501</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td>
+<td class="column-2">9.74700</td>
+<td class="column-3">10.31500</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.02726</td>
+<td class="column-6">-0.00360	</td>
+<td class="column-7">10.03100</td>
+<td class="column-8">0.00014</td>
+<td class="column-9">0.09366</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td>
+<td class="column-2">9.95030</td>
+<td class="column-3">10.11240</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.02994</td>
+<td class="column-6">-0.00092	</td>
+<td class="column-7">10.03045</td>
+<td class="column-8">-0.00041	</td>
+<td class="column-9">0.02945<br>
+</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td>
+<td class="column-2">10.00060</td>
+<td class="column-3">10.06768</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.03072</td>
+<td class="column-6">-0.00014	</td>
+<td class="column-7">10.03065	</td>
+<td class="column-8">-0.00022	</td>
+<td class="column-9">0.00956</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td>
+<td class="column-2">10.02151</td>
+<td class="column-3">10.04116</td>
+<td class="column-4">10.03086</td>
+<td class="column-5">10.03091</td>
+<td class="column-6">0.00004</td>
+<td class="column-7">10.03102</td>
+<td class="column-8">0.00016</td>
+<td class="column-9">0.00310</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-10 from cache -->
+<p>E mais uma vez podemos ver que entre 10 e 100 milhões é valor ideal. Interessante notar que esse caso realmente foi mais complexo, levando <strong>35 segundos a mais</strong> em média quando comparada com a rolagem de um único dado.</p>
+<h2>Conclusão</h2>
+<p>Depois de realizar todos esses testes, é possível concluir que, para a utilização em gerenciamento de projetos, uma quantidade de iterações entre 10 e 100 milhões atenderia adequadamente a necessidade de prever alguma data de entrega.</p>
+<p>O valor que tenho utilizado é de 10 milhões, quando vou passar os dados para algum <em>stakeholder</em>. Porém como o processo fica demorado (em média de 30 minutos para rodar com 10 milhões), quando eu preciso verificar os dados no dia-a-dia utilizo algum valor menor (algo entre 100 mil a 1 milhão).</p>
+<p>E você? Tem utilizado o método? Se sim, quais valores de iterações têm usado para a análise? Os resultados obtidos tem tido valor para os <em>stakeholders</em> de seus projetos? Caso queira trocar experiências, podemos iniciar um bate-papo por e-mail, através do endereço <a href="mailto:gabriel.lopes@plataformatec.com.br" target="_blank" rel="noopener noreferrer">gabriel.lopes@plataformatec.com.br</a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/agile/" rel="tag">Agile</a>, <a href="/tag/metricas/" rel="tag">métricas</a>, Posted in <a href="/category/portugues/" rel="category tag">Português</a>,   <span>Comments Off<span class="screen-reader-text"> on Monte Carlo na Prática: Encontrando o valor de iterações ideal</span></span>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2018/12/plataformatec-and-elixir-2018-in-review/" rel="prev">Plataformatec and Elixir: 2018 in review</a>          <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" rel="next">Building a new MySQL adapter for Ecto, Part III: DBConnection Integration</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+                                                                            <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="/wp-content/plugins/tablepress/js/jquery.datatables.min.js?ver=2.2.4" id="tablepress-datatables-js"></script>
+<script type="text/javascript">jQuery(function($){
+var DT_language={"en_US":{}};
+$('#tablepress-1').DataTable({"language":DT_language["en_US"],"stripeClasses":[],"ordering":false,"paging":false,"searching":false,"info":false,"scrollX":true});
+$('#tablepress-2').DataTable({"language":DT_language["en_US"],"stripeClasses":[],"ordering":false,"paging":false,"searching":false,"info":false,"scrollX":true});
+$('#tablepress-4').DataTable({"language":DT_language["en_US"],"stripeClasses":[],"ordering":false,"paging":false,"searching":false,"info":false,"scrollX":true});
+$('#tablepress-10').DataTable({"language":DT_language["en_US"],"stripeClasses":[],"ordering":false,"paging":false,"searching":false,"info":false,"scrollX":true});
+});</script>  </body>
+</html>

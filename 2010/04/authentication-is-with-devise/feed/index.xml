@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Authentication is with Devise!	</title>
+	<atom:link href="/2010/04/authentication-is-with-devise/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/04/authentication-is-with-devise/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 11 May 2010 19:26:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-612</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:26:26 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-612</guid>
+
+					<description><![CDATA[Trevor, could you please use the mailing list? http://groups.google.com/group/plataformatec-devise
+
+Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Trevor, could you please use the mailing list? <a href="http://groups.google.com/group/plataformatec-devise" rel="nofollow ugc">http://groups.google.com/group/plataformatec-devise</a></p>
+<p>Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-995</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-995</guid>
+
+					<description><![CDATA[Trevor, could you please use the mailing list? http://groups.google.com/group/plataformatec-devise
+
+Thanks!]]></description>
+			<content:encoded><![CDATA[<p>Trevor, could you please use the mailing list? <a href="http://groups.google.com/group/plataformatec-devise" rel="nofollow ugc">http://groups.google.com/group/plataformatec-devise</a></p>
+<p>Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-611</link>
+
+		<dc:creator><![CDATA[Trevor]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:21:22 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-611</guid>
+
+					<description><![CDATA[Nevermind, I&#039;m finding some good stuff in the mailing list :)]]></description>
+			<content:encoded><![CDATA[<p>Nevermind, I&#8217;m finding some good stuff in the mailing list 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-994</link>
+
+		<dc:creator><![CDATA[Trevor]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-994</guid>
+
+					<description><![CDATA[Nevermind, I&#039;m finding some good stuff in the mailing list :)]]></description>
+			<content:encoded><![CDATA[<p>Nevermind, I&#8217;m finding some good stuff in the mailing list 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-610</link>
+
+		<dc:creator><![CDATA[Trevor]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:19:57 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-610</guid>
+
+					<description><![CDATA[What do you recommend for authenticating API users with devise in addition to the web app?  Would it make sense to generate an API key?]]></description>
+			<content:encoded><![CDATA[<p>What do you recommend for authenticating API users with devise in addition to the web app?  Would it make sense to generate an API key?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor		</title>
+		<link>/2010/04/authentication-is-with-devise/comment-page-1/#comment-993</link>
+
+		<dc:creator><![CDATA[Trevor]]></dc:creator>
+		<pubDate>Tue, 11 May 2010 19:19:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=862#comment-993</guid>
+
+					<description><![CDATA[What do you recommend for authenticating API users with devise in addition to the web app?  Would it make sense to generate an API key?]]></description>
+			<content:encoded><![CDATA[<p>What do you recommend for authenticating API users with devise in addition to the web app?  Would it make sense to generate an API key?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

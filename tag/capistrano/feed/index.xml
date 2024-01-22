@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>capistrano « Plataformatec Blog</title>
+	<atom:link href="/tag/capistrano/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 Apr 2010 19:00:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Monitoring Delayed Job with Bluepill and Capistrano</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/</link>
+					<comments>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 10 Feb 2010 17:47:33 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[bluepill]]></category>
+		<category><![CDATA[capistrano]]></category>
+		<category><![CDATA[delayed job]]></category>
+		<category><![CDATA[process monitoring]]></category>
+		<guid isPermaLink="false">/?p=714</guid>
+
+					<description><![CDATA[<p>So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart ... <a class="read-more-link" href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/">»</a></p>
+<p>The post <a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/">Monitoring Delayed Job with Bluepill and Capistrano</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart it manually? I wouldn&#8217;t do that, I really appreciate my sleep. So, what&#8217;s the solution?</p>
+<p>As rubyists and railers, we already know there are solutions, like <a href="http://god.rubyforge.org/" target="_blank">God</a>, that do this job for us. However, there are another solutions, like <a href="http://github.com/arya/bluepill/" target="_blank">Bluepill</a>. Bluepill is a process monitoring tool like God, but, unlike God, <a href="http://asemanfar.com/Why-We-Wrote-Bluepill" target="_blank">it doesn&#8217;t have memory leak</a>, according to its authors.</p>
+<p>Well, as I don&#8217;t want to wake up in the dawn to restart my Delayed Job process, and neither I want to restart my God process because of memory leaking, I decided to use Bluepill. But, how I use Bluepill to monitor my Delayed Job process?</p>
+<p>In order to configure Bluepill to monitor Delayed Job, and use Capistrano to automate some tasks, we have basically 4 steps:</p>
+<ol>
+<li>Install and configure Delayed Job</li>
+<li>Install and configure Bluepill</li>
+<li>Write a Capistrano Recipe for Bluepill</li>
+<li>Set some stuff in /etc/sudoers</li>
+</ol>
+<p>Let&#8217;s take a look at each step.</p>
+<h3>Installing and configuring Delayed Job</h3>
+<p>Installing and configuring Delayed Job is super simple, just read the project&#8217;s <a href="http://github.com/collectiveidea/delayed_job" target="_blank">README</a>, which is very clear. I also recommend watching the <a href="http://railscasts.com/episodes/171-delayed-job" target="_blank">RailsCast episode</a> about Delayed Job, there is some good information there, like using the Delayed Job CollectiveIdea&#8217;s fork, instead of the original repo&#8217;s version.</p>
+<h3>Installing and configuring Bluepill</h3>
+<p>There&#8217;s no secret in installing Bluepill too, you just need to read the project&#8217;s <a href="http://github.com/arya/bluepill/" target="_blank">README</a> and follow its steps.</p>
+<p>In the confiuration part, you can see all the options in the <a href="http://github.com/arya/bluepill/" target="_blank">README</a> too. In my case, the configuration file is at <code>RAILS_ROOT/config/production.pill</code>.</p>
+<pre lang="ruby">Bluepill.application("my_app") do |app|
+  app.process("delayed_job") do |process|
+    process.working_dir = "/home/deploy/my_app/current"
+
+    process.start_grace_time    = 10.seconds
+    process.stop_grace_time     = 10.seconds
+    process.restart_grace_time  = 10.seconds
+
+    process.start_command = "ruby script/delayed_job -e production start"
+    process.stop_command  = "ruby script/delayed_job -e production stop"
+
+    process.pid_file = "/home/deploy/my_app/shared/pids/delayed_job.pid"
+    process.uid = "deploy"
+    process.gid = "deploy"
+  end
+end
+</pre>
+<p>However, I had a little problem between the interaction of Bluepill and Delayed Job. Delayed Job is not interpreting very well the <code>-e production</code> flag. You can see more details about that in an <a href="http://github.com/collectiveidea/delayed_job/issues/#issue/38" target="_blank">issue</a> I opened.</p>
+<p>The first solution I thought was to use <code>RAILS_ENV=production ruby script/delayed_job start</code>, however, for some reason that I don&#8217;t know exactly, it didn&#8217;t work.</p>
+<p>So, the solution I came up with was to modify the file in <code>RAILS_ROOT/script/delayed_job</code> to the following one:</p>
+<pre lang="ruby" line="1">
+#!/usr/bin/env ruby
+
+# TODO improve the line of code below
+# The line below is just a hack while we wait the delayed job guys answer the following issue
+# http://github.com/collectiveidea/delayed_job/issues#issue/38
+ENV['RAILS_ENV'] ||= "production"
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'delayed/command'
+Delayed::Command.new(ARGV).daemonize
+</pre>
+<p>As the <code>-e production</code> was not being interpreted properly by Delayed Job, I&#8217;m setting manually the <code>RAILS_ENV</code> to <code>production</code> (line 6), therefore I&#8217;m supposing  that you are using Bluepill to monitor processes that are in a production environment.</p>
+<h3>Capistrano recipe for Bluepill</h3>
+<p>In order to automate the start and stop Bluepill&#8217;s tasks, I wrote the following capistrano&#8217;s recipe:</p>
+<pre lang="ruby"># deploy credentials
+set :user, "deploy"
+set :deploy_to, "/home/deploy/#{application}"
+set :use_sudo, false
+set :rails_env, "production"
+
+# Bluepill related tasks
+after "deploy:update", "bluepill:quit", "bluepill:start"
+namespace :bluepill do
+  desc "Stop processes that bluepill is monitoring and quit bluepill"
+  task :quit, :roles => [:app] do
+    sudo "bluepill stop"
+    sudo "bluepill quit"
+  end
+
+  desc "Load bluepill configuration and start it"
+  task :start, :roles => [:app] do
+    sudo "bluepill load /home/deploy/my_app/current/config/production.pill"
+  end
+
+  desc "Prints bluepills monitored processes statuses"
+  task :status, :roles => [:app] do
+    sudo "bluepill status"
+  end
+end
+</pre>
+<p>Note that instead of using the <code>run</code> capistrano&#8217;s method, I&#8217;m using the <code>sudo</code> method. I&#8217;m doing this because the bluepill command must be run as root. And that, takes us to the next topic.</p>
+<h3>/etc/sudoers</h3>
+<p>Since I need to run the bluepill command as root, should I change from <code>set :user, "deploy"</code> to <code>set :user, "root"</code>? I think it&#8217;s not a good idea, we don&#8217;t like to give root access to anything, even to deployment. So, what should I do? It&#8217;s simple, you just need to edit your sudoers file.</p>
+<p>In order to do this, you need to use the <code>visudo</code> command to open and edit the <code>/etc/sudoers</code> file. Once with the file opened, just add the following line to the end of the file:</p>
+<p><code>deploy ALL=(ALL) NOPASSWD: /usr/local/bin/bluepill</code></p>
+<p>Now, you&#8217;re done, the deploy user already can do <code>sudo bluepill</code> without giving any password. Problem solved without opening security holes.</p>
+<p>After these 4 steps, you&#8217;re ready to sleep at night without worrying about your Delayed Job process. And, if you want to know the status of the monitored processes by Buepill, you just need to run the following capistrano task in your local machine:</p>
+<p><code>cap bluepill:status</code></p>
+<p>And you, what are your solutions to sleep in peace?</p>
+<p><strong>Update:</strong> if are having trouble with restarting Bluepill with Capistrano, take a look at <a href="http://groups.google.com/group/bluepill-rb/browse_thread/thread/53e15749ee0edd93?hl=en">this</a>.</p><p>The post <a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/">Monitoring Delayed Job with Bluepill and Capistrano</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/feed/</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

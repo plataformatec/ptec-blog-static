@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Flushing content blocks with Rails 4	</title>
+	<atom:link href="/2012/07/flushing-content-blocks-with-rails-4/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/07/flushing-content-blocks-with-rails-4/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 29 Jul 2012 02:23:29 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Mazza		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1268</link>
+
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Sun, 29 Jul 2012 02:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1268</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1266&quot;&gt;Aaron Breckenridge&lt;/a&gt;.
+
+Thanks for the feedback Aaron!
+
+My 2 cents: besides whatever component is being used to handle assets, I rather cherry pick one or two scripts to be included instead of having huge &quot;application.*&quot; file - it&#039;s easier to avoid clashes and conflict between styles and/or JavaScript components. On using a boolean check, I&#039;ve done things like that but it feels cleaner to use options already baked on Rails instead of (re)building things like this on my own every now and then.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1266">Aaron Breckenridge</a>.</p>
+<p>Thanks for the feedback Aaron!</p>
+<p>My 2 cents: besides whatever component is being used to handle assets, I rather cherry pick one or two scripts to be included instead of having huge &#8220;application.*&#8221; file &#8211; it&#8217;s easier to avoid clashes and conflict between styles and/or JavaScript components. On using a boolean check, I&#8217;ve done things like that but it feels cleaner to use options already baked on Rails instead of (re)building things like this on my own every now and then.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rafael Mendonça França		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1267</link>
+
+		<dc:creator><![CDATA[Rafael Mendonça França]]></dc:creator>
+		<pubDate>Sat, 28 Jul 2012 22:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1267</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1266&quot;&gt;Aaron Breckenridge&lt;/a&gt;.
+
+Our javascript is inside the assets directory but we want to add it only when these are galleries on the page. We are using this because our application is not a normal Rails application and in our scenario this was the best solution so far.
+
+The Rails 4 code is doing the boolean check. We used the flushing+set path so we don&#039;t have to copy the content_for code inside our application.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1266">Aaron Breckenridge</a>.</p>
+<p>Our javascript is inside the assets directory but we want to add it only when these are galleries on the page. We are using this because our application is not a normal Rails application and in our scenario this was the best solution so far.</p>
+<p>The Rails 4 code is doing the boolean check. We used the flushing+set path so we don&#8217;t have to copy the content_for code inside our application.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron Breckenridge		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1266</link>
+
+		<dc:creator><![CDATA[Aaron Breckenridge]]></dc:creator>
+		<pubDate>Sat, 28 Jul 2012 13:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1266</guid>
+
+					<description><![CDATA[Neat trick, and great usable code for 3.2. Thanks.
+
+The example left me with two questions: Why isn&#039;t your Javascript in your assets directory and included once? And wouldn&#039;t a Boolean check be faster than repeatedly including and then flushing content?I&#039;ll have to check out that :flush option, could be someone already thought this scenario out in Rails already.]]></description>
+			<content:encoded><![CDATA[<p>Neat trick, and great usable code for 3.2. Thanks.</p>
+<p>The example left me with two questions: Why isn&#8217;t your Javascript in your assets directory and included once? And wouldn&#8217;t a Boolean check be faster than repeatedly including and then flushing content?I&#8217;ll have to check out that :flush option, could be someone already thought this scenario out in Rails already.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sharipov Ruslan		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1265</link>
+
+		<dc:creator><![CDATA[Sharipov Ruslan]]></dc:creator>
+		<pubDate>Sat, 28 Jul 2012 12:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1265</guid>
+
+					<description><![CDATA[very useful, thanks]]></description>
+			<content:encoded><![CDATA[<p>very useful, thanks</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1264</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sat, 28 Jul 2012 07:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1264</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1261&quot;&gt;Kieran P&lt;/a&gt;.
+
+It is fixed, thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1261">Kieran P</a>.</p>
+<p>It is fixed, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Mazza		</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1263</link>
+
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Sat, 28 Jul 2012 00:06:46 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2987#comment-1263</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1261&quot;&gt;Kieran P&lt;/a&gt;.
+
+Fixed, thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/07/flushing-content-blocks-with-rails-4/comment-page-1/#comment-1261">Kieran P</a>.</p>
+<p>Fixed, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

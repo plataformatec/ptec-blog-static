@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Using Boxen for automating our development setup	</title>
+	<atom:link href="/2013/07/using-boxen-for-automating-our-development-setup/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/07/using-boxen-for-automating-our-development-setup/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 07 Aug 2013 09:40:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: mrdias		</title>
+		<link>/2013/07/using-boxen-for-automating-our-development-setup/comment-page-1/#comment-1338</link>
+
+		<dc:creator><![CDATA[mrdias]]></dc:creator>
+		<pubDate>Wed, 07 Aug 2013 09:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3498#comment-1338</guid>
+
+					<description><![CDATA[I&#039;ve used soloist in the past with great success and many of the chef recipes from pivotal_workstation or sprout.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve used soloist in the past with great success and many of the chef recipes from pivotal_workstation or sprout.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

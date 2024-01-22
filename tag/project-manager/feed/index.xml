@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>project manager « Plataformatec Blog</title>
+	<atom:link href="/tag/project-manager/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 03 Oct 2017 15:45:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</title>
+		<link>/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 21 Jun 2017 17:33:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[livro]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=6533</guid>
+
+					<description><![CDATA[<p>Aqui na Plataformatec, temos a cultura de compartilhamento de conhecimento muito forte. Faz parte do nosso DNA. Depois de um tempo, entendemos que essa característica da nossa cultura está por trás do que nos move desde o começo da empresa: fazer software de qualidade, que traz resultado&#8230; e ajudar os outros a fazer o mesmo. ... <a class="read-more-link" href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">»</a></p>
+<p>The post <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Aqui na Plataformatec, temos a cultura de compartilhamento de conhecimento muito forte. Faz parte do nosso DNA. Depois de um tempo, entendemos que essa característica da nossa cultura está por trás do que nos move desde o começo da empresa: fazer software de qualidade, que traz resultado&#8230; e ajudar os outros a fazer o mesmo.</p>
+<p>Ao longo dos mais de 8 anos de vida da nossa empresa, nosso time já compartilhou muito conhecimento:</p>
+<ul>
+<li>mais de 250 blog posts</li>
+<li>dezenas de palestras</li>
+<li>4 livros (2 no Brasil, 2 nos EUA)</li>
+</ul>
+<p>Este post é para falar do mais novo livro que um membro do nosso time está lançando: <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">Métricas Ágeis</a>, do <a href="/author/raphael-albino/">Raphael Albino</a>.</p>
+<div id="attachment_6538" style="width: 460px" class="wp-caption alignright"><a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-6538" class="wp-image-6538" src="/wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código.png" alt="Livro: Métricas Ágeis" width="450" height="395" srcset="/wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código.png 566w, /wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código-300x263.png 300w" sizes="(max-width: 450px) 100vw, 450px" /></a><p id="caption-attachment-6538" class="wp-caption-text">www.casadocodigo.com.br/products/livro-metricas-ageis</p></div>
+<p>Mas antes de falar do livro em si, vamos entender um pouco dos panos de fundo por trás do livro.</p>
+<h2>Primeiro, um pouco de contexto</h2>
+<p>Na Plataformatec, nós gostamos de uma frase de efeito que os <em>US Marine Corps</em> utilizam:</p>
+<blockquote><p>
+  <em>&#8220;Improvise, Adapt and Overcome&#8221;</em>
+</p></blockquote>
+<p>Especialmente das últimas duas palavras: se adaptar e superar. Por que digo isso? Pois acreditamos que o processo de melhoria contínua em um projeto segue esse mantra. Nós não temos a ingenuidade de que, para melhorar um processo, basta apenas implementar uma caixa preta de metodologias. Nós respondemos a quase todas as perguntas com &#8220;depende&#8221;. Depende do seu contexto, ambiente, pessoas, economia, estratégia. Tudo, em termos de gerenciamento de projetos de software, depende.</p>
+<p>E é aí que muitas empresas se perdem. Decidem implementar Scrum, Kanban, XP ou outra metodologia e acreditam que todos os seus problemas estarão solucionados&#8230; não é bem assim. Você precisa analisar como está seu processo para que consiga entender quais práticas, ou conjunto de práticas, seu time está preparado para aderir e, a partir de então, fazer pequenos ajustes rumo a um processo melhor (a famosa melhoria contínua). Com isso em mente, nós aderimos a uma filosofia parecida com a descrita acima:</p>
+<blockquote><p>
+  <em>&#8220;Analise, se adapte e supere&#8221;</em>
+</p></blockquote>
+<p>E como fazemos isso? Bom, uma das maneiras é através de métricas de processo. Nós coletamos uma série de métricas de processo assim que entramos em um cliente. Não chegamos mudando as coisas, chegamos analisando. Assim que temos as métricas em mãos, as lemos, analisamos e mudamos os pontos necessários para melhorar o processo pouco a pouco de maneira <strong>sustentável</strong>. E essa é a palavra chave de uma melhoria de processo. Ela precissa ser sustentável, ou seja, não pode incomodar demais a entropia do time, senão tudo se perde.</p>
+<h2>Por que um livro de métricas ágeis?</h2>
+<p>Pode parecer difícil e complicado esse processo de coleta de métricas, análise, adaptação e superação. Nós tratamos desse assunto no <a href="/tag/metrics/">nosso blog</a>, mas, se quiser realmente &#8220;beber da fonte&#8221; de tudo isso &#8211; saber de onde as métricas vieram, como coletar, ler e, principalmente, como melhorá-las &#8211; eu indico o <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">novo livro do Albino</a>.</p>
+<p>Não é jabá. É fato. Na minha opinião, é o livro que melhor explica as métricas de processo, todos os tipos de leitura de gráficos e a melhor maneira de utilizar esses dados. Aliás, este é o maior valor do livro. É muito fácil você começar a coletar métricas&#8230; Mas isso não traz resultados se você não souber utilizar os dados que você coletou!</p>
+<p>Albino aborda no livro toda a parte processual, matemática e heurística que os métodos trazem, sem nunca deixar de lado o valor de negócio atrelado. Resumindo, o livro não trata de &#8220;métricas por métricas&#8221;&#8230; trata de métricas para obter os <em>melhores resultados possíveis no seu negócio</em>. Entre os assuntos abordados estão o Throughput, Lead Time, Simulação de Monte Carlo, Eficiência de Fluxo e muito mais.</p>
+<p>Então, se quiser entender melhor como nós fazemos para ter sucesso com nossos clientes e a metodologia por trás das nossas ações, não esqueçam de comprar o <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">livro do Albino</a>, acompanhar os novos <a href="/tag/agile/">blog posts</a> e se cadastrar na nossa <a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=link">newsletter de ágil</a>.</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=curso-metricas-agile&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" src="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png" alt="Métricas para Projetos Agile em 7 e-mails" width="831" height="147" class="aligncenter size-full wp-image-5972" srcset="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png 831w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-300x53.png 300w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The user story in development was deprioritized, what now?</title>
+		<link>/2017/05/the-user-story-in-development-was-deprioritized-what-now/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 04 May 2017 22:30:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[project manager]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6308</guid>
+
+					<description><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following: Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized ... <a class="read-more-link" href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">»</a></p>
+<p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Let&#8217;s say you have a Kanban board like the following:</p>
+<p><img decoding="async" src="/wp-content/uploads/2017/05/card-flow-e1493907975371.png" alt="Kanban" width="400" height="268" class="aligncenter size-full wp-image-6286" style="border:none;"/></p>
+<p>Then, suddenly, the P.O. discovers that the features D and E were developed by a competitor and that you are losing users because of that. Therefore, the P.O. decides to deprioritize story C. This is only an example of why a card might be deprioritized in the middle of its development. But now that it was deprioritized, what happens to story C?</p>
+<p>Well, to answer that, let me make a parallel with an alcohol-based perfume company.</p>
+<p>In the backlog column, the company has the bottle ready to be filled but no fluid yet. When the bottle starts to be filled, the card goes to &#8220;in progress&#8221;. When the bottle is totally filled, the bottle is closed and the card goes to done.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-e1493908094223.png" alt="Perfume flow" width="400" height="275" class="aligncenter size-full wp-image-6287" style="border:none;" /></p>
+<p>So what happens if another perfume suddenly receives a priority greater than the priority of the bottle being filled? Well, as we all know, alcohol-based fluids are volatile and, with time, they will completely evaporate, requiring them to be refilled.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-volatile-e1493908131534.png" alt="Perfume flow volatile" width="400" height="567" class="aligncenter size-full wp-image-6288" style="border:none;" /></p>
+<p>The same happens with the story and its code. With time, the code that is inside the story gets obsolete and unnecessary, losing its value. What to do with the story depends on the following rationales:</p>
+<ul>
+<li><strong>How long will the story C stay in the same stage?</strong>
+<ul>
+<li>If the story stays too long in the same stage, some part of the work may get useless, therefore, you could just remove it from the board and put it back on backlog, since some refining might be needed when this story is chosen gain.</li>
+<li>If the story will stay there for a short time, you may want to leave it there and, when it can be worked on, you may still use what was already developed.</li>
+</ul>
+</li>
+<li><strong>What is the value story C will generate after being done?</strong><br />
+Let&#8217;s say that the return on the development of that feature is small. Is it worth to pause its development and run the risk of investing even more money on the development later? Will the return on its development be greater than the development time?</p>
+</li>
+</ul>
+<p>For this to be true, the following needs to happen (visualized in the chart below):</p>
+<ul>
+<li>$ spent with initial development + $ spent with rest of the development &lt; story C $ return
+<ul>
+<li>The amount spent with rest of the development will increase with time, since the initial development starts to lose value.</li>
+</ul>
+</li>
+<li>If the amount spent is greater than the return, it is better to ignore the functionality. However, this math is not as easy as it seems&#8230; You need to account for risks, increased revenue, increase the number of users of your product, etc. So be careful!</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/chart-1024x768.png" alt="Gráficos" width="1024" height="768" class="aligncenter size-large wp-image-6289" style="border:none;max-width: 99%;" /></p>
+<p>Therefore, based on those, you can possibly do four things:</p>
+<ul>
+<li><strong>Leave it on the column and restart it when its priority arrives</strong><br />
+The pause will be fast and will not harm the development of the card. In this case, it is important to flag the story somehow so that the whole team can see that the story is &#8220;blocked&#8221; by the P.O. due to its prioritization.</p>
+</li>
+<li>
+<p><strong>Take it back to the backlog, and restart it when its priority arrives</strong><br />
+The pause will be long and the card will need more refinement.</p>
+</li>
+<li>
+<p><strong>Finish it first, before getting another card</strong><br />
+The card is almost done, and if you stop it, it will not generate value anymore.</p>
+</li>
+<li>
+<p><strong>Cancel the card</strong><br />
+The card is a long way from being finished, and its value is too small to pay for the time it will be paused.</p>
+</li>
+</ul>
+<p>It is also important to notice that this should NOT be a common thing in your process. If it is happening too often, you may need to work on your prioritizations!</p>
+<p>What are your thoughts on the topic? Leave your comments below <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/the-user-story-in-development-was-deprioritized-what-now/">The user story in development was deprioritized, what now?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>User Stories. Quebrar ou não quebrar? Eis a questão.</title>
+		<link>/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/</link>
+		
+		<dc:creator><![CDATA[Breno Campos]]></dc:creator>
+		<pubDate>Thu, 06 Apr 2017 18:41:19 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project manager]]></category>
+		<category><![CDATA[user story]]></category>
+		<guid isPermaLink="false">/?p=6231</guid>
+
+					<description><![CDATA[<p>Em muitos casos quando estamos em clientes, nos deparamos com uma situação que pode gerar um certo desconforto em alguns Product Owners e até mesmo em algumas pessoas com foco no processo como Scrum Masters, Agile Coaches ou Gerentes de Projetos. Uma user story grande, que corre o risco de demorar a &#8220;gerar valor&#8221; por ... <a class="read-more-link" href="/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/">»</a></p>
+<p>The post <a href="/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/">User Stories. Quebrar ou não quebrar? Eis a questão.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Em muitos casos quando estamos em clientes, nos deparamos com uma situação que pode gerar um certo desconforto em alguns Product Owners e até mesmo em algumas pessoas com foco no processo como Scrum Masters, Agile Coaches ou Gerentes de Projetos. Uma user story grande, que corre o risco de demorar a &#8220;gerar valor&#8221; por ficar dias e mais dias no ciclo de desenvolvimento. Nesse momento, surge a grande dúvida: devemos quebrar essa user story? Essa pergunta vem com uma série de outros questionamentos, como por exemplo: <em>&#8220;A user story quebrada vai gerar valor?&#8221;</em>, <em>&#8220;A user story quebrada vai ser perceptível pelo cliente?&#8221;</em>, <em>&#8220;Como vamos explicar um aumento de backlog aos sponsors do projeto?&#8221;</em>. Essas perguntas recaem sobre a decisão, deixando-a mais difícil de ser tomada, e com um peso grande sobre o colo do Product Owner, e de quem o estiver auxiliando no processo.</p>
+<p>Muitas dessas dúvidas talvez surjam por conta dos conceitos que temos desde o &#8220;lançamento&#8221; do ágil. O conceito de &#8220;história do usuário&#8221;, algo que deve ser escrito pelo usuário, indicando na visão dele, uma necessidade para o produto ou projeto. Segundo <a href="https://www.mountaingoatsoftware.com/company/about-mike-cohn">Mike Cohn</a> argumenta em <a href="https://www.mountaingoatsoftware.com/agile/user-stories">&#8220;User Stories&#8221;</a>, uma US deve ser pequena, com descrição simples de uma funcionalidade contada a partir da perspectiva da pessoa que solicitou, geralmente um usuário ou cliente do sistema. Por conta disso nos prendemos muito ao &#8220;usuário final&#8221;, o cliente, o carinha que está na outra ponta da feature, sem levar em conta todas as outras pessoas que também utilizarão a feature (time de suporte, time de operações, os próprios devs, por exemplo).</p>
+<p>Alguns já devem ter lido ou ouvido &#8220;User Stories devem ser INVEST&#8221;, e pra quem não leu/ouviu, é um acronimo criado por <a href="https://www.industriallogic.com/people/Bill">Bill Wake</a> em seu artigo <a href="http://xp123.com/articles/invest-in-good-stories-and-smart-tasks/">&#8220;INVEST in Good Stories, and SMART Tasks&#8221;</a> e reproduzido também por <a href="https://www.mountaingoatsoftware.com/company/about-mike-cohn">Mike Cohn</a> em seu livro <a href="https://www.amazon.com/dp/0321205685?tag=viglink122630-20">&#8220;User stories applied&#8221;</a>.</p>
+<p>São livros e artigos bem interessantes, e em um TL:DR, o que ele diz é que boas user stories possuem alguns atributos desejáveis. São eles: <em>Independent</em>, <em>Negotiable</em>, <em>Valuable</em>, <em>Estimable</em>, <em>Small</em> e <em>Testable</em>. Aqui, o que gostaria de chamar atenção são para 3 itens: <em>Valuable</em>, <em>Estimable</em> e <em>Small</em>. Lembramos sempre do &#8220;Valor&#8221;, mas esquecemos do Estimável e Pequena. Não uma estimativa mais apurada de esforço, pontos ou dias, mas algo que possa ajudar um Product Owner, por exemplo, a priorizar um backlog sabendo de uma duração próxima que o card terá. E principalmente, pequena, de forma a ser entregue em poucos dias entregando valor mais cedo.</p>
+<p>Nos prendemos ao contexto de valor gerado pro usuário final, mas esquecemos que o valor é relativo. Além de ser algo que deve ser benéfico para outras pessoas dentro do processo, como o time de desenvolvimento, por exemplo. No caso de um card que vai gerar uma API que poderá ser utilizada por outros times, isso não gera um valor para o projeto como um todo? User stories técnicas não são user stories? Não devem entrar no backlog? Se formos pensar somente no &#8220;card escrito pelo usuário&#8221;, uma criação de API não entraria no backlog.</p>
+<p>Então, vamos pensar no seguinte caso: o time X está trabalhando num projeto novo, o lançamento de um e-commerce e precisa desenvolver uma feature que deverá receber um pagamento via cartão de crédito, e após confirmado o pagamento envie por e-mail um documento em pdf listando os itens da compra realizada. Algo como <em>&#8220;Eu como cliente gostaria de usar meu cartão para pagar a conta, e ao final quero receber no meu e-mail um pdf listando todos os itens comprados.&#8221;</em>. Se formos pensar nesse card, o &#8220;valor&#8221; geral só será entregue quando o pdf chegar no e-mail do cliente, certo?</p>
+<p>Essa US por si só, teria um tamanho considerável, levando em conta que: será necessária uma integração com algum gateway de pagamento, para processar a compra no cartão de crédito, uma API de mensagens que faça a rotina de disparos de e-mail, e uma API geradora de docs capaz de gerar o arquivo PDF que o cliente espera. E também é provável que uma PoC, caso o time não tenha mexido com gateways de pagamento antes. Se formos pensar no tamanho dessa user story, ela poderia levar semanas para ser desenvolvida por completo, se considerarmos o &#8220;valor&#8221; esperado pelo cliente, o PDF no e-mail, dessa forma não se encaixaria no <em>Estimable</em> e nem no <em>Small</em>. Mas uma API de envio de mensagens pode ser usada pelo time de marketing, por exemplo. O gateway de pagamento também já pode ser utilizado por outros times. Da mesma maneira o gerador de PDF já tem valor para outras equipes dentro do projeto. Além de que uma PoC também serve para validar uma hipótese, nos ajudando a mudar de rumo mais rápido, caso o conceito não seja provado. O que também, se formos pensar, é valor.</p>
+<p>Dessa forma, esse &#8220;épico&#8221;, poderia ser quebrado como descrito acima, criando cerca de 4 US, que também geram valor sozinhas. Valor que provavelmente não será entregue somente ao cliente final, mas sim aos times de operações, marketing e suporte. Pensar no cliente externo é muito bom, mas devemos também pensar no cliente interno, aqueles envolvidos que quase sempre são esquecidos.</p>
+<p>O conceito de valor é interpretativo demais, além de ser volátil e perecível. Tendo isso em vista, devemos ter bastante cuidado ao deixar de quebrar uma user story por achar que ela não está gerando o devido benefício, é importante lembrar que outras pessoas dentro do fluxo podem se beneficiar de um card quebrado. Dessa forma, se levamos semanas para entrega de uma user story, estamos depreciando o que poderia ter sido entregue, por conta da volatilidade. Fatiar cards, entregando histórias mais rápido auxilia numa geração de valor acelerada com risco reduzido da solução perecer.</p>
+<p>E você? Como lida quando o assunto é a quebra de user stories dentro do seu time? Deixe sua opinião aí nos comentários <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<div style="margin:40px 0 60px;">
+<a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" style="max-width:95%;" class="aligncenter" src="/wp-content/uploads/2017/02/blog-cta-assinar-contagil.png" alt="Quero assinar a ContÁgil Newsletter"/></a>
+</div><p>The post <a href="/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/">User Stories. Quebrar ou não quebrar? Eis a questão.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Nossa participação no Agile Brazil 2016</title>
+		<link>/2016/11/nossa-participacao-no-agile-brazil-2016/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 17 Nov 2016 16:29:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=5842</guid>
+
+					<description><![CDATA[<p>Na última semana aconteceu em Curitiba, Paraná, uma das maiores conferências sobre métodos ágeis na América Latina, o Agile Brazil 2016. Foi a primeira participação do time de gerentes de projetos da Plataformatec como palestrantes no evento e, neste post, gostaria de compartilhar algumas impressões sobre essa participação e o evento como um todo. Primeiro ... <a class="read-more-link" href="/2016/11/nossa-participacao-no-agile-brazil-2016/">»</a></p>
+<p>The post <a href="/2016/11/nossa-participacao-no-agile-brazil-2016/">Nossa participação no Agile Brazil 2016</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Na última semana aconteceu em Curitiba, Paraná, uma das maiores conferências sobre métodos ágeis na América Latina, o <a href="http://www.agilebrazil.com/2016/">Agile Brazil 2016</a>.</p>
+<p>Foi a primeira participação do time de gerentes de projetos da Plataformatec como palestrantes no evento e, neste post, gostaria de compartilhar algumas impressões sobre essa participação e o evento como um todo.</p>
+<h2>Primeiro dia</h2>
+<p>Eu<a href="https://twitter.com/rapha_albino" target="_blank"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/@rapha_albino" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a> e o Lucas Colucci<a href="https://twitter.com/lucasrcolucci1" target="_blank"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/lucasrcolucci1" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a> tivemos a oportunidade de compartilhar no <a href="http://www.agilebrazil.com/2016/wbma/">WBMA</a> (a frente acadêmica do Agile Brazil) algumas descobertas do <em>short paper</em> que escrevemos sobre o uso de simulações de Monte Carlo como uma abordagem para predição de prazos de entrega em projetos de desenvolvimento de <em>software</em>.</p>
+<p>A experiência de conversar com outros pesquisadores sobre a importância em gerar uma convergência entre a ciência (academia) e a aplicação (indústria) foi de extrema importância, afinal, acreditamos que esse tipo de discussão cria um fértil caminho para a inovação.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/Lucas-Colutti_Raphael-Albino_Agile-Brasil-2016.jpg" alt="Lucas Colutti e Raphael Albino no Agile Brazil 2016" width="1224" height="519" class="aligncenter size-full wp-image-5852" srcset="/wp-content/uploads/2016/11/Lucas-Colutti_Raphael-Albino_Agile-Brasil-2016.jpg 1224w, /wp-content/uploads/2016/11/Lucas-Colutti_Raphael-Albino_Agile-Brasil-2016-300x127.jpg 300w, /wp-content/uploads/2016/11/Lucas-Colutti_Raphael-Albino_Agile-Brasil-2016-768x326.jpg 768w, /wp-content/uploads/2016/11/Lucas-Colutti_Raphael-Albino_Agile-Brasil-2016-1024x434.jpg 1024w" sizes="(max-width: 1224px) 100vw, 1224px" /></p>
+<p>Caso você tenha interesse em entender como usamos o modelo estatístico de Monte Carlo em nossos projetos, recomendo que você leia o post, em inglês, intitulado <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a>.</p>
+<p>Além disso, disponibilizamos gratuitamente, uma versão da nossa planilha com este modelo estatístico para que você teste no seu dia a dia. Para ter acesso ao material, basta <a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=cta-blog-post-bottom">clicar aqui</a>.</p>
+<p>No fim do primeiro dia, depois de muito café e ótimas conversas de corredor com novos e antigos amigos sobre os assuntos abordados no evento até então, tivemos uma nova participação do time da Plataformatec com o Wesley Zappelini<a href="https://twitter.com/wesleyzapellini"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/@wesleyzapellini" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a>.</p>
+<p>A palestra conduzida por ele compartilhou <a href="https://speakerdeck.com/wesleytz/estrategias-para-otimizar-um-sistema-de-trabalho-agile-brazil-1">estratégias para melhorar o fluxo de trabalho no processo de desenvolvimento de <em>software</em></a>.</p>
+<p>Em linhas gerais, foram compartilhadas 5 maneiras para se trazer eficácia em processos que não estão saudáveis (mais informações podem ser lidas em  <a href="/2016/08/5-strategies-to-improve-software-development-workflow/">5 Strategies to improve software development workflow</a>).</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/Wesley-Zappelini_Agile-Brasil-2016.jpg" alt="Wesley Zappelini no Agile Brazil 2016" width="1224" height="383" class="aligncenter size-full wp-image-5861" srcset="/wp-content/uploads/2016/11/Wesley-Zappelini_Agile-Brasil-2016.jpg 1224w, /wp-content/uploads/2016/11/Wesley-Zappelini_Agile-Brasil-2016-300x94.jpg 300w, /wp-content/uploads/2016/11/Wesley-Zappelini_Agile-Brasil-2016-768x240.jpg 768w, /wp-content/uploads/2016/11/Wesley-Zappelini_Agile-Brasil-2016-1024x320.jpg 1024w" sizes="(max-width: 1224px) 100vw, 1224px" /></p>
+<p>Após a palestra, interagimos com outras pessoas que continuam enfrentando problemas para otimizar o fluxo de desenvolvimento das equipes em que atuam.</p>
+<p>Se você se interessou pelas formas de otimizar o fluxo de trabalho em times de desenvolvimento, não perca a oportunidade de ter acesso ao <em>ebook</em> gratuito que lançaremos nas próximas semanas explicando detalhadamente cada uma das estratégias que estamos adotando para melhorar o dia a dia de nossos projetos e clientes. Para ter acesso exclusivo ao material, <a href="http://pages.plataformatec.com.br/ebook-strategies-to-improve-software-development-workflow?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-strategies&amp;utm_content=link-click-here">clique aqui</a>.</p>
+<h2>Segundo dia</h2>
+<p>Não houve apresentações do nosso time no segundo dia, portanto, pudemos assistir ótimas apresentações sobre:</p>
+<ul>
+<li>Desenvolvimento de equipes (obrigado, Sandy Mamoli, pela apresentação <a href="http://www.slideshare.net/smamol/formando-times-memorveis-como-a-autoseleo-proporciona-excelncia">Creating Great Teams &#8211; How Self-Selection Lets People Excel</a>); </li>
+<li>Escalando ágil dentro do governo;</li>
+<li>O uso de uma abordagem de fluxo unificado para a gestão de portfólio de projetos (parabéns Rafael Caceres<a href="https://twitter.com/rafaelcaceres"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/@rafaelcaceres" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a>);</li>
+<li>&#8220;<strong>No Estimates</strong>&#8220;.</li>
+</ul>
+<h2>Terceiro dia</h2>
+<p>No início do terceiro e último dia do Agile Brazil, tive a oportunidade de conversar com uma das poucas pessoas que conheci no evento que atuava em uma área fora da tecnologia, no caso, recursos humanos. Era a primeira vez que ela participava do evento e fiquei muito interessado em saber quais eram as suas impressões.</p>
+<p>Papo vem, papo vai e ela compartilhou que ao participar do evento havia aprendido muito sobre os princípios ágeis, os problemas que uma transformação ágil traz para as empresas e como compreender e avaliar as habilidades necessárias ao contratar Gestores de Produtos e Agile Coaches.</p>
+<p>Em outras palavras, ela resumiu que sua participação fazia parte de uma estratégia para aprimorar a visão sobre ágil a partir da ótica de recursos humanos.</p>
+<p>O relato dela reforça a ideia de que para o ágil de fato fazer parte da cultura de uma organização ele deve ser entendido por todos. Como diria meu amigo João Britto<a href="https://twitter.com/noteu"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/@noteu" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a>: &#8220;o ágil tem que estar no coração das pessoas&#8221;.</p>
+<p>Nossa última participação no evento aconteceu com o Breno Campos<a href="https://twitter.com/brenobcampos"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/icon-tw.png" alt="twitter.com/@brenobcampos" width="20" height="20" style="box-sizing: none; display: inline;margin: 0 2px -3px !important;max-width: auto;height: auto;padding: 0;border: none;" /></a>, com a palestra sobre <a href="http://www.slideshare.net/BrenoCampos/maos-nas-metricas-uma-abordagem-pratica-na-avaliacao-de-processos-agile-brazil-2016">métricas de processo para melhorar o desenvolvimento de <em>software</em></a>, assunto que temos abordado em outros posts aqui no blog.</p>
+<p>Foi lindo ver a sala cheia de pessoas interessadas em saber de que maneira métricas como <em>lead time</em> e <em>throughput</em> e, visualizações como o Cumulative Flow Diagrams (CFD) e o gráfico de <em>burn down</em>, tem nos ajudado a trazer visibilidade e previsibilidade para nossos clientes.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/Breno-Campos_Agile-Brasil-2016.jpg" alt="Breno Campos no Agile Brazil 2016" width="1224" height="341" class="aligncenter size-full wp-image-5862" srcset="/wp-content/uploads/2016/11/Breno-Campos_Agile-Brasil-2016.jpg 1224w, /wp-content/uploads/2016/11/Breno-Campos_Agile-Brasil-2016-300x84.jpg 300w, /wp-content/uploads/2016/11/Breno-Campos_Agile-Brasil-2016-768x214.jpg 768w, /wp-content/uploads/2016/11/Breno-Campos_Agile-Brasil-2016-1024x285.jpg 1024w" sizes="(max-width: 1224px) 100vw, 1224px" /></p>
+<p>Caso você tenha interesse em saber porque amamos métricas aqui na Plataformatec, leia os seguintes posts:</p>
+<ul>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with lead time</a>.</li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and burnup charts</a>.</li>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a>. </li>
+</ul>
+<p>Ainda falando sobre métricas, lancei recentemente, em português, um curso via email com algumas dicas de como usar métricas no processo de desenvolvimento de <em>software</em> de forma contínua. Caso tenha interesse em receber os emails com o conteúdo, <a href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile">clique aqui</a>.</p>
+<h2>Conclusão</h2>
+<p>Essa foi a primeira vez que estive no Agile Brazil e uma coisa que me chamou a atenção foi o tamanho do evento (mais de 800 pessoas). Outro ponto interessante foi a qualidade e a diversidade das palestras. O Brasil, como você sabe, é &#8220;um país com tamanho de continente&#8221;, portanto, conversar com pessoas de todas as regiões do país me mostrou o quão amplo é o movimento ágil em terras tupiniquins.</p>
+<p>Ano que vem o evento acontecerá em Belém, Pará, e espero estar por lá comendo açaí e trocando mais ideias sobre como melhorar os negócios a partir de processos ágeis.</p>
+<p>E você? Como foi o seu Agile Brazil 2016? Compartilhe suas impressões nos comentários abaixo <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="padding: 40px 0 60px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/11/nossa-participacao-no-agile-brazil-2016/">Nossa participação no Agile Brazil 2016</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Coding can make you a better project manager</title>
+		<link>/2015/07/coding-can-make-you-a-better-project-manager/</link>
+					<comments>/2015/07/coding-can-make-you-a-better-project-manager/#comments</comments>
+		
+		<dc:creator><![CDATA[Wesley Zapellini]]></dc:creator>
+		<pubDate>Wed, 22 Jul 2015 12:00:46 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=4836</guid>
+
+					<description><![CDATA[<p>As a Scrum Master, Project Manager or any other project management role you can have, removing impediments is part of your daily routine. They come in many forms and sizes, ranging from organizational to human ones. But there are also technical impediments, those you annoy ask your beloved developer teammates for help if you don&#8217;t ... <a class="read-more-link" href="/2015/07/coding-can-make-you-a-better-project-manager/">»</a></p>
+<p>The post <a href="/2015/07/coding-can-make-you-a-better-project-manager/">Coding can make you a better project manager</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As a Scrum Master, Project Manager or any other project management role you can have, removing impediments is part of your daily routine. They come in many forms and sizes, ranging from organizational to human ones.</p>
+<p>But there are also technical impediments, those you <span style="text-decoration: line-through">annoy</span> ask your beloved developer teammates for help if you don&#8217;t usually code.</p>
+<p>The truth is that big part of those roadblocks can be tackled with a single line of code. Yes, you can work on low hanging fruits and have a lot of fun!</p>
+<h2>Which technical impediments can you work on?</h2>
+<p>Recently I had the opportunity to code a little bit to help the team. I can suggest the following topics, where you can achieve positive outcomes with very little effort:</p>
+<h3>Outdated project readme files</h3>
+<p>It&#8217;s just text, but it&#8217;s a good opportunity to hone your GitHub and markdown skills without breaking stuff.</p>
+<p>Besides helping a new member on his onboarding process, it will also spread the message that it&#8217;s important to keep it up to date.</p>
+<h3>Outdated Boxen manifests</h3>
+<p>Some of our folks use Boxen to set up their environments. We often forget to update the project&#8217;s manifest. One more chance to practice. Go for it, your teammates will be grateful when they perform another clean OSX install!</p>
+<h3>Front-end fixes (color, text, positioning, size, UI behavior)</h3>
+<p>They&#8217;re small, they&#8217;re easy to fix and may bore a developer to death. But to you it&#8217;s all new and rewarding. Those represent the majority of the commits I&#8217;ve done.</p>
+<p>As you become more experienced and confident you can expand into other areas, it&#8217;s just a matter of curiosity and opportunity.</p>
+<h2>What are the benefits?</h2>
+<p>Between one commit and another I noticed some advantages. Below are some that might also work for you:</p>
+<h3>Codebase knowledge</h3>
+<p>As you perform fixes, you get in touch with different parts of the code. It will naturally increase your awareness of where things come from and where they belong. From now on when you hear about a bug you will probably track its origin with ease.</p>
+<p>This also makes grooming sessions more productive, since you are more familiar with the effects a new feature will bring to the application, improving your negotiation superpowers.</p>
+<h3>Better communication and relationship</h3>
+<p>Good communication saves a tremendous amount of time and energy. When you deal with code, you learn the technical vocabulary. In your next conversation with the team, people won&#8217;t need to translate jargon so you can understand. The same applies in the opposite direction.</p>
+<p>In my opinion, a manager that can code also increases the sense of fellowship, improving the overall relationship among team members.</p>
+<h3>The feeling of shipping code</h3>
+<p>My first commit made some checkboxes to be selected by default. Nothing big, I know, but when I saw the customer using it I realized that shipping code feels amazing!</p>
+<p>This brings the sense of belonging and increases shared ownership. You should give it a try!</p>
+<h3>Working with Pull Requests</h3>
+<p>At my very first day at Plataformatec, I realized that all teams were using Pull Requests. Shortly after, I figured out why we were using this technique. But I really understood it when I first submitted one of my own. Reading code and discussions added value to me, because I could see what was going on without interrupting people. Discussions also acted as a thermometer, revealing some insights about team relationship.</p>
+<h3>Learning how to write tests</h3>
+<p>Your code will break some tests (believe me, it will). Panic? Never! Go on and learn how to write and run automated tests. It&#8217;s not that hard. Ask your friends, they will be happy to teach you.<br />
+Learning about tests will help your communication with developers and reinforce quality culture as well.</p>
+<h3>Waste reduction</h3>
+<p>Waste is a fierce enemy and every chance to beat it must be taken. Coding can give you some opportunities to do so.</p>
+<p>Every little fix you deal with is one less interruption and context switch for a developer. Every conversation you join in a Pull Request is a shorter feedback cycle being nurtured and less time being spent in queues.</p>
+<p>These and other factors combined can positively impact the team&#8217;s performance.</p>
+<h2>Where to start?</h2>
+<p>I recommend following these steps:</p>
+<h3>Learning git and Pull Request basics</h3>
+<p>Here in Plataformatec we use GitHub, so finding documentation about Pull Requests wasn&#8217;t difficult. If you use it as well, you can browse Github&#8217;s Help and even use <a href="http://guidelines.plataformatec.com.br/pull-requests.html">our Guidelines</a> as a reference. If you don&#8217;t, I&#8217;m sure you can find plenty of content about your version control tool with a simple Google search.</p>
+<h3>Practicing in a controlled environment</h3>
+<p>Look for a repository that you can commit without spreading panic if you mess things up. For instance, I have practiced in our Campfire bot. If you don&#8217;t find any appropriate repository, you can fork a public project on GitHub and use it as your sandbox.</p>
+<p>In this phase my colleagues helped me a lot crafting my first Pull Request, I bet yours will do the same. Don&#8217;t be shy and ask them for help!</p>
+<h3>Looking for and working on impediments</h3>
+<p>You have just developed a new skill, now it&#8217;s time to use it! Look for things similar to those examples I suggested and invest a little time in them. A couple of fixes later you will be able to work more independently, and the results will start to come.</p>
+<h2>Is there any pitfalls in this practice?</h2>
+<p>If you do things in a careful and balanced way, they will happen just right. But there are some traps you should avoid:</p>
+<h3>Creating dependencies</h3>
+<p>Remember that you are coding to help removing obstacles. If you turn yourself into the person responsible for maintenance, you have just become a bottleneck for the system (or an irresponsible developer, as you prefer).</p>
+<h3>Forcing people to code</h3>
+<p>Despite the several advantages mentioned, not every manager likes to code. Don&#8217;t force people into doing it.</p>
+<h3>Micromanaging</h3>
+<p>Joining Pull Request discussions brings great value. Micromanaging doesn&#8217;t. Don&#8217;t even think of using Pull Request discussions as a control tool. Trust your team!</p>
+<p><em>I hope this blog post can help you and your team to improve. Have you ever tried something like this? What are you thoughts about it? Share them with us in the comments below!</em></p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2015/07/coding-can-make-you-a-better-project-manager/">Coding can make you a better project manager</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/07/coding-can-make-you-a-better-project-manager/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Estamos contratando gerentes de projetos</title>
+		<link>/2014/12/estamos-contratando-gerentes-de-projeto/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 19 Dec 2014 11:00:48 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=4345</guid>
+
+					<description><![CDATA[<p>Você tem perfil para lidar com pessoas e gosta de ágil? Gosta de metodologia ágeis como Scrum, Kanban e Lean? Temos uma oportunidade para você. Veja abaixo como é ser um gerente de projetos na Plataformatec, e também como é a cultura da nossa empresa. Sobre a Plataformatec A Plataformatec é uma empresa de consultoria ... <a class="read-more-link" href="/2014/12/estamos-contratando-gerentes-de-projeto/">»</a></p>
+<p>The post <a href="/2014/12/estamos-contratando-gerentes-de-projeto/">Estamos contratando gerentes de projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Você tem perfil para lidar com pessoas e gosta de ágil? Gosta de metodologia ágeis como Scrum, Kanban e Lean?</p>
+<p>Temos uma oportunidade para você. Veja abaixo como é ser um gerente de projetos na Plataformatec, e também como é a cultura da nossa empresa.</p>
+<p><iframe loading="lazy" src="//fast.wistia.net/embed/iframe/xp3x8wzcie?videoFoam=true" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360"></iframe></p>
+<p><script src="//fast.wistia.net/assets/external/iframe-api-v1.js"></script></p>
+<h2>Sobre a Plataformatec</h2>
+<p>A Plataformatec é uma empresa de consultoria em desenvolvimento de projetos de software customizado. Usamos Agile, Ruby, Rails, Elixir e métodos de análise estratégica de negócios para ajudar nossos clientes a alcançarem seus objetivos. Nosso time é organizado em equipes compostas por um gerente de projetos e de dois a seis desenvolvedores que encaram os seguintes desafios:</p>
+<ul>
+<li>entender como um projeto de software se encaixa na estratégia de um cliente e como esse projeto fará com que o cliente alcance seus objetivos</li>
+<li>ajudar o cliente a definir e esclarecer os objetivos de negócio</li>
+<li>criar um roadmap em formato de release backlog, pronto para ser transformado em software</li>
+<li>desenvolver software de modo iterativo, incremental e colaborativo</li>
+</ul>
+<p>Por entendermos que a entrega de resultados é de responsabilidade da equipe inteira, não existe hierarquia dentro de uma equipe. Cada pessoa cumpre seu papel da melhor maneira possível para atingir os objetivos do cliente. Não queremos apenas clientes, nosso objetivo é termos fãs.</p>
+<p>Como empresa, adoramos compartilhar nosso trabalho e a produção de conhecimento. Mantemos vários <a href="https://github.com/plataformatec">projetos open-source</a>, criamos <a href="http://elixir-lang.org/">nossa própria linguagem de programação</a>, escrevemos <a href="http://www.amazon.com/Crafting-Rails-Applications-Practices-Development/dp/1937785556/ref=sr_1_1?ie=UTF8&amp;qid=1418331529&amp;sr=8-1&amp;keywords=crafting+rails+applications">três</a> <a href="http://www.amazon.com/HTML5-CSS3-Domine-futuro-Portuguese-ebook/dp/B00JQYJB60/ref=sr_1_1?ie=UTF8&amp;qid=1418331546&amp;sr=8-1&amp;keywords=html+5+e+css+3">livros</a> sobre <a href="http://www.amazon.com/Cucumber-RSpec-aplica%C3%A7%C3%B5es-especifica%C3%A7%C3%B5es-Portuguese-ebook/dp/B00JQYJD5Y/ref=sr_1_1?ie=UTF8&amp;qid=1418331536&amp;sr=8-1&amp;keywords=cucumber+e+rspec">desenvolvimento de software</a> e palestramos em dezenas de eventos de desenvolvimento e agile. Além disso, somos referência mundial na comunidade de Ruby on Rails.</p>
+<p>Melhoria contínua sempre esteve presente em nosso DNA. Atuamos no mercado há quase seis anos e desde sempre aplicamos a filosofia agile na empresa inteira, do time de projetos ao RH, do time de vendas ao administrativo.</p>
+<p>Nós amamos nosso trabalho.</p>
+<h2>Sobre a vaga</h2>
+<p><strong>O que um gerente de projetos faz na Plataformatec</strong></p>
+<p>Nossos gerentes de projetos não seguem a chamada linha tradicional. O principal objetivo do nosso GP é potencializar o trabalho do restante da equipe. Para isso, ele mistura atividades de um gerente de projetos, mas também de scrum master, analista de requisitos e proxy de PO.</p>
+<p>Algumas atividades típicas do nosso gerente de projetos são:</p>
+<ul>
+<li>participar do entendimento dos objetivos de negócio do cliente</li>
+<li>ajudar o cliente a transformar suas ideias em requisitos de software</li>
+<li>facilitar a comunicação do time com o cliente</li>
+<li>organizar e acompanhar as releases do projeto</li>
+<li>ajudar o cliente a otimizar o escopo do projeto para maximizar o valor de negócio no período do projeto</li>
+<li>planejar e conduzir as cerimônias do agile: planning, daily, grooming, review e retrospectiva</li>
+<li>monitorar a velocidade de entrega e indicadores de sucesso do projeto</li>
+<li>retirar impedimentos da equipe</li>
+</ul>
+<p><strong>Requisitos para a vaga</strong></p>
+<ul>
+<li>Educação
+<ul>
+<li>ensino superior completo em curso da área de computação</li>
+<li>inglês intermediário (oral e escrito)</li>
+</ul>
+</li>
+<li>Experiência
+<ul>
+<li>1 ano em gestão de projetos de software</li>
+<li>1 ano em gestão de projetos com metodologias ágeis (Scrum, Kanban, Lean etc)</li>
+</ul>
+</li>
+<li>Skills
+<ul>
+<li>apresentar habilidade analítica</li>
+<li>ser orientado a resultados</li>
+<li>gostar de aprender</li>
+<li>ter boa comunicação (verbal e escrita)</li>
+<li>ser capaz de comunicar informações técnicas para pessoas não técnicas</li>
+</ul>
+</li>
+<li>
+<p>Disponibilidade para trabalhar em SP</p>
+</li>
+</ul>
+<h2>Como participar do processo seletivo</h2>
+<p>Para participar no processo seletivo visite <a href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers</a> e envie seu curriculum. Veja também nossa página no <a href="https://www.facebook.com/plataformatec.com.br">Facebook</a> para conhecer mais sobre o nosso time e <a href="https://www.facebook.com/media/set/?set=a.624574547608807.1073741828.270287263037539&amp;type=1">nosso escritório</a>.</p>
+<p>Nós queremos pessoas que compartilhem dos <a href="http://plataformatec.com.br/playbook">nossos valores</a>, que se importem com o que fazem e que não cansem de aprender e de se superarem.</p>
+<p>Se você compartilha da nossa visão, participe do processo seletivo. Se você conhece alguém que possa se interessar, <a href="mailto:email.do.seu.amigo@email.com?Subject=Vaga%20legal%20para%20gerente%20de%20projeto&amp;Body=Ola%2C%0A%0AA%20Plataformatec%20esta%20procurando%20novos%20gerentes%20de%20projeto%20e%20acho%20que%20vale%20a%20pena%20voce%20dar%20uma%20olhada.%0A%0ASegue%20o%20blog%20post%20falando%20da%20empresa%2C%20da%20cultura%20deles%20e%20da%20vaga%3A%20http%3A//blog.plataformatec.com.br/2014/12/estamos-contratando-gerentes-de-projeto/">indique para seu amigo</a>.</p><p>The post <a href="/2014/12/estamos-contratando-gerentes-de-projeto/">Estamos contratando gerentes de projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

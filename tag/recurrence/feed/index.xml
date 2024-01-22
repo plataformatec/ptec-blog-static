@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>recurrence « Plataformatec Blog</title>
+	<atom:link href="/tag/recurrence/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:59:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Recurring events</title>
+		<link>/2010/04/recurring-events/</link>
+					<comments>/2010/04/recurring-events/#comments</comments>
+		
+		<dc:creator><![CDATA[Fabio Yamate]]></dc:creator>
+		<pubDate>Thu, 22 Apr 2010 17:59:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[recurrence]]></category>
+		<guid isPermaLink="false">/?p=870</guid>
+
+					<description><![CDATA[<p>We have been working in a project which deals with date events and we needed a recurrence feature in the application. An initial implementation could simply work with Rails ActiveSupport and use its Date helper methods, in order to shift by day, week, month and others. >> Date.today => Thu, 15 Apr 2010 >> Date.today.next_month ... <a class="read-more-link" href="/2010/04/recurring-events/">»</a></p>
+<p>The post <a href="/2010/04/recurring-events/">Recurring events</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We have been working in a project which deals with date events and we needed a recurrence feature in the application. An initial implementation could simply work with Rails ActiveSupport and use its Date helper methods, in order to shift by day, week, month and others.</p>
+<pre lang='ruby'>
+>> Date.today
+=> Thu, 15 Apr 2010
+>> Date.today.next_month
+=> Sat, 15 May 2010
+>> Date.today.next_week
+=> Mon, 19 Apr 2010
+>> Date.today.next_week(:thursday)
+=> Thu, 22 Apr 2010
+>> Date.today.advance(:days => 4)
+=> Mon, 19 Apr 2010
+</pre>
+<p>Very easy, right? But what if we now want events that occur every monday or sunday? Or events that happen at each two weeks? For each new case, we will need to add and deal with more and more logic.</p>
+<p>Instead we have been using the <a href="http://github.com/fnando/recurrence">Recurrence</a> gem, created by <a href="http://github.com/fnando">Nando Vieira</a> with some contributions by <a href="http://github.com/josevalim/">José Valim</a> (yeah, our good fellow ;)). Recurrence works with ActiveSupport as its base for date calculation and provides a simple DSL to work with recurring events. Let me show a simple example:</p>
+<pre lang='ruby'>
+# events every day, considering today as Apr 15th.
+>> r = Recurrence.new(:starts => 2.days.ago, :every => :day, :until => Date.tomorrow)
+>> r.events
+=> [Tue, 13 Apr 2010, Wed, 14 Apr 2010, Thu, 15 Apr 2010, Fri, 16 Apr 2010]
+</pre>
+<p>If no <em>:until</em> is determined, it runs until year <a href="http://www.unixtimestamp.com/index.php">2037</a> (maybe the end of world? No, it&#8217;s when the unix time 32-bit overflow&#8230;). You can check the <a href="http://github.com/fnando/recurrence">Github repository</a> and <a href="http://simplesideias.com.br/criando-eventos-recorrentes-com-recurrence/">this blog post</a> (in brazilian portuguese) to learn different use cases and examples for Recurrence.</p>
+<p>Now I want to show you how we integrated it with our application. We have built an EventRecurrence class which deals internally with the recurrence logic.</p>
+<pre lang='ruby'>
+# app/models/event_recurrence.rb
+# It has :start_date, :every and :end_date as database columns
+class EventRecurrence < ActiveRecord::Base
+  def dates(options={})
+    options = {:every => every, :starts => start_date, :until => end_date}.merge(options)
+    options[:on] = case options[:every]
+    when 'year'
+      [options[:starts].month, options[:starts].day]
+    when 'week'
+      options[:starts].strftime('%A').downcase.to_sym
+    when 'day', 'month'
+      options[:starts].day
+    end
+    Recurrence.new(options).events
+  end
+end
+</pre>
+<p>Notice we need to setup the <em>options</em> hash for different cases (day, week, month and year) because the configuration options changes for each. Now, accessing all the recurring dates for one model is quite easy:</p>
+<pre lang='ruby'>
+>> er = EventRecurrence.new(:start_date => Date.today, :every => :month, :end_date => 6.months.from_now)
+>> er.dates
+=> [Thu, 15 Apr 2010, Sat, 15 May 2010, Tue, 15 Jun 2010,
+Thu, 15 Jul 2010, Sun, 15 Aug 2010, Wed, 15 Sep 2010, Fri, 15 Oct 2010]
+</pre>
+<p>Since <em>EventRecurrence</em> is a model, these options are saved in database and we can update or use them for querying freely. For instance, if we want to look for all dates in a given period, we just search for all <em>EventRecurrence</em>s that are in the range and collect the dates returned by recurrence. Here you can see a raw implementation of this idea:</p>
+<pre lang="ruby">
+class EventRecurrence < ActiveRecord::Base
+  # Retrieves a list of all dates for a period
+  def self.dates_between(start_date, end_date)
+    # Filtering EventRecurrence on the period using a between named scope
+    recurrences = EventRecurrence.between(start_date, end_date)
+
+    recurrences.inject([]) do |dates, recurrence|
+      # Use the given dates instead of the ones in the DB
+      dates.concat(recurrence.dates(:starts => start_date, :until => end_date))
+    end
+  end
+end
+</pre>
+<p>This is just an initial post showing some ideas to get you going with recurring events. If you are interested, there is a lot of information related to this topic, like <a href="http://martinfowler.com/apsupp/recurring.pdf">Recurring Event in Calendars</a>, an article by <a href="http://martinfowler.com/">Martin Fowler</a>, and the iCal <a href="http://www.ietf.org/rfc/rfc2445.txt">RFC2445</a> which includes calendar specifications.</p>
+<p>And you, have some different solutions about recurring events to share with us?</p><p>The post <a href="/2010/04/recurring-events/">Recurring events</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/recurring-events/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

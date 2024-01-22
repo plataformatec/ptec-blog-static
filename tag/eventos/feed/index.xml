@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>eventos « Plataformatec Blog</title>
+	<atom:link href="/tag/eventos/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 30 Jan 2018 19:20:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Time da Plataformatec no Elixir Brasil 2018</title>
+		<link>/2018/01/time-da-plataformatec-no-elixir-brasil-2018/</link>
+		
+		<dc:creator><![CDATA[Guilherme Fernandez]]></dc:creator>
+		<pubDate>Mon, 29 Jan 2018 18:04:08 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir brasil]]></category>
+		<category><![CDATA[eventos]]></category>
+		<guid isPermaLink="false">/?p=7143</guid>
+
+					<description><![CDATA[<p>Como a empresa que criou o Elixir, naturalmente, a Plataformatec estará apoiando o evento Elixir Brasil, que vai acontecer em São Paulo, no dia 03 de fevereiro. Esse evento aborda duas trilhas principais de conteúdo: uma para quem já desenvolve em Elixir e outras linguagens de programação funcional, e a outra para quem está começando ... <a class="read-more-link" href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">»</a></p>
+<p>The post <a href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">Time da Plataformatec no Elixir Brasil 2018</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Como a empresa que criou o Elixir, naturalmente, a Plataformatec estará apoiando o evento </span><a href="http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/"><span style="font-weight: 400;">Elixir Brasil</span></a><span style="font-weight: 400;">, que vai acontecer em São Paulo, no dia 03 de fevereiro. </span></p>
+<p><span style="font-weight: 400;">Esse evento aborda duas trilhas principais de conteúdo: uma para quem já desenvolve em Elixir e outras linguagens de programação funcional, e a outra para quem está começando a dar os primeiros passos nessa área.</span></p>
+<p><span style="font-weight: 400;">E é claro que o pessoal da Plataformatec estará por lá. Veja abaixo o que nosso time irá falar no evento, e o conteúdo que vão compartilhar: </span></p>
+<p><span style="font-weight: 400;"><strong>Amanda Sposito</strong>: <a href="http://eventos.locaweb.com.br/schedule/miguel/">Como concorrência funciona em Elixir?</a></span></p>
+<p><span style="font-weight: 400;"><strong>Ulisses Almeida</strong>: <a href="http://eventos.locaweb.com.br/schedule/ulisses-almeida-3/">O essencial da programação funcional em Elixir</a></span></p>
+<p><span style="font-weight: 400;"><strong>João Britto</strong>: <a href="http://eventos.locaweb.com.br/schedule/milhouse/">Evitando o Jenga Driven Development</a></span></p>
+<p><span style="font-weight: 400;"><strong>José Valim</strong>: <a href="http://eventos.locaweb.com.br/schedule/jose-valim-keynote/">Introducing HDD: Hughes Driven Development</a></span></p>
+<p><span style="font-weight: 400;">Veja aqui mais detalhes sobre o evento: <a href="http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/">http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/</a></span></p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Acompanhe nossa página de carreiras!</h3>
+<p style="margin-top: 0.5em !important;">Estamos sempre em busca de novas pessoas para trabalhar com Elixir, Ruby e Agile. Para isso temos nosso banco de talentos e vagas abertas, confira <a href="http://careers.plataformatec.com.br/">aqui</a>!</p>
+</div><p>The post <a href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">Time da Plataformatec no Elixir Brasil 2018</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Estamos patrocinando o Lean Kanban Brazil 2017</title>
+		<link>/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/</link>
+		
+		<dc:creator><![CDATA[Sheila Chang]]></dc:creator>
+		<pubDate>Fri, 13 Oct 2017 16:13:18 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[kanban]]></category>
+		<guid isPermaLink="false">/?p=6774</guid>
+
+					<description><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência aqui no blog e no conteúdo dos nossos materiais. Tudo grátis! 😉 Nossa contribuição se expandiu. Palestras e workshops em eventos agile ... <a class="read-more-link" href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">»</a></p>
+<p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência <a href="/tag/agile/">aqui no blog</a> e no conteúdo dos <a href="/materiais-de-metodologias-ageis/">nossos materiais</a>. Tudo grátis! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Nossa contribuição se expandiu. Palestras e workshops em eventos agile tornaram-se parte das atividades do nosso time, e para firmar nosso compromisso com a comunidade ágil, estamos patrocinando o <a href="http://leankanban.com.br/">Lean Kanban Brazil 2017</a>. \o/</p>
+<p><img decoding="async" class="alignleft size-full wp-image-6778" src="/wp-content/uploads/2017/10/logo-lean-kanban-brazil.png" alt="Lean Kanban Brazil" width="250" height="77" /></p>
+<h2>Lean Kanban Conferences</h2>
+<p>A <em><a href="http://leankanban.com/events/">Lean Kanban Conferences Internacional</a></em> apoia conferências em diversos países, e Brasil está na lista. Com temas relacionados a <strong>gestão</strong>, a <a href="http://leankanban.com.br/programa/">programação da segunda edição brasileira</a> está dividida em três.</p>
+<h3>1. Webinars</h3>
+<p>Democrático e inclusivo, a organização preocupou-se em eliminar a restrição geográfica. Quem não pode participar do evento em São Paulo, tem opção de webinars pré-conferência.</p>
+<p><img decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/breno-campos.png" alt="Breno Campos" width="110" height="110" /> No dia <strong>17/10</strong>, nosso carismático <em>agile consultant</em>, <strong>Breno Campos</strong> falará sobre priorização de backlog e desenvolvimento de produtos/plataformas digitais no webinar <em><strong>Cost of Delay &#8211; Você perde por esperar</strong></em>. Ele vai mostrar que atrasos de projetos significam perda de grana $$$. Você levará um choque de realidade. o.O</p>
+<h3 style="clear: both;">2. Workshops</h3>
+<p>6 workshops focados em gestão, com duração de 4 horas, ocuparão salas no Espaço Franklin Covey (<a href="https://goo.gl/maps/oC6M4wLgwgs">mapa</a>).</p>
+<p><img decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/raphael-albino.png" alt="Raphael Albino" width="110" height="110" />Claro que o <strong>Raphael Albino</strong> &#8212; professor, mestre, doutorando, <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">autor de livro</a> e nosso <em>agile consultant</em> &#8212; estará lá no dia <strong>27/10</strong> promovendo o workshop <em><strong>Vamos falar sobre Métricas de Processo?</strong></em> Você não terá moleza. Vai por a mão na massa, praticar de verdade! Se conhecimento é poder, você será poderoso(a) depois dessa aula. :bulb:</p>
+<h3 style="clear: both;">3. Palestras</h3>
+<p>Estão dividas em 2 tracks, marcadas para o dia <strong>28/10</strong>, no Grand Mercure Ibirapuera (<a href="https://goo.gl/maps/RqGJaxax8Ls">mapa</a>). Você terá oportunidade para networking nos coffee-breaks e almoço.</p>
+<p>Pensa que acabou? Tem mais!</p>
+<h2>Nosso estande</h2>
+<p>Vamos compartilhar mais conhecimento nas <strong><em>Coaching Sessions</em></strong> que teremos no nosso estande.</p>
+<p>Sério! Será imperdível! Sabe por quê? Porque não são <em>coaching sessions</em> sobre o que queremos ensinar. Abordaremos O QUE VOCÊ QUER APRENDER!</p>
+<p>Para isso, você precisa nos ajudar a te ajudar <small>(Tropa de Elite, caveiraaa!)</small>. Como? Basta responder <a href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=link">neste formulário</a> o tema do seu interesse.</p>
+<p>Você quer o &#8220;faz-me rir&#8221; <small>(faca na caveira)</small>? Que tal 20% de desconto na compra da entrada?</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; font: bold 12px arial; line-height: 1.8; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;" href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=button" target="_blank" rel="noopener">Clique aqui e responda o que você quer ver nas Coaching Sessions</a></p>
+<div style="height: 60px;"></div><p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Plataformatec organiza evento para CTOs, CIOs e Diretores de Produto</title>
+		<link>/2017/04/plataformatec-organiza-evento-para-ctos-cios-e-diretores-de-produto/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 14 Apr 2017 14:34:45 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[talking digital conf]]></category>
+		<guid isPermaLink="false">/?p=6257</guid>
+
+					<description><![CDATA[<p>&#160; Estamos organizando a segunda edição do Talking Digital Conf, um evento de networking e conteúdo para CTOs, CIOs, diretores de produto e outros líderes de equipes de desenvolvimento de produtos digitais e plataformas digitais. Esta segunda edição acontecerá no próximo dia 17 de maio, em São Paulo. Se você quer aprender como outros C-levels e ... <a class="read-more-link" href="/2017/04/plataformatec-organiza-evento-para-ctos-cios-e-diretores-de-produto/">»</a></p>
+<p>The post <a href="/2017/04/plataformatec-organiza-evento-para-ctos-cios-e-diretores-de-produto/">Plataformatec organiza evento para CTOs, CIOs e Diretores de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-6264" style="border: none;" src="/wp-content/uploads/2017/04/Marcas-exportar-01.png" alt="Talking Digital Conf logo" width="466" height="106" srcset="/wp-content/uploads/2017/04/Marcas-exportar-01.png 466w, /wp-content/uploads/2017/04/Marcas-exportar-01-300x68.png 300w" sizes="(max-width: 466px) 100vw, 466px" /></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Estamos organizando a segunda</span><span style="font-weight: 400;"> edição do <a href="http://talkingdigitalconf.com/">Talking Digital Conf</a>, um evento de networking e conteúdo para CTOs, CIOs, diretores de produto e outros líderes de equipes de desenvolvimento de produtos digitais e plataformas digitais.</span></p>
+<p><span style="font-weight: 400;">Esta segunda edição acontecerá no próximo dia 17 de maio, em São Paulo. <strong>Se você quer aprender como outros C-levels e gestores de produto e tecnologia estão resolvendo seus desafios, este evento é para você.</strong></span></p>
+<p><strong>Se você trabalha em uma equipe de produto e tecnologia, indique o evento para o seu gestor, enviando este blog post para ele.</strong></p>
+<p><span style="font-weight: 400;">Esta segunda edição acontece pouco mais de 3 anos depois da <a href="http://talkingdigitalconf.com/2014/">primeira edição</a>, que reuniu <a href="http://talkingdigitalconf.com/2014/index.html#participants">50 gestores de empresas</a> de </span><span style="font-weight: 400;">produtos e plataformas digitais. Participaram desde startups em crescimento acelerado até empresas tradicionais buscando inovação e criação de ofertas digitais.</span></p>
+<p style="text-align: center;">Abaixo você pode assistir o vídeo do evento de 2014:</p>
+<p style="text-align: center;"><iframe loading="lazy" src="https://www.youtube.com/embed/2Di9_VhENWU" width="800" height="450" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+<p><span style="font-weight: 400;">No período entre a última edição e hoje, empresas que estavam começando, e algumas que ainda nem existiam, se transformaram em negócios consolidados. Algumas delas totalmente baseadas em plataformas digitais, como a <a href="https://www.youse.com.br/">Youse</a> e a <a href="https://www.nubank.com.br/">Nubank</a>, estão transformando os negócios no Brasil. Devido a esse cenário, a inovação digital é hoje uma preocupação em empresas de todos os portes e segmentos. A ideia do Talking Digital Conf é ajudar os gestores de tecnologia e produto a resolver esses desafios.</span></p>
+<p>O evento irá manter o propósito de aproximar executivos e empresas com desafios semelhantes para trocarem ideias e experiências em um modelo extremamente colaborativo, onde cada um dos temas é discutido de maneira aprofundada, com um mix de palestra, mesa redonda e networking.</p>
+<p>No evento deste ano, serão discutidos vários desafios dos gestores de tecnologia e produto, tais como:</p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Desafios de crescimento devido a estratégias de diversificação e aquisição</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Avaliação de desempenho de equipes de produto e desenvolvimento</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Crescimento acelerado</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Adoção de novas tecnologias e migração de plataformas</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Digitalização de negócios tradicionais</span></li>
+</ul>
+<p>A partir deste ano, a Plataformatec tem o objetivo de transformar o Talking Digital Conf em um evento anual e estabelecer um canal frequente de diálogo entre os participantes, desenvolvendo uma série de atividades que irão contar com meetups e webinars, fomentando a interação e um fluxo contínuo de comunicação.</p>
+<p><strong>Visite o site do evento para saber mais detalhes e solicitar sua inscrição:</strong></p>
+<p style="text-align: center;"><a href="http://talkingdigitalconf.com/">http://talkingdigitalconf.com/</a></p>
+<p style="text-align: center;">17 de Maio / 9:00am &#8211; 8:00pm &#8211; Hotel Pulmman, São Paulo, Vila Olímpia</p>
+<p style="text-align: center;">Rua das Olimpíadas, 205</p>
+<p>&nbsp;</p>
+<p><strong>Confira abaixo o que alguns dos participantes falaram sobre o Talking Digital Conf 2014:</strong></p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;Falamos desde gestão de pessoas e tecnologia. Até os papos de corredor: &#8220;como é que vocês fazem contratação?&#8221;, então acho que no final das contas é muito produtivo, é muito gostoso estar aqui.&#8221;</span></em></p>
+<p><strong>Renato Freitas &#8211; CTO &#8211; 99Taxis</strong></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;Trouxe um pouco da experiência que a gente tem lá na Locaweb. A gente tem um portfolio bem diversificado de produtos: como é que a gente faz? por que nós temos esse portfolio? O tema do evento é muito importante, tem muita gente falando sobre startups, que é só o começo da história, mas a história é sempre maior do que essa. Quando o produto dá certo, o que você faz?&#8221;</span></em></p>
+<p><b>Joaquim Torres &#8211; Ex Diretor de Produtos &#8211; Locaweb</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><i>&#8220;Um grupo de participantes super bem escolhido. Um modelo mais colaborativo, as pessoas falando mais e a gente escutando mais experiência de outras pessoas. É um honra estar aqui!&#8221;</i></p>
+<p><b>Manoel Lemos &#8211; Ex CDO &#8211; Abril Mídia</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em>&#8220;Essa conferência reúne tecnologia, produtos e negócios, que é um espaço a ser preenchido. Estou bastante satisfeito.&#8221;</em></p>
+<p><b>Otávio Ferreira &#8211; Ex CTO &#8211; Emprego Ligado</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;É uma oportunidade de conhecermos muita gente com desafios parecidos e trocar experiências.&#8221;</span></em></p>
+<p><b>Guilherme Rolim &#8211; Gerente de Desenvolvimento de Software da ClearSale</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;A quantidade de profissionais excelentes que estão aqui, eu conheço alguns e outros que eu sempre quis conhecer. Não pode perder!&#8221;</span></em></p>
+<p><b>Gustavo Pioto &#8211; Ex Diretor de Produtos &#8211; Bidu</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;É fantástico poder participar de um evento assim! Primeiro pelo conteúdo e pelas pessoas que vão compartilhar o conhecimento, mas também pelo networking.&#8221;</span></em></p>
+<p><b>Fernanda Novak &#8211; Gerente de Produtos &#8211; VAGAS</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;Hoje em dia, você quase não consegue abrir uma empresa sem ter uma equipe de tecnologia. E não era assim alguns anos atrás.&#8221;</span></em></p>
+<p><b>Joshua Kempf &#8211; CEO &#8211; Gaveteiro</b></p></blockquote>
+<p>&nbsp;</p>
+<blockquote><p><em><span style="font-weight: 400;">&#8220;Vejo muito valor na discussão, em conhecer as dificuldades que todas as empresas têm em comum e que vem à tona nas discussões. A Plataformatec está de parabéns!&#8221;</span></em></p>
+<p><b>Anamaria Martins &#8211; Diretora de Produtos &#8211; Bionexo</b></p></blockquote><p>The post <a href="/2017/04/plataformatec-organiza-evento-para-ctos-cios-e-diretores-de-produto/">Plataformatec organiza evento para CTOs, CIOs e Diretores de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Talks da RubyConf Brasil 2012</title>
+		<link>/2012/09/talks-da-rubyconf-brasil-2012/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 04 Sep 2012 16:27:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3091</guid>
+
+					<description><![CDATA[<p>A Plataformatec esteve presente na RubyConf Brasil 2012 com palestras e lightning talks. O evento teve mais de 750 participantes e mais de 500 pessoas assistindo online. As palestras foram: Vamos falar sobre Concorrência, por José Valim; Escrevendo Aplicações Melhores com Active Model, por Carlos Antonio; e Conhecendo as Entranhas do Rails, por Rafael França. E os lightning talks foram: Contribuindo para o Rails, por Carlos Galdino; I18nAlchemy, por Lucas Mazza; e Copyright, Licenças Open Source e você!, por George Guimarães.</p>
+<p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos dias 30 e 31 de Agosto de 2012, aconteceu o maior evento de Ruby da América Latina: a <a href="http://rubyconf.com.br/" title="RubyConf Brasil">RubyConf Brasil</a>, e a Plataformatec marcou presença com palestras e lightning talks. O evento foi um sucesso, com mais de 750 participantes durante a conferência, e mais de 500 pessoas assistindo o evento online através do site da <a href="http://www.eventials.com/rubyconfbr2012" title="RubyConfBR 2012 - Vídeos">Eventials</a>.</p>
+<p><a href="/2012/09/talks-da-rubyconf-brasil-2012/ptec_team/" rel="attachment wp-att-3100"><img loading="lazy" decoding="async" src="/wp-content/uploads/2012/09/ptec_team.jpg" alt="Plataformatec Team" title="Plataformatec Team" width="600" height="398" class="aligncenter size-full wp-image-3100" srcset="/wp-content/uploads/2012/09/ptec_team.jpg 600w, /wp-content/uploads/2012/09/ptec_team-300x199.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>Abaixo você pode ver os temas, com links para os slides e vídeos:</p>
+<h3>Palestras</h3>
+<h4>Vamos falar sobre Concorrência</h4>
+<p><script async class="speakerdeck-embed" data-id="5046019de76a640002006e42" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por José Valim. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTk_3D" title="Vamos falar sobre Concorrência - José Valim - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Escrevendo Aplicações Melhores com Active Model</h4>
+<p><script async class="speakerdeck-embed" data-id="5046049ee76a6400020080b4" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Antonio. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDI_3D" title="Escrevendo Aplicações Melhores com Active Model - Carlos Antonio - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Conhecendo as Entranhas do Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="504605d9e76a640002008854" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Rafael França. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDM_3D" title="Conhecendo as Entranhas do Rails - Rafael França - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h3>Lightning Talks</h3>
+<h4>Contribuindo para o Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="50460791dd297e0002009176" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Galdino.</p>
+<h4>I18nAlchemy</h4>
+<p><script async class="speakerdeck-embed" data-id="504607d0e76a640002009384" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Lucas Mazza.</p>
+<h4>Copyright, Licenças Open Source e você!</h4>
+<p><script async class="speakerdeck-embed" data-id="5046081cdd297e00020094f3" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por George Guimarães.</p>
+<p><a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTg_3D" title="Lightning Talks - RubyConf Brasil 2012">Confira o vídeo das Lightning Talks</a>.</p>
+<p>Sinta-se à vontade para ver e rever os slides e vídeos das palestras, e nos passar seu feedback através dos comentários. Não deixe também de conferir as outras palestras disponíveis, e se você escreveu um post sobre o evento em seu blog, adoraríamos ver um comentário com um link compartilhando seu post.</p>
+<p>Gostaríamos também de agradecer e parabenizar o Fábio Akita e a Locaweb pela ótima organização e alta qualidade do evento, tudo funcionou perfeitamente para que todos pudessem aproveitar ao máximo a conferência.</p>
+<p>E nos vemos na RubyConf Brasil 2013!</p><p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Plataformatec na RubyConf 2012</title>
+		<link>/2012/08/plataformatec-na-ruby-conf-2012/</link>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 18:17:47 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3059</guid>
+
+					<description><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na Ruby Conf Brasil com três palestrantes! No dia 31, às 9h40, José Valim falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações. Às 11h, na sala 2, Carlos Antonio falará sobre como usar Active Model ... <a class="read-more-link" href="/2012/08/plataformatec-na-ruby-conf-2012/">»</a></p>
+<p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na <a href="http://www.rubyconf.com.br/">Ruby Conf Brasil</a> com três palestrantes!</p>
+<p>No dia 31, às 9h40, <a href="http://www.rubyconf.com.br/pt-BR/speakers/jose-valim">José Valim</a> falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações.</p>
+<p>Às 11h, na sala 2, <a href="http://www.rubyconf.com.br/pt-BR/speakers/carlos-antonio-da-silva">Carlos Antonio</a> falará sobre como usar Active Model para escrevermos aplicações melhores.</p>
+<p>Por fim, às 11h50, na sala 1, <a href="http://www.rubyconf.com.br/pt-BR/speakers/rafael-franca">Rafael França</a> falará sobre as entranhas do Rails e as grandes novidades do Rails 4.</p>
+<p>Não deixe também de votar em nossos Lightning Talks, que serão realizados no primeiro dia, a partir das 18h20:</p>
+<ul>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/517">Contribuindo para o Rails</a>, do Carlos Galdino</li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/518">I18nAlchemy</a>, do Lucas Mazza </li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/516">Copyright, Licenças Open Source e você!</a>, do George Guimarães</li>
+</ul>
+<p>Nos vemos lá!</p><p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Lançamos mais um livro! \o/ &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</title>
+		<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/</link>
+					<comments>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 19:02:28 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[front-end]]></category>
+		<category><![CDATA[livro]]></category>
+		<category><![CDATA[qcon]]></category>
+		<guid isPermaLink="false">/?p=3013</guid>
+
+					<description><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares ... <a class="read-more-link" href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">»</a></p>
+<p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares e os nossos resultados nos convencem cada vez mais disso.</p>
+<div id="attachment_3022" style="width: 522px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3022" src="/wp-content/uploads/2012/07/htmlcss-capa.jpg" alt="A capa do livro &quot;HTML5 e CSS3: Domine a web do futuro&quot;" title="htmlcss-capa" width="512" class="size-full wp-image-3022" srcset="/wp-content/uploads/2012/07/htmlcss-capa.jpg 800w, /wp-content/uploads/2012/07/htmlcss-capa-300x204.jpg 300w" sizes="(max-width: 800px) 100vw, 800px" /><p id="caption-attachment-3022" class="wp-caption-text">A capa do livro &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</p></div>
+<p>E a melhor evidência de que eu também acredito em multi-disciplinaridade é o meu recém lançado livro: <a href="http://casadocodigo.com.br/products/html5-e-css3-domine-a-web-do-futuro">&#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</a> publicado pela <a href="http://casadocodigo.com.br/">Casa do Código</a>. Sou desenvolvedor há algum tempo e sempre me interessei por front-end. No começo eu tive dúvidas em qual assunto me aprofundar, mas entre escolher um caminho ou outro acabei optando em aprofundar em ambos. Confesso que eu não me arrependo em nada da minha escolha e estou muito contente em ter aprendido bastante ao longo do caminho e hoje eu poder compartilhar o que aprendi em HTML e CSS através deste livro.</p>
+<p>Escrevi este livro pensando em desenvolvedores web que desejam aprimorar os seus conhecimentos em front-end e profissionais que estejam dedicando exclusivamente a estes assuntos. Aprendi muitas coisas ao &#8216;fazer&#8217;, por isso eu tentei replicar este tipo de aprendizado no livro com vários tutoriais e lições sobre técnicas clássicas de CSS e HTML (utilizando float, pseudo elementos e outros) e combinações de CSS3 para componentes visuais.</p>
+<p>Para quem se interessar, o livro está a venda online na Casa do Código (versões impressa, .mobi, .epub e .pdf).</p>
+<h3>Plataformatec na QCon SP</h3>
+<p>Aproveito para fazer o convite para assitirem o meu lightning talk sobre <em>CSS3 Transitions</em> e a palestra do José Valim <a href="http://www.qconsp.com/palestra/jose-valim/uma-abordagem-moderna-para-programacao-na-erlang-vm-elixir">&#8220;Uma abordagem moderna para programação na Erlang VM: Elixir&#8221;</a> na <a href="http://www.qconsp.com/">QCon SP</a>, neste final de semana, no dia 04 de Agosto.</p>
+<p>Fora a minha palestra, eu estarei no stand da Casa do Código (lá na QCon). Passe por lá para bater um papo. Será um prazer! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

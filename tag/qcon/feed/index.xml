@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>qcon « Plataformatec Blog</title>
+	<atom:link href="/tag/qcon/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 31 Jul 2012 19:02:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Lançamos mais um livro! \o/ &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</title>
+		<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/</link>
+					<comments>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 19:02:28 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[front-end]]></category>
+		<category><![CDATA[livro]]></category>
+		<category><![CDATA[qcon]]></category>
+		<guid isPermaLink="false">/?p=3013</guid>
+
+					<description><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares ... <a class="read-more-link" href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">»</a></p>
+<p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares e os nossos resultados nos convencem cada vez mais disso.</p>
+<div id="attachment_3022" style="width: 522px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3022" src="/wp-content/uploads/2012/07/htmlcss-capa.jpg" alt="A capa do livro &quot;HTML5 e CSS3: Domine a web do futuro&quot;" title="htmlcss-capa" width="512" class="size-full wp-image-3022" srcset="/wp-content/uploads/2012/07/htmlcss-capa.jpg 800w, /wp-content/uploads/2012/07/htmlcss-capa-300x204.jpg 300w" sizes="(max-width: 800px) 100vw, 800px" /><p id="caption-attachment-3022" class="wp-caption-text">A capa do livro &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</p></div>
+<p>E a melhor evidência de que eu também acredito em multi-disciplinaridade é o meu recém lançado livro: <a href="http://casadocodigo.com.br/products/html5-e-css3-domine-a-web-do-futuro">&#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</a> publicado pela <a href="http://casadocodigo.com.br/">Casa do Código</a>. Sou desenvolvedor há algum tempo e sempre me interessei por front-end. No começo eu tive dúvidas em qual assunto me aprofundar, mas entre escolher um caminho ou outro acabei optando em aprofundar em ambos. Confesso que eu não me arrependo em nada da minha escolha e estou muito contente em ter aprendido bastante ao longo do caminho e hoje eu poder compartilhar o que aprendi em HTML e CSS através deste livro.</p>
+<p>Escrevi este livro pensando em desenvolvedores web que desejam aprimorar os seus conhecimentos em front-end e profissionais que estejam dedicando exclusivamente a estes assuntos. Aprendi muitas coisas ao &#8216;fazer&#8217;, por isso eu tentei replicar este tipo de aprendizado no livro com vários tutoriais e lições sobre técnicas clássicas de CSS e HTML (utilizando float, pseudo elementos e outros) e combinações de CSS3 para componentes visuais.</p>
+<p>Para quem se interessar, o livro está a venda online na Casa do Código (versões impressa, .mobi, .epub e .pdf).</p>
+<h3>Plataformatec na QCon SP</h3>
+<p>Aproveito para fazer o convite para assitirem o meu lightning talk sobre <em>CSS3 Transitions</em> e a palestra do José Valim <a href="http://www.qconsp.com/palestra/jose-valim/uma-abordagem-moderna-para-programacao-na-erlang-vm-elixir">&#8220;Uma abordagem moderna para programação na Erlang VM: Elixir&#8221;</a> na <a href="http://www.qconsp.com/">QCon SP</a>, neste final de semana, no dia 04 de Agosto.</p>
+<p>Fora a minha palestra, eu estarei no stand da Casa do Código (lá na QCon). Passe por lá para bater um papo. Será um prazer! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Devise: authentication for lazy programmers	</title>
+	<atom:link href="/2009/11/devise-authentication-for-lazy-programmers/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/11/devise-authentication-for-lazy-programmers/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 20 Dec 2009 10:28:08 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-416</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2009 10:28:08 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-416</guid>
+
+					<description><![CDATA[@Jeem, that was already asked in the mailing list, take a look there please:
+
+http://groups.google.com/group/plataformatec-devise]]></description>
+			<content:encoded><![CDATA[<p>@Jeem, that was already asked in the mailing list, take a look there please:</p>
+<p><a href="http://groups.google.com/group/plataformatec-devise" rel="nofollow ugc">http://groups.google.com/group/plataformatec-devise</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-887</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2009 10:28:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-887</guid>
+
+					<description><![CDATA[@Jeem, that was already asked in the mailing list, take a look there please:
+
+http://groups.google.com/group/plataformatec-devise]]></description>
+			<content:encoded><![CDATA[<p>@Jeem, that was already asked in the mailing list, take a look there please:</p>
+<p><a href="http://groups.google.com/group/plataformatec-devise" rel="nofollow ugc">http://groups.google.com/group/plataformatec-devise</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jeem Khat		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-415</link>
+
+		<dc:creator><![CDATA[Jeem Khat]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2009 03:37:43 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-415</guid>
+
+					<description><![CDATA[Just started using Devise. A question - my login panel is on the home page (home/index). What&#039;s the best way of configuring Devise so it redirects to this page when a login is required or when incorrect credentials are passed?
+
+I&#039;ve tried adding the following routes after map.devise_for :users without success:
+
+map.new_user_session  &#039;home/index&#039;, :controller =&#062; &#039;sessions&#039;, :action =&#062; &#039;new&#039;,     :conditions =&#062; { :method =&#062; :get }
+  map.user_session      &#039;home/index&#039;, :controller =&#062; &#039;sessions&#039;, :action =&#062; &#039;create&#039;,  :conditions =&#062; { :method =&#062; :post }]]></description>
+			<content:encoded><![CDATA[<p>Just started using Devise. A question &#8211; my login panel is on the home page (home/index). What&#8217;s the best way of configuring Devise so it redirects to this page when a login is required or when incorrect credentials are passed?</p>
+<p>I&#8217;ve tried adding the following routes after map.devise_for :users without success:</p>
+<p>map.new_user_session  &#8216;home/index&#8217;, :controller =&gt; &#8216;sessions&#8217;, :action =&gt; &#8216;new&#8217;,     :conditions =&gt; { :method =&gt; :get }<br />
+  map.user_session      &#8216;home/index&#8217;, :controller =&gt; &#8216;sessions&#8217;, :action =&gt; &#8216;create&#8217;,  :conditions =&gt; { :method =&gt; :post }</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jeem Khat		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-886</link>
+
+		<dc:creator><![CDATA[Jeem Khat]]></dc:creator>
+		<pubDate>Sun, 20 Dec 2009 03:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-886</guid>
+
+					<description><![CDATA[Just started using Devise. A question - my login panel is on the home page (home/index). What&#039;s the best way of configuring Devise so it redirects to this page when a login is required or when incorrect credentials are passed?
+
+I&#039;ve tried adding the following routes after map.devise_for :users without success:
+
+map.new_user_session  &#039;home/index&#039;, :controller =&#062; &#039;sessions&#039;, :action =&#062; &#039;new&#039;,     :conditions =&#062; { :method =&#062; :get }
+  map.user_session      &#039;home/index&#039;, :controller =&#062; &#039;sessions&#039;, :action =&#062; &#039;create&#039;,  :conditions =&#062; { :method =&#062; :post }]]></description>
+			<content:encoded><![CDATA[<p>Just started using Devise. A question &#8211; my login panel is on the home page (home/index). What&#8217;s the best way of configuring Devise so it redirects to this page when a login is required or when incorrect credentials are passed?</p>
+<p>I&#8217;ve tried adding the following routes after map.devise_for :users without success:</p>
+<p>map.new_user_session  &#8216;home/index&#8217;, :controller =&gt; &#8216;sessions&#8217;, :action =&gt; &#8216;new&#8217;,     :conditions =&gt; { :method =&gt; :get }<br />
+  map.user_session      &#8216;home/index&#8217;, :controller =&gt; &#8216;sessions&#8217;, :action =&gt; &#8216;create&#8217;,  :conditions =&gt; { :method =&gt; :post }</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mmm&#8230;food &#187; Authentication with Devise and Warden, part 1: Up and Running		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-396</link>
+
+		<dc:creator><![CDATA[Mmm&#8230;food &#187; Authentication with Devise and Warden, part 1: Up and Running]]></dc:creator>
+		<pubDate>Sat, 12 Dec 2009 22:52:02 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-396</guid>
+
+					<description><![CDATA[[...] into your existing code.  (For this, as well as the great gem itself, I&#8217;m deeply indebted to this post by Plataforma, the creators of [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] into your existing code.  (For this, as well as the great gem itself, I&#8217;m deeply indebted to this post by Plataforma, the creators of [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: hassox		</title>
+		<link>/2009/11/devise-authentication-for-lazy-programmers/comment-page-1/#comment-370</link>
+
+		<dc:creator><![CDATA[hassox]]></dc:creator>
+		<pubDate>Mon, 09 Nov 2009 12:31:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=410#comment-370</guid>
+
+					<description><![CDATA[For anyone who wants to implement OpenID, merb-auth, which was the pre-cursor to warden, has an open-id strategy that could be ported (and improved): http://github.com/merb/merb-auth/blob/master/merb-auth-more/lib/merb-auth-more/strategies/basic/openid.rb
+
+Just to help it along ;)]]></description>
+			<content:encoded><![CDATA[<p>For anyone who wants to implement OpenID, merb-auth, which was the pre-cursor to warden, has an open-id strategy that could be ported (and improved): <a href="http://github.com/merb/merb-auth/blob/master/merb-auth-more/lib/merb-auth-more/strategies/basic/openid.rb" rel="nofollow ugc">http://github.com/merb/merb-auth/blob/master/merb-auth-more/lib/merb-auth-more/strategies/basic/openid.rb</a></p>
+<p>Just to help it along 😉</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

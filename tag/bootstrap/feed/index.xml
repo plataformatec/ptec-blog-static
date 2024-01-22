@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>bootstrap « Plataformatec Blog</title>
+	<atom:link href="/tag/bootstrap/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 16:12:18 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Bootstrap 3 support for Simple Form</title>
+		<link>/2014/04/bootstrap-3-support-for-simple-form/</link>
+					<comments>/2014/04/bootstrap-3-support-for-simple-form/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Mon, 14 Apr 2014 16:22:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[bootstrap]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3855</guid>
+
+					<description><![CDATA[<p>We just released Simple Form 3.1.0.rc1 with support to Bootstrap 3. To make it possible, we leveled up the Wrapper API to make it more extensible and to allow developers to directly configure it instead of relying on global state. After such improvements, it was very easy to change the Simple Form configuration to work ... <a class="read-more-link" href="/2014/04/bootstrap-3-support-for-simple-form/">»</a></p>
+<p>The post <a href="/2014/04/bootstrap-3-support-for-simple-form/">Bootstrap 3 support for Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We just released Simple Form 3.1.0.rc1 with support to <a href="http://getbootstrap.com/">Bootstrap 3</a>.</p>
+<p>To make it possible, we leveled up the Wrapper API to make it more extensible and to allow developers to directly configure it instead of relying on global state. After such improvements, it was very easy to change the Simple Form configuration to work with Bootstrap 3. I&#8217;ll talk more about this in a future post.</p>
+<p>Integrating Bootstrap with Simple Form should be as easy as it was before. We are working on the documentation before the final release but you can find examples about how to integrate Simple Form with Bootstrap in our <a href="http://simple-form-bootstrap.plataformatec.com.br/">sample application</a>. The <a href="https://github.com/rafaelfranca/simple_form-bootstrap">app source code is available too</a>.</p>
+<p>Besides this main feature, Simple Form&#8217;s new 3.1.0 comes with a lot of enhancements. You can find the whole list of changes in the <a href="https://github.com/plataformatec/simple_form/blob/v3.1.0.rc1/CHANGELOG.md">CHANGELOG file</a>.</p>
+<p>I hope you are excited about this release as much as we are. Please try out the release candidate and if you find an issue, report at the <a href="https://github.com/plataformatec/simple_form/issues">Simple Form issues tracker</a>.</p>
+<p>We plan to release the final version in a month or so, and we&#8217;ll write a new blog post with more details about Simple Form 3.1.</p>
+<h3>Acknowledgments</h3>
+<p>We, at Plataformatec, have worked hard to get this release out, with <a href="https://github.com/laurocaetano">Lauro Caetano</a> and <a href="https://github.com/rafaelfranca">Rafael França</a> (it&#8217;s me!) working together on this final sprint. Also kudos to <a href="https://github.com/Nerian">Gonzalo Rodríguez-Baltanás Díaz</a> and the whole community for helping us to improve the sample application.</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/04/bootstrap-3-support-for-simple-form/">Bootstrap 3 support for Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/04/bootstrap-3-support-for-simple-form/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

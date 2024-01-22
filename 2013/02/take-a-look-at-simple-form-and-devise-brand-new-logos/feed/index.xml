@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Take a look at Simple Form and Devise brand new logos	</title>
+	<atom:link href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 27 Feb 2013 07:44:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Denis Peplin		</title>
+		<link>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/comment-page-1/#comment-1335</link>
+
+		<dc:creator><![CDATA[Denis Peplin]]></dc:creator>
+		<pubDate>Wed, 27 Feb 2013 07:44:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3422#comment-1335</guid>
+
+					<description><![CDATA[Seems everybody forgot about show_for gem, which is great companion to simple_form. Give it some love, it deserves it own logo too :)]]></description>
+			<content:encoded><![CDATA[<p>Seems everybody forgot about show_for gem, which is great companion to simple_form. Give it some love, it deserves it own logo too 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

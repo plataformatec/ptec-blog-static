@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>métricas « Plataformatec Blog</title>
+	<atom:link href="/tag/metricas/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 28 Oct 2019 14:38:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>An Agilist&#8217;s Guide: Analyzing Process health</title>
+		<link>/2019/01/an-agilists-guide-analyzing-process-health/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 02 Jan 2019 13:04:11 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=8204</guid>
+
+					<description><![CDATA[<p>Regardless of whether you are an experienced or recent agilist, there are challenges that are part of the daily routine of any team that is seeking to create a quality software with a predictable deadline for delivering a demand (e.g., new functionality, fixing a bug, technical improvement, etc.). Developing a vision that enables seeing and ... <a class="read-more-link" href="/2019/01/an-agilists-guide-analyzing-process-health/">»</a></p>
+<p>The post <a href="/2019/01/an-agilists-guide-analyzing-process-health/">An Agilist’s Guide: Analyzing Process health</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Regardless of whether you are an experienced or recent agilist, there are challenges that are part of the daily routine of any team that is seeking to create a quality software with a predictable deadline for delivering a demand (e.g., new functionality, fixing a bug, technical improvement, etc.).</p>
+<p>Developing a vision that enables seeing and understanding the whole by analyzing the parts that form it is a great challenge when dealing with uncertain environments.</p>
+<p>One of the ways to understand and analyze the work system of an agile team is through process metrics (there is a collection of cool content on the subject here on Ptec&#8217;s blog).</p>
+<p>Understanding the flow from data is a pragmatic way to incorporate transparently a continuous improvement philosophy without abrupt and chaotic changes for everyone involved in the context (team, stakeholders, product area, managers, etc.). To paraphrase the Kanban community, measuring is a tool that will help the evolution and not revolution of an existing process.</p>
+<p>Personally, I like to quantify the process when I am mapping the reality of a team, as I expose facts (data) for discussion and analysis. In my experience with software development teams, I have realized that having this type of behavior helps to reduce a subjective load that may exist on the team and is a way of confronting beliefs like &#8220;we don&#8217;t need to improve&#8221;, &#8220;we don&#8217;t have problems in the process&#8221; and &#8220;we work collaboratively&#8221;.</p>
+<p>In today&#8217;s blog post, I&#8217;ll share a collection of metrics that will help you diagnose the health of an agile team process.</p>
+<p><strong>Assumptions</strong></p>
+<p>First of all, I need to list some reservations about using metrics.</p>
+<p><strong>Metrics should be used to evolve the process, not to generate destructive demands and comparisons.</strong></p>
+<p>Don&#8217;t be tempted to compare teams and measure an individual&#8217;s performance. If you or the company where you work are interested in rewarding individual results, engineer a method that proposes evaluating the person&#8217;s performance from the opinion of managers, peers and customers who have interacted with the results of the individual&#8217;s work. In the event of individually rewarding teams for their results, avoid metrics that are not directly related to business results (e.g. what is the value of the team delivering a number of features in the semester if product revenue has not increased?).</p>
+<p>I share this assumption so that you and your team don&#8217;t behave according to how they are being measured. After all, as Goldratt would say: &#8220;<a href="https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt" target="_blank" rel="noopener">Tell me how you measure me, and I will tell you how I will behave</a>&#8220;.</p>
+<p><strong>Numbers without context are dangerous.</strong></p>
+<p>Any analysis done without understanding the variables that form a scenario becomes superficial, skewed and poor. If someone tells you that the number of features delivered in one team is 10 items per week, is it possible to reach any conclusion? Is this metric good or bad? What is the meaning of delivered for that team? Is it software in production or delivery in a QA environment? Well, from the previous questions it is possible to conclude that a loose number is nothing more than a symbol deprived of any meaning.</p>
+<p><strong>Look for trends and run away from accuracy. Given the complexity of creating a software product, do not seek to be deterministic in a world that is receptive by nature to a probabilistic reality.</strong></p>
+<p>The logic behind the last assumption is: we live in an environment where there is risk, that is, there is a probability of failure due to some uncertain event whose occurrence does not depend exclusively on the team&#8217;s will. Therefore, it is unlikely that the team knows for certain the delivery deadline for a demand or project. Rather than fooling ourselves with deadlines that ratify that deliveries will always happen on the same date and in the same way, let&#8217;s analyze the team&#8217;s data history to project the chance of delivering something.</p>
+<p>These assumptions that I shared will help you use metrics effectively. <a href="https://twitter.com/lucasrcolucci1" target="_blank" rel="noopener">Lucas Colucci</a> wrote a very important article that presents some <a href="/2017/10/12-common-mistakes-when-using-process-metrics/" target="_blank" rel="noopener">common mistakes when using process metrics</a>.</p>
+<p><strong>Process diagnostics</strong></p>
+<p>Given the assumptions shared above, let&#8217;s go to what really matters. The metrics listed below will assist you in mapping the health of a team process. As an agilist, I consider that the views below form a workflow cockpit and should be available for teams to use as material for promoting process improvements (e.g., use of metrics in retrospectives, process analysis in daily meetings, etc.).</p>
+<p><strong>Work in progress</strong></p>
+<p>Monitoring the work in progress will help the team become aware of the work volume that the process has supported over time. I like this kind of view as it shows, for example, if teams are respecting a policy regarding limits to work in progress.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8240 size-full" src="/wp-content/uploads/2019/01/wip_history_en.png" alt="" width="1665" height="763" srcset="/wp-content/uploads/2019/01/wip_history_en.png 1665w, /wp-content/uploads/2019/01/wip_history_en-300x137.png 300w, /wp-content/uploads/2019/01/wip_history_en-768x352.png 768w, /wp-content/uploads/2019/01/wip_history_en-1024x469.png 1024w" sizes="(max-width: 1665px) 100vw, 1665px" /></p>
+<p>In the example above, we have a situation where the team had close to 10 items in progress a week, until at some point there was a reconfiguration in the number of people, which caused the amount of work in progress to decrease. An insight here is that this view presents an interesting history of the team, helping to identify moments when changes occurred in team structure, changes of direction (the famous pivots), obstacles, etc.</p>
+<p>In order to stabilize the process from the productive capacity, it is important that there isn&#8217;t a growth trend for the number of items in WIP. If this is happening, the team is likely to need optimizations to reduce WIP. As an agilist, monitoring WIP will support you to reverberate the following mantra with the team: &#8220;Let&#8217;s stop starting and let&#8217;s start finishing&#8221;.</p>
+<p>Another WIP analysis I have started is related to the lifespan of items that are in WIP within a given week. Essentially, the view considers the items that are in progress that week and accounts for how long they have been in the workflow. For an easier reading of the chart, I group the data by category where I consider the following ranges: (1) 1 day in WIP; (2) up to one week in WIP; (3) from 1 to 2 weeks in WIP; (4) from 2 to 3 weeks in WIP; (5) from 3 to 4 weeks in WIP; (6) over 4 weeks on WIP.</p>
+<p>Still on how the view is structured, for the weeks that have passed, items that are in WIP at the end of the period are accounted for and classified. For the current week, items currently in WIP are analyzed.</p>
+<p><img decoding="async" class="aligncenter wp-image-8242 size-full" src="/wp-content/uploads/2019/01/wip_age_en.png" alt="" width="1847" height="774" srcset="/wp-content/uploads/2019/01/wip_age_en.png 1847w, /wp-content/uploads/2019/01/wip_age_en-300x126.png 300w, /wp-content/uploads/2019/01/wip_age_en-768x322.png 768w, /wp-content/uploads/2019/01/wip_age_en-1024x429.png 1024w" sizes="(max-width: 1847px) 100vw, 1847px" /></p>
+<p>Applying it to one example, you can see that in the fifth week of WIP lifespan tracking of the team above, there were two items that were over a month in the flow. If the team, by systematically tracking their workflow, realizes that the older categories are growing, it is very likely that a bottleneck is being produced at some stage in the process and an intervention will be needed.</p>
+<p>Keep in mind that WIP represents effort and energy that has not yet been validated and the longer the team spends carrying it, the less feedback will be received, the slower the process of validating the assumptions behind the initiatives that originate the work, and the greater the risk of the company missing on a market opportunity.</p>
+<p><strong>Lead time</strong></p>
+<p>Lead time is an important metric for teams to develop the ability to understand how long they have taken to complete a work item. In addition, teams that develop the skill to analyze such metrics can identify situations that have generated variability in the process (e.g. environment issues, exit of team members, lack of clear acceptance criteria for demands).</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png" /></p>
+<p>The first view that should be available for the team is the lead time scatter plot chart. It will provide an idea if the time for delivering the items is decreasing or not over time.</p>
+<p>As shown in the chart above, I like to combine the following information in this view: completed items (represented in the chart by the blue dots) and item in progress (represented in the chart by the red dots); the moving average that considers the last 5 delivered items (this is a completely arbitrary parameter); and the information for 50th percentile (median), 75th percentile and 95th percentile.</p>
+<p>Such reference measures are useful because, from the example, they bring to light findings such as:</p>
+<ul>
+<li>The moving average has varied over time.</li>
+<li>Based on the history of completed items, 50% of them were completed within 10 days, 75% took up to 16 days to complete and 95% were completed within 34 days.</li>
+</ul>
+<p>In addition, the scatter plot chart can generate answers to questions such as:</p>
+<ul>
+<li>What is the team doing to handle items in progress that are becoming extreme lead time cases?</li>
+<li>What can be improved in the process to reduce lead time?</li>
+</ul>
+<p>Another beneficial view to understand lead time is the histogram chart, because, when considering each lead time as a category, it presents data more concisely and allows extracting information about distribution behavior.</p>
+<p><img decoding="async" class="aligncenter wp-image-8244 size-full" src="/wp-content/uploads/2019/01/leadtime_histogram_en.png" alt="" width="1865" height="777" srcset="/wp-content/uploads/2019/01/leadtime_histogram_en.png 1865w, /wp-content/uploads/2019/01/leadtime_histogram_en-300x125.png 300w, /wp-content/uploads/2019/01/leadtime_histogram_en-768x320.png 768w, /wp-content/uploads/2019/01/leadtime_histogram_en-1024x427.png 1024w" sizes="(max-width: 1865px) 100vw, 1865px" /></p>
+<p>As shown in the example above, the histogram enables the team to respond to queries such as:</p>
+<ul>
+<li>What has been the most frequent lead time?</li>
+<li>Are extreme lead time cases very common?</li>
+<li>What is the distribution format? Is there a lead time concentration to the left or right of the distribution? Is there more than one mode? Usually bimodal distributions represent flows of teams that deal with more than one type of demand in their process, because they have similar concentrations in different lead time categories.</li>
+</ul>
+<p><strong>Delivery pace</strong></p>
+<p>Measuring and visualizing <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/" target="_blank" rel="noopener">throughput</a> is important for the team to understand what amount of work has been delivered over a period of time (example: week, two weeks, month), as well as helping it identify if there is an upward trend in the number of deliveries. When realizing that throughput is falling, the team can try to understand which factors are affecting the process throughput.</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/throughput_variation-1024x436.png" /></p>
+<p>I recommend whenever possible breaking the throughput view by demand type. Thus, it is clear to everyone if the team is able to:</p>
+<ul>
+<li>Balance the number of valuable deliveries (e.g. features) with failure demands (e.g. bugs).</li>
+<li>Deal with urgent demands in a sustainable manner. I often find teams that classify every demand that enters the workflow as urgent and work on them, leaving aside items that will be important to the business in the medium term.</li>
+</ul>
+<p>In the example above, the team managed to balance during most weeks user story deliveries with bug fixes. In weeks marked with red arrows, the team had to act and deliver critical issues that were affecting the company&#8217;s operation, therefore, it delivered only bug fixes.</p>
+<p><strong>Analysis of flow input and output rate</strong></p>
+<p>In addition to using the CFD chart <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" target="_blank" rel="noopener">(I wrote a full blog post to talk about this view</a>), I would like to present an analysis that I have not seen many agilists do: the relationship between workflow input and output rates. Basically this view compares the amount of items that the team has committed to deliver with the number of items delivered over time.</p>
+<p><img decoding="async" src="/wp-content/uploads/2018/02/throughput_break6-1024x443.png" /></p>
+<p>What insight can be provided by can this type of view? Let&#8217;s look at an example.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8238 size-full" src="/wp-content/uploads/2019/01/arrival_throughput_rate_en.png" alt="" width="1817" height="769" srcset="/wp-content/uploads/2019/01/arrival_throughput_rate_en.png 1817w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-300x127.png 300w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-768x325.png 768w, /wp-content/uploads/2019/01/arrival_throughput_rate_en-1024x433.png 1024w" sizes="(max-width: 1817px) 100vw, 1817px" /></p>
+<p>Based on the image above you can make some deductions:</p>
+<ul>
+<li>Of the 27 weeks analyzed, 10 of them had an input rate (items the team committed to delivering) greater than the number of delivered items.</li>
+<li>In week 17 the team had a peak of items committed to being delivered. This happened because the team&#8217;s PO was about to go on vacation. Speaking of inventories, I suggest reading <a href="/2017/12/estoques-no-desenvolvimento-de-software/" target="_blank" rel="noopener">Guilherme Fré&#8217;s blog post on the subject</a>.</li>
+</ul>
+<p>Analyzing the process input and output rate will support the team in understanding whether the delivery pace is tracking the number of committed items. I have seen teams making commitments that are over their actual capacity. This type of behavior leads to lack of trust by stakeholders because the team delivers less than requested, as well as frustration in the team for never being able to deliver &#8220;everything&#8221;.</p>
+<p>In a perfectly stable system, the input and output rate should be the same. If you and your team can develop a process where most weeks these rates are equivalent (e.g., for every 4 weeks, 3 have equal input and output rates), this will demonstrate workflow maturity and represent a highly predictable context.</p>
+<p><strong>Conclusion</strong></p>
+<p>Incorporating a culture that brings data to your team will enable you to monitor a process that has an essentially complex nature (software) providing progress visibility to anyone interested in what is being built or maintained.</p>
+<p>Furthermore, proposing data-driven improvements and evolutions is an excellent way for removing subjective and, to some extent, empty analysis. Basically, I hope that this blog post helps you, agilist, on encouraging people to use less feeling and more facts when they are analyzing a team&#8217;s workflow behavior.</p>
+<p>If you are looking for advanced material on metrics, I recommend the book I have written <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis" target="_blank" rel="noopener">Agile Metrics &#8211; Get better results in your team</a>. Check out the<a href="https://www.goodreads.com/book/show/35341623-m-tricas-geis" target="_blank" rel="noopener"> reviews</a> posted by those who have read it <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60f.png" alt="😏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>And you? What metrics have you used to track process health? Share your experiences in the comments below!<br />
+What challenges do you face to track the health of your process?<br />
+Schedule a 30-minute conversation with one of our experts. A consultant will help you map out your biggest challenges in the development process.</p><p>The post <a href="/2019/01/an-agilists-guide-analyzing-process-health/">An Agilist’s Guide: Analyzing Process health</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Monte Carlo na Prática: Encontrando o valor de iterações ideal</title>
+		<link>/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/</link>
+		
+		<dc:creator><![CDATA[Gabriel Lopes]]></dc:creator>
+		<pubDate>Tue, 18 Dec 2018 15:44:39 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=8262</guid>
+
+					<description><![CDATA[<p>Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos. O atraso de uma semana em um projeto, gera dois custos diferentes: O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana. Já o segundo, trata-se ... <a class="read-more-link" href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/">»</a></p>
+<p>The post <a href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/">Monte Carlo na Prática: Encontrando o valor de iterações ideal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Um dos maiores motivos pelo qual qualquer metodologia de gerenciamento de projetos existe, é trazer redução de custos.</p>
+<p>O atraso de uma semana em um projeto, gera dois custos diferentes:</p>
+<ul>
+<li>O primeiro custo é o custo das pessoas presentes no time do projeto, por terem que trabalhar por mais uma semana.</li>
+<li>Já o segundo, trata-se do custo de atraso (normalmente chamado de <em>cost of delay</em>) que por sua vez é a receita que deixa-se de receber pelo atraso, por exemplo: supondo que um novo produto tenha uma receita diária de 100 reais, o custo de atraso seria de 700 reais (100 reais x 7 dias), aqui no blog temos um <a href="/2016/11/calculating-cost-of-delay-for-software-projects/" target="_blank" rel="noopener noreferrer">post muito interessante sobre o assunto</a>.</li>
+</ul>
+<p>Como esses custos podem ser altos, é preciso utilizar ferramentas que possam dar visibilidade para as datas de entrega. Uma das formas encontradas para dar visibilidade a estes potenciais problemas, foi através da adoção do Diagrama de Gantt, para gerenciamento de projetos, nele é possível identificar os pontos mais delicados do projeto (os caminhos críticos) em que deve-se dar maior esforço para que não atrasem, visto que ao atrasar nesses pontos o projeto inteiro também irá atrasar.</p>
+<p>Embora essa ferramenta seja ótima para alguns tipos de projetos (normalmente onde existe um grau de incerteza baixo), ela não é a ideal para projetos com previsibilidade baixa devido a <a href="https://pt.wikipedia.org/wiki/Vari%C3%A2ncia" target="_blank" rel="noopener noreferrer">variância</a> de entregas, como ocorre em projetos que lidam com o campo do conhecimento (redigir um livro ou desenvolver software, como exemplos).</p>
+<p>Aqui na Plataformatec temos sempre feito o máximo para que todas as nossas previsões de entregas sejam embasadas em dados e sigam métodos científicos comprovados. Os dois métodos que mais utilizamos são:</p>
+<ul>
+<li>Progressão linear</li>
+<li>Simulação de Monte Carlo</li>
+</ul>
+<h2>PROGRESSÃO LINEAR</h2>
+<p>Na progressão linear, fazemos uma análise dos dados de itens de trabalho entregues durante algum período (normalmente trabalhamos com periodicidade semanal) e através de uma análise destes valores elegemos quais são os melhores valores a serem alocados na progressão. Por exemplo: supondo que tenhamos os valores de histórico de itens de trabalho entregues por semana (throughput), conforme o gráfico abaixo:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-8134 size-full" src="/wp-content/uploads/2018/12/tabela_de_tp.png" alt="" width="1554" height="688" srcset="/wp-content/uploads/2018/12/tabela_de_tp.png 1554w, /wp-content/uploads/2018/12/tabela_de_tp-300x133.png 300w, /wp-content/uploads/2018/12/tabela_de_tp-768x340.png 768w, /wp-content/uploads/2018/12/tabela_de_tp-1024x453.png 1024w" sizes="(max-width: 1554px) 100vw, 1554px" /></p>
+<p>Um valor que faz sentido para a progressão <strong>pessimista</strong> será de que a cada semana iremos entregar <strong>1</strong> item de trabalho por semana, visto que tivemos 5 casos em que a entrega foi de <strong>1</strong> ou <strong>0</strong>, para a estimativa <strong>otimista</strong> podemos utilizar o valor <strong>3</strong> ou <strong>4</strong> ou até mesmo <strong>3,5</strong> visto que tivemos 4 casos em que o valor foi 3 ou mais, por fim para a progressão <strong>provável</strong> o melhor valor seria o de <strong>2</strong> visto que é o valor da mediana do <em>dataset</em> e é o valor que mais aparece (a moda).</p>
+<p>O maior problema da progressão linear é de que estamos informando os valores a serem utilizados para cada cenário, algo que pode ser perigoso caso a pessoa que está fazendo a progressão não tenha um bom domínio de análise de dados. Além disso, a progressão linear também ignora a variância. Desta forma, em sistemas com uma variância de entrega muito elevada, a progressão linear pode não fazer tanto sentido.</p>
+<h2>MONTE CARLO</h2>
+<p>Outra técnica que utilizamos chama-se <strong>Monte Carlo</strong>, para entender melhor como o método funciona, bem como ter uma inferência do que ele faz, recomendo <a href="/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/" target="_blank" rel="noopener noreferrer">esse blogpost que é bem completo</a>.</p>
+<p>Tenho utilizado o método desde que entrei na Plataformatec com grande sucesso, porém uma coisa sempre ficava na minha mente era: &#8220;Quantas iterações são necessárias para que eu possa ter um bom grau de confiabilidade no método?&#8221;. Para responder essa pergunta eu fiz muitas pesquisas em livros estatísticos e pela internet e não consegui encontrar nenhum tipo de informação que me auxiliasse.</p>
+<p>Dessa forma resolvi fazer um estudo desse assunto. O objetivo do Monte Carlo é de inferir a probabilidade de algum evento, &#8220;forçando&#8221; que o evento ocorra tantas vezes que o resultado me dê a probabilidade da ocorrência do evento. Por exemplo, ao lançar uma moeda mil vezes se eu contar quantas vezes a moeda cai em &#8220;cara&#8221; e dividir esse valor pelas mil vezes que a moeda foi lançada, obterei uma inferência da probabilidade da moeda cair em &#8220;cara&#8221;.</p>
+<p>Para conseguir saber a qualidade do método eu realizei testes nos quais eu já sabia o resultado esperado, e fui fazendo com que o problema fosse cada vez mais complexo, de forma a ver se existe alguma relação entre a dificuldade do problema e a quantidade de iterações necessárias para que o valor inferido pelo método seja o mais próximo possível do valor calculado.</p>
+<p>O objetivo é verificar quantas iterações são necessárias para que o erro entre o valor inferido pelo método e o valor calculado seja mínimo (para previsões de probabilidade de entrega um erro a partir da segunda ou terceira casa decimal é bem aceitável). Gostaria de ressaltar que esse <em>blogpost</em> não é um estudo científico acerca do assunto, e seu objetivo é entender através de inferência qual é um valor de iterações bom para ser utilizado em predições para projetos.</p>
+<h2>OS TESTES</h2>
+<p>Os testes foram todos realizado utilizando a linguagem de programação <strong>R</strong>, que pode ser baixado neste <a href="https://www.r-project.org/" target="_blank" rel="noopener noreferrer">link</a>. Caso prefira utilizar um IDE, recomendo o <a href="https://www.rstudio.com/" target="_blank" rel="noopener noreferrer">RStudio</a>.</p>
+<p>Em todos os testes eu rodei o sistema por 100 vezes utilizando as seguintes quantidades de iterações: <strong>100</strong> (cem), <strong>1000</strong> (mil), <strong>10000</strong> (dez mil), <strong>100000</strong> (cem mil), <strong>1000000</strong> (um milhão), <strong>10000000</strong> (dez milhões), <strong>100000000</strong> (cem milhões) e <strong>200000000</strong> (duzentos milhões). Os resultados são os consolidados dessas 100 &#8220;rodadas&#8221;, em cada iteração.</p>
+<h3>A MOEDA</h3>
+<p>O primeiro teste que fiz foi em cima de um lançamento de moeda. Uma moeda tem <strong>50%</strong> de chance de cair em qualquer um de seus lados e este é o valor que queremos que seja inferido pelo Monte Carlo. Para isso utilizei o seguinte código em R:</p>
+<pre><code class="R">LancaMoeda &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para a moeda 1 = Cara e 0 = Coroa
+moeda = c(0,1)
+resultado = 0
+
+# Soma todos os resultados em que a moeda foi "Cara"
+resultado = sum(sample(moeda, iteracoes, replace=T))
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while (controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, LancaMoeda(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Alterando os valores da variável <em>iterações</em> e compilando os resultados obtive a seguinte tabela:</p>
+
+<table id="tablepress-1" class="tablepress tablepress-id-1">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th><th class="column-2">Resultado Min</th><th class="column-3">Resultado Max</th><th class="column-4">Resultado Esperado</th><th class="column-5">Resultado Médio</th><th class="column-6">Resultado Médio - Resultado Esperado </th><th class="column-7"> Mediana do Resultado</th><th class="column-8"> Mediana Resultado - Resultado Esperado</th><th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td><td class="column-2">33.00000</td><td class="column-3">67.00000</td><td class="column-4">50.00000 </td><td class="column-5">50.02000 </td><td class="column-6">0.02000 </td><td class="column-7">50.00000 </td><td class="column-8">0.00000 </td><td class="column-9">5.09368 </td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td><td class="column-2">43.60000</td><td class="column-3">56.20000 </td><td class="column-4">50.00000 </td><td class="column-5">49.99440 </td><td class="column-6">0.00560 </td><td class="column-7">50.00000 </td><td class="column-8">0.00000 </td><td class="column-9">1.59105 </td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td><td class="column-2">48.35000</td><td class="column-3">51.78000 </td><td class="column-4">50.00000 </td><td class="column-5">50.01263 </td><td class="column-6">0.01263 </td><td class="column-7">50.02000 </td><td class="column-8">0.02000 </td><td class="column-9">0.51001 </td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td><td class="column-2">49.58000</td><td class="column-3">51.78000 </td><td class="column-4">50.00000 </td><td class="column-5">49.99110 </td><td class="column-6">0.00890 </td><td class="column-7">49.99350 </td><td class="column-8">0.00650 </td><td class="column-9">0.15805 </td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td><td class="column-2">49.85170</td><td class="column-3">50.15090 </td><td class="column-4">50.00000 </td><td class="column-5">49.99883 </td><td class="column-6">0.00117 </td><td class="column-7">49.99785 </td><td class="column-8">0.00215 </td><td class="column-9">0.04811 </td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td><td class="column-2">49.95433 </td><td class="column-3">50.05807 </td><td class="column-4">50.00000 </td><td class="column-5">50.00013 </td><td class="column-6">0.00013 </td><td class="column-7">50.00010 </td><td class="column-8">0.00010 </td><td class="column-9">0.01564 </td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td><td class="column-2">49.98435 </td><td class="column-3">50.01637 </td><td class="column-4">50.00000 </td><td class="column-5">50.00004 </td><td class="column-6">0.00004 </td><td class="column-7">49.99989 </td><td class="column-8">0.00011 </td><td class="column-9">0.00516 </td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td><td class="column-2">49.98890</td><td class="column-3">50.01195 </td><td class="column-4">50.00000 </td><td class="column-5">49.99981 </td><td class="column-6">0.00019 </td><td class="column-7">49.99987 </td><td class="column-8">0.00013 </td><td class="column-9">0.00345 </td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-1 from cache -->
+<p>No caso de um problema simples, como o lançamento de uma moeda, podemos ver que a quantidade ideal de iterações seria algo entre 10 e 100 milhões de vezes. Visto que é nessa faixa em que o desvio padrão dos resultados começa a ser na ordem da terceira casa decimal, outro ponto interessante é que se você deseja mostrar apenas a primeira casa decimal um valor de 1 milhão de iterações já atenderia.</p>
+<h3>O DADO</h3>
+<p>Com o teste da moeda podemos ter uma idéia de quantas iterações são necessárias, para cada grau de confiabilidade desejado. Porém uma pergunta que fica é se esse comportamento é o mesmo para sistemas mais complexos. Por este motivo fiz um teste parecido, porém agora rodando um dado de 6 lados, que tem <strong>16,67%</strong> de chances de cair em qualquer face.</p>
+<pre><code class="R">RolaDado &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens do dado
+resultado = sample(dado,iteracoes,replace=T)
+
+# Soma todos os valores que tiverem sigo iguais a 6
+resultado = sum(resultado == 6)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaDado(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Alterando os valores da variável <em>iterações</em> e compilando os resultados obtive a seguinte tabela:</p>
+
+<table id="tablepress-2" class="tablepress tablepress-id-2">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th><th class="column-2">Resultado Min</th><th class="column-3">Resultado Max</th><th class="column-4">Resultado Esperado</th><th class="column-5">Resultado Médio</th><th class="column-6">Resultado Médio - Resultado Esperado </th><th class="column-7"> Mediana do Resultado</th><th class="column-8"> Mediana Resultado - Resultado Esperado</th><th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td><td class="column-2">6.00000</td><td class="column-3">28.00000</td><td class="column-4">16.66667</td><td class="column-5">16.58100</td><td class="column-6">-0.08567</td><td class="column-7">16.00000</td><td class="column-8">-0.66667</td><td class="column-9">3.64372</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td><td class="column-2">13.20000</td><td class="column-3">20.40000</td><td class="column-4">16.66667</td><td class="column-5">16.68500</td><td class="column-6">0.01833</td><td class="column-7">16.60000</td><td class="column-8">-0.06667</td><td class="column-9">1.16949</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td><td class="column-2">15.60000</td><td class="column-3">17.94000</td><td class="column-4">16.66667</td><td class="column-5">16.65962</td><td class="column-6">-0.00705</td><td class="column-7">16.67000</td><td class="column-8">0.00333</td><td class="column-9">0.38072</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td><td class="column-2">16.22200</td><td class="column-3">17.06200</td><td class="column-4">16.66667</td><td class="column-5">16.66109</td><td class="column-6">-0.00557</td><td class="column-7">16.66500</td><td class="column-8">-0.00167</td><td class="column-9">0.11356</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td><td class="column-2">16.54960</td><td class="column-3">16.54960</td><td class="column-4">16.66667</td><td class="column-5">16.66616</td><td class="column-6">-0.00050</td><td class="column-7">16.66790</td><td class="column-8">0.00123</td><td class="column-9">0.03650</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td><td class="column-2">16.63294</td><td class="column-3">16.70266</td><td class="column-4">16.66667</td><td class="column-5">16.66607</td><td class="column-6">-0.00060</td><td class="column-7">16.66577</td><td class="column-8">-0.00090</td><td class="column-9">0.01220</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td><td class="column-2">16.65592</td><td class="column-3">16.67948</td><td class="column-4">16.66667</td><td class="column-5">16.66670</td><td class="column-6">0.00004</td><td class="column-7">16.66679</td><td class="column-8">0.00012</td><td class="column-9">0.00372</td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td><td class="column-2">16.65787</td><td class="column-3">16.67476</td><td class="column-4">16.66667</td><td class="column-5">16.66671</td><td class="column-6">0.00004</td><td class="column-7">16.66671</td><td class="column-8">0.00004</td><td class="column-9">0.00267</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-2 from cache -->
+<p>Podemos ver que neste caso também temos que a quantidade ideal de iterações seria algo entre 10 e 100 milhões de vezes, para termos um erro a partir da segunda ou terceira casa decimal. Esse resultado mostra que, ou a complexidade do problema não tem influência na quantidade de iterações ou de que o problema da moeda e do dado têm complexidades parecidas. Analisando os tempos de execuções da moeda e do dado verifica-se que eles demoram tempos parecidos de execução, o que corrobora a hipótese de que os problemas tem complexidades próximas.</p>
+<h3>DOIS DADOS</h3>
+<p>Para saber se a complexidade era muito próxima e por isso que os valores de iterações ideais ficaram iguais, decidi dobrar a complexidade do problema ao rodar <strong>dois</strong> dados em vez de <strong>um</strong> (entendo que nem sempre ao dobrar a quantidade de funções teremos mais complexidade por conta da ordem de complexidade ou <a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank" rel="noopener noreferrer">Big-O Notation</a>, porém fiz o teste para ter certeza se isso se aplicava). A maior probabilidade de resultado encontrada ao rolar dois dados é o valor <strong>7</strong>, tendo <strong>16,67%</strong> de chances de ocorrer.</p>
+<pre><code class="R">RolaDoisDados &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens dos dados
+primeira_rolagem = sample(dado,iteracoes,replace=T)
+segunda_rolagem = sample(dado,iteracoes,replace=T)
+
+# Soma os vetores, item a item
+resultado = primeira_rolagem + segunda_rolagem
+
+# Soma todos os valores que tiverem sigo iguais a 7
+resultado = sum(resultado == 7)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 100
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaDoisDados(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Novamente alterando os valores da variável <em>iterações</em> e compilando os resultados:</p>
+
+<table id="tablepress-4" class="tablepress tablepress-id-4">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th><th class="column-2">Resultado Min</th><th class="column-3">Resultado Max</th><th class="column-4">Resultado Esperado</th><th class="column-5">Resultado Médio</th><th class="column-6">Resultado Médio - Resultado Esperado </th><th class="column-7"> Mediana do Resultado</th><th class="column-8"> Mediana Resultado - Resultado Esperado</th><th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td><td class="column-2">5.00000</td><td class="column-3">31.00000</td><td class="column-4">16.66667</td><td class="column-5">16.37100</td><td class="column-6">-0.29567</td><td class="column-7">16.00000</td><td class="column-8">-0.66667</td><td class="column-9">3.77487</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td><td class="column-2">13.40000</td><td class="column-3">21.80000</td><td class="column-4">16.66667</td><td class="column-5">16.64710</td><td class="column-6">-0.01957</td><td class="column-7">16.60000</td><td class="column-8">-0.06667</td><td class="column-9">1.18550</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td><td class="column-2">15.33000</td><td class="column-3">17.77000</td><td class="column-4">16.66667</td><td class="column-5">16.68307</td><td class="column-6">0.01640</td><td class="column-7">16.68500</td><td class="column-8">0.01833</td><td class="column-9">0.38059</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td><td class="column-2">16.23100</td><td class="column-3">17.06600</td><td class="column-4">16.66667</td><td class="column-5">16.66546</td><td class="column-6">-0.00120</td><td class="column-7">16.66800</td><td class="column-8">0.00133</td><td class="column-9">0.11597</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td><td class="column-2">16.54450</td><td class="column-3">16.81170</td><td class="column-4">16.66667</td><td class="column-5">16.66657</td><td class="column-6">-0.00010</td><td class="column-7">16.66860</td><td class="column-8">0.00193</td><td class="column-9">0.03798</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td><td class="column-2">16.62888</td><td class="column-3">16.70282</td><td class="column-4">16.66667</td><td class="column-5">16.66683</td><td class="column-6"> 0.00016</td><td class="column-7">16.66705</td><td class="column-8">0.00038</td><td class="column-9">0.01155</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td><td class="column-2">16.65408</td><td class="column-3">16.67899</td><td class="column-4">16.66667</td><td class="column-5">16.66669</td><td class="column-6">0.00002</td><td class="column-7">16.66673</td><td class="column-8">0.00007</td><td class="column-9">0.00382</td>
+</tr>
+<tr class="row-9">
+	<td class="column-1">200000000</td><td class="column-2">16.65881</td><td class="column-3">16.67455</td><td class="column-4">16.66667</td><td class="column-5">16.66675</td><td class="column-6">0.00009</td><td class="column-7">16.66682</td><td class="column-8">0.00015</td><td class="column-9">0.00258</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-4 from cache -->
+<p>Novamente verificamos que uma quantidade de iterações entre 10 e 100 milhões traz uma variação baixa o suficiente para ser confiável. E nesse caso pude identificar que o problema era sim mais complexo, visto que o tempo de execução para 200 milhões de vezes levou em média <strong>7,47 segundos a mais</strong> que o problema de um único dado.</p>
+<h3>CINCO DADOS</h3>
+<p>A inferência que tive até este momento é de que a complexidade do problema influi muito pouco na quantidade de iterações a serem realizadas, mas para ter certeza eu fiz o teste com 5 dados. A maior probabilidade de resultado encontrada ao rolar cinco dados são os valores <strong>17</strong> e <strong>18</strong>, tendo <strong>10,03%</strong> de chances de ocorrer.</p>
+<pre><code class="R">RolaCincoDados &lt;- function(iteracoes)
+{
+# Cria o vetor com os valores possíveis para o dado
+dado = 1:6
+resultado = 0
+
+# Aloca os resultados das rolagens dos dados
+primeira_rolagem = sample(dado,iteracoes,replace=T)
+segunda_rolagem = sample(dado,iteracoes,replace=T)
+terceira_rolagem = sample(dado,iteracoes,replace=T)
+quarta_rolagem = sample(dado,iteracoes,replace=T)
+quinta_rolagem = sample(dado,iteracoes,replace=T)
+
+# Soma os vetores, item a item
+resultado = primeira_rolagem + segunda_rolagem + terceira_rolagem + quarta_rolagem + quinta_rolagem
+
+# Soma todos os valores que tiverem sigo iguais a 18
+resultado = sum(resultado == 18)
+
+# Divide o valor pela quantidade de iterações e transforma em percentual
+resultado = (resultado/iteracoes) * 100
+
+return(resultado)
+}
+
+# Inicializa variáveis
+vetor_resultado = 0
+vetor_tempo = 0
+controle = 0
+
+# Informa a quantidade de iterações a serão executadas
+rodadas = 10
+
+# Aloca os resultados percentuais em um vetor de 100 itens e aloca os tempos de execução em outro
+while(controle != 100)
+{
+tempo_inicial = Sys.time()
+vetor_resultado = append(vetor_resultado, RolaCincoDados(rodadas))
+tempo_final = Sys.time()
+
+tempo = tempo_final - tempo_inicial
+vetor_tempo = append(vetor_tempo, tempo)
+
+controle = controle + 1
+}
+
+# Mostra os percentuais
+vetor_resultado
+
+# Mostra os tempos de execução
+vetor_tempo
+</code></pre>
+<p>Compilando os resultados:</p>
+
+<table id="tablepress-10" class="tablepress tablepress-id-10">
+<thead>
+<tr class="row-1">
+	<th class="column-1">Iterações</th><th class="column-2">Resultado Min</th><th class="column-3">Resultado Max</th><th class="column-4">Resultado Esperado</th><th class="column-5">Resultado Médio</th><th class="column-6">Resultado Médio - Resultado Esperado </th><th class="column-7"> Mediana do Resultado</th><th class="column-8"> Mediana Resultado - Resultado Esperado</th><th class="column-9">Desvio-Padrão do Resultado</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2">
+	<td class="column-1"> 100</td><td class="column-2">2.00000</td><td class="column-3">20.00000</td><td class="column-4">10.03086</td><td class="column-5">10.04300</td><td class="column-6">0.01214</td><td class="column-7">10.00000</td><td class="column-8">-0.03086	</td><td class="column-9">3.01268</td>
+</tr>
+<tr class="row-3">
+	<td class="column-1">1000</td><td class="column-2">6.80000</td><td class="column-3">13.40000</td><td class="column-4">10.03086</td><td class="column-5">10.04160</td><td class="column-6">0.01074</td><td class="column-7">10.00000</td><td class="column-8">-0.03086	</td><td class="column-9">0.96373</td>
+</tr>
+<tr class="row-4">
+	<td class="column-1">10000</td><td class="column-2">9.07000</td><td class="column-3">11.03000</td><td class="column-4">10.03086</td><td class="column-5">10.04600</td><td class="column-6">0.01514	</td><td class="column-7">10.04500</td><td class="column-8">0.01414</td><td class="column-9">0.30501</td>
+</tr>
+<tr class="row-5">
+	<td class="column-1">100000</td><td class="column-2">9.74700</td><td class="column-3">10.31500</td><td class="column-4">10.03086</td><td class="column-5">10.02726</td><td class="column-6">-0.00360	</td><td class="column-7">10.03100</td><td class="column-8">0.00014</td><td class="column-9">0.09366</td>
+</tr>
+<tr class="row-6">
+	<td class="column-1">1000000 </td><td class="column-2">9.95030</td><td class="column-3">10.11240</td><td class="column-4">10.03086</td><td class="column-5">10.02994</td><td class="column-6">-0.00092	</td><td class="column-7">10.03045</td><td class="column-8">-0.00041	</td><td class="column-9">0.02945<br />
+</td>
+</tr>
+<tr class="row-7">
+	<td class="column-1">10000000</td><td class="column-2">10.00060</td><td class="column-3">10.06768</td><td class="column-4">10.03086</td><td class="column-5">10.03072</td><td class="column-6">-0.00014	</td><td class="column-7">10.03065	</td><td class="column-8">-0.00022	</td><td class="column-9">0.00956</td>
+</tr>
+<tr class="row-8">
+	<td class="column-1">100000000</td><td class="column-2">10.02151</td><td class="column-3">10.04116</td><td class="column-4">10.03086</td><td class="column-5">10.03091</td><td class="column-6">0.00004</td><td class="column-7">10.03102</td><td class="column-8">0.00016</td><td class="column-9">0.00310</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-10 from cache -->
+<p>E mais uma vez podemos ver que entre 10 e 100 milhões é valor ideal. Interessante notar que esse caso realmente foi mais complexo, levando <strong>35 segundos a mais</strong> em média quando comparada com a rolagem de um único dado.</p>
+<h2>Conclusão</h2>
+<p>Depois de realizar todos esses testes, é possível concluir que, para a utilização em gerenciamento de projetos, uma quantidade de iterações entre 10 e 100 milhões atenderia adequadamente a necessidade de prever alguma data de entrega.</p>
+<p>O valor que tenho utilizado é de 10 milhões, quando vou passar os dados para algum <em>stakeholder</em>. Porém como o processo fica demorado (em média de 30 minutos para rodar com 10 milhões), quando eu preciso verificar os dados no dia-a-dia utilizo algum valor menor (algo entre 100 mil a 1 milhão).</p>
+<p>E você? Tem utilizado o método? Se sim, quais valores de iterações têm usado para a análise? Os resultados obtidos tem tido valor para os <em>stakeholders</em> de seus projetos? Caso queira trocar experiências, podemos iniciar um bate-papo por e-mail, através do endereço <a href="mailto:gabriel.lopes@plataformatec.com.br" target="_blank" rel="noopener noreferrer">gabriel.lopes@plataformatec.com.br</a></p><p>The post <a href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/">Monte Carlo na Prática: Encontrando o valor de iterações ideal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>O desafio de analisar a maturidade ágil de uma empresa</title>
+		<link>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/</link>
+					<comments>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 19 Mar 2018 17:08:55 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=7330</guid>
+
+					<description><![CDATA[<p>Ao participar de eventos, rodas de discussão e reuniões com os clientes da Plataformatec, tenho observado que as empresas estão buscando saber o quão ágil elas são. Investimentos em capacitações, consultorias e contratações estão sendo feitos, porém, as empresas estão com dificuldade em ter visibilidade dos impactos que a cultura ágil tem trazido para o ... <a class="read-more-link" href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/">»</a></p>
+<p>The post <a href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/">O desafio de analisar a maturidade ágil de uma empresa</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Ao participar de eventos, rodas de discussão e reuniões com os clientes da Plataformatec, tenho observado que as empresas estão buscando saber o quão ágil elas são. Investimentos em capacitações, consultorias e contratações estão sendo feitos, porém, as empresas estão com dificuldade em ter visibilidade dos impactos que a cultura ágil tem trazido para o negócio (em outras palavras, resultado).</p>
+<p>O discurso de que a agilidade torna o negócio eficaz (saber priorizar as iniciativas corretamente) e eficiente (ter um fluxo de trabalho e um ferramental que permitam entregas constantes e com qualidade) faz sentido desde que acompanhe uma perspectiva econômica (utilizar da maneira mais otimizada os recursos escassos da organização). A combinação dessas três perspectivas é o que chamo de uma &#8220;gestão efetiva&#8221; que habilita a formação de um ambiente de excelência.</p>
+<p>Não existe um consenso sobre o quão agilmente madura uma organização está. Algumas pessoas são contra medir o nível de maturidade de uma equipe ou empresa, pois creem que o ágil é um tipo de disciplina difícil de sintetizar em uma métrica. A comunidade Kanban tem divulgado um modelo de maturidade chamado <a href="https://www.fincalabs.com/wp-content/uploads/2017/12/KMM_CommunityRelease_2.pdf" rel="nofollow">Kanban Maturity Model</a>, que tem como premissa desenvolver nas organizações a capacidade de:</p>
+<ul>
+<li>Criar um ambiente que promova a agilidade organizacional;</li>
+<li>Aliviar a sobrecarga de trabalho;</li>
+<li>Atender as expectativas dos clientes;</li>
+<li>Gerar resultados econômicos previsíveis e uma robustez financeira;</li>
+<li>Desenvolver uma capacidade de sobrevivência.</li>
+</ul>
+<p>A seguir, gostaria de compartilhar um modelo que tenho utilizado para analisar o nível de competência, capacidade e maestria em ágil nas empresas.</p>
+<h2><a id="user-content-afinal-de-contas-o-que-significa-ser-ágil" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#afinal-de-contas-o-que-significa-ser-%C3%A1gil" aria-hidden="true"></a><strong>Afinal de contas, o que significa ser ágil?</strong></h2>
+<p>Em uma frase, resumiria agilidade como: <em>&#8220;entregar pequenos lotes, em curtos espaços de tempo a fim de validar hipóteses de negócio, reduzir riscos e responder com rapidez às mudanças de mercado&#8221;</em>.</p>
+<p>Elaborando um pouco mais a definição, ser ágil constitui desenvolver capacidades que ofereçam agilidade ao negócio. Considerando empresas digitais, é como se a tecnologia e os processos de trabalho criassem um ambiente no qual fosse possível entregar pequenos experimentos dentro de um curto espaço de tempo, a fim de provar hipóteses que gerem eficiência operacional, aumentem a capacidade de geração nas receitas atuais, e propiciem inovações nos produtos e nos processos organizacionais.</p>
+<p>Tal definição exige que a empresa seja agnóstica a metodologias, frameworks, crenças e práticas milagrosas. Se você acredita que a partir de um ferramental encantador seu ambiente se tornará ágil, sinto lhe dizer que isso não vai acontecer. Sobre esse assunto, recomendo fortemente a leitura do texto do meu amigo Lucas sobre o <a href="/2016/12/nos-nao-somos-necessariamente-ageis-mas-com-certeza-somos-ageis/" rel="nofollow">porquê nós não somos necessariamente Ágeis, mas com certeza somos ágeis</a>.</p>
+<p>Considero que uma cultura ágil é construída dentro de uma empresa a partir da combinação de um alto alinhamento e um alto empoderamento.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7331" src="/wp-content/uploads/2018/03/empoderamento_alinhamento_blog_post.png" alt="" width="943" height="562" srcset="/wp-content/uploads/2018/03/empoderamento_alinhamento_blog_post.png 967w, /wp-content/uploads/2018/03/empoderamento_alinhamento_blog_post-300x179.png 300w, /wp-content/uploads/2018/03/empoderamento_alinhamento_blog_post-768x457.png 768w" sizes="(max-width: 943px) 100vw, 943px" /></p>
+<p>&nbsp;</p>
+<p>Alinhamento quer dizer que a empresa e seus líderes estão plenamente conscientes de onde desejam chegar e conseguem comunicar tal visão de forma clara, objetiva e que engaje a todos. Uma liderança participativa e ferramentas como os <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/" rel="nofollow">OKRs</a> são excelentes alavancas para desenvolver um ecossistema onde as pessoas estejam <strong>alinhadas</strong>.</p>
+<p>O empoderamento é a soma da <strong>habilidade</strong> (que nada mais é do que a capacidade das pessoas conseguirem executar a estratégia da organização a partir de ferramentas, técnicas e práticas) com <strong>autonomia</strong> (que é a capacidade das pessoas se adaptarem e se auto organizarem).</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-large wp-image-7332" src="/wp-content/uploads/2018/03/visa_sistemica_blog_post-1024x152.png" alt="" width="1024" height="152" srcset="/wp-content/uploads/2018/03/visa_sistemica_blog_post-1024x152.png 1024w, /wp-content/uploads/2018/03/visa_sistemica_blog_post-300x44.png 300w, /wp-content/uploads/2018/03/visa_sistemica_blog_post-768x114.png 768w, /wp-content/uploads/2018/03/visa_sistemica_blog_post.png 1140w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<p>Para que a empresa usufrua dos benefícios da agilidade é fundamental que ela desenvolva uma visão sistêmica do negócio a partir de 4 macro etapas. Partindo do pressuposto que os recursos são limitados, torna-se necessária uma análise da viabilidade financeira das iniciativas nas quais a empresa trabalhará, a fim de tomar melhores decisões a partir das oportunidades que podem ser perdidas pela manutenção do status quo.</p>
+<p>Após filtrar as iniciativas com a lente estratégica, a empresa precisa compreender se ela possui capacidade operacional para executar o que foi definido como prioridade. Neste momento, a empresa pode cogitar a contratação de terceiros, a capacitação da sua equipe interna ou até mesmo um redesenho da sua estrutura com o propósito de criar células capazes de construir soluções que comprovem as hipóteses de negócio.</p>
+<p>Os dois últimos estágios seriam a execução e a entrega. Saber executar com <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/" rel="nofollow">lead times</a> curtos fará com que a empresa valide rapidamente suas suposições e tenha aptidão para mudar de rota quando necessário. Por fim, entregar bem representa disponibilizar o que o cliente precisa com qualidade e rapidez (ex: deploys automatizados, integrações contínuas, testes de integração etc.) e com o mínimo de ruído interno (comunicando os stakeholders da empresa impactados pela entrega da iniciativa) e externo (garantindo que as informações cheguem de forma clara aos clientes e usuários).</p>
+<h2><a id="user-content-um-modelo-para-analisar-a-maturidade-ágil-de-uma-organização" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#um-modelo-para-analisar-a-maturidade-%C3%A1gil-de-uma-organiza%C3%A7%C3%A3o" aria-hidden="true"></a><strong>Um modelo para analisar a maturidade ágil de uma organização</strong></h2>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-7333" src="/wp-content/uploads/2018/03/maturidade_blog_post.png" alt="" width="633" height="553" srcset="/wp-content/uploads/2018/03/maturidade_blog_post.png 633w, /wp-content/uploads/2018/03/maturidade_blog_post-300x262.png 300w" sizes="(max-width: 633px) 100vw, 633px" /></p>
+<p>O modelo que venho utilizando para analisar a proficiência em ágil das organizações leva em consideração 4 perspectivas:</p>
+<h3><a id="user-content-práticas-e-papéis" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#pr%C3%A1ticas-e-pap%C3%A9is" aria-hidden="true"></a><strong>Práticas e papéis</strong></h3>
+<p>Esta dimensão tem como objetivo compreender se a empresa tem utilizado de forma eficiente os processos e se há clareza dos papéis e das respectivas responsabilidades. Geralmente utilizo as seguintes perguntas para analisar esta dimensão:</p>
+<ul>
+<li>Existe clareza de quais são as responsabilidades dos papéis disponíveis na empresa atualmente?</li>
+<li>O fluxo de trabalho das equipes está visível?</li>
+<li>As equipes possuem políticas explícitas (ex: definição de pronto para ser trabalhado, definição de pronto etc.)?</li>
+<li>Gargalos e filas estão visíveis no fluxo de trabalho das equipes?</li>
+<li>As equipes possuem clareza das principais fontes de retrabalho?</li>
+<li>Práticas de engenharia de software estão sendo utilizadas para manter o código saudável?</li>
+<li>O processo de publicação está automatizado?</li>
+<li>Existem testes automatizados?</li>
+</ul>
+<h3><a id="user-content-métricas" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#m%C3%A9tricas" aria-hidden="true"></a>Métricas</h3>
+<p>Este aspecto visa compreender em qual nível a empresa tem utilizado as métricas de negócio e de processo. A essência dessa perspectiva é ir contra a ideia de que métricas moldam comportamento, mas sim reforçar a importância de se desenvolver uma referência comum que promova melhoria e ações para o negócio. As perguntas que uso para esta dimensão são:</p>
+<ul>
+<li>As métricas de negócio estão sendo utilizadas no processo de tomada de decisão?</li>
+<li>As métricas de negócio estão visíveis para todas as pessoas da empresa analisarem?</li>
+<li>As métricas de negócio são utilizadas como referência no processo de definição de uma iniciativa (ex: quais indicadores de negócio serão alavancados pelo projeto X)?</li>
+<li>As equipes utilizam métricas de processo para projetar prazos de entrega?</li>
+<li>As equipes utilizam métricas de processo para analisarem a saúde do processo?</li>
+</ul>
+<h3><a id="user-content-priorização-orientada-ao-negócio" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#prioriza%C3%A7%C3%A3o-orientada-ao-neg%C3%B3cio" aria-hidden="true"></a>Priorização orientada ao negócio</h3>
+<p>Quando tudo é prioridade nada é prioridade. Essa é uma frase que tenho utilizado com equipes que têm o desafio de gerenciar o portfólio de iniciativas de uma empresa. Esta dimensão serve como guia para entender se de fato há um processo estruturado de priorização e para isso levanto as seguintes informações:</p>
+<ul>
+<li>Existem critérios claros de priorização?</li>
+<li>A priorização tem levado em consideração as necessidades dos clientes?</li>
+<li>As métricas de negócio são utilizadas no processo de priorização das iniciativas?</li>
+<li>É realizada uma análise das dependências entre as iniciativas antes da finalização do processo de priorização?</li>
+</ul>
+<h3><a id="user-content-resultado-financeiro" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#resultado-financeiro" aria-hidden="true"></a>Resultado financeiro</h3>
+<p>esta dimensão tem por objetivo compreender em qual nível a empresa tem mensurado os resultados financeiros das suas iniciativas. Levanto as seguintes informações para analisar este aspecto nas empresas:</p>
+<ul>
+<li>A liderança da organização tem clareza dos objetivos de negócio de cada iniciativa?</li>
+<li>As equipes estão metrificando o resultado financeiro das entregas?</li>
+<li>A organização consegue classificar as iniciativas quanto ao resultado esperado (ex: essa iniciativa gerará maior eficiência no negócio, ajudará a conquistar market share, será uma inovação, antecipará o custo do atraso?)</li>
+</ul>
+<p>O modelo acima ajudará você a diagnosticar em cada uma das dimensões qual é a situação atual e se existem problemas que precisam ser tratados.</p>
+<p>Tenho observado que uma empresa madura em ágil é aquela que consegue ter:</p>
+<ol>
+<li>Uma gestão de fluxo eficiente, isto é, que tenha domínio das práticas e dos processos;</li>
+<li>Saiba priorizar a partir de critérios quantitativos (métricas);</li>
+<li>Tenha consciência dos riscos e utilize um ferramental para reduzi-los;</li>
+<li>Entenda as necessidades do cliente e as transformem em oportunidades viáveis;</li>
+<li>Disponha de uma estrutura flexível e orientada por propósitos;</li>
+<li>Respeite as individualidades das pessoas e saiba comunicar de forma clara suas responsabilidades (alinhamento de expectativas).</li>
+</ol>
+<h2><a id="user-content-conclusão" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-03-o-desafio-de-analisar-a-maturidade-agil.md#conclus%C3%A3o" aria-hidden="true"></a>Conclusão</h2>
+<p>Tentei compartilhar um pouco como nós da Plataformatec temos levado agilidade para os nossos clientes. A proposta do modelo é ser algo evolucionário e que respeite o contexto de cada empresa. Buscamos identificar alavancas que permitirão gerar um ambiente onde haja agilidade no negócio. E você, como tem analisado a maturidade em ágil no seu contexto? Deixe sua opinião nos comentários abaixo.</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Curso: Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.5em !important;">Um <strong>curso gratuito</strong>, em 7 e-mails, em que Raphael Albino, autor do livro &#8220;Métricas Ágeis&#8221;, ensina o que medir e como interpretar os dados.</p>
+<p><a style="background: #e9af35; border: none; color: #fff; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRATUITAMENTE</a></p>
+</div><p>The post <a href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/">O desafio de analisar a maturidade ágil de uma empresa</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Guia de um Agilista: Analisando a saúde do Processo</title>
+		<link>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/</link>
+					<comments>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 22 Feb 2018 19:51:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[product owner]]></category>
+		<guid isPermaLink="false">/?p=7210</guid>
+
+					<description><![CDATA[<p>Independente se você é um agilista experiente ou iniciante, existem desafios que fazem parte do dia a dia de qualquer equipe que esteja em busca da criação de software com qualidade e com o mínimo de previsibilidade quanto ao prazo para a entrega de uma demanda (ex: nova funcionalidade, correção de um bug, melhoria técnica, ... <a class="read-more-link" href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">»</a></p>
+<p>The post <a href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">Guia de um Agilista: Analisando a saúde do Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Independente se você é um agilista experiente ou iniciante, existem desafios que fazem parte do dia a dia de qualquer equipe que esteja em busca da criação de software com qualidade e com o mínimo de previsibilidade quanto ao prazo para a entrega de uma demanda (ex: nova funcionalidade, correção de um bug, melhoria técnica, etc.).</p>
+<p>Desenvolver uma visão que possibilite enxergar e compreender o todo por meio da análise das partes que o formam é um grande desafio ao lidar com ambientes de incerteza.</p>
+<p>Uma das formas de compreender e analisar o sistema de trabalho de uma equipe ágil se dá através das métricas de processo (<a href="/?s=m%C3%A9tricas" rel="nofollow">há uma coletânea de conteúdo bacana sobre o assunto aqui no blog da Ptec</a>).</p>
+<p>Entender o fluxo a partir dos dados é uma maneira pragmática de incorporar uma filosofia de melhoria contínua, sem mudanças abruptas e caóticas e de forma transparente para todos que estão envolvidos no contexto (equipe, stakeholders, área de produtos, gestores, etc.). Parafraseando a comunidade Kanban, medir é uma ferramenta que ajudará a evoluir e não revolucionar um processo já existente.</p>
+<p>Pessoalmente, eu gosto de quantificar o processo quando estou mapeando a realidade de uma equipe, pois exponho fatos (dados) para discussão e análise. Na minha experiência com equipes de desenvolvimento de software, venho percebendo que ter esse tipo de conduta ajuda a diminuir uma carga subjetiva que possa existir na equipe e é um jeito de confrontar crenças como &#8220;não precisamos melhorar&#8221;, &#8220;não temos problemas no processo&#8221; e &#8220;atuamos de forma colaborativa&#8221;.</p>
+<p>No blog post de hoje, compartilharei uma coleção de métricas que ajudarão você a diagnosticar a saúde do proceso de uma equipe ágil.</p>
+<h2><a id="user-content-premissas" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#premissas"></a>Premissas</h2>
+<p>Antes de qualquer coisa, preciso deixar algumas ressalvas quanto ao uso das métricas.</p>
+<p><strong>Métricas devem ser usadas para evoluir o processo e não para gerar cobranças e comparações destrutivas.</strong></p>
+<p>Não caia na tentação de comparar equipes e medir o desempenho de um indivíduo. Se você ou a empresa no qual trabalha estão interessados em premiar resultados individuais, formulem um método que proponha avaliar o desempenho da pessoa a partir da opinião dos gestores, pares e clientes que tenham interagido com o resultado do trabalho do indivíduo. No caso de recompensar individualmente as equipes por seu resultado, fuja de métricas que não tenham relação direta com o resultado do negócio (ex: do que adianta a equipe ter entregue um número de funcionalidades no semestre sendo que o produto não teve um aumento de receita?).</p>
+<p>Compartilho essa premissa para que você e sua equipe não se comportem de acordo como estão sendo medidos. Afinal, já diria Goldratt: <a href="https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt" rel="nofollow">&#8220;diga-me como serei avaliado e eu lhe direi como me comporto&#8221;</a>.</p>
+<p><strong>Números sem contextos são perigosos.</strong></p>
+<p>Qualquer análise feita sem compreender as variáveis que compõe um cenário se torna superficial, enviesada e pobre. Se alguém lhe contar que o número de funcionalidades entregues em uma equipe é de 10 itens por semana, é possível concluir algo? Tal métrica é boa ou ruim? Qual o significado de entregue para aquela equipe? É software em produção ou entrega em um ambiente de homologação? Bem, pelos questionamentos anteriores é possível concluir que um número solto nada mais é do que um símbolo privado de qualquer significado.</p>
+<p><strong>Procure tendências e fuja da precisão. Dada a complexidade que é criar um produto de software, não busque ser determinístico em um mundo que é receptivo por natureza a uma realidade probabilística.</strong></p>
+<p>A lógica por trás da última premissa é: vivemos em um ambiente onde há risco, isto é, existe a probabilidade de insucesso em função de algum acontecimento incerto, cuja ocorrência não depende exclusivamente da vontade da equipe. Portanto, é pouco provável que a equipe saiba ao certo o prazo de entrega de uma demanda ou projeto. Ao invés de nos enganarmos com prazos que ratificam que as entregas acontecerão sempre na mesma data e na mesma forma, passemos a analisar o histórico de dados da equipe para projetarmos a chance de entregarmos algo.</p>
+<p>As premissas compartilhadas ajudarão você a utilizar as métricas de forma efetiva. O <a href="https://twitter.com/lucasrcolucci1" rel="nofollow">Lucas Colucci</a> escreveu um texto muito importante que apresenta alguns <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/" rel="nofollow">erros comuns ao utilizar métricas de processo</a>.</p>
+<h2><a id="user-content-diagnóstico-do-processo" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#diagn%C3%B3stico-do-processo"></a>Diagnóstico do processo</h2>
+<p>Dada as premissas compartilhadas acima, vamos ao que de fato interessa. As métricas listadas a seguir servirão para você mapear como está a saúde do processo de uma equipe. Como agilista, considero que as visualizações abaixo compõem o painel de análise (cockpit) de um fluxo de trabalho e devem estar disponíveis para que as equipes utilizem como material para a promoção de melhorias no processo (ex: uso das métricas em retrospectivas, análise do processo em reuniões diárias, etc.).</p>
+<p><strong>Trabalho em progresso</strong></p>
+<p>Monitorar o trabalho em progresso ajudará a equipe a ter consciência de qual é o montante de trabalho que o processo tem suportado ao longo do tempo. Gosto desse tipo de visualização, pois ela demonstra, por exemplo, se as equipes estão respeitado uma política de limite do trabalho em progresso.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7212" src="/wp-content/uploads/2018/02/wip_history1-1024x469.png" alt="" width="1046" height="479" srcset="/wp-content/uploads/2018/02/wip_history1-1024x469.png 1024w, /wp-content/uploads/2018/02/wip_history1-300x137.png 300w, /wp-content/uploads/2018/02/wip_history1-768x352.png 768w, /wp-content/uploads/2018/02/wip_history1.png 1665w" sizes="(max-width: 1046px) 100vw, 1046px" /></p>
+<p>No exemplo acima, temos uma situação onde a equipe estava com a quantidade de itens em progresso próximo de 10 por semana até que em determinado momento houve uma reconfiguração no número de pessoas, o que fez com que a quantidade de trabalho em progresso diminuísse. Um insight aqui é que essa visualização apresenta um histórico interessante da equipe, ajudando a identificar momentos em que ocorreram mudanças na estrutura do time, mudanças de rumo (as famosas pivotadas), impedimentos, etc.</p>
+<p>Visando estabilizar o processo a partir da capacidade produtiva, é importante que o número de itens em WIP não entre em uma tendência de crescimento. Caso isso esteja acontecendo, é bem provável que a equipe precise de otimizações para que o WIP passe a diminuir. Como agilista, monitorar o WIP apoiará você a reverberar o seguinte mantra com a equipe: &#8220;vamos parar de começar e comecemos a terminar&#8221;.</p>
+<p>Uma outra análise de WIP que tenho começando a fazer diz respeito ao tempo de vida dos itens que estão em WIP dentro de uma determinada semana. Essencialmente, a visualização leva em consideração os itens que estão em progresso naquela semana e contabiliza há quanto tempo eles se encontram dentro do fluxo de trabalho. Para facilitar a leitura do gráfico, faço um agrupamento por categoria onde considero as seguintes faixas: (1) 1 dia em WIP; (2) até uma semana em WIP; (3) de 1 à 2 semanas em WIP; (4) de 2 à 3 semanas em WIP; (5) de 3 à 4 semanas em WIP; (6) acima de 4 semanas em WIP.</p>
+<p>Ainda sobre a estrutura da visualização, para as semanas que já passaram, é feita a contabilização e a classificação dos itens que estão em WIP no final do período. Já para a semana corrente, é realizada uma análise dos itens que estão em WIP no momento.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7218" src="/wp-content/uploads/2018/02/wip_age2-1024x429.png" alt="" width="1055" height="442" srcset="/wp-content/uploads/2018/02/wip_age2-1024x429.png 1024w, /wp-content/uploads/2018/02/wip_age2-300x126.png 300w, /wp-content/uploads/2018/02/wip_age2-768x322.png 768w, /wp-content/uploads/2018/02/wip_age2.png 1847w" sizes="(max-width: 1055px) 100vw, 1055px" /></p>
+<p>Aplicando em um exemplo, é possível perceber que, na quinta semana de monitoramento do tempo de vida do WIP da equipe acima, existiam dois itens que estavam há mais de um mês dentro do fluxo. Se a equipe, ao acompanhar sistematicamente seu fluxo de trabalho, perceber que as categorias de mais idade estão crescendo é bem provável que um gargalo esteja se formando em alguma etapa do processo e uma intervenção será necessária.</p>
+<p>Tenha em mente que WIP representa esforço e energia que ainda não foram validados e quanto mais tempo a equipe passar carregando-o, menos <em>feedback</em> será recebido, mais lento será o processo de validação das hipóteses por detrás das iniciativas que originaram o trabalho e maior será o risco da empresa estar perdendo uma oportunidade de mercado.</p>
+<p>Caso queira saber mais sobre WIP, não deixe de ler post <a href="/2018/01/wip-limit-a-further-study/">Um estudo mais profundo sobre Limites WIP</a></p>
+<p><strong>Tempo de entrega</strong></p>
+<p>O <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/" rel="nofollow">lead time</a> é uma métrica importante para que as equipes desenvolvam a capacidade de entender quanto tempo elas têm levado para concluir um item de trabalho. Além disso, equipes que desenvolvem a habilidade de analisar tal métrica conseguem identificar situações que geraram variabilidade no processo (ex: problemas em ambientes, saída de membros da equipe, falta de critérios de aceite claros nas demandas).</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7214" src="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png" alt="" width="1071" height="430" srcset="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png 1024w, /wp-content/uploads/2018/02/leadtime_distribution3-300x120.png 300w, /wp-content/uploads/2018/02/leadtime_distribution3-768x308.png 768w, /wp-content/uploads/2018/02/leadtime_distribution3.png 1880w" sizes="(max-width: 1071px) 100vw, 1071px" /></p>
+<p>A primeira visualização que recomendo estar disponível para a equipe é o gráfico de dispersão do lead time. Ele oferecerá uma ideia se o tempo para que os itens sejam entregues está diminuindo ou não ao longo do tempo.</p>
+<p>Conforme ilustrado no gráfico acima, gosto de combinar nessa visualização as seguintes informações: itens finalizados (representados no gráfico pelos pontos em azul) e em progresso (representados no gráfico pelos pontos em vermelho); a média móvel que leva em consideração os últimos 5 itens entregues (esse é um parâmetro totalmente arbitrário); e as informações de percentil 50 (mediana), percentil 75 e percentil 95.</p>
+<p>Tais medidas de referência são úteis, pois, a partir do exemplo, trazem a tona constatações como:</p>
+<ul>
+<li>A média móvel tem variado ao longo do tempo.</li>
+<li>Baseado no histórico de itens concluídos, 50% deles foram finalizados em até 10 dias, 75% levaram até 16 dias para serem finalizados e 95% foram concluídos em até 34 dias.</li>
+</ul>
+<p>Além disso, o gráfico de dispersão pode gerar respostas para questionamentos como:</p>
+<ul>
+<li>O que a equipe está fazendo para tratar os itens em progresso que estão se tornando casos extremos de lead time?</li>
+<li>O que é possível melhorar no processo para que haja uma diminuição no lead time?</li>
+</ul>
+<p>Outra visualização benéfica para entender o tempo de entrega é o gráfico de histograma, pois, ao considerar cada lead time como uma categoria, o mesmo apresenta os dados de uma maneira mais concisa e que permite extrair informação sobre o comportamento da distribuição.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-large wp-image-7215" src="/wp-content/uploads/2018/02/leadtime_histogram4-1024x427.png" alt="" width="1024" height="427" srcset="/wp-content/uploads/2018/02/leadtime_histogram4-1024x427.png 1024w, /wp-content/uploads/2018/02/leadtime_histogram4-300x125.png 300w, /wp-content/uploads/2018/02/leadtime_histogram4-768x320.png 768w, /wp-content/uploads/2018/02/leadtime_histogram4.png 1865w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Conforme ilustrado no exemplo acima, o histograma permite que a equipe tenha resposta para indagações do tipo:</p>
+<ul>
+<li>Qual tem sido o lead time mais frequente?</li>
+<li>Os casos extremos de lead time são muito frequentes?</li>
+<li>Qual o formato da distribuição? Há uma concentração do lead time a esquerda ou a direita da distribuição? Existe mais do que uma moda? Geralmente distribuições bimodais representam fluxos de equipes que lidam com mais de um tipo de demanda em seu processo, pois apresentam concentrações semelhantes em diferentes categorias de lead time.</li>
+</ul>
+<p><strong>Ritmo das entregas</strong></p>
+<p>Medir e visualizar o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/" rel="nofollow">throughput (vazão)</a> é importante para que a equipe compreenda qual tem sido o montante de trabalho entregue em um período de tempo (exemplo: semana, quinzena, mês), bem como para que ela identifique se há a criação de uma tendência de aumento no número de entregas. Ao perceber que o throughput está em queda, a equipe pode buscar entender quais fatores estão afetando a vazão do processo.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7217" src="/wp-content/uploads/2018/02/throughput_variation-1024x436.png" alt="" width="1069" height="455" srcset="/wp-content/uploads/2018/02/throughput_variation-1024x436.png 1024w, /wp-content/uploads/2018/02/throughput_variation-300x128.png 300w, /wp-content/uploads/2018/02/throughput_variation-768x327.png 768w, /wp-content/uploads/2018/02/throughput_variation.png 1713w" sizes="(max-width: 1069px) 100vw, 1069px" /></p>
+<p>Recomendo sempre que possível a quebra da visualização do throughput por tipo de demanda. Dessa forma, fica explícito para todos se a equipe está conseguindo:</p>
+<ul>
+<li>Equilibrar o número de entregas de valor (ex: funcionalidades) com demandas de falha (ex: bugs).</li>
+<li>Lidar com o <em>urgente</em> de forma sustentável. Volta e meia me deparo com equipes que classificam todo tipo de demanda que entra no fluxo de trabalho como urgente e atuam em cima delas, deixando de lado itens que serão importantes para o negócio no médio prazo.</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7216" src="/wp-content/uploads/2018/02/throughput_break6-1024x443.png" alt="" width="1073" height="464" srcset="/wp-content/uploads/2018/02/throughput_break6-1024x443.png 1024w, /wp-content/uploads/2018/02/throughput_break6-300x130.png 300w, /wp-content/uploads/2018/02/throughput_break6-768x332.png 768w, /wp-content/uploads/2018/02/throughput_break6.png 1823w" sizes="(max-width: 1073px) 100vw, 1073px" /></p>
+<p>No exemplo acima a equipe conseguiu equilibrar em grande parte das semanas entregas de história do usuário com correções de bug. Na semanas sinalizadas com as setas em vermelho, a equipe precisou atuar e entregar problemas críticos que estavam afetando a operação da empresa e por isso entregou apenas correções de bugs.</p>
+<p><strong>Análise da taxa de entrada e saída do fluxo</strong></p>
+<p>Além do uso do gráfico de CFD (<a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" rel="nofollow">escrevi um blog post completo para falar sobre essa visualização</a>), gostaria de apresentar uma análise que não tenho visto muitos agilistas fazerem: relação entre as taxas de entrada e saída do fluxo de trabalho. Basicamente essa visualização compara a quantidade de itens que a equipe se comprometeu entregar com o número de itens entregues ao longo do tempo.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7213" src="/wp-content/uploads/2018/02/arrival_throughput_rate7-1024x433.png" alt="" width="1116" height="472" srcset="/wp-content/uploads/2018/02/arrival_throughput_rate7-1024x433.png 1024w, /wp-content/uploads/2018/02/arrival_throughput_rate7-300x127.png 300w, /wp-content/uploads/2018/02/arrival_throughput_rate7-768x325.png 768w, /wp-content/uploads/2018/02/arrival_throughput_rate7.png 1817w" sizes="(max-width: 1116px) 100vw, 1116px" /></p>
+<p>O que esse tipo de visualização pode trazer de insight? Vamos analisar um exemplo.</p>
+<p>Baseado na imagem acima é possível fazer algumas deduções:</p>
+<ul>
+<li>Das 27 semanas analisadas, 10 delas tiveram uma taxa de entrada (itens que a equipe se comprometeu) maior do que a quantidade de itens entregues.</li>
+<li>Na semana 17 a equipe teve um pico de itens comprometidos para serem entregues. Isso ocorreu pelo fato da pessoa que era PO da equipe estar em vias de entrar de férias. Falando em <a href="/2017/12/estoques-no-desenvolvimento-de-software/" rel="nofollow">estoques, sugiro a leitura do blog post do Guilherme Fré sobre o assunto</a>.</li>
+</ul>
+<p>Analisar a taxa de entrada e saída do processo apoiará a equipe no entendimento de se o ritmo de entrega está acompanhando a quantidade de itens comprometidos. Tenho visto equipes assumindo mais do que sua real capacidade. Tal tipo de comportamento gera desconfiança dos stakeholders pelo fato da equipe entregar menos do que é pedido e frustação da equipe por nunca conseguir entregar &#8220;tudo&#8221;.</p>
+<p>Em um sistema perfeitamente estável, a taxa de entrada e saída deveria ser a mesma. Se você e sua equipe conseguirem desenvolver um processo onde na maior parte das semanas as taxas forem equivalentes (ex: para cada 4 semanas, 3 tiveram as taxas de entrada e saída iguais), isso demonstrará maturidade do fluxo de trabalho e representará um contexto altamente previsível.</p>
+<h2><a id="user-content-conclusão" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#conclus%C3%A3o"></a>Conclusão</h2>
+<p>Incorporar uma cultura que traga dados para sua equipe fará com que você monitore um processo que possui uma natureza essencialmente complexa (software) trazendo visibilidade do progresso para quaisquer interessados no que está sendo construído ou mantido.</p>
+<p>Além disso, propor melhorias e evoluções baseadas em dados é um excelente caminho para a remoção de análises subjetivas e, até certo ponto, vazias. No fundo, espero que com esse blog post você, agilista, estimule que as pessoas utilizem menos o recurso do <em>feeling</em> quando estiverem analisando o comportamento do fluxo de trabalho de uma equipe.</p>
+<p>Se você busca um material avançado em métricas, recomendo o livro que escrevi sobre o assunto <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis" rel="nofollow">Métricas Ágeis – Obtenha melhores resultados em sua equipe</a>. Aproveite para dar uma olhada nas <a href="https://www.goodreads.com/book/show/35341623-m-tricas-geis" rel="nofollow">revisões feitas por quem já leu</a> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60f.png" alt="😏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>E você? Quais métricas tem utilizado para acompanhar a saúde do processo? Deixe suas experiências nos comentários abaixo!</p>
+<div id="nurturing-agile-blog-post-guia-de-um-agilista-analisando-saude-do-processo-1d8b67d69ba6b19eaca3"></div>
+<p>
+jQuery( document ).ready(function() {<br />
+  new RDStationForms(&#8216;nurturing-agile-blog-post-guia-de-um-agilista-analisando-saude-do-processo-1d8b67d69ba6b19eaca3-html&#8217;, &#8216;UA-8268430-1&#8217;).createForm();<br />
+  });</p><p>The post <a href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">Guia de um Agilista: Analisando a saúde do Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>O que seriam boas métricas para produtos digitais?</title>
+		<link>/2018/01/o-que-seriam-boas-metricas-para-produtos-digitais/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 11 Jan 2018 13:07:32 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=7092</guid>
+
+					<description><![CDATA[<p>Em Dilemas de PO: priorizar features e projetar entregas tive a oportunidade de compartilhar a importância do uso de métricas de negócio quali e quantitativas para a priorização de funcionalidades em equipes de produto. No blog post de hoje, gostaria de aprofundar um pouco mais no assunto e falar sobre o que seriam boas métricas ... <a class="read-more-link" href="/2018/01/o-que-seriam-boas-metricas-para-produtos-digitais/">»</a></p>
+<p>The post <a href="/2018/01/o-que-seriam-boas-metricas-para-produtos-digitais/">O que seriam boas métricas para produtos digitais?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Em <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> tive a oportunidade de compartilhar a importância do uso de métricas de negócio quali e quantitativas para a priorização de funcionalidades em equipes de produto. No blog post de hoje, gostaria de aprofundar um pouco mais no assunto e falar sobre o que seriam boas métricas de negócio.</p>
+<h2>Características de uma boa métrica de negócio</h2>
+<p>Primeiramente, uma boa métrica de negócio deve ser comparável. Saber que a taxa de conversão de pessoas interessadas no seu produto para clientes é de 10% não lhe servirá para muita coisa se você não tiver como analisar o comportamento da mesma ao longo do tempo. Como estava a métrica na semana passada? No mês passado? No ano anterior? As conversões estão crescendo? Responder questões como essa permitirão que você possa fazer melhor uso da métrica.</p>
+<p>Outra característica importante sobre métricas de negócio é que elas devem ser simples para que todos compreendam o que elas representam.</p>
+<p>A métrica de negócio deve também ser uma relação ou uma taxa. A quantidade de usuários pode ser pouco útil, porém, a porcentagem de usuários ativos diários já poderá trazer tendências de crescimento. Razões e taxas são comparativas, o que o ajudam a tomar melhores decisões.</p>
+<p>Por fim, lembre-se: métricas de negócio boas se transformam. Se a métrica muda e você não sabe a motivação ou o que fazer com ela, então você tem uma métrica ruim.</p>
+<h2>Métricas de produto</h2>
+<p>A seguir, listarei um conjunto de métricas que você poderá utilizar quando tiver o trabalho de analisar os resultados dos produtos de software, porém, sugiro leituras complementares como Lean Analytics e Product Management (uma boa dica de leitura é o livro <a href="https://www.casadocodigo.com.br/products/livro-gestao-produtos">Gestão de produtos de software: como aumentar as chances de sucesso do seu software</a> do Joaquim Torres).</p>
+<ul>
+<li><strong>Receita recorrente mensal:</strong> total de receita gerada pelos clientes que assinam o produto mês a mês.</p>
+</li>
+<li>
+<p><strong>Receita recorrente anual:</strong> total de receita recorrente gerada pelo produto (ex: soma das receitas mensais gerada pela assinatura do produto).</p>
+</li>
+<li>
+<p><strong>Receita recorrente anual por cliente:</strong> total de receita recorrente gerada por cada cliente da carteira. Se o valor dessa métrica está subindo, isso representa que você está conseguindo, por exemplo, aumentar o preço do serviço, aumentar o ticket médio no geral ou vender novas soluções aos clientes.</p>
+</li>
+<li>
+<p><strong>Receita anual total:</strong> total de receita gerada pela organização tanto via produto como via serviço. Geralmente os investidores avaliam as empresas a partir da sua capacidade de geração de receita recorrente, pois prestação de serviço é algo periódico e menos escalável do que a venda de um produto.</p>
+</li>
+<li>
+<p><strong>Taxa de conversão:</strong> é o percentual entre os pontenciais interessados em seu produto (leads) e os que acabam efetivamente se tornando clientes. Quanto maior for a taxa de conversão, maior será a capacidade de monetização do seu produto. Outra variável importante de analisar em conjunto da taxa de conversão é o tempo no qual um lead levou para se tornar um cliente. Neste caso, quanto menor o tempo mais otimizado estará o funil de conversão dos leads em clientes.</p>
+</li>
+<li>
+<p><strong>Custo de aquisição do cliente:</strong> é o custo total de aquisição de clientes (CAC). É possível considerar o CAC a partir de duas perspectivas: (i) custo para a aquisição de qualquer cliente do produto; (ii) custo para a aquisição dos clientes oriundos de investimentos feitos em marketing. Ao calcular o CAC total como um custo que inclui os clientes adquiridos organicamente ao invés de isolar clientes adquiridos através de marketing &#8220;pago&#8221;, você deixa de saber o quão bem suas campanhas pagas estão funcionando e se elas são lucrativas. É por isso que os investidores consideram que o CAC pago é mais importante do que o CAC misturado na avaliação da viabilidade de um negócio, pois ele informa se uma empresa pode escalar seu orçamento de aquisição de usuários de forma lucrativa.</p>
+</li>
+<li>
+<p><strong>Evasão (churn):</strong> indica a média de cancelamentos de assinaturas dos clientes de uma empresa, assim como as perdas financeiras que elas representam, em determinado período. Pode ser calculado através de um taxa do total de clientes cancelados dividido pelo número total de clientes ativos do último mês ou pela receita recorrente mensal gerada pelos clientes cancelados dividido pelo total de receita recorrente mensal.</p>
+</li>
+<li>
+<p><strong>Número de usuários ativos:</strong> pode ser considerada uma métrica que não ajuda na tomada de decisão dado que você pode ter muitos usuários ativos que não geram receita, porém, tal métrica pode ser útil como forma de entender o engajamento da solução no mercado.</p>
+</li>
+<li>
+<p><strong>Relação entre clientes pagos e o total de usuários:</strong> é o percentual entre os clientes pagos (geradores de receita) e o total de usuários do seu produto. Se o seu produto possui diferentes planos, tal métrica pode ser útil para analisar, a partir da base total de usuários, a representatividade de cada plano a partir do total de usuários pagos. Ex: Caso seu produto possua uma base de 5.000 usuários sendo que 4.900 fazem parte de um plano &#8220;free&#8221;, apenas 2% (100) dos clientes compõe os planos pagos.</p>
+</li>
+</ul>
+<h2>Conclusão</h2>
+<p>As métricas discutidas acima ajudarão você e a sua a equipe na tomada de melhores decisões quando estiverem discutindo qual funcionalidade trará maior resultado para o negócio e, principalmente, servirão como um guia para análise da saúde dos produtos que estiverem sob a tutela da empresa.</p>
+<p>E você, tem visto algum tipo de métrica diferente das comentadas? Não deixe de compartilhar nos comentários abaixo sua opinião.</p>
+<p>&nbsp;</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Curso: Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.5em !important;">Em 7 e-mails você vai aprender neste curso o que medir e como interpretar os dados. <strong>Curso gratuito</strong> criado pelo autor do livro “Métricas Ágeis”, Raphael Albino.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRATUITAMENTE</a></p>
+</div><p>The post <a href="/2018/01/o-que-seriam-boas-metricas-para-produtos-digitais/">O que seriam boas métricas para produtos digitais?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>12 Erros comuns no uso de Métricas de Processo</title>
+		<link>/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 26 Oct 2017 13:49:38 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=6874</guid>
+
+					<description><![CDATA[<p>Defendemos o uso de métricas há algum tempo, e já produzimos muito conteúdo sobre o assunto. No entanto, vemos times que usam métricas ativamente e não alcançam o resultado esperado. Neste post, compilei os erros mais comuns que os times cometem quando usam métricas, assim você saberá o que evitar quando adotá-las. 1 &#8211; Não ... <a class="read-more-link" href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">»</a></p>
+<p>The post <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">12 Erros comuns no uso de Métricas de Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Defendemos o uso de métricas há algum tempo, e já produzimos muito <a href="blog.plataformatec.com.br/tag/metrics">conteúdo sobre o assunto</a>. No entanto, vemos times que usam métricas ativamente e não alcançam o resultado esperado.</p>
+<p>Neste post, compilei os erros mais comuns que os times cometem quando usam métricas, assim você saberá o que evitar quando adotá-las.</p>
+<h2>1 &#8211; Não ter reação</h2>
+<p>Se você coleta métricas, você <strong>precisa</strong> usá-las de alguma maneira. Portanto, um dos erros mais comuns é não reagir ao que as métricas apontam. Métricas podem lhe dar <em>insights</em>  e, para reagir, você precisa entender como elas funcionam e o que significam.</p>
+<p>Para mais informações sobre como usá-las, dê uma olhada nesses posts:</p>
+<ul>
+<li><a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Cumulative Flow Diagrams e Lead Time Breakdown</a></li>
+<li><a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Throughput e gráfico de Burnup</a></li>
+<li><a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">O que Lead Time fala sobre seu projeto</a></li>
+</ul>
+<h2>2 &#8211; Usar métricas com poucos dados</h2>
+<p>Outro grande erro é utilizar métricas quando não existem dados suficientes para suportar suas conclusões. No começo de um projeto, ou quando começamos a coletar métricas, geralmente ficamos ansiosos para melhorarmos nosso processo. No entanto, com uma quantidade baixa de dados, as métricas não são tão confiáveis.</p>
+<p>Uma boa dica seria observar o comportamento dos dados e verificar se algum padrão já se formou. No caso de ter um padrão, você provavelmente já pode começar a usá-las e atuar em cima dos dados.</p>
+<p>É importante notar também, que esse não é o único método, mas em geral, eu esperaria no mínimo 3 semanas para começar a questionar o processo. &#8212; Mais sobre como agir baseado em métricas pode ser encontrado em nossos <a href="blog.plataformatec.com.br/tag/metrics">blog posts</a>.</p>
+<p>Uma possível saída, caso você tenha um projeto curto e precise de métricas o quanto antes, seria utilizar métricas diárias. Temos um post falando sobre isso também: <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">Pros and cons of using daily metrics</a></p>
+<h2>3 &#8211; Usar métricas sem considerar o contexto</h2>
+<p>Esse é um erro muito comum, não só no desenvolvimento de software, mas em toda conclusão construída estatisticamente. Números sozinhos são usados apenas em álgebra ou cálculo. Você precisa do contexto nos quais os números estão inseridos para entendê-los. Com isso em mente, para dizer se a vazão do seu projeto está saudável ou não, para entender se a variância do seu <em>lead time</em> é muito grande ou não, observe. o. contexto.</p>
+<h2>4 &#8211; Comparar métricas entre times</h2>
+<p>Esse problema está de certa forma relacionado com o 3. Não faz sentido falar algo como &#8220;time A está melhor que o time B pois eles têm uma vazão maior&#8221;. E se o time A possui 10 pessoas enquanto o time B possui 3? E se o time A trabalha com o desenvolvimento simples de um website e o time B com algum <em>deep learning</em> complexo? Tenha cuidado.</p>
+<h2>5 &#8211; Ter métricas individuais</h2>
+<p>Esse é um problema de microgerenciamento e está relacionado com os erros 3 e 4. Pessoas, tentando melhorar o máximo possível o processo, acabam medindo métricas de indivíduos. É praticamente impossível comparar pessoas diferentes. Apenas não o faça. Se o fizer, estará afetando o ambiente do seu time e vai até diminuir a produtividade geral. Além disso, as métricas do processo devem ser usadas para entender a <strong>saúde do processo</strong>.</p>
+<h2>6 &#8211; Simplificar demais a leitura das métricas</h2>
+<p>Ainda relacionado ao contexto, mas agora com o contexto dos números. Por exemplo, se você comunica às outras pessoas que um time entrega em média 4 histórias por semana, <em>é só isso</em>, você não está dizendo nada do time. Talvez os dados sejam {0, 0, 0, 0, 0, 24}, talvez sejam {4, 4, 4, 4, 4, 4}. Então, tenha certeza que você não está simplificando demais a leitura das suas métricas e que todo o seu ferramental constrói a imagem que você está tentando desenhar.</p>
+<h2>7 &#8211; Usar apenas as métricas convenientes</h2>
+<p>Relacionado ao erro anterior, pessoas reportam as métricas para seus gerentes/diretores mostrando apenas os &#8220;números bons&#8221;. Então, se a vazão aumenta, você mostra apenas a vazão. Se o backlog diminui, você mostra apenas isso. Seja transparente. Caso contrário, eles estarão vivendo uma mentira e, quando a verdade vier à tona, você não conseguirá se explicar.</p>
+<h2>8 &#8211; Usar apenas os dados convenientes</h2>
+<p>Outro problema é usar apenas métricas com os dados que você quer. Recortar os dados para ter resultados mais relevantes, como considerar apenas os últimos 2 meses em um projeto de 10 meses, pode fazer sentido já que o contexto de um projeto muda com o tempo e você quer ter certeza que está considerando o contexto certo nos seus resultados. No entanto, tenha cuidado quando fizer isso, pois você pode estar escondendo muitas informações úteis de você mesmo.</p>
+<h2>9 &#8211; Falsificar métricas</h2>
+<p>Este é de longe o mais comum que vejo. Pessoas tem medo de mostrar os gargalos ou problemas e mascaram resultados (às vezes sem perceber). Agrupam histórias para diminuir backlog, quebram histórias desnecessariamente para aumentar a vazão ou até mesmo mudam pontos de história (quando os usam) para manter a velocidade do time &#8220;constante&#8221;. Com isso, você está apenas enganando você mesmo e não está melhorando o processo.</p>
+<h2>10 &#8211; Ter metas baseadas em métricas</h2>
+<p>Esse é um assunto <em>muito</em> polêmico. As métricas não foram feitas para serem metas. Foram feitas para ajudar o time a entender como o processo está e tentar melhorar o fluxo. Metas relacionadas à métricas podem colocar muita pressão no time e ter o efeito contrário ao desejado, fazendo com que o time cumpra uma métrica mas desregule todo o processo. Então, antes de definir uma meta com base em métricas, pense se a meta precisa ser tão &#8220;baixo-nível&#8221; e, caso precise, confirme com o time se é possível, de fato, atingir essa meta ou se existe algum impedimento inerente ao precesso.</p>
+<h2>11 &#8211; Tentar diminuir o lead time à todo custo</h2>
+<p>Lead time (LT) é uma métrica que serve para entendermos quanto tempo um item leva para passar por todo o processo. Então, existem duas perguntas que podem ser feitas aos dados:</p>
+<ul>
+<li>O LT está muito alto?</li>
+<li>A variância do LT está muito alta?</li>
+</ul>
+<p>A segunda pergunta é muitas vezes mais importante para o time do que a primeira. Ter um LT com distribuição {0, 5, 2, 8} é geralmente pior do que ter uma como {4, 4, 4, 4}. Na primeira os dados não são confiáveis o suficiente para se ter uma predição assertiva, enquanto no segundo você tem maior probabilidade de acertar. No entanto, não esqueça de olhar para o seu contexto!</p>
+<h2>12 &#8211; Tentar aumentar a vazão ao invés de focar na eficácia</h2>
+<p>Ser eficaz é fazer a coisa certa. Vazão não é importante se você não está fazendo a coisa certa. Então, foque no seu produto, no que é melhor para ele, antes de se importar com o quão rápido você entrega.</p>
+<p>O que achou desses erros? Já cometeu algum deles? Deixe seus comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0 !important;">ContÁgil Newsletter</h3>
+<p style="margin-top: 0.5em !important;">Newsletter mensal <strong>gratuita</strong>, criada para ajudar você a se manter atualizado sobre o que está acontecendo na área de gerenciamento de projetos, metodologias e cultura ágil.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">ASSINAR NEWSLETTER GRÁTIS</a>
+</div><p>The post <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">12 Erros comuns no uso de Métricas de Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

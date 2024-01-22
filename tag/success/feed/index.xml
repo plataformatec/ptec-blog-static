@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>success « Plataformatec Blog</title>
+	<atom:link href="/tag/success/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 07 Aug 2009 14:54:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Platataforma Tecnologia e Engenharia de Software</title>
+		<link>/2009/07/platataforma-tecnologia-e-engenharia-de-software/</link>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Fri, 31 Jul 2009 17:17:51 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[software]]></category>
+		<category><![CDATA[success]]></category>
+		<guid isPermaLink="false">/?p=9</guid>
+
+					<description><![CDATA[<p>Pergunta: Em uma frase, o que é a &#60;plataforma/&#62;? Resposta: É uma consultoria em engenharia de software. Pergunta: AH! Uma fábrica de software? Resposta: NÃO! Fábricas são locais que produzem commodities através de processos e modelos essencialmente estabelecidos no século XVIII. A atividade de desenvolvimento de softwares é muito mais recente e comprovadamente não se ... <a class="read-more-link" href="/2009/07/platataforma-tecnologia-e-engenharia-de-software/">»</a></p>
+<p>The post <a href="/2009/07/platataforma-tecnologia-e-engenharia-de-software/">Platataforma Tecnologia e Engenharia de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong>Pergunta:</strong> Em uma frase, o que é a &lt;plataforma/&gt;?<br />
+<strong>Resposta:</strong> É uma consultoria em engenharia de software.</p>
+<p><strong>Pergunta:</strong> AH! Uma fábrica de software?<br />
+<strong>Resposta:</strong> NÃO!</p>
+<p>Fábricas são locais que produzem commodities através de processos e modelos essencialmente estabelecidos no século XVIII. A atividade de desenvolvimento de softwares é muito mais recente e comprovadamente não se adequa aos modelos de produção industriais. Para ilustrar o cenário atual, pegamos os dados referentes à 2008 da <em>The Standish Group</em> (<em>CHAOS Summary 2009, The Standish Group</em>). De acordo com o levantamento feito por eles, <strong>64%</strong> dos projetos de desenvolvimento de software atrasaram, ultrapassaram seus orçamentos, foram entregues parcialmente ou simplesmente foram cancelados.</p>
+<p>Então, fica a pergunta: &#8220;<strong>O que está errado com a indústria de software?</strong>&#8221;</p>
+<p>Sob a nossa ótica, o desenvolvimento de software deve ser tratado como uma prestação de serviços cujos principais ativos são as <strong>habilidades</strong> <strong>técnicas dos desenvolvedores </strong>e a <strong>capacidade gerencial </strong>que assegure que o projeto será entregue de acordo com as necessidades do cliente e executado <strong>sem desperdícios de tempo ou dinheiro</strong>.</p>
+<p>Softwares não devem ser &#8220;fabricados&#8221; e desenvolvedores não são máquinas.<br />
+Desenvolver software é uma prestação de serviço feita por profissionais com talentos distintos e únicos.</p>
+<p>Você contrataria uma &#8220;Fábrica de Planejamentos Estratégicos&#8221; ou uma Consultoria Estratégica?<br />
+O ponto em questão é esclarecer que existe uma carga conceitual pesada que justifica as limitações das &#8220;fábricas de software&#8221;. É fato que elas não atendem seus clientes como deveriam.</p>
+<p>Dado o contexto, podemos concluir este post dizendo que não somos uma fábrica de software. Nós prestamos serviços de <strong>consultoria em engenharia de software</strong>. Nós realmente acreditamos que se enxergarmos o problema sob esta perspectiva entregaremos softwares funcionais, dentro do prazo, do orçamento e que gerem valor aos nossos clientes.</p>
+<p>Bem, sobre o nosso blog&#8230; Ele será nosso canal de comunicação com pessoas que tiverem interesse em desenvolvimento de aplicativos web. Falaremos muito sobre Ruby, Ruby on Rails e engenharia de software em geral. Esperamos que gostem! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Abraços!<br />
+George, Hugo, José e Marcelo.</p><p>The post <a href="/2009/07/platataforma-tecnologia-e-engenharia-de-software/">Platataforma Tecnologia e Engenharia de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

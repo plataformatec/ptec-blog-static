@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>html 5 « Plataformatec Blog</title>
+	<atom:link href="/tag/html-5/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 18 May 2011 17:18:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>SimpleForm 1.4 is out</title>
+		<link>/2011/05/simpleform-1-4-is-out/</link>
+					<comments>/2011/05/simpleform-1-4-is-out/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 17:10:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=2051</guid>
+
+					<description><![CDATA[<p>I&#8217;m pleased to say that we released SimpleForm 1.4. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features: Custom Form Builders Now you can set a custom form builder that inherits from SimpleForm::FormBuilder: ... <a class="read-more-link" href="/2011/05/simpleform-1-4-is-out/">»</a></p>
+<p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m pleased to say that we released <a href="https://github.com/plataformatec/simple_form">SimpleForm 1.4</a>. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features:</p>
+<h3>Custom Form Builders</h3>
+<p>Now you can set a custom form builder that inherits from <code>SimpleForm::FormBuilder</code>:</p>
+<pre lang="ruby">class CustomBuilder < SimpleForm::FormBuilder
+  def input(attribute_name, options={}, &#038;block)
+    options[:input_html].merge! :class => 'custom'
+    super
+  end
+end</pre>
+<p>And use it straight in the <code>simple_form_for</code> helper, like the example below:</p>
+<pre lang="ruby"><%= simple_form_for(@user, :builder => CustomBuilder) do |f| %>
+  <%= f.input :name %>
+<% end %></pre>
+<h3>Custom Inputs</h3>
+<p>SimpleForm has many different inputs available in its source code. But, sometimes, depending on the business logic the application requires, we need to add new inputs to make our work easier. Before this version, you had to explicitly define your new input inside SimpleForm namespace for it to work. Furthermore, customizing existing SimpleForm inputs could only be achieved through monkey patching.</p>
+<p>Inspired by a similar feature in the <a href="https://github.com/justinfrench/formtastic">Formtastic</a> gem, from now on you will be able to create new input types inside <code>app/inputs</code> folder in your application. The only restriction to create such inputs is that the class name must end with <code>Input</code>. See some examples:</p>
+<pre lang="ruby"># app/inputs/currency_input.rb
+class CurrencyInput < SimpleForm::Inputs::StringInput
+  def input
+    "$ #{super}".html_safe
+  end
+end</pre>
+<p>And the usage:</p>
+<pre lang="ruby">f.input :money, :as => :currency</pre>
+<p>You can also redefine existing SimpleForm inputs by creating a new class with the same name. For instance, if you want to wrap date/time/datetime inputs in a div, you can do:</p>
+<pre lang="ruby"># app/inputs/date_time_input.rb
+class DateTimeInput < SimpleForm::Inputs::DateTimeInput
+  def input
+    "<div>#{super}</div>".html_safe
+  end
+end</pre>
+<h3>HTML 5</h3>
+<p>SimpleForm allows you to add many HTML 5 features to your applications, like placeholders, inline browser validations and more. The problem is: most browsers are still experimenting some HTML 5 features, and people started having lots of troubles with the automatic browser validation.</p>
+<p>For this reason, SimpleForm now has an option to easily disable such form validations. You have to add this line to your SimpleForm initializer:</p>
+<pre lang="ruby">config.browser_validations = false</pre>
+<p>But, if HTML 5 is still not for you, you can disable all the HTML 5 stuff, by adding the configuration below to your initializer:</p>
+<pre lang="ruby">config.html5 = false</pre>
+<p>Notice that this option does not disable the `placeholder` component, because we believe this option is very well supported currently in mostly browsers. If you don't want to use it as well, just remove it from the `components` option in your initializer.</p>
+<h3>More Helpers</h3>
+<p>In this version we also add two new form helpers to SimpleForm: <code>input_field</code> and <code>full_error</code>.</p>
+<p>The <code>full_error</code> helper shows errors in an attribute prepending its human name. This can be used when you want to show errors on hidden fields, for instance. You can see how it works in this example:</p>
+<pre lang="ruby">f.full_error :token #=> <span class="error">Token is invalid</span></pre>
+<p>The <code>input_field</code> helper renders only the input tag with all the facilities of SimpleForm's input helper. It means no wrapper, error or hint will be rendered. A good example of using this helper is inside an input block:</p>
+<pre lang="ruby"><%= f.input :max_time, :as => :integer do %>
+  <%= f.input_field :max_time, :as => :integer, :type => :range %>
+  <%= content_tag :span, '1', :id => 'max_time_value' %>
+<% end %></pre>
+<p>It will render:</p>
+<pre lang="html">
+<div class="input integer required">
+  <label class="integer required for="model_max_time">Max time <abbr title="required">*</abbr></label>
+  <input class="numeric integer required" id="model_max_time" name="model[max_time]" required="required" size="50" type="range" />
+  <span id="max_time_value">1</span>
+</div>
+</pre>
+<h3>Wrapping up</h3>
+<p>This version allows you to do more customizations in SimpleForm based on your applications needs. We encourage you to take a look at the <a title="SimpleForm Changelog" href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc">CHANGELOG</a> and also review the <a title="SimpleForm Readme" href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a title="SimpleForm contributors" href="https://github.com/plataformatec/simple_form/contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>Right now, we are working on Rails 3.1 compatibility for the next version. If you feel like helping us or just want to see a new feature, feel free to send us a pull request. And last, but not least, we look forward to know how SimpleForm is changing your life. Is it being helpful? How does it improve your applications? Don't be shy, comments are welcome.</p><p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/simpleform-1-4-is-out/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm 1.3: more HTML 5 goodness and new stuff</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/</link>
+					<comments>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 08 Dec 2010 19:49:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1529</guid>
+
+					<description><![CDATA[<p>We have been working on SimpleForm for some time since the last release and have got a lot of contributions from community. Now it is time for a new release with more HTML 5 compatibility plus some new cool features. So, without further ado, lets take a ride on the new stuff. HTML 5 One ... <a class="read-more-link" href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">»</a></p>
+<p>The post <a href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">SimpleForm 1.3: more HTML 5 goodness and new stuff</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We have been working on SimpleForm for some time since the last release and have got a lot of contributions from community. Now it is time for a new release with more HTML 5 compatibility plus some new cool features. So, without further ado, lets take a ride on the new stuff.</p>
+<h3>HTML 5</h3>
+<p>One of the most useful features coming in HTML 5, in my opinion, is the placeholder option. This option allows us to configure a text to be shown inside the input when it is empty. This is really nice to help the user while filling out forms. SimpleForm now gives us the possibility to pass in a placeholder option in the same way we are used to do with use hints:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, :label => 'Your username please' %>
+  <%= f.input :password, :hint => 'No special characters.' %>
+  <%= f.input :email, :placeholder => 'user@domain.com' %>
+  <%= f.button :submit %>
+<% end %>
+</pre>
+<p>As you can see here, the placeholder is given as String, but it can also be fetched from I18n, as labels/hints does.</p>
+<p>Another addition is the automatic lookup of min/max values from numericality validations, for <code>number</code> inputs. For instance:</p>
+<pre lang="ruby">
+class User
+  validates_numericality_of :age, :greater_than_or_equal_to => 18,
+    :less_than_or_equal_to => 99, :only_integer => true
+end
+</pre>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :age %>
+<% end %>
+</pre>
+<p>Would generate an input with type number, and the min/max attributes configured with 18 and 99, respectively.</p>
+<p>Besides that SimpleForm also adds:</p>
+<ul>
+<li>the <code>:required</code> html attribute for required inputs (it is retrieved automatically from your presence validations);</li>
+<li>the <code>:search</code> and <code>:tel</code> input types, with <code>:tel</code> mapping automatically for attributes matching <code>/phone/</code>.</li>
+</ul>
+<h3>Collections</h3>
+<p>From now on, radio and check box collections will wrap the input element inside the label, making it pretty straightforward to associate both elements. Besides that, SimpleForm now comes with two new configurations:</p>
+<ul>
+<li><code>collection_wrapper_tag</code> wraps the entire collection in the configured tag;</li>
+<li><code>item_wrapper_tag</code> wraps each item in the collection using the configured tag.</li>
+</ul>
+<p>An example:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.association :roles, :as => :check_boxes, 
+    :collection_wrapper_tag => :ul, :item_wrapper_tag => :li %>
+<% end %>
+</pre>
+<p>This should be kind of self explanatory =).</p>
+<h3>New input options</h3>
+<p>It&#8217;s now possible to give the <code>:disabled</code> option straight to the input, which will also add the <code>disabled</code> css class to both input and wrapper elements:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email, :disabled => true %>
+<% end %>
+</pre>
+<p>And also the <code>:components</code> option, which will only render the given components in the given order:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  # Generates the label after the input, and ignores errors/hints/placeholders
+  <%= f.input :email, :components => [:input, :label] %>
+<% end %>
+</pre>
+<h3>New configuration options</h3>
+<p>If you are not using any label / hint / placeholder with I18n, you can now completely disable the translation lookup of these components by setting the <code>config.translate</code> to <code>false</code> in your SimpleForm initializer. This should improve performance a bit in these cases.</p>
+<p>Another nice improvement is the ability to add custom input mappings to SimpleForm. If you ever needed to map a specific attribute to a default input, now you can:</p>
+<pre lang="ruby">
+  config.input_mappings = { /_count$/ => :integer }
+</pre>
+<p>This configuration expects a hash containing a regexp to match as key, and the input type that will be used when the field name matches the regexp as value. In this example we match all attributes ending with <code>_count</code>, such as <code>comments_count</code>, to be rendered as integer input by SimpleForm.</p>
+<h3>New docs and mailing list</h3>
+<p>SimpleForm now has its own <a href="http://groups.google.com/group/plataformatec-simpleform" title="SimpleForm Google Group">google group</a> where you can ask questions, search for already answered questions and also help others. Besides that, you can also navigate and search the entire <a href="http://rubydoc.info/github/plataformatec/simple_form/master/frames" title="SimpleForm RDoc">RDoc</a>.</p>
+<h3>Wrapping up</h3>
+<p>As you can see, there are plenty of new and cool stuff in this release. We encourage you to take a look at the <a href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc" title="SimpleForm Changelog">CHANGELOG</a> and also review the <a href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc" title="SimpleForm Readme">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a href="https://github.com/plataformatec/simple_form/contributors" title="SimpleForm contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>What about you? Do you want any cool feature in SimpleForm? Help us improve it by forking and sending us a pull request, we will be really glad to apply it. We hope to see your name in the contributors page soon!</p>
+<p>Finally, in your opinion, what is the coolest feature SimpleForm has? And what idea you have you might want to be added to SimpleForm? Feel free to comment <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">SimpleForm 1.3: more HTML 5 goodness and new stuff</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

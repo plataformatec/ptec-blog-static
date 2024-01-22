@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Floating Point and currency	</title>
+	<atom:link href="/2014/09/floating-point-and-currency/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/09/floating-point-and-currency/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 07 Oct 2014 00:06:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: IrioMk		</title>
+		<link>/2014/09/floating-point-and-currency/comment-page-1/#comment-1442</link>
+
+		<dc:creator><![CDATA[IrioMk]]></dc:creator>
+		<pubDate>Tue, 07 Oct 2014 00:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4168#comment-1442</guid>
+
+					<description><![CDATA[I published an article calling attention for the same (initial) point with days of difference.
+
+If you find it worthy: http://blog.iriomk.com/post/98382401723/ruby-numeric-types-dos-and-do-nots]]></description>
+			<content:encoded><![CDATA[<p>I published an article calling attention for the same (initial) point with days of difference.</p>
+<p>If you find it worthy: <a href="http://blog.iriomk.com/post/98382401723/ruby-numeric-types-dos-and-do-nots" rel="nofollow ugc">http://blog.iriomk.com/post/98382401723/ruby-numeric-types-dos-and-do-nots</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rcillo		</title>
+		<link>/2014/09/floating-point-and-currency/comment-page-1/#comment-1438</link>
+
+		<dc:creator><![CDATA[rcillo]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2014 13:46:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4168#comment-1438</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/09/floating-point-and-currency/comment-page-1/#comment-1436&quot;&gt;darkside&lt;/a&gt;.
+
+Thanks for the tip. It&#039;s always good to have options ]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/09/floating-point-and-currency/comment-page-1/#comment-1436">darkside</a>.</p>
+<p>Thanks for the tip. It&#8217;s always good to have options </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Guest		</title>
+		<link>/2014/09/floating-point-and-currency/comment-page-1/#comment-1437</link>
+
+		<dc:creator><![CDATA[Guest]]></dc:creator>
+		<pubDate>Mon, 15 Sep 2014 13:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4168#comment-1437</guid>
+
+					<description><![CDATA[Great. Thanks for the tip. It&#039;s always good to have options ]]></description>
+			<content:encoded><![CDATA[<p>Great. Thanks for the tip. It&#8217;s always good to have options </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: darkside		</title>
+		<link>/2014/09/floating-point-and-currency/comment-page-1/#comment-1436</link>
+
+		<dc:creator><![CDATA[darkside]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 14:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4168#comment-1436</guid>
+
+					<description><![CDATA[https://github.com/RubyMoney/money-rails makes running with Integers quite easy]]></description>
+			<content:encoded><![CDATA[<p><a href="https://github.com/RubyMoney/money-rails" rel="nofollow ugc">https://github.com/RubyMoney/money-rails</a> makes running with Integers quite easy</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

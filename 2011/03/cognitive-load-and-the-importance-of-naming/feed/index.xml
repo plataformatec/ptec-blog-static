@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Cognitive load and the importance of naming	</title>
+	<atom:link href="/2011/03/cognitive-load-and-the-importance-of-naming/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/03/cognitive-load-and-the-importance-of-naming/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 03 Mar 2011 23:53:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Vinicius Baggio Fuentes		</title>
+		<link>/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1106</link>
+
+		<dc:creator><![CDATA[Vinicius Baggio Fuentes]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 23:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1901#comment-1106</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1105&quot;&gt;Benoit Daloze&lt;/a&gt;.
+
+Corrected. Thanks! :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1105">Benoit Daloze</a>.</p>
+<p>Corrected. Thanks! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vinicius Baggio Fuentes		</title>
+		<link>/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1107</link>
+
+		<dc:creator><![CDATA[Vinicius Baggio Fuentes]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 23:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1901#comment-1107</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1105&quot;&gt;Benoit Daloze&lt;/a&gt;.
+
+Corrected. Thanks! :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1105">Benoit Daloze</a>.</p>
+<p>Corrected. Thanks! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Benoit Daloze		</title>
+		<link>/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1105</link>
+
+		<dc:creator><![CDATA[Benoit Daloze]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 22:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1901#comment-1105</guid>
+
+					<description><![CDATA[Nice post !
+s/comprehention/comprehension/ ;)]]></description>
+			<content:encoded><![CDATA[<p>Nice post !<br />
+s/comprehention/comprehension/ 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jack Kinsella		</title>
+		<link>/2011/03/cognitive-load-and-the-importance-of-naming/comment-page-1/#comment-1104</link>
+
+		<dc:creator><![CDATA[Jack Kinsella]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 19:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1901#comment-1104</guid>
+
+					<description><![CDATA[Another aspect of cognitive load is unnecessarily complex logic. A good example is double negatives which are sadly far too common - both in code and further afield. ]]></description>
+			<content:encoded><![CDATA[<p>Another aspect of cognitive load is unnecessarily complex logic. A good example is double negatives which are sadly far too common &#8211; both in code and further afield. </p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

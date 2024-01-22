@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>subdomain « Plataformatec Blog</title>
+	<atom:link href="/tag/subdomain/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 16 Dec 2009 22:06:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Subdomains and sessions to the rescue!</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/</link>
+					<comments>/2009/12/subdomains-and-sessions-to-the-rescue/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 16 Dec 2009 18:48:31 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[session]]></category>
+		<category><![CDATA[subdomain]]></category>
+		<guid isPermaLink="false">/?p=481</guid>
+
+					<description><![CDATA[<p>We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several ... <a class="read-more-link" href="/2009/12/subdomains-and-sessions-to-the-rescue/">»</a></p>
+<p>The post <a href="/2009/12/subdomains-and-sessions-to-the-rescue/">Subdomains and sessions to the rescue!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several subdomains, as a user can access other accounts when allowed.</p>
+<p>After some research we decided to go with the <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> gem, which is great to give your application the ability of handling subdomains. Another great resource we have used is Ryan Bates&#8217; <a title="Subdomains Railscast" href="http://railscasts.com/episodes/123-subdomains">screencast</a> about the subject. But they did not solve our problem completely, so here we are going to document a few steps to help you get up and running easily with subdomains and sessions.</p>
+<h3>Setup a development environment</h3>
+<p>As we need to test all the subdomain stuff in our application while developing it, we are going to need some extra setup for our development environment. However, our local machine knows nothing about subdomains, so how do we do that? We need to tell our machine which subdomains we will be using, manually. You can do this by editing your hosts file, located at <code>/etc/hosts</code>, and configuring the subdomains you are goint to need:</p>
+<pre>127.0.0.1     localhost local.host test.local.host subdomain.local.host xxx.local.host</pre>
+<p>We are making explicit all domains and subdomains that will point to our local machine, under IP 127.0.0.1. By default <code>localhost</code> was already there, so we have just added the needed subdomains. When working with this subdomains I personally like to create a domain like <code>my_app.local</code>, and point subdomains to it like <code>sub.my_app.local</code>. There are some other ways to create this setup, but we would rather go with this due to readability and easy configuration.</p>
+<p>To make sure everything is fine we need to clear our dns cache:</p>
+<p>Under linux:</p>
+<pre>/etc/init.d/dns-clean start</pre>
+<p>Under OS X:</p>
+<pre>dscacheutil -flushcache</pre>
+<p>And that is it. Restart your application and try it out. Access it under the new domain or subdomain you have created, for instance <code>local.host:3000</code>, to see if everything is working fine.</p>
+<p>You may be asking why we could not be using just <code>subdomain.localhost</code> instead of <code>subdomain.local.host</code> as subdomain configuration. And you are right, we could use it, and it should work fine to access subdomains. However, there are some &#8220;bumps in the road&#8221; while sharing sessions, so keep reading!</p>
+<h3>Installing subdomain-fu</h3>
+<p><a href="http://gemcutter.org/gems/subdomain-fu">Subdomain-fu</a> is easy to install as any other gem:</p>
+<pre>gem install subdomain-fu</pre>
+<p>Configure it in your environment:</p>
+<pre lang="ruby">config.gem 'subdomain-fu', :version => '0.5.3'</pre>
+<p>Then we are going to need a config file to setup <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a>, with basically the following code:</p>
+<pre lang="ruby">SubdomainFu.tld_sizes = {
+  :development => 1, # local.host
+  :test => 1,
+  :production => 1 # my_app.com
+}</pre>
+<p>This config file can be placed at <code>config/initializers</code> folder. Basically it tells <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> the sizes of the domain for each environment, i.e. 0 for <code>localhost</code>, 1 for <code>foo.com</code>, 2 for <code>foo.bar.com</code>.</p>
+<p>The gem gives you some special powers through the <code>current_subdomain</code> method in your controllers, and also some adds to your routes like using the <code>:subdomain</code> option: <code>root_url(:subdomain => 'foo') #=> foo.local.host.</code></p>
+<h3>Routing</h3>
+<p>Chances are you are going to need specific actions to be handled only under subdomains, but not in the root domain or a specific subdomain, like <code>admin.foo.com</code>. And <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> will help you here: you just need to setup your routes using the :subdomain condition, like the example below:</p>
+<pre lang="ruby">ActionController::Routing::Routes.draw do |map|
+  map.with_options :conditions => { :subdomain => /^[A-Za-z0-9-]+$/ } do |app|
+    app.resources :posts
+    app.root :controller => 'posts'
+  end
+  # ... other routes
+end</pre>
+<p>This will ensure your routes require a subdomain to be recognized.</p>
+<p>Finally, everything is perfect, you are now able to test subdomains in your environment, create some filters to ensure the subdomain exists and your user has access to it, sessions work as expected, and so on, right? Nope. We are not ready yet. Sessions are our pain.</p>
+<h3>Sharing sessions between subdomains</h3>
+<p>Due to security issues, browsers do not allow sharing cookies using only <code>.com</code>, just under the complete domain like <code>foo.com</code>, and of course it is totally right. Could you imagine sharing sessions between <code><a href="http://gmail.com/">gmail.com</a></code> and <code><a href="http://hotmail.com/">hotmail.com</a></code>, just because they are both <code>.com</code>? I could not. The same rule applies while trying to share sessions using <code>localhost</code> only. Browsers will not allow you sharing sessions between subdomains under <code>localhost</code>, and some weird issues may appear. We have had <code>AuthenticityToken</code> errors while trying to use <code>localhost</code>.</p>
+<p>Anyway, we were smart enough to create our own subdomain configuration using <code>local.host</code> instead of <code>localhost</code>, remember? Our configuration actually simulates a full domain like the <code>foo.com</code> example instead of <code>.com</code> only. Think this way: <code>localhost => com</code>, <code>local.host => foo.com</code>.</p>
+<p>We are going to use this setup now. To enable sharing sessions in your application you need to configure the <code>:domain</code> option in your session config hash, for each environment. Here is how to do it in development config:</p>
+<pre lang="ruby">config.action_controller.session = { :domain => '.local.host' }</pre>
+<p>Please note the dot prepended to the domain. It will enable sharing sessions between all subdomains in your application. Think about it as <code>*.local.host</code>, including <code>local.host</code> itself. By doing this, you are now able to sign a user in one subdomain, or even the root domain, and redirect it to any other subdomain, for instance. The session will be kept and the user will stay signed in as expected.</p>
+<p>Do not forget to setup the production environment with the same config, pointing to the real domain of your application.</p>
+<h3>Testing</h3>
+<p>We are using <a href="http://cukes.info/">cucumber</a> in this application together with <a href="http://gemcutter.org/gems/celerity">celerity</a>/<a href="http://gemcutter.org/gems/culerity">culerity</a>, and at the beginning it was kind of pain to get it up and running. The first thing you must bear in mind is that you always have to setup the host you are testing. By default, cucumber uses host <code>example.com</code>. And that is okay for default Rails integration tests, except when we use &#8220;real browsers&#8221; tests like <a href="http://gemcutter.org/gems/celerity">celerity</a> or <a href="http://seleniumhq.org/">selenium</a>. You have to set it up by yourself. Just create two steps like this:</p>
+<pre lang="ruby">Given /^I am visiting the root application$/ do
+  host! 'local.host'
+end
+
+Given /^I am visiting the subdomain "([^\"]*)"$/ do |subdomain|
+  host! "#{subdomain}.local.host"
+end</pre>
+<p>And use then inside your features:</p>
+<pre lang="ruby">Given I am visiting the subdomain "my_sub"</pre>
+<p>That should do the trick. Make sure you use only subdomains you have configured in your hosts file, or you will get some weird errors =).</p>
+<h3>Mailers</h3>
+<p>We had some issues while creating mailers with links pointing to the subdomain. As our users has many subdomains, we don&#8217;t know where we should point the user inside the mailer, due to default lack of request context as we have in the controller. To solve this we could not use any class accessor, because they are not thread safe. So we decided to go with <code>Thread.current</code>. Just create a filter in your application controller:</p>
+<pre lang="ruby">before_filter :set_current_subdomain
+protected
+  def set_current_subdomain
+    Thread.current[:current_subdomain] = current_subdomain
+  end</pre>
+<p>Then create a new helper called <code>MailHelper</code> inside your <code>app/helpers</code> folder, adding a method to obtain the subdomain:</p>
+<pre lang="ruby">def current_subdomain
+  Thread.current[:current_subdomain]
+end</pre>
+<p>This <code>MailHelper</code> is a module provided by Rails which is included in all mailers. Now you are able to create links inside your mailers using the <code>current_subdomain</code> method, just like you do in your controllers:</p>
+<pre lang="ruby">link_to "Go to application", root_url(:subdomain => current_subdomain)</pre>
+<h3>What about Devise?</h3>
+<p>Devise has been doing a great work while authenticating a user under a specific subdomain. There are two cases to be handled: the first one is when your <code>User</code> model has a <code>subdomain</code> attribute and you want the authentication process take into account this <code>subdomain</code> with the <code>current_subdomain</code>. First of all you need to update devise call inside your user model to add the <code>:authentication_keys</code> option:</p>
+<pre lang="ruby">devise :all, :authentication_keys => [:email, :subdomain]</pre>
+<p>This will tell devise to find the user based on both <code>subdomain</code> and <code>email</code>. Then you have to add the subdomain to your sign in form as a <code>hidden field</code>, so Devise will be able to get this information easily from params while authenticating the user:</p>
+<pre lang="ruby">f.hidden_field :subdomain, :value => current_subdomain</pre>
+<p>The second case happens when your subdomain data is inside another model associatied with the user, let&#8217;s say a user has many accesses. In addition to what we have done in the first case, we must override a class method from Devise to add our own condition for finding the user:</p>
+<pre lang="ruby">def self.find_for_authentication(conditions={})
+  conditions[:accesses] = { :subdomain => conditions.delete(:subdomain) }
+  find(:first, :conditions => conditions, :joins => :accesses)
+end</pre>
+<p>Devise is now totally capable of handling authentication based on subdomains. <strong>Remember</strong>: Devise is managing authentication, so it will not be able to do anything after the user signs in. Be sure to also add filters to your controllers to ensure a user will never access a subdomain it has no access.</p>
+<h3>Here we go!</h3>
+<p>A few steps are needed to get our development machine up and running to create an application using subdomains, but they are key steps to ensure you are not going to have problems while starting. </p>
+<p>What about you? Have you ever developed an application using subdomains? Have you run through any of these issues, or maybe another you want to share? Do you have any tip?</p>
+<div id="_mcePaste" style="overflow: hidden; position: absolute; left: -10000px; top: 1611px; width: 1px; height: 1px;"><a href="http://gemcutter.org/gems/celerity">celerity</a>/<a href="http://gemcutter.org/gems/culerity">culerity</a></div><p>The post <a href="/2009/12/subdomains-and-sessions-to-the-rescue/">Subdomains and sessions to the rescue!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/12/subdomains-and-sessions-to-the-rescue/feed/</wfw:commentRss>
+			<slash:comments>33</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

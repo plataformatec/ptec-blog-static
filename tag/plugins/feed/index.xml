@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>plugins « Plataformatec Blog</title>
+	<atom:link href="/tag/plugins/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 18:07:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>SimpleForm: forms made easy</title>
+		<link>/2010/06/simpleform-forms-made-easy/</link>
+					<comments>/2010/06/simpleform-forms-made-easy/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 29 Jun 2010 20:01:53 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the ... <a class="read-more-link" href="/2010/06/simpleform-forms-made-easy/">»</a></p>
+<p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the designer created with similar forms, duplicating the code. But we don&#8217;t like code duplication, we weren&#8217;t feeling comfortable with it. So we decided to move on and create a tool to help us, that should be flexible enough to let us define the markup that fits better for each application, or even no extra markup at all. Here is SimpleForm!</p>
+<h3>SimpleForm inputs</h3>
+<p>From the README:</p>
+<blockquote><p>Forms made easy (for Rails)!</p>
+<p>SimpleForm aims to be as flexible as possible while helping you with powerful components to create your forms. The basic goal of simple form is to not touch your way of defining the layout, letting you find the better design for your eyes. Good part of the DSL was inherited from Formtastic, which we are thankful for and should make you feel right at home.</p></blockquote>
+<p>As the README says, <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">SimpleForm is a tool to help you build forms easily in Rails</a>. Let&#8217;s see some examples:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :username, :label =&gt; 'Your username please' %&gt;
+  &lt;%= f.input :password, :hint =&gt; 'No special characters.' %&gt;
+  &lt;%= f.input :remember_me, :as =&gt; :boolean %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>There are plenty of things going on here: we create a form using <code>simple_form_for</code> helper, then we use the <code>:input</code> method to create input elements based on column type. For instance, <code>:username</code> will create a default text input, while <code>:password</code> attribute will render an input type password. For the <code>:username</code> attribute, we are specifying a label manually. For <code>:password</code>, the label will be taken from I18n, and we are adding a hint message to the field. For <code>:remember_me</code>, we are explicitly saying to render it as a checkbox, using the <code>:as => :boolean</code> option (that is the default for boolean attributes). Also, there is a <code>button</code> helper that simply delegates to Rails helpers, in this case <code>submit</code>.</p>
+<p>The output for a new <code>@user</code> would be:</p>
+<pre><code class="html">&lt;form action="/users" class="simple_form user" id="new_user" method="post"&gt;
+  &lt;div class="input string required"&gt;
+    &lt;label class="string required" for="user_username"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Your username please&lt;/label&gt;
+    &lt;input class="string required" id="user_username" maxlength="255" name="user[username]" size="50" type="text" /&gt;
+  &lt;/div&gt; 
+  &lt;div class="input password required"&gt;
+    &lt;label class="password required" for="user_password"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Password&lt;/label&gt;
+    &lt;input class="password required" id="user_password" name="user[password]" size="30" type="password" /&gt;
+    &lt;span class="hint"&gt;No special characters.&lt;/span&gt;
+  &lt;/div&gt; 
+  &lt;div class="input boolean optional"&gt;
+    &lt;label class="boolean optional" for="user_remember_me"&gt; Remember me&lt;/label&gt;
+    &lt;input name="user[remember_me]" type="hidden" value="0" /&gt;
+    &lt;input class="boolean optional" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /&gt;
+  &lt;/div&gt; 
+  &lt;input id="user_submit" name="commit" type="submit" value="Create User" /&gt; 
+&lt;/form&gt; 
+</code></pre>
+<p>You may have noticed there is some additional css classes added to the markup, like <code>string</code> and <code>required</code>. They are added automatically by SimpleForm to help us style and plug some javascript in. There are specific css classes for each available input type. Also, pay some attention to the <code>label</code>: inside it there is an <code>abbr</code> tag with an asterisk (*) showing that the field is required. SimpleForm uses the new validations reflection API from Rails 3 to check if the attribute has the <code>presence</code> validator, and mark the field as required if so. And we are able to say that a field is required or disable the required mark, by passing the option <code>:required => true|false</code>.</p>
+<p>Furthermore, there is the <code>hint</code> tag for the <code>:password</code> attribute that SimpleForm creates based on the <code>:hint</code> option we have defined. Also notice that the gem has automatically added a <code>div</code> wrapper to each input, with the same css classes. SimpleForm allows us to configure this wrapper as well, using for instance <code>p</code> instead of <code>div</code>. We are going to see more about configuration later.</p>
+<p>SimpleForm is already prepared to generate some of the new HTML 5 input tags, such as <code>email</code>, <code>url</code> and <code>number</code> inputs:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :website, :as =&gt; :url %&gt;
+  &lt;%= f.input :email %&gt;
+  &lt;%= f.input :age, :hint =&gt; "This defaults to 'number' input based on field type" %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>Based on the attribute name, SimpleForm will generate <code>url</code> or <code>email</code> input types, and we can always set a specific type with the <code>:as</code> option. Numeric attributes will always be rendered as input type number.</p>
+<h3>Working with associations</h3>
+<p>SimpleForm adds a custom and straightforward method to render select tags for associations, called <code>association</code>. For now, consider our <code>User</code> belongs to a <code>Company</code>, and has and belongs to many <code>Roles</code>. Let&#8217;s go straight to the example:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :name %&gt;
+  &lt;%= f.association :company %&gt;
+  &lt;%= f.association :roles %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>It will detect the association type and render a <code>select</code> tag for choosing the company, listing all companies in the database, and another <code>select</code> for roles, with <code>multiple</code> option enabled.</p>
+<p>SimpleForm also has some add-ons, letting us render associations as a collection of radios or check boxes. Using the same example:</p>
+<pre><code class="ruby">  f.association :company, :as =&gt; :radio
+  f.association :roles, :as =&gt; :check_boxes
+</code></pre>
+<p>Now we are rendering a collection of radios for choosing the <code>Company</code>, and another collection of check boxes for choosing <code>Roles</code>.</p>
+<h3>Configuration</h3>
+<p>SimpleForm lets us do some customizations by running its install generator:</p>
+<pre><code>rails generate simple_form:install
+
+# Output
+  create  config/initializers/simple_form.rb
+  create  config/locales/simple_form.en.yml
+  create  lib/templates/erb/scaffold/_form.html.erb
+</code></pre>
+<p>As we can see, running this generator will copy an initializer file, responsible for configuring SimpleForm; a locale file, to let us change some I18n messages; and a form template inside our lib dir. This template will be used instead of the default Rails scaffold form template, so it will create our form already using SimpleForm. Easy, right?</p>
+<p>Let&#8217;s take a look at some configuration options:</p>
+<ul>
+<li><strong>components</strong>: defines the components used by the form builder. We can remove any of them, change the order, or add new ones. Defaults to <code>[ :label, :input, :hint, :error ]</code>.</li>
+<li><strong>hint_tag</strong>: tag used for hints, defaults to <code>span</code>.</li>
+<li><strong>error_tag</strong>: tag used for errors, defaults to <code>span</code>.</li>
+<li><strong>wrapper_tag</strong>: tag used as wrapper to all inputs, defaults to <code>div</code></li>
+<li><strong>label_text</strong>: determines how the label text should be generated altogether with the required text. It must be a lambda/proc that receives both label and required texts. Defaults to <code>"required label"</code>.</li>
+</ul>
+<p>There are a lot more options available in the initializer file, such as default input size and priority countries for generating country selects. Also, the locale file lets us determine the required text and mark, or even the entire required html tag.</p>
+<h3>Internationalization</h3>
+<p>SimpleForm is ready for I18n, supporting <code>labels</code> and <code>hints</code>. In addition, it lets us set different content for each action, <code>new</code> and <code>edit</code>. Here is an example locale file:</p>
+<pre><code class="yml">en:
+  simple_form:
+    labels:
+      user:
+        username: 'User name'
+        password: 'Password'
+        edit:
+          username: 'Change user name'
+          password: 'Change password'
+    hints:
+      user:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+</code></pre>
+<p>Simple, right? If it does not find any specific translation using I18n for the <code>label</code>, it will fallback to <code>human_attribute_name</code>.</p>
+<h3>Here we go!</h3>
+<p>SimpleForm has much more to offer. We would like to invite you to take a <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">better look at the examples and possibilities</a>. Remember, SimpleForm aims to be flexible and powerful to help you easily build forms, without saying how you should create your markup.</p>
+<p>Also, feel free to explore the source code and extend SimpleForm even further. Since it&#8217;s based on components, creating a new component which moves the current hints to inside the input (using javascript or the new placehoder attribute in HTML 5), should be easy!</p>
+<p>It&#8217;s worth saying SimpleForm is Rails 3 compatible in the master branch. If you are using Rails 2.3.x, <a href="http://github.com/plataformatec/simple_form/tree/v1.0" title="SimpleForm for Rails 2.3.x">there is a v1.0 branch and version</a> that you might want to take a look.</p>
+<p>SimpleForm has been helping us a lot so far, we hope you enjoy it. Moreover, we would like to enjoy other tools that help your productivity day by day, please leave a comment and let us know, we would appreciate a lot!</p><p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/06/simpleform-forms-made-easy/feed/</wfw:commentRss>
+			<slash:comments>46</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Authentication is with Devise!</title>
+		<link>/2010/04/authentication-is-with-devise/</link>
+					<comments>/2010/04/authentication-is-with-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Mon, 12 Apr 2010 19:43:29 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[engine]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railscasts]]></category>
+		<guid isPermaLink="false">/?p=862</guid>
+
+					<description><![CDATA[<p>Two months ago we were celebrating Devise&#8217;s birthday. We were not talking about its age, Devise had just 4 months of life, but we were happy to reach the 1.0 release. Today we are celebrating again! We are very proud and glad to have Devise in its first Railscast! Ryan Bates has done a great ... <a class="read-more-link" href="/2010/04/authentication-is-with-devise/">»</a></p>
+<p>The post <a href="/2010/04/authentication-is-with-devise/">Authentication is with Devise!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Two months ago we were celebrating <a href="/2010/02/happy-birthday-devise/">Devise&#8217;s birthday</a>. We were not talking about its age, Devise had just 4 months of life, but we were happy to reach the 1.0 release.</p>
+<p>Today we are celebrating again! We are very proud and glad to have <a href="http://github.com/plataformatec/devise">Devise</a> in its first <a href="http://railscasts.com/episodes/209-introducing-devise">Railscast</a>! <a href="http://github.com/ryanb">Ryan Bates</a> has done a great job explaining how to get <a href="http://github.com/plataformatec/devise">Devise</a> up and running in a Rails 3 application, showing how to install <a href="http://github.com/plataformatec/devise">Devise</a> and choose the basic modules you want to use in your application.</p>
+<p>We also made a promise to you: get <a href="http://github.com/plataformatec/devise">Devise</a> up and running for Rails 3. We keep walking this road, each Rails beta version released we are releasing a new compatible Devise version. For the time being, we have Devise 1.1.rc0, a release candidate version, compatible with Rails 3 beta 2.</p>
+<p>We are looking forward to see the second part of <a href="http://railscasts.com/episodes/209-introducing-devise">Devise&#8217;s Railscast</a>, about how to configure <a href="http://github.com/plataformatec/devise">Devise</a> to fit the needs of your application.</p>
+<p>Give <a href="http://github.com/plataformatec/devise">Devise</a> a try. You can post your questions to the <a href="http://groups.google.com/group/plataformatec-devise">mailing list</a> and, if you find any issue, please use the <a href="http://github.com/plataformatec/devise/issues">Github Issue Tracker</a>. Don’t forget to post information about your environment (like Devise, Warden and Rails versions) including the stack trace if you are facing an error, to help us help you =). Enjoy!</p>
+<p><strong>Update:</strong> <a href="http://railscasts.com/">Railscasts</a> just released the second part of Devise screencast, Customizing Devise, going through Devise configuration options. <a href="http://railscasts.com/episodes/210-customizing-devise">Check it out</a>!</p><p>The post <a href="/2010/04/authentication-is-with-devise/">Authentication is with Devise!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/authentication-is-with-devise/feed/</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Show your objects baby!</title>
+		<link>/2010/03/show-your-objects-baby/</link>
+					<comments>/2010/03/show-your-objects-baby/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 10 Mar 2010 19:03:05 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[show_for]]></category>
+		<guid isPermaLink="false">/?p=817</guid>
+
+					<description><![CDATA[<p>We have been having some projects lately that needed a lot of admin CRUDs and pages showing a list of attributes, and we were getting bored of copy and paste code like this in our show pages, for every single attribute: Name We had already created some helper to do the work for us, but ... <a class="read-more-link" href="/2010/03/show-your-objects-baby/">»</a></p>
+<p>The post <a href="/2010/03/show-your-objects-baby/">Show your objects baby!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We have been having some projects lately that needed a lot of admin CRUDs and pages showing a list of attributes, and we were getting bored of copy and paste code like this in our show pages, for every single attribute:</p>
+<pre lang="ruby">
+<p>
+  <strong class="label">Name</strong><br />
+  <%= @person.name %>
+</p>
+</pre>
+<p>We had already created some helper to do the work for us, but having this helper being copied from one project to another wasn&#8217;t that DRY. That&#8217;s when we decided to create <a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a>.</p>
+<p><a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> is a DSL to help you showing a list of attributes, with I18n, perfect for show pages in CRUD interfaces. It allows you to replace code/html duplication in your views using a nice syntax. Let&#8217;s see what we can do.</p>
+<h3>Attributes</h3>
+<p>Let&#8217;s imagine we have a Person model, which has first_name, last_name, age, photo, and confirmed attributes. The following lines show a list of values for a specific person:</p>
+<pre lang="ruby">
+<% show_for @person do |p| %>
+  <%= p.attribute :first_name %>
+  <%= p.attribute :last_name %>
+  <%= p.attribute :confirmed? %>
+  <%= p.attribute :created_at, :format => :short %>
+  <%= p.attribute :age, :if_blank => "No age" %>
+
+  <% p.attribute :photo do %>
+    <%= image_tag(@person.photo_url) %>
+  <% end %>
+<% end %>
+</pre>
+<p>Here is an example output you will get:</p>
+<pre lang="html">
+<div class="show_for person" id="person_1">
+  <p class="wrapper person_first_name"><strong class="label">First name</strong><br />Carlos</p>
+  <p class="wrapper person_last_name"><strong class="label">Last name</strong><br />Antonio</p>
+  <p class="wrapper person_confirmed"><strong class="label">Confirmed?</strong><br />Yes</p>
+  <p class="wrapper person_created_at"><strong class="label">Created at</strong><br />08 Mar 11:30</p>
+  <p class="wrapper person_age"><strong class="label">Age</strong><br />24</p>
+  <p class="wrapper person_photo"><strong class="label">Photo</strong><br />
+    <img decoding="async" alt="Rails" src="/images/rails.png?1268047643" />
+  </p>
+</div>
+</pre>
+<p>As you can see, you are going to get a default html markup, with classes and ids to help you design with CSS. And if you noticed, we are using extra options in some attributes, lets take a look at some of them:</p>
+<ul>
+<li><code>:format</code> lets you pass any format that will be used together with i18n, for date/time attributes only, as you would use with the <code>l</code> helper.</li>
+<li><code>:if_blank</code> specifies what to show if the attribute is blank. It may have a default value from i18n.</li>
+<li><code>do...end</code>: using blocks you can handle the content for that specific attribute by yourself, as we have done in this example for the <code>photo</code> attribute.</li>
+</ul>
+<p>Boolean attributes, as our <code>:confirmed</code>, also have a default for <code>true</code> and <code>false</code> values, and can be configured through i18n. If you want to say &#8220;Yup&#8221; and &#8220;Nope&#8221; instead of &#8220;Yes&#8221; and &#8220;No&#8221; respectively, just change your i18n file. You can also pass a <code>:escape</code> option to not escape the value (<code>true</code> by default).</p>
+<h3>Associations</h3>
+<p><a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> also works with associations. For instance, we can easily add that a Person belongs to a City with a name attribute and that it has and belongs to many Tags. To handle the former, we can do:</p>
+<pre lang="ruby">
+<%= p.association :city %>
+</pre>
+<p><a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> will guess the right attribute to show by looking into all possibilities configured in <code>ShowFor.association_methods</code> and in this case choosing :name. But of course, you can change it as you need, on-the-fly:</p>
+<pre lang="ruby">
+<%= p.association :city, :using => :full_name %>
+<%= p.attribute :full_name, :in => :city %>
+</pre>
+<p>Both calls above will have the same output, just choose the one which suits you better. </p>
+<p>Handling collections is easy as belongs_to associations. You can just pass the association to <a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> and it will know whether it&#8217;s a collection or not, generating a list of elements using <code>ul</code> and <code>li</code> tags.</p>
+<pre lang="ruby">
+<%= p.association :tags %>
+</pre>
+<p>However, if you want to render the collection inline, you can use :to_sentence or :join as options:</p>
+<pre lang="ruby">
+<%= p.association :tags, :to_sentence => true %>
+<%= p.association :tags, :join => ',' %>
+</pre>
+<p>It&#8217;s also possible to pass a block to the collection. <a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> will create the wrapper tag (<code>ul</code> by default in this case) and will <code>yield</code> each element in the collection for you to handle it:</p>
+<pre lang="ruby">
+<% a.association :tags do |tag| %>
+  <li><%= link_to tag.name, tag %></li>
+<% end %>
+</pre>
+<h3>Labels</h3>
+<p>You may have noticed <a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> has a default label using the <code>strong</code> html tag. It also exposes you this as a  helper, so you can use it whenever you wish:</p>
+<pre lang="ruby">
+  <%= p.label :first_name %>
+  <%= p.label :age, :id => 'person_age' %>
+
+  <strong class="label">First name</strong>
+  <strong class="label" id="person_age">Age</strong>
+</pre>
+<h3>Installation</h3>
+<p><a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> is already compatible with Rails 3, at the time of this writing in version 0.2.0. You can just follow the instructions in the <a href="http://github.com/plataformatec/show_for/blob/master/README.rdoc">README</a> to get it installed.</p>
+<p>If you are using Rails 2.3.x, take a look at the <a href="http://github.com/plataformatec/show_for/tree/v0.1">0.1 branch</a>, and follow the installations in the <a href="http://github.com/plataformatec/show_for/blob/v0.1/README.rdoc">README</a> for this branch to get it up and running.</p>
+<p>Please don&#8217;t forget to run the generator and take a look at the initializer, it will allows you configure several parts of <a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a>.</p>
+<pre lang="ruby">
+script/generate show_for_install
+</pre>
+<h3>Closing</h3>
+<p><a href="http://github.com/plataformatec/show_for" title="ShowFor - Wrap your objects with a helper to easily show them">ShowFor</a> helps you to show your objects easily with a default html markup, and can be totally configured to suit your needs. It has been helping us in every project, and we hope it may help you too. If you have any doubt, please take a look at the <a href="http://github.com/plataformatec/show_for/blob/master/README.rdoc">README</a>, there are a lot of examples and documentation there.</p>
+<p>And what about you? Do you have any helper you use every single day that might be transformed in a plugin/gem? Do not hesitate on doing this, we would be glad to see your work.</p>
+<p>Enjoy!</p><p>The post <a href="/2010/03/show-your-objects-baby/">Show your objects baby!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/03/show-your-objects-baby/feed/</wfw:commentRss>
+			<slash:comments>49</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Happy Birthday Devise</title>
+		<link>/2010/02/happy-birthday-devise/</link>
+					<comments>/2010/02/happy-birthday-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2010 19:05:24 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[engine]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=746</guid>
+
+					<description><![CDATA[<p>Today we are celebrating Devise&#8216;s birthday. But wait, if you have started watching Devise since the beginning you may be asking: has Devise already completed one year of life? Nope. Today we are completing exactly 4 months since Devise was released at Rails Summit Latin America 2009. And we are very proud and glad to ... <a class="read-more-link" href="/2010/02/happy-birthday-devise/">»</a></p>
+<p>The post <a href="/2010/02/happy-birthday-devise/">Happy Birthday Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we are celebrating <a href="http://github.com/plataformatec/devise">Devise</a>&#8216;s birthday. But wait, if you have started watching <a href="http://github.com/plataformatec/devise">Devise</a> since the beginning you may be asking: has <a href="http://github.com/plataformatec/devise">Devise</a> already completed one year of life? Nope. Today we are completing exactly 4 months since <a href="http://github.com/plataformatec/devise">Devise</a> was <a href="/2009/10/thor-e-devise-no-rails-summit-latin-america-2009/">released at Rails Summit Latin America 2009</a>. And we are very proud and glad to say that we have just reached <a href="http://github.com/plataformatec/devise/commit/4bfbeea7e6e6f78503abf5b59571a316a7a72158">version 1.0</a>! Yeah! Let&#8217;s celebrate and talk a bit about history.</p>
+<h3>The beginning</h3>
+<p>We decided to build <a href="http://github.com/plataformatec/devise">Devise</a> based on some requirements we had in a project last year. The majority of our projects usually require an admin interface to configure the application with some CRUD information. And in this specific project, we were needing two different roles in the same application, the admin itself with all its powers to manage the application, and the end users that should be signed in to do some stuff inside the application. Usually only one model would be required in this situation, with some &#8220;type&#8221; column or flag to determine if the user is an admin or not, right? Okay, but we didn&#8217;t like this approach that much. So we started looking at some of the possibilities:</p>
+<ul>
+<li><strong><a href="http://github.com/binarylogic/authlogic">Authlogic</a></strong>: a really great piece of code and functionality, but a bit messy by handling the session in a model. It also only handles the model part.</li>
+<li><strong><a href="http://github.com/thoughtbot/clearance">Clearance</a></strong>: full stack, Rails Engine, extra modules, everything we needed. However, packaged with a User model and without the ability to customize it.</li>
+</ul>
+<p>Okay, we could pick one of these and with a bit of extra work we would achieve our requirements. But would we need to do it every time this situation happens? We said no. It&#8217;s not DRY enough. And we like DRY. So <a href="http://github.com/plataformatec/devise">Devise</a> was born.</p>
+<p>The main objective of the first <a href="http://github.com/plataformatec/devise">Devise</a> version was to get up and running the entire sign in process, including password recovery and confirmation stuff. And everything should work with different roles, which mean you could easily plug and play an Admin, User, Account, or whichever role you needed, in your application, without much effort. And we had a deadline: <a href="http://www.railssummit.com.br/">Rails Summit</a>. It took almost 1 month of work before <a href="http://www.railssummit.com.br/">Rails Summit</a>. I still remember the days before the event, we putting a lot of effort to have <a href="http://github.com/plataformatec/devise">Devise</a> up and running, and the <a href="http://github.com/plataformatec/devise/blob/master/README.rdoc">README</a> being written during the event. So, we were ready there and presenting <a href="http://github.com/plataformatec/devise">Devise</a> to the world.</p>
+<h3>How it works</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> was born with the intuit of handling different roles without effort, automatically, and it is achieved with Rails Engines. In addition, <a href="http://github.com/plataformatec/devise">Devise</a> is build in top of <a href="http://github.com/hassox/warden">Warden</a>, a great rack authentication framework. It allowed us to be flexible enough and add different strategies, hooks, and modules easily. In short, <a href="http://github.com/plataformatec/devise">Devise</a>:</p>
+<ul>
+<li>Is Rack based;</li>
+<li>Is a complete MVC solution based on Rails Engines;</li>
+<li>Allows you to have multiple roles (or models/scopes) signed in at the same time;</li>
+<li>Is based on a modularity concept: use just what you really need.</li>
+</ul>
+<h3>The road so far</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> has started with the basic modules needed for that specific application: </p>
+<ul>
+<li><strong>Authenticatable</strong>: responsible for signing users in through a basic login form, handling password validation and authentication.</li>
+<li><strong>Confirmable</strong>: manages confirming users account.</li>
+<li><strong>Recoverable</strong>: handles password recovery.</li>
+<li><strong>Validatable</strong>: basic email and password validation.</li>
+</ul>
+<p>Okay, everything we needed were there. Everything else was in a wish list, nicely called TODO. And we decided from the beginning to not add features to <a href="http://github.com/plataformatec/devise">Devise</a> until us or somebody else really needed them. But people asked, people needed new features. And they were always there to help, to fork and fix a bug, to comment. We started soon to add new features, the first was:</p>
+<ul>
+<li><strong>Rememberable</strong>: handles signing users in automatically from cookies.</li>
+</ul>
+<p>After people were asking for easier ways to create their migrations, so we introduced a new module with <a href="http://github.com/plataformatec/devise">Devise</a> 0.2:</p>
+<ul>
+<li><strong>Migratable</strong>: hooks into <a href="http://ar.rubyonrails.org/">ActiveRecord</a> <a href="http://ar.rubyonrails.org/classes/ActiveRecord/Migration.html">migrations</a> to add helper methods for creating <a href="http://github.com/plataformatec/devise">Devise</a> colums. So you can do stuff like <code>t.authenticatable</code>, <code>t.confirmable</code> and so on.</li>
+</ul>
+<p>To help people getting up and running faster, we created some generators. Now they are:</p>
+<ul>
+<li><code>script/generate <strong>devise_install</code></strong>: create devise initializer file to enable some configs and copy default locale file.</li>
+<li><code>script/generate <strong>devise</strong> MyModel</code>: create a model with setup for <a href="http://github.com/plataformatec/devise">Devise</a>, routes and migration.</li>
+<li><code>script/generate <strong>devise_views</strong></code>: copy all <a href="http://github.com/plataformatec/devise">Devise</a> views to your app/views folder, so you can change it as needed.</li>
+</ul>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> 0.3 and 0.4 came soon after, with a lot of bug fixes in generators, I18n, initialization, some deprecations and a bunch of code refactored.</p>
+<p>Contributions from community were coming more and more. The first big contribution came with the addition of encryptors. Nowadays <a href="http://github.com/plataformatec/devise">Devise</a> supports encrypting passwords with SHA1, SHA512, and BCrypt. It has also support for using the same encryptors as <a href="http://github.com/binarylogic/authlogic">Authlogic</a>, <a href="http://github.com/thoughtbot/clearance">Clearance</a> and <a href="http://github.com/technoweenie/restful-authentication">Restful Authentication</a>, to help you migrating from these solutions.</p>
+<p>At this point we thought: okay, that should be enough. It wasn&#8217;t. People needed different ORMs, other than <a href="http://ar.rubyonrails.org/">ActiveRecord</a>. So we introduced support to <a href="http://mongomapper.com/">MongoMapper</a> and then we were reaching <a href="http://github.com/plataformatec/devise">Devise</a> 0.5.</p>
+<p>We were receiving a lot of issues with functional tests, so we introduced some test helpers to help people with the sign in/out process in this kind of tests called Devise::TestHelper.</p>
+<p>As applications grow, more roles may be needed. So we created the possibility to scope your views for each role/scope in your application. This way your user can have a different sign in view than the admin, for example. Reaching <a href="http://github.com/plataformatec/devise">Devise</a> 0.6, a lot of improvements on routes and <a href="http://datamapper.org/">DataMapper</a> support were added.</p>
+<p>We were full of nice ideas to add new features, and our TODO was bigger than we like. So we came up with:</p>
+<ul>
+<li><strong>Timeoutable</strong>: verify each request to timeout the user session after a certain period of inactivity, asking for credentials again.</li>
+<li><strong>Trackable</strong>: records how many times each user has signed in, last timestamps and ips.</li>
+</ul>
+<p>Also the loading process and ORM support received a lot of work before launching <a href="http://github.com/plataformatec/devise">Devise</a> 0.7.</p>
+<p>For <a href="http://github.com/plataformatec/devise">Devise</a> 0.8 we looked at tests for <a href="http://mongomapper.com/">MongoMapper</a> and the code got a great review. Also some work was done to get <a href="http://github.com/plataformatec/devise">Devise</a> up and running with latest version of <a href="http://github.com/hassox/warden">Warden</a> and its new features, such as serializers. We also extracted a new base module from Confirmable:</p>
+<ul>
+<li><strong>Activatable</strong>: allow setting up extra activation methods for your models.</li>
+</ul>
+<p>We were receiving a lot of feedback from the community, and then we merged a cool new feature:</p>
+<ul>
+<li><strong>Lockable</strong>: lock accounts based on a number of invalid sign in attempts.</li>
+</ul>
+<p>Following the same pattern from Rails in <a href="http://github.com/rails/rails/commit/fa575973">this commit</a> we moved flash messages to <code>:notice</code> and <code>:alert</code>, and released <a href="http://github.com/plataformatec/devise">Devise</a> 0.9. Step by step the 1.0 version was coming.</p>
+<h3>What is new</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> 1.0 introduces a lot of cool features. The community seems to be really appreciating <a href="http://github.com/plataformatec/devise">Devise</a>, and we&#8217;ve received another great contribution:</p>
+<ul>
+<li><strong>Token Authenticatable</strong>: validates authenticity of a user while signing in using an authentication token (also known as &#8220;single access token&#8221;).</li>
+</ul>
+<p>In addition, we created the two most requested features for <a href="http://github.com/plataformatec/devise">Devise</a>:</p>
+<ul>
+<li><strong>Registerable</strong>: handles sign up users through a registration process, and also editing/updating user info and deleting user account.</li>
+<li><strong>HTTP Authenticatable</strong>: http basic authentication.</li>
+</ul>
+<p>We also added the possibility to use Migratable while editing a table using <code>change_table</code>, among other fixes.</p>
+<h3>What comes next</h3>
+<p>We are preparing a new release of <a href="http://github.com/plataformatec/devise">Devise</a> fully compatible with Rails 3. It means <a href="http://github.com/plataformatec/devise">Devise</a> has now closed its development for new features in Rails 2.x. We are still going to maintain a 1.0 branch in github for bug fixes to keep everything up and running.</p>
+<h3>In the end</h3>
+<p>We would like to say thank you to everyone who has helped us achieve 1.0 version and who is using <a href="http://github.com/plataformatec/devise">Devise</a>, testing, creating issues, and giving all this feedback.</p>
+<p>Also, for those who were at <a href="http://www.railssummit.com.br/">Rails Summit</a> last year, we proposed something: get the biggest number of watchers on github as fast as possible! When we presented <a href="http://github.com/plataformatec/devise">Devise</a>, there were 7 watchers, and if I am right we were 4 of them. At the time of this writing we have 762 watchers. Yeah! I think I can take the risk and say we accomplished it. Thanks!</p>
+<p>Let&#8217;s celebrate <a href="http://github.com/plataformatec/devise">Devise</a> 1.0, and look forward to see <a href="http://github.com/plataformatec/devise">Devise</a> and Rails 3. Enjoy!</p>
+<p>Happy birthday <a href="http://github.com/plataformatec/devise">Devise</a>! </p><p>The post <a href="/2010/02/happy-birthday-devise/">Happy Birthday Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/02/happy-birthday-devise/feed/</wfw:commentRss>
+			<slash:comments>36</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Discovering Rails 3 generators</title>
+		<link>/2010/01/discovering-rails-3-generators/</link>
+					<comments>/2010/01/discovering-rails-3-generators/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2010 17:50:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[generators]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[thor]]></category>
+		<guid isPermaLink="false">/?p=654</guid>
+
+					<description><![CDATA[<p>This weekend during Rails Bugmash I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments! First, David Trasbo wrote a nice guide about how to make your first Rails 3 generator, it covers up all the basic steps including setting it up in a gem. ... <a class="read-more-link" href="/2010/01/discovering-rails-3-generators/">»</a></p>
+<p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This weekend during <a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments!</p>
+<p>First, David Trasbo wrote a nice guide about how to <a href="http://caffeinedd.com/guides/331-making-generators-for-rails-3-with-thor">make your first Rails 3 generator</a>, it covers up all the basic steps including setting it up in a gem. He also puts the deserved attention into <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, which contains most helpers you need in a generator, like <code>copy_file</code>, <code>template</code>, <code>create_file</code>, <code>empty_directory</code> and so on.</p>
+<p>On another post, Ben Scofield talks about <code>apply</code> method, which is also in <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, and <a href="http://benscofield.com/2009/09/application-templates-in-rails-3/">how to use it to dry your application templates</a>.</p>
+<p>Wait&#8230; so <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> is used both in generators and in Rails application templates? Exactly, Rails&#8217; new generators <strong>unifies both application templates and generators API into one</strong>. While <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> holds basic methods, all Rails specific methods like <code>environment</code>, <code>rakefile</code>, <code>generator</code> are in <a href="http://github.com/rails/rails/tree/master/railties/lib/rails/generators/actions.rb">Rails::Generators::Actions</a>. If you already wrote an application template, you will feel more at home when writing a Rails 3 generator.</p>
+<p>Paul Barry talks <a href="http://paulbarry.com/articles/2010/01/13/customizing-generators-in-rails-3" target="_blank">how easy it&#8217;s to customize your scaffold</a> to use Rspec, Haml and Factory Girl instead of Test::Unit, Erb and Fixtures. This all works because <strong>scaffold is just a meta generator which provides hooks</strong> for template engine, test framework, ORM and so forth. A good way to see the hooks system working is by running <code>script/generate scaffold --help</code> before and after Paul changes, so you can see exactly how generators options update depending on the configuration values you set. While I wrote Rspec generators used in the example, he implemented himself Haml and Factory Girl generators and they can all be used as example if you plan to build your own.</p>
+<p>Finally, Zigzag Chen wrote about <a href="http://zigzag.github.com/2010/01/18/customizing-your-scaffold-template-become-easier-in-rails3.html">templates customization</a> and how you can change your scaffold controller to use json instead of the xml format. New generators have source paths, so <strong>you can customize them simply by copying files to RAILS_ROOT/lib/templates</strong>.</p>
+<p><a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> was excellent to gather feedback and we also got some tickets on Lighthouse, mainly about how generators help can be improved for people starting with Rails. Many thanks to <a href="http://www.railsbridge.org/">Rails Bridge</a> and besides the posts linked above, there is <a href="http://guides.rails.info/generators.html" target="_blank">a generator guide</a>, which may help you get started and maybe write your own post as well. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/01/discovering-rails-3-generators/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How everyone is inserting technical debt in their applications</title>
+		<link>/2010/01/how-everyone-is-inserting-technical-debt-in-app/</link>
+					<comments>/2010/01/how-everyone-is-inserting-technical-debt-in-app/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2010 17:41:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[source code]]></category>
+		<guid isPermaLink="false">/?p=566</guid>
+
+					<description><![CDATA[<p>A couple days ago DHH twitted that they were getting Basecamp running on Ruby on Rails 3.0. This means Basecamp migrated from the first Rails release up to the edge one. So how come people say so frequently how hard is to update their applications from Rails 2.1 to Rails 2.2? And the answer is ... <a class="read-more-link" href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">»</a></p>
+<p>The post <a href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">How everyone is inserting technical debt in their applications</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A couple days ago <a href="http://twitter.com/dhh/status/7390494826" target="_blank">DHH twitted</a> that they were getting <a href="http://www.basecamphq.com/" target="_blank">Basecamp</a> running on <a href="http://github.com/rails/rails">Ruby on Rails 3.0</a>.</p>
+<p>This means <a href="http://www.basecamphq.com/" target="_blank">Basecamp</a> migrated from the first Rails release up to the edge one. So how come people say so frequently how hard is to update their applications from Rails 2.1 to Rails 2.2? And the answer is simple: <strong>plugins</strong>.</p>
+<p>Every time you are adding a plugin to your application, you are inserting some hundreds or even thousands of lines of code in your application, without knowing what it does exactly. And sometimes this becomes technical debt, mostly noticeable when you have to update to a new Rails version. And why is that? Because a lot of plugins are monkey patching Rails, so whenever Rails changes its internal API between releases, the plugin breaks.</p>
+<p>However, they are two simple actions you could do to improve your application maintainability, your ruby fu and also give a little back to the community.</p>
+<p>The first one is easy: <strong>check the source code of the plugin you are installing</strong>. Does it needs to monkey patch Rails code? Or even worse, Ruby classes? If so, how much? If too much, turn it down. Search for simpler solutions or even start one from scratch with just what you need, it will take more time, but you will learn a lot through the process.</p>
+<p>Another very compelling reason is that <strong>reading other people&#8217;s code is one of the best ways to learn</strong>. You will learn new things and probably see a few things which could be done better. And when it happens, write a patch!</p>
+<p>Besides, whenever something is going wrong in your application, you will know better where to start searching and you will eventually help plugins authors to track bugs down. And, in the worst scenario, if you have to update the plugin after a Rails release on your own because the plugin creator is no longer interested, you will be more capable to do so.</p>
+<p>Some people often choose plugin A because of features X, Y and Z. But whenever they have to add feature W, they are stuck, because the plugin code is a complete spaghetti. And all this time, they could have chosen plugin B, which just has feature X, but adding Y, Z and W would be quite easy. Reading the plugin&#8217;s source code is one way to ensure <strong>you are prioritizing code quality instead of features count</strong>.</p>
+<p>And the second step, guess what, is easy too: <strong>run the plugin test suite</strong>. Really, it will take just a couple minutes. You definitely don&#8217;t want to use a plugin where the test suite fails (or which does not have a test suite at all). Imagine that for some reason you need to add features to a plugin, how you will ensure you did not break other thing while doing so? Or even worse, imagine you have to update the plugin for a new Rails release. How can you ensure the plugin works on 3.0 if you cannot even ensure it works on 2.3?!</p>
+<p>Some already noted that I have patches applied in different plugins around GitHub. And this is the very reason: I check their code, send simple suggestions whenever it&#8217;s possible and most important of all, I choose well which plugins to use. So whenever I need to write a new feature because the application I&#8217;m working on needs it, I know it will be easy, since the plugin code is quite well written and test suite is green.</p>
+<p>It&#8217;s really two small efforts, which gives everyone, including you, a lot back.</p><p>The post <a href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">How everyone is inserting technical debt in their applications</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/01/how-everyone-is-inserting-technical-debt-in-app/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

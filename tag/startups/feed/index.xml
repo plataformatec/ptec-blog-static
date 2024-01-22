@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>startups « Plataformatec Blog</title>
+	<atom:link href="/tag/startups/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 16 Nov 2011 12:11:09 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Join other entrepreneurs! Startup Weekend is back to São Paulo</title>
+		<link>/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/</link>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Wed, 16 Nov 2011 12:11:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[startups]]></category>
+		<guid isPermaLink="false">/?p=2391</guid>
+
+					<description><![CDATA[<p>Startup Weekend is a global network of passionate leaders and entrepreneurs on a mission to inspire, educate, and empower individuals, teams and communities. And when they say global, they really mean it! There are Startup Weekends in Germany, France, Poland, Malasya, China, Uruguay, USA and many other countries, incluing Brazil. It is the time and ... <a class="read-more-link" href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">»</a></p>
+<p>The post <a href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">Join other entrepreneurs! Startup Weekend is back to São Paulo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Startup Weekend is a global network of passionate leaders and entrepreneurs on a mission to inspire, educate, and empower individuals, teams and communities. And when they say global, they really mean it! There are Startup Weekends in Germany, France, Poland, Malasya, China, Uruguay, USA and many other countries, incluing Brazil.</p>
+<p>It is the time and place where developers, designers, product managers and startup enthusiasts gather to build products and launch startups. And now, it is São Paulo&#8217;s turn! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The &#8216;paulista&#8217; edition will be hosted at ESPM in the next weekend (November 18th, 19th and 20th) and we will be there too. Don&#8217;t miss this opportunity. Bring your ideas and coding skills. Let&#8217;s share experiences and meet other entrepreneurs.</p>
+<p>Watch the video below or take a look into <a title="Startup Weekend São Paulo" href="http://saopaulo.startupweekend.org/">http://saopaulo.startupweekend.org/</a> for more information.</p>
+<p><object width="560" height="315" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/7ymvKiAKgzU?version=3&amp;hl=en_US" /><param name="allowfullscreen" value="true" /></object></p><p>The post <a href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">Join other entrepreneurs! Startup Weekend is back to São Paulo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

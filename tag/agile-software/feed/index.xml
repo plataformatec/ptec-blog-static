@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Agile Software « Plataformatec Blog</title>
+	<atom:link href="/tag/agile-software/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 14:51:50 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>WIP Limit &#8211; A further study</title>
+		<link>/2018/01/wip-limit-a-further-study/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 18 Jan 2018 17:43:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[Agile Software]]></category>
+		<category><![CDATA[process monitoring]]></category>
+		<guid isPermaLink="false">/?p=7112</guid>
+
+					<description><![CDATA[<p>One year ago I wrote a post talking about WIP limit and its importance. At the time, it was a case study and an introduction to the subject. However, after working on more projects and meeting different people, I saw that, maybe, you don&#8217;t need it. Introduction When we use WIP limit, we limit the ... <a class="read-more-link" href="/2018/01/wip-limit-a-further-study/">»</a></p>
+<p>The post <a href="/2018/01/wip-limit-a-further-study/">WIP Limit – A further study</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">One year ago I wrote a </span><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/"><span style="font-weight: 400;">post talking about WIP limit and its importance</span></a><span style="font-weight: 400;">. At the time, it was a case study and an introduction to the subject. However, after working on more projects and meeting different people, I saw that, maybe, you don&#8217;t need it.</span></p>
+<p><b>Introduction</b></p>
+<p><span style="font-weight: 400;">When we use WIP limit, we limit the number of concurrent tasks. It could be a limit to each column of a Kanban Board; it could be a limit to the whole system; or even a limit to a set of steps of the process.</span></p>
+<p><span style="font-weight: 400;">The idea behind limiting the work in progress is to work side-by-side with </span><a href="https://en.wikipedia.org/wiki/Little%27s_law"><span style="font-weight: 400;">Little&#8217;s Law</span></a><span style="font-weight: 400;"> and try to improve the flow of the system, diminishing the lead time (LT) of a work item. And that works like a charm for machines. For software development? The relationship between WIP, LT and throughput is not that straightforward.</span></p>
+<p><b>People are different</b></p>
+<p><span style="font-weight: 400;">When we have a chain of machines linked together, in which the output from one feeds the input of other, everything is easier to predict. Now, imagine a situation in which:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Items entering the first machine are not always the same size. And the machines don&#8217;t follow a linear relationship between size and time to complete a task.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Each machine can, unpredictably, change its behavior. One week, it may receive an input of size x and generate its outcome in 1 hour. In another week, it will, unpredictably, take 3 hours to produce the same result.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Things start to get tricky, right?</span></p>
+<p><b>WIP Saturation Chart</b></p>
+<p><span style="font-weight: 400;">From my experience, some readings and even the way I work, I saw that different people work best with different workloads. I believe that a chart of WIP by the throughput of a person follow something like this:</span></p>
+<p><img fetchpriority="high" decoding="async" class="size-medium wp-image-7113 aligncenter" src="/wp-content/uploads/2018/01/WIP-saturation-chart-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2018/01/WIP-saturation-chart-300x187.png 300w, /wp-content/uploads/2018/01/WIP-saturation-chart.png 426w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<p><span style="font-weight: 400;">This chart was taken from </span><a href="https://www.infoq.com/articles/how-kanban-works"><span style="font-weight: 400;">https://www.infoq.com/articles/how-kanban-works</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Some people work best with more t</span>han one task at a time. For different reasons. They might get unmotivated with few responsibilities, or it might be easy for them to rapidly change focus between tasks, for example. On the other hand, other people have a really difficult time changing focus and handling many tasks at once.</p>
+<p><span style="font-weight: 400;">Other than depending on the person, it also depends on the project: it might involve third-parties that regularly block their work, it might have a testing process that takes weeks or months to finish, etc.</span></p>
+<p><span style="font-weight: 400;">So, how can we come up with a single number that will magically fit all those curves under the same process? You can&#8217;t. But that doesn&#8217;t mean you shouldn&#8217;t.</span></p>
+<p><b>So what? Should I just go crazy and forget limits?</b></p>
+<p><span style="font-weight: 400;">As I said, it is just impossible to get a number that limits the work of everyone in an optimal manner. But that doesn&#8217;t mean you shouldn&#8217;t use one. I see, until the time of this post, two options for two different contexts:</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">You have someone looking at your process. If you have a Project Manager, an Agile Coach, a Scrum Master or other person that takes care of your process, you don&#8217;t need WIP limits. You need WIP management. This person can better understand how each person works and alert people to the amount of WIP according to each individual necessity as well as the type of project. I&#8217;d only use WIP Limits here to give process ownership to the rest of the team. This means that the person looking at the process would be actually temporary.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">You don&#8217;t have a process guru. In this case, limiting the WIP with numbers and trying to tune it with time will give you a better process. It will </span><i><span style="font-weight: 400;">not</span></i><span style="font-weight: 400;"> give you the optimal outcome, but it will unquestionably give you a better result.</span></li>
+</ol>
+<p><b>Conclusion</b></p>
+<p><span style="font-weight: 400;">WIP limit works. It will improve your process. But it is not a silver-bullet (I feel like a parrot repeating this). Look at your context (people + project) and use whatever delivers a better outcome.</span></p>
+<p><span style="font-weight: 400;">What do you think? Do you believe in WIP Limits or not? Leave your comments below!</span></p>
+<p>&nbsp;</p>
+<div style="margin: 20px 0 60px;"><a href="http://pages.plataformatec.com.br/ebook-strategies-to-improve-software-development-workflow?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-strategies&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener"><img decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/08/blog-cta-strategies-to-improve-software-development-workflow.png" alt="5 Strategies to Improve a Software Development Workflow -- Reserve your copy" width="831" height="147" /></a></div><p>The post <a href="/2018/01/wip-limit-a-further-study/">WIP Limit – A further study</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>5 Strategies to improve software development workflow</title>
+		<link>/2016/08/5-strategies-to-improve-software-development-workflow/</link>
+		
+		<dc:creator><![CDATA[Wesley Zapellini]]></dc:creator>
+		<pubDate>Wed, 03 Aug 2016 20:02:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[Agile Software]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[workflow]]></category>
+		<guid isPermaLink="false">/?p=5572</guid>
+
+					<description><![CDATA[<p>It is difficult to come up with a plan when you find yourself in a dysfunctional environment. Everything is on fire and there is no time available. Tight deadlines, pressure, working overtime, unsatisfied customers, waste, and a whole lot of other chaotic stuff that piles up and makes it difficult to pick the most critical ... <a class="read-more-link" href="/2016/08/5-strategies-to-improve-software-development-workflow/">»</a></p>
+<p>The post <a href="/2016/08/5-strategies-to-improve-software-development-workflow/">5 Strategies to improve software development workflow</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is difficult to come up with a plan when you find yourself in a dysfunctional environment. Everything is on fire and there is no time available. Tight deadlines, pressure, working overtime, unsatisfied customers, waste, and a whole lot of other chaotic stuff that piles up and makes it difficult to pick the most critical problem to fix.</p>
+<p>I will offer guidance in situations like this with five strategies in a recommended sequence. They are aligned with Lean principles and will work as a guide whichever method you use, be it Scrum, Kanban, XP or any other.</p>
+<p>These strategies came to my attention while attending a course called <a href="http://softwarezen.me/" target="_blank" rel="noopener">SoftwareZen</a>, by Alisson Vale. Alisson is a Kanban pioneer here in Brazil and I strongly recommend his course to all Portuguese speakers out there.</p>
+<p>The strategies were complemented with our experience at Plataformatec and the content I presented (<a href="https://speakerdeck.com/wesleytz/estrategias-para-otimizar-um-sistema-de-trabalho" target="_blank" rel="noopener">here the slides in Portuguese</a>) at <a href="http://www.agilefloripa.com.br/" target="_blank" rel="noopener">Agile Floripa 2016</a>.</p>
+<h2>An overview of the strategies</h2>
+<p>A work system, like any other system, has an input, a processing area, an output and a feedback loop:</p>
+<p><img decoding="async" class="aligncenter size-full wp-image-5586" src="/wp-content/uploads/2016/08/agile-workflow.png" alt="Agile workflow" width="593" height="158" srcset="/wp-content/uploads/2016/08/agile-workflow.png 593w, /wp-content/uploads/2016/08/agile-workflow-300x80.png 300w" sizes="(max-width: 593px) 100vw, 593px" /></p>
+<p>To be generic, let&#8217;s call &#8220;work items&#8221; all things that flow in a working system. The processing area deals with work items related to the present, the system&#8217;s input has work items that will be processed in the future and the output has items that had already been worked on.</p>
+<p>It&#8217;s a good practice to start improvement by looking at the &#8220;Present&#8221;. This will give good leverage to the actions applied. It doesn&#8217;t mean that &#8220;Future&#8221; and &#8220;Past&#8221; are not important, they are complementary. Learning with &#8220;Past&#8221; work items can make your &#8220;Future&#8221; ones better.</p>
+<p>Having this in mind, this is how the strategies are related to the system areas and the recommended sequence to apply them:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-5587" src="/wp-content/uploads/2016/08/strategies-agile-workflow.png" alt="Strategies agile workflow" width="681" height="424" srcset="/wp-content/uploads/2016/08/strategies-agile-workflow.png 681w, /wp-content/uploads/2016/08/strategies-agile-workflow-300x187.png 300w" sizes="(max-width: 681px) 100vw, 681px" /></p>
+<p>In the following weeks, I&#8217;ll post the first two strategies, &#8220;Start with work in progress&#8221; and &#8220;Reduce work item size&#8221; as a preview of an ebook I&#8217;m writing, 5 Strategies to improve software development workflow. The e-book will feature the content below:</p>
+<ul>
+<li><strong>Start with work in progress</strong>: The first strategy shows why it&#8217;s a good idea to start looking at your system&#8217;s work in progress (WIP). Also, you will get to know how to do it through these practices:
+<ul style="margin-top: -20px;">
+<li>Making the current workflow tangible;</li>
+<li>Managing capacity;</li>
+<li>Promoting tactical coordination;</li>
+</ul>
+</li>
+<li><strong>Reduce work item size</strong>: Slicing work into smaller pieces helps creating a healthy workflow and is one of the principles of Lean thinking. I will recommend some techniques to do it with different types of work items.</li>
+<li><strong>Promote collaboration</strong>: Which characteristics do you have to pursue to achieve collaboration in team and organizational levels? And which ones do you have to avoid? That will be addressed in the third strategy.</li>
+<li><strong>Do the right thing</strong>: Capacity is precious. Working in stuff that doesn&#8217;t matter is pure waste. The fourth strategy is all about techniques to help ensure you are working on the most important thing at the moment, in business, product and team levels.</li>
+<li><strong>Make results tangible</strong>: The last strategy brings some tips on giving visibility to achievements, mainly with metrics. This will help with predictability, sense of progress and also with data to drive continuous improvement.</li>
+</ul>
+<p>The ebook will be available to download very soon. If you want to get the Portuguese version, <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-estratgias-para-fluxo&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">click here</a>.</p>
+<p>Until then, leave your comments below and stay tuned for the upcoming weeks!</p>
+<hr />
+<div style="margin: 20px 0 60px;"></div><p>The post <a href="/2016/08/5-strategies-to-improve-software-development-workflow/">5 Strategies to improve software development workflow</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

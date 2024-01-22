@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Os desafios de desenvolver uma cultura ágil	</title>
+	<atom:link href="/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/feed/" rel="self" type="application/rss+xml" />
+	<link>/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 04 Apr 2018 03:14:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: George Moura		</title>
+		<link>/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1792</link>
+
+		<dc:creator><![CDATA[George Moura]]></dc:creator>
+		<pubDate>Wed, 04 Apr 2018 03:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7420#comment-1792</guid>
+
+					<description><![CDATA[O maior problema que enfrento é fazer os superiores e a equipe entender os beneficios e entender o que e ser agil.
+
+Como vender o conceito ágil?
+Como fazer a equipe entender e aprender o que é ser ágil?]]></description>
+			<content:encoded><![CDATA[<p>O maior problema que enfrento é fazer os superiores e a equipe entender os beneficios e entender o que e ser agil.</p>
+<p>Como vender o conceito ágil?<br />
+Como fazer a equipe entender e aprender o que é ser ágil?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Guilherme Fernandez		</title>
+		<link>/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1790</link>
+
+		<dc:creator><![CDATA[Guilherme Fernandez]]></dc:creator>
+		<pubDate>Tue, 03 Apr 2018 18:20:18 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7420#comment-1790</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1788&quot;&gt;Franciela Nissola&lt;/a&gt;.
+
+Oi Franciela, tudo bem? 
+O evento ocorre dia 05 de abril, das 19h30 as 21h. 
+O evento será transmitido pelo canal do youtube do Agilidade.org (https://goo.gl/TMgHE5), assim como o vídeo da transmissão fica disponível também :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1788">Franciela Nissola</a>.</p>
+<p>Oi Franciela, tudo bem?<br />
+O evento ocorre dia 05 de abril, das 19h30 as 21h.<br />
+O evento será transmitido pelo canal do youtube do Agilidade.org (<a href="https://goo.gl/TMgHE5" rel="nofollow ugc">https://goo.gl/TMgHE5</a>), assim como o vídeo da transmissão fica disponível também 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Franciela Nissola		</title>
+		<link>/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1788</link>
+
+		<dc:creator><![CDATA[Franciela Nissola]]></dc:creator>
+		<pubDate>Tue, 03 Apr 2018 13:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7420#comment-1788</guid>
+
+					<description><![CDATA[Qual o horário que irá acontecer?
+Será gravado para assistir posteriormente?]]></description>
+			<content:encoded><![CDATA[<p>Qual o horário que irá acontecer?<br />
+Será gravado para assistir posteriormente?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

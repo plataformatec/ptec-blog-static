@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Bringing continuous improvements into your agile process: The Reality Check Ceremony	</title>
+	<atom:link href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 15 Feb 2017 11:58:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1702</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 15 Feb 2017 11:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1702</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1701&quot;&gt;Dalibor Nasevic&lt;/a&gt;.
+
+No problem! Any questions you have, just ask us =)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1701">Dalibor Nasevic</a>.</p>
+<p>No problem! Any questions you have, just ask us =)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dalibor Nasevic		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1701</link>
+
+		<dc:creator><![CDATA[Dalibor Nasevic]]></dc:creator>
+		<pubDate>Wed, 15 Feb 2017 11:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1701</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1700&quot;&gt;Lucas Colucci&lt;/a&gt;.
+
+Cool, thanks for the insights. As long as that works for you, that&#039;s great. I was just curious to learn more details about your process. :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1700">Lucas Colucci</a>.</p>
+<p>Cool, thanks for the insights. As long as that works for you, that&#8217;s great. I was just curious to learn more details about your process. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1700</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 15 Feb 2017 11:39:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1700</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1699&quot;&gt;Dalibor Nasevic&lt;/a&gt;.
+
+Hey! So yes, in our clients we usually have a P.O. to the projects. We usually do the Daily, Retrospective and Planning (or Replenishing) with Kanban. However we don&#039;t like to call it Kanban (or any other name), since we don&#039;t follow any methodology by-the-book.. We try to implement practices that will improve the process, and not only follow a methodology.
+
+The feedback loop on delivery and process is not long at all. Since we keep metrics of the process, and follow their behaviour everyday, we always have a clue on how the process health is. 
+
+About the P.O. being present, they usually are, but sometimes they don&#039;t see the big picture and look at the whole backlog to reprioritize everything.
+
+And this is not a ceremony that should always be used. If you don&#039;t need it, that&#039;s perfect! It means that all your other meetings are being transparent and efficient enough to deliver the information to the business area. And that is awesome! We ourselves don&#039;t use it in all of our teams/clients... But the idea is to pass the knowledge of this kind of ceremony so, when someone has the problem where the business and technical areas are unaligned, they can act on it with a more focused meeting. Does that make sense? :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1699">Dalibor Nasevic</a>.</p>
+<p>Hey! So yes, in our clients we usually have a P.O. to the projects. We usually do the Daily, Retrospective and Planning (or Replenishing) with Kanban. However we don&#8217;t like to call it Kanban (or any other name), since we don&#8217;t follow any methodology by-the-book.. We try to implement practices that will improve the process, and not only follow a methodology.</p>
+<p>The feedback loop on delivery and process is not long at all. Since we keep metrics of the process, and follow their behaviour everyday, we always have a clue on how the process health is. </p>
+<p>About the P.O. being present, they usually are, but sometimes they don&#8217;t see the big picture and look at the whole backlog to reprioritize everything.</p>
+<p>And this is not a ceremony that should always be used. If you don&#8217;t need it, that&#8217;s perfect! It means that all your other meetings are being transparent and efficient enough to deliver the information to the business area. And that is awesome! We ourselves don&#8217;t use it in all of our teams/clients&#8230; But the idea is to pass the knowledge of this kind of ceremony so, when someone has the problem where the business and technical areas are unaligned, they can act on it with a more focused meeting. Does that make sense? 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dalibor Nasevic		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1699</link>
+
+		<dc:creator><![CDATA[Dalibor Nasevic]]></dc:creator>
+		<pubDate>Tue, 14 Feb 2017 22:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1699</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1698&quot;&gt;Lucas Colucci&lt;/a&gt;.
+
+Hey hey! Thanks for your reply. Do you have an On Site Customer (XP), or Product Owner how Scrum wants to call it, that represents the business and is available to the team? Do you do any other regular events like planning and retrospectives with Kanban and how long is the loop until you get a measurable feedback on the delivery and the process? I get the impression that the &quot;Reality Check&quot; is kind of a reactive meeting that happens at some tipping point vs having proactive meetings that could potentially deliver more continuous improvements but only if they are short, efficient and avoid waste. :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1698">Lucas Colucci</a>.</p>
+<p>Hey hey! Thanks for your reply. Do you have an On Site Customer (XP), or Product Owner how Scrum wants to call it, that represents the business and is available to the team? Do you do any other regular events like planning and retrospectives with Kanban and how long is the loop until you get a measurable feedback on the delivery and the process? I get the impression that the &#8220;Reality Check&#8221; is kind of a reactive meeting that happens at some tipping point vs having proactive meetings that could potentially deliver more continuous improvements but only if they are short, efficient and avoid waste. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1698</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 13 Feb 2017 17:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1698</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1697&quot;&gt;Dalibor Nasevic&lt;/a&gt;.
+
+Hey Dalibor! Thanks for your comment
+Actually, the idea is far from being to weigh commitment levels, and it is good that you said that, because I may have lacked details on how to handle it. The questions that we make, on how confident the team is with finishing those stories, are to bring everybody to the same page on whether it is or not possible to finish that work, not talking exactly if they will indeed do it. After all, we are dealing with real people, real projects and real money, therefore if all tasks won&#039;t be covered before the deadline, we may need to adjust the deadline or the scope, and it needs to be done asap.
+
+So the idea is to bring transparency to the business side of the flow, in order to adjust the strategy. However, it is good to mention that, in order to avoid overwork and overtime like you said, it is good to remove all the &quot;retaliation culture&quot; that some teams have when they say something that may differ from the original plan. For example, if a dev thinks that something won&#039;t be finished, he/she must say it and he/she must not suffer by saying it.
+
+Besides that, when we use Kanban we not necessarily apply Sprint Planning meetings. So if you use Scrum, you indeed could do this reality check during the ceremony, however it could take much longer than necessary.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1697">Dalibor Nasevic</a>.</p>
+<p>Hey Dalibor! Thanks for your comment<br />
+Actually, the idea is far from being to weigh commitment levels, and it is good that you said that, because I may have lacked details on how to handle it. The questions that we make, on how confident the team is with finishing those stories, are to bring everybody to the same page on whether it is or not possible to finish that work, not talking exactly if they will indeed do it. After all, we are dealing with real people, real projects and real money, therefore if all tasks won&#8217;t be covered before the deadline, we may need to adjust the deadline or the scope, and it needs to be done asap.</p>
+<p>So the idea is to bring transparency to the business side of the flow, in order to adjust the strategy. However, it is good to mention that, in order to avoid overwork and overtime like you said, it is good to remove all the &#8220;retaliation culture&#8221; that some teams have when they say something that may differ from the original plan. For example, if a dev thinks that something won&#8217;t be finished, he/she must say it and he/she must not suffer by saying it.</p>
+<p>Besides that, when we use Kanban we not necessarily apply Sprint Planning meetings. So if you use Scrum, you indeed could do this reality check during the ceremony, however it could take much longer than necessary.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dalibor Nasevic		</title>
+		<link>/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/comment-page-1/#comment-1697</link>
+
+		<dc:creator><![CDATA[Dalibor Nasevic]]></dc:creator>
+		<pubDate>Sun, 12 Feb 2017 10:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6087#comment-1697</guid>
+
+					<description><![CDATA[This &quot;Reality Check&quot; that you are doing (weighing commitment levels) sounds like something you should do on a sprint planning meetings. It might be that the sprints last longer until you get the necessary feedback or maybe the stories are not refined well enough and small enough to be more precisely estimated? This method might put some additional pressure on the team and might pull a commitment level that will result in overtime. Fix time, budget and quality, and have scope and shorter sprints to adjust accordingly.]]></description>
+			<content:encoded><![CDATA[<p>This &#8220;Reality Check&#8221; that you are doing (weighing commitment levels) sounds like something you should do on a sprint planning meetings. It might be that the sprints last longer until you get the necessary feedback or maybe the stories are not refined well enough and small enough to be more precisely estimated? This method might put some additional pressure on the team and might pull a commitment level that will result in overtime. Fix time, budget and quality, and have scope and shorter sprints to adjust accordingly.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

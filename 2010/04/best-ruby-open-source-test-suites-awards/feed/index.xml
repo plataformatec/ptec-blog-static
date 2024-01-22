@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Best Ruby Open Source Test Suites Awards	</title>
+	<atom:link href="/2010/04/best-ruby-open-source-test-suites-awards/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/04/best-ruby-open-source-test-suites-awards/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 21 Feb 2011 12:35:51 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/comment-page-1/#comment-602</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 07 May 2010 09:07:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=974#comment-602</guid>
+
+					<description><![CDATA[Not yet! But it look nice, we define pretty much the same aliases in our projects. :)]]></description>
+			<content:encoded><![CDATA[<p>Not yet! But it look nice, we define pretty much the same aliases in our projects. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Guillermo		</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/comment-page-1/#comment-601</link>
+
+		<dc:creator><![CDATA[Guillermo]]></dc:creator>
+		<pubDate>Fri, 07 May 2010 08:57:03 +0000</pubDate>
+		<guid isPermaLink="false">/?p=974#comment-601</guid>
+
+					<description><![CDATA[Did you try steak testing framework?
+http://github.com/cavalle/steak]]></description>
+			<content:encoded><![CDATA[<p>Did you try steak testing framework?<br />
+<a href="http://github.com/cavalle/steak" rel="nofollow ugc">http://github.com/cavalle/steak</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bob Aman		</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/comment-page-1/#comment-584</link>
+
+		<dc:creator><![CDATA[Bob Aman]]></dc:creator>
+		<pubDate>Fri, 30 Apr 2010 08:56:14 +0000</pubDate>
+		<guid isPermaLink="false">/?p=974#comment-584</guid>
+
+					<description><![CDATA[Take a look at http://addressable.rubyforge.org/ sometime.]]></description>
+			<content:encoded><![CDATA[<p>Take a look at <a href="http://addressable.rubyforge.org/" rel="nofollow ugc">http://addressable.rubyforge.org/</a> sometime.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: ecin		</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/comment-page-1/#comment-580</link>
+
+		<dc:creator><![CDATA[ecin]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 18:05:44 +0000</pubDate>
+		<guid isPermaLink="false">/?p=974#comment-580</guid>
+
+					<description><![CDATA[As a user of shoulda, I can say that shared tests is one of those things that I wish I had. 
+
+As for testing web services, I&#039;ve found Yehuda&#039;s Artifice library to be great: just mock up the web service as a Sinatra or Rack application and have all your requests forwarded to it. It&#039;s also a great example of tests providing the documentation.]]></description>
+			<content:encoded><![CDATA[<p>As a user of shoulda, I can say that shared tests is one of those things that I wish I had. </p>
+<p>As for testing web services, I&#8217;ve found Yehuda&#8217;s Artifice library to be great: just mock up the web service as a Sinatra or Rack application and have all your requests forwarded to it. It&#8217;s also a great example of tests providing the documentation.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neeraj Singh		</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/comment-page-1/#comment-579</link>
+
+		<dc:creator><![CDATA[Neeraj Singh]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 16:37:27 +0000</pubDate>
+		<guid isPermaLink="false">/?p=974#comment-579</guid>
+
+					<description><![CDATA[Would like to know on which side of debate you are on the topic of fixtures vs factories.
+
+Thanks for the post. Will checkout those libraries.]]></description>
+			<content:encoded><![CDATA[<p>Would like to know on which side of debate you are on the topic of fixtures vs factories.</p>
+<p>Thanks for the post. Will checkout those libraries.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

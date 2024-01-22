@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>acceptance tests « Plataformatec Blog</title>
+	<atom:link href="/tag/acceptance-tests/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 28 Jan 2016 14:34:10 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Writing Acceptance tests in Phoenix</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/</link>
+					<comments>/2016/01/writing-acceptance-tests-in-phoenix/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2016 09:00:08 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5007</guid>
+
+					<description><![CDATA[<p>Acceptance testing seems to be in its first steps in the Elixir ecosystem, but there are already some cool libs that can help us out to do it. I&#8217;m going to show you how we did it with Hound. In this blog post, we&#8217;ll write a few acceptance tests for an expenses report listing page, ... <a class="read-more-link" href="/2016/01/writing-acceptance-tests-in-phoenix/">»</a></p>
+<p>The post <a href="/2016/01/writing-acceptance-tests-in-phoenix/">Writing Acceptance tests in Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Acceptance testing seems to be in its first steps in the Elixir ecosystem, but there are already some cool libs that can help us out to do it. I&#8217;m going to show you how we did it with <a href="https://github.com/HashNuke/hound">Hound</a>.</p>
+<p>In this blog post, we&#8217;ll write a few acceptance tests for an expenses report listing page, where we&#8217;ll interact with the report and some form elements.</p>
+<p>To make possible to interact with the elements on the page, we&#8217;ll need a web browser driver. Hound accepts <code>chrome_driver</code>, <code>firefox</code>, <code>phantomjs</code> and <code>selenium</code>. My choice is <code>phantomjs</code> because I want to use a headless browser (I don&#8217;t want the driver to open a browser during the execution of the test suite).</p>
+<h2>Setup</h2>
+<p>First we&#8217;ll need to add Hound into our dependencies, so add the following line in your <code>mix.exs</code>:</p>
+<pre><code class="elixir">{:hound, "~&gt; 0.8"}
+</code></pre>
+<p>Make sure it&#8217;ll start during the test suite runtime. To do this we&#8217;ll need to add <code>Application.ensure_all_started(:hound)</code> before <code>ExUnit.start</code> in our test helper:</p>
+<pre><code class="elixir">Application.ensure_all_started(:hound)
+ExUnit.start
+</code></pre>
+<p>We&#8217;ll be using <code>phantomjs</code> as our web driver. <a href="http://phantomjs.org/download.html">Make sure it&#8217;s properly installed and that you can start it</a> with <code>phantomjs --wd</code>. To configure it, add this to the <code>config.exs</code> file:</p>
+<pre><code class="elixir">config :hound, driver: "phantomjs"
+</code></pre>
+<p>Take a look at <a href="https://github.com/HashNuke/hound/blob/master/notes/configuring-hound.md">this doc from Hound resources</a> to check if you&#8217;d like different configs.</p>
+<p>We&#8217;ll also need to set the server config in our <code>config/test.exs</code>to <code>true</code>.</p>
+<pre><code class="elixir">config :my_app, MyApp.Endpoint,
+  http: [port: 4001]
+  server: true
+</code></pre>
+<p>That should do it! Before writing our first test, let&#8217;s define an <code>IntegrationCase</code> module, similar to the <code>ModelCase</code> and <code>ConnCase</code> provided by Phoenix, which will include all functionality we need to write our integration tests. Create the <code>test/support/integration_case.ex</code> file and add the following content:</p>
+<pre><code class="elixir">defmodule MyApp.IntegrationCase do
+  use ExUnit.CaseTemplate
+
+  using do
+    quote do
+      use Hound.Helpers
+
+      import Ecto.Model
+      import Ecto.Query, only: [from: 2]
+      import MyApp.Router.Helpers
+
+      alias MyApp.Repo
+
+      # The default endpoint for testing
+      @endpoint MyApp.Endpoint
+
+      hound_session
+    end
+  end
+
+  setup tags do
+    unless tags[:async] do
+      Ecto.Adapters.SQL.restart_test_transaction(MyApp.Repo, [])
+    end
+
+    :ok
+  end
+end
+</code></pre>
+<p>There are a few lines that are worth commenting:</p>
+<ul>
+<li><code>use Hound.Helpers</code> will include the helpers necessary for us to interact with our interface (<a href="http://hexdocs.pm/hound/readme.html">take a look at the docs and explore them a little, they&#8217;ll be very helpful</a>);</li>
+<li><code>hound_session</code> will make sure that Hound will start and closes its session during the test execution;</li>
+<li><code>import MyApp.Router.Helpers</code> will include helpers so we can manipulate routes and URLs.</li>
+</ul>
+<h2>Exercise</h2>
+<p>Let&#8217;s test!</p>
+<p>We&#8217;re testing a simple list of expenses from a city (that example was extracted from an app we have been working on, but its scope was reduced so we can follow the steps more easily).</p>
+<p>Take a look at its template code:</p>
+<pre><code class="html">&lt;div&gt;
+  &lt;%= form_for @conn, city_expense_path(@conn, :index, @city.id), [as: :q, method: :get], fn f -&gt; %&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;q_status&quot;&gt;Status&lt;/label&gt;
+      &lt;%=
+        select f, :status, [{&quot;Paid&quot;, &quot;paid&quot;}, {&quot;Cancelled&quot;, &quot;cancelled&quot;}], prompt: &quot;All&quot; %&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;q_supplier&quot;&gt;Supplier&lt;/label&gt;
+      &lt;%= text_input f, :supplier %&gt;
+    &lt;/div&gt;
+
+    &lt;%= submit &quot;Submit&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;th&gt;ID&lt;/th&gt;
+    &lt;th&gt;Status&lt;/th&gt;
+    &lt;th&gt;Supplier&lt;/th&gt;
+    &lt;th&gt;Value&lt;/th&gt;
+    &lt;th&gt;Date&lt;/th&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;%= for expense &lt;- @expenses do %&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;%= expense.id %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.status %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.supplier.name %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.value %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.date %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;% end %&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<p>We&#8217;ll need a new test file, let&#8217;s put it at <code>test/integration/expenses_list_test.exs</code>. To use Hound’s facilities, we&#8217;ll need to use the <code>IntegrationCase</code> module that we have previously created.</p>
+<pre><code class="elixir">defmodule MyApp.ExpenseListTest do
+  use MyApp.IntegrationCase
+
+end
+</code></pre>
+<p>We&#8217;ll be using three private functions to help us making assertions and interacting with elements in our test file. The first one, <code>expense_on_the_list</code>, will check if a given expense, that is represented by the Ecto model called <code>MyApp.Expense</code>, is in there. The second function is just a helper for getting the expenses list and the third will help us interact with a select input within a form.</p>
+<pre><code class="elixir">defmodule MyApp.ExpenseListTest do
+  use MyApp.IntegrationCase
+
+  # ...
+
+  defp expense_on_the_list(expense, list) do
+    list
+    |&gt; visible_text
+    |&gt; String.contains?(expense.id)
+  end
+
+  defp expense_list_items do
+    find_element(:tag, "tbody")
+    |&gt; find_all_within_element(:tag, "tr")
+  end
+
+  defp select_status(form, status) do
+    form
+    |&gt; find_within_element(:id, "q_status")
+    |&gt; input_into_field(status)
+  end
+end
+</code></pre>
+<p>To interact with an element, you&#8217;ll always need to find the element on the page and for this, you need to know Hound&#8217;s <a href="http://hexdocs.pm/hound/Hound.Helpers.Page.html">page helpers</a>. I&#8217;ve noticed that we ended up using <code>find_element</code> and <code>find_all_within_element</code> most of the time to find the elements on the page or in a context (i.e inside a previously found element).</p>
+<p>Since this test is about the City resource, we&#8217;ve created just this city and navigated to it directly on the setup, since this would be a requirement for all the tests in this file, and shared it with all the tests through the setup context.</p>
+<pre><code class="elixir">setup do
+  city = insert_city!(%{name: "Winterfell"})
+
+  navigate_to("/cities/#{city.id}/expenses")
+
+  {:ok, city: city}
+end
+</code></pre>
+<p><a href="http://hexdocs.pm/hound/Hound.Helpers.Navigation.html#content">Navigation</a> is another important Hound module. It will help us go through our app easily and get info about the page, like the <code>current_path()</code> function that returns the path we&#8217;re navigating on that moment.</p>
+<p>Now that we&#8217;re on the page, we&#8217;ll be interacting with the form, by finding elements that are within it and filling or selecting values on them.</p>
+<pre><code class="elixir">test "filter by supplier", %{city: city} do
+  supplier = insert_supplier!(%{name: "Ned Stark"})
+  supplier_b = insert_supplier!(%{name: "Bell Tower Management"})
+  expense = insert_expense!(%{supplier: supplier, city: city, status: "paid"})
+  insert_expense!(%{supplier: supplier_b, city: city, status: "paid"})
+
+  search_form = find_element(:tag, "form")
+  search_form
+  |&gt; find_within_element(:id, "q_supplier")
+  |&gt; fill_field("Ned")
+
+  submit_element(search_form)
+
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(expense, items)
+end
+</code></pre>
+<p>The module responsible for these tasks is <a href="http://hexdocs.pm/hound/Hound.Helpers.Element.html">Element</a>. It has very useful functions, like <code>fill_field</code> we used above. All of its functions require an element.</p>
+<p>In the previous example, the interactions with the form ended with <code>submit_element</code>, but if we need any other action on it after this, we would need to re-assign it (otherwise, we&#8217;ll get a <code>** (RuntimeError) Element does not exist in cache</code> error), like in the following example:</p>
+<pre><code class="elixir">test "filter by statuses", %{city: city} do
+  supplier = insert_supplier!(%{name: "Jon Snow"})
+
+  cancelled_expense = insert_expense!(%{supplier: supplier, city: city, status: "cancelled"})
+  paid_expense = insert_expense!(%{supplier: supplier, city: city, status: "paid"})
+
+  search_form = find_element(:tag, "form")
+  select_status(search_form, "Cancelled")
+
+  submit_element(search_form)
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(cancelled_expense, items)
+
+  search_form = find_element(:tag, "form")
+  select_status(search_form, "Paid")
+  submit_element(search_form)
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(paid_expense, items)
+end
+</code></pre>
+<h2>Verify</h2>
+<h3>Runtime</h3>
+<p>One of the things I&#8217;ve paid a lot of attention during this experience was the test suite runtime. As expected, it can get slow with acceptance tests. The original app is still really tiny and before adding the acceptance tests, the runtime was:</p>
+<pre><code>Finished in 0.6 seconds (0.5s on load, 0.1s on tests)
+23 tests, 0 failures, 2 skipped
+</code></pre>
+<p>After including two tests (but with more interactions than the ones presented), it was noticeable the test suite became slower. It tripled the runtime.</p>
+<pre><code>Finished in 1.8 seconds (0.5s on load, 1.2s on tests)
+25 tests, 0 failures, 2 skipped
+</code></pre>
+<p>This effect is actually expected. We know that acceptance tests are expensive and that they should be a small portion of your <a href="http://martinfowler.com/bliki/TestPyramid.html">test pyramid</a></p>
+<p>There are a few things that can make acceptance tests faster:</p>
+<ul>
+<li>Upcoming Ecto v2.0 will allow us to <a href="https://github.com/elixir-lang/ecto/pull/1198">run tests that use database persistence asyncronously</a>;</p>
+</li>
+<li>
+<p>In my experience Phantom.js considerably faster than the other options, I recommend you to go with it.</p>
+</li>
+</ul>
+<p>You will definitely need to write some acceptance tests, but give preference to controller tests in most scenarios and use acceptance tests for important flows of your app (take a look at the <a href="https://www.techwell.com/2012/10/performing-effective-automated-acceptance-testing">user journey concept</a>, that can give you some good insights).</p>
+<h2>Web driver server execution</h2>
+<p>Currently, Hound doesn&#8217;t execute the browser automatically during tests. You&#8217;ll need to start it; otherwise, your tests will fail. There may be some workarounds to achieve it, if you&#8217;re on OS X, you can run <a href="http://blog.animascodelabs.com/2015/12/31/running-phantomjs-ghostdriver-as-an-osx-service/">Phantomjs as a service</a>.</p>
+<h2>Teardown</h2>
+<p>I really enjoyed playing with Hound, and I found very simple to work with it. Also, I see it as a potential project if you&#8217;re considering contributing to an Open Source Project.</p>
+<p>I hope this post was useful and gave you some ideas of how to write acceptance tests with Elixir and Phoenix. If you have any questions or suggestions, I&#8217;m all ears (or eyes).</p>
+<p><em>Which tool have you recently found to be useful when writing tests in Elixir?</em></p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=elixir-radar&#038;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br />
+</a></p><p>The post <a href="/2016/01/writing-acceptance-tests-in-phoenix/">Writing Acceptance tests in Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/01/writing-acceptance-tests-in-phoenix/feed/</wfw:commentRss>
+			<slash:comments>15</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Configuring User Agents with Capybara + Selenium Webdriver</title>
+		<link>/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2011 14:44:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[selenium]]></category>
+		<category><![CDATA[tests]]></category>
+		<category><![CDATA[user agent]]></category>
+		<guid isPermaLink="false">/?p=1572</guid>
+
+					<description><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee ... <a class="read-more-link" href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">»</a></p>
+<p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee that we would also be testing the mobile version, we would have to simulate an iPhone user agent accessing the application.</p>
+<p>But wait, you might be thinking that we are not able to change browser headers while dealing with Selenium. Capybara has a nice API to define new drivers and Selenium allows us to define different profiles with custom configurations for each driver. Lets see how we can put all this together to handle that:</p>
+<pre lang="ruby">Capybara.register_driver :iphone do |app|
+  require 'selenium/webdriver'
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile['general.useragent.override'] = "iPhone"
+
+  Capybara::Driver::Selenium.new(app, :profile => profile)
+end</pre>
+<p>Yup, it&#8217;s that simple =). We are creating a new driver for Capybara called <code>:iphone</code>, that will use Selenium with Firefox, but with a different profile, overriding the user agent string. This way you can pretend to your application that you are accessing through a &#8220;real&#8221; iPhone, by giving the &#8220;iPhone&#8221; string as user agent. You could also configure an <code>:android</code> driver, for instance, by simply changing the user agent string.</p>
+<p>So now, how do we make use of that new driver in our specs? Here comes a simple example:</p>
+<pre lang="ruby">scenario 'access phone information using a modal box', :driver => :iphone do
+  visit root_path
+
+  page.should have_no_css "#fancybox-wrap"
+  page.should have_no_content "0800 123456"
+
+  within("header") { click_link "Telefones úteis" }
+
+  within("#fancybox-wrap") do
+    page.should have_content "0800 123456"
+  end
+end</pre>
+<p>We are just passing the <code>:driver =&gt; :iphone</code> option to our scenario. Remember that the latest Capybara versions use RSpec metadata options and will apply the <code>:driver</code> option automatically, changing the current driver to our registered <code>:iphone</code> in this case. For more info please refer to <a title="Capybara's README" href="https://github.com/jnicklas/capybara">Capybara&#8217;s README</a>.</p>
+<p>You are now able to configure different user agents based on your application requirements, and test it in a full stack way. How about you, do you have any quick hint on how to test different user agents using another driver? Let us know in the comments <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h3>Updates (04/04/2014)</h3>
+<p>We were told that if you&#8217;re using Selenium Webdriver version 2.41.0, the code above will raise an exception. In order to fix that problem, you just need to replace <code>Capybara::Driver::Selenium.new</code> by <code>Capybara::Selenium::Driver.new</code>. Thanks <a href="https://twitter.com/ohayitsmj">Michael Joseph</a> for suggesting that update.</p><p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Acceptance tests for OmniAuth</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/</link>
+					<comments>/2010/12/acceptance-tests-for-omniauth/#comments</comments>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Tue, 28 Dec 2010 18:55:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[omniauth]]></category>
+		<guid isPermaLink="false">/?p=1575</guid>
+
+					<description><![CDATA[<p>One of the great gems released in the past few months was OmniAuth. It is very easy to use, it works without tons of configurations (unless configuring XML files is your thing) and there are already plenty of resources about it on the internet. However, it is not easy to do acceptance tests with Omniauth ... <a class="read-more-link" href="/2010/12/acceptance-tests-for-omniauth/">»</a></p>
+<p>The post <a href="/2010/12/acceptance-tests-for-omniauth/">Acceptance tests for OmniAuth</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the great gems released in the past few months was <a href="https://github.com/intridea/omniauth">OmniAuth</a>. It is very easy to use, it works without tons of configurations (unless configuring XML files is your thing) and there are already <a href="http://railscasts.com/tags/25" target="_blank">plenty of resources</a> <a href="http://blog.railsrumble.com/blog/2010/10/08/intridea-omniauth" target="_blank">about it</a> on the internet.</p>
+<p>However, it is not easy to do acceptance tests with Omniauth as it depends on external services to work. So what should we do? When I face a scenario like this, I split the acceptance test in two parts: one before the external service and one after the external service response.</p>
+<p>Testing the first one is trivial: you only have to ensure there is an &lt;a&gt; tag with href equals to &#8220;/auth/facebook&#8221; (or &#8220;/auth/#{insert_your_provider_here}&#8221; if you use another one). We don&#8217;t test any of the redirects done by OmniAuth internals, because it is already tested in gem&#8217;s tests, so we go to the next step: testing the OmniAuth callback.</p>
+<p>Testing OmniAuth callbacks is in general cumbersome but for OAuth2 providers it is a bit easier as it uses <a href="https://github.com/technoweenie/faraday">Faraday</a> internally to connect to the provider. With Faraday, we can configure a test adapter and stub calls to return what we want.</p>
+<p>The OmniAuth strategy provides an entry point to the Faraday connection, but we don&#8217;t have an access to the strategy directly, so we need to store it globally. For a Facebook strategy, we can achieve it as below whenever configuring Omniauth middleware:</p>
+<pre lang="ruby">
+module OmniAuth
+  mattr_accessor :facebook_strategy
+end
+
+middleware.use OmniAuth::Strategies::Facebook, "APP_ID", "APP_SECRET" do |strategy|
+  OmniAuth.facebook_strategy = strategy
+end</pre>
+<p>Note you will need OmniAuth 0.2.0 (which currently is OmniAuth master) as previous versions don&#8217;t yield a block on initialization like above.</p>
+<p>With access to the strategy, we do the acceptance test. First, we define the hashes we will return on the <a href="https://github.com/technoweenie/faraday">Faraday</a> responses.</p>
+<pre lang="ruby">FACEBOOK_INFO = {
+  :id =>; '12345',
+  :link => 'http://facebook.com/plataformatec',
+  :email => 'myemail@example.com',
+  :first_name => 'Plataforma',
+  :last_name => 'Tecnologia',
+  :website => '/'
+}
+
+ACCESS_TOKEN = {
+  :access_token => "nevergonnagiveyouup"
+}</pre>
+<p>Now, we will define the stubs. OAuth2 strategies do two requests: one to retrieve the access token and another to retrieve the user information. In this example, let&#8217;s stub the Facebook requests and assign these stubs to a new connection.</p>
+<pre lang="ruby">stubs = Faraday::Adapter::Test::Stubs.new do |b|
+  b.post('/oauth/access_token') { [200, {}, ACCESS_TOKEN.to_json] }
+  b.get('/me?access_token=nevergonnagiveyouup') { [200, {}, FACEBOOK_INFO.to_json] }
+end
+
+OmniAuth.facebook_strategy.client.connection = Faraday::Connection.new do |builder|
+  builder.adapter :test, stubs
+end</pre>
+<p>For each provider the URLs may differ, so an idea is to do this on a TDD way (or you can browse through the OmniAuth source code and see the url that it requests):</p>
+<ol>
+<li> Assign the Faraday fake connection without stubs.</li>
+<li> Run your test</li>
+<li> See the test to raise an exception like &#8220;No stubbed request for DESIRED_URL&#8221;.</li>
+<li> Add the stubbed request with the response that you want.</li>
+<li> Repeat this process until the test pass</li>
+</ol>
+<p>This is what we do on acceptance tests with OmniAuth: testing before and after the access to the external services.</p>
+<p>Another approach is to do only one test by short-circuiting the provider authentication URLs. To do that on a Rails application, you can store the provider URL on a method like &#8220;OmniAuth.facebook_url&#8221; and stub the method to return the callback URL on your test. If you happen to be using <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, the upcoming 1.2 version does the short-circuiting automatically for you, as you can see in <a href="https://github.com/plataformatec/devise/blob/master/test/integration/omniauthable_test.rb">Devise integration tests</a>.</p>
+<p>What about you? How do you stub OmniAuth requests and responses on your applications?</p><p>The post <a href="/2010/12/acceptance-tests-for-omniauth/">Acceptance tests for OmniAuth</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/acceptance-tests-for-omniauth/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

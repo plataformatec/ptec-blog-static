@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>playbook « Plataformatec Blog</title>
+	<atom:link href="/tag/playbook/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 27 May 2015 13:39:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Tips for hiring great software engineers</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/</link>
+					<comments>/2014/03/tips-for-hiring-great-software-engineers/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Tue, 25 Mar 2014 13:45:04 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[non-tech]]></category>
+		<category><![CDATA[playbook]]></category>
+		<category><![CDATA[ptec way]]></category>
+		<guid isPermaLink="false">/?p=3694</guid>
+
+					<description><![CDATA[<p>Every once in a while people ask us how we hire and interview software developers at Plataformatec. In this post, we share the key things we do when looking for and interviewing job candidates. We focused the post on actionable hints, from the basic tips up to some specific characteristics to the hiring process at Plataformatec. This is ... <a class="read-more-link" href="/2014/03/tips-for-hiring-great-software-engineers/">»</a></p>
+<p>The post <a href="/2014/03/tips-for-hiring-great-software-engineers/">Tips for hiring great software engineers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="padding-left: 30px;">Every once in a while people ask us how we hire and interview software developers at Plataformatec. In this post, we share the key things we do when looking for and interviewing job candidates. We focused the post on actionable hints, from the basic tips up to some specific characteristics to the hiring process at Plataformatec. This is what has been working for us and we hope it is useful for you too.</p>
+<div id="attachment_3736" style="width: 522px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-3736" class=" wp-image-3736 " alt="how to interview software engineers" src="/wp-content/uploads/2014/03/patricia_and_hugo.jpg" width="512" height="384" srcset="/wp-content/uploads/2014/03/patricia_and_hugo.jpg 640w, /wp-content/uploads/2014/03/patricia_and_hugo-300x225.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /><p id="caption-attachment-3736" class="wp-caption-text">Pair-Interviewing: Patricia (HR Responsible) and Hugo (co-founder)</p></div>
+<h3>Part One &#8211; define your Candidate Profile</h3>
+<p>Having a well defined candidate profile can save a lot of your time and is fairly simple to put together. A Candidate Profile makes easy for a non-technical person (an HR colleague for example) to help you find and identify potential candidates. These are some examples of what could be in your profile description:</p>
+<ul>
+<li>common &#8220;job titles&#8221; (specially if you are using LinkedIn Search to find candidates. ex.: software engineer, software craftsman, ruby developer, and so on)</li>
+<li>the most common skills</li>
+<li>their degrees and/or the universities the candidates went to</li>
+<li>their graduation year (if you&#8217;re looking for recent grads)</li>
+<li>companies they have worked for in the past</li>
+<li>also, it helps a lot to describe the things you are NOT looking for</li>
+</ul>
+<p>But be careful not to make this list too long, it is supposed to be something simple to use. Our experience says that 4 to 5 characteristics are enough. If you want, you can <strong><a href="#download-form">download a Candidate Profile template</a></strong> at the end of this post.</p>
+<h3>Part Two &#8211; preparing your interview questions</h3>
+<p>The interview is a great opportunity for you to detect evidences (strong signals) that a candidate would be a great match with your team and that he/she is able to do the job&#8230; but you&#8217;ve got only 60min to do it. Wow, that&#8217;s hard! Where to start?</p>
+<p>We&#8217;d suggest that you follow these steps:</p>
+<p><strong>1) Think about your company Culture and Values</strong></p>
+<ul>
+<li>identify which behaviours&#8230;
+<ul>
+<li>&#8230;reinforce your company culture</li>
+<li>&#8230;are definitely against your company culture</li>
+</ul>
+</li>
+</ul>
+<p><strong> 2) Think about the challenges of being in the role/job</strong></p>
+<ul>
+<li>make a list of the key skills that the candidate must have to perform it&#8217;s activities
+<ul>
+<li>describe a typical day of a person in this position</li>
+<li>think about the most difficult tasks this position requires</li>
+</ul>
+</li>
+</ul>
+<p><strong>3) Focus on &#8216;how the candidate solves a problem&#8217; rather than &#8216;the right answer&#8217;</strong></p>
+<ul>
+<li>So, when building technical questions:
+<ul>
+<li>avoid technical questions that are &#8220;right or wrong&#8221; type</li>
+<li>prefer questions where the candidate has to compare X and Y and present you good arguments (the pros and cons), ex.:
+<ul>
+<li><em>&#8220;When would you recommend using X and when you would use Y?&#8221;</em></li>
+</ul>
+</li>
+<li>we usually ask the candidates to criticize something that they really like, e.g.:
+<ul>
+<li><em>&#8220;Tell me three things you don&#8217;t like about Ruby on Rails.&#8221;</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>4) Test your questions</strong></p>
+<ul>
+<li>once you have finished writing your questions, ask them to yourself, to your colleagues or friends. Take notes about the type of answers you&#8217;re getting.</li>
+<li>remember, your job during the interview is to look for EVIDENCES, so if the answers you are getting are not providing you any evidences, then you need to refactor your questions.</li>
+</ul>
+<h3>Part Three &#8211; the interview</h3>
+<p>All right, you are about to finally meet with the candidate face to face. And if you&#8217;re using Skype or Google Hangouts please turn on your camera and ask the candidate to do the same. For the interview here are a few notes and reminders:</p>
+<ol>
+<li><strong>Ice-breaking is important, and so is being nice. </strong>There&#8217;s high probability that the candidates will be nervous when the interview starts. So, the first step is to make them feel comfortable. This is good for them and for you too. If they feel comfortable, they will be able to be more authentic, show their real personalities. So, it is your job to turn the interview into a pleasant conversation. If the candidate is stressed during the whole interview you probably won&#8217;t be able to find any of your evidences.</li>
+<li><strong>Pair-Interviewing.</strong> At Plataformatec, we like to interview candidates in pairs because we believe that two people can detect evidences better than just one. Usually one of us conduces most of the interview while the other pays close attention and takes notes. But try to avoid more than two interviewers as it could increase the stress level for the candidate and that wouldn&#8217;t help at all.</li>
+<li><strong>The candidate should interview you too.</strong> Remember to spare a reasonable amount of time (preferably after you have asked your questions) to present your company to the candidate and to answer her/his questions. It is a respectful gesture. They have saved a few hours preparing and answering your questions and the least you can do is to return the gesture. And don&#8217;t forget that they are choosing where they want to work with you too. At Plataformatec, we feel that we had a good interview if the candidates leaves our office with more admiration and appraisal to our company&#8217;s culture, even if they are not moving on to the next steps of the hiring process.</li>
+<li><strong>Look for for Cultural Fit evidences.</strong> As an interviewer, your job is to detect if there is a fit between the candidates and your company. Sometimes we hear from others interviewers comments like &#8220;We scared the sh#@ out of the candidate!&#8221;. That is a very corrosive attitude. Besides making candidates uncomfortable and being disrespectful, it is unlikely they will suggest your company to their colleagues.</li>
+</ol>
+<p>Well, that&#8217;s it. I would love to hear your experiences in this topic and I wish you good luck in finding great teammates for your company! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<div id="download-form" style="margin-top: 50px; padding: 10px; background-color: #eee; border-radius: 10px;">
+<h3>Download the Candidate Profile template</h3>
+<p>Fill in the form below so that we can send you a link for downloading the template. That document can help you on defining your candidate profile.</p>
+<form action="https://www.rdstation.com.br/api/1.2/conversions" method="POST" id="conversion-form">
+<fieldset style="max-width:500px;font:700 .8em Helvetica, Arial, sans-serif;color:#414141;border:none;"> <input type="hidden" name="token_rdstation" value="b667ebeff260eade64b64dc989992095"/> <input type="hidden" name="identificador" value="Candidates Profile Template - blog post"/> <input type="hidden" name="redirect_to" value="/thank-you-for-downloading-candidate-profile-template"/> </p>
+<div style="float:left;width:49%;"> <label for="first-name" style="display:block;margin-bottom:4px;">First name<span style="color:red;font-size:.8em;"> * </span></label> <input id="first-name" type="text" required="required" name="First Name" style=" width:95%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="float:right;width:49%;"> <label for="last-name" style="display:block;margin-bottom:4px;">Last name<span style="color:red;font-size:.8em;"> * </span></label> <input id="last-name" type="text" required="required" name="Last Name" style=" width:96%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="clear:both;"></div>
+<div style="margin-top:15px;"> <label for="email" style="display:block;margin-bottom:4px;">Email<span style="color:red;font-size:.8em;"> * </span></label> </p>
+<div style="display:block;margin: 0 0 1px;color:#aaa;font-size:11px;font-weight:normal;">Don&#8217;t worry, we won&#8217;t share your email with third parties</div>
+<p><input id="email "type="email" required="required" name="email" style="width:98%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 18px;padding: 4px;font-weight:100;"> </div>
+<div style="margin-top:15px;"> <label for="job-role" style="display:block;margin-bottom:4px;">Job role<span style="color:red;font-size:.8em;"> * </span></label> <select id="job-role" name="cargo" required style="width:100%;border: 1px solid #ccc;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;height: 27px;padding: 4px;font-weight:100;"><option value="">&#8211; Please Select &#8211;</option><option value="CTO / CIO / IT Director / VP Technology">CTO / CIO / IT Director / VP Technology</option><option value="CEO / CxO">CEO / CxO</option><option value="Developer / Software Architect">Developer / Software Architect</option><option value="Project manager / Scrum master / Agile coach">Project manager / Scrum master / Agile coach</option><option value="IT professional">IT professional</option><option value="Executive">Executive</option><option value="Other">Other</option></select> </div>
+<div style="margin-top:20px;"> <input type="submit" value="Send the template to my email" style="color: #fff;text-shadow: 0 -1px 0 #3574E3;background-color: #3574E3;background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiP…dpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==);background-size: 100%;background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0%,#7ec8f4),color-stop(100%,#3574e3));background-image: -moz-linear-gradient(top,#7ec8f4,#3574e3);background-image: -webkit-linear-gradient(top,#7ec8f4,#3574e3);background-image: linear-gradient(to bottom,#7ec8f4,#3574e3);box-shadow: inset 0 1px 0 rgba(255,255,255,.5);border-top: 1px solid #64BAF0;border-bottom: 1px solid #1C4ED5;border-right: 1px solid #468EE6;border-left: 1px solid #468EE6;border-radius: 4px;-moz-transition: opacity .15s linear;-o-transition: opacity .15s linear;-webkit-transition: opacity .15s linear;transition: opacity .15s linear;-moz-user-select: none;-webkit-user-select: none;user-select: none;font-size: 12px;font-weight: 700;line-height: 12px;padding: 7px 18px;"> </div>
+<p><input type="hidden" name="c_utmz" id="c_utmz" value=""/> <input type="hidden" name="Nome" id="name"/> </fieldset>
+</p></form>
+</div>
+<p><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(event) {
+    function read_cookie(a) {
+      var b = a + "=";
+      var c = document.cookie.split(";");
+      for (var d = 0; d < c.length; d++) {
+        var e = c[d];
+        while (e.charAt(0) == " ") e = e.substring(1, e.length);
+        if (e.indexOf(b) == 0) {
+          return e.substring(b.length, e.length)
+        }
+      }
+      return null
+    }
+    try {
+      document.getElementById("c_utmz").value = read_cookie("__utmz");
+    } catch (err) {};
+    (function(window, document, undefined) {
+      var form = document.querySelectorAll('#conversion-form')[0];
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          var nameInput = document.getElementById('name'),
+          firstName = document.getElementById('first-name').value,
+          lastName = document.getElementById('last-name').value;
+          nameInput.value = firstName + ' ' + lastName;
+        }, true);
+      }
+    })(window, document);
+  });
+</script></p><p>The post <a href="/2014/03/tips-for-hiring-great-software-engineers/">Tips for hiring great software engineers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/03/tips-for-hiring-great-software-engineers/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

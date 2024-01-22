@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>cache « Plataformatec Blog</title>
+	<atom:link href="/tag/cache/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 18 Sep 2009 16:26:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How to avoid the dog-pile effect on your Rails app</title>
+		<link>/2009/09/how-to-avoid-dog-pile-effect-rails-app/</link>
+					<comments>/2009/09/how-to-avoid-dog-pile-effect-rails-app/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Tue, 08 Sep 2009 19:22:13 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[cache]]></category>
+		<category><![CDATA[memcached]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[scalability]]></category>
+		<guid isPermaLink="false">/?p=246</guid>
+
+					<description><![CDATA[<p>Everyone already heard about scalability at least once. Everyone already heard about memcached as well. What not everyone might heard is the dog-pile effect and how to avoid it. But before we start, let&#8217;s take a look on how to use Rails with memcached. Rails + Memcached = expires_at &#038;& !exist?("lock_#{key}") orig_write("lock_#{key}", true, :expires_in => ... <a class="read-more-link" href="/2009/09/how-to-avoid-dog-pile-effect-rails-app/">»</a></p>
+<p>The post <a href="/2009/09/how-to-avoid-dog-pile-effect-rails-app/">How to avoid the dog-pile effect on your Rails app</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Everyone already heard about scalability at least once. Everyone already heard about <a href="http://www.danga.com/memcached/" target="_blank" >memcached</a> as well. What not everyone might heard is the dog-pile effect and how to avoid it. But before we start, let&#8217;s take a look on how to use Rails with memcached.</p>
+<h3>Rails + Memcached = <3</h3>
+<p>First, if you never used memcached with rails or never read/heard a lot about scalability, I recommend checking out <a href="http://railslab.newrelic.com/scaling-rails" target="_blank">Scaling Rails</a> episodes done by <a href="http://blog.envylabs.com/" target="_blank">Gregg Pollack</a>, in special the <a href="http://railslab.newrelic.com/2009/02/19/episode-8-memcached" target="_blank">episode</a> about memcached.</p>
+<p>Assuming that you have your memcached installed and want to use it on your application, you just need to add the following to your configuration files (for example production.rb):</p>
+<pre lang="ruby" line="1">
+config.cache_store = :mem_cache_store
+</pre>
+<p>By default, Rails will search for a memcached process running on localhost:11211.</p>
+<p>But wait, why would I want to use memcached? Well, imagine that your application has a page where a slow query is executed against the database to generate a ranking of blog posts based on the author&#8217;s influence and this query takes on average 5 seconds. In this case, everytime an user access this page, the query will be executed and your application will end up having a very high response time.</p>
+<p>Since you don&#8217;t want the user to wait 5 seconds everytime he wants to see the ranking, what do you do? You store the query results inside memcached. Once your query result is cached, your app users do not have to wait for those damn 5 seconds anymore!</p>
+<h3>What is the dog-pile effect?</h3>
+<p>Nice, we start to cache our query results, our application is responsive and we can finally sleep at night, right?</p>
+<p>That depends. Let&#8217;s suppose we are expiring the cache based on a time interval, for example 5 minutes. Let&#8217;s see how it will work in two scenarios:</p>
+<p><b>1 user accessing the page after the cache was expired:</b></p>
+<p>In this first case, when the user access the page after the cache was expired, the query will be executed again. After 5 seconds the user will be able to see the ranking, your server worked a little and your application is still working.</p>
+<p><b>N users accessing the page after the cache was expired:</b></p>
+<p>Imagine that in a certain hour, this page on your application receives 4 requests per second on average. In this case, between the first request and the query results being returned, 5 seconds will pass and something around 20 requests will hit your server. The problem is, all those 20 requests will miss the cache and your application will try to execute the query in all of them, consuming a lot of CPU and memory resources. This is the dog-pile effect.</p>
+<p>Depending on how many requests hit your server and the amount of resources needed to process the query, the dog-pile effect can bring your application down. Holy cow!</p>
+<p>Luckily, there are a few solutions to handle this effect. Let&#8217;s take a look at one of them.</p>
+<div id="attachment_193" style="width: 310px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-193" src="/wp-content/uploads/2009/09/predio-desmoranando.jpg" alt="Dog pile effect working on your application!" title="Dog pile effect working on your application!" width="300" height="200" class="size-full wp-image-193" /><p id="caption-attachment-193" class="wp-caption-text">Dog pile effect working on your application!</p></div>
+<h3>How to avoid the dog-pile effect?</h3>
+<p>The dog-pile effect is triggered because we allowed more than one request to execute the expensive query. So, what if we isolate this operation to just the first request and let the next requests use the old cache until the new one is available? Looks like a good idea, so let&#8217;s code it!</p>
+<p>Since Rails 2.1, we have an API to access the cache, which is defined by an abstract class called <a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html" target="_blank">ActiveSupport::Cache::Store</a>. You can read more about it in <a href="http://thewebfellas.com/blog/2008/6/9/rails-2-1-now-with-better-integrated-caching" target="_blank">this post</a> or in this excellent <a href="http://railscasts.com/episodes/115-caching-in-rails-2-1" target="_blank">railscast episode</a>.</p>
+<p>The code below simply implements a new and smarter memcached store on top of the already existing <a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/MemCacheStore.html" target="_blank">MemCacheStore</a>:</p>
+<pre lang="ruby" line="1">
+module ActiveSupport
+  module Cache
+    class SmartMemCacheStore < MemCacheStore
+
+      alias_method :orig_read, :read
+      alias_method :orig_write, :write
+
+      def read(key, options = nil)
+        lock_expires_in = options.delete(:lock_expires_in) if !options.nil?
+        lock_expires_in ||= 10
+
+        response = orig_read(key, options)
+        return nil if response.nil?
+
+        data, expires_at = response
+        if Time.now > expires_at && !exist?("lock_#{key}")
+          orig_write("lock_#{key}", true, :expires_in => lock_expires_in)
+          return nil
+        else
+          data
+        end
+      end
+
+      def write(key, value, options = nil)
+        expires_delta = options.delete[:expires_delta] if !options.nil?
+        expires_delta ||= 300
+
+        expires_at = Time.now + expires_delta
+        package = [value, expires_at]
+        orig_write(key, package, options)
+        delete("lock_#{key}")
+      end
+    end
+  end
+end
+</pre>
+<p>The code above is mainly doing:</p>
+<ol style="line-height:20px">
+<li>Suppose that your query is already cached;</li>
+<li>In the first five minutes, all requests will hit the cache;</li>
+<li>In the next minutes, the first request will notice that the cache is stale (line 17) and will create a lock so only it will calculate the new cache;</li>
+<li>In the next 5 seconds, the new query is calculated and all requests, instead of missing the cache, will access the old cache and return it to the client (lines 17 and 21)k;</li>
+<li>When the query result is returned, it will overwrite the old cache with the new value and remove the lock (lines 31 and 32);</li>
+<li>From now on, all new requests in the next five minutes will access the fresh cache and return it (lines 17 and 21).</li>
+</ol>
+<h3>Fallbacks and a few things to keep in mind</h3>
+<p>First, is not recommend to set the :expires_in value in your cache:</p>
+<pre lang="ruby" line="1">
+Rails.cache.write('my_key', 'my_value', :expires_in => 300)
+</pre>
+<p>With the solution proposed above, you just need to set :expires_delta. This is due to the fact that our application will now be responsible to expire the cache and not memcached.</p>
+<pre lang="ruby" line="1">
+Rails.cache.write('my_key', 'my_value', :expires_delta => 300)
+</pre>
+<p>However, there are a few cases where memcached can eventually expire the cache. When you initialize memcached, it allocates by default 64MB in memory. If eventually those 64MB are filled, what will memcached do when you try to save a new object? It uses the <a href="http://en.wikipedia.org/wiki/Cache_algorithms#Least_Recently_Used" target="_blank">LRU algorithm</a> and deletes the less accessed object in memory.</p>
+<p>In such cases, where memcached removes a cache on its own, the dog pile effect can appear again. Suppose that the ranking is not accessed for quite some time and the cached ranking is discarded due to LRU. If suddenly a lot of people access the page in the five initial seconds where the query is being calculated, requests will accumulate and once again the dog-pile effect can bring your application down.</p>
+<p>It&#8217;s important to have this scenario in mind when you are sizing your memcached, mainly on how many memory will be allocated.</p>
+<h3>Now I can handle the dog-pile effect and sleep again!</h3>
+<p>Summarizing, when your are using a cache strategy, you will probably need to expire your cache. In this process, the dog-pile effect can appear and haunt you down. Now you have one (more) tool to solve it.</p>
+<p>You just need to add the SmartMemCacheStore code above to your application (for example in lib/), set your production.rb (or any appropriated environment) to use the :smart_mem_cache_store. If you use Rails default API to access the cache (Rails.cache.read, Rails.cache.write) and designed well your memcached structure, you will be protected from the dog-pile effect.</p>
+<div id="attachment_184" style="width: 410px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-184" src="/wp-content/uploads/2009/09/dogpileweek2.jpg" alt="A real dog-pile! =p" title="A real dog-pile! =p" width="400" height="300" class="size-full wp-image-184" /><p id="caption-attachment-184" class="wp-caption-text">A real dog-pile! =p</p></div><p>The post <a href="/2009/09/how-to-avoid-dog-pile-effect-rails-app/">How to avoid the dog-pile effect on your Rails app</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/09/how-to-avoid-dog-pile-effect-rails-app/feed/</wfw:commentRss>
+			<slash:comments>23</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

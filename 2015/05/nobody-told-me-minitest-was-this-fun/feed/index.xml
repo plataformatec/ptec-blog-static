@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Nobody told me Minitest was this fun	</title>
+	<atom:link href="/2015/05/nobody-told-me-minitest-was-this-fun/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/05/nobody-told-me-minitest-was-this-fun/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 17:56:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: boxofrox		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1498</link>
+
+		<dc:creator><![CDATA[boxofrox]]></dc:creator>
+		<pubDate>Mon, 01 Jun 2015 17:56:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1498</guid>
+
+					<description><![CDATA[what purpose does `notifier.verify` in your test_does_not_notifies_on_republish spec?  It seems like a no-op.]]></description>
+			<content:encoded><![CDATA[<p>what purpose does `notifier.verify` in your test_does_not_notifies_on_republish spec?  It seems like a no-op.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Brandon Conway		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1492</link>
+
+		<dc:creator><![CDATA[Brandon Conway]]></dc:creator>
+		<pubDate>Sat, 16 May 2015 21:29:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1492</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1491&quot;&gt;Lucas Mazza&lt;/a&gt;.
+
+Oh okay. That&#039;s less intuitive than I like my tests to be, but I can definitely see how that can be used. Thanks for the response!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1491">Lucas Mazza</a>.</p>
+<p>Oh okay. That&#8217;s less intuitive than I like my tests to be, but I can definitely see how that can be used. Thanks for the response!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Mazza		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1491</link>
+
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Fri, 15 May 2015 13:46:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1491</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1490&quot;&gt;Brandon Conway&lt;/a&gt;.
+
+In this case, if the code ends up calling `notifier.notify!` we would get a &quot;NoMethodError: unmocked method :notify!&quot; exception. 
+In RSpec we would probably write something in the lines of `expect(notifier).to_not receive`, but Minitest::Mock does not have an API for this type of negative exception, but we can settle for the NoMethodError for this test case.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1490">Brandon Conway</a>.</p>
+<p>In this case, if the code ends up calling `notifier.notify!` we would get a &#8220;NoMethodError: unmocked method :notify!&#8221; exception.<br />
+In RSpec we would probably write something in the lines of `expect(notifier).to_not receive`, but Minitest::Mock does not have an API for this type of negative exception, but we can settle for the NoMethodError for this test case.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Brandon Conway		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1490</link>
+
+		<dc:creator><![CDATA[Brandon Conway]]></dc:creator>
+		<pubDate>Thu, 14 May 2015 21:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1490</guid>
+
+					<description><![CDATA[Are you missing something in your mocking/stubbing example? It seems like your test_does_not_notifies_on_republish spec should specify that it expects not to receive notify!. If you don&#039;t have an error here, can you explain how it knows what you are verifying?]]></description>
+			<content:encoded><![CDATA[<p>Are you missing something in your mocking/stubbing example? It seems like your test_does_not_notifies_on_republish spec should specify that it expects not to receive notify!. If you don&#8217;t have an error here, can you explain how it knows what you are verifying?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Antonio		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1489</link>
+
+		<dc:creator><![CDATA[Antonio]]></dc:creator>
+		<pubDate>Thu, 14 May 2015 21:12:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1489</guid>
+
+					<description><![CDATA[God, I wish I could have seen the &quot;pimp&quot; version of this post.]]></description>
+			<content:encoded><![CDATA[<p>God, I wish I could have seen the &#8220;pimp&#8221; version of this post.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Thiago A.		</title>
+		<link>/2015/05/nobody-told-me-minitest-was-this-fun/comment-page-1/#comment-1488</link>
+
+		<dc:creator><![CDATA[Thiago A.]]></dc:creator>
+		<pubDate>Tue, 12 May 2015 17:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4568#comment-1488</guid>
+
+					<description><![CDATA[Here is an RSpec-like reporter: https://github.com/fnando/minitest-utils]]></description>
+			<content:encoded><![CDATA[<p>Here is an RSpec-like reporter: <a href="https://github.com/fnando/minitest-utils" rel="nofollow ugc">https://github.com/fnando/minitest-utils</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

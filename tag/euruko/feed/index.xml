@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>euruko « Plataformatec Blog</title>
+	<atom:link href="/tag/euruko/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 21 Feb 2011 12:35:51 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>2010 &#8211; A year in review</title>
+		<link>/2010/12/2010-a-year-in-review/</link>
+					<comments>/2010/12/2010-a-year-in-review/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 17:18:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[dsl]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railsconf]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1612</guid>
+
+					<description><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few. Open Source The year has begun on fire. In February, José Valim made his way into the Rails Core team and has been ... <a class="read-more-link" href="/2010/12/2010-a-year-in-review/">»</a></p>
+<p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few.</p>
+<h3>Open Source</h3>
+<p>The year has begun on fire. In February, <a href="http://weblog.rubyonrails.org/2010/2/13/jos-e-valim-and-carl-lerche-joins-rails-core">José Valim made his way into the Rails Core team</a> and has been doing a great work since then, including many contributions to the Rails 3 release.</p>
+<p>We are also really proud with <a href="http://www.github.com/plataformatec/devise">Devise</a>. It got very mature, achieving the 1.0 version this February. Since then, Devise is becoming one of the best solutions for authentication in Rails and also one of the most watched repositories on GitHub. </p>
+<p>In August, <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1</a> was released with Rails 3 support and a bunch of cool features. Recently, a lot of work is being done towards the 1.2 version, which includes full support to the awesome <a href="http://www.github.com/intridea/omniauth">OmniAuth</a> gem.</p>
+<p>We also released <a href="http://www.github.com/plataformatec/simple_form">SimpleForm</a> this year. SimpleForm is our take on building forms in a simplified way lead by Carlos Antônio who recently did a great work on HTML 5 support.</p>
+<p>Other gems were released, such as <a href="/2010/03/show-your-objects-baby/">ShowFor</a>, which is a DSL to simplify how you show your objects in views and also <a href="https://github.com/plataformatec/responders">Responders</a>, a collection of Rails 3 responders.</p>
+<h3>Book</h3>
+<p>Eariler this month, José Valim&#8217;s book entitled <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> has been released by the highly acclaimed publisher <a href="http://www.pragprog.com/">Pragmatic Bookstore</a>! The book covers internal aspects of Rails 3 and how you can bend it to your will. The reviews and buzz has been great so far, even though still in beta. <a href="http://plataformatec.com.br/crafting-rails-applications/">Grab your copy now!</a></p>
+<h3>Events</h3>
+<p>This year was also very productive in terms of events. We&#8217;ve been to a lot of events, heck, George was even able to go to RailsConf, in Baltimore! Also, José Valim has spoken in various events, including <a href="/2010/06/dsl-or-nodsl-at-euruko-2010/">Euruko 2010 (includes video)</a>, <a href="http://vimeo.com/17088248">RubyConf Brazil 2010 (talk in portuguese)</a> and OxenteRails 2010. </p>
+<p>Carlos, Hugo and George did their share as well, speaking at various events, from smaller and user-group events to bigger ones such as OxenteRails, RS on Rails and QCon SP.</p>
+<h3>Company</h3>
+<p>The company itself is getting more mature and increasing. At January 2010, PlataformaTec was composed of 6 people, and up until December 2010, 5 other people joined the company (including myself)! We also have started playing with iOS development, something we believe to have a great future, expect future blog posts on the subject.</p>
+<h3>Great 2011!</h3>
+<p>Have a great New Year! We wish you all the best for year to come. We have high expectations for 2011, so stay tuned!</p><p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/2010-a-year-in-review/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Best Ruby Open Source Test Suites Awards</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/</link>
+					<comments>/2010/04/best-ruby-open-source-test-suites-awards/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 15:40:37 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[i18n]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[railties]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=974</guid>
+
+					<description><![CDATA[<p>One of the beauties in the Open Source world is the possibility of reading other people source code and learn new things. However, lately I found out that not only the library code, but the test suite of several open source projects are full lessons for us. In this post, I want to tell you ... <a class="read-more-link" href="/2010/04/best-ruby-open-source-test-suites-awards/">»</a></p>
+<p>The post <a href="/2010/04/best-ruby-open-source-test-suites-awards/">Best Ruby Open Source Test Suites Awards</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the beauties in the Open Source world is the possibility of reading other people source code and learn new things. However, lately I found out that not only the library code, but the test suite of several open source projects are full lessons for us.</p>
+<p>In this post, I want to tell you which are the three test suites that I admire the most and why.</p>
+<h3>Integration award: Railties</h3>
+<p><a href="http://github.com/rails/rails" target="_blank">Rails 3</a> has several improvements and not all of them may be visible to the application developer. One of the hidden unicorns is Railties test suite. As Yehuda stated <a href="http://yehudakatz.com/2009/07/01/new-rails-isolation-testing/" target="_blank">in a blog post</a> during the refactoring of version 2.3 to 3.0:</p>
+<blockquote><p>&#8220;Although the Rails initializer tests covered a fair amount of area, successfully getting the tests to pass did not guarantee that Rails booted.&#8221;</p></blockquote>
+<p>This happened because, in order to have fast tests, Rails 2.3 suite stubbed and mocked a significant part of the booting process. The new test suite is able to create a new application using the application generator, change configuration options, add plugins and engines, boot it and even make HTTP requests using Rack::Test.</p>
+<p>For instance, take a look at this test which ensures that app/metals inside plugins are successfully added to the application middleware stack:</p>
+<pre lang='ruby'>def test_plugin_metals_added_to_middleware_stack
+  @plugin.write 'app/metal/foo_metal.rb', <<-RUBY
+    class FooMetal
+      def self.call(env)
+        [200, { "Content-Type" => "text/html"}, ["FooMetal"]]
+      end
+    end
+  RUBY
+
+  boot_rails
+  require 'rack/test'
+  extend Rack::Test::Methods
+
+  get "/not/slash"
+  assert_equal 200, last_response.status
+  assert_equal "FooMetal", last_response.body
+end</pre>
+<p>The most important lesson here is: whenever mocking or stubbing in our tests, we still need to add tests without the mocks and stubs to ensure all API contracts are respected.</p>
+<h3>Readability award: Capybara</h3>
+<p><a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> is a tool to aid writing acceptance tests for web applications. <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> can use several drivers to interact with a web application, as Selenium, Celerity or even Rack::Test. Each driver needs a different setup and has different features. For instance, both Selenium and Celerity can handle javascript, but not Rack::Test.</p>
+<p>As you may imagine, all these different drivers can make a test suite become a real spaghetti. However, <a href="http://twitter.com/jncoward" target="_blank">Jonas Nicklas</a> was able to transform a potential problem into a very elegant and readable test suite with Rspec help. Here is, for instance, the tests for selenium:</p>
+<pre lang="ruby">describe Capybara::Driver::Selenium do
+  before do
+    @driver = Capybara::Driver::Selenium.new(TestApp)
+  end
+
+  it_should_behave_like "driver"
+  it_should_behave_like "driver with javascript support"
+end
+</pre>
+<p>Each behavior group above (&#8220;driver&#8221; and &#8220;driver with javascript support&#8221;) is inside <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> library allowing everyone to develop its own extensions using a shared suite. For instance, if a driver has javascript support, it means the following tests should pass:</p>
+<pre lang="ruby">shared_examples_for "driver with javascript support" do
+  before { @driver.visit('/with_js') }
+
+  describe '#find' do
+    it "should find dynamically changed nodes" do
+      @driver.find('//p').first.text.should == 'I changed it'
+    end
+  end
+
+  describe '#drag_to' do
+    it "should drag and drop an object" do
+      draggable = @driver.find('//div[@id="drag"]').first
+      droppable = @driver.find('//div[@id="drop"]').first
+      draggable.drag_to(droppable)
+      @driver.find('//div[contains(., "Dropped!")]').should_not be_nil
+    end
+  end
+
+  describe "#evaluate_script" do
+    it "should return the value of the executed script" do
+      @driver.evaluate_script('1+1').should == 2
+    end
+  end
+end</pre>
+<p><a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> test suite is one of the best examples of using tests as documentation. By skimming the test suite you can easily know which features are supported by each driver! Sweet, isn&#8217;t it?</p>
+<h3>Friendliness award: I18n</h3>
+<p>When you are a big Open Source project, your test suite needs to be easy to run in order to new developers can create patches without hassle. The <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> library for Ruby definitely meets the big Open Source project requirement since it&#8217;s widely used and provides several extensions.</p>
+<p>However, some of these extensions depends on <strong>ActiveRecord</strong>, some in <strong>ruby2ruby</strong>, others in <strong>ruby-cldr</strong>&#8230; and <a href="http://gist.github.com/381892" target="_blank">soon it will even support a few Key-Value stores</a>, as Tokyo and Redis. Due to all these dependencies, you would probably imagine that running I18n test suite would require several trials and a lot of configuration before it finally works, right?</p>
+<p>WRONG! If you don&#8217;t have ActiveRecord, <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> will say: &#8220;hey, you don&#8217;t have ActiveRecord&#8221; but still run the part of test suite that does not depend on it. So if a developer wants to fix or add something trivial, he doesn&#8217;t need to worry with installing all sorts of dependencies.</p>
+<p>Besides, as mentioned a couple months ago, <a href="/2009/12/run-i18n-run/">the I18n library allows you to create several combinations of backends</a>. In other words, the I18n test suite needs to ensure that all these different combinations work as expected.</p>
+<p>This problem is quite similar to the one in <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> which needs to test different drivers. However, <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> uses Test::Unit thus it cannot use shared examples groups as in Rspec. So how were I18n developers able to solve this issue? Using Ruby modules!</p>
+<p>Here are the tests for the upcoming KeyValue backend:</p>
+<pre lang="ruby">require 'test_helper'
+require 'api'
+
+class I18nKeyValueApiTest < Test::Unit::TestCase
+  include Tests::Api::Basics
+  include Tests::Api::Defaults
+  include Tests::Api::Interpolation
+  include Tests::Api::Link
+  include Tests::Api::Lookup
+  include Tests::Api::Pluralization
+  # include Tests::Api::Procs
+  include Tests::Api::Localization::Date
+  include Tests::Api::Localization::DateTime
+  include Tests::Api::Localization::Time
+  # include Tests::Api::Localization::Procs
+
+  STORE = Rufus::Tokyo::Cabinet.new('*')
+
+  def setup
+    I18n.backend = I18n::Backend::KeyValue.new(STORE)
+    super
+  end
+
+  test "make sure we use the KeyValue backend" do
+    assert_equal I18n::Backend::KeyValue, I18n.backend.class
+  end
+end</pre>
+<p>Each included module above adds a series of tests to the backend. Since key-value backends cannot store procs, we don't include any test related to procs.</p>
+<h3>Wrapping up</h3>
+<p>These three are my favorite test suites and also part of my favorite open source projects!</p>
+<p>We've adopted <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> as the official testing tool at PlataformaTec for some time already and I18n is one of the subjects of my upcoming book about Rails 3. In one specific chapter, we will build a tool that stores <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> translations into TokyoCabinet, which allows us to create and update translations through a web interface, similarly to ActiveRecord. The only difference is that <a href="http://gist.github.com/381892" target="_blank">TokyoCabinet is waaaay faster</a>.</p>
+<p>Finally, the fact you can mimic several of Rspec features using simple Ruby (like <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> using shared example groups and <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> simply using modules) will be part of my talk in <a href="http://euruko2010.org/" target="_blank">Euruko 2010</a> entitled <strong>DSL or NoDSL: The power is in the middle</strong>. The talk will show cases where DSLs mimics much of the behavior provided by Ruby and discuss what we are winning and/or losing in such cases.</p>
+<p>Keep following us and, until the next blog post is out, we would love to hear in the comments which are your favorite test suites!</p><p>The post <a href="/2010/04/best-ruby-open-source-test-suites-awards/">Best Ruby Open Source Test Suites Awards</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/best-ruby-open-source-test-suites-awards/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>produto digital « Plataformatec Blog</title>
+	<atom:link href="/tag/produto-digital/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 07 Feb 2018 22:32:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Pare de chamar Product Owners e Product Managers de mini CEOs</title>
+		<link>/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/</link>
+					<comments>/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 07 Feb 2018 15:11:49 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=7176</guid>
+
+					<description><![CDATA[<p>O que esperar de uma pessoa que atua com produto? No blog post de hoje, gostaria de discutir um pouco sobre o assunto sem apresentar uma receita pronta de job description do papel, mas sim debater a respeito de uma função que parece estar sofrendo por lidar com expectativas que por vezes são exageradas. Tive a sutileza ... <a class="read-more-link" href="/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/">»</a></p>
+<p>The post <a href="/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/">Pare de chamar Product Owners e Product Managers de mini CEOs</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>O que esperar de uma pessoa que atua com produto? No blog post de hoje, gostaria de discutir um pouco sobre o assunto sem apresentar uma receita pronta de <em>job description</em> do papel, mas sim debater a respeito de uma função que parece estar sofrendo por lidar com expectativas que por vezes são exageradas.</p>
+<p>Tive a sutileza de usar o termo &#8220;pessoa de produto&#8221; para fugir de nomenclaturas como Product Owner, Product Manager, Product Success Manager etc. Minha motivação para escrever o texto veio de uma frase que escutei recentemente e que dizia o seguinte: &#8220;aqui na empresa, as pessoas de produto são como mini CEOs&#8221;. Será que o fato de a pessoa lidar com múltiplas disciplinas (negócio, tecnologia, pessoas, experiência do usuário etc.) ela está habilitada a estar no patamar de ser a CEO de um produto?</p>
+<p>Dando uma resposta simplista, minha opinião é não. O cargo que está mais próximo do CEO é o de <a href="https://www.aha.io/roadmapping/guide/product-management" rel="nofollow">CPO (Chief of Product Officer)</a>, o qual se reporta diretamente a ele e é responsável por todas as atividades do produto dentro da organização. Tais pessoas atuam na definição da estratégia global do produto projetada para alcançar os objetivos estabelecidos pelo CEO e os membros do conselho.</p>
+<h2><a id="user-content-o-que-faz-uma-pessoa-de-produto" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-product-ceo.md#o-que-faz-uma-pessoa-de-produto"></a>O que faz uma pessoa de produto?</h2>
+<p>O que uma empresa deve esperar de uma pessoa de produto é alguém conectado com os estímulos do mercado, atento ao feedback dos usuários e clientes, preocupado com o propósito do produto, responsável pela priorização e especificação do trabalho que é empregado pelas equipes de tecnologia, bem como pelo desenvolvimento, comunicação e execução da visão e estratégia do produto.</p>
+<p>Além disso, a pessoa deve saber justificar a relação entre a solução tecnológica proposta e as métricas de negócio (ex: aumento de receita, diminuição do churn, aumento do ticket médio, diversificação do portfólio de produtos etc.) e garantir o melhor atendimento ao cliente.</p>
+<p>Ocasionalmente, a pessoa de produto terá de contar com o apoio das áreas de marketing e de negócios com o objetivo de realizar as atividades necessárias para o sucesso do produto.</p>
+<p>Em resumo: é uma pessoa articulada dentro da organização que compreende o que acontece fora dela (ex: desejo e necessidades dos clientes, posicionamento dos concorrentes, ambições dos investidores etc.), focada em gerar bons entregáveis e organizar a fila de trabalho das equipes para que elas desenvolvam produtos que apoiarão a estratégia da empresa.</p>
+<p>Cabe ressaltar que há vários níveis de pessoas de produto, com responsabilidades muitas vezes diferentes e, frequentemente, compartilhadas. Por exemplo, nada impede a existência de um Product Owner e um Product Manager no mesmo contexto, pois, cada pessoa atuará em níveis diferentes da cadeia de valor do produto e com granularidades diferentes das iniciativas.</p>
+<h2><a id="user-content-o-que-faz-um-ceo" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-product-ceo.md#o-que-faz-um-ceo"></a>O que faz um CEO?</h2>
+<p>Retomando a provocação colocada no início do texto, volto a questionar: qual a semelhança entre a descrição que fiz de uma pessoa de produto e o trabalho de um CEO? Bem, antes vale a pena compartilhar o que é a função de um CEO dentro de uma organização.</p>
+<p>Segundo uma definição do <a href="https://www.investopedia.com/terms/c/ceo.asp" rel="nofollow">Investopedia</a>, o CEO é o executivo de mais alto escalão em uma empresa e suas principais responsabilidades incluem: tomar decisões corporativas importantes; gerenciar as operações e recursos gerais de uma empresa; e atuar como o principal ponto de comunicação entre o conselho de administração e as operações corporativas.</p>
+<p>Na minha opinião, o CEO de uma empresa é a pessoa que:</p>
+<ul>
+<li><strong>Desenha e direciona a estratégia da empresa:</strong> a equipe pode ter autonomia em ajudar no planejamento da estratégia, os investidores podem aprovar o plano de negócio e o conselho pode pedir algum tipo de revisão em um plano de negócio, porém, a pessoa que terá completa autonomia e responsabilidade pela execução da estratégia da empresa será o CEO.</li>
+<li><strong>Modela e direciona a cultura, valores e comportamento da empresa:</strong> as atitudes e decisões do CEO terão total impacto na construção e no reforço dos valores, crenças e normas da empresa.</li>
+<li><strong>Desenvolve e lidera o time de líderes da empresa:</strong> é papel do CEO desenvolver e liderar um grupo de líderes para que sejam transparentes entre si, se sintam seguros para se expressar, busquem o conflito produtivo, tenham clareza dos resultados esperados, estejam engajados em um mesmo objetivo (mesmo que não haja 100% de consenso) e foquem nos resultados coletivos em vez dos resultados individuais.</li>
+<li><strong>Aloca capital para as prioridades da empresa:</strong> geralmente assessorado por alguma pessoa de finanças, o CEO é a pessoa da grana. É ele quem toma decisões quanto aos orçamentos dentro da empresa. Ele financia iniciativas (produtos e projetos) que apoiam a estratégia e reduzem as iniciativas que não geram resultado ou que estão desalinhadas aos objetivos de negócio.</li>
+</ul>
+<h2><a id="user-content-por-que-uma-pessoa-de-produto-não-é-um-mini-ceo" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2018-product-ceo.md#por-que-uma-pessoa-de-produto-n%C3%A3o-%C3%A9-um-mini-ceo"></a>Por que uma pessoa de produto não é um mini CEO?</h2>
+<p>Esperar que uma pessoa de produto exerça as atribuições discutidas anteriormente pode gerar 4 disfunções, sendo elas:</p>
+<ul>
+<li><strong>Frustração:</strong> as pessoas acreditam que terão autonomia total para alavancar o produto, controlar o budget, mudar a cultura da equipe, alocar as melhores pessoas para trabalhar no produto, repensar a estratégia do negócio, mas esquecem de se articular com os objetivos estratégicos da empresa. Os primeiros indícios de frustração aparecem quando as pessoas de produto começam a receber as primeiras negativas para as sugestões oferecidas na forma como foi estruturado o orçamento da empresa, em como organizar as equipes e em como solucionar os desafios culturais. No meu ponto de vista, tal disfunção pode ser resolvida no momento da contratação, ao deixar claro o que é e não é esperado da pessoa que for responsável pelo produto dentro da empresa.</li>
+<li><strong>Foco perdido:</strong> dificilmente uma pessoa de produto terá uma visão holística da estratégia da organização como o CEO. Ao tentar envolver-se com questões estratégicas que não estão conectadas com o produto (ex: participar de reuniões que não tenham relação com temas que ajudarão na alavancagem do produto), afastam o responsável do produto da equipe, o que aumenta a chance da criação de soluções que não suportarão os objetivos do negócio (desperdício). Uma das formas de resolver tal disfunção se dá a partir da construção de uma visão clara de como os objetivos estratégicos estão relacionados ao produto e uma ferramenta útil para isso é o <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/" rel="nofollow">OKR</a>. Lembre-se: se você é uma pessoa de produto, você existe para ajudar o negócio, portanto, foque nisso.</li>
+<li><strong>Queda no desempenho da equipe:</strong> quando uma pessoa de produto se encontra extremamente atarefada por gerenciar a equipe, operar o produto, garantir o atendimento ao cliente, acompanhar métricas de negócio ou pelo fato dela exercer múltiplos papéis (ex: head de inovação, head de tecnologia, head de produto, executivo de marketing etc.), o efeito de tal sobrecarga é a queda do desempenho das equipes. Geralmente tal disfunção é causada por: retrabalhos; indefinições; centralização no processo de tomada de decisão no que diz respeito ao produto; e baixa qualidade no processo de priorização.</li>
+<li><strong>Atividades básicas ficam abandonadas:</strong> quando uma pessoa de produto não sabe claramente o que é esperado dela uma série de atividades &#8220;básicas&#8221; são negligenciadas, como: gerenciar e priorizar o escopo de trabalho da equipe; dar suporte para a equipe em dúvidas sobre negócio; ter uma boa comunicação com os stakeholders da empresa; analisar as métricas de produto; compreender o negócio e o cliente em profundidade; compreender o modelo de negócio, o processo, a necessidade do cliente e a experiência do usuário. Quando a pessoa de produto delega alguma das atividades listadas acima para a equipe, ela está se omitindo do seu trabalho.</li>
+</ul>
+<p>No contexto de uma startup, é bem provável que o CEO do negócio exerça o papel de uma pessoa de produto, mas como tentei apresentar ao longo do texto o contrário não parece ser correto. Deixo a dica de um ótimo podcast sobre o assunto no blog <a href="https://seekingwisdom.io/38-product-managers-ceos-and-a-book-preview-95a250cb4c7" rel="nofollow">Seeking Wisdom</a>. Qual é a sua opinião? Deixe seus comentários abaixo!</p>
+<div style="background-color: #fffdf9;border: 1px solid #e9af35;margin: 32px 0;padding: 22px 24px;font-family: sans-serif">
+<h3 style="font-size: 1.4em;line-height: 1.3em;margin-top: 0 !important">Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.7em !important"><strong>Curso gratuito em 7 e-mails</strong>, elaborado pelo autor do livro “Métricas Ágeis”, Raphael Albino.<br />
+<small>Indicado para <strong>Agile Coach, Gerente de Produtos, Gerente de Projetos, Product Owner, Scrum Master e CTO/CIOs</strong>.</small></p>
+<p><a style="background: #e9af35;border: none;color: #fff;font-size: 12px;line-height: 1.5;margin-top: 5px;padding: 8px 16px;text-align: center;text-decoration: none;letter-spacing: 0.1em" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRÁTIS</a></p>
+</div><p>The post <a href="/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/">Pare de chamar Product Owners e Product Managers de mini CEOs</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/02/pare-de-chamar-product-owners-e-product-managers-de-mini-ceos/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Avaliando os estágios do portfólio de produtos em uma empresa digital</title>
+		<link>/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 23 Jan 2018 18:54:03 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=7122</guid>
+
+					<description><![CDATA[<p>Se você está inserido em uma empresa de soluções digitais, é bem provável que tenha se deparado com os seguintes questionamentos: Será que temos capacidade produtiva suficiente para operar a quantidade de iniciativas (evoluções nos produtos atuais e criação de novos produtos) que foram definidas para suportar a estratégia da empresa? Os critérios de priorização ... <a class="read-more-link" href="/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/">»</a></p>
+<p>The post <a href="/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/">Avaliando os estágios do portfólio de produtos em uma empresa digital</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Se você está inserido em uma empresa de soluções digitais, é bem provável que tenha se deparado com os seguintes questionamentos:</p>
+<ul>
+<li>Será que temos capacidade produtiva suficiente para operar a quantidade de iniciativas (evoluções nos produtos atuais e criação de novos produtos) que foram definidas para suportar a estratégia da empresa?</li>
+<li>Os critérios de priorização das iniciativas estão claros para os diferentes níveis da empresa? Todos compreendem as motivações pelas quais as iniciativas foram organizadas do jeito que estão?</li>
+<li>Como está a saúde do portfólio de produtos da empresa? Todos os produtos estão operando eficientemente e gerando resultado financeiro positivo?</li>
+</ul>
+<p>Neste blog post, compartilharei uma técnica que temos utilizado na Plataformatec e que vem ajudando nossos clientes a terem visibilidade sobre em que estágio os diferentes produtos do seu portfólio se encontram.</p>
+<h2><a id="user-content-premissas-para-uma-boa-gestão-de-portfólio-de-produtos" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2017-12-estagios-produto.md#premissas-para-uma-boa-gest%C3%A3o-de-portf%C3%B3lio-de-produtos" aria-hidden="true"></a>Premissas para uma boa gestão de portfólio de produtos</h2>
+<p>Antes de aprofundar na descrição da técnica, gostaria de compartilhar três premissas importantes que apoiam uma gestão de portfólio de produtos inteligente:</p>
+<ul>
+<li><strong>Estabeleça resultados de negócio:</strong> um erro comum que tenho observado nas empresas que atuam com produtos digitais é uma obsessão pela entrega de funcionalidades (features) e pouca discussão sobre como o entregável de fato está contribuindo para um melhor resultado no negócio (aumento da receita, diminuição da evasão de clientes, aumento no número de clientes ativos, etc.). Sendo assim, para que o portfólio de produtos seja administrado de forma inteligente, é fundamental que todos da empresa estejam engajados em como ajudar o negócio a gerar melhores resultados.</li>
+<li><strong>Colete e divulgue as métricas de negócio:</strong> para que todos tenham consciência do impacto que o seu trabalho tem no resultado da empresa, se faz necessária a coleta e a disseminação das métricas do negócio (para mais informações sobre o assunto, não deixe de ler o blog post <a href="/2018/01/o-que-seriam-boas-metricas-para-produtos-digitais/">O que seriam boas métricas para produtos digitais?</a>). Neste sentido, desenvolver rotinas que garantam visibilidade sobre a saúde do negócio se torna algo primordial para que as pessoas criem uma cultura orientada a dados. Algumas formas inteligentes que tenho observado e recomendado são: envio de uma mensagem diária através de um canal assíncrono (ex: email) com os principais indicadores do negócio; criação de uma plataforma analítica com as métricas do negócio disponíveis para consulta; reuniões quinzenais sobre como as funcionalidades construídas estão impactando os resultados dos produtos; reuniões mensais sobre como está a saúde financeira do portfólio de produtos e para a definição de planos de ação; reuniões trimestrais para a definição de OKRs (há um tempo atrás escrevi um blog post sobre como <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/" rel="nofollow">definir OKRs em equipes ágeis</a>).</li>
+<li><strong>Equilibre os investimentos:</strong> expandir o negócio atual e explorar novas oportunidades é algo tentador, principalmente em empresas que acabaram de captar montantes consideráveis de dinheiro. Porém, lembre-se que manter e desenvolver o território atual do negócio da empresa é algo que garantirá uma saúde financeira no curto prazo. Portanto, balancear a carga de recursos (financeiros, pessoas, tecnologia, pesquisa, etc.) investidos garantirá que a empresa olhe para o curto, médio e longo prazo, a partir da combinação de evoluções nos produtos atuais, em inovações para o mercado atual e na exploração de um mercado futuro.</li>
+</ul>
+<h2><a id="user-content-analisando-os-diferentes-estágios-dos-produtos" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/master/2017-12-estagios-produto.md#analisando-os-diferentes-est%C3%A1gios-dos-produtos" aria-hidden="true"></a>Analisando os diferentes estágios dos produtos</h2>
+<p>Vamos ao que interessa. Com objetivo de analisar o portfólio de produtos em uma empresa, tenho utilizando um modelo que leva em consideração três estágios de um ciclo de vida que são:</p>
+<ol>
+<li><strong>Discovery:</strong> neste estágio, a empresa identificou uma oportunidade de mercado, desenvolveu um modelo de negócio, definiu uma estratégia comercial, criou uma solução tecnológica mínima que entrega valor aos usuários e estruturou um processo, mesmo que ineficiente, para sustentar a operação do produto. É muito comum acontecerem mudanças e desperdícios, pois há o desafio de descobrir uma solução que o mercado enxergará valor. Além disso, o estágio de descoberta exige um maior investimento e geralmente é mais estressante.</li>
+<li><strong>Refinamento:</strong> neste estágio, o produto já se encontra em operação e o modelo de negócio precisa ser refinado para que a operação se torne viável. Evoluções na plataforma tecnológica, intensificação na promoção através das estratégias em marketing e a identificação de novos canais de vendas são temas corriqueiros no dia a dia de produtos neste estágio. O produto ainda está descobrindo a melhor forma de gerar resultado e qualquer estímulo do mercado (ex: concorrência, clientes, preço de venda, etc.) pode ser crítico para que ele se torne um player de expressão.</li>
+<li><strong>Market share:</strong> o último estágio do modelo tem como objetivo garantir que o produto esteja gerando lucro para a empresa em um horizonte de curto, médio e longo prazo e, pode ser dividido em duas frentes:</li>
+</ol>
+<ul>
+<li><strong>Eficiência operacional:</strong> as evoluções e melhorias no produto têm como foco o ganho através da escala. Redução no custo de aquisição por cliente, redução no custo de atendimento aos clientes e diminuição nos custos de infraestrutura tecnológica são exemplos de direcionadores que garantirão uma maior eficiência operacional para a empresa.</li>
+<li><strong>Inovação:</strong> as evoluções têm como cerne a criação de um diferencial competitivo que torne o produto cada vez mais valioso, raro, difícil de ser imitado e insubstituível. Para que a empresa promova a inovação no produto é importante que ela compreenda as necessidades dos clientes, promova rotinas que estimulem soluções &#8220;fora da caixa&#8221; e pense em maneiras de expandir o mercado atual.</li>
+</ul>
+<p><img fetchpriority="high" decoding="async" class="wp-image-7124 aligncenter" src="/wp-content/uploads/2018/01/estagios_produto_blog_post-1024x525.png" alt="" width="887" height="455" srcset="/wp-content/uploads/2018/01/estagios_produto_blog_post-1024x525.png 1024w, /wp-content/uploads/2018/01/estagios_produto_blog_post-300x154.png 300w, /wp-content/uploads/2018/01/estagios_produto_blog_post-768x394.png 768w, /wp-content/uploads/2018/01/estagios_produto_blog_post.png 1062w" sizes="(max-width: 887px) 100vw, 887px" /></p>
+<h2>Conclusão</h2>
+<p>A visualização dos produtos a partir dos estágios apresentados anteriormente tem os seguintes benefícios:</p>
+<ul>
+<li><strong>Quando tudo é prioridade, nada é prioridade.</strong> Dar visibilidade aos diferentes stakeholders sobre o número de produtos que a empresa está operando e criando e, ajudar a repensar a estratégia caso a relação entre a capacidade de entrega e o número de demandas seja elevadamente desproporcional.</li>
+<li><strong>Questione a crença de que todos os produtos dão o mesmo resultado.</strong> Estruturar e acelerar o processo de tomada de decisão no caso de produtos que estejam há um tempo sem gerar resultado para a empresa, bem como dar clareza sobre os critérios utilizados para a manutenção do atual portfólio de produtos.</li>
+<li><strong>Promova o desapego nas decisões.</strong> Equilibrar os investimentos e a alocação das equipes sem ficar preso a desenhos organizacionais, mas sim com base na necessidade de aceleração dos resultados do negócio.</li>
+</ul>
+<p>E você? Os estágios apresentados acima fazem sentido para o contexto de produtos da sua empresa? Deixe seu comentário abaixo.</p>
+<p>Ps: Caso você trabalhe com serviço, saiba que estamos aplicando no portfólio de serviços da Plataformatec todos os conceitos apresentados neste blog post <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p>
+<p><a href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom"><img decoding="async" class="alignnone wp-image-6692" src="/wp-content/uploads/2017/09/curso-por-email-métricas-para-projetos-agile.png" alt="" width="277" height="165" /></a></p><p>The post <a href="/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/">Avaliando os estágios do portfólio de produtos em uma empresa digital</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: como definir OKRs em equipes ágeis</title>
+		<link>/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 05 Sep 2017 21:41:51 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business of software]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=6664</guid>
+
+					<description><![CDATA[<p>Continuando a série de posts referente aos dilemas da vida de gerentes de produto, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor. É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados ... <a class="read-more-link" href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">»</a></p>
+<p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Continuando a <a href="/?s=dilemas+de+po">série de posts referente aos dilemas da vida de gerentes de produto</a>, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor.</p>
+<p>É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados esperados e o planejamento de entregas. Se você convive com tais desafios, confira a seguir uma dinâmica na qual obtive ótimos resultados no processo de concepção de OKRs.</p>
+<h2>O que é OKR e para o que serve</h2>
+<p>Bom, antes de escrever sobre o assunto, vale a pena definir o <strong>termo OKR</strong>.</p>
+<p>Segundo definição do pessoal da <a href="http://leanperformance.com/pt-br/okr/o-que-e-okr/">Lean Performance</a>, OKR &#8212; do inglês <em>Objectives and Key Results</em> &#8211;, utilizado no Silicon Valley por empresas como Google, Facebook, Linkedin, Intel etc, <strong>é um <em>framework</em> para definir metas</strong>. Trata-se de um <strong>sistema simples para criar alinhamento e engajamento em torno de metas mensuráveis e dinâmicas</strong>, tipicamente definidas trimestralmente.</p>
+<p>OKRs são uma ótima forma das organizações criarem e comunicarem objetivos e resultados. <strong>Seu maior propósito é promover conexão entre os objetivos da empresa, do time e dos indivíduos a partir de resultados mensuráveis, fazendo com que todos se movam na mesma direção</strong>.</p>
+<p>Em resumo, utilizar OKRs adequadamente auxilia no aumento do alinhamento e do engajamento entre as pessoas, e torna o processo de planejamento estratégico mais ágil, com maior cadência de revisão, adaptação e participação de toda a equipe.</p>
+<p>O alinhamento e engajamento entre as pessoas aumentam, pois o time passa a fazer parte do direcionamento do produto, gerando maior senso de pertencimento em cada um.</p>
+<p>Certa vez, no projeto de um dos nossos clientes, após a equipe definir os OKRs, fui informado pelo QA que o bug que estava ocorrendo no ambiente de produção iria impactar diretamente um dos OKRs, se não fosse corrigido imediatamente. Esse fato me deixou realmente surpreso, pois jamais veria uma ação assim se não compartilhassemos a responsabilidade com todo o time.</p>
+<p>Com a aplicação de OKRs, ganhamos mais uma ferramenta na priorização do backlog e, mais importante, temos o escopo direcionado para um objetivo comum.</p>
+<p>Ao aplicar dinâmicas de OKRs, espera-se que a empresa, equipe ou pessoa tenha em mãos:</p>
+<ol>
+<li><strong>Objetivos:</strong> Possuem, por essência, característica qualitativa, inspiracional, com prazo definido e apontem para metas, ou seja, dizem para onde se deve ir.</li>
+<li><strong>Key results:</strong> Quantificam toda a ideia inspiracional. Devem ser atingíveis, mensuráveis e realistas. Em outras palavras, indicam como será possível atingir os objetivos.</li>
+</ol>
+<p><em>Beleza Raphael, entendi os conceitos e percebi que isso pode ser útil, mas você pode dar um exemplo?</em></p>
+<blockquote><p>
+  <strong>Objetivo:</strong> Aumentar o número de clientes a partir de melhor experiência de uso do aplicativo.</p>
+<p>  <strong>Período:</strong> Primeiro trimestre de 2017.</p>
+<p>  <strong>Key results:</strong></p>
+<ul>
+<li>Aumentar a taxa de conversão mobile global de 5% (último trimestre de 2016) para 10%.</li>
+<li>Aumentar o volume de sessões entrantes de 161 mil (último trimestre de 2016) para 240 mil.</li>
+<li>Vender 10.000 mil licenças básicas.</li>
+<li>Vender 500 licenças <em>premium</em>.</li>
+</ul>
+</blockquote>
+<p>De onde vamos tirar esses indicadores?</p>
+<p>Aqui vai um ponto importante: para definir bons <em>key results</em>, que sejam mensuráveis e reflitam a situação real, <strong>é essencial que a organização seja orientada a dados e indicadores</strong>. Basicamente, a empresa deve possuir métricas de produto que assegurem uma tomada de decisão assertiva, dando a real noção de direção e esforço; e não somente baseada em intuições e experiências. Esses dados ajudam a definir as estratégias do próximo período com maior segurança e a otimizar os recursos empreendidos.</p>
+<p>Os dados devem direcionar as seguintes questões:</p>
+<ul>
+<li>Quais desafios temos à frente? Quais indicadores estão ruins? O que devemos fazer para melhorar tal indicador? Ex: Diminuir o churn, aumentar prospects e leads, melhorar os processos operacionais etc.</li>
+<li>Qual frente do produto precisamos melhorar para atingir o objetivo X da organização?</li>
+<li>Quais riscos esses dados evidenciam e onde devemos manter a atenção?</li>
+</ul>
+<p>Feita essa introdução, vamos para a dinâmica de definição dos OKRs para que você possa aplicá-la e aprimorá-la.</p>
+<h2>Parte 1 &#8211; Compreendendo o negócio</h2>
+<p>O primeiro tópico a ser discutido diz respeito a revisão ou criação do modelo de negócios do produto.</p>
+<p>Baseado nas personas, a equipe poderá analisar os canais, formatos de relacionamento com o cliente, fontes de receita, atividades chave, recursos chave, parceiros chave e estrutura de custo.</p>
+<p>Para levantar tais informações, sugiro que você leve as seguintes perguntas:</p>
+<ul>
+<li>Personas: qual o perfil de clientes que utilizam o produto?</li>
+<li>Canais: como os clientes chegam ao produto, geralmente?</li>
+<li>Formatos de relacionamento: como ocorre o relacionamento dos usuários com o produto atualmente?</li>
+<li>Fontes de receita: quais são as fontes de receita atuais?</li>
+<li>Atividades chave: quais as principais atividades que precisam ser realizadas no dia a dia da operação para que o produto possa entregar o valor que se propõe?</li>
+<li>Recursos chave: o que o produto possui de diferencial competitivo?</li>
+<li>Parceiros chave: quais parceiros ajudam a empresa a viabilizar/alavancar o produto?</li>
+<li>Custos: qual a estrutura necessária para tornar a operação do produto viável?</li>
+</ul>
+<p><img decoding="async" class="alignleft size-full wp-image-6668" src="/wp-content/uploads/2017/09/business-model-canvas.png" alt="Business model canvas" width="763" height="489" srcset="/wp-content/uploads/2017/09/business-model-canvas.png 763w, /wp-content/uploads/2017/09/business-model-canvas-300x192.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<p>Assim, a equipe terá maior clareza sobre o estágio atual do produto. Caso o produto não possua um modelo de negócios, não deixe de desenvolver um. Uma dica de leitura para que você possa construir um é o livro <a href="https://www.goodreads.com/book/show/7723797-business-model-generation">Business Model Generation</a>.</p>
+<p>Após a revisão do modelo de negócio, o próximo passo será analisar as principais métricas do produto. Cada pessoa da equipe poderá explorar o produto a partir de:</p>
+<ul>
+<li>Informações financeiras: churn, ticket médio, custo de aquisição do cliente etc;</li>
+<li>Comportamento de acesso: número de acessos, taxa de saída, tempo despendido nas páginas do fluxo de venda, origem do tráfego, dispositivo utilizado para acessar o fluxo de venda etc;</li>
+<li>Perfil do cliente: dados demográficos, nível de serviço contratado, faixa etária etc.</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6669" style="margin-right: 15px !important" src="/wp-content/uploads/2017/09/dashboard_metricas.jpg" alt="Exemplo de dashboard de produto" width="300" height="225" align="left" /> A partir das métricas de produto, cada membro da equipe deverá identificar pontos de melhoria e pontos onde o produto aparenta estar bem.</p>
+<div style="clear: both"></div>
+<h2>Parte 2 &#8211; Definindo os OKRs</h2>
+<p>Feita a análise das métricas de negócio e do modelo de negócio, levante com a equipe os potenciais objetivos que serão trabalhados no período de tempo (exemplo: próximo trimestre).</p>
+<p>Se você estiver facilitando a discussão, tenha em mãos as seguintes dicas antes da equipe determinar os objetivos:</p>
+<ul>
+<li>Tenha poucos objetivos (de 3 a 4). Motivo? O trimestre, por exemplo, é curto para se assumir muitos objetivos.</li>
+<li>Relacione os objetivos do produto com os objetivos da empresa.</li>
+<li>Relacione os objetivos com problemas e necessidades reais.</li>
+<li>Utilize as métricas de negócio para definir os objetivos.</li>
+</ul>
+<p>Caso os objetivos levantados sejam complexos ou grandes, vale a pena fomentar discussões para que a equipe simplifique. O mantra que deve ser pensado aqui é: <strong>pequenos incrementos que geram valor econômico para o negócio.</strong></p>
+<p>Para medir os objetivos, a equipe deverá elencar quais serão os <em>key results</em> que serão acompanhados ao longo do período. Para que a equipe tenha um norte:</p>
+<ul>
+<li>Defina poucos <em>key results</em> (de 3 à 4). Motivo? Se o objetivo precisa de muitos itens para ser medido é provável que ele seja complexo demais.</li>
+<li>Os <em>key results</em> devem ser expressos através de números.</li>
+<li>Quais resultados garantirão que alcancemos nossos objetivos?</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6670" src="/wp-content/uploads/2017/09/okr_todos.png" alt="Exemplo de OKRs definidos" width="400" height="300" srcset="/wp-content/uploads/2017/09/okr_todos.png 400w, /wp-content/uploads/2017/09/okr_todos-300x225.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Parte 3 &#8211; Definindo um roadmap</h2>
+<p>Dado que os objetivos e os <em>key results</em> estão definidos, a equipe pode se questionar: <em>bom, e agora, o que vamos fazer para atingir nossos OKRs?</em></p>
+<p>Sugiro como última parte da dinâmica o desenvolvimento de um roadmap, a fim de identificar entregáveis macro e quando eles deverão ser entregues ao longo do período (ex: trimestre).</p>
+<p>Técnicas de <em>brainstorming</em> e <em>story mapping</em> ajudam a ter uma ideia de cronologia e dependência entre as possíveis funcionalidades que serão construídas para alcançar os OKRs.</p>
+<p>Antes que alguém me crucifique dizendo que não estou sendo <em>lean</em>, gostaria de deixar algo claro. O roadmap criado será uma referência que COM CERTEZA (repita, <strong>C-O-M C-E-R-T-E-Z-A</strong>) sofrerá alterações ao longo do tempo por conta das mudanças e experimentações que acontecerão para atingir os objetivos e <em>key results</em> definidos.</p>
+<h2>Conclusão</h2>
+<p>A estrutura de OKR pode ser replicada no nível empresa, equipe e, até mesmo, indivíduo. Uma dica que sempre compartilho é: comece com poucos objetivos e trace em torno de 3 à 4 <em>key results</em>. O motivo? Foco. Quanto mais direcionado, mensurável e acionável for a sua estrutura de OKR, maiores serão as chances de alcançar o planejamento desenvolvido.</p>
+<p>Lembre-se que os OKRs devem ser revistos com frequência para que o time possa tê-los sempre em mente e, juntos, decidirem onde despender esforços para caminharem na direção correta.</p>
+<p>É essencial que a empresa possua uma cultura questionadora, desapegada de ferramentas e soluções revolucionárias e tenha um ambiente que promova aprendizado com as falhas, pois certamente haverão erros no início.</p>
+<p>A dinâmica que apresentei teve como objetivo conectar negócio, resultados atuais e futuro (OKRs + funcionalidades).</p>
+<p>E você, como tem aplicado dinâmicas de OKR? Compartilhe os resultados e desafios.</p>
+<p>Até próximo dilema <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Algumas referências: <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<ul>
+<li><a href="https://www.infoq.com/br/articles/agile-goals-okr">Metas Ágeis com OKR</a></li>
+<li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li>
+<li><a href="https://medium.com/startup-tools/okrs-5afdc298bc28">OKRs</a></li>
+<li><a href="https://www.slideshare.net/HenrikJanVanderPol/how-to-outperform-anyone-else-introduction-to-okr">The Basics of OKR &#8211; Google&#8217;s Secret Sauce</a></li>
+</ul>
+<div style="background-color: #fffdf9;border: 1px solid #e9af35;margin: 32px 0;padding: 22px 24px;font-family: sans-serif">
+<h3 style="font-size: 1.4em;line-height: 1.3em;margin-top: 0 !important">Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.7em !important"><strong>Curso gratuito em 7 e-mails</strong>, elaborado pelo autor do livro “Métricas Ágeis”, Raphael Albino.<br />
+<small>Indicado para Agile Coach, Gerente de Produtos, Gerente de Projetos, Product Owner, Scrum Master e CTO/CIO.</small></p>
+<p><a style="background: #e9af35;border: none;color: #fff;font-size: 12px;line-height: 1.5;margin-top: 5px;padding: 8px 16px;text-align: center;text-decoration: none;letter-spacing: 0.1em" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRÁTIS</a></p>
+</div><p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A user story em desenvolvimento foi despriorizada, e agora?</title>
+		<link>/2017/05/user-story-em-desenvolvimento-foi-despriorizada/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 04 May 2017 14:35:44 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6285</guid>
+
+					<description><![CDATA[<p>Digamos que você tenha um quadro kanban como o seguinte: Então, no meio do seu sprint, o P.O. descobre que as features D e E foram lançadas por um concorrente e que vocês estão perdendo usuários por isso. Pensando nisso, a P.O. decide despriorizar a história C. Isso seria apenas um exemplo de como um ... <a class="read-more-link" href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">»</a></p>
+<p>The post <a href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">A user story em desenvolvimento foi despriorizada, e agora?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Digamos que você tenha um quadro kanban como o seguinte:</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/card-flow-e1493907975371.png" alt="Kanban" width="400" height="268" class="aligncenter size-full wp-image-6286" style="border:none;" /></p>
+<p>Então, no meio do seu sprint, o P.O. descobre que as features D e E foram lançadas por um concorrente e que vocês estão perdendo usuários por isso. Pensando nisso, a P.O. decide despriorizar a história C. Isso seria apenas um exemplo de como um card pode ser despriorizado no meio do seu desenvolvimento. Mas, e agora, o que acontece com a história C?</p>
+<p>Para responder isso, deixe-me fazer um paralelo com uma companhia de perfumes a base de álcool.</p>
+<p>Na coluna de backlog, a companhia tem a garrafa pronta mas sem fluído algum. Quando a garrafa começa a ser enchida, o card é passado para &#8220;in progress&#8221;. Após a garrafa estar cheia, ela é lacrada e o card vai para &#8220;done&#8221;.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-e1493908094223.png" alt="Perfume flow" width="400" height="275" class="aligncenter size-full wp-image-6287" style="border:none;" /></p>
+<p>O que acontece então se outro perfume tem sua prioridade elevada a um nível maior do que o que está sendo abastecido? Bom, como sabemos, fluídos com base em álcool são voláteis e, com o tempo, evamporam totalmente, sendo necessário que se reabasteça o recipiente.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/perfume-flow-volatile-e1493908131534.png" alt="Perfume flow volatile" width="400" height="567" class="aligncenter size-full wp-image-6288" style="border:none;" /></p>
+<p>O mesmo acontece com uma história e seu código. Com o tempo, o código que compõe tal história se torna obsoleto e desnecessário, perdendo o valor que tinha outrora. Neste caso, o que fazer com a história despriorizada depende dos seguintes pontos:</p>
+<ul>
+<li><strong>Quanto tempo a história C continuará no mesmo estágio?</strong>
+<ul>
+<li>Se a história permanece muito tempo no mesmo estágio, alguma parte do trabalho já feito pode se tornar desnecessário, portanto, você poderia apenas removê-la da coluna e colocá-la de volta ao backlog, já que algum refinamento pode ser necessário para que essa história seja desenvolvida novamente.</li>
+<li>Se a história vai ficar por um curto período de tempo em tal coluna, você pode optar por deixá-la lá e, quando sua hora chegar, pode continuar aproveitando o que já havia sido desenvolvido.</li>
+</ul>
+</li>
+<li><strong>Qual o valor que a história C vai gerar quando pronta?</strong><br />
+Digamos que o retorno gerado pelo desenvolvimento de tal feature seja pequeno. Será que vale a pena pausar seu desenvolvimento e ter o risco de investir ainda mais dinheiro no seu desenvolvimento em outro momento? O retorno gerado será maior do que o tempo total de desenvolvimento gasto?</p>
+</li>
+</ul>
+<p>Para que isso seja verdade, o seguinte precisa acontecer (observado na imagem abaixo):</p>
+<ul>
+<li>$ gasto com o desenvolvimento inicial + $ gasto com o resto do desenvolvimento &lt; retorno da história C
+<ul>
+<li>A quantia gasta com o resto do desenvolvimento aumentará com o tempo, já que o desenvolvimento feito anteriormente vai perdendo valor.</li>
+</ul>
+</li>
+<li>Caso o retorno seja menor do que o gasto, é melhor ignorar a funcionalidade. No entanto estes cálculos não são tão simples como parecem&#8230; Você precisa levar em conta riscos, aumento na receita, aumento no número de usuários, etc&#8230; Então tenha cuidado com essa ação.</li>
+</ul>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/05/chart-1024x768.png" alt="Gráficos" width="1024" height="768" class="aligncenter size-large wp-image-6289" style="border:none;max-width: 99%;" /></p>
+<p>Portanto, baseado no que já foi dito, você pode ter as seguintes ações a respeito do card C:</p>
+<ul>
+<li><strong>Mantenha-o na coluna &#8220;in progress&#8221; e recomece o trabalho quando sua prioridade for retomada</strong><br />
+Essa pausa será rápida e não afetará o desenvolvimento da feature. Neste caso é importante deixar visível de alguma forma no quadro que essa história está &#8220;bloqueada&#8221; por motivos de priorização.</p>
+</li>
+<li>
+<p><strong>Ponha-o na coluna de backlog novamente, e recomece quando necessário</strong><br />
+A pausa será longa e o card precisará de um novo refinamento.</p>
+</li>
+<li>
+<p><strong>Termine-o primeiro, antes de começar outra história</strong><br />
+O card está quase pronto e, caso você pare seu desenvolvimento, quando pronto, seu valor será menor do que o gasto no seu desenvolvimento.</p>
+</li>
+<li>
+<p><strong>Cancele o seu desenvolvimento</strong><br />
+A história está muito longe de ser terminada, e seu valor final é muito pequeno para pagar o tempo que ela ficará pausada.</p>
+</li>
+</ul>
+<p>É importante também notar que isso NÃO deve ser algo comum em seu processo. Se coisas como essa estão acontecendo frequentemente, você pode precisar melhorar suas priorizações!</p>
+<p>O que acha do que foi discutido aqui? Deixe seus comentários abaixo! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-bottom" target=_blank""><br />
+<img loading="lazy" decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="Como lidar com prazo em projetos de software [e-book gratuito]" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/05/user-story-em-desenvolvimento-foi-despriorizada/">A user story em desenvolvimento foi despriorizada, e agora?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: priorizar features e projetar entregas</title>
+		<link>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/</link>
+					<comments>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 20 Apr 2017 18:43:37 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6241</guid>
+
+					<description><![CDATA[<p>Se você gerencia um produto de software que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação: Como priorizá-las? Quando elas serão entregues? Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos ... <a class="read-more-link" href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">»</a></p>
+<p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Se você gerencia um produto de <em>software</em> que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação:</p>
+<ul>
+<li>Como priorizá-las?</li>
+<li>Quando elas serão entregues?</li>
+</ul>
+<p>Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos (neste ano, falarei mais sobre o assunto aqui no blog).</p>
+<p>Tenho observado um movimento de gestão de produtos que vem concretizando os princípios por trás do <em>Lean Startup</em> que diziam: construa, meça e aprenda. A partir da ótica de <strong>medir</strong> e <strong>aprender</strong>, é perceptível que gestoras e gestores de produto começam a levantar hipóteses de negócio a partir de métricas como taxa de conversão, recorrência mensal, taxa de evasão, análise da interação dos usuários nos fluxos críticos da aplicação, etc.</p>
+<p>Voltando para a primeira pergunta que abriu o texto, nos deparamos com atributos quantitativos que nos permitem priorizar o que precisamos construir. Tal ferramental sustenta a ideia de que estamos interessados em melhorar os resultados do produto a partir de números.</p>
+<p>Antes que alguém me crucifique, nem só baseados em números devem ser os fatores para a priorização de novas <em>features</em> dos produtos que trabalhamos. Caso você tenha a possibilidade de se aproximar do seu usuário para perguntá-lo o que ele deseja, você também estará aumentando a probabilidade de construir algo que traga valor para ele. Dados qualitativos podem ser coletados através de questionários <em>online</em>, pesquisas de campo, análises de interação a partir de protótipos, etc.</p>
+<p>Ao priorizarmos uma funcionalidade, estamos em busca de gerarmos uma solução que traga valor para nossos usuários, clientes, acionistas e empresa. Em outras palavras, podemos dizer que estamos em busca de encontrarmos uma relação positiva na equação de valor que nada mais é do que a diferença entre o valor criado pela solução menos o preço pago por ela #maisvalorporfavor.</p>
+<div id="attachment_6242" style="width: 506px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6242" class="wp-image-6242 size-full" src="/wp-content/uploads/2017/04/blog_quadro_metodos.png" alt="" width="496" height="168" srcset="/wp-content/uploads/2017/04/blog_quadro_metodos.png 496w, /wp-content/uploads/2017/04/blog_quadro_metodos-300x102.png 300w" sizes="(max-width: 496px) 100vw, 496px" /><p id="caption-attachment-6242" class="wp-caption-text">Quadro de abordagens quali e quantitativa</p></div>
+<p>Dado que priorizamos aquilo que é mais importante para a saúde do produto e para os usuários, um segundo questionamento que por vezes fica na cabeça é: quanto tempo levaremos para entregar essa nova <em>feature</em>?</p>
+<p>Partindo do pressuposto que vivemos em um contexto incerto (sim, acredite, desenvolver <em>softwar</em>e não é algo determinístico), trabalhar com cenários de entrega passa a ser uma abordagem mais confiável. Ao utilizar projeções você passa a calcular ou predizer um evento futuro a partir da análise dos dados disponíveis (passado).</p>
+<p>Para que isso seja possível, sugiro que você e a sua equipe passem a monitorar uma métrica de processo: lead time (número de dias entre o início e o fim do processo de entrega de uma história do usuário, um bug, etc.).</p>
+<p>Em outras oportunidades tivemos a chance de discutir formas de analisar o lead time (<a href="/2016/03/looking-at-lead-time-in-a-different-way/">“Looking at Lead Time in a different way”</a> e <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">“Why we love metrics? Learning with Lead time”</a>), porém, gostaria de compartilhar como o percentil pode ser uma referência útil para desenhar cenários futuros a partir de referências do passado.</p>
+<p>Se você não conhece, percentil é uma medida que divide a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual. Traduzindo e relacionando com uma distribuição de <em>lead time</em>, é como se analisássemos o <em>lead time</em> das demandas que foram entregues e discutíssemos qual o percentual de chances de um determinado valor ser atingido a partir do percentil.</p>
+<p>Em um projeto recente utilizamos a informação de percentil para projetar possíveis prazos de entrega de uma demanda de negócio que havia sido priorizada pelo Product Owner (PO) da célula em que trabalhamos.</p>
+<div id="attachment_6244" style="width: 1034px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6244" class="wp-image-6244 size-large" src="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png" alt="" width="1024" height="353" srcset="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png 1024w, /wp-content/uploads/2017/04/blog_post_exemplo-300x103.png 300w, /wp-content/uploads/2017/04/blog_post_exemplo-768x265.png 768w, /wp-content/uploads/2017/04/blog_post_exemplo.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" /><p id="caption-attachment-6244" class="wp-caption-text">Histograma de lead time</p></div>
+<p>A equipe utilizou o histograma acima e passou a seguinte análise do cenário ao PO:</p>
+<ul>
+<li>50% das demandas levaram até 6 dias para serem concluídas (mediana).</li>
+<li>75% das demandas levaram até 12 dias para serem concluídas ou seja apenas 25% levaram mais do que tal limite para serem concluídas (percentil 75).</li>
+<li>95% das demandas levaram até 18 dias para serem concluídas, o que nos leva a afirmar que apenas 5% delas levaram mais tempo do que isso para serem finalizadas (percentil 95).</li>
+</ul>
+<p>A partir dos dados acima, o time demonstrou confiança de entregar a demanda entre 6 e 12 dias. Com tal informação em mãos, o PO traçou o plano de comunicação e promoção do novo recurso do produto. Se você ficou curioso em saber, a demanda foi entregue em 8 dias.</p>
+<p>Ao utilizar tal abordagem de projeção, o time e o PO se sentiram mais confortáveis e confiantes. Caso o PO tivesse imposto para o time que a nova demanda deveria ser entregue em 3 dias, com posse das informações de percentil, o time teria insumos para dizer que seria muito difícil entregá-la pelo simples fato de que apenas 25% das demandas entregues foram concluídas no prazo determinado (percentil 25).</p>
+<p>Fecho esse texto com algumas sugestões:</p>
+<ol>
+<li>Crie hipóteses através de fatos que podem ser originados por dados quanti ou qualitativos.</li>
+<li>Projete cenários de entrega a partir de uma referência (histórico do time).</li>
+<li>Desenvolva pequenas entregas de valor, pois elas permitirão que você mude de direção mais rápido.</li>
+<li>Não acredite que métrica de produto ou processo é algo burocrático, pois elas servem como uma base para você construir um futuro melhor.</li>
+</ol>
+<p>E você? Como tem priorizado e projetado suas entregas? Quais métricas e abordagens tem utilizado? Compartilhe sua opinião nos comentários abaixo. Estou curioso para aprender com o seu exemplo.</p>
+<p>Se está interessado saber mais como lidar com prazos de projetos de <em>software</em> não deixe de conferir nosso <a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-middle">e-book gratuito sobre o assunto</a>.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-bottom" target="_blank&quot;&quot;"><br />
+<img loading="lazy" decoding="async" class="aligncenter size-full wp-image-6158" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="" width="831" height="147" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>ruby « Plataformatec Blog</title>
+	<atom:link href="/tag/ruby/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 06 Jan 2021 11:34:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Important information about our Elixir and Ruby Open Source projects</title>
+		<link>/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 06 Jan 2020 21:20:55 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=9631</guid>
+
+					<description><![CDATA[<p>You may have heard that Nubank has acqui-hired Plataformatec. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements ... <a class="read-more-link" href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">»</a></p>
+<p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You may have heard that <a href="https://medium.com/building-nubank/tech-perspectives-behind-nubanks-first-acquisition-deal-what-this-business-move-means-and-how-it-d7d1233c72b8">Nubank has acqui-hired Plataformatec</a>. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements through better-planned teams using innovative metrics and more reliable estimates. The acquisition is a recognition of the work we displayed over the last 11 years to clients in Brazil and across the globe.</p>
+<p>In the last decade, Plataformatec has also created and maintained a range of open source projects. In the next paragraphs, I will describe what the next steps are for the open source projects currently owned by Plataformatec.</p>
+<p>We are very proud of the contributions we have made to open source communities throughout our history. We have built important projects in the Rails community, such as <a href="https://github.com/plataformatec/devise">Devise</a>, <a href="https://github.com/plataformatec/simple_form">Simple Form</a>, among others. We have also developed the <a href="https://elixir-lang.org/">Elixir programming language</a>, which started as a Research &amp; Development project inside Plataformatec, and today is used by companies around the world.</p>
+<p>So what will happen with these projects from now on?</p>
+<p>All of the projects above have one thing in common: they were created and maintained by passionate individuals who wanted to make positive contributions to their communities. Without these individuals and their efforts, these projects would not have become what they are today. Therefore, it is only fair that Plataformatec gives these individuals control of these projects moving forward.</p>
+<p>For the Elixir programming language in particular, José Valim and the Elixir Core Team will continue developing and maintaining the programming language in the same capacity as they have been doing over the last few years, independently from Plataformatec and Nubank. We are in touch with the Elixir Core Team to transfer all assets, including the existing trademarks and the Elixir website, to their control. The remaining Elixir projects will be transferred to José Valim and his team at <a href="https://dashbit.co/">Dashbit</a>.</p>
+<p>For all other Open Source projects <a href="https://github.com/plataformatec/">under the Plataformatec organization on GitHub</a>, we will reach out to the current maintainers and take the necessary steps to transfer the ownership of all relevant assets, including names, source code, and logos of such projects.</p>
+<p>We are thankful to these communities for all the support and feedback they&#8217;ve given us throughout the years. We are glad to have been the home to these projects and to have worked with the teams that will continue shaping these projects from now on.</p><p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</title>
+		<link>/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/</link>
+		
+		<dc:creator><![CDATA[gersonscanapieco]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2018 16:30:22 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[code review]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=7675</guid>
+
+					<description><![CDATA[<p>Priorização é sempre algo complicado, não é mesmo? O tempo está sempre contra a gente, e as vezes precisamos fazer escolhas difíceis sobre onde devemos focar a nossa atenção e o nosso esforço. Com code reviews não é diferente. Por isso é muito importante traçar uma estratégia para investir seu tempo de revisão de maneira ... <a class="read-more-link" href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">»</a></p>
+<p>The post <a href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Priorização é sempre algo complicado, não é mesmo? O tempo está sempre contra a gente, e as vezes precisamos fazer escolhas difíceis sobre onde devemos focar a nossa atenção e o nosso esforço. Com code reviews não é diferente. Por isso é muito importante traçar uma estratégia para investir seu tempo de revisão de maneira eficiente.</p>
+<p>Conforme a organização em que trabalhamos cresce, vai ficando cada vez mais difícil acompanhar tudo o que está acontecendo. Pessoas novas vão entrando na equipe, ao mesmo tempo em que a base de código cresce numa velocidade ainda maior. O conhecimento técnico e de negócios, que antes era de conhecimento de todos os desenvolvedores, começa a se concentrar nas equipes, podendo gerar uma série de problemas:</p>
+<ul>
+<li>Diminuição da qualidade dos code reviews, pois algumas equipes podem estar desfalcadas de pessoas com conhecimento técnico ou de negócios</li>
+<li>Diminuição no número de code reviews em projetos de pouca visiblidade</li>
+<li>Redução no alinhamento entre as equipes, podendo resultar em retrabalho ou até mesmo bugs</li>
+<li>Risco de perda de conhecimento e dificuldade na realocação dos membros das equipes, já que alguns contextos podem se tornar muito dependentes de pessoas específicas</li>
+</ul>
+<p>Como reduzir esses problemas?</p>
+<h2><a id="user-content-nem-todos-os-code-reviews-são-iguais" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#nem-todos-os-code-reviews-s%C3%A3o-iguais" aria-hidden="true"></a>Nem todos os code reviews são iguais</h2>
+<p>Os code reviews são uma excelente prática para <strong><a href="https://medium.com/javascript-scene/the-outrageous-cost-of-skipping-tdd-codereviews-57887064c412">melhorar a qualidade do código e diminuir o número de erros</a>.</strong> Mas um outro benefício, tão importante quanto estes, é o compartilhamento de conhecimento entre os desenvolvedores.</p>
+<p>Quando eu reviso um PR (Pull Request ou Change request, dependendo da ferramenta), sinto que conhecendo o seu contexto fica mais fácil fazer uma revisão mais aprofundada e assertiva. Dúvidas do tipo:</p>
+<ul>
+<li>Essa solução realmente resolve o problema?</li>
+<li>Existem maneiras melhores de resolver o problema?</li>
+<li>Essa funcionalidade faz sentido do ponto de vista de negócios?</li>
+<li>É viável prosseguir com essa funcionalidade agora?</li>
+</ul>
+<p>Ficam mais mais fáceis de serem enxergadas e respondidas. Mas, para ter essas respostas, ter um bom conhecimento sobre o negócio é fundamental. Por isso, as vezes acabamos revisando apenas os PRs nos quais já temos contexto, sejam eles da nossa equipe ou de partes do sistema que já conhecemos. Se pensarmos no nível organizacional, esse tipo de comportamento pode resultar nos problemas citados, muitas vezes difíceis de serem diagnosticados.</p>
+<h2><a id="user-content-apresentando-a-pirâmide-de-code-reviews" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#apresentando-a-pir%C3%A2mide-de-code-reviews" aria-hidden="true"></a>Apresentando a Pirâmide de Code Reviews</h2>
+<p>Uma prática que pode ajudar a resolver esses problemas é a Pirâmide de Code Reviews.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter size-large wp-image-7678" src="/wp-content/uploads/2018/07/pyramid-1024x545.png" alt="pirâmide de revisão de código" width="1024" height="545" srcset="/wp-content/uploads/2018/07/pyramid-1024x545.png 1024w, /wp-content/uploads/2018/07/pyramid-300x160.png 300w, /wp-content/uploads/2018/07/pyramid-768x408.png 768w, /wp-content/uploads/2018/07/pyramid.png 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Essa pirâmide, inspirada na <a href="https://martinfowler.com/bliki/TestPyramid.html" rel="nofollow">Pirâmide de Testes</a>, nos ajuda na priorização do que devemos fazer.</p>
+<p>Pull Requests da nossa equipe são a base da pirâmide, pois são neles onde dedicaremos mais tempo. Como já possuímos o conhecimento necessário para fazer um bom code review, é provável que essas revisões sejam feitas mais rapidamente. Dessa forma, ajudamos os outros desenvolvedores a entregar seu trabalho com mais qualidade mais rapidamente.</p>
+<p>No segundo nível da pirâmide temos dois grupos de PRs: aqueles em que já possuímos contexto e os chamados &#8220;PRs críticos&#8221;.</p>
+<p>Os PRs que já possuímos contexto são mais óbvios: eles envolvem uma parte do código ou do negócio já conhecida pelo desenvolvedor, fazendo com que ele(a) se sinta confortável na revisão. Eles não diferem muito dos Pull Requests do próprio squad, porém como são externos, consideramos que haverão outras pessoas da squad envolvida ajudando na revisão. Por isso gastamos menos tempo neles.</p>
+<p>Já os chamados &#8220;Pull Requests Críticos&#8221; são um pouco diferentes. Esses PRs podem implementar diferentes tipos de funcionalidades, desde resolver um erro crítico até mudanças na arquitetura, e é essencial que os desenvolvedores estejam alinhados com suas alterações. Esse tipo de Pull Request geralmente requer uma atenção imediata dos desenvolvedores, por isso é importante separar um tempo para revisá-los.</p>
+<p>O que a pirâmide traz de diferente é tornar explícito que devemos inserir no nosso processo de trabalho as revisões exploratórias. Ou seja, não precisamos mais nos sentir restritos a(s) parte(s) do sistema onde trabalhamos. Pelo contrário, tendo a pirâmide em mente, nos sentimos incentivados a revisar outras partes do código e expandir nosso conhecimento do negócio.</p>
+<p>Mas como começar por esse caminho? Será que meus code-reviews serão bem aceitos?</p>
+<h2><a id="user-content-começando-os-code-reviews-exploratórios" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#come%C3%A7ando-os-code-reviews-explorat%C3%B3rios" aria-hidden="true"></a>Começando os code reviews exploratórios</h2>
+<p>Ao revisar uma parte do código ou do negócio que não estamos familizados é natural nos sentir desconfortáveis ou inseguros. Podemos nos sentir desestimulados a discutir, com medo de fazer perguntas &#8220;estúpidas&#8221; ou redundantes. E se não conhecermos muito bem os desenvolvedores envolvidos no PR isso fica ainda pior. Resumindo: saímos da nossa zona de conforto.</p>
+<p>Já apresentamos os benefícios dos code reviews exploratórios, porém como devemos proceder na hora de revisar código desconhecido, onde supostamente nossa efetividade vai ser menor? E como devemos reagir quando uma pessoa de fora revisa o código e começa a fazer perguntas ou questionamentos?</p>
+<p>Como o próprio nome já diz, estamos explorando uma parte desconhecida do projeto, por isso ter uma atitude curiosa é essencial. Fazer perguntas, dar dicas e sugestões e compartilhar experiências são ótimos pontos para se ter em mente nessas revisões. Ter bom senso também é importante aqui, pois não precisamos entender todo o contexto de negócio logo de cara na primeira revisão. Identificar o contexto mínimo que precisamos para fazer a revisão é vital para não onerarmos demais o nosso tempo nem o dos demais participantes.</p>
+<p>E quando recebermos esse tipo de revisão é importante ter uma atitude respeitosa e didática nos comentários. Perguntas devem ser respondidas sempre educadamente e com um nível suficiente de detalhes(o bom senso vale aqui também). Respostas atravessadas ou incompletas podem prejudicar as revisões e desestimular os revisores a continuarem com essa prática. Lembre-se: ninguém é dono do código, o código que você está fazendo agora será usado por outros desenvolvedores no futuro. E vice-versa. Um ambiente amigável durante as revisões vai tornar essa prática muito mais proveitosa para todas as partes envolvidas.</p>
+<p>E quais critérios devemos usar para escolher aonde vamos explorar? Bem, a decisão final fica por sua escolha. Mas se você souber de alguma parte do projeto que carece de revisões, pode ser uma boa idéia dar uma explorada por lá.</p>
+<p>Quanto tempo devo me dedicar aos code reviews exploratórios? Isso varia de cada contexto. Se você tem bastante tempo livre para explorar outras partes do código, faça isso! Já se você não tiver tanto tempo assim, tente dedicar pelo menos algumas horas por semana para explorar. Um bom começo seria fazer pelo menos uma revisão exploratória por semana.</p>
+<p>E você, como organiza seu tempo para revisar PRs? Você se sentiria confortável em adotar essa prática onde você trabalha? Deixe seu comentário logo abaixo.</p><p>The post <a href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using the test pyramid to have better feedback from your test suite</title>
+		<link>/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Tue, 04 Oct 2016 20:39:50 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5734</guid>
+
+					<description><![CDATA[<p>In this blog post, I&#8217;ll explain the problem of developers spending too much time trying to discover a problem in a failing test suite. A cause of this issue may be the lack of a good test feedback. A good feedback is one that happens fast with a helpful message. To illustrate this problem, consider ... <a class="read-more-link" href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">»</a></p>
+<p>The post <a href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">Using the test pyramid to have better feedback from your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>In this blog post, I&#8217;ll explain the problem of developers spending too much time trying to discover a problem in a failing test suite. A cause of this issue may be the lack of a good test feedback. A good feedback is one that happens fast with a helpful message.</p>
+<p>To illustrate this problem, consider a simple application of storing and listing contacts. You have an actor user that can sign up, sign in, then can CRUD their contacts with first name, last name and phone number. We are in a context of multiple developers working together, programming and delivering features every day. For the examples below I&#8217;ll use Ruby, RSpec, Capybara and Ruby on Rails.</p>
+<p>Suppose we have a UI testing using <a href="https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec">RSpec features test</a> like this:</p>
+<pre><code class="ruby">#spec/features/contacts_spec.rb
+feature 'User can create new contact' do
+  scenario 'when user provides valid contact information' do
+    login_with email: 'default@mail.com', password: 'default'
+
+    click_link 'Contacts'
+
+    expect(page).to have_content('Listing Contacts')
+    expect(page).to have_content("There're no contacts.")
+
+    click_link 'New Contact'
+
+    fill_in 'First name', with: 'Jon'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Phone number', with: '1199999999'
+
+    click_on 'Create Contact'
+
+    expect(page).to have_content('Listing Contacts')
+    expect(page).to have_content('Jon Doe - (11) 9999-9999')
+  end
+end
+</code></pre>
+<p>Simple and straight forward. The good part of this test is it checks the entire application stack: authentication, rendering, storing stuff on the database and the logic of creating contacts. Some developer may be confident with this test and start to question: Should I add more unit tests? For phone number formatting? For displaying complete names? For user authentication? For contact validation and creation? If one of these features fail, this feature test will fail too. Why should I care to add more tests? Isn’t it redundancy? Waste of time? The short answer is you should add more unit and integration tests because of feedback. Now, let&#8217;s expand the topic.</p>
+<h2>Speed matters</h2>
+<p>We know the UI test brings confidence since it tests the entire stack of your application. But overusing this type of tests will severely impact your test suite speed.</p>
+<p>In our contacts creation test example, we have some edge cases that were not covered. What happens if we use a different size of numbers in the telephone number field? How will it be displayed? We can add a new UI test to cover this case, but a unit test suits better and faster. If the number formatting is a view helper we can check it with a helper test, for example:</p>
+<pre><code class="ruby">describe '#format_phone_number' do
+  it 'formats cell phones numbers of 10 digits in "(XX) XXXXX-XXXX" format' do
+    formatted_number = helper.format_phone_number('11999998888')
+    expect(formatted_number).to eq '(11) 99999-8888'
+  end
+
+  it 'does not format others digits different of 10' do
+    formatted_number = helper.format_phone_number('11888')
+    expect(formatted_number).to eq '11888'
+  end
+end
+</code></pre>
+<p>This test is way easier to write, read, cheaper and faster than adding a new UI to test this specific case. Keeping this practice, you will have fewer UI tests and more integration and unit tests. Such distribution of the different kind of tests resembles the format of a pyramid:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/10/test-pyramid.png" alt="pyramid" /></p>
+<p>Few UI tests on top and a solid base of unit tests. If you want more information about the test pyramid, I recommend you the following links:</p>
+<ul>
+<li><a href="https://www.mountaingoatsoftware.com/blog/the-forgotten-layer-of-the-test-automation-pyramid">The Forgotten Layer of the Test Automation Pyramid</a> by <a href="https://twitter.com/mikewcohn">Mike Cohn</a></li>
+<li><a href="https://www.kenneth-truyers.net/2015/06/27/the-test-pyramid/">The Test Pyramid</a> by <a href="https://twitter.com/kennethtruyers">Kenneth Truyers</a></li>
+<li><a href="http://martinfowler.com/bliki/TestPyramid.html">TestPyramid</a> by <a href="https://twitter.com/martinfowler">Martin Fowler</a></li>
+<li>We have a <a href="https://speakerdeck.com/plataformatec/piramide-de-testes-escrevendo-testes-com-qualidade-at-rubyconf-2015">talk</a> and <a href="https://www.youtube.com/watch?v=xgnF1hxwpBM">a video</a> explaining the test pyramid in portuguese.</li>
+</ul>
+<h2>Helpful messages</h2>
+<p>In the daily routine of a development team, the code is constantly evolving. The test server is running and warning when the test suite is passing or broken. A passing test suite is a requirement to deploy a new change in production in most of the clients that we have been working on. Then when the test suite fails, it is important for developers to act and fix the broken tests fast. Without helpful messages, it is critically hard.</p>
+<p>Let&#8217;s use again our contacts UI test, let&#8217;s use a scenario where we just have that test. The application has received new changes and the test server warns the team that we have an error, and the output is:</p>
+<pre><code>  1) User can create new contact when user provides valid contact information
+     Failure/Error: expect(page).to have_content("Jon Doe - (11) 9999-9999")
+       expected to find text "Jon Doe - (11) 9999-9999" in "default@mail.com Log out Contacts Contact was successfully created. Contact was successfully created. Listing Contacts Jon Doe - 1199999
+</code></pre>
+<p>We know the test failed in the last step, the step of checking the recent contact content in the listing page. In this sample application, we have a small text to search what&#8217;s going on. In a real world application, this content can be a lot bigger and unproductive to read. From here the developer has a lot of possibilities to search what the root cause of the problem. For example:</p>
+<ul>
+<li>Is it in the creation?</li>
+<li>Is it in the contacts listing?</li>
+<li>Is it in the telephone format method?</li>
+<li>Is it in the test?</li>
+<li>Had been changes to asynchronous request and expectation didn&#8217;t have time to assert the new content?</li>
+</ul>
+<p>The list can go on depending on your creativity. Now let&#8217;s build a scenario where we also have the <code>format_phone_number</code> helper unit test. The tests are failing, but now have this output:</p>
+<pre><code>1) User can create new contact when user provides valid contact information
+     Failure/Error: expect(page).to have_content("Jon Doe - (11) 9999-9999")
+       expected to find text "Jon Doe - (11) 9999-9999" in "default@mail.com Log out Contacts Contact was successfully created. Contact was successfully created. Listing Contacts Jon Doe - 1199999999 Show Edit Destroy New Contact"
+
+2) ContactsHelper#format_phone_number formats cell phones numbers of 10 digits in "(XX) XXXXX-XXXX" format
+   Failure/Error: expect(helper.format_phone_number('11999998888')).to eq '(11) 99999-8888'
+
+     expected: "(11) 99999-8888"
+          got: "11999998888"
+
+     (compared using ==)
+</code></pre>
+<p>Now we have two failing tests. The second error message is way easier to guess why it is broken. Some change on the <code>format_phone_number</code> helper has broken the cell phone formatting. Knowing it, looking again at the first error message you may connect the dots and find out the errors are connected.</p>
+<p>If two tests are failing for the same reason, this is not the same thing of worthless redundancy. Focused behavior tests bring you a lot more information for debugging, helping you solve problems fast. This is another benefit of the test pyramid.</p>
+<h1>Conclusion</h1>
+<p>Some people tend to be relaxed about worry too much about creating focused tests. I think the main reason is they are very used to code base context. If something fails they can navigate, debug and figure out fast what happened. But unfortunately, it not always true for everyone, specially for the newcomers.</p>
+<p>Another problem is when the team becomes careless about covering exceptional cases with unit and integrations tests.  The test suite is always green but problems are increasing in production. Your test suites become less reliable and leaving the entire team insecure about deploying new changes.</p>
+<p>To keep your test suite fast and worthy of trust I recommend you use the test pyramid technique. In Rails applications will be something like:</p>
+<ul>
+<li>Fewer UI tests with Capybara. Use them to test the user main journey and some exceptional cases.</li>
+<li>Test beyond the expected behavior. Exercise the exceptional behaviors with integration and unit tests. Write more models, controllers, requests, views, helpers, or mailers tests.</li>
+<li>Consider adding JavaScript unit tests in your test suite.</li>
+</ul>
+<p>These practices help us a lot to maintain a healthy code base and allow us to adapt and be more agile to change. What do you think of this practices? Which techniques and practices are you doing to keep your test suite fast and with helpful messages? Let me know with a comment below.</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">Using the test pyramid to have better feedback from your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Highlights of RubyConf Brazil 2016</title>
+		<link>/2016/09/highlights-of-rubyconf-brazil-2016/</link>
+		
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Fri, 30 Sep 2016 12:42:10 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=5718</guid>
+
+					<description><![CDATA[<p>Last week happened the biggest Ruby-related conference in Latin America, RubyConf Brazil. Our team was present in this edition, which by the way, was particularly interesting, therefore I&#8217;d like to share some highlights. The first highlight comes from the night before the event. We went to a bar with some conference speakers. It was really ... <a class="read-more-link" href="/2016/09/highlights-of-rubyconf-brazil-2016/">»</a></p>
+<p>The post <a href="/2016/09/highlights-of-rubyconf-brazil-2016/">Highlights of RubyConf Brazil 2016</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last week happened the biggest Ruby-related conference in Latin America, RubyConf Brazil. Our team was present in this edition, which by the way, was particularly interesting, therefore I&#8217;d like to share some highlights.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/09/plataformatec-team-rubyconf-brazil-2016.jpg" alt="Plataformatec Team at RubyConf Brazil 2016" /></p>
+<p>The first highlight comes from the night before the event. We went to a bar with some conference speakers. It was really fun to chat with everyone there. Besides, <a href="https://twitter.com/sdogruyol">Serdar Doğruyol</a>, who talked about the Crystal framework called Kemal, brought us a box of <a href="https://en.wikipedia.org/wiki/Turkish_delight">Turkish Delights</a>. And when I say &#8220;delights&#8221;, I mean it :yum:.</p>
+<p>During the event, I made new friends and met old ones. I had great conversations about hiring, team building, technologies and mainly Ruby and Elixir. It is very clear that the community is more mature than ever.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/09/rubyconf-brazil-2016-auditorium.jpg" alt="RubyConf Brazil 2016 auditorium" /></p>
+<p>Talking about Elixir, this year there were a high number of languages being talked about. As I could list, I&#8217;ve seen talks about Clojure, Crystal, JavaScript, Go, Ruby and Elixir.</p>
+<p>Another thing that caught my attention was the large number of people trying Elixir in Brazil. I was even more surprised to know that a lot of them already have production-running apps. Here are some interesting talks about Elixir:</p>
+<ul>
+<li>10 things I&#8217;ve learned in my first Phoenix + Elixir Project (a Rubyist point of View), by <a href="https://twitter.com/fbzga">Fabiano Beselga</a></li>
+<li>Building a Twitter clone with Phoenix and Vue.js, by <a href="https://twitter.com/philipsampaio">Philip Sampaio</a></li>
+<li>Measuring your Elixir application, by <a href="https://twitter.com/renanranelli">Renan Ranelli (Milhouse)</a></li>
+<li>How Elixir helped us scale our video user profile service for the Olympics, by <a href="https://twitter.com/emerleite">Emerson Macedo</a></li>
+<li>Phoenix for Rubyists, by <a href="https://twitter.com/michaellnorth">Mike North</a></li>
+<li>Elixir dev to prod: challenges encountered, by <a href="https://twitter.com/nirev">Guilherme Nogueira</a></li>
+</ul>
+<p>In addition, eight coworkers from Plataformatec spoke at the event. Some about Ruby, some about Elixir and some about development process and culture. I&#8217;d like to greet them and also list their talks:</p>
+<ul>
+<li><a href="https://speakerdeck.com/peagha/do-asp-dot-net-para-o-rails-as-melhores-partes">From ASP.NET to Rails: the best parts</a>, by <a href="https://twitter.com/philHenri">Philippe Hardardt</a></li>
+<li><a href="https://speakerdeck.com/flaviafortes/como-funciona-o-rails">How does Rails Work?</a>, by <a href="https://twitter.com/FlaFortes">Flavia Fortes</a></li>
+<li><a href="https://speakerdeck.com/wesleytz/como-consertar-projetos">How to fix projects</a>, by <a href="https://twitter.com/wesleyzapellini">Wesley Zapellini</a></li>
+<li><a href="https://speakerdeck.com/yteruia/rails-5-and-its-new-features-by-examples">Rails 5 and its new features by examples</a>, by <a href="https://twitter.com/yoteruia">Yoshio Teruia</a></li>
+<li><a href="https://speakerdeck.com/erichkist/debugging-techniques-in-elixir-elixirconf-2016">Debugging Techniques in Elixir</a>, by <a href="https://twitter.com/erichkist">Erich Kist</a> (this talk was <a href="http://confreaks.tv/videos/elixirconf2016-debugging-techniques-in-elixir">presented in English</a> in last ElixirConf)</li>
+<li><a href="https://speakerdeck.com/igorffs/voce-nao-esta-sozinho-va-pra-producao-com-elixir">You&#8217;re not alone, go to production with Elixir</a>, by <a href="https://twitter.com/igorflorianfs">Igor Florian</a></li>
+<li><a href="https://speakerdeck.com/diegorv/seguranca-em-aplicacoes-rails">Ruby on Rails Security: common faults and some not so obvious</a>, by <a href="https://twitter.com/diegorv">Diego Viera</a></li>
+<li><a href="https://speakerdeck.com/lucas/the-zen-and-art-of-refactoring">The Zen and Art of Refactoring</a>, by <a href="https://twitter.com/lucasmazza">Lucas Mazza</a></li>
+</ul>
+<p><a href="https://ebertapp.io/?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=blog-posts-ptec&amp;utm_content=rubyconf-2016"><br />
+<img decoding="async" src="/wp-content/uploads/2016/09/ebert-app-plataformatec.jpg" alt="Ebert App" /><br />
+</a></p>
+<p>Also, I am very excited to say that <a href="http://ebertapp.io/">Ebert</a>, the first Plataformatec product, went public during the event. I am very happy we made it. It&#8217;s a tool we&#8217;ve been using internally and for our clients, which now is available for everyone.</p>
+<p>Ebert has helped our team by doing continuous static analysis on GitHub repositories and delivering it straight to Pull Request. By automating some checks, it allowed us to focus on important issues. If you haven&#8217;t checked it yet, <a href="https://ebertapp.io/?utm_source=blog-ptec&amp;utm_medium=referral&amp;utm_campaign=rubyconf_blogpost&amp;utm_content=link_ebert">give it a try</a>.</p>
+<p>The last highlight is that Fabio Akita will not be part of the conference organization anymore. That said, <a href="https://twitter.com/locaweb/status/779819447087403008">Locaweb already twitted</a> that the event will continue next year.</p>
+<p>Well, that&#8217;s all for now. I hope you&#8217;ve enjoyed the event as much as we did. Tell us your thoughts on the comments below!</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/09/highlights-of-rubyconf-brazil-2016/">Highlights of RubyConf Brazil 2016</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Keeping your Ruby on Rails app easy to update</title>
+		<link>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/</link>
+					<comments>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/#comments</comments>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Thu, 12 May 2016 20:02:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 5]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=5397</guid>
+
+					<description><![CDATA[<p>The Rails 5 release candidate is out, bringing new improvements that will make your life as a developer easier. Probably you are excited to update your application to the new major Rails release, but you may have some concerns. It is normal, updating your application to fit the new version may bring an unknown number ... <a class="read-more-link" href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">»</a></p>
+<p>The post <a href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">Keeping your Ruby on Rails app easy to update</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://weblog.rubyonrails.org/2016/5/6/this-week-in-rails-railsconf-recap-rails-5-0-rc-1-is-out/">The Rails 5 release candidate is out</a>, bringing new improvements that will make your life as a developer easier. Probably you are excited to update your application to the new major Rails release, but you may have some concerns. It is normal, updating your application to fit the new version may bring an unknown number of changes to work. On this blog post, I&#8217;ll give you some tips to keep the workload of updating at a minimum.</p>
+<p>You can try the new Rails version using the <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-4-2-to-rails-5-0">published guides</a> and report any problem you may find on <a href="https://github.com/rails/rails/milestones/5.0.0">Rails issue tracker</a>.</p>
+<h2>Why update?</h2>
+<p>I think it is an important question you may need to answer to your team members. My favorite reasons are: <strong>security</strong>, <strong>bug fixes</strong>, and <strong>features</strong>.</p>
+<p>Rails has supported versions to receive security fix releases. If you are in a version not supported, you may be vulnerable. You should read the <a href="http://rubyonrails.org/security">security policies</a> and check if your app is using the supported versions.</p>
+<p>The framework also has <a href="http://rubyonrails.org/maintenance/">maintenance policies</a> that you should be aware of. Performance improvements and bug fixes you may miss if your app is too old. You need to code by yourself and do workarounds to have the same benefits, a code that would be more reliable being inside the framework.</p>
+<p>We usually hear developers complaining about applications that use old versions of the framework. The reason is new versions of the tool usually bring improvements to make the developer&#8217;s life easier. In the developer&#8217;s perspective, it&#8217;s demotivating knowing there&#8217;s a robust, elegant and productive way to do things and they are not able to use it.</p>
+<p>Keeping your Rails up to date will help your code base health and also can be a factor of motivation for your team.</p>
+<h2>What I should do?</h2>
+<p>We have been maintaining and evolving several old Rails apps in different contexts for years, and we have seen some practices that make it easier to keep your app updated:</p>
+<ul>
+<li>strict use of gems</li>
+<li>avoid monkey patches</li>
+<li>keep a good test coverage</li>
+</ul>
+<h3>Gems</h3>
+<p>Adding new dependencies using RubyGems and bundler is awesome, but overusing gems can not only slow your app down but slow you with the amount of work you need to update your Rails version. Some gems are coupled to the framework when you update it. These gems may break. When they break, you need to update them together.</p>
+<p>I recommend you considering these points before putting a new gem in your Gemfile:</p>
+<ul>
+<li><strong>Is this gem adding great value to your project?</strong> Some gems increase your app security, solve complex problems and reduce a lot of worktimes. Other gems add less value and can easily be replaced with your own implementation. Sometimes, it’s worth doing your own implementation than depending on a third­party code.</p>
+</li>
+<li>
+<p><strong>Is this gem well maintained?</strong> It’s good checking if the commits are recent, the project is well documented, the changelog contains helpful messages between releases, the maintainers often close issues and answer them respectfully. These are good signs that the gem you are adding won&#8217;t give you trouble in the future.</p>
+</li>
+</ul>
+<p>Adding a gem to your project is adding a coupling. Software coupling has its downsides, for example, the ripple effect of changes. The downside of more work to update your dependencies will be worth it if you accurately added them. If you want to learn more about downsides of dependencies, you can read this <a href="https://www.mikeperham.com/2016/02/09/kill-your-dependencies/">blog post about Ruby dependencies</a> and <a href="http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/">this one about Node</a>.</p>
+<h3>Avoid monkey patches</h3>
+<p>Monkey patches are often used to change the behavior of the code you don&#8217;t own. For example, rewriting or adding Ruby standard library classes or methods to fit your application needs. Careless monkey patches can bring you serious problems while updating Rails.</p>
+<p>Adding code that changes the behavior of gem classes can result in hidden bugs and turn any upgrade into a painful experience. It&#8217;s often uncertain how many objects are depending on your change and predicting all the effects of the monkey patched method. For example, in a new version of the gem, your monkey patch can change a method that was updated or doesn’t even exist anymore.</p>
+<p>We have seen some monkey patches that are a gem fix or enhancement. These changes may benefit others users of the gem and were hidden in application code. You may get in touch with gem maintainers and propose your changes. If your contribution is accepted, your fix will have a solid and proper place to be.</p>
+<p>If your behavior is specific for your app, you should consider extending the gem and applying your wanted behavior using the conventional OO practices. For example, you can create an adapter class, subclass or composition. You may also take a look at <a href="http://blog.honeybadger.io/understanding-ruby-refinements-and-lexical-scope/">Ruby Refinements</a>. Using this structure, you can create scoped changes that must be used explicitly. Explicit code reduces costs to maintain the app and the effort of updating to a new Rails version.</p>
+<p>After checking all previous solutions and you still think that a monkey patch better suits your needs, you should know there are <a href="http://www.justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess/">organized ways of adding them</a>. Regardless of coding, I recommend you to add a great documentation to keep it sane for your teammates and your future self. In this documentation, you should describe why it is necessary, when it can be removed and how it can be removed. It will help a better understanding of the app and provide useful information while updating your Rails app.</p>
+<h3>Keep a good test coverage</h3>
+<p>We all need to pay special attention to the tests. Some changes while updating Rails will be required and having a trustful test suite will help you discover problems before deploying your app to your end users.</p>
+<p>Having 100% of test coverage is <a href="http://martinfowler.com/bliki/TestCoverage.html">no guarantee of testing the correct behavior</a>. I would say the team should have a test coverage that they feel confident about.</p>
+<p>Some symptoms that your application doesn’t have good coverage is when recurrent errors are found while the application is running and all your automated tests are passing. You may use a tool like <a href="https://github.com/colszowka/simplecov">simplecov</a> to check your coverage rate, having a very low coverage is a bad sign.</p>
+<p>Adding proper tests is the only solution for low test coverage. If you are in this situation, you should start adding tests focused on the most used and important features. Having a good test coverage is essential to evolve because its main purpose is providing fast feedback that previously working features are still working.</p>
+<h2>Conclusion</h2>
+<p>Keeping the application’s Rails version updated is a responsibility that should not be ignored since it brings improvements for your team and security for your users.</p>
+<p>I hope these tips help you keep your code easy to update.</p>
+<p>Do you have more tips? Please leave comments below and tell us about your experience to keep your application up to date.</p>
+<div style="padding: 40px 0 60px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">Keeping your Ruby on Rails app easy to update</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Experimenting with explicit contracts with Ruby</title>
+		<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/</link>
+					<comments>/2016/02/experimenting-with-explicit-contracts-with-ruby/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 13:25:59 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5132</guid>
+
+					<description><![CDATA[<p>A few months back, José Valim started a conversation on overusing mocks and coupling between components. That made me interested on revisiting how I design my code and it has changed my approach to testing a bit in one of our current Ruby projects. A Tale of Two Adapters Back in November, I worked on ... <a class="read-more-link" href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">»</a></p>
+<p>The post <a href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">Experimenting with explicit contracts with Ruby</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months back, José Valim <a href="/2015/10/mocks-and-explicit-contracts/">started a conversation</a> on overusing mocks and coupling between components. That made me interested on revisiting how I design my code and it has changed my approach to testing a bit in one of our current Ruby projects.</p>
+<h2>A Tale of Two Adapters</h2>
+<p>Back in November, I worked on integrating a payment gateway from scratch into one of our client projects, through a gem that abstracts the HTTP interface of this external service. On this payment flow we had to first authorize the payment data with the gateway, which would return the transaction data for us to capture the payment in the background and go on with the business logic that depended on a successful payment flow.</p>
+<p>If you ever worked on something similar, you probably remember a few rough edges that we need to deal in cases like this: how to test the integration with the right credit card numbers for each possible outcome? Do we have a sandbox available for development and test environments? How can we control the performance and stability costs that this external dependency might bring to our application, and the coupling between the code that supports this core feature and this gem?</p>
+<p>Our attempt to handle the coupling and maintenance cost of this dependency was to push all the integration code behind an abstraction layer responsible for dealing with this payment flow logic under a <code>Payments</code> namespace.</p>
+<pre><code class="ruby">require 'gateway-xyz-gem'
+
+module Payments
+  class GatewayXYZ
+    def authorize(order, credit_card)
+      # Uses the `Order` details and the user `CreditCard` data to authorize
+      # a new transaction on the XYZ Payment Gateway through the
+      # `gateway-xyz-gem` classes.
+    end
+
+    def capture(payment_id)
+      # Capture the payment information for a transaction that was previously
+      # authorized.
+    end
+  end
+end
+</code></pre>
+<p>Somewhere down our <code>orders#create</code> action (but not directly in the controller method itself) we call <code>GatewayXYZ#authorize</code> with the <code>order</code> record and a <code>credit_card</code> value object and our integration with the external service is done.</p>
+<p>We might have a nice set of well-defined methods on the <code>GatewayXYZ</code> class but our job on these abstractions is far from done. We might unit test it with something like <a href="https://github.com/bblimke/webmock">WebMock</a> or <a href="https://github.com/vcr/vcr">VCR</a> to handle the external service dependency, but every other piece of our system that interacts with this abstraction will also depend on the external API to work properly &#8211; the <code>OrdersController</code>, the background job that captures the payment and the <code>Order</code> model itself that might trigger the initial <code>authorize</code> call. Should we just sprinkle the existing stubs all over our test suite and call it a day?</p>
+<p>We added a gateway implementation that mimics the expected behavior of the <code>GatewayXYZ</code> (with the same method signatures as the real gateway) and doesn’t depend on external resources. It also has a predefined behavior for specific inputs so we can test different code paths of their collaborators based on the test input.</p>
+<pre><code class="ruby">module Payments
+  class Memory
+    def authorize(order, credit_card)
+      if BAD_CREDIT_CARD_NUMBERS.include?(credit_card.number)
+        bad_response
+      else
+        ok_response
+      end
+    end
+  end
+end
+</code></pre>
+<h2>Dealing with environment specific setups</h2>
+<p>Now we need to make our <code>Payments::Memory</code> the go-to implementation for our test cases that depend on our payment abstractions. There are a few different ways we can do this on a Rails app.</p>
+<h3><code>Rails.application.config</code></h3>
+<p>We can expose a configuration setting in app that says which implementation it should use, similar to how <code>Action Mailer</code> picks the delivery method for your emails or how <code>Active Job</code> might have different queue adapters for your background jobs.</p>
+<pre><code class="ruby"># config/application.rb
+Rails.application.config.x.payment_gateway = Payments::GatewayXYZ
+
+# config/environments/test.rb
+Rails.application.config.x.payment_gateway = Payments::Memory
+
+# app/models/order.rb
+class Order
+  def authorize(credit_card)
+    gateway = build_gateway
+    gateway.authorize(self, credit_card)
+  end
+
+  private
+
+  def build_gateway
+    klass = Rails.application.config.x.payment_gateway
+    klass.new
+  end
+end
+</code></pre>
+<h3><code>Module.mattr_accessor</code> macro</h3>
+<p>You can set a class level macro on the classes that depend on a configurable value and change as you want in your code. This approach can be useful if you want to keep the configuration closer to the implementation that relies on it, instead of jumping between app code and configuration code if you want to debug something or be able to change it during runtime.</p>
+<pre><code class="ruby"># app/models/order.rb
+class Order
+  cattr_accessor :payment_gateway do
+    Payments::GatewayXYZ
+  end
+
+  def authorize(credit_card)
+    gateway = payment_gateway.new
+    gateway.authorize(self, credit_card)
+  end
+end
+
+# test/test_helper.rb
+Order.payment_gateway = Payments::Memory
+</code></pre>
+<h2>Factory method</h2>
+<p>This approach is useful when you want to hide away how to create an instance of a gateway implementation, so other classes that depend on it can have a way to just ask for a gateway object without worrying on how to create it.</p>
+<pre><code class="ruby"># app/models/payments.rb
+module Payments
+  matt_accessor :gateway do
+    Payments::GatewayXYZ
+  end
+
+  def build_gateway
+    gateway.new
+  end
+
+  module_function :build_gateway
+end
+
+# test/test_helper.rb
+Payments.gateway = Payments::Memory
+</code></pre>
+<p>I don’t believe that there is a Single Way to Do It<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" /> this kind of dependency injection, so you should feel free to pick a strategy that suits the interfaces you are building and the coding style of your team &#8211; I’m personally a fan of the factory method and the <code>cattr_accessor</code> approaches as they feel more detached from the configuration and closer to the application code, although the configuration way feels more aligned with global APIs from 3rd party gems.</p>
+<h2>Skipping Hash driven development</h2>
+<p>Our <code>GatewayXYZ</code> and <code>Memory</code> implementations have the same methods with the same arguments but there is a second piece of making a uniform API that we need to think about: what those methods should return?</p>
+<p>Our <code>authorize</code> needs to return more than a <code>truthy</code>/<code>falsy</code> value, as we need to gather more information about the payment transaction on our end, like the <code>payment_id</code> from the transaction, or a reason of why it might have failed (was the credit card denied? There is invalid data in the request), details for logging or instrumentation, etc. And if we think about implementing this API for multiple services (let&#8217;s say we need a <code>Payments::PayPal</code> now, for instance), those services will return this data in different formats that we need to normalize so these differences don&#8217;t leak to the rest of the system.</p>
+<p>One might say that a <code>Hash</code> with all this junk would do it, but going that path opens too many doors for inconsistency and bugs as the hash is a weak abstraction that can be mutated anywhere and won&#8217;t enforce any specific format or requirements on the return values.</p>
+<p>For that, we can implement a <code>Payments::Result</code> struct/value object to represent the outcome of our <code>authorize</code> action, and return it from each gateway implementation in our system, enforcing the interface we want to have.</p>
+<pre><code class="ruby">module Payments
+  class Result &lt; Struct.new(:payment_id, :errors)
+    def ok?
+      errors.blank?
+    end
+
+    def failed?
+      !ok?
+    end
+  end
+end
+</code></pre>
+<p>Our <code>Result</code> class has the minimal information that our client code needs, and each gateway is responsible for constructing a <code>Result</code> from its own data. The <code>Memory</code> gateway can do something as straightforward as this:</p>
+<pre><code class="ruby">module Payments
+  class Memory
+    def authorize(order, credit_card)
+      Result.new(
+        payment_id: SecureRandom.hex,
+        errors: SAMPLE_ERRORS[credit_card.number])
+    end
+  end
+end
+</code></pre>
+<p>This approach is useful not just for enforcing the interface we want, but also to improve other areas of our code that could use more specific abstractions than a bare <code>Hash</code> instance.</p>
+<h2>Going forward with contracts and macros</h2>
+<p>This homemade approach for better contracts between our app and this external service can go a long way, but if you want, you can build strict checks on top of your APIs to ensure that your objects are collaborating as you expect. We haven&#8217;t tried yet, but the <a href="https://github.com/egonSchiele/contracts.ruby">contracts</a> gem looks very interesting if you want that kind of type constraints that are lacking on Ruby.</p>
+<p>You can even write your own checks by wrapping methods into type checking proxies, as <a href="https://github.com/refile/refile"><code>refile</code></a> does with its <a href="https://github.com/refile/refile/blob/v0.6.2/lib/refile/backend_macros.rb"><code>Refile::BackendMacros</code></a> module. When <a href="https://github.com/refile/refile/blob/v0.6.2/lib/refile/backend/file_system.rb">extended by a backend implementation</a>, it provides macros to validate the input for methods like <code>#upload(uploadable)</code> or <code>#delete(id)</code>, so custom implementations don&#8217;t need to worry about validating these arguments on their own.</p>
+<div style="padding: 40px 0 20px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">Experimenting with explicit contracts with Ruby</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/02/experimenting-with-explicit-contracts-with-ruby/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

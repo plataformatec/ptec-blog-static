@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>usability « Plataformatec Blog</title>
+	<atom:link href="/tag/usability/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 08 Apr 2011 12:57:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Do not burden your users with validations</title>
+		<link>/2009/08/do-not-burden-your-users-with-validations/</link>
+					<comments>/2009/08/do-not-burden-your-users-with-validations/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Mon, 31 Aug 2009 14:02:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[usability]]></category>
+		<category><![CDATA[validations]]></category>
+		<guid isPermaLink="false">/?p=123</guid>
+
+					<description><![CDATA[<p>One of the first things we learn in Rails which are greatly useful are ActiveRecord validations. However, since they are easy to add, it happens frequently that we are burdening our users with validations instead of making forms easier and clearer. For instance, let&#8217;s suppose we are validating the Social Security Number (SSN) of an ... <a class="read-more-link" href="/2009/08/do-not-burden-your-users-with-validations/">»</a></p>
+<p>The post <a href="/2009/08/do-not-burden-your-users-with-validations/">Do not burden your users with validations</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the first things we learn in Rails which are greatly useful are <a href="http://api.rubyonrails.org/classes/ActiveRecord/Validations/ClassMethods.html" target="_blank" >ActiveRecord validations</a>. However, since they are easy to add, it happens frequently that we are burdening our users with validations instead of making forms easier and clearer.</p>
+<p>For instance, let&#8217;s suppose we are validating the <a href="http://en.wikipedia.org/wiki/Social_Security_number" target="_blank">Social Security Number (SSN)</a> of an user on signup. A sample code would be:</p>
+<pre lang="ruby" line="1">
+class User < ActiveRecord::Base
+  validates_presence_of :ssn
+  validates_length_of :ssn, :is => 9
+  validates_numericality_of :ssn
+  validates_uniqueness_of :ssn
+  validates_as_ssn :ssn # Checks if a reserved or special SSN was sent
+end
+</pre>
+<p>With the configuration above, if the user forgets to fill in the SSN, leaving it blank, <strong>four error messages</strong> related to the SSN field will be shown:</p>
+<ul>
+<li> SSN can&#8217;t be blank</li>
+<li> SSN is the wrong length (should be 9 characters)</li>
+<li> SSN is not a number</li>
+<li> SSN is invalid</li>
+</ul>
+<p>The question is: if the user just left the field blank, why we should show all those errors to him? Are they all relevant?</p>
+<div id="attachment_105" style="width: 410px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-105" class="size-full wp-image-105" title="Sad Cat" src="/wp-content/uploads/2009/08/funny-pictures-sad-cat-blackandwhit.jpg" alt="OMG! What have I done wrong to appear so many errors?" width="300" height="233" /><p id="caption-attachment-105" class="wp-caption-text">OMG! What have I done wrong to appear so many errors?</p></div>
+<p>Luckily, the solution is quite simple: we can make use of the <em>:allow_blank</em> option, so other validations won&#8217;t be triggered if the field is blank:</p>
+<pre lang="ruby" line="1">
+class User < ActiveRecord::Base
+  validates_presence_of :ssn
+  validates_length_of :ssn, :is => 11, :allow_blank => true
+  validates_numericality_of :ssn, :allow_blank => true
+  validates_uniqueness_of :ssn, :allow_blank => true
+  validates_as_ssn :ssn, :allow_blank => true
+end
+</pre>
+<p>This is also a nice use case for the <strong>Object#with_options</strong> method added by Rails:</p>
+<pre lang="ruby" line="1">
+class User < ActiveRecord::Base
+  validates_presence_of :ssn
+
+  with_options :allow_blank => true do |v|
+    v.validates_length_of :ssn, :is => 11
+    v.validates_numericality_of :ssn
+    v.validates_uniqueness_of :ssn
+    v.validates_as_ssn :ssn
+  end
+end
+</pre>
+<p>SSN is just an example, but we are frequently burdening our users in username, e-mail, password and many other fields.</p>
+<h3>Do not validate presence of confirmation fields</h3>
+<p>Another interesting subject about validations are the confirmation fields. We have the following note in the documentation of <em>validates_confirmation_of</em>:</p>
+<pre lang="ruby" line="1">
+validates_confirmation_of :password
+# NOTE: This check is performed only if password_confirmation is not nil
+</pre>
+<p>And this is a <strong>feature</strong>. This means that you don&#8217;t need to give the <em>:password_confirmation</em> key when creating objects in console or when writing tests:</p>
+<pre lang="ruby" line="1">
+it "should be valid with valid attributes" do
+  User.new(:password => "123456").should be_valid
+end
+</pre>
+<p>If the test fails, you are validating the presence of  <em>:password_confirmation</em>, which is unnecessary.  Since the <em>:password_confirmation</em> field will be available in the views, it will always be sent. So if the user leave it blank, it&#8217;s sent as blank value to the model and therefore will be checked. Just in the place it needs to be.</p><p>The post <a href="/2009/08/do-not-burden-your-users-with-validations/">Do not burden your users with validations</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/08/do-not-burden-your-users-with-validations/feed/</wfw:commentRss>
+			<slash:comments>23</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

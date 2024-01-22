@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How everyone is inserting technical debt in their applications	</title>
+	<atom:link href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/01/how-everyone-is-inserting-technical-debt-in-app/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 15 Jan 2010 14:26:07 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: andhapp		</title>
+		<link>/2010/01/how-everyone-is-inserting-technical-debt-in-app/comment-page-1/#comment-453</link>
+
+		<dc:creator><![CDATA[andhapp]]></dc:creator>
+		<pubDate>Fri, 15 Jan 2010 14:26:07 +0000</pubDate>
+		<guid isPermaLink="false">/?p=566#comment-453</guid>
+
+					<description><![CDATA[&quot;Never use a plugin you would not be able to write yourself.&quot; — Jamis Buck]]></description>
+			<content:encoded><![CDATA[<p>&#8220;Never use a plugin you would not be able to write yourself.&#8221; — Jamis Buck</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: andhapp		</title>
+		<link>/2010/01/how-everyone-is-inserting-technical-debt-in-app/comment-page-1/#comment-924</link>
+
+		<dc:creator><![CDATA[andhapp]]></dc:creator>
+		<pubDate>Fri, 15 Jan 2010 14:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=566#comment-924</guid>
+
+					<description><![CDATA[&quot;Never use a plugin you would not be able to write yourself.&quot; — Jamis Buck]]></description>
+			<content:encoded><![CDATA[<p>&#8220;Never use a plugin you would not be able to write yourself.&#8221; — Jamis Buck</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

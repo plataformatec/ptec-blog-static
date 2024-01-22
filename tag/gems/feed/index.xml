@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>gems « Plataformatec Blog</title>
+	<atom:link href="/tag/gems/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 18:07:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>SimpleForm 2.0 + Bootstrap: for you with love</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/</link>
+					<comments>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Thu, 23 Feb 2012 16:54:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<category><![CDATA[twitter bootstrap]]></category>
+		<guid isPermaLink="false">/?p=2469</guid>
+
+					<description><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you, not a small bump, but a shiny new version: Simple Form 2.0. Simple Form 2.0 features a new wrapper API which makes it very flexible and easy to integrate with CSS frameworks like Twitter Bootstrap.</p>
+<p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you a complete new release of SimpleForm. This time is not a small bump though, it&#8217;s a shiny new version: <a href="https://github.com/plataformatec/simple_form" title="SimpleForm">SimpleForm 2.0</a>, that comes with a bunch of new features and customizations, a new wrapper API to create custom input stacks and a great integration with <a href="http://twitter.github.com/bootstrap" title="Twitter Bootstrap">Twitter Bootstrap</a>.</p>
+<h3>Wrappers API</h3>
+<p>The new wrappers API is here in place of the old <code>components</code> option (besides some other *_tag and *_class configs), to add more flexibility to the way you build SimpleForm inputs. Here is an example of the default wrapper config that ships with SimpleForm when you run its install generator:</p>
+<pre lang="ruby">
+config.wrappers :default, :class => :input,
+  :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
+  ## Extensions enabled by default
+  # Any of these extensions can be disabled for a
+  # given input by passing: `f.input EXTENSION_NAME => false`.
+  # You can make any of these extensions optional by
+  # renaming `b.use` to `b.optional`.
+
+  # Determines whether to use HTML5 (:email, :url, ...)
+  # and required attributes
+  b.use :html5
+
+  # Calculates placeholders automatically from I18n
+  # You can also pass a string as f.input :placeholder => "Placeholder"
+  b.use :placeholder
+
+  ## Optional extensions
+  # They are disabled unless you pass `f.input EXTENSION_NAME => :lookup`
+  # to the input. If so, they will retrieve the values from the model
+  # if any exists. If you want to enable the lookup for any of those
+  # extensions by default, you can change `b.optional` to `b.use`.
+
+  # Calculates maxlength from length validations for string inputs
+  b.optional :maxlength
+
+  # Calculates pattern from format validations for string inputs
+  b.optional :pattern
+
+  # Calculates min and max from length validations for numeric inputs
+  b.optional :min_max
+
+  # Calculates readonly automatically from readonly attributes
+  b.optional :readonly
+
+  ## Inputs
+  b.use :label_input
+  b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
+  b.use :error, :wrap_with => { :tag => :span, :class => :error }
+end
+</pre>
+<p>Wrappers are used by the form builder to generate a complete input. You can remove any component from the wrapper, change the order or even add your own to the stack.</p>
+<p>The <code>:default</code> wrapper is going to be used in all forms by default. You can also select which wrapper to use per form, by naming them:</p>
+<pre lang="ruby">
+# Given you added this wrapper in your SimpleForm initializer:
+config.wrappers :small do |b|
+  b.use :placeholder
+  b.use :label_input
+end
+
+# Uses the :small wrapper for all inputs in this form.
+simple_form_for @user, :wrapper => :small do |f|
+  f.input :name
+end
+</pre>
+<p>Or you can just pick a different wrapper in a specific input if you want:</p>
+<pre lang="ruby">
+# Uses the default wrapper for other inputs, and :small for :name.
+simple_form_for @user do |f|
+  f.input :name, :wrapper => :small
+end
+</pre>
+<p>You can see a more detailed description of the new <a href="http://simple-form.plataformatec.com.br/#configuration/the-wrappers-api" title="SimpleForm 2.0 wrappers API docs">wrappers API in the documentation</a>.</p>
+<h3>Twitter Bootstrap</h3>
+<p>The second big change in SimpleForm 2.0 is out of the box Bootstrap integration. SimpleForm now ships with a generator option to initialize your application with a set of specific wrappers customized for Bootstrap. To get them, just run in your terminal, inside a Rails application (with SimpleForm already installed):</p>
+<pre>
+rails generate simple_form:install --bootstrap
+</pre>
+<p>This gives you the default SimpleForm initializer in <code>config/initializers/simple_form.rb</code> with some extra integration code added for Bootstrap. For example, here is the default wrapper:</p>
+<pre lang="ruby">
+config.wrappers :bootstrap, :tag => 'div', :class => 'control-group', 
+  :error_class => 'error' do |b|
+  b.use :placeholder
+  b.use :label
+  b.wrapper :tag => 'div', :class => 'controls' do |ba|
+    ba.use :input
+    ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+    ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+  end
+end
+</pre>
+<p>This wrapper is setup with the same structure that Bootstrap expects and is set to be the default wrapper in your application. This is <strong>the killer feature in SimpleForm 2.0</strong>: the Bootstrap integration is not inside SimpleForm but all in your application. This means that, if you want to move away or customize Bootstrap in the future, you don&#8217;t need to monkey patch SimpleForm, everything is in your app!</p>
+<p>We&#8217;ve set up a <a href="http://simple-form-bootstrap.plataformatec.com.br/articles/new" title="SimpleForm Bootstrap example application">live example application showing most of the SimpleForm inputs integrated with Twitter Bootstrap</a>, make sure you check it out! The <a href="https://github.com/rafaelfranca/simple_form-bootstrap" title="SimpleForm Bootstrap example application code">application code is on github</a>.</p>
+<p>Keep reading this blog post to find out the other changes and deprecations that gave SimpleForm all this extra flexibility, allowing it to be easily integrated with Twitter Bootstrap 2.0. </p>
+<h3>New configs</h3>
+<p>SimpleForm 2.0 comes with some new configs to ease its integration with Bootstrap and to make your daily work even more flexible:</p>
+<ul>
+<li><code>default_wrapper</code>: defines the default wrapper to be used when no one is given.</li>
+<li><code>button_class</code>: defines a class to add for all buttons.</li>
+<li><code>boolean_style</code>: change the way booleans (mainly check boxes and radio buttons) are shown: <code>:inline</code> (the default) uses the same structure as before, checkbox + label; <code>:nested</code> (generated for new apps) puts the checkbox inside the label, as label > checkbox.</li>
+<li><code>collection_wrapper_class</code>: class to add in all collections (check boxes / radio buttons), given <code>collection_wrapper_tag</code> is set.</li>
+<li><code>item_wrapper_class</code>: class to add to all items in a collection.</li>
+<li><code>generate_additional_classes_for</code>: allows you to specify whether to generate the extra css classes for inputs, labels and wrappers. By default SimpleForm always generate all classes, such as input type and required info, to all of them. You can be more selective and tell SimpleForm to just add such classes to the input or wrapper, by changing this config.</li>
+</ul>
+<h3>Deprecations</h3>
+<p>In order to create the new wrappers API, we had to deprecate some configs and change some helpers, so here is a basic summary of what is being deprecated:</p>
+<h4>Configs</h4>
+<ul>
+<li><code>translate</code>: By making <code>placeholder</code> and <code>hint</code> <code>optional</code> options in the wrappers API, you can already disable the automatic translation attempt that happens for these components. <code>labels</code>, on the other hand, are always used in forms, so we added a special config for them: <code>translate_labels</code>.</li>
+<li><code>html5</code>: this config is now part of the wrappers API, with <code>b.use :html5</code>, so the config option has been deprecated.</li>
+<li><code>error_notification_id</code>: in favor of using <code>error_notification_class</code> only.</li>
+<li><code>wrapper_tag=, wrapper_class=, wrapper_error_class=, error_tag=, error_class=, hint_tag=, hint_class=, components=</code>: all these were moved to the wrappers API structure, and are not required anymore.</li>
+</ul>
+<h4>Helpers</h4>
+<ul>
+<li><code>:radio</code> input type: In order to integrate with Bootstrap, we had to get rid of the <code>:as => :radio</code> and use <code>:as => :radio_buttons</code> instead. The former still works, but will give you a bunch of deprecation warnings. CSS class names changed accordingly as well</li>
+<li><code>collection_radio</code>: has changed to <code>collection_radio_buttons</code> to follow the <code>:as => :radio_buttons</code> change. Its label class has changed as well based on the helper name.</li>
+</ul>
+<h3>Wrapping up</h3>
+<p>SimpleForm 2.0 comes with a lot of new features, in special the new wrappers API, to make it flexible enough to allow you to customize inputs as much as possible in an easier way, and to bring you the integrated Bootstrap structure.</p>
+<p>Make sure you check out the new <a href="http://simple-form.plataformatec.com.br/" title="SimpleForm README">SimpleForm README</a> and also the <a href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.md" title="SimpleForm CHANGELOG">CHANGELOG</a> for a full list of changes. We&#8217;ve also created an special wiki page to help you <a href="https://github.com/plataformatec/simple_form/wiki/Upgrading-to-Simple-Form-2.0" title="Upgrading to SimpleForm 2.0">Upgrading to SimpleForm 2.0</a>. </p>
+<p>If you find any trouble while migrating to 2.0, or any issue with Bootstrap integration, or any other issue, please let us know in the <a href="https://github.com/plataformatec/simple_form/issues" title="SimpleForm issues tracker">issues tracker</a>. And if you have any questions, make sure to send them to the <a href="http://groups.google.com/group/plataformatec-simpleform" title="SimpleForm mailing list">mailing list</a>, there are a lot of people there to help you.</p>
+<p>All our development team and an <a href="https://github.com/plataformatec/simple_form/contributors" title="SimpleForm contributors">amazing number of contributors</a> put a lot of effort into this new release and we hope you will enjoy it. SimpleForm 2.0 + Bootstrap: from us, for you, with love.</p>
+<p>Thoughts about SimpleForm 2.0? Please let us know in the comments.</p><p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm 1.4 is out</title>
+		<link>/2011/05/simpleform-1-4-is-out/</link>
+					<comments>/2011/05/simpleform-1-4-is-out/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 17:10:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=2051</guid>
+
+					<description><![CDATA[<p>I&#8217;m pleased to say that we released SimpleForm 1.4. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features: Custom Form Builders Now you can set a custom form builder that inherits from SimpleForm::FormBuilder: ... <a class="read-more-link" href="/2011/05/simpleform-1-4-is-out/">»</a></p>
+<p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m pleased to say that we released <a href="https://github.com/plataformatec/simple_form">SimpleForm 1.4</a>. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features:</p>
+<h3>Custom Form Builders</h3>
+<p>Now you can set a custom form builder that inherits from <code>SimpleForm::FormBuilder</code>:</p>
+<pre lang="ruby">class CustomBuilder < SimpleForm::FormBuilder
+  def input(attribute_name, options={}, &#038;block)
+    options[:input_html].merge! :class => 'custom'
+    super
+  end
+end</pre>
+<p>And use it straight in the <code>simple_form_for</code> helper, like the example below:</p>
+<pre lang="ruby"><%= simple_form_for(@user, :builder => CustomBuilder) do |f| %>
+  <%= f.input :name %>
+<% end %></pre>
+<h3>Custom Inputs</h3>
+<p>SimpleForm has many different inputs available in its source code. But, sometimes, depending on the business logic the application requires, we need to add new inputs to make our work easier. Before this version, you had to explicitly define your new input inside SimpleForm namespace for it to work. Furthermore, customizing existing SimpleForm inputs could only be achieved through monkey patching.</p>
+<p>Inspired by a similar feature in the <a href="https://github.com/justinfrench/formtastic">Formtastic</a> gem, from now on you will be able to create new input types inside <code>app/inputs</code> folder in your application. The only restriction to create such inputs is that the class name must end with <code>Input</code>. See some examples:</p>
+<pre lang="ruby"># app/inputs/currency_input.rb
+class CurrencyInput < SimpleForm::Inputs::StringInput
+  def input
+    "$ #{super}".html_safe
+  end
+end</pre>
+<p>And the usage:</p>
+<pre lang="ruby">f.input :money, :as => :currency</pre>
+<p>You can also redefine existing SimpleForm inputs by creating a new class with the same name. For instance, if you want to wrap date/time/datetime inputs in a div, you can do:</p>
+<pre lang="ruby"># app/inputs/date_time_input.rb
+class DateTimeInput < SimpleForm::Inputs::DateTimeInput
+  def input
+    "<div>#{super}</div>".html_safe
+  end
+end</pre>
+<h3>HTML 5</h3>
+<p>SimpleForm allows you to add many HTML 5 features to your applications, like placeholders, inline browser validations and more. The problem is: most browsers are still experimenting some HTML 5 features, and people started having lots of troubles with the automatic browser validation.</p>
+<p>For this reason, SimpleForm now has an option to easily disable such form validations. You have to add this line to your SimpleForm initializer:</p>
+<pre lang="ruby">config.browser_validations = false</pre>
+<p>But, if HTML 5 is still not for you, you can disable all the HTML 5 stuff, by adding the configuration below to your initializer:</p>
+<pre lang="ruby">config.html5 = false</pre>
+<p>Notice that this option does not disable the `placeholder` component, because we believe this option is very well supported currently in mostly browsers. If you don't want to use it as well, just remove it from the `components` option in your initializer.</p>
+<h3>More Helpers</h3>
+<p>In this version we also add two new form helpers to SimpleForm: <code>input_field</code> and <code>full_error</code>.</p>
+<p>The <code>full_error</code> helper shows errors in an attribute prepending its human name. This can be used when you want to show errors on hidden fields, for instance. You can see how it works in this example:</p>
+<pre lang="ruby">f.full_error :token #=> <span class="error">Token is invalid</span></pre>
+<p>The <code>input_field</code> helper renders only the input tag with all the facilities of SimpleForm's input helper. It means no wrapper, error or hint will be rendered. A good example of using this helper is inside an input block:</p>
+<pre lang="ruby"><%= f.input :max_time, :as => :integer do %>
+  <%= f.input_field :max_time, :as => :integer, :type => :range %>
+  <%= content_tag :span, '1', :id => 'max_time_value' %>
+<% end %></pre>
+<p>It will render:</p>
+<pre lang="html">
+<div class="input integer required">
+  <label class="integer required for="model_max_time">Max time <abbr title="required">*</abbr></label>
+  <input class="numeric integer required" id="model_max_time" name="model[max_time]" required="required" size="50" type="range" />
+  <span id="max_time_value">1</span>
+</div>
+</pre>
+<h3>Wrapping up</h3>
+<p>This version allows you to do more customizations in SimpleForm based on your applications needs. We encourage you to take a look at the <a title="SimpleForm Changelog" href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc">CHANGELOG</a> and also review the <a title="SimpleForm Readme" href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a title="SimpleForm contributors" href="https://github.com/plataformatec/simple_form/contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>Right now, we are working on Rails 3.1 compatibility for the next version. If you feel like helping us or just want to see a new feature, feel free to send us a pull request. And last, but not least, we look forward to know how SimpleForm is changing your life. Is it being helpful? How does it improve your applications? Don't be shy, comments are welcome.</p><p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/simpleform-1-4-is-out/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm: forms made easy</title>
+		<link>/2010/06/simpleform-forms-made-easy/</link>
+					<comments>/2010/06/simpleform-forms-made-easy/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 29 Jun 2010 20:01:53 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the ... <a class="read-more-link" href="/2010/06/simpleform-forms-made-easy/">»</a></p>
+<p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the designer created with similar forms, duplicating the code. But we don&#8217;t like code duplication, we weren&#8217;t feeling comfortable with it. So we decided to move on and create a tool to help us, that should be flexible enough to let us define the markup that fits better for each application, or even no extra markup at all. Here is SimpleForm!</p>
+<h3>SimpleForm inputs</h3>
+<p>From the README:</p>
+<blockquote><p>Forms made easy (for Rails)!</p>
+<p>SimpleForm aims to be as flexible as possible while helping you with powerful components to create your forms. The basic goal of simple form is to not touch your way of defining the layout, letting you find the better design for your eyes. Good part of the DSL was inherited from Formtastic, which we are thankful for and should make you feel right at home.</p></blockquote>
+<p>As the README says, <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">SimpleForm is a tool to help you build forms easily in Rails</a>. Let&#8217;s see some examples:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :username, :label =&gt; 'Your username please' %&gt;
+  &lt;%= f.input :password, :hint =&gt; 'No special characters.' %&gt;
+  &lt;%= f.input :remember_me, :as =&gt; :boolean %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>There are plenty of things going on here: we create a form using <code>simple_form_for</code> helper, then we use the <code>:input</code> method to create input elements based on column type. For instance, <code>:username</code> will create a default text input, while <code>:password</code> attribute will render an input type password. For the <code>:username</code> attribute, we are specifying a label manually. For <code>:password</code>, the label will be taken from I18n, and we are adding a hint message to the field. For <code>:remember_me</code>, we are explicitly saying to render it as a checkbox, using the <code>:as => :boolean</code> option (that is the default for boolean attributes). Also, there is a <code>button</code> helper that simply delegates to Rails helpers, in this case <code>submit</code>.</p>
+<p>The output for a new <code>@user</code> would be:</p>
+<pre><code class="html">&lt;form action="/users" class="simple_form user" id="new_user" method="post"&gt;
+  &lt;div class="input string required"&gt;
+    &lt;label class="string required" for="user_username"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Your username please&lt;/label&gt;
+    &lt;input class="string required" id="user_username" maxlength="255" name="user[username]" size="50" type="text" /&gt;
+  &lt;/div&gt; 
+  &lt;div class="input password required"&gt;
+    &lt;label class="password required" for="user_password"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Password&lt;/label&gt;
+    &lt;input class="password required" id="user_password" name="user[password]" size="30" type="password" /&gt;
+    &lt;span class="hint"&gt;No special characters.&lt;/span&gt;
+  &lt;/div&gt; 
+  &lt;div class="input boolean optional"&gt;
+    &lt;label class="boolean optional" for="user_remember_me"&gt; Remember me&lt;/label&gt;
+    &lt;input name="user[remember_me]" type="hidden" value="0" /&gt;
+    &lt;input class="boolean optional" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /&gt;
+  &lt;/div&gt; 
+  &lt;input id="user_submit" name="commit" type="submit" value="Create User" /&gt; 
+&lt;/form&gt; 
+</code></pre>
+<p>You may have noticed there is some additional css classes added to the markup, like <code>string</code> and <code>required</code>. They are added automatically by SimpleForm to help us style and plug some javascript in. There are specific css classes for each available input type. Also, pay some attention to the <code>label</code>: inside it there is an <code>abbr</code> tag with an asterisk (*) showing that the field is required. SimpleForm uses the new validations reflection API from Rails 3 to check if the attribute has the <code>presence</code> validator, and mark the field as required if so. And we are able to say that a field is required or disable the required mark, by passing the option <code>:required => true|false</code>.</p>
+<p>Furthermore, there is the <code>hint</code> tag for the <code>:password</code> attribute that SimpleForm creates based on the <code>:hint</code> option we have defined. Also notice that the gem has automatically added a <code>div</code> wrapper to each input, with the same css classes. SimpleForm allows us to configure this wrapper as well, using for instance <code>p</code> instead of <code>div</code>. We are going to see more about configuration later.</p>
+<p>SimpleForm is already prepared to generate some of the new HTML 5 input tags, such as <code>email</code>, <code>url</code> and <code>number</code> inputs:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :website, :as =&gt; :url %&gt;
+  &lt;%= f.input :email %&gt;
+  &lt;%= f.input :age, :hint =&gt; "This defaults to 'number' input based on field type" %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>Based on the attribute name, SimpleForm will generate <code>url</code> or <code>email</code> input types, and we can always set a specific type with the <code>:as</code> option. Numeric attributes will always be rendered as input type number.</p>
+<h3>Working with associations</h3>
+<p>SimpleForm adds a custom and straightforward method to render select tags for associations, called <code>association</code>. For now, consider our <code>User</code> belongs to a <code>Company</code>, and has and belongs to many <code>Roles</code>. Let&#8217;s go straight to the example:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :name %&gt;
+  &lt;%= f.association :company %&gt;
+  &lt;%= f.association :roles %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>It will detect the association type and render a <code>select</code> tag for choosing the company, listing all companies in the database, and another <code>select</code> for roles, with <code>multiple</code> option enabled.</p>
+<p>SimpleForm also has some add-ons, letting us render associations as a collection of radios or check boxes. Using the same example:</p>
+<pre><code class="ruby">  f.association :company, :as =&gt; :radio
+  f.association :roles, :as =&gt; :check_boxes
+</code></pre>
+<p>Now we are rendering a collection of radios for choosing the <code>Company</code>, and another collection of check boxes for choosing <code>Roles</code>.</p>
+<h3>Configuration</h3>
+<p>SimpleForm lets us do some customizations by running its install generator:</p>
+<pre><code>rails generate simple_form:install
+
+# Output
+  create  config/initializers/simple_form.rb
+  create  config/locales/simple_form.en.yml
+  create  lib/templates/erb/scaffold/_form.html.erb
+</code></pre>
+<p>As we can see, running this generator will copy an initializer file, responsible for configuring SimpleForm; a locale file, to let us change some I18n messages; and a form template inside our lib dir. This template will be used instead of the default Rails scaffold form template, so it will create our form already using SimpleForm. Easy, right?</p>
+<p>Let&#8217;s take a look at some configuration options:</p>
+<ul>
+<li><strong>components</strong>: defines the components used by the form builder. We can remove any of them, change the order, or add new ones. Defaults to <code>[ :label, :input, :hint, :error ]</code>.</li>
+<li><strong>hint_tag</strong>: tag used for hints, defaults to <code>span</code>.</li>
+<li><strong>error_tag</strong>: tag used for errors, defaults to <code>span</code>.</li>
+<li><strong>wrapper_tag</strong>: tag used as wrapper to all inputs, defaults to <code>div</code></li>
+<li><strong>label_text</strong>: determines how the label text should be generated altogether with the required text. It must be a lambda/proc that receives both label and required texts. Defaults to <code>"required label"</code>.</li>
+</ul>
+<p>There are a lot more options available in the initializer file, such as default input size and priority countries for generating country selects. Also, the locale file lets us determine the required text and mark, or even the entire required html tag.</p>
+<h3>Internationalization</h3>
+<p>SimpleForm is ready for I18n, supporting <code>labels</code> and <code>hints</code>. In addition, it lets us set different content for each action, <code>new</code> and <code>edit</code>. Here is an example locale file:</p>
+<pre><code class="yml">en:
+  simple_form:
+    labels:
+      user:
+        username: 'User name'
+        password: 'Password'
+        edit:
+          username: 'Change user name'
+          password: 'Change password'
+    hints:
+      user:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+</code></pre>
+<p>Simple, right? If it does not find any specific translation using I18n for the <code>label</code>, it will fallback to <code>human_attribute_name</code>.</p>
+<h3>Here we go!</h3>
+<p>SimpleForm has much more to offer. We would like to invite you to take a <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">better look at the examples and possibilities</a>. Remember, SimpleForm aims to be flexible and powerful to help you easily build forms, without saying how you should create your markup.</p>
+<p>Also, feel free to explore the source code and extend SimpleForm even further. Since it&#8217;s based on components, creating a new component which moves the current hints to inside the input (using javascript or the new placehoder attribute in HTML 5), should be easy!</p>
+<p>It&#8217;s worth saying SimpleForm is Rails 3 compatible in the master branch. If you are using Rails 2.3.x, <a href="http://github.com/plataformatec/simple_form/tree/v1.0" title="SimpleForm for Rails 2.3.x">there is a v1.0 branch and version</a> that you might want to take a look.</p>
+<p>SimpleForm has been helping us a lot so far, we hope you enjoy it. Moreover, we would like to enjoy other tools that help your productivity day by day, please leave a comment and let us know, we would appreciate a lot!</p><p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/06/simpleform-forms-made-easy/feed/</wfw:commentRss>
+			<slash:comments>46</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rails Metrics: know what is happening inside your Rails 3 application</title>
+		<link>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/</link>
+					<comments>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 16 Feb 2010 18:18:29 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[notifications]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=803</guid>
+
+					<description><![CDATA[<p>RailsMetrics is a new Rails engine which stores everything that is happening inside your application in the database, so you can profile each request, besides creating charts, statistics and extract useful information. I&#8217;ve been working on it for the last couple months in parallel with ActiveSupport::Notifications, which is the foundation for RailsMetrics, and it was ... <a class="read-more-link" href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">»</a></p>
+<p>The post <a href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">Rails Metrics: know what is happening inside your Rails 3 application</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a> is a new Rails engine which stores everything that is happening inside your application in the database, so you can profile each request, besides creating charts, statistics and extract useful information.</p>
+<p>I&#8217;ve been working on it for the last couple months in parallel with <a href="http://github.com/rails/rails/tree/master/activesupport/lib/active_support/notifications.rb" target="_blank">ActiveSupport::Notifications</a>, which is the foundation for <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>, and it was open sourced today by <a href="http://www.engineyard.com/" target="_blank">Engine Yard</a>!</p>
+<p>It was a challenging project due to its threaded nature and I will share a couple things I learned during the process in this blog later. For now, you can watch the screencast below to see what it does and how to install it:</p>
+<div style="text-align:center"><object width="600" height="450"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9473741&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /></object></p>
+<p><a href="http://vimeo.com/9473741">Rails Metrics Screencast &#8211; Feb/2010</a> from <a href="http://vimeo.com/user3182384">PlataformaTec</a> on <a href="http://vimeo.com/">Vimeo</a>.</p>
+</div>
+<p>As said in the video, getting it released is just the first step and now it&#8217;s <strong>your turn to fork and improve it</strong> by providing a better layout, creating new reports, charts, etc!</p>
+<p>In case you are interested here are some screenshots that I <a href="http://twitter.com/josevalim/status/9138183973" target="_blank">tweeted</a> earlier: <a href="http://twitpic.com/13e7fn/full" target="_blank">http://twitpic.com/13e7fn/full</a> and <a href="http://twitpic.com/13e7h2/full" target="_blank">http://twitpic.com/13e7h2/full</a>.</p>
+<h3>The javascript novell</h3>
+<p>A week ago I <a href="http://twitter.com/josevalim/status/8898250204" target="_blank">asked</a> what people uses to create charts in Rails so I could evaluate what would be the best library to use in <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>. There were three types of libraries: server side ones, flash and javascript. Since I don&#8217;t want to depend on having neither RMagick nor Flash installed on the developer machine, I chose the javascript kind.</p>
+<p>After some research I ended up with three libraries: <a href="http://g.raphaeljs.com/" target="_blank">g.raphael</a>, <a href="http://code.google.com/p/flot/" target="_blank">flot</a> and <a href="http://www.jqplot.com/" target="_blank">jqplot</a>.</p>
+<p>For <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>, I chose to use <a href="http://g.raphaeljs.com/" target="_blank">g.raphael</a> since I can easily manipulate the objects it creates and it is the one which looks better (at least imho ;)). However it has poor documentation and the default charts have poor customization options compared to the other two libraries, so you end up tweaking the chart by hand (which was fine in my experience).</p>
+<p>I&#8217;m waiting for your pull requests, enjoy!</p><p>The post <a href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">Rails Metrics: know what is happening inside your Rails 3 application</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Discovering Rails 3 generators</title>
+		<link>/2010/01/discovering-rails-3-generators/</link>
+					<comments>/2010/01/discovering-rails-3-generators/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2010 17:50:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[generators]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[thor]]></category>
+		<guid isPermaLink="false">/?p=654</guid>
+
+					<description><![CDATA[<p>This weekend during Rails Bugmash I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments! First, David Trasbo wrote a nice guide about how to make your first Rails 3 generator, it covers up all the basic steps including setting it up in a gem. ... <a class="read-more-link" href="/2010/01/discovering-rails-3-generators/">»</a></p>
+<p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This weekend during <a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments!</p>
+<p>First, David Trasbo wrote a nice guide about how to <a href="http://caffeinedd.com/guides/331-making-generators-for-rails-3-with-thor">make your first Rails 3 generator</a>, it covers up all the basic steps including setting it up in a gem. He also puts the deserved attention into <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, which contains most helpers you need in a generator, like <code>copy_file</code>, <code>template</code>, <code>create_file</code>, <code>empty_directory</code> and so on.</p>
+<p>On another post, Ben Scofield talks about <code>apply</code> method, which is also in <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, and <a href="http://benscofield.com/2009/09/application-templates-in-rails-3/">how to use it to dry your application templates</a>.</p>
+<p>Wait&#8230; so <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> is used both in generators and in Rails application templates? Exactly, Rails&#8217; new generators <strong>unifies both application templates and generators API into one</strong>. While <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> holds basic methods, all Rails specific methods like <code>environment</code>, <code>rakefile</code>, <code>generator</code> are in <a href="http://github.com/rails/rails/tree/master/railties/lib/rails/generators/actions.rb">Rails::Generators::Actions</a>. If you already wrote an application template, you will feel more at home when writing a Rails 3 generator.</p>
+<p>Paul Barry talks <a href="http://paulbarry.com/articles/2010/01/13/customizing-generators-in-rails-3" target="_blank">how easy it&#8217;s to customize your scaffold</a> to use Rspec, Haml and Factory Girl instead of Test::Unit, Erb and Fixtures. This all works because <strong>scaffold is just a meta generator which provides hooks</strong> for template engine, test framework, ORM and so forth. A good way to see the hooks system working is by running <code>script/generate scaffold --help</code> before and after Paul changes, so you can see exactly how generators options update depending on the configuration values you set. While I wrote Rspec generators used in the example, he implemented himself Haml and Factory Girl generators and they can all be used as example if you plan to build your own.</p>
+<p>Finally, Zigzag Chen wrote about <a href="http://zigzag.github.com/2010/01/18/customizing-your-scaffold-template-become-easier-in-rails3.html">templates customization</a> and how you can change your scaffold controller to use json instead of the xml format. New generators have source paths, so <strong>you can customize them simply by copying files to RAILS_ROOT/lib/templates</strong>.</p>
+<p><a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> was excellent to gather feedback and we also got some tickets on Lighthouse, mainly about how generators help can be improved for people starting with Rails. Many thanks to <a href="http://www.railsbridge.org/">Rails Bridge</a> and besides the posts linked above, there is <a href="http://guides.rails.info/generators.html" target="_blank">a generator guide</a>, which may help you get started and maybe write your own post as well. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/01/discovering-rails-3-generators/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

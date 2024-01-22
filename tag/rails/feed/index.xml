@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rails « Plataformatec Blog</title>
+	<atom:link href="/tag/rails/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 28 Oct 2019 14:55:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Improve confirmation token validation in Devise (CVE-2019-16109)</title>
+		<link>/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Fri, 06 Sep 2019 18:08:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=9287</guid>
+
+					<description><![CDATA[<p>Devise version 4.7.1 was released with a fix for an edge case that could confirm accounts by mistake. We&#8217;ll explain now in details what is the issue, how it was fixed and which actions you might want to take in your applications. Description We received a security report saying that it was possible to confirm ... <a class="read-more-link" href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">»</a></p>
+<p>The post <a href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">Improve confirmation token validation in Devise (CVE-2019-16109)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Devise version <code>4.7.1</code> was released with a fix for an edge case that could confirm accounts by mistake. We&#8217;ll explain now in details what is the issue, how it was fixed and which actions you might want to take in your applications.</p>
+
+
+
+<h2 class="wp-block-heading">Description</h2>
+
+
+
+<p>We received a security report saying that it was possible to confirm records with a blank <code>confirmation_token</code> parameter. In order words, hitting the following URL <code>/users/confirmation?confirmation_token=</code> would successfully confirm a user instead of showing a validation error &#8211; e.g. <code>Confirmation token can't be blank</code>.</p>
+
+
+
+<p>This only happens if there are <strong>records with a blank confirmation token in the database</strong>. This is because of the way the method <code><a href="https://github.com/plataformatec/devise/blob/0ea4bd70b2ca852d3314f53b62ffd9c7583c4f0d/lib/devise/models/authenticatable.rb#L274" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">find_first_by_auth_conditions</a></code> works (which is similar to ActiveRecord&#8217;s <code>#find_by</code>). It is important to mention that we haven&#8217;t found a case where Devise sets <code>confirmation_token</code> to an empty string.</p>
+
+
+
+<p>In summary, before version <code>4.7.1</code>, this is what would happen after hitting the confirmation endpoint with a blank <code>confirmation_token</code>:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">Started GET <span class="hljs-string">"/users/confirmation?confirmation_token="</span> <span class="hljs-keyword">for</span> ::<span class="hljs-number">1</span> at <span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-05</span> <span class="hljs-number">10</span>:<span class="hljs-number">24</span>:<span class="hljs-number">29</span> <span class="hljs-number">-0300</span>
+Processing by Devise::ConfirmationsController<span class="hljs-comment">#show as HTML</span>
+  Parameters: {<span class="hljs-string">"confirmation_token"</span>=&gt;<span class="hljs-string">""</span>}
+  User Load (<span class="hljs-number">1.0</span>ms)  SELECT  <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span> ORDER BY <span class="hljs-string">"users"</span>.<span class="hljs-string">"id"</span> ASC LIMIT $<span class="hljs-number">2</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>], [<span class="hljs-string">"LIMIT"</span>, <span class="hljs-number">1</span>]]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Notice that the SQL query is trying to find users with <code>confirmation_token = ""</code>.</p>
+
+
+
+<p>It&#8217;s also worth mentioning that <strong>only unconfirmed records</strong> &#8211; i.e. with <code>confirmed_at: nil</code> in the database &#8211; would be confirmed in this case. For already confirmed users, a validation error (<code>Email was already confirmed, please try signing in</code>) would be displayed.</p>
+
+
+
+<h2 class="wp-block-heading">Possible implications</h2>
+
+
+
+<p>Considering that there are records with an empty <code>confirmation_token</code> in the database, a request sending a blank parameter would confirm the first record found in the database. This means that someone&#8217;s account would be confirmed by mistake.</p>
+
+
+
+<p>A more sensible scenario is for applications that automatically sign in accounts after confirmation. That would not only confirm someone&#8217;s account but also give an attacker access to it. Although this feature is not included in Devise, we know that some applications might have it.</p>
+
+
+
+<p>For already confirmed records &#8211; i.e. with a <code>confirmed_at</code> date in the database &#8211; the validation error would be displayed, but their email would be leaked to the end user inside the form&#8217;s input.</p>
+
+
+
+<h2 class="wp-block-heading">Solution</h2>
+
+
+
+<p>The solution was to validate whether the <code>confirmation_token</code> is empty before doing any query in the database. So now, when the same endpoint is hit, nothing happens:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">Processing by Devise::ConfirmationsController<span class="hljs-comment">#show as HTML</span>
+  Parameters: {<span class="hljs-string">"confirmation_token"</span>=&gt;<span class="hljs-string">""</span>}
+Completed <span class="hljs-number">200</span> OK in <span class="hljs-number">371</span>ms (Views: <span class="hljs-number">339.0</span>ms | ActiveRecord: <span class="hljs-number">5.9</span>ms)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And the end-user will see the validation error on the screen.</p>
+
+
+
+<p>See the <a href="https://github.com/plataformatec/devise/pull/5132" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">pull request</a> with the solution for more information.</p>
+
+
+
+<h2 class="wp-block-heading">Actions you might want to take</h2>
+
+
+
+<p>Aside from updating Devise, you might also want to check whether you have records in that state in your application. You can do that with a query like this one:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">irb(main):<span class="hljs-number">001</span>:<span class="hljs-number">0</span>&gt; User.where(confirmation_token: <span class="hljs-string">""</span>)
+  User Load (<span class="hljs-number">0.6</span>ms)  SELECT  <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span> LIMIT $<span class="hljs-number">2</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>], [<span class="hljs-string">"LIMIT"</span>, <span class="hljs-number">11</span>]]
+=&gt; <span class="hljs-comment">#&lt;ActiveRecord::Relation []&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>If you get results out of this query, you might want to nullify them to avoid the confirmation by mistake:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">irb(main):<span class="hljs-number">002</span>:<span class="hljs-number">0</span>&gt; User.where(confirmation_token: <span class="hljs-string">""</span>).update(confirmation_token: nil)
+  User Load (<span class="hljs-number">0.4</span>ms)  SELECT <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>]]
+   (<span class="hljs-number">0.2</span>ms)  BEGIN
+  User Update (<span class="hljs-number">0.7</span>ms)  UPDATE <span class="hljs-string">"users"</span> SET <span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span>, <span class="hljs-string">"updated_at"</span> = $<span class="hljs-number">2</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"id"</span> = $<span class="hljs-number">3</span>  [[<span class="hljs-string">"confirmation_token"</span>, nil], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-09-05 14:03:20.857488"</span>], [<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>]]
+   (<span class="hljs-number">1.2</span>ms)  COMMIT</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2 class="wp-block-heading">Causes</h2>
+
+
+
+<p>Although we received a report where someone worked in an application that had records with a blank confirmation token in the database, no code or use case was found inside Devise that would make records end up in that state.</p>
+
+
+
+<p>If you find a case where this happens, please contact us at <a href="mailto:opensource@plataformatec.com.br">opensource@plataformatec.com.br</a> and we&#8217;ll look at it.</p>
+
+
+
+<p>Finally, we want to thank <a href="https://github.com/amangano-privy" target="_blank" rel="noreferrer noopener" aria-label="Anthony Mangano (opens in a new tab)">Anthony Mangano</a> for reporting this issue and helping with the solution.</p><p>The post <a href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">Improve confirmation token validation in Devise (CVE-2019-16109)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom authentication methods with Devise</title>
+		<link>/2019/01/custom-authentication-methods-with-devise/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Mon, 28 Jan 2019 17:00:34 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=8512</guid>
+
+					<description><![CDATA[<p>In the past, we have been asked to include other authentication methods in Devise (e.g. token-based and magic email links). Although it might make sense to include those for some applications, there is no plan to support them in Devise. But don&#8217;t be upset, it turns out you might not need to override Devise&#8217;s SessionsController ... <a class="read-more-link" href="/2019/01/custom-authentication-methods-with-devise/">»</a></p>
+<p>The post <a href="/2019/01/custom-authentication-methods-with-devise/">Custom authentication methods with Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>In the past, we have been asked to include other authentication methods in Devise (e.g. token-based and <a href="https://github.com/plataformatec/devise/issues/4724" target="_blank" rel="noopener noreferrer">magic email links</a>). Although it might make sense to include those for some applications, there is no plan to support them in Devise.</p>
+<p>But don&#8217;t be upset, it turns out you might not need to override Devise&#8217;s <code>SessionsController</code> or monkey patch some of its internals. In this article, you&#8217;ll learn how to create a token-based authentication for a JSON API by relying on <a href="https://github.com/wardencommunity/warden/wiki/Strategies" target="_blank" rel="noopener noreferrer">Warden&#8217;s features</a>.</p>
+<h2>Disclaimers</h2>
+<h3>Warden? Huh?</h3>
+<p>This article will focus on how to include custom Warden strategies in a Rails application that uses Devise. If you want to know more about Warden strategies, I gave <a href="https://www.youtube.com/watch?v=QBJ3G40fxHg" target="_blank" rel="noopener noreferrer">a talk</a> last year at RailsConf that explains them in more details.</p>
+<h3>Show me the code!</h3>
+<p>The first part of this article will show how to set up a Rails application using Devise. If you want to skip to the token authentication part, click <a href="#the-api-token-strategy">here</a>.</p>
+<h2>Setup</h2>
+<p>Create a new Rails application (this example uses Postgres as the database to take advantage of <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener noreferrer">UUID</a>s to generate the access tokens):</p>
+<pre><code class="bash">rails new devise-token-based-auth --database=postgresql
+</code></pre>
+<p>Add the <code>devise</code> gem to your Gemfile:</p>
+<pre><code class="ruby">gem 'devise'
+</code></pre>
+<p>Now run the Devise generators:</p>
+<pre><code class="bash">rails generate devise:install
+rails generate devise User
+</code></pre>
+<p>We are going to need a column to store the <code>api_token</code>. For this, we&#8217;ll use the <a href="https://www.postgresql.org/docs/10/pgcrypto.html" target="_blank" rel="noopener noreferrer">pgcrypto</a> extension&#8217;s <code>gen_random_uuid()</code> function.</p>
+<p>First, create a migration to enable the <code>pgcrypto</code> extension:</p>
+<pre><code class="bash">rails generate migration enable_pgcrypto_extension
+</code></pre>
+<p>Now edit the migration to call the <code>#enable_extension</code> method:</p>
+<pre><code class="ruby">class EnablePgcryptoExtension &lt; ActiveRecord::Migration[5.2]
+  def change
+    enable_extension 'pgcrypto'
+  end
+end
+</code></pre>
+<p>The database is now able to use <code>pgcrypto</code>&#8216;s functions. Now we can create a migration to add the <code>api_token</code> column:</p>
+<pre><code class="bash">rails generate migration add_api_token_to_users
+</code></pre>
+<p>Now edit the migration like the one below. Notice the default is set to <code>gen_random_uuid()</code>:</p>
+<pre><code class="ruby">class AddApiTokenToUsers &lt; ActiveRecord::Migration[5.2]
+  def change
+    add_column :users, :api_token, :string, default: -&gt; { 'gen_random_uuid()' }
+    add_index :users, :api_token, unique: true
+  end
+end
+</code></pre>
+<p>Don&#8217;t forget to create the database and run the migrations:</p>
+<pre>rails db:create db:migrate</pre>
+<p>The next step is to create a user using <code>rails console</code> and grab its <code>api_token</code>:</p>
+<pre><code class="bash">rails console
+Running via Spring preloader in process 60784
+Loading development environment (Rails 5.2.2)
+irb(main):001:0&gt; user = User.create!(email: 'bruce@wayne.com', password: '123123')
+=&gt; #
+irb(main):002:0&gt; user.reload.api_token
+=&gt; "a4839b85-4c96-4f22-96f1-c2568e5d6a7f"
+</code></pre>
+<p>It&#8217;s time to create the Warden strategy now!</p>
+<h2 id="the-api-token-strategy">The Api Token Strategy</h2>
+<p>Create a file <code>app/strategies/api_token_strategy.rb</code> with the following content:</p>
+<pre><code class="ruby">class ApiTokenStrategy &lt; Warden::Strategies::Base
+  def valid?
+    api_token.present?
+  end
+
+  def authenticate!
+    user = User.find_by(api_token: api_token)
+
+    if user
+      success!(user)
+    else
+      fail!('Invalid email or password')
+    end
+  end
+
+  private
+
+  def api_token
+    env['HTTP_AUTHORIZATION'].to_s.remove('Bearer ')
+  end
+end
+</code></pre>
+<p>In short, the strategy tries to find a user for the token sent in the <code>Authorization</code> header. If it does, it signs the user in. Otherwise, it returns an error. If you are not familiar with the <code>success!</code> and <code>fail!</code> methods, watch the talk on the start of the blog post to get a sense on how Warden works.</p>
+<p>Warden needs to know about this strategy. Create a file <code>config/initializers/warden.rb</code> with the following code:</p>
+<pre><code class="ruby">Warden::Strategies.add(:api_token, ApiTokenStrategy)
+</code></pre>
+<p>This allows Warden to recognise that it should call the <code>ApiTokenStrategy</code> when it receives the <code>:api_token</code> symbol.</p>
+<h2>Authenticating a user</h2>
+<p>Now it&#8217;s time to use the strategy. Create an <code>UsersController</code> that renders the <code>current_user</code> in JSON:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  def show
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<p>Don&#8217;t forget to add a route for this controller action. Open <code>config/routes.rb</code> in your editor and include the following:</p>
+<pre><code class="ruby">Rails.application.routes.draw do
+  devise_for :users
+  resource :user, only: :show
+end
+</code></pre>
+<p>To require authentication in the controller, the method <code>#authenticate!</code> should be called passing the desired strategy as a parameter:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  def show
+    warden.authenticate!(:api_token)
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<p>You can see that this works using a simple <code>curl</code> request:</p>
+<pre><code class="bash">curl http://localhost:3000/user -H 'Authorization: Bearer a4839b85-4c96-4f22-96f1-c2568e5d6a7f'
+
+{"id":3,"email":"bruce@wayne.com","created_at":"2018-12-26T13:45:37.473Z","updated_at":"2018-12-26T13:45:37.473Z","api_token":"a4839b85-4c96-4f22-96f1-c2568e5d6a7f"}
+</code></pre>
+<p>It is also possible to define <code>:api_token</code> as a default strategy so that it&#8217;s called when no strategy is passed as a parameter. Add the following code in the <code>config/initializers/devise.rb</code> file:</p>
+<pre><code class="ruby">Devise.setup do |config|
+   # The secret key used by Devise. Devise uses this key to generate...
+   config.warden do |manager|
+     manager.default_strategies(scope: :user).unshift :api_token
+   end
+
+# ==&gt; Mountable engine configurations...
+end
+</code></pre>
+<p>This will add the&nbsp;<code>:api_token</code> strategy in the first position, followed by Devise&#8217;s default strategies (<code>:rememberable</code> and <code>:database_authenticatable</code>).</p>
+<p>Now it&#8217;s possible to use Devise&#8217;s <code>#authenticate_user!</code> helper, and the <code>:api_token</code> will still be used:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  before_action :authenticate_user!
+
+  def show
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<h2>Summary</h2>
+<p>And&#8230; we&#8217;re done! The focus here was to show how to include custom Warden strategies in a Rails application. The example was straightforward but you can follow this structure to create custom authentication logic to suit your application&#8217;s needs.</p>
+<p>The entire application used in this article can be found in <a href="https://github.com/tegon/devise-token-based-auth" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+
+<p></p><p>The post <a href="/2019/01/custom-authentication-methods-with-devise/">Custom authentication methods with Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Índices para JSONB no Postgres</title>
+		<link>/2019/01/indices-para-jsonb-no-postgres/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Mon, 21 Jan 2019 17:02:59 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=8429</guid>
+
+					<description><![CDATA[<p>No Postgres existe a opção de salvar dados como JSON &#8211; o que pode ser muito útil especialmente quando temos muitas incertezas quanto aos requisitos de negócio que ajudariam na modelagem das tabelas. A flexibilidade de poder armazenar os dados sem se preocupar com a estrutura das tabelas parece interessante, porém qual o impacto disso ... <a class="read-more-link" href="/2019/01/indices-para-jsonb-no-postgres/">»</a></p>
+<p>The post <a href="/2019/01/indices-para-jsonb-no-postgres/">Índices para JSONB no Postgres</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>No Postgres existe a opção de salvar dados como <a href="https://www.postgresql.org/docs/9.5/datatype-json.html" target="_blank" rel="noopener noreferrer">JSON</a> &#8211; o que pode ser muito útil especialmente quando temos muitas incertezas quanto aos requisitos de negócio que ajudariam na modelagem das tabelas.</p>
+<p>A flexibilidade de poder armazenar os dados sem se preocupar com a estrutura das tabelas parece interessante, porém qual o impacto disso na performance?</p>
+<p>A verdade é o que os dados do tipo JSON são armazenados da maneira como foram inseridos &#8211; isto é, em texto &#8211; o que deixa as consultas um pouco mais lentas já que os dados precisam ser <em>parseados</em> novamente. Porém, existe uma outra variação: o JSONB. Esse formato processa o texto no momento da inserção e o armazena em formato binário. Isso faz com que a inserção demore um pouco mais, em troca de consultas mais rápidas. Ah, e o JSONB também suporta índices!</p>
+<p>Nesse artigo você vai encontrar uma comparação dos tipos de índices disponíveis para JSONB no Postgres, um <em>benchmark</em> e como usá-los em aplicações Rails.</p>
+<h2>Setup</h2>
+<p>Para testar a performance de índices, é importante ter um banco populado com uma quantidade razoável de registros. Abaixo você encontrará as etapas necessárias para criar o banco de dados utilizado nesse <em>benchmark</em>.<br />
+Para acompanhar as etapas à seguir, precisaremos do <a href="https://www.postgresql.org/download/" target="_blank" rel="noopener noreferrer">Postgres devidamente instalado e rodando</a>.</p>
+<p>Iremos importar cerca de 600 mil registros na estrutura abaixo:</p>
+<pre><code class="json">{
+
+        "customer_id": "ATVPDKIKX0DER",
+        "product": {
+            "category": "Arts &amp; Photography",
+            "group": "Book",
+            "id": "1854103040",
+            "sales_rank": 72019,
+            "similar_ids": [
+                "1854102664",
+                "0893815381",
+                "0893816493",
+                "3037664959",
+                "089381296X"
+            ],
+            "subcategory": "Art",
+            "title": "The Age of Innocence"
+        },
+        "review": {
+            "date": "1995-08-10",
+            "helpful_votes": 5,
+            "rating": 5,
+            "votes": 12
+        }
+   }
+</code></pre>
+<p>Para importar esses dados, faça o <a href="http://examples.citusdata.com/customer_reviews_nested_1998.json.gz" target="_blank" rel="noopener noreferrer">download do arquivo</a> e siga as instruções abaixo:</p>
+<h3>1. Criar banco de dados</h3>
+<pre><code class="bash">❯ psql
+</code></pre>
+<pre><code class="sql">CREATE DATABASE store;
+</code></pre>
+<h3>2. Criar tabela</h3>
+<p>Vamos criar a tabela <code>reviews</code> com um único campo (<code>content</code>) para armazenar o conteúdo de cada registro:</p>
+<pre><code class="bash">❯ psql store
+</code></pre>
+<pre><code class="sql">CREATE TABLE reviews(content jsonb);
+</code></pre>
+<h3>3. Importar os dados</h3>
+<p>Por fim, vamos importar os dados do JSON que acabamos de baixar utilizando o comando <code>copy</code> dentro do console do Postgres:</p>
+<pre><code class="sql">copy reviews (content) FROM 'customer_reviews_nested_1998.json'
+</code></pre>
+<h2>B-tree</h2>
+<p>O índice do formato <strong>B-tree</strong> funciona somente com uma chave do documento e para um operador específico: isto é, o operador usado na definição do índice deverá ser o mesmo utilizado na consulta:</p>
+<pre><code class="sql">CREATE INDEX ON reviews((content #&gt;&gt; '{product,category}'));
+</code></pre>
+<p>Para que o índice seja utilizado, devemos fazer a consulta com o mesmo operador:</p>
+<pre><code class="sql">SELECT COUNT(*) FROM reviews WHERE content #&gt;&gt; '{product,category}' = 'Arts &amp; Photography';
+</code></pre>
+<p>Se utilizarmos outros operadores o índice não será aplicado, e consequentemente a busca ficará mais lenta:</p>
+<pre><code class="sql">SELECT COUNT(*) FROM reviews WHERE content-&gt;'product'-&gt;&gt;'category' = 'Arts &amp; Photography';
+</code></pre>
+<p>O índice para a consulta acima seria o seguinte:</p>
+<pre><code class="sql">CREATE INDEX ON reviews((content-&gt;'product'-&gt;&gt;'category'));
+</code></pre>
+<p>Se for necessário responder perguntas como “quais as <em>reviews</em> tem <em>rating</em> <code>4</code> ou mais” ou “quais <em>reviews</em> não são de livros” &#8211; operadores <code>&gt;</code>, <code>=</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> e <code>!=</code> &#8211; esse é o índice mais indicado.</p>
+<p>Porém fica uma observação aqui: nos testes feitos nesse <em>benchmark</em>, os índices para esses operadores acabaram <strong>não</strong> valendo a pena, o tempo de execução foi o mesmo. Mas pode ser que esse não seja sempre o caso, por isso é importante fazer <em>benchmarks</em> no seu ambiente para ter uma escolha mais assertiva.</p>
+<h3>Prós:</h3>
+<ul>
+<li>Melhor performance na consulta;</li>
+<li>Mais rápido para gerar;</li>
+<li>Utiliza menos espaço em disco;</li>
+<li>Suporta os operadores <code>&gt;</code>, <code>=</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> e <code>!=</code>.</li>
+</ul>
+<h3>Contras:</h3>
+<ul>
+<li>Somente um operador de consulta;</li>
+<li>Se for necessário buscar por várias chaves do documento, será preciso criar um índice para cada uma.</li>
+</ul>
+<h2>Hash</h2>
+<p>Apenas uma menção honrosa. Sua funcionalidade é muito similar ao <strong>B-tree</strong>, porém o próprio banco já lança um <em>warning</em> ao criá-lo. O <em>warning</em> informa que o <strong>Hash</strong> não suport algo chamado <strong>WAL</strong> e, portanto, seu uso é desencorajado:</p>
+<pre><code class="sql">CREATE INDEX ON reviews USING HASH((content #&gt;&gt; '{product,category}'));
+WARNING:  hash indexes are not WAL-logged and their use is discouraged
+</code></pre>
+<p>O <em>Write-Ahead Logging</em> (WAL) é um padrão que garante a integridade dos dados. De forma resumida, ele garante que as alterações nos arquivos do banco de dados só sejam salvas depois que essas mudanças forem salvas em um log. Isso permite que, se houver um <em>crash</em> no banco, seja possível aplicar as mudanças perdidas com base no log.<br />
+Caso queira saber mais sobre <strong>WAL</strong>, recomendo ler a <a href="https://www.postgresql.org/docs/9.1/static/wal-intro.html" target="_blank" rel="noopener noreferrer">documentação de Postgres</a>.</p>
+<p>Por não suportar o WAL, o <strong>Hash</strong> acaba sendo um pouco mais rápido que o <strong>B-tree</strong>, porém ele não foi incluído no <em>benchmark</em> por conta de seu uso ser desencorajado.</p>
+<p><strong>Atualização:</strong> a partir do Postgres 10, os índices de tipo <strong>Hash</strong> passaram a suportar o WAL. Portanto, pode valer a pena considerar essa opção na hora de escolher qual índice utilizar.</p>
+<h2>GIN (General inverted Index)</h2>
+<p>A partir do Postgres <strong>9.4</strong>, podemos utilizar esse novo formato de índice para os documentos. Esse índice pode ser usado em todo o documento (com qualquer chave).</p>
+<pre><code class="sql">CREATE INDEX on reviews USING GIN(content);
+</code></pre>
+<p>Nesse caso podemos realizar a consulta dessa forma:</p>
+<pre><code class="sql">SELECT COUNT(*) FROM reviews WHERE content @&gt; '{"product": {"category": "Arts &amp; Photography"}}';
+</code></pre>
+<p>Também é possível utilizar os operadores <code>?</code>, <code>?|</code> e <code>?&amp;</code> &#8211; que são usados para saber se o documento contém alguma chave.</p>
+<h3>GIN (jsonb_path_ops)</h3>
+<p>Normalmente o operador mais usado é o <code>@&gt;</code> , para saber se o documento “contém o pedaço” que for passado como argumento.<br />
+Se na sua aplicação for possível utilizar apenas esse operador, é interessante usar a variação <code>jsonb_path_ops</code>:</p>
+<pre><code class="sql">CREATE INDEX ON reviews USING GIN(content jsonb_path_ops);
+</code></pre>
+<p>Por suportar somente esse operador, o índice fica um pouco menor e as consultas mais performáticas.</p>
+<h3>Prós:</h3>
+<ul>
+<li>Funciona com qualquer chave do documento;</li>
+<li>Um índice serve para consultas por qualquer chave.</li>
+</ul>
+<h3>Contras:</h3>
+<ul>
+<li>Ocupa mais espaço em disco;</li>
+<li>Demora mais tempo para ser gerado;</li>
+<li>Consulta é mais lenta;</li>
+<li>Não permite utilizar os operadores <code>&gt;</code>, <code>=</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> e <code>!=</code>.</li>
+</ul>
+<h2>Benchmarks</h2>
+<p>Os testes foram realizados em um MacBook Pro 13’ Early 2015 com 8GB de RAM, Core i5 2.7GHz e 120GB SSD.<br />
+O banco possuí 589.859 registros.</p>
+<h3>Criação do índice</h3>
+<p>
+<table id="tablepress-5" class="tablepress tablepress-id-5">
+<thead>
+<tr class="row-1 odd">
+	<th class="column-1">Índice</th><th class="column-2">Tempo (ms)</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1">Btree</td><td class="column-2">	1207.831</td>
+</tr>
+<tr class="row-3 odd">
+	<td class="column-1">GIN</td><td class="column-2">	20676.872</td>
+</tr>
+<tr class="row-4 even">
+	<td class="column-1">GIN (jsonb_path_ops)</td><td class="column-2">8880.895<br />
+</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-5 from cache --></p>
+<h3>Consulta</h3>
+<p>
+<table id="tablepress-11" class="tablepress tablepress-id-11">
+<thead>
+<tr class="row-1 odd">
+	<th class="column-1">Índice</th><th class="column-2">Tempo (ms)</th>
+</tr>
+</thead>
+<tbody class="row-hover">
+<tr class="row-2 even">
+	<td class="column-1">Btree</td><td class="column-2">         2.661</td>
+</tr>
+<tr class="row-3 odd">
+	<td class="column-1">GIN</td><td class="column-2">	13.643</td>
+</tr>
+<tr class="row-4 even">
+	<td class="column-1">GIN (jsonb_path_ops)</td><td class="column-2">         3.985</td>
+</tr>
+</tbody>
+</table>
+<!-- #tablepress-11 from cache --></p>
+<p>Com o resultado do <em>benchmark</em>, podemos concluir que: se a ideia for utilizar operadores de comparação simples (<code>&gt;</code>, <code>=</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> e <code>!=</code>) ou apenas um chave do documento, a melhor opção é o <strong>B-tree</strong>.<br />
+Se as consultas necessitarem de maior flexibilidade &#8211; buscar por várias chaves do documento &#8211; a melhor opção é o <strong>GIN</strong>. E se você utilizar somente o operador <code>@&gt;</code>, vale a pena utilizar a variação <code>jsonb_path_ops</code> do <strong>GIN</strong>.</p>
+<h1>Uso em aplicações Rails</h1>
+<p>Os índices acima contém expressões de SQL, então como podemos criar esses tipos de índice no Rails? Bom, se sua aplicação estiver usando Rails 4 ou anterior, o jeito é usar o método <a href="https://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/PostgreSQL/DatabaseStatements.html#method-i-execute" target="_blank" rel="noopener noreferrer">execute</a> que aceita um SQL literal como argumento:</p>
+<pre><code class="ruby">class AddIndex &lt; ActiveRecord::Migration
+  def up
+    execute 'CREATE INDEX index_reviews_on_content ON reviews USING GIN(content jsonb_path_ops)'
+  end
+
+  def down
+    remove_index :reviews, name: 'index_reviews_on_content'
+  end
+end
+</code></pre>
+<p>Por conta disso também é preciso especificar como a <em>migration</em> pode ser revertida &#8211; ou seja, implementar o método <code>down</code>.</p>
+<p>A boa notícia é que, a partir do Rails 5 podemos utilizar <a href="https://blog.bigbinary.com/2016/07/20/rails-5-adds-support-for-expression-indexes-for-postgresql.html" target="_blank" rel="noopener noreferrer">expressões SQL</a> na criação dos índices:</p>
+<pre><code class="ruby">class AddIndex &lt; ActiveRecord::Migration[5.0]
+  def up
+    add_index :reviews, 'content jsonb_path_ops', using: :gin, name: 'index_reviews_on_content'
+  end
+
+  def down
+    remove_index :reviews, name: 'index_reviews_on_content'
+  end
+end
+</code></pre>
+<p>Em um próximo post, vamos mostrar alguns exemplos de como fazer <em>queries</em> e <em>updates</em> utilizando Rails e JSONB. Fique ligado!</p>
+<h2>Links de referência</h2>
+<p>https://www.postgresql.org/docs/9.5/static/functions-json.html</p>
+<p>https://www.postgresql.org/docs/9.5/static/datatype-json.html</p>
+<p>https://blog.heapanalytics.com/when-to-avoid-jsonb-in-a-postgresql-schema/</p>
+<p>http://schinckel.net/2014/05/25/querying-json-in-postgres/</p>
+<blockquote class="wp-embedded-content" data-secret="4FyLATrOQj"><p><a href="https://bitnine.net/blog-postgresql/postgresql-internals-jsonb-type-and-its-indexes/">PostgreSQL internals: JSONB type and its indexes</a></p></blockquote>
+<p><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted" src="https://bitnine.net/blog-postgresql/postgresql-internals-jsonb-type-and-its-indexes/embed/#?secret=4FyLATrOQj" data-secret="4FyLATrOQj" width="500" height="282" title="&#8220;PostgreSQL internals: JSONB type and its indexes&#8221; &#8212; Bitnine Global Inc." frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe></p>
+<p>https://blog.2ndquadrant.com/jsonb-type-performance-postgresql-9-4/</p>
+<p>https://stackoverflow.com/questions/36075918/postgresql-index-on-json</p>
+<p>http://blog.bigbinary.com/2016/07/20/rails-5-adds-support-for-expression-indexes-for-postgresql.html</p><p>The post <a href="/2019/01/indices-para-jsonb-no-postgres/">Índices para JSONB no Postgres</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Stop hiding the error and start fixing the problem</title>
+		<link>/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2018 17:52:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=7710</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been working on Plataformatec for 5 years and one common mistake that I see developers making is hiding the error, instead of fixing the problem. This kind of behaviour can turn your product full of problems quickly by having a codebase with unnecessary defensive programming. Let&#8217;s explore that by taking a look at an ... <a class="read-more-link" href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">»</a></p>
+<p>The post <a href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">Stop hiding the error and start fixing the problem</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been working on Plataformatec for 5 years and one common mistake that I see developers making is hiding the error, instead of fixing the problem. This kind of behaviour can turn your product full of problems quickly by having a codebase with unnecessary defensive programming. Let&#8217;s explore that by taking a look at an example from the real world.</p>
+<p>In some period of time, we&#8217;re working on an address autocomplete feature using Google places. Suddenly, we receive an error report complaining about an undefined object in Javascript. Something like this:</p>
+<pre><code>Uncaught TypeError: Cannot read property 'maps' of undefined
+</code></pre>
+<p>A developer looked at the stacktrace, then, found the problematic line. The line was something like this:</p>
+<pre><code class="javascript">const autocomplete = new google.maps.places.Autocomplete(input, options);
+</code></pre>
+<p>After a moment, the developer opened a Pull Request like this:</p>
+<pre><code>// Sometimes google is undefined
+if (google) {
+const autocomplete = new google.maps.places.Autocomplete(input, options);
+}
+</code></pre>
+<p>Can you say if it&#8217;s a good solution? I can say it&#8217;s an answer. Sometimes this kind of code can be a solution. However, when I see a solution like this, too easy, it sets my spidey sense off. Let&#8217;s see why it&#8217;s not good.</p>
+<p>That code initializes the Autocomplete widget. It means, when <code>google</code> is undefined, the address suggestion is not working. The <code>if</code> might prevent an error report, but it won&#8217;t fix the problem. This version now is worse than the previous one. Why? Now, users still can&#8217;t have the address suggestion and the team will not be aware of the problem. The code is hiding the error, not fixing the users&#8217; problem.</p>
+<p>You might think it was a junior mistake, but I can tell you, I could see many developers with many years of experience doing that. Everybody can make a mistake, that’s why we have a process of reviewing other people’s code to prevent errors like this.</p>
+<p>A bad context can make a good professional produce poor results. If the leader presses the team to make the errors reports go down fast, mistakes like that become more common. People start finding the easiest way of stopping that error of being reported.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">“People with targets […] will probably meet the targets &#8211; even if they have to destroy the enterprise to do it.” – Deming <a href="https://t.co/EJZLIZ50zT">pic.twitter.com/EJZLIZ50zT</a></p>
+<p>— Lindsay Holmwood <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f5a4.png" alt="🖤" class="wp-smiley" style="height: 1em; max-height: 1em;" /><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f9e1.png" alt="🧡" class="wp-smiley" style="height: 1em; max-height: 1em;" /><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2764.png" alt="❤" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (@auxesis) <a href="https://twitter.com/auxesis/status/828205291728625664?ref_src=twsrc%5Etfw">February 5, 2017</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>The target should not be reducing the errors reported. The goal should be fixing the users&#8217; problems. For every bug reported by a bug track tool, ask yourself: Which problem is it generating for users? Then, make that problem your target to fix, not the error reported. This mindset that generates better solutions, a better product, a better codebase.</p>
+<p>If you are curious to know a good solution for the example problem, I&#8217;ll explain to you. That Autocomplete class is provided by a third party script included in the HTML document. The problem was a race condition. Our code was executing faster than the script being loaded and available. A good fix for that would be only executing that code after the Google&#8217;s script initialization. Thankfully, you can pass a function to be executed as an argument to Google&#8217;s script inclusion. Example:</p>
+<pre><code>&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;libraries=places&amp;callback=initAutocomplete" async defer&gt;&lt;/script&gt;
+</code></pre>
+<p>We passed the function<code>initAutocomplete</code> to initialize our address suggestion widget. It&#8217;s a good answer that fixes the user&#8217;s problem. It does not hide the error.</p>
+<p>Every time you see a solution for an error, ask yourself: is that really fixing the problem? Try to figure out how that error impacts the end users. Remember, is better having errors reported than invisible problems. Avoid defensive code that hides errors instead of fixing them.</p><p>The post <a href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">Stop hiding the error and start fixing the problem</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Keeping your Ruby on Rails app easy to update</title>
+		<link>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/</link>
+					<comments>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/#comments</comments>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Thu, 12 May 2016 20:02:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 5]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=5397</guid>
+
+					<description><![CDATA[<p>The Rails 5 release candidate is out, bringing new improvements that will make your life as a developer easier. Probably you are excited to update your application to the new major Rails release, but you may have some concerns. It is normal, updating your application to fit the new version may bring an unknown number ... <a class="read-more-link" href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">»</a></p>
+<p>The post <a href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">Keeping your Ruby on Rails app easy to update</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://weblog.rubyonrails.org/2016/5/6/this-week-in-rails-railsconf-recap-rails-5-0-rc-1-is-out/">The Rails 5 release candidate is out</a>, bringing new improvements that will make your life as a developer easier. Probably you are excited to update your application to the new major Rails release, but you may have some concerns. It is normal, updating your application to fit the new version may bring an unknown number of changes to work. On this blog post, I&#8217;ll give you some tips to keep the workload of updating at a minimum.</p>
+<p>You can try the new Rails version using the <a href="http://edgeguides.rubyonrails.org/upgrading_ruby_on_rails.html#upgrading-from-rails-4-2-to-rails-5-0">published guides</a> and report any problem you may find on <a href="https://github.com/rails/rails/milestones/5.0.0">Rails issue tracker</a>.</p>
+<h2>Why update?</h2>
+<p>I think it is an important question you may need to answer to your team members. My favorite reasons are: <strong>security</strong>, <strong>bug fixes</strong>, and <strong>features</strong>.</p>
+<p>Rails has supported versions to receive security fix releases. If you are in a version not supported, you may be vulnerable. You should read the <a href="http://rubyonrails.org/security">security policies</a> and check if your app is using the supported versions.</p>
+<p>The framework also has <a href="http://rubyonrails.org/maintenance/">maintenance policies</a> that you should be aware of. Performance improvements and bug fixes you may miss if your app is too old. You need to code by yourself and do workarounds to have the same benefits, a code that would be more reliable being inside the framework.</p>
+<p>We usually hear developers complaining about applications that use old versions of the framework. The reason is new versions of the tool usually bring improvements to make the developer&#8217;s life easier. In the developer&#8217;s perspective, it&#8217;s demotivating knowing there&#8217;s a robust, elegant and productive way to do things and they are not able to use it.</p>
+<p>Keeping your Rails up to date will help your code base health and also can be a factor of motivation for your team.</p>
+<h2>What I should do?</h2>
+<p>We have been maintaining and evolving several old Rails apps in different contexts for years, and we have seen some practices that make it easier to keep your app updated:</p>
+<ul>
+<li>strict use of gems</li>
+<li>avoid monkey patches</li>
+<li>keep a good test coverage</li>
+</ul>
+<h3>Gems</h3>
+<p>Adding new dependencies using RubyGems and bundler is awesome, but overusing gems can not only slow your app down but slow you with the amount of work you need to update your Rails version. Some gems are coupled to the framework when you update it. These gems may break. When they break, you need to update them together.</p>
+<p>I recommend you considering these points before putting a new gem in your Gemfile:</p>
+<ul>
+<li><strong>Is this gem adding great value to your project?</strong> Some gems increase your app security, solve complex problems and reduce a lot of worktimes. Other gems add less value and can easily be replaced with your own implementation. Sometimes, it’s worth doing your own implementation than depending on a third­party code.</p>
+</li>
+<li>
+<p><strong>Is this gem well maintained?</strong> It’s good checking if the commits are recent, the project is well documented, the changelog contains helpful messages between releases, the maintainers often close issues and answer them respectfully. These are good signs that the gem you are adding won&#8217;t give you trouble in the future.</p>
+</li>
+</ul>
+<p>Adding a gem to your project is adding a coupling. Software coupling has its downsides, for example, the ripple effect of changes. The downside of more work to update your dependencies will be worth it if you accurately added them. If you want to learn more about downsides of dependencies, you can read this <a href="https://www.mikeperham.com/2016/02/09/kill-your-dependencies/">blog post about Ruby dependencies</a> and <a href="http://www.haneycodes.net/npm-left-pad-have-we-forgotten-how-to-program/">this one about Node</a>.</p>
+<h3>Avoid monkey patches</h3>
+<p>Monkey patches are often used to change the behavior of the code you don&#8217;t own. For example, rewriting or adding Ruby standard library classes or methods to fit your application needs. Careless monkey patches can bring you serious problems while updating Rails.</p>
+<p>Adding code that changes the behavior of gem classes can result in hidden bugs and turn any upgrade into a painful experience. It&#8217;s often uncertain how many objects are depending on your change and predicting all the effects of the monkey patched method. For example, in a new version of the gem, your monkey patch can change a method that was updated or doesn’t even exist anymore.</p>
+<p>We have seen some monkey patches that are a gem fix or enhancement. These changes may benefit others users of the gem and were hidden in application code. You may get in touch with gem maintainers and propose your changes. If your contribution is accepted, your fix will have a solid and proper place to be.</p>
+<p>If your behavior is specific for your app, you should consider extending the gem and applying your wanted behavior using the conventional OO practices. For example, you can create an adapter class, subclass or composition. You may also take a look at <a href="http://blog.honeybadger.io/understanding-ruby-refinements-and-lexical-scope/">Ruby Refinements</a>. Using this structure, you can create scoped changes that must be used explicitly. Explicit code reduces costs to maintain the app and the effort of updating to a new Rails version.</p>
+<p>After checking all previous solutions and you still think that a monkey patch better suits your needs, you should know there are <a href="http://www.justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess/">organized ways of adding them</a>. Regardless of coding, I recommend you to add a great documentation to keep it sane for your teammates and your future self. In this documentation, you should describe why it is necessary, when it can be removed and how it can be removed. It will help a better understanding of the app and provide useful information while updating your Rails app.</p>
+<h3>Keep a good test coverage</h3>
+<p>We all need to pay special attention to the tests. Some changes while updating Rails will be required and having a trustful test suite will help you discover problems before deploying your app to your end users.</p>
+<p>Having 100% of test coverage is <a href="http://martinfowler.com/bliki/TestCoverage.html">no guarantee of testing the correct behavior</a>. I would say the team should have a test coverage that they feel confident about.</p>
+<p>Some symptoms that your application doesn’t have good coverage is when recurrent errors are found while the application is running and all your automated tests are passing. You may use a tool like <a href="https://github.com/colszowka/simplecov">simplecov</a> to check your coverage rate, having a very low coverage is a bad sign.</p>
+<p>Adding proper tests is the only solution for low test coverage. If you are in this situation, you should start adding tests focused on the most used and important features. Having a good test coverage is essential to evolve because its main purpose is providing fast feedback that previously working features are still working.</p>
+<h2>Conclusion</h2>
+<p>Keeping the application’s Rails version updated is a responsibility that should not be ignored since it brings improvements for your team and security for your users.</p>
+<p>I hope these tips help you keep your code easy to update.</p>
+<p>Do you have more tips? Please leave comments below and tell us about your experience to keep your application up to date.</p>
+<div style="padding: 40px 0 60px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/">Keeping your Ruby on Rails app easy to update</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/keeping-your-ruby-on-rails-app-easy-to-update/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The new HTML sanitizer in Rails 4.2</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/</link>
+					<comments>/2014/07/the-new-html-sanitizer-in-rails-4-2/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Thu, 24 Jul 2014 12:00:08 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=4134</guid>
+
+					<description><![CDATA[<p>The article below was originally written by Kasper Timm Hansen (@kaspth on github &#38; twitter) about his work during the Google Summer of Code 2013. Kasper and I worked a lot changing the underlying implementation of the sanitize helper to give Rails developers a more robust, faster and secure solution to sanitize user input. This ... <a class="read-more-link" href="/2014/07/the-new-html-sanitizer-in-rails-4-2/">»</a></p>
+<p>The post <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/">The new HTML sanitizer in Rails 4.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The article below was originally written by Kasper Timm Hansen (@kaspth on <a href="https://github.com/kaspth">github</a> &amp; <a href="https://twitter.com/kaspth">twitter</a>) about his work during the Google Summer of Code 2013.</p>
+<p>Kasper and I worked a lot changing the underlying implementation of the <code>sanitize</code> helper to give Rails developers a more robust, faster and secure solution to sanitize user input.</p>
+<p>This new implementation should be fully backward compatible, with no changes to the API, which should make the update easier.</p>
+<p>You can see more information about the previous and the new implementation <a href="https://speakerdeck.com/rafaelfranca/rails-the-hidden-parts">on this talk</a> I presented in a Brazillian conference this year (the slides are in English).</p>
+<p>Now, I&#8217;ll let Kasper share his words with you.</p>
+<h3>Scrubbing Rails Free of HTML-scanner</h3>
+<p>Everyone, at least one time, has already needed to use the <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize"><code>sanitize</code></a> method to scrub some pesky HTML away.</p>
+<pre lang="ruby">
+<%= sanitize @article.body %>
+</pre>
+<p>If you were to run this on Rails 4.1 (and before) this would take advantage of the html-scanner, a vendored library inside Rails, for the sanitization. Since the summer of 2013 I have been working to destroy that notion by wiping the traces of html-scanner throughout Rails. Before you become concerned of my mental health, I didn&#8217;t do this unwarranted. I&#8217;m one of the <a href="http://weblog.rubyonrails.or/2013/5/27/rails-google-summer-of-code-projects/">Google Summer of Code students</a> working on Ruby on Rails. My <a href="https://github.com/kaspth/gsoc-application">project proposal</a> was to kick html-scanner to the curb (technical term) and grab a hold of <a href="https://github.com/flavorjones/loofah">Loofah</a> instead. Why did the old library need replacing, though?</p>
+<h3>The out washed HTML-scanner</h3>
+<p>html-scanner has been with us for a long time now. The <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/vendor/html-scanner/html/selector.rb#L1-L4">copyright notice</a> in the library clocks it in at 2006, when Assaf Arkin created it. This library <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/vendor/html-scanner/html/tokenizer.rb">relies on Regular Expressions</a> to recognize HTML (and XML) elements. This made the code more brittle. It was easier to introduce errors via <a href="https://github.com/rails/rails/blob/973490a2879358db9269ecf75e03b2777f9c9e24/actionpack/lib/action_view/vendor/html-scanner/html/selector.rb#L522-L680">complex Regular Expressions</a>, which also gave it a higher potential for security issues.</p>
+<p>The Rails Team wanted something more robust and faster, so we picked Loofah. Loofah uses <a href="http://nokogiri.org/">Nokogiri</a> for parsing, which provides a Ruby interface to either a C or Java parser depending on the Ruby implementation you use. This means Loofah is fast. It&#8217;s up to <a href="https://gist.github.com/flavorjones/170193">60 to 100% faster</a> than html-scanner on larger documents and fragments.</p>
+<p>I started by taking a look at the <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/helpers/sanitize_helper.rb"><code>SanitizeHelper</code></a> in Action View, which consists of four methods and some settings. The four methods of the are <code>sanitize</code>, <code>sanitize_css</code>, <code>strip_tags</code> and <code>strip_links</code>.</p>
+<p>Let&#8217;s take a look at the <code>sanitize</code> method.</p>
+<p>Comparing with the old implementation, <code>sanitize</code> still uses the <code>WhiteListSanitizer</code> class to do it&#8217;s HTML stripping. However, since Action View was pulled out of Action Pack and both needed to use this functionality, we&#8217;ve extracted this to it&#8217;s own <a href="https://github.com/rafaelfranca/rails-html-sanitizer">gem</a>.</p>
+<h3>Developers meet Rails::Html::WhiteListSanitizer</h3>
+<p>When you use <code>sanitize</code>, you&#8217;re really using <code>WhiteListSanitizer</code>&#8216;s <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/sanitizer.rb"><code>sanitize</code></a> method. Let me show you the new version.</p>
+<pre lang="ruby">
+def sanitize(html, options = {})
+  return nil unless html
+  return html if html.empty?
+</pre>
+<p>No surprises here.</p>
+<pre lang="ruby">
+  loofah_fragment = Loofah.fragment(html)
+</pre>
+<p>The first trace of Loofah. A <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/html/document_fragment.rb">fragment</a> is a part of a document, but without a DOCTYPE declaration and html and body tags. A piece of a document essentially. Internally Nokogiri creates a document and pulls the parsed html out of the body tag, leaving us with a fragment.</p>
+<pre lang="ruby">
+  if scrubber = options[:scrubber]
+    # No duck typing, Loofah ensures subclass of Loofah::Scrubber
+    loofah_fragment.scrub!(scrubber)
+</pre>
+<p>You can pass your own <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubber.rb"><code>Scrubber</code></a> to <code>sanitize</code>! Giving you the power to choose if and how elements are sanitized. As the comment alludes, any scrubber has to be either a subclass of <code>Loofah::Scrubber</code> or it can wrap a block. I&#8217;ll show an example later.</p>
+<pre lang="ruby">
+  elsif allowed_tags(options) || allowed_attributes(options)
+    @permit_scrubber.tags = allowed_tags(options)
+    @permit_scrubber.attributes = allowed_attributes(options)
+    loofah_fragment.scrub!(@permit_scrubber)
+</pre>
+<p>We have been very keen on maintaining backwards compatibility throughout this project, so you can still supply <code>Enumerable</code>s of tags and attributes to <code>sanitize</code>. That&#8217;s what the <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb"><code>PermitScrubber</code></a> used here handles. It manages these options and makes them work independently. If you pass one it&#8217;ll use the standard behavior for the other. See the <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb#L3-45">documentation</a> on what the standard behavior is.<br />
+You can also set the allowed tags and attributes on the class level. Like this:</p>
+<pre lang="ruby">
+Rails::Html::Sanitizer.allowed_tags = Set.new %w(for your health)
+</pre>
+<p>That&#8217;s simply what <code>allowed_tags</code> and <code>allowed_attributes</code> methods are there for. They&#8217;ll return the tags or attributes from the options and fallback to the class level setting if any.</p>
+<pre lang="ruby">
+  else
+    remove_xpaths(loofah_fragment, XPATHS_TO_REMOVE)
+    loofah_fragment.scrub!(:strip)
+  end
+</pre>
+<p>The <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubbers.rb#L86-96"><code>StripScrubber</code></a> built in to <code>Loofah</code> will strip the tags but leave the contents of elements. Which is usually what we want. We use <code>remove_xpaths</code> to remove elements along with their subtrees in the few instances where we don&#8217;t. If you have trouble with the syntax above, they&#8217;re <a href="https://en.wikipedia.org/wiki/XPath">XPath Selectors</a>.</p>
+<pre lang="ruby">
+  loofah_fragment.to_s
+end
+</pre>
+<p>Lastly we&#8217;ll take the elements and extract the remaining markup with <code>to_s</code>. Internally Nokogiri will call either <a href="https://github.com/sparklemotion/nokogiri/blob/5546170ab7bb789645d8e96ff0eb585d73748636/lib/nokogiri/xml/node.rb#L609-L614"><code>to_xml</code> or <code>to_html</code></a> depending on the kind of document or fragment you have.</p>
+<h3>Rub, buff or clean it off, however you like</h3>
+<p>So there you have it. I could go through how the other sanitizers work, but they&#8217;re not that complex. So go code spelunking in the <a href="https://github.com/rails/rails-html-sanitizer">source</a>.</p>
+<p>If this was the first time you&#8217;ve seen a <code>Loofah::Scrubber</code>, be sure to check out <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb">the source</a> for <code>PermitScrubber</code> and see an example of how to implement one. You can also subclass <code>PermitScrubber</code> and get the sanitization you need without worrying about the implementation details of stripping elements and scrubbing attributes. Take a look at <code>TargetScrubber</code> &#8211; the weird <code>PermitScrubber</code> &#8211; and how it uses that to get scrubbing fast.</p>
+<p>Before I scrub off though, I promised you an example of a custom scrubber. I&#8217;ll use the option that wraps a block here, but you could easily create a subclass of <code>Loofah::Scrubber</code> (in a helper maybe?) and override <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubber.rb#L85-L87"><code>scrub(node)</code></a>. So here goes:</p>
+<pre lang="ruby">
+<%= sanitize @article.body,
+  scrubber: Loofah::Scrubber.new { |node| node.name = "script" } %>
+</pre>
+<p>The code above changes all the HTML tags included in the article body to be a tag <code>&lt;script&gt;</code>.</p>
+<p><code>&lt;sarcasm&#62;</code><br />
+If you&#8217;re going to introduce bugs, why not make everything a potential risk of running arbitrary code?<br />
+<code>&lt;/sarcasm&#62;</code></p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/">The new HTML sanitizer in Rails 4.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/07/the-new-html-sanitizer-in-rails-4-2/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>javascript « Plataformatec Blog</title>
+	<atom:link href="/tag/javascript/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 16 Feb 2010 18:19:12 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Rails Metrics: know what is happening inside your Rails 3 application</title>
+		<link>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/</link>
+					<comments>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 16 Feb 2010 18:18:29 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[charts]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[javascript]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[notifications]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=803</guid>
+
+					<description><![CDATA[<p>RailsMetrics is a new Rails engine which stores everything that is happening inside your application in the database, so you can profile each request, besides creating charts, statistics and extract useful information. I&#8217;ve been working on it for the last couple months in parallel with ActiveSupport::Notifications, which is the foundation for RailsMetrics, and it was ... <a class="read-more-link" href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">»</a></p>
+<p>The post <a href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">Rails Metrics: know what is happening inside your Rails 3 application</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a> is a new Rails engine which stores everything that is happening inside your application in the database, so you can profile each request, besides creating charts, statistics and extract useful information.</p>
+<p>I&#8217;ve been working on it for the last couple months in parallel with <a href="http://github.com/rails/rails/tree/master/activesupport/lib/active_support/notifications.rb" target="_blank">ActiveSupport::Notifications</a>, which is the foundation for <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>, and it was open sourced today by <a href="http://www.engineyard.com/" target="_blank">Engine Yard</a>!</p>
+<p>It was a challenging project due to its threaded nature and I will share a couple things I learned during the process in this blog later. For now, you can watch the screencast below to see what it does and how to install it:</p>
+<div style="text-align:center"><object width="600" height="450"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=9473741&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=1" /></object></p>
+<p><a href="http://vimeo.com/9473741">Rails Metrics Screencast &#8211; Feb/2010</a> from <a href="http://vimeo.com/user3182384">PlataformaTec</a> on <a href="http://vimeo.com/">Vimeo</a>.</p>
+</div>
+<p>As said in the video, getting it released is just the first step and now it&#8217;s <strong>your turn to fork and improve it</strong> by providing a better layout, creating new reports, charts, etc!</p>
+<p>In case you are interested here are some screenshots that I <a href="http://twitter.com/josevalim/status/9138183973" target="_blank">tweeted</a> earlier: <a href="http://twitpic.com/13e7fn/full" target="_blank">http://twitpic.com/13e7fn/full</a> and <a href="http://twitpic.com/13e7h2/full" target="_blank">http://twitpic.com/13e7h2/full</a>.</p>
+<h3>The javascript novell</h3>
+<p>A week ago I <a href="http://twitter.com/josevalim/status/8898250204" target="_blank">asked</a> what people uses to create charts in Rails so I could evaluate what would be the best library to use in <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>. There were three types of libraries: server side ones, flash and javascript. Since I don&#8217;t want to depend on having neither RMagick nor Flash installed on the developer machine, I chose the javascript kind.</p>
+<p>After some research I ended up with three libraries: <a href="http://g.raphaeljs.com/" target="_blank">g.raphael</a>, <a href="http://code.google.com/p/flot/" target="_blank">flot</a> and <a href="http://www.jqplot.com/" target="_blank">jqplot</a>.</p>
+<p>For <a href="http://github.com/engineyard/rails_metrics" target="_blank">RailsMetrics</a>, I chose to use <a href="http://g.raphaeljs.com/" target="_blank">g.raphael</a> since I can easily manipulate the objects it creates and it is the one which looks better (at least imho ;)). However it has poor documentation and the default charts have poor customization options compared to the other two libraries, so you end up tweaking the chart by hand (which was fine in my experience).</p>
+<p>I&#8217;m waiting for your pull requests, enjoy!</p><p>The post <a href="/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/">Rails Metrics: know what is happening inside your Rails 3 application</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/02/rails-metrics-know-what-is-happening-inside-your-rails-3-application/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

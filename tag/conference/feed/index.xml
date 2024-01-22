@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>conference « Plataformatec Blog</title>
+	<atom:link href="/tag/conference/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 04 Sep 2012 16:27:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Talks da RubyConf Brasil 2012</title>
+		<link>/2012/09/talks-da-rubyconf-brasil-2012/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 04 Sep 2012 16:27:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3091</guid>
+
+					<description><![CDATA[<p>A Plataformatec esteve presente na RubyConf Brasil 2012 com palestras e lightning talks. O evento teve mais de 750 participantes e mais de 500 pessoas assistindo online. As palestras foram: Vamos falar sobre Concorrência, por José Valim; Escrevendo Aplicações Melhores com Active Model, por Carlos Antonio; e Conhecendo as Entranhas do Rails, por Rafael França. E os lightning talks foram: Contribuindo para o Rails, por Carlos Galdino; I18nAlchemy, por Lucas Mazza; e Copyright, Licenças Open Source e você!, por George Guimarães.</p>
+<p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos dias 30 e 31 de Agosto de 2012, aconteceu o maior evento de Ruby da América Latina: a <a href="http://rubyconf.com.br/" title="RubyConf Brasil">RubyConf Brasil</a>, e a Plataformatec marcou presença com palestras e lightning talks. O evento foi um sucesso, com mais de 750 participantes durante a conferência, e mais de 500 pessoas assistindo o evento online através do site da <a href="http://www.eventials.com/rubyconfbr2012" title="RubyConfBR 2012 - Vídeos">Eventials</a>.</p>
+<p><a href="/2012/09/talks-da-rubyconf-brasil-2012/ptec_team/" rel="attachment wp-att-3100"><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2012/09/ptec_team.jpg" alt="Plataformatec Team" title="Plataformatec Team" width="600" height="398" class="aligncenter size-full wp-image-3100" srcset="/wp-content/uploads/2012/09/ptec_team.jpg 600w, /wp-content/uploads/2012/09/ptec_team-300x199.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>Abaixo você pode ver os temas, com links para os slides e vídeos:</p>
+<h3>Palestras</h3>
+<h4>Vamos falar sobre Concorrência</h4>
+<p><script async class="speakerdeck-embed" data-id="5046019de76a640002006e42" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por José Valim. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTk_3D" title="Vamos falar sobre Concorrência - José Valim - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Escrevendo Aplicações Melhores com Active Model</h4>
+<p><script async class="speakerdeck-embed" data-id="5046049ee76a6400020080b4" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Antonio. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDI_3D" title="Escrevendo Aplicações Melhores com Active Model - Carlos Antonio - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Conhecendo as Entranhas do Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="504605d9e76a640002008854" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Rafael França. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDM_3D" title="Conhecendo as Entranhas do Rails - Rafael França - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h3>Lightning Talks</h3>
+<h4>Contribuindo para o Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="50460791dd297e0002009176" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Galdino.</p>
+<h4>I18nAlchemy</h4>
+<p><script async class="speakerdeck-embed" data-id="504607d0e76a640002009384" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Lucas Mazza.</p>
+<h4>Copyright, Licenças Open Source e você!</h4>
+<p><script async class="speakerdeck-embed" data-id="5046081cdd297e00020094f3" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por George Guimarães.</p>
+<p><a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTg_3D" title="Lightning Talks - RubyConf Brasil 2012">Confira o vídeo das Lightning Talks</a>.</p>
+<p>Sinta-se à vontade para ver e rever os slides e vídeos das palestras, e nos passar seu feedback através dos comentários. Não deixe também de conferir as outras palestras disponíveis, e se você escreveu um post sobre o evento em seu blog, adoraríamos ver um comentário com um link compartilhando seu post.</p>
+<p>Gostaríamos também de agradecer e parabenizar o Fábio Akita e a Locaweb pela ótima organização e alta qualidade do evento, tudo funcionou perfeitamente para que todos pudessem aproveitar ao máximo a conferência.</p>
+<p>E nos vemos na RubyConf Brasil 2013!</p><p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Plataformatec na RubyConf 2012</title>
+		<link>/2012/08/plataformatec-na-ruby-conf-2012/</link>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 18:17:47 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3059</guid>
+
+					<description><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na Ruby Conf Brasil com três palestrantes! No dia 31, às 9h40, José Valim falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações. Às 11h, na sala 2, Carlos Antonio falará sobre como usar Active Model ... <a class="read-more-link" href="/2012/08/plataformatec-na-ruby-conf-2012/">»</a></p>
+<p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na <a href="http://www.rubyconf.com.br/">Ruby Conf Brasil</a> com três palestrantes!</p>
+<p>No dia 31, às 9h40, <a href="http://www.rubyconf.com.br/pt-BR/speakers/jose-valim">José Valim</a> falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações.</p>
+<p>Às 11h, na sala 2, <a href="http://www.rubyconf.com.br/pt-BR/speakers/carlos-antonio-da-silva">Carlos Antonio</a> falará sobre como usar Active Model para escrevermos aplicações melhores.</p>
+<p>Por fim, às 11h50, na sala 1, <a href="http://www.rubyconf.com.br/pt-BR/speakers/rafael-franca">Rafael França</a> falará sobre as entranhas do Rails e as grandes novidades do Rails 4.</p>
+<p>Não deixe também de votar em nossos Lightning Talks, que serão realizados no primeiro dia, a partir das 18h20:</p>
+<ul>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/517">Contribuindo para o Rails</a>, do Carlos Galdino</li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/518">I18nAlchemy</a>, do Lucas Mazza </li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/516">Copyright, Licenças Open Source e você!</a>, do George Guimarães</li>
+</ul>
+<p>Nos vemos lá!</p><p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Rails 3.1 talks are on the way!</title>
+		<link>/2010/09/rails-3-1-talks-are-on-the-way/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 03 Sep 2010 13:09:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<guid isPermaLink="false">/?p=1405</guid>
+
+					<description><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk and, as Ruby Summer of Code ... <a class="read-more-link" href="/2010/09/rails-3-1-talks-are-on-the-way/">»</a></p>
+<p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was <a href="http://37signals.com/svn/posts/2399-davids-talk-at-railsconf-2010" target="_blank">the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk</a> and, as <a href="http://rubysoc.org/" target="_blank">Ruby Summer of Code</a> is close to its end, we are able to see the work of several students getting solid enough to be an important part of Rails 3.1 release.</p>
+<p>In between all this work, I was invited to participate in three important conferences in the following months and lately I&#8217;ve prepared enough material to give a talk entitled &#8220;<strong>Rails 2.3, 3.0 and 3.1: Past, Present and Future</strong>&#8220;!</p>
+<p>In this talk I plan to discuss many of the conceptual changes done in Rails 3 and how these changes were given life in the Rails source code, comparing, as much as possible, with Rails 2.3. After the current and past scenarios are throughly discussed, I will show how much of the work done in Rails 3 can still be improved and how several Ruby Summer of Code Projects are helping us to achieve it. And if you ever wondered how much Merb affected the Rails community, you will have a few surprises while watching this talk!</p>
+<p>The three different conferences I mentioned above will be held in Ukraine, Brasil and Sweden. But I&#8217;m not sure if there will be anyone recording them, so I&#8217;d suggest you not to miss any of them. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here they are&#8230;</p>
+<h3>1) RubyConfUA (Ukraine): 16th and 17th October</h3>
+<p>If you have never been to Kyiv before (just like me), here&#8217;s a great opportunity to visit it for the first time! It will be <a href="http://rubylang.org.ua/" target="_blank">two days of deep immersion into Ruby</a> with nice city visits during the night!</p>
+<p><a href="/wp-content/uploads/2010/09/kiev.jpg"><img decoding="async" src="/wp-content/uploads/2010/09/kiev.jpg" alt="Kiev" title="Kiev" width="500" height="327" class="aligncenter size-full wp-image-1439" /></a></p>
+<p>Other active developers in the community as <a href="http://oleganza.tumblr.com/" target="_blank">Oleg Andreev</a> and <a href="http://piotrsarnacki.com/" target="_blank">Piotr Sarnacki</a> will be present as well.  By the way, <a href="http://rubylang.org.ua/" target="_blank">RubyConf Ukraine</a> is still accepting both sponsors and talk proposals! We are waiting for you!</p>
+<h3>2) RubyConf (Brasil): 26th and 27th October</h3>
+<p>Right after RubyConf Ukraine, I&#8217;ll be flying back to Brasil to present a portuguese version of this talk. <a href="http://www.rubyconf.com.br/en/" target="_blank">RubyConf Brasil</a> is the former &#8220;Rails Summit Latin America&#8221; (which has been the largest Ruby and Rails conference in Latin America for the last two years). And this year it won&#8217;t be different. Several Ruby and Rails developers (like Yehuda Katz, Charles Nutter, Evan Phoenix and many others) have confirmed their presence. If  you get the chance, don&#8217;t miss it!</p>
+<h3>3) Oredev (Sweden): 8th to 12th November</h3>
+<p>And finally, my last stop will be in Sweden at the <a href="http://oredev.org/2010" target="_blank">developer conference held in Malmö</a>. This will be different from the previous two, since it is not focused in Ruby nor Rails. It&#8217;s a multitrack conference that hosts different technologies (by the way, the keynotes and tutorials programme is very interesting!). Since I&#8217;m expecting several non-Rails developers in the audience, I will slightly change my talk to focus more on the conceptual side and less on technical discussions. Also, I&#8217;ll be hosting a a workshop about Rails 3, where I&#8217;ll demonstrate a few of @plataformatec&#8217;s <a title="Plataforma Tec Open Source Projects" href="http://github.com/plataformatec">open source projects</a>.</p>
+<p>If you are coming to any of these events, please let me know in the comments!</p><p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

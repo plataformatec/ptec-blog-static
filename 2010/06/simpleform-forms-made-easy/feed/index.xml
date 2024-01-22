@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: SimpleForm: forms made easy	</title>
+	<atom:link href="/2010/06/simpleform-forms-made-easy/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/06/simpleform-forms-made-easy/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 18:07:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: tspore		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-764</link>
+
+		<dc:creator><![CDATA[tspore]]></dc:creator>
+		<pubDate>Mon, 12 Jul 2010 23:57:53 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-764</guid>
+
+					<description><![CDATA[In text_area how do I change cols = &quot;40&quot;  -]]></description>
+			<content:encoded><![CDATA[<p>In text_area how do I change cols = &#8220;40&#8221;  &#8211;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-1032</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Mon, 12 Jul 2010 05:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-1032</guid>
+
+					<description><![CDATA[ok a newbe question - How do I create the controller for something like a simple website contact form? 
+]]></description>
+			<content:encoded><![CDATA[<p>ok a newbe question &#8211; How do I create the controller for something like a simple website contact form? </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Erik Dahlstrand		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-763</link>
+
+		<dc:creator><![CDATA[Erik Dahlstrand]]></dc:creator>
+		<pubDate>Fri, 09 Jul 2010 18:03:36 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-763</guid>
+
+					<description><![CDATA[This gem is really a gem!  Thank you and keep up the good work :)]]></description>
+			<content:encoded><![CDATA[<p>This gem is really a gem!  Thank you and keep up the good work 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Millisami		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-762</link>
+
+		<dc:creator><![CDATA[Millisami]]></dc:creator>
+		<pubDate>Thu, 08 Jul 2010 23:50:54 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-762</guid>
+
+					<description><![CDATA[How to use it with Haml?]]></description>
+			<content:encoded><![CDATA[<p>How to use it with Haml?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-754</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 12:34:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-754</guid>
+
+					<description><![CDATA[@adam, one of the most important features in Formtastic is that it&#039;s quite opinionated about your markup. Sometimes, we get the design straight from our client and we are not supposed to redesign the form markup, meaning we cannot use Formtastic (as said in the beginning of the text). So, if you need a more flexible solution, not opinionated on markup, I recommend you to use SimpleForm. But, if you are free to choose your markup and love Formtastic one, stick with it!]]></description>
+			<content:encoded><![CDATA[<p>@adam, one of the most important features in Formtastic is that it&#39;s quite opinionated about your markup. Sometimes, we get the design straight from our client and we are not supposed to redesign the form markup, meaning we cannot use Formtastic (as said in the beginning of the text). So, if you need a more flexible solution, not opinionated on markup, I recommend you to use SimpleForm. But, if you are free to choose your markup and love Formtastic one, stick with it!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2010/06/simpleform-forms-made-easy/comment-page-1/#comment-752</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 12:33:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1143#comment-752</guid>
+
+					<description><![CDATA[Szymon, unfortunately not all browsers support placeholder yet, so we would need to depend on Javascript which I think is something we don&#039;t want to do by default. In any case, changing SimpleForm to use placeholder instead of hint in your app should be piece of cake! :)]]></description>
+			<content:encoded><![CDATA[<p>Szymon, unfortunately not all browsers support placeholder yet, so we would need to depend on Javascript which I think is something we don&#39;t want to do by default. In any case, changing SimpleForm to use placeholder instead of hint in your app should be piece of cake! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

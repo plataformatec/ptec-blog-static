@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>code « Plataformatec Blog</title>
+	<atom:link href="/tag/code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 23 Aug 2018 14:03:41 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>The misguiding mindset that you are using and how it is hindering your microservices architecture</title>
+		<link>/2018/08/the-misguiding-mindset-that-you-are-using-and-how-it-is-hindering-your-microservices-architecture/</link>
+		
+		<dc:creator><![CDATA[gersonscanapieco]]></dc:creator>
+		<pubDate>Thu, 23 Aug 2018 17:30:36 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[code]]></category>
+		<guid isPermaLink="false">/?p=7768</guid>
+
+					<description><![CDATA[<p>As software developers, we have the bias to see the systems we create from a technical perspective. We have been taught to think like that since the beginning of our careers, and unfortunately it&#8217;s the dominant mindset in our industry. The perception that software development is an activity that requires few interpersonal interactions is still ... <a class="read-more-link" href="/2018/08/the-misguiding-mindset-that-you-are-using-and-how-it-is-hindering-your-microservices-architecture/">»</a></p>
+<p>The post <a href="/2018/08/the-misguiding-mindset-that-you-are-using-and-how-it-is-hindering-your-microservices-architecture/">The misguiding mindset that you are using and how it is hindering your microservices architecture</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As software developers, we have the bias to see the systems we create from a technical perspective. We have been taught to think like that since the beginning of our careers, and unfortunately it&#8217;s the dominant mindset in our industry. The perception that software development is an activity that requires few interpersonal interactions is still strong, and the myth about the &#8220;genius loner coder&#8221; persists to this day. With microservices this is not different.</p>
+<p>I&#8217;ve been working with microservices for some time now, and for most of that time my reasoning about this architecture was aligned with what I just described. When designing new services or making tough architectural decisions, my bias was analysing each alternative with a technical mindset. Very important questions like &#8220;How we gonna extract this functionality from the monolith?&#8221; or &#8220;How we gonna handle this interaction? Event-based or through a REST endpoint?&#8221; were always analysed in a technical-first perspective.</p>
+<p>And everything went well for a while, until we started having some problems. In one of the projects I&#8217;ve worked on, we constantly faced features that were supposed to be simple to ship but took a lot longer than expected. These same features also required a great deal of alignment with other developers, reducing our speed. Decisions we made in one service ended up impacting the whole organization, and bugs started to appear in unexpected places.</p>
+<p>These problems made me question if something was wrong in the way the services were being designed. This thought seemed odd at first, our client was a mature organization with a great expertise in microservices. But the more I thought about it, the more I got the feeling that even mature organizations can still have their share of problems. Very subtle problems, that are not as obvious to see as a common programming mistake. Weren’t microservices supposed to make us ship faster and in a fault-tolerant way?</p>
+<p>After a lot of thinking and research, I brought together some opinions about building microservices that I&#8217;m gonna share with you. But first, let&#8217;s expand more the problems of that misguiding mindset&#8230;</p>
+<h2><b>The problems of the service-as-code mindset</b></h2>
+<p>From now on we gonna talk about Booble, a fictitious car rental company. Booble adopted the microservices architecture a few years ago, after migrating from a standard Rails monolithic application.</p>
+<p>Booble&#8217;s architectural direction was that services should be reusable. Each service was created to hold a piece of the platform&#8217;s functionality, such as: mailing service, document service, pricing service and vehicle service. Each one of them was extracted in a way as not to duplicate any code or data with other services. If one service needed data from another service, it would have to use a REST API for that, as each service was the authoritative data-source of its domain.</p>
+<p>This architectural decision is what I would call the “service-as-code” mindset: when designing a new service, we tend to define them in a similar way to how we would define modules &#8211; or classes &#8211; in a monolith. And by doing that, we may end up with services that, if combined, would pretty much result in the monolith they were extracted from: a “distributed monolith”. This led Booble to have a myriad of services, and as many times more dependencies between them.</p>
+<p>In time, a series of problems started appearing:</p>
+<ul>
+<li>Lack of resilience in the platform: if one service went down, many could become inoperant;</li>
+<li>Some services concentrated the bulk of requests, leading to performance and scalability problems. In extreme circumstances, this could even cause a service to crash under load;</li>
+<li>Changes made by one team impacted other ones, sometimes in unexpected ways;</li>
+<li>Changes in one service&#8217;s data-model could impact the whole platform, slowing down the development speed.</li>
+</ul>
+<p>The problems listed above are almost the exact opposite of what we would expect from a microservices architecture: robustness and speed. When facing these problems, we lose all the advantages that this architecture can provide us, and risk having the same ones that a monolith would have. But this time, distributed in a network of services. How did Booble end up like this?</p>
+<p>This may be due to the fact that the microservices architecture is quite new, and there’s still a lot of confusion about what constitutes a service. In face of that ambiguity, the developers responsible for the decision about what services should be created focus on the technical side of it. Services start to be reasoned about as something close to a code library.</p>
+<p>I believe that this is the result of many years applying the DRY principle in the code. We are so accustomed to it that it seems natural to apply it into the architectural layer as well, resulting in services that don&#8217;t have any redundancy between then &#8211; in the code or in the data. The same DRY principle, if taken further, may lead to the construction of shared artifacts between services, like libraries and shared databases, resulting in even more coupling.</p>
+<p>“The evils of too much coupling between services are far worse than the problems caused by code duplication.” &#8211; Sam Newman, Building Microservices</p>
+<p>So how can we design a service, or many services for that matter, that would avoid the problems we listed?</p>
+<h2><b>Designing a robust service</b></h2>
+<p>Every time a service is designed, it should increase the related team&#8217;s capacity to deliver value faster and in a robust way. And, to be able to do so, you need to think beyond its technical aspects. In fact, even though software architecture may appear similar to coding, when designing systems and their interactions one should be careful to not let your developer mindset misguide your decisions.</p>
+<p>Take the Booble example: there, the teams were divided in accordance with the company’s business areas: car rental team, finance team, analytics team, mobile team etc. But the services did not follow that division. This led to a situation where only a handful of the services were properly owned by a team, as each one of them held responsibilities that were needed across the company. Because of that, many features of the services were shared between different teams, sometimes for completely different use cases.</p>
+<p>This taught me that when deciding if a new service needs to be created, it&#8217;s paramount to consider how it will fit into the company&#8217;s teams structure. It&#8217;s too easy to fall into the<a href="http://www.michaelnygard.com/blog/2017/12/the-entity-service-antipattern/"> entity service antipattern</a> and start modeling our services according to our business entities, forgetting the teams that will actually use them and how this shared dependency is going to affect their workflow.</p>
+<p>Ideally, teams should have as fewer dependencies as possible with each other in order to do their job. Every time a team has to sync with another one, it&#8217;s a friction point that can cause delays and headaches. By keeping the services limited to the interested team, we get closer to the <i>micro</i> of microservices: instead of big services that fulfill a role for all the company, we have smaller services that fulfill a specific need for a business segment. Changes made in these services will only impact a fraction of the architecture, as opposed to the big services approach.</p>
+<p>In order to attain the microservices architecture advantages, things that we usually avoid should actually be embraced:</p>
+<ul>
+<li>data redundancy</li>
+<li>code redundancy</li>
+</ul>
+<p>If one service has all the data it needs to perform its business rules, we reduce its dependency from other services, increasing the system&#8217;s resilience and performance &#8211; no need to transfer data, after all. The service is also free to store this data<a href="https://www.martinfowler.com/bliki/PolyglotPersistence.html"> in a format that makes sense to it</a>.</p>
+<p>But developers avoid writing applications with these traits for a good reason: when used badly, they can lead to disaster. But from a systems architecture point of view, if used correctly, these traits can boost the productivity of the whole organization as it decreases the dependency between teams and services.</p>
+<p>Microservices is about team independence and alignment, not DRYness and entanglement. The team should suppress the urge to create a new service for each new feature that appears, and instead think about how it will fit into the broader picture of the architecture.</p>
+<p>A service is not an end in itself, and vanity metrics such as</p>
+<ul>
+<li>number of services</li>
+<li>number of different technologies</li>
+<li>number of deploys per day</li>
+</ul>
+<p>do not count much at the end of the day if it&#8217;s harder to ship code.</p>
+<p><b>Your business will not survive based on the number of services your platform has, but instead in your organization&#8217;s capacity to stay ahead of the competition.</b></p>
+<p>Some good rules of thumb are:</p>
+<ul>
+<li>Think about where/when the service will be used. Does it make sense to put this logic into an existing service?</li>
+<li>Avoid services with generic responsibilities, break them into smaller ones related to the business context where they will be used;</li>
+<li>Foment code locality. Code should be close to where it will be used.</li>
+</ul>
+<p>These points are very difficult to ponder and, to do so properly, one needs experience. I, like most developers, started building microservices with a mindset that may hinder the microservices strong points. After facing big problems, I changed my mind about some dogmas that seemed right at the time. Today, if I would start a new project, I would try to focus on increasing the teams independency and alignment, and not worry too much about DRYness in the services.</p>
+<p>Another lesson that I learned was that in order to guarantee that the architecture grows in a healthy manner, we need people who can take these kinds of decisions and have a broad view of the organization. But I&#8217;m gonna talk about this in a future post. Stay tuned!</p>
+<p>Have you ever faced similar issues? Have any comment or suggestion? Please leave them in the comments section below.</p><p>The post <a href="/2018/08/the-misguiding-mindset-that-you-are-using-and-how-it-is-hindering-your-microservices-architecture/">The misguiding mindset that you are using and how it is hindering your microservices architecture</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Stop hiding the error and start fixing the problem</title>
+		<link>/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Mon, 30 Jul 2018 17:52:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[code]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=7710</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been working on Plataformatec for 5 years and one common mistake that I see developers making is hiding the error, instead of fixing the problem. This kind of behaviour can turn your product full of problems quickly by having a codebase with unnecessary defensive programming. Let&#8217;s explore that by taking a look at an ... <a class="read-more-link" href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">»</a></p>
+<p>The post <a href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">Stop hiding the error and start fixing the problem</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been working on Plataformatec for 5 years and one common mistake that I see developers making is hiding the error, instead of fixing the problem. This kind of behaviour can turn your product full of problems quickly by having a codebase with unnecessary defensive programming. Let&#8217;s explore that by taking a look at an example from the real world.</p>
+<p>In some period of time, we&#8217;re working on an address autocomplete feature using Google places. Suddenly, we receive an error report complaining about an undefined object in Javascript. Something like this:</p>
+<pre><code>Uncaught TypeError: Cannot read property 'maps' of undefined
+</code></pre>
+<p>A developer looked at the stacktrace, then, found the problematic line. The line was something like this:</p>
+<pre><code class="javascript">const autocomplete = new google.maps.places.Autocomplete(input, options);
+</code></pre>
+<p>After a moment, the developer opened a Pull Request like this:</p>
+<pre><code>// Sometimes google is undefined
+if (google) {
+const autocomplete = new google.maps.places.Autocomplete(input, options);
+}
+</code></pre>
+<p>Can you say if it&#8217;s a good solution? I can say it&#8217;s an answer. Sometimes this kind of code can be a solution. However, when I see a solution like this, too easy, it sets my spidey sense off. Let&#8217;s see why it&#8217;s not good.</p>
+<p>That code initializes the Autocomplete widget. It means, when <code>google</code> is undefined, the address suggestion is not working. The <code>if</code> might prevent an error report, but it won&#8217;t fix the problem. This version now is worse than the previous one. Why? Now, users still can&#8217;t have the address suggestion and the team will not be aware of the problem. The code is hiding the error, not fixing the users&#8217; problem.</p>
+<p>You might think it was a junior mistake, but I can tell you, I could see many developers with many years of experience doing that. Everybody can make a mistake, that’s why we have a process of reviewing other people’s code to prevent errors like this.</p>
+<p>A bad context can make a good professional produce poor results. If the leader presses the team to make the errors reports go down fast, mistakes like that become more common. People start finding the easiest way of stopping that error of being reported.</p>
+<blockquote class="twitter-tweet" data-lang="en">
+<p dir="ltr" lang="en">“People with targets […] will probably meet the targets &#8211; even if they have to destroy the enterprise to do it.” – Deming <a href="https://t.co/EJZLIZ50zT">pic.twitter.com/EJZLIZ50zT</a></p>
+<p>— Lindsay Holmwood <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f5a4.png" alt="🖤" class="wp-smiley" style="height: 1em; max-height: 1em;" /><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f9e1.png" alt="🧡" class="wp-smiley" style="height: 1em; max-height: 1em;" /><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2764.png" alt="❤" class="wp-smiley" style="height: 1em; max-height: 1em;" /> (@auxesis) <a href="https://twitter.com/auxesis/status/828205291728625664?ref_src=twsrc%5Etfw">February 5, 2017</a></p></blockquote>
+<p><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>The target should not be reducing the errors reported. The goal should be fixing the users&#8217; problems. For every bug reported by a bug track tool, ask yourself: Which problem is it generating for users? Then, make that problem your target to fix, not the error reported. This mindset that generates better solutions, a better product, a better codebase.</p>
+<p>If you are curious to know a good solution for the example problem, I&#8217;ll explain to you. That Autocomplete class is provided by a third party script included in the HTML document. The problem was a race condition. Our code was executing faster than the script being loaded and available. A good fix for that would be only executing that code after the Google&#8217;s script initialization. Thankfully, you can pass a function to be executed as an argument to Google&#8217;s script inclusion. Example:</p>
+<pre><code>&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&amp;libraries=places&amp;callback=initAutocomplete" async defer&gt;&lt;/script&gt;
+</code></pre>
+<p>We passed the function<code>initAutocomplete</code> to initialize our address suggestion widget. It&#8217;s a good answer that fixes the user&#8217;s problem. It does not hide the error.</p>
+<p>Every time you see a solution for an error, ask yourself: is that really fixing the problem? Try to figure out how that error impacts the end users. Remember, is better having errors reported than invisible problems. Avoid defensive code that hides errors instead of fixing them.</p><p>The post <a href="/2018/07/stop-hiding-the-error-and-start-fixing-the-problem/">Stop hiding the error and start fixing the problem</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Debugging techniques in Elixir « Plataformatec Blog</title>
+		<meta name="description" content="A brief tutorial on debugging Elixir projects using `IEx.pry/0` and `:debugger`.">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2016/04/debugging-techniques-in-elixir-lang/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Debugging techniques in Elixir « Plataformatec Blog">
+		<meta property="og:description" content="A brief tutorial on debugging Elixir projects using `IEx.pry/0` and `:debugger`.">
+		<meta property="og:url" content="/2016/04/debugging-techniques-in-elixir-lang/">
+		<meta property="article:published_time" content="2016-04-07T17:33:20+00:00">
+		<meta property="article:modified_time" content="2016-04-08T11:18:42+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Debugging techniques in Elixir « Plataformatec Blog">
+		<meta name="twitter:description" content="A brief tutorial on debugging Elixir projects using `IEx.pry/0` and `:debugger`.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#article","name":"Debugging techniques in Elixir « Plataformatec Blog","headline":"Debugging techniques in Elixir","author":{"@id":"\/author\/erichkist\/#author"},"publisher":{"@id":"\/#organization"},"image":{"@type":"ImageObject","url":"\/wp-content\/uploads\/2016\/04\/iex-pry-elixir.gif","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#articleImage","width":930,"height":506,"caption":"Starting a new IEx session"},"datePublished":"2016-04-07T14:33:20-03:00","dateModified":"2016-04-08T08:18:42-03:00","inLanguage":"en-US","commentCount":9,"mainEntityOfPage":{"@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#webpage"},"isPartOf":{"@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#webpage"},"articleSection":"English, debug, elixir"},{"@type":"BreadcrumbList","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2016\/#listItem"},{"@type":"ListItem","@id":"\/2016\/#listItem","position":2,"name":"2016","item":"\/2016\/","nextItem":"\/2016\/04\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2016\/04\/#listItem","position":3,"name":"April","item":"\/2016\/04\/","nextItem":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#listItem","previousItem":"\/2016\/#listItem"},{"@type":"ListItem","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#listItem","position":4,"name":"Debugging techniques in Elixir","previousItem":"\/2016\/04\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/erichkist\/#author","url":"\/author\/erichkist\/","name":"Erich Kist","image":{"@type":"ImageObject","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/ad4dd13a336f1af8f730fd07d478573d?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Erich Kist"}},{"@type":"WebPage","@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#webpage","url":"\/2016\/04\/debugging-techniques-in-elixir-lang\/","name":"Debugging techniques in Elixir « Plataformatec Blog","description":"A brief tutorial on debugging Elixir projects using `IEx.pry\/0` and `:debugger`.","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2016\/04\/debugging-techniques-in-elixir-lang\/#breadcrumblist"},"author":{"@id":"\/author\/erichkist\/#author"},"creator":{"@id":"\/author\/erichkist\/#author"},"datePublished":"2016-04-07T14:33:20-03:00","dateModified":"2016-04-08T08:18:42-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Debugging techniques in Elixir Comments Feed" href="/2016/04/debugging-techniques-in-elixir-lang/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/5280">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=5280">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2016%2F04%2Fdebugging-techniques-in-elixir-lang%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2016%2F04%2Fdebugging-techniques-in-elixir-lang%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-5280 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2016/04/debugging-techniques-in-elixir-lang/" rel="bookmark">Debugging techniques in Elixir</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2016-04-07T14:33:20-03:00">Apr 7, 2016</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/ad4dd13a336f1af8f730fd07d478573d?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ad4dd13a336f1af8f730fd07d478573d?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=18" title="Posts by Erich Kist">Erich Kist</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>It&#8217;s common that our first experience with debugging in a new language is by printing values to the terminal. Elixir isn&#8217;t different: we can use <code>IO.puts/2</code> and <code>IO.inspect/2</code>. However, Elixir also provides other approaches to debugging.</p>
+<p>In this blog post, we&#8217;ll show you other 2 options: <code>IEx.pry/0</code> and <code>:debugger</code>.</p>
+<h2>IEx.pry</h2>
+<p>The name &#8220;pry&#8221; is an old friend in the Ruby ecosystem but it has a different behavior in Elixir. Let&#8217;s create a new project with <code>mix</code> to try it out:</p>
+<pre><code class="shell">$ mix new example
+$ cd example
+</code></pre>
+<p>Now let&#8217;s write some sample code in <code>lib/example.ex</code>:</p>
+<pre><code class="elixir">require IEx;
+
+defmodule Example do
+  def double_sum(x, y) do
+    IEx.pry
+    hard_work(x, y)
+  end
+
+  defp hard_work(x, y) do
+    2 * (x + y)
+  end
+end
+</code></pre>
+<p>Now start a new IEx session and invoke our new function:</p>
+<pre><code class="iex">$ iex -S mix
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; Example.double_sum(1, 2)
+</code></pre>
+<p><code>IEx.pry/0</code> is built on top of IEx. Although it isn&#8217;t a traditional debugger since you can&#8217;t step, add breakpoints and so forth, it&#8217;s a good tool for non-production debugging. It runs in the caller process, blocking the caller and allowing us to access its binding (variables), verify its lexical information and access the process information. You can finish your &#8220;pry&#8221; session by calling <code>respawn</code>, which starts a new IEx shell.</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2016/04/iex-pry-elixir.gif" alt="Starting a new IEx session" width="930" height="506" class="aligncenter size-full wp-image-5285"></p>
+<p>You can find more information at <a href="http://elixir-lang.org/docs/stable/iex/IEx.html#pry/1">IEx.pry doc</a>.</p>
+<h2>Debugger</h2>
+<p>If you need a breakpoint feature, we can use the <code>:debugger</code> module that ships with Erlang. Let&#8217;s make a change in our example to be more didactic:</p>
+<pre><code class="elixir">defmodule Example do
+  def double_sum(x, y) do
+    hard_work(x, y)
+  end
+
+  defp hard_work(x, y) do
+    x = 2 * x
+    y = 2 * y
+
+    x + y
+  end
+end
+</code></pre>
+<p>Now we can start our debugger:</p>
+<pre><code class="iex">$ iex -S mix
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Compiled lib/example.ex
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; :debugger.start()
+{:ok, #PID&lt;0.87.0&gt;}
+iex(2)&gt; :int.ni(Example)
+{:module, Example}
+iex(3)&gt; :int.break(Example, 3)
+:ok
+iex(4)&gt; Example.double_sum(1,2)
+</code></pre>
+<p>When you started the debugger, a Graphical User Interface must have opened in your machine. We called <code>:int.ni(Example)</code> to prepare our module for debugging and then added a breakpoint to line 3 with <code>:int.break(Example, 3)</code>. After we call our function, we can see our process with break status in the debugger:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/04/debugger-elixir.gif" alt="Process with break status in the de" width="990" height="752" class="aligncenter size-full wp-image-5286"></p>
+<p>The process is blocked as in <code>IEx.pry/0</code>. We can add a new breakpoint in the monitor window, inspect the code, see the variables and navigate it in steps.</p>
+<p>Debugger has more options and command instructions that you can use. Take a look at <a href="http://erlang.org/doc/apps/debugger/debugger_chapter.html">Debbuger doc</a> for more information.</p>
+<h3>Troubleshooting</h3>
+<p>You may have some problems when executing <code>:int.ni(Example)</code> in the example above:</p>
+<pre><code class="elixir">iex(2)&gt; :int.ni(Example)
+** Invalid beam file or no abstract code: 'Elixir.Example'
+</code></pre>
+<p>Before the upcoming Erlang 19 version, the debugger did not have the <a href="https://github.com/erlang/otp/pull/977">heuristic that traverses the module source attribute</a> applied. If you are not on the latest Erlang version, you can update the debugger manually with the following steps:</p>
+<ol>
+<li>Download the file <code>int.erl</code> from the PR.</li>
+<li>Compile it with <code>erlc -o . int.erl</code>.</li>
+<li>Overwrite <code>lib/debugger/ebin/int.beam</code> in your Erlang installation with the new compiled file.</li>
+</ol>
+<p>In the next post, we will see a tracing technique that doesn&#8217;t block the caller process.</p>
+<p>What about you? What are the tools that you are using to debug your Elixir applications?</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br>
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar"><br>
+</a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/debug/" rel="tag">debug</a>, <a href="/tag/elixir/" rel="tag">elixir</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2016/04/debugging-techniques-in-elixir-lang/#comments"><span class="dsq-postid" data-dsqidentifier="5280 http://blog.plataformatec.com.br/?p=5280">9 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		9 responses to &#8220;Debugging techniques in Elixir&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1588">
+				<div id="div-comment-1588" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c118e7be6c761d4575ad543460778524?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/c118e7be6c761d4575ad543460778524?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://ijoshsmith.com/" class="url" rel="ugc external nofollow">Josh Smith</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1588">April 8, 2016 at 1:29 pm</a>		</div>
+
+		<p>Thanks Erich, this is very useful information!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1589">
+				<div id="div-comment-1589" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/960fd385d2d99c24f0ab40bf4ddaf03d?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/960fd385d2d99c24f0ab40bf4ddaf03d?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">sribe</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1589">April 16, 2016 at 12:06 am</a>		</div>
+
+		<p>&#8220;Download the file int.erl from the PR.&#8221;</p>
+<p>Would be nice to have a link; whether to the file or the PR I don&#8217;t really care&#8230;</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1590">
+				<div id="div-comment-1590" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1590">April 16, 2016 at 5:29 am</a>		</div>
+
+		<p>The PR is linked in the post. In case you missed it, here it goes again:</p>
+<p>PR: <a href="https://github.com/erlang/otp/pull/977" rel="nofollow ugc">https://github.com/erlang/otp/pull/977</a></p>
+<p>File: <a href="https://github.com/josevalim/otp/blob/c7e82c6b406b632a191c791a1bd2162bde08f692/lib/debugger/src/int.erl" rel="nofollow ugc">https://github.com/josevalim/otp/blob/c7e82c6b406b632a191c791a1bd2162bde08f692/lib/debugger/src/int.erl</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1591">
+				<div id="div-comment-1591" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c24199f2c80a70b90e13552e7c9c2e09?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/c24199f2c80a70b90e13552e7c9c2e09?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">scott hamilton</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1591">April 18, 2016 at 11:17 am</a>		</div>
+
+		<p>I&#8217;m a big docker fan for dev. Does anybody know if you can get the debugger to work with docker?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1592">
+				<div id="div-comment-1592" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/b3572bd73f4727d9eced1aef0a8c66b6?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/b3572bd73f4727d9eced1aef0a8c66b6?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">davidcotter</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1592">April 18, 2016 at 1:15 pm</a>		</div>
+
+		<p>Great article.<br>
+I got it working on Windows with the int.erl compile and the &#8211;werl. I tried debugging a Phoenix app and it worked but I don&#8217;t quit know what I am doing. To debug the Phoenix app: </p>
+<p>c:devhello_phoenix&gt; iex &#8211;werl -S mix phoenix.server<br>
+iex(1)&gt; :debugger.start()<br>
+iex(2)&gt; :int.ni(HelloPhoenix.PageController)<br>
+iex(3)&gt; :int.break(HelloPhoenix.PageController, 5)</p>
+<p>Refresh browser and it breaks at the controller. The &#8220;:int.ni&#8221; interprets the module for debugging purposes.  Does this mean that I need to call ni and break for every module I want to step through &#8211; I guess so. Do you know if it is possible &#8220;Step over&#8221; &#8211; I can&#8217;t see any difference between &#8220;Next&#8221; and &#8220;Step&#8221; in the debugger. Am I doing it right?</p>
+<p>I had no idea this was possible with elixir/phoenix so it&#8217;s great for tracking down elusive issues.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1593">
+				<div id="div-comment-1593" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/4ce9b0658da10cde28a0c55839cf6d3a?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/4ce9b0658da10cde28a0c55839cf6d3a?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Bryan Hunt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1593">April 20, 2016 at 7:30 am</a>		</div>
+
+		<p>I&#8217;ve written a convenience script to make patching the beam file easier (tested on OS-X)- you can grab it from here : <a href="https://gist.github.com/ef1830f3f7ce2fcdbda2cf9aa781b68f" rel="nofollow ugc">https://gist.github.com/ef1830f3f7ce2fcdbda2cf9aa781b68f</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1594">
+				<div id="div-comment-1594" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ae362648af17ad86dbc65c56deed2192?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ae362648af17ad86dbc65c56deed2192?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Erich Kist</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1594">April 20, 2016 at 11:17 am</a>		</div>
+
+		<p>HI Scott, you can use debugger with docker.</p>
+<p>Probably, the debugger will not run in the docker. So, my suggestion is to start a locally shell and connect with your node in docker and then use the debugger. Our next post will cover this strategy. Stay tuned for more details.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1597">
+				<div id="div-comment-1597" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c24199f2c80a70b90e13552e7c9c2e09?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/c24199f2c80a70b90e13552e7c9c2e09?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">scott hamilton</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1597">April 22, 2016 at 12:15 pm</a>		</div>
+
+		<p>THANKS!!! I figured it was possible. Just wanted to see if there was any advice on the subject. Thanks, I&#8217;ll take a stab at it over the weekend.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1599">
+				<div id="div-comment-1599" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/f9a5574c99bf9d531ec99e5c5a1231cf?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/f9a5574c99bf9d531ec99e5c5a1231cf?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Luke Imhoff</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/04/debugging-techniques-in-elixir-lang/#comment-1599">April 27, 2016 at 5:04 pm</a>		</div>
+
+		<p>How do you evaluate expressions in the evaluator window after attaching to the process?  I have variable names listed like `resource@1`, but that&#8217;s not a valid Erlang variable name, so I can&#8217;t do `resource@1#{relationships}` to get the `relationships` value out of the `resource@1` map.  I seem to only be able to evaluate variables by clicking on their name.  Is there someway to refer to Elixir variables, so the Erlang evaluator can parse them?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/" rel="prev">Inspecting, changing and debugging Elixir project dependencies</a>          <a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/" rel="next">How to trace Elixir nodes with Erlyberly</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

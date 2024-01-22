@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Quick tip: search forms	</title>
+	<atom:link href="/2010/04/quick-tip-search-forms/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/04/quick-tip-search-forms/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 29 Apr 2010 14:37:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Neeraj Singh		</title>
+		<link>/2010/04/quick-tip-search-forms/comment-page-1/#comment-578</link>
+
+		<dc:creator><![CDATA[Neeraj Singh]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 14:37:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=845#comment-578</guid>
+
+					<description><![CDATA[This is a neat technique. Thanks for sharing.]]></description>
+			<content:encoded><![CDATA[<p>This is a neat technique. Thanks for sharing.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neeraj Singh		</title>
+		<link>/2010/04/quick-tip-search-forms/comment-page-1/#comment-989</link>
+
+		<dc:creator><![CDATA[Neeraj Singh]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 14:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=845#comment-989</guid>
+
+					<description><![CDATA[This is a neat technique. Thanks for sharing.]]></description>
+			<content:encoded><![CDATA[<p>This is a neat technique. Thanks for sharing.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

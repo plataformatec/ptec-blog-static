@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to work with distributed teams	</title>
+	<atom:link href="/2017/12/how-to-work-with-distributed-teams/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/12/how-to-work-with-distributed-teams/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 22 Jan 2018 12:17:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1771</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2018 12:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7021#comment-1771</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1765&quot;&gt;Rebecca Skinner&lt;/a&gt;.
+
+Unfortunately I don&#039;t speak Esperanto! But that would be awesome! haha]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1765">Rebecca Skinner</a>.</p>
+<p>Unfortunately I don&#8217;t speak Esperanto! But that would be awesome! haha</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1770</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 22 Jan 2018 12:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7021#comment-1770</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1766&quot;&gt;Dan McHarness&lt;/a&gt;.
+
+Hi Dan! Thanks for your comment! And sorry for the delay answering it.
+
+I guess your question is one of the most difficult questions, and not only regarding distributed teams. Dividing work among teams is really difficult, but the answer depends on: 
+* the kind of structure you have (micro services vs monolith), 
+* the number of teams you have, the type of product you deal with, 
+* the risk of working in each component of your code, and so on. 
+
+I guess that is why it is so difficult to do a blog post with an answer for it. Therefore, I don&#039;t have an answer for it haha... But I&#039;d say that you can try different manners and try to find the best one! It is good to always question the status quo and try to improve our process... if it gets worse, just rollback :P]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1766">Dan McHarness</a>.</p>
+<p>Hi Dan! Thanks for your comment! And sorry for the delay answering it.</p>
+<p>I guess your question is one of the most difficult questions, and not only regarding distributed teams. Dividing work among teams is really difficult, but the answer depends on:<br />
+* the kind of structure you have (micro services vs monolith),<br />
+* the number of teams you have, the type of product you deal with,<br />
+* the risk of working in each component of your code, and so on. </p>
+<p>I guess that is why it is so difficult to do a blog post with an answer for it. Therefore, I don&#8217;t have an answer for it haha&#8230; But I&#8217;d say that you can try different manners and try to find the best one! It is good to always question the status quo and try to improve our process&#8230; if it gets worse, just rollback 😛</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dan McHarness		</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1766</link>
+
+		<dc:creator><![CDATA[Dan McHarness]]></dc:creator>
+		<pubDate>Fri, 15 Dec 2017 13:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7021#comment-1766</guid>
+
+					<description><![CDATA[I&#039;ve read a number of posts like this, and this one is one of the better ones. However, I&#039;ve yet to read a post on distributed development that discusses approaches to dividing up the work so that teams don&#039;t step on each other and work can occur in parallel. Is the rule of thumb to divide up work by interface touch points?]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve read a number of posts like this, and this one is one of the better ones. However, I&#8217;ve yet to read a post on distributed development that discusses approaches to dividing up the work so that teams don&#8217;t step on each other and work can occur in parallel. Is the rule of thumb to divide up work by interface touch points?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rebecca Skinner		</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/comment-page-1/#comment-1765</link>
+
+		<dc:creator><![CDATA[Rebecca Skinner]]></dc:creator>
+		<pubDate>Thu, 14 Dec 2017 08:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7021#comment-1765</guid>
+
+					<description><![CDATA[Kial vi ne parolas Esperanton?? (That would actually be really cool if you did!)]]></description>
+			<content:encoded><![CDATA[<p>Kial vi ne parolas Esperanton?? (That would actually be really cool if you did!)</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

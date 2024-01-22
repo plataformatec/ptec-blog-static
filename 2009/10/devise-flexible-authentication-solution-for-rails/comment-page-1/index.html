@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Devise: flexible authentication solution for Rails « Plataformatec Blog</title>
+		<meta name="description" content="UPDATE: This post was an introduction to Devise and a couple of things changed since then. There is a more recent post which describes the same steps as below using generators and, for a more complete and always updated explanation, please check the README. In Rails Summit Latin America 2009, we showed Devise in a">
+		<meta name="robots" content="noindex, nofollow, max-image-preview:large">
+		<link rel="canonical" href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comments">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Devise: flexible authentication solution for Rails « Plataformatec Blog">
+		<meta property="og:description" content="UPDATE: This post was an introduction to Devise and a couple of things changed since then. There is a more recent post which describes the same steps as below using generators and, for a more complete and always updated explanation, please check the README. In Rails Summit Latin America 2009, we showed Devise in a">
+		<meta property="og:url" content="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comments">
+		<meta property="article:published_time" content="2009-10-21T02:46:58+00:00">
+		<meta property="article:modified_time" content="2009-11-05T22:48:32+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Devise: flexible authentication solution for Rails « Plataformatec Blog">
+		<meta name="twitter:description" content="UPDATE: This post was an introduction to Devise and a couple of things changed since then. There is a more recent post which describes the same steps as below using generators and, for a more complete and always updated explanation, please check the README. In Rails Summit Latin America 2009, we showed Devise in a">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#article","name":"Devise: flexible authentication solution for Rails « Plataformatec Blog","headline":"Devise: flexible authentication solution for Rails","author":{"@id":"\/author\/josevalim\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2009-10-21T00:46:58-02:00","dateModified":"2009-11-05T20:48:32-02:00","inLanguage":"en-US","commentCount":69,"mainEntityOfPage":{"@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#webpage"},"isPartOf":{"@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#webpage"},"articleSection":"English, authentication, devise, engine, plugins, rails"},{"@type":"BreadcrumbList","@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/#listItem","position":2,"name":"2009","item":"\/2009\/","nextItem":"\/2009\/10\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2009\/10\/#listItem","position":3,"name":"October","item":"\/2009\/10\/","nextItem":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#listItem","previousItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#listItem","position":4,"name":"Devise: flexible authentication solution for Rails","previousItem":"\/2009\/10\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/josevalim\/#author","url":"\/author\/josevalim\/","name":"José Valim","image":{"@type":"ImageObject","@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/e837f6b7fd146ab16ed3d663476c063e?s=96&d=mm&r=pg","width":96,"height":96,"caption":"José Valim"}},{"@type":"WebPage","@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#webpage","url":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/","name":"Devise: flexible authentication solution for Rails « Plataformatec Blog","description":"UPDATE: This post was an introduction to Devise and a couple of things changed since then. There is a more recent post which describes the same steps as below using generators and, for a more complete and always updated explanation, please check the README. In Rails Summit Latin America 2009, we showed Devise in a","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2009\/10\/devise-flexible-authentication-solution-for-rails\/#breadcrumblist"},"author":{"@id":"\/author\/josevalim\/#author"},"creator":{"@id":"\/author\/josevalim\/#author"},"datePublished":"2009-10-21T00:46:58-02:00","dateModified":"2009-11-05T20:48:32-02:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Devise: flexible authentication solution for Rails Comments Feed" href="/2009/10/devise-flexible-authentication-solution-for-rails/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/365">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=365">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F10%2Fdevise-flexible-authentication-solution-for-rails%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F10%2Fdevise-flexible-authentication-solution-for-rails%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-365 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2009/10/devise-flexible-authentication-solution-for-rails/" rel="bookmark">Devise: flexible authentication solution for Rails</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2009-10-21T00:46:58-02:00">Oct 21, 2009</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=4" title="Posts by José Valim">José Valim</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p><strong>UPDATE:</strong> This post was an introduction to Devise and a couple of things changed since then. There is a <a href="/2009/11/devise-authentication-for-lazy-programmers/">more recent post which describes the same steps as below using generators</a> and, for a more complete and always updated explanation, please check the <a href="http://github.com/plataformatec/devise">README</a>.</p>
+<p>In <a href="http://railssummit.locaweb.com.br/en/pages/home" target="_blank">Rails Summit Latin America 2009</a>, we showed <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a> in a lightning talk and today we are officially releasing it! Before we show you some code, we are going to explain what we want to achieve with <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, starting with the most used authentication solution nowadays: <a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> and <a href="http://github.com/binarylogic/authlogic" target="_blank">Authlogic</a>.</p>
+<h3>Clearance</h3>
+<p><a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> is a full stack authentication solution, implementing all Model, View and Controller layers using Rails Engines. It deals with account confirmation and password recovery. You just need to plug and play! However, you are required to use the model User and it does not allow you have add and/or customize different roles.</p>
+<h3>Authlogic</h3>
+<p>When comes to the Model, <a href="http://github.com/binarylogic/authlogic" target="_blank">Authlogic</a> is definitely the most complete solution out there. It handles several cryptography providers and many other goodies which are completely configurable. However, it&#8217;s not a full stack solution (it does not say how users should confirm their account or recover their password) and it has a little bit of controversy since it handles the session in a model. So here is the question, where the session could be handled then?</p>
+<h3>Here comes Warden!</h3>
+<p><a href="http://github.com/hassox/warden" target="_blank">Warden</a> is a general rack authentication framework, developed by <a href="http://github.com/hassox" target="_blank">Daniel Neighman</a>, which handles the session in a rack middleware. The main benefit from it is that you can share your authentication strategies with several apps, so if you are using Sinatra, Rails and some others middlewares at the same time, they all rely on the same rules!</p>
+<h3>Devise: strategies for authentication</h3>
+<p>After we fell in love with <a href="http://github.com/hassox/warden" target="_blank">Warden</a> and used it in some projects, we decided to create a full stack solution as Clearance, but flexible as Authlogic, on top of <a href="http://github.com/hassox/warden" target="_blank">Warden</a>. The solution is <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, a Rails Engine which handles multiple roles, each one of them with different strategies. Devise currently comes with 5 strategies:</p>
+<ul>
+<li>
+<b>Authenticatable</b>: responsible for encrypting password and validating authenticity of a user while signing in;</li>
+<li>
+<b>Confirmable</b>: responsible for verifying whether an account is already confirmed to sign in, and to send emails with confirmation instructions;</li>
+<li>
+<b>Recoverable</b>: takes care of reseting the user password and send reset instructions;</li>
+<li>
+<b>Rememberable</b>: generates and clears a token to remember the user from a saved cookie;
+</li>
+<li>
+<b>Validatable</b>: creates all needed validations for email and password. It’s totally optional, so you’re able to to customize validations by yourself.</li>
+</ul>
+<p>The nice thing is: imagine that you are building an app which needs to handle invitations. You just need to create a Invitable strategy on Devise and never implement it again!</p>
+<h3>Show me the code!</h3>
+<p>In the <a href="http://github.com/plataformatec/devise" target="_blank">README</a>, you will find all the information you need to start using Devise in your projects, so here we are going to cover the main aspects of it. Let&#8217;s suppose you are creating an user model, which needs to be authenticated and recover his password. The first step is to create the columns using Devise migration helpers:</p>
+<pre lang="ruby">
+create_table :users do |t|
+  # creates email, encrypted_password and password_salt
+  t.authenticatable
+
+  # creates reset_password_token
+  t.recoverable
+end
+</pre>
+<p>Then you need to declare inside your model which strategies you want to use:</p>
+<pre lang="ruby">
+class User 
+<p>And create the routes:</p>
+<pre lang="ruby">
+ActionController::Routing::Routes.draw do |map|
+  # Check for configuration params on README
+  map.devise_for :users
+end
+</pre>
+<p>The route will access your model and create only the routes for the strategies declared. That ensures that your user won't access the confirmations controller inside Devise. Devise also adds a couple of helpers and filters to be used inside your controllers:</p>
+<pre lang="ruby">
+  # Inside your protected controller
+  before_filter :authenticate_user!
+
+  # Inside your controllers and views
+  user_signed_in?
+  current_user
+  user_session
+</pre>
+<p><strong>user_session</strong> is a hash scoped only to the user. So if you have two roles, they will have different session hashes and their data won't conflict! This awesome feature come straights from Warden!</p>
+<p>Devise also has I18n support and since it's an engine, you can customize your views just by placing a copy of it in your application. <a href="http://github.com/plataformatec/devise_example" target="_blank">A small application build as example is also available on Github</a>!</p>
+<h3>What's more to come?</h3>
+<p>We are planning to add several other strategies to Devise, including brute force protection, session timeouts and also other features, as generators. You can spy our <a href="http://github.com/plataformatec/devise/blob/master/TODO" target="_blank">TODO list</a> whenever you want.</p>
+<h3>Our many thanks to</h3>
+<p><a href="http://carlosantoniodasilva.wordpress.com/" target="_blank">Carlos Antônio</a> which worked on Devise and made it ready for prime time! <a href="http://twitter.com/jncoward" target="_blank">Jonas Nicklas</a>, which introduced us to <a href="http://github.com/hassox/warden" target="_blank">Warden</a> and <a href="http://twitter.com/hassox" target="_blank">Daniel Neighman</a> for building and maintaining it! </p>
+<p>We also want to thank <a href="http://robots.thoughtbot.com/" target="_blank">Thoughtbot</a> guys, which wrote several <a href="http://robots.thoughtbot.com/post/159805420/sign-up-sign-in-sign-out" target="_blank">decisions</a> and <a href="http://robots.thoughtbot.com/post/159805560/tips-for-writing-your-own-rails-engine" target="_blank">tips</a> they took while developing <a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> which helped us while building <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>.</p>
+<p>Finally, thanks to <a href="http://www.akitaonrails.com/" target="_blank">Fábio Akita</a> for giving us the chance to release it at Rails Summit and Gregg Pollack for releasing <a href="http://ruby5.envylabs.com/episodes/21" target="_blank">Devise on Ruby 5</a>!</p>
+    </pre></article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/authentication/" rel="tag">authentication</a>, <a href="/tag/devise/" rel="tag">devise</a>, <a href="/tag/engine/" rel="tag">engine</a>, <a href="/tag/plugins/" rel="tag">plugins</a>, <a href="/tag/rails/" rel="tag">rails</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2009/10/devise-flexible-authentication-solution-for-rails/#comments"><span class="dsq-postid" data-dsqidentifier="365 http://blog.plataformatec.com.br/?p=365">69 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		69 responses to &#8220;Devise: flexible authentication solution for Rails&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"><a href="/2009/10/devise-flexible-authentication-solution-for-rails/#comments">Newer Comments &raquo;</a></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-835">
+				<div id="div-comment-835" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/67fb0981460f067487eb749b0a6f0702?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/67fb0981460f067487eb749b0a6f0702?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://www.targinosilveira.com/" class="url" rel="ugc external nofollow">Targino Silveira</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-835">October 21, 2009 at 1:16 pm</a>		</div>
+
+		<p>Very interesting this post, thak you for your job, I will do some tests and make tutorials for brazilians&#8230;</p>
+<p>Thank you..</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-294">
+				<div id="div-comment-294" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/67fb0981460f067487eb749b0a6f0702?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/67fb0981460f067487eb749b0a6f0702?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://www.targinosilveira.com/" class="url" rel="ugc external nofollow">Targino Silveira</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-294">October 21, 2009 at 11:16 am</a>		</div>
+
+		<p>Very interesting this post, thak you for your job, I will do some tests and make tutorials for brazilians&#8230;</p>
+<p>Thank you..</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-836">
+				<div id="div-comment-836" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://darkhax.com/" class="url" rel="ugc external nofollow">Daniel Huckstep</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-836">October 21, 2009 at 3:45 pm</a>		</div>
+
+		<p>Does it support OpenID?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-295">
+				<div id="div-comment-295" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.darkhax.com/" class="url" rel="ugc external nofollow">Daniel Huckstep</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-295">October 21, 2009 at 1:45 pm</a>		</div>
+
+		<p>Does it support OpenID?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-837">
+				<div id="div-comment-837" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-837">October 21, 2009 at 3:48 pm</a>		</div>
+
+		<p>Not yet, but due to how Warden and Devise were designed, add OpenID support should be easy!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-296">
+				<div id="div-comment-296" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-296">October 21, 2009 at 1:48 pm</a>		</div>
+
+		<p>Not yet, but due to how Warden and Devise were designed, add OpenID support should be easy!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-838">
+				<div id="div-comment-838" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/44bf7541ad28af4ae7932914c048c69c?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/44bf7541ad28af4ae7932914c048c69c?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Teddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-838">October 21, 2009 at 9:43 pm</a>		</div>
+
+		<p>I really like the way this is set up. I&#8217;ll try this out in my next two upcoming projects.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-297">
+				<div id="div-comment-297" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/44bf7541ad28af4ae7932914c048c69c?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/44bf7541ad28af4ae7932914c048c69c?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Teddy</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-297">October 21, 2009 at 7:43 pm</a>		</div>
+
+		<p>I really like the way this is set up. I&#8217;ll try this out in my next two upcoming projects.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-839">
+				<div id="div-comment-839" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/25e782eb7e799e78d781b0026fc6a4d8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/25e782eb7e799e78d781b0026fc6a4d8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.icoretech.org/" class="url" rel="ugc external nofollow">Claudio Poli</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-839">October 22, 2009 at 2:34 am</a>		</div>
+
+		<p>Cool stuff, thanks, will try it out in next project</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-298">
+				<div id="div-comment-298" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/25e782eb7e799e78d781b0026fc6a4d8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/25e782eb7e799e78d781b0026fc6a4d8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.icoretech.org/" class="url" rel="ugc external nofollow">Claudio Poli</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-298">October 22, 2009 at 12:34 am</a>		</div>
+
+		<p>Cool stuff, thanks, will try it out in next project</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-840">
+				<div id="div-comment-840" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-840">October 22, 2009 at 5:50 am</a>		</div>
+
+		<p>I can see the ActionController::IntegrationTest helpers, but can&#8217;t for the life of me figure out how to sign in a user in a functional test. I&#8217;ve mucked around, but am not getting very far. any ideas?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-299">
+				<div id="div-comment-299" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-299">October 22, 2009 at 3:50 am</a>		</div>
+
+		<p>I can see the ActionController::IntegrationTest helpers, but can&#8217;t for the life of me figure out how to sign in a user in a functional test. I&#8217;ve mucked around, but am not getting very far. any ideas?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-841">
+				<div id="div-comment-841" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-841">October 22, 2009 at 9:03 am</a>		</div>
+
+		<p>@Mike, the way to make functional tests work is by setting a mock in @env[:warden] and stubbing the appropriated methods. Maybe we should add a helper that does all required stubs?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-300">
+				<div id="div-comment-300" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-300">October 22, 2009 at 7:03 am</a>		</div>
+
+		<p>@Mike, the way to make functional tests work is by setting a mock in @env[:warden] and stubbing the appropriated methods. Maybe we should add a helper that does all required stubs?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-301">
+				<div id="div-comment-301" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://blog.robincurry.com/2009/10/22/chain-links-042/" class="url" rel="ugc external nofollow">Chain Links #042 | Proc#curry</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-301">October 22, 2009 at 11:51 am</a>		</div>
+
+		<p>[&#8230;] Devise A full stack Rails authentication engine built on top of Rack-based Warden that uses a strategy provider pattern. Use of Rack allows authentication to be shared across different types of applications (Rails, Sinatra, etc) and strategy pattern allows new, customizable strategies (i.e. Invitable) to be created and shared. Very interesting&#8230; [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-842">
+				<div id="div-comment-842" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/37f5b02845d2bfa71641ec9736d58061?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/37f5b02845d2bfa71641ec9736d58061?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.jerodsanto.net/" class="url" rel="ugc external nofollow">Jerod Santo</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-842">October 22, 2009 at 3:00 pm</a>		</div>
+
+		<p>@Jose yes, a test helper would be great or even a wiki page describing the required stubs might do. Looks like an interesting alternative, thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-302">
+				<div id="div-comment-302" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/37f5b02845d2bfa71641ec9736d58061?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/37f5b02845d2bfa71641ec9736d58061?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.jerodsanto.net/" class="url" rel="ugc external nofollow">Jerod Santo</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-302">October 22, 2009 at 1:00 pm</a>		</div>
+
+		<p>@Jose yes, a test helper would be great or even a wiki page describing the required stubs might do. Looks like an interesting alternative, thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-843">
+				<div id="div-comment-843" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/2eac5554aeb88694468a955a0db2b274?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/2eac5554aeb88694468a955a0db2b274?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.scrum8.com/" class="url" rel="ugc external nofollow">Joshua Partogi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-843">October 25, 2009 at 9:50 am</a>		</div>
+
+		<p>Has it been tested against Rails 3 yet? Authlogic and Clearance breaks in Rails 3. I think it will be prime time if it is compatible with Rails 3.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-313">
+				<div id="div-comment-313" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/2eac5554aeb88694468a955a0db2b274?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/2eac5554aeb88694468a955a0db2b274?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://blog.scrum8.com/" class="url" rel="ugc external nofollow">Joshua Partogi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-313">October 25, 2009 at 7:50 am</a>		</div>
+
+		<p>Has it been tested against Rails 3 yet? Authlogic and Clearance breaks in Rails 3. I think it will be prime time if it is compatible with Rails 3.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-844">
+				<div id="div-comment-844" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-844">October 25, 2009 at 2:31 pm</a>		</div>
+
+		<p>@Joshua, right now makes no sense to be compatible with Rails 3 while the API is still changing. We may start to look into it when a beta is released.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-314">
+				<div id="div-comment-314" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-314">October 25, 2009 at 12:31 pm</a>		</div>
+
+		<p>@Joshua, right now makes no sense to be compatible with Rails 3 while the API is still changing. We may start to look into it when a beta is released.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-845">
+				<div id="div-comment-845" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-845">October 27, 2009 at 4:52 am</a>		</div>
+
+		<p>this is what I&#8217;ve come up with. it&#8217;s crude, uses only the :user scope in warden and uses Factory Girl, but it was the first thing that worked for me.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-323">
+				<div id="div-comment-323" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-323">October 27, 2009 at 2:52 am</a>		</div>
+
+		<p>this is what I&#8217;ve come up with. it&#8217;s crude, uses only the :user scope in warden and uses Factory Girl, but it was the first thing that worked for me.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-846">
+				<div id="div-comment-846" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-846">October 27, 2009 at 4:59 am</a>		</div>
+
+		<p>and a link would be helpful eh<br>
+<a href="http://gist.github.com/219330" rel="nofollow ugc">http://gist.github.com/219330</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-324">
+				<div id="div-comment-324" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-324">October 27, 2009 at 2:59 am</a>		</div>
+
+		<p>and a link would be helpful eh<br>
+<a href="http://gist.github.com/219330" rel="nofollow ugc">http://gist.github.com/219330</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-847">
+				<div id="div-comment-847" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-847">October 27, 2009 at 12:00 pm</a>		</div>
+
+		<p>@Mike, pretty nice your method for mocking warden.. thanks for that.<br>
+We are working on this helpers for functional testing, and it will be useful. Thanks.<br>
+Carlos Antonio</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-carlosantonio even thread-even depth-1" id="comment-325">
+				<div id="div-comment-325" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-325">October 27, 2009 at 10:00 am</a>		</div>
+
+		<p>@Mike, pretty nice your method for mocking warden.. thanks for that.<br>
+We are working on this helpers for functional testing, and it will be useful. Thanks.<br>
+Carlos Antonio</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-848">
+				<div id="div-comment-848" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/416eb3f3cebbdffb20541c8c2478ba15?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/416eb3f3cebbdffb20541c8c2478ba15?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://perens.com/" class="url" rel="ugc external nofollow">Bruce Perens</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-848">October 29, 2009 at 12:58 am</a>		</div>
+
+		<p>I must be missing something. Is the API documentation online, or do I have to extract it myself? How should one create a new user? Sorry if that was all obvious and I just didn&#8217;t see where it was.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-330">
+				<div id="div-comment-330" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/416eb3f3cebbdffb20541c8c2478ba15?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/416eb3f3cebbdffb20541c8c2478ba15?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://perens.com/" class="url" rel="ugc external nofollow">Bruce Perens</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-330">October 28, 2009 at 10:58 pm</a>		</div>
+
+		<p>I must be missing something. Is the API documentation online, or do I have to extract it myself? How should one create a new user? Sorry if that was all obvious and I just didn&#8217;t see where it was.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-849">
+				<div id="div-comment-849" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-849">October 29, 2009 at 1:02 am</a>		</div>
+
+		<p>@Bruce, the main documentation until now is the README. We will find a place to release the rdoc documentation, but you can always use `gem server` on your machine.</p>
+<p>Devise does not say anything on how your user should be created (sign up). But that should be quick, just two views! 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-331">
+				<div id="div-comment-331" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-331">October 28, 2009 at 11:02 pm</a>		</div>
+
+		<p>@Bruce, the main documentation until now is the README. We will find a place to release the rdoc documentation, but you can always use `gem server` on your machine.</p>
+<p>Devise does not say anything on how your user should be created (sign up). But that should be quick, just two views! 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-850">
+				<div id="div-comment-850" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/6bbd3aedd191f6b70e0cf5e9138521da?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/6bbd3aedd191f6b70e0cf5e9138521da?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Ludovic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-850">October 30, 2009 at 1:41 pm</a>		</div>
+
+		<p>Does it support OAuth ?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-332">
+				<div id="div-comment-332" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/6bbd3aedd191f6b70e0cf5e9138521da?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/6bbd3aedd191f6b70e0cf5e9138521da?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Ludovic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-332">October 30, 2009 at 11:41 am</a>		</div>
+
+		<p>Does it support OAuth ?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-851">
+				<div id="div-comment-851" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-851">October 30, 2009 at 2:42 pm</a>		</div>
+
+		<p>@Ludovic, not yet! But due to how Warden and Devise were designed, add OpenID and OAuth support should be easy!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-333">
+				<div id="div-comment-333" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-333">October 30, 2009 at 12:42 pm</a>		</div>
+
+		<p>@Ludovic, not yet! But due to how Warden and Devise were designed, add OpenID and OAuth support should be easy!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-852">
+				<div id="div-comment-852" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jochen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-852">October 30, 2009 at 9:09 pm</a>		</div>
+
+		<p>Hi,</p>
+<p>can I use couchdb with devise?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-334">
+				<div id="div-comment-334" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jochen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-334">October 30, 2009 at 7:09 pm</a>		</div>
+
+		<p>Hi,</p>
+<p>can I use couchdb with devise?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-853">
+				<div id="div-comment-853" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-853">October 30, 2009 at 9:15 pm</a>		</div>
+
+		<p>@Jochen, if your CouchDB ORM mimics ActiveRecord interface, it shouldn&#8217;t be hard at all because Devise just include one module called Devise::ActiveRecord in ActiveRecord::Base. All you need to do is a small patch where, before including this module, Devise checks if ActiveRecord::Base is really defined and then you should include Devise::ActiveRecord (we should probably rename it to Devise::Model) in your CouchDB ORM.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-335">
+				<div id="div-comment-335" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-335">October 30, 2009 at 7:15 pm</a>		</div>
+
+		<p>@Jochen, if your CouchDB ORM mimics ActiveRecord interface, it shouldn&#8217;t be hard at all because Devise just include one module called Devise::ActiveRecord in ActiveRecord::Base. All you need to do is a small patch where, before including this module, Devise checks if ActiveRecord::Base is really defined and then you should include Devise::ActiveRecord (we should probably rename it to Devise::Model) in your CouchDB ORM.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-854">
+				<div id="div-comment-854" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jochen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-854">October 30, 2009 at 9:42 pm</a>		</div>
+
+		<p>@josé, I am using Couchrest as CouchDB ORM. So I just have to include Devise::ActiveRecord in Couchrest?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-336">
+				<div id="div-comment-336" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/db90fac1650bf9dbd8e208c934ecdfa9?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jochen</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-336">October 30, 2009 at 7:42 pm</a>		</div>
+
+		<p>@josé, I am using Couchrest as CouchDB ORM. So I just have to include Devise::ActiveRecord in Couchrest?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-855">
+				<div id="div-comment-855" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-855">October 30, 2009 at 11:53 pm</a>		</div>
+
+		<p>@Jochen, I just commited to Devise a patch that should, at least in theory, remove ActiveRecord dependency. Please install Devise as a plugin and all you have to do (if Couchrest mimics ActiveRecord API) is to include Devise::Models in Couchrest base (the one you inherit from).</p>
+<p>If everything works great, I will release Devise 0.3.1, otherwise we can work on adjustments until it works for you. 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-337">
+				<div id="div-comment-337" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-337">October 30, 2009 at 9:53 pm</a>		</div>
+
+		<p>@Jochen, I just commited to Devise a patch that should, at least in theory, remove ActiveRecord dependency. Please install Devise as a plugin and all you have to do (if Couchrest mimics ActiveRecord API) is to include Devise::Models in Couchrest base (the one you inherit from).</p>
+<p>If everything works great, I will release Devise 0.3.1, otherwise we can work on adjustments until it works for you. 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-856">
+				<div id="div-comment-856" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/d9bd61e9a9ed9c9f3b995c07f7113ae5?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/d9bd61e9a9ed9c9f3b995c07f7113ae5?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.startbreakingfree.com/" class="url" rel="ugc external nofollow">Brian Armstrong</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-856">November 2, 2009 at 3:47 pm</a>		</div>
+
+		<p>+1 for OpenID, especially getting the views and controllers setup for it as well, possibly with something like rpxnow.com or clickpass.com which a lot of sites are using now.</p>
+<p>Setting up a login screen which does both (example: <a href="http://buyersvote.com/user_session/new" rel="nofollow ugc">http://buyersvote.com/user_session/new</a> ) still takes a long time and lots of hacking with AuthLogic.</p>
+<p>Great work!<br>
+Brian</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-340">
+				<div id="div-comment-340" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/d9bd61e9a9ed9c9f3b995c07f7113ae5?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/d9bd61e9a9ed9c9f3b995c07f7113ae5?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.startbreakingfree.com/" class="url" rel="ugc external nofollow">Brian Armstrong</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-340">November 2, 2009 at 1:47 pm</a>		</div>
+
+		<p>+1 for OpenID, especially getting the views and controllers setup for it as well, possibly with something like rpxnow.com or clickpass.com which a lot of sites are using now.</p>
+<p>Setting up a login screen which does both (example: <a href="http://buyersvote.com/user_session/new" rel="nofollow ugc">http://buyersvote.com/user_session/new</a> ) still takes a long time and lots of hacking with AuthLogic.</p>
+<p>Great work!<br>
+Brian</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-857">
+				<div id="div-comment-857" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-857">November 2, 2009 at 3:52 pm</a>		</div>
+
+		<p>Hey @Brian, I&#8217;m also +1 on OpenID, but we are not going to implement it until we need for an app we are working on. That can take one week or one month, we never know!</p>
+<p>That&#8217;s why I say that anyone who wants to implement it first can count with my support! 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-341">
+				<div id="div-comment-341" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-341">November 2, 2009 at 1:52 pm</a>		</div>
+
+		<p>Hey @Brian, I&#8217;m also +1 on OpenID, but we are not going to implement it until we need for an app we are working on. That can take one week or one month, we never know!</p>
+<p>That&#8217;s why I say that anyone who wants to implement it first can count with my support! 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-858">
+				<div id="div-comment-858" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-858">November 2, 2009 at 9:35 pm</a>		</div>
+
+		<p>so I&#8217;m still trying to get authentication into functional tests. after realizing that what I had before would modify the controller for ALL the tests the need for a block was added. so now you must do `mock_warden!(:user =&gt; Factory(:user)) { post :create }`</p>
+<p>but what I&#8217;m having trouble with now is if you use `:user =&gt; nil`, it still passes the `authenticate_user!` filter, and I can&#8217;t figure out any way of preventing this</p>
+<p>the code is available at <a href="http://gist.github.com/219330" rel="nofollow ugc">http://gist.github.com/219330</a>, but I can&#8217;t stress enough that I have no idea what I&#8217;m doing</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-342">
+				<div id="div-comment-342" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/8384ce03f141ef0db08ac8f185139059?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mike Wyatt</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-342">November 2, 2009 at 7:35 pm</a>		</div>
+
+		<p>so I&#8217;m still trying to get authentication into functional tests. after realizing that what I had before would modify the controller for ALL the tests the need for a block was added. so now you must do `mock_warden!(:user =&gt; Factory(:user)) { post :create }`</p>
+<p>but what I&#8217;m having trouble with now is if you use `:user =&gt; nil`, it still passes the `authenticate_user!` filter, and I can&#8217;t figure out any way of preventing this</p>
+<p>the code is available at <a href="http://gist.github.com/219330" rel="nofollow ugc">http://gist.github.com/219330</a>, but I can&#8217;t stress enough that I have no idea what I&#8217;m doing</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-859">
+				<div id="div-comment-859" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-1/#comment-859">November 2, 2009 at 9:42 pm</a>		</div>
+
+		<p>@Mike, it&#8217;s odd that changing the env in one controller will change for all tests. If that is the case, instead of working with a block, I would suggest to remove the warden environment in teardown.</p>
+<pre><code>class ActionController::TestCase
+  teardown :cleanup_warden_env
+
+  def cleanup_warden_env
+    @controller.request.env.delete('warden')
+  end
+end</code></pre>
+<p>And about the &#8220;:user =&gt; nil&#8221; I would suggest you to, while you stub, check if a value was given, if so, make the method call raise an error:</p>
+<pre><code>if v
+  warden.stubs(:authenticate!).with(:scope =&gt; k) do
+    raise "Not authenticated user"
+  end
+else
+  warden.stubs(:authenticate!).with(:scope =&gt; k)
+end</code></pre>
+<p>I&#8217;m not sure that syntax works for mocha, but something similar must be available. What do you think?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"><a href="/2009/10/devise-flexible-authentication-solution-for-rails/#comments">Newer Comments &raquo;</a></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2009/10/thor-e-devise-no-rails-summit-latin-america-2009/" rel="prev">Thor e Devise no Rails Summit Latin America 2009</a>          <a href="/2009/10/estamos-contratando/" rel="next">Estamos contratando!</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

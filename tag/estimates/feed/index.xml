@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>estimates « Plataformatec Blog</title>
+	<atom:link href="/tag/estimates/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 14:26:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Improve your agile estimates using the Ruler Score</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/</link>
+					<comments>/2014/04/improve-your-agile-estimates-using-the-ruler-score/#comments</comments>
+		
+		<dc:creator><![CDATA[Caroline Mota]]></dc:creator>
+		<pubDate>Wed, 23 Apr 2014 11:54:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[estimates]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=3919</guid>
+
+					<description><![CDATA[<p>The formal definition of estimate is &#8220;an approximate judgment or calculation of the value, amount, time or size of something&#8221;. In a software development project, estimates are important to help us predict how much time will be necessary in order to finish a set of activities, or to select and prioritize scope for a release ... <a class="read-more-link" href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/">»</a></p>
+<p>The post <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/">Improve your agile estimates using the Ruler Score</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The formal definition of estimate is &#8220;an approximate judgment or calculation of the value, amount, time or size of something&#8221;. In a software development project, estimates are important to help us predict how much time will be necessary in order to finish a set of activities, or to select and prioritize scope for a release or iteration.</p>
+<p>It&#8217;s rather common on Agile projects that the estimates are done in a planning poker session. Each team member has a deck of cards with the Fibonacci sequence (0, 1, 2, 3, 5, 8, 13), and for each user story (US), the team member privately selects one card to represent his or her estimate. All cards are then revealed at the same time. The estimates can represent story points, ideal days, or other units of cost that make sense to the project. Usually we use story points because we can consider three different aspects when estimating: complexity, effort, and risks. The story point unit allows us to more effectively capture sources of variation compared to an hour-based estimate.</p>
+<p>Since story points are a relative measurement unit, the first step your team should take is to define one story as the baseline, so that they can estimate the other stories comparing to that reference. According to the literature, the team should find the simplest story in the backlog, and assign 1 story point to it, after that, they use that story as baseline to estimate the other stories.</p>
+<p>However, here at Plataformatec we go a step further on defining that baseline story. We select at least one user story for each story point that we use, composing a &#8220;ruler score&#8221;.</p>
+<div id="attachment_3923" style="width: 522px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-3923" class="size-full wp-image-3923" src="/wp-content/uploads/2014/04/ruler-score-agile-estimate.jpg" alt="ruler score example" width="512" height="340" srcset="/wp-content/uploads/2014/04/ruler-score-agile-estimate.jpg 512w, /wp-content/uploads/2014/04/ruler-score-agile-estimate-300x199.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /><p id="caption-attachment-3923" class="wp-caption-text">Ruler score example</p></div>
+<p>In each sprint, we update the stories in the ruler with US&#8217;s of the previous sprint, so that when our team meets for the planning poker session, they have at least one baseline story on each story point to compare to.</p>
+<p>Using that practice has brought us a lot of benefits, such as:</p>
+<ul>
+<li>The estimation process is more effective because the reference to each story point is clear, reducing the length of the discussion among the team;</li>
+<li>Even if the team has a new member, the story point variation is reduced because this practice enforces a reference to each story point in the &#8220;ruler score&#8221;;</li>
+<li>The team members have the same reference for each story point, preventing someone from having an implicit story point reference that is not shared among the others;</li>
+<li>On each sprint, the estimates becomes more and more stable, since using the ruler score guarantees that the story point references are always updated.</li>
+</ul>
+<p>That&#8217;s it! We&#8217;d like to know what are your practices in estimating using story points. And if you try out the ruler score, let us know your results!</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/">Improve your agile estimates using the Ruler Score</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/04/improve-your-agile-estimates-using-the-ruler-score/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

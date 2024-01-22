@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>refatoração de código « Plataformatec Blog</title>
+	<atom:link href="/tag/refatoracao-de-codigo/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 29 Sep 2017 20:26:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>9 Pontos-chaves ao se fazer uma refatoração grande de software</title>
+		<link>/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 16 Jun 2017 14:45:53 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refatoração de código]]></category>
+		<category><![CDATA[refatoração de software]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6510</guid>
+
+					<description><![CDATA[<p>O segundo post da série Baixa Qualidade Interna de Software. Realizar uma refatoração grande1 de software não é algo simples. Há muitos pontos que você deve considerar, desde o planejamento e priorização até a motivação e execução da equipe. Entender esses pontos de forma estruturada e clara faz parte do processo. A boa notícia é que ... <a class="read-more-link" href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">»</a></p>
+<p>The post <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">O segundo post da série Baixa Qualidade Interna de Software.</em></p>
+<p>Realizar uma refatoração grande<sup id="fnref-refactor"><a href="#fn-refactor" rel="footnote">1</a></sup> de software não é algo simples. Há muitos pontos que você deve considerar, desde o planejamento e priorização até a motivação e execução da equipe. Entender esses pontos de forma estruturada e clara faz parte do processo. A boa notícia é que já passamos por essa situação antes e aprendemos quais os pontos principais com os quais você deve se preocupar.</p>
+<p>Aqui estão os pontos principais que você deve considerar ao planejar e executar uma <span style="font-weight: 400;">refatoração grande do seu sistema.</span></p>
+<h2>1. Defina metas de negócios</h2>
+<p><span style="font-weight: 400;">Uma refatoração grande de software</span> não deve ser iniciada sem metas de negócios claras, caso contrário, você pode sofrer com a falta de comprometimento das partes interessadas. Aqui estão alguns exemplos de metas:</p>
+<ul>
+<li>O objetivo da refatoração é possibilitar a conexão de vários gateways de pagamento.</li>
+<li>O objetivo da refatoração é melhorar a velocidade <span style="font-weight: 400;">de entrega.</span></li>
+<li>O objetivo da refatoração é viabilizar uma arquitetura multi-tenant para simplificar operações de infraestrutura.</li>
+</ul>
+<h2>2. Faça a medição do progresso</h2>
+<p>Em sua essência, o processo de refatoração de software é um esforço técnico, razão pela qual é comum não medir o progresso de forma estruturada, como <span style="font-weight: 400;">é medido</span> o progresso do desenvolvimento de novas features. Não caia nessa armadilha.</p>
+<p>Assim como cada tarefa em um projeto, uma refatoração deve sempre ser planejada e <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">medida</a>.</p>
+<h2>3. Preste atenção à motivação da sua equipe</h2>
+<p>Trabalhar em base de código legado pode desmotivar os desenvolvedores, especialmente se não conseguem <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=post-refatoracao&amp;utm_content=link">visualizar o progresso de suas atividades</a>, ou se <a href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=post-refatoracao&amp;utm_content=link">não sabem quando vão acabar</a>. Ao passar por um processo de refatoração, você deve ter isso em mente.</p>
+<p>Mostre à sua equipe que estão avançando. <a href="/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/">Planeje pequenas entregas</a>, para viabilizar liberações contínuas e celebrar o bom trabalho feito. Além disso, <span style="font-weight: 400;">pense </span><span style="font-weight: 400;">em rotacionar os</span><span style="font-weight: 400;"> desenvolvedores para essa tarefa de refatoração, pois pode ajudar a manter a motivação.</span></p>
+<h2>4. Defina sua abordagem: puxada ou empurrada?</h2>
+<p>Você vai melhorar a base de código apenas quando encontrar um problema, ou escolherá de forma proativa as partes a melhorar?</p>
+<p style="text-align: center;"><a style="background-color: #e9af35; border-radius: 3px; font-family: sans-serif; display: inline-block; line-height: 1.5; padding: 14px 40px; text-align: center; text-decoration: none; width: auto; color: #fff;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma-tdconf&amp;utm_content=cta-blog-post-middle" target="_blank" rel="noopener noreferrer">Clique aqui para assistir o webinar Migração de Plataforma Tecnológica. É grátis!</a></p>
+<h2>5. Priorização</h2>
+<p>Se você tem uma meta de negócios clara, é mais fácil escolher proativamente as partes que precisam ser melhoradas para alcançar a meta. Com as partes listadas, você pode priorizar, como de costume.</p>
+<p>Por outro lado, se você imagina que a base <span style="font-weight: 400;">de código </span><span style="font-weight: 400;">inteira</span><span style="font-weight: 400;"> deve ser refatorada</span>, priorizar torna-se complicado, porque não há uma ou duas partes principais que precisam de melhorias, há muitas. É difícil saber por onde começar.</p>
+<p>Uma solução é pedir ao time para avaliar a complexidade e churn do código para apontar as partes a refatorar. Para chegar numa conclusão se o código deve ou não ser refatorado, eles tem de se perguntar:</p>
+<ul>
+<li>A complexidade dessa classe é muito alta comparada às outras?</li>
+<li>Precisamos fazer mudanças constantes nesse arquivo?</li>
+</ul>
+<p>Se ambas as respostas forem sim, <span style="font-weight: 400;">essa parte do código </span>parece um bom candidato para refatoração. Trace um gráfico de &#8220;complexidade de classe X churn&#8221;, priorize as partes que são mais complexas e que passam por alterações com <span style="font-weight: 400;">frequência</span>.</p>
+<p><span style="font-weight: 400;">As partes do código que tem complexidade alta e que sofrem poucas modificações não são boas candidatas para serem refatoradas. Isso porque apesar de feias, funcionam. E também tem pouco impacto no desenvolvimento, já que a os desenvolvedores precisam modificá-las pouco no seu dia a dia.</span></p>
+<h2>6. Defina o &#8220;pronto&#8221;</h2>
+<p>O processo de refatoração de software pode se transformar em esforço infinito se você não planejar, priorizar e medir o progresso. Você deve tratá-lo como um projeto. Deve ter começo, meio e fim.</p>
+<h2>7. Cobertura da suíte de testes</h2>
+<p>A refatoração deve melhorar o que já está funcionando, sem quebrar nada. Certifique-se que a cobertura de testes está adequada, caso contrário, o processo pode gerar mais bugs do que melhorias de qualidade.</p>
+<h2>8. Desempenho da suíte de testes</h2>
+<p>Se a suíte de testes é lenta, refatorar também se tornará um processo lento, visto que a refatoração de software é fortemente baseada na execução contínua dos testes. Assegure que o desempenho da suíte de testes não seja um gargalo.</p>
+<h2>9. Compromisso dos patrocinadores</h2>
+<p>O processo de refatoração pode levar muito tempo: semanas, meses. Durante esse período, a velocidade das entregas de novas features será comprometida.</p>
+<p>Certifique-se que stakeholders das áreas de negócio entendam os objetivos e a natureza desse tipo de trabalho para evitar que eles desistam no meio do caminho.</p>
+<p>E você tem alguma dica além dessas para grande refatoração de software? Compartilhe conosco!</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li><a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a></li>
+<li>9 Pontos-chaves ao se fazer uma refatoração grande de software você está lendo</li>
+<li><a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chaves para reescrever um software</a></li>
+</ol>
+<hr />
+<div class="footnotes">
+<ol>
+<li id="fn-refactor"><em> Eu prefiro o termo &#8220;code refurbishment&#8221; ao invés de &#8220;refatoração grande&#8221;, já que refatoração por definição é pequena, mas as pessoas não estão acostumadas com essa terminologia. Então utilizarei o termo &#8220;refatoração&#8221; para fins de clareza. <a href="#fnref-refactor" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a></em></li>
+</ol>
+</div>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Sintomas da Baixa Qualidade Interna de Software</title>
+		<link>/2017/05/sintomas-da-baixa-qualidade-interna-de-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 31 May 2017 18:20:52 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refatoração de código]]></category>
+		<category><![CDATA[refatoração de software]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6400</guid>
+
+					<description><![CDATA[<p>Primeiro post da série Baixa Qualidade Interna de Software Não só bens físicos se deterioram, isso também ocorre com software. Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens ... <a class="read-more-link" href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">»</a></p>
+<p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">Primeiro post da série Baixa Qualidade Interna de Software</em></p>
+<h2>Não só bens físicos se deterioram, isso também ocorre com software.</h2>
+<p>Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens físicos, isso não acontece devido a algum fenômeno físico ou químico. Essa deterioração ocorre geralmente devido a mudanças de negócios ou de profissionais. Vou dar um exemplo.</p>
+<p>Imagine que você é o líder de uma equipe de produto ou tecnologia em uma startup; você é o CTO. Você já lançou a primeira versão do seu produto e foi um sucesso. Seu modelo de negócio foi validado e agora você está em fase de crescimento. Isso é fantástico! Mas tem seus custos, além de novos desafios.</p>
+<p>A primeira versão do seu produto está funcionando, mas a base de código não está como você precisa a partir de agora. Talvez sua equipe não seja tão veloz quanto antes. Sua equipe reclama continuamente da qualidade do código. O CEO e o diretor de produto querem novas features e suas estimativas atuais não atenderão às necessidades do negócio.</p>
+<p>Não raro, baixa qualidade da base de código está entre as principais origens de todos problemas. Talvez você precise refatorar (refactor) ou reescrever (rewrite) o software.</p>
+<h2>Quando a base de código não está em boas condições, todos podem ficar frustrados.</h2>
+<p>Sua equipe inteira, incluindo os desenvolvedores, se sentirão frustrados porque gostariam de liberar features com maior velocidade, porém a qualidade do código e a arquitetura atual não ajudam.</p>
+<p>Os departamentos de TI, produto e software sofrem por não atenderem às expectativas das outras áreas.</p>
+<p>O cliente também sofre devido aos bugs frequentes, o tempo gasto para que sejam corrigidos, além da demora para lançar novas features.</p>
+<p>Você conseguiu entender.</p>
+<h2>Identifique os sintomas</h2>
+<p>É papel do líder (por exemplo, o CTO) identificar quando é necessário refatorar ou reescrever o software. Para isso, ele(a) pode fazer uma análise em busca de alguns sintomas, como os listados abaixo:</p>
+<ul>
+<li style="font-weight: 400;"><b>Tudo é difícil: </b>Quase todas features novas ou correções de bugs que sua equipe precisa fazer são difíceis. Nem sempre foi assim. Você se lembra dos bons tempos em que sua equipe era rápida e a execução era perfeita.</li>
+<li style="font-weight: 400;"><b>Velocidade lenta: </b>a velocidade de sua equipe diminuiu ou está diminuindo. Quando vocês desenvolveram a primeira versão do produto, era rápido desenvolver uma nova feature. Sua equipe conseguia desenvolver um monte delas a cada iteração. Agora é diferente.</li>
+<li style="font-weight: 400;"><b>Suíte de testes lenta: </b>Sua suíte de testes apresenta tempo de execução 10x, 20x, 30x maior que antes.</li>
+<li style="font-weight: 400;"><b>Bugs que não desaparecem: </b>Sua equipe corrige um bug e em algumas semanas ele reaparece. É comum sua equipe corrigir bugs em testes de regressão.</li>
+<li style="font-weight: 400;"><b>Sua equipe está desmotivada: </b>Sua equipe reclama continuamente que trabalhar no projeto já não é tão produtivo como era no antes. Uma pessoa não consegue construir uma feature sozinha; há muitas partes em movimento.</li>
+<li style="font-weight: 400;"><b>Conhecimento isolado: </b>Existem algumas partes do software que apenas um desenvolvedor conhece bem o suficiente para mantê-las. O resto da equipe tem dificuldades em trabalhar com esse código específico.</li>
+<li style="font-weight: 400;"><b>O período de adaptação de um novo desenvolvedor é muito longo: </b>Quando novos desenvolvedores se juntam à equipe, demora demais para que eles se tornem totalmente produtivos.</li>
+</ul>
+<p>A razão pela qual você está em uma dessas situações provavelmente não é técnica. Talvez você precisasse entregar muitas features muito rápido, enquanto ainda estava desenvolvendo a primeira versão de seu produto. Talvez sua equipe não tinha maturidade e experiência que possuem agora. Analisar a causa raiz também é importante, mas você precisa fazer mais. Você precisa resolver o seu problema.</p>
+<p>Se você está enfrentando os sintomas acima, <strong>provavelmente você tem problema de baixa qualidade interna de software</strong>. Reconhecer os sintomas já é um grande passo. O próximo passo é pensar em soluções. Algumas soluções que você pode considerar incluem o processo de refatorar ou reescrever o software.</p>
+<h2>Refatorar ou reescrever?</h2>
+<p>Não existe um guia definitivo que aponte quando você deve refatorar ou reescrever o software, pois depende muito do seu contexto. Dito isto, existem algumas regras básicas que você deve considerar ao avaliar qual a melhor solução para sua situação:</p>
+<h3>Quando reescrever</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa está desatualizada e não possui mais manutenção;</li>
+<li style="font-weight: 400;">Se seu software é muito lento e mudar a arquitetura não é suficiente ou viável;</li>
+<li style="font-weight: 400;">Se a disponibilidade de desenvolvedores de software que conhecem a tecnologia que você usa é baixa e está diminuindo;</li>
+<li style="font-weight: 400;">Se existem novas tecnologias que oferecem vantagem significativa em relação a que você utiliza.</li>
+</ul>
+<h3>Quando refatorar</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa ainda possui manutenção e é relevante;</li>
+<li style="font-weight: 400;">Se é viável melhorar seu aplicativo gradualmente;</li>
+<li style="font-weight: 400;">Se o problema que você está resolvendo é apenas técnico, e não de negócio.</li>
+</ul>
+<p>Não é fácil decidir qual opção escolher. Ao optar por uma delas, você enfrentará um monte de novas preocupações. Fique atento, em nossos próximos posts vamos discutir o que levar em consideração antes de optar por refatoração ou reescrita do software.</p>
+<p>Agora eu gostaria de saber sobre suas experiências. Você já esteve nessa situação? Como você identificou que o problema era baixa qualidade interna de software? Compartilhe sua história conosco!</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li>Sintomas da Baixa Qualidade Interna de Software você está lendo</li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li><a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chaves para reescrever um software</a></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

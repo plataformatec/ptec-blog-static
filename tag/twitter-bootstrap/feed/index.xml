@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>twitter bootstrap « Plataformatec Blog</title>
+	<atom:link href="/tag/twitter-bootstrap/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 08 Mar 2012 13:04:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>SimpleForm 2.0 + Bootstrap: for you with love</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/</link>
+					<comments>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Thu, 23 Feb 2012 16:54:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<category><![CDATA[twitter bootstrap]]></category>
+		<guid isPermaLink="false">/?p=2469</guid>
+
+					<description><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you, not a small bump, but a shiny new version: Simple Form 2.0. Simple Form 2.0 features a new wrapper API which makes it very flexible and easy to integrate with CSS frameworks like Twitter Bootstrap.</p>
+<p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you a complete new release of SimpleForm. This time is not a small bump though, it&#8217;s a shiny new version: <a href="https://github.com/plataformatec/simple_form" title="SimpleForm">SimpleForm 2.0</a>, that comes with a bunch of new features and customizations, a new wrapper API to create custom input stacks and a great integration with <a href="http://twitter.github.com/bootstrap" title="Twitter Bootstrap">Twitter Bootstrap</a>.</p>
+<h3>Wrappers API</h3>
+<p>The new wrappers API is here in place of the old <code>components</code> option (besides some other *_tag and *_class configs), to add more flexibility to the way you build SimpleForm inputs. Here is an example of the default wrapper config that ships with SimpleForm when you run its install generator:</p>
+<pre lang="ruby">
+config.wrappers :default, :class => :input,
+  :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
+  ## Extensions enabled by default
+  # Any of these extensions can be disabled for a
+  # given input by passing: `f.input EXTENSION_NAME => false`.
+  # You can make any of these extensions optional by
+  # renaming `b.use` to `b.optional`.
+
+  # Determines whether to use HTML5 (:email, :url, ...)
+  # and required attributes
+  b.use :html5
+
+  # Calculates placeholders automatically from I18n
+  # You can also pass a string as f.input :placeholder => "Placeholder"
+  b.use :placeholder
+
+  ## Optional extensions
+  # They are disabled unless you pass `f.input EXTENSION_NAME => :lookup`
+  # to the input. If so, they will retrieve the values from the model
+  # if any exists. If you want to enable the lookup for any of those
+  # extensions by default, you can change `b.optional` to `b.use`.
+
+  # Calculates maxlength from length validations for string inputs
+  b.optional :maxlength
+
+  # Calculates pattern from format validations for string inputs
+  b.optional :pattern
+
+  # Calculates min and max from length validations for numeric inputs
+  b.optional :min_max
+
+  # Calculates readonly automatically from readonly attributes
+  b.optional :readonly
+
+  ## Inputs
+  b.use :label_input
+  b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
+  b.use :error, :wrap_with => { :tag => :span, :class => :error }
+end
+</pre>
+<p>Wrappers are used by the form builder to generate a complete input. You can remove any component from the wrapper, change the order or even add your own to the stack.</p>
+<p>The <code>:default</code> wrapper is going to be used in all forms by default. You can also select which wrapper to use per form, by naming them:</p>
+<pre lang="ruby">
+# Given you added this wrapper in your SimpleForm initializer:
+config.wrappers :small do |b|
+  b.use :placeholder
+  b.use :label_input
+end
+
+# Uses the :small wrapper for all inputs in this form.
+simple_form_for @user, :wrapper => :small do |f|
+  f.input :name
+end
+</pre>
+<p>Or you can just pick a different wrapper in a specific input if you want:</p>
+<pre lang="ruby">
+# Uses the default wrapper for other inputs, and :small for :name.
+simple_form_for @user do |f|
+  f.input :name, :wrapper => :small
+end
+</pre>
+<p>You can see a more detailed description of the new <a href="http://simple-form.plataformatec.com.br/#configuration/the-wrappers-api" title="SimpleForm 2.0 wrappers API docs">wrappers API in the documentation</a>.</p>
+<h3>Twitter Bootstrap</h3>
+<p>The second big change in SimpleForm 2.0 is out of the box Bootstrap integration. SimpleForm now ships with a generator option to initialize your application with a set of specific wrappers customized for Bootstrap. To get them, just run in your terminal, inside a Rails application (with SimpleForm already installed):</p>
+<pre>
+rails generate simple_form:install --bootstrap
+</pre>
+<p>This gives you the default SimpleForm initializer in <code>config/initializers/simple_form.rb</code> with some extra integration code added for Bootstrap. For example, here is the default wrapper:</p>
+<pre lang="ruby">
+config.wrappers :bootstrap, :tag => 'div', :class => 'control-group', 
+  :error_class => 'error' do |b|
+  b.use :placeholder
+  b.use :label
+  b.wrapper :tag => 'div', :class => 'controls' do |ba|
+    ba.use :input
+    ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+    ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+  end
+end
+</pre>
+<p>This wrapper is setup with the same structure that Bootstrap expects and is set to be the default wrapper in your application. This is <strong>the killer feature in SimpleForm 2.0</strong>: the Bootstrap integration is not inside SimpleForm but all in your application. This means that, if you want to move away or customize Bootstrap in the future, you don&#8217;t need to monkey patch SimpleForm, everything is in your app!</p>
+<p>We&#8217;ve set up a <a href="http://simple-form-bootstrap.plataformatec.com.br/articles/new" title="SimpleForm Bootstrap example application">live example application showing most of the SimpleForm inputs integrated with Twitter Bootstrap</a>, make sure you check it out! The <a href="https://github.com/rafaelfranca/simple_form-bootstrap" title="SimpleForm Bootstrap example application code">application code is on github</a>.</p>
+<p>Keep reading this blog post to find out the other changes and deprecations that gave SimpleForm all this extra flexibility, allowing it to be easily integrated with Twitter Bootstrap 2.0. </p>
+<h3>New configs</h3>
+<p>SimpleForm 2.0 comes with some new configs to ease its integration with Bootstrap and to make your daily work even more flexible:</p>
+<ul>
+<li><code>default_wrapper</code>: defines the default wrapper to be used when no one is given.</li>
+<li><code>button_class</code>: defines a class to add for all buttons.</li>
+<li><code>boolean_style</code>: change the way booleans (mainly check boxes and radio buttons) are shown: <code>:inline</code> (the default) uses the same structure as before, checkbox + label; <code>:nested</code> (generated for new apps) puts the checkbox inside the label, as label > checkbox.</li>
+<li><code>collection_wrapper_class</code>: class to add in all collections (check boxes / radio buttons), given <code>collection_wrapper_tag</code> is set.</li>
+<li><code>item_wrapper_class</code>: class to add to all items in a collection.</li>
+<li><code>generate_additional_classes_for</code>: allows you to specify whether to generate the extra css classes for inputs, labels and wrappers. By default SimpleForm always generate all classes, such as input type and required info, to all of them. You can be more selective and tell SimpleForm to just add such classes to the input or wrapper, by changing this config.</li>
+</ul>
+<h3>Deprecations</h3>
+<p>In order to create the new wrappers API, we had to deprecate some configs and change some helpers, so here is a basic summary of what is being deprecated:</p>
+<h4>Configs</h4>
+<ul>
+<li><code>translate</code>: By making <code>placeholder</code> and <code>hint</code> <code>optional</code> options in the wrappers API, you can already disable the automatic translation attempt that happens for these components. <code>labels</code>, on the other hand, are always used in forms, so we added a special config for them: <code>translate_labels</code>.</li>
+<li><code>html5</code>: this config is now part of the wrappers API, with <code>b.use :html5</code>, so the config option has been deprecated.</li>
+<li><code>error_notification_id</code>: in favor of using <code>error_notification_class</code> only.</li>
+<li><code>wrapper_tag=, wrapper_class=, wrapper_error_class=, error_tag=, error_class=, hint_tag=, hint_class=, components=</code>: all these were moved to the wrappers API structure, and are not required anymore.</li>
+</ul>
+<h4>Helpers</h4>
+<ul>
+<li><code>:radio</code> input type: In order to integrate with Bootstrap, we had to get rid of the <code>:as => :radio</code> and use <code>:as => :radio_buttons</code> instead. The former still works, but will give you a bunch of deprecation warnings. CSS class names changed accordingly as well</li>
+<li><code>collection_radio</code>: has changed to <code>collection_radio_buttons</code> to follow the <code>:as => :radio_buttons</code> change. Its label class has changed as well based on the helper name.</li>
+</ul>
+<h3>Wrapping up</h3>
+<p>SimpleForm 2.0 comes with a lot of new features, in special the new wrappers API, to make it flexible enough to allow you to customize inputs as much as possible in an easier way, and to bring you the integrated Bootstrap structure.</p>
+<p>Make sure you check out the new <a href="http://simple-form.plataformatec.com.br/" title="SimpleForm README">SimpleForm README</a> and also the <a href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.md" title="SimpleForm CHANGELOG">CHANGELOG</a> for a full list of changes. We&#8217;ve also created an special wiki page to help you <a href="https://github.com/plataformatec/simple_form/wiki/Upgrading-to-Simple-Form-2.0" title="Upgrading to SimpleForm 2.0">Upgrading to SimpleForm 2.0</a>. </p>
+<p>If you find any trouble while migrating to 2.0, or any issue with Bootstrap integration, or any other issue, please let us know in the <a href="https://github.com/plataformatec/simple_form/issues" title="SimpleForm issues tracker">issues tracker</a>. And if you have any questions, make sure to send them to the <a href="http://groups.google.com/group/plataformatec-simpleform" title="SimpleForm mailing list">mailing list</a>, there are a lot of people there to help you.</p>
+<p>All our development team and an <a href="https://github.com/plataformatec/simple_form/contributors" title="SimpleForm contributors">amazing number of contributors</a> put a lot of effort into this new release and we hope you will enjoy it. SimpleForm 2.0 + Bootstrap: from us, for you, with love.</p>
+<p>Thoughts about SimpleForm 2.0? Please let us know in the comments.</p><p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

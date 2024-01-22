@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Tips for hiring great software engineers	</title>
+	<atom:link href="/2014/03/tips-for-hiring-great-software-engineers/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/03/tips-for-hiring-great-software-engineers/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 27 May 2015 13:39:12 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Mayur Rokade		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1372</link>
+
+		<dc:creator><![CDATA[Mayur Rokade]]></dc:creator>
+		<pubDate>Tue, 15 Apr 2014 11:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1372</guid>
+
+					<description><![CDATA[I think getting a background as to how the candidate ended doing what he does is also very important. Understanding his learning journey will help while deciding the amount of experience he has]]></description>
+			<content:encoded><![CDATA[<p>I think getting a background as to how the candidate ended doing what he does is also very important. Understanding his learning journey will help while deciding the amount of experience he has</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: hugobarauna		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1361</link>
+
+		<dc:creator><![CDATA[hugobarauna]]></dc:creator>
+		<pubDate>Thu, 27 Mar 2014 19:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1361</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1359&quot;&gt;Eduardo Shiota Yasuda&lt;/a&gt;.
+
+In fact, we do something like live coding sessions, we do a pair-programming session. But we don&#039;t do that in the middle of the interview, it&#039;s a separate step in the process and we explain the whole process the first time we talk to the candidate.
+
+We don&#039;t look for right answers, we actually pay attention to how the candidate thinks and communicates his ideas. We focus more on the process and less on the output.
+
+The results were great so far. It&#039;s different to review code that the candidate wrote on his own time from seeing how he thinks, structures his ideas, explains them and implements then in real time. Also, the pair-programming session works as way to feel how would be to work with the candidate. We don&#039;t look just for people who can code, we also look for people who we&#039;ll enjoy work with.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1359">Eduardo Shiota Yasuda</a>.</p>
+<p>In fact, we do something like live coding sessions, we do a pair-programming session. But we don&#8217;t do that in the middle of the interview, it&#8217;s a separate step in the process and we explain the whole process the first time we talk to the candidate.</p>
+<p>We don&#8217;t look for right answers, we actually pay attention to how the candidate thinks and communicates his ideas. We focus more on the process and less on the output.</p>
+<p>The results were great so far. It&#8217;s different to review code that the candidate wrote on his own time from seeing how he thinks, structures his ideas, explains them and implements then in real time. Also, the pair-programming session works as way to feel how would be to work with the candidate. We don&#8217;t look just for people who can code, we also look for people who we&#8217;ll enjoy work with.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nando Vieira		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1360</link>
+
+		<dc:creator><![CDATA[Nando Vieira]]></dc:creator>
+		<pubDate>Thu, 27 Mar 2014 18:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1360</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1359&quot;&gt;Eduardo Shiota Yasuda&lt;/a&gt;.
+
+I think the best way is telling the candidate beforehand. Candidates shouldn&#039;t be afraid of coding; just don&#039;t ask stupid/out of scope/incredibly hard questions.
+
+
+I don&#039;t think paper/whiteboard is any good. The candidate will use Google/StackOverflow/Blogs in daily basis, so just give a problem and a timeframe, and watch how the solution is elaborated, asking questions along the way.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1359">Eduardo Shiota Yasuda</a>.</p>
+<p>I think the best way is telling the candidate beforehand. Candidates shouldn&#8217;t be afraid of coding; just don&#8217;t ask stupid/out of scope/incredibly hard questions.</p>
+<p>I don&#8217;t think paper/whiteboard is any good. The candidate will use Google/StackOverflow/Blogs in daily basis, so just give a problem and a timeframe, and watch how the solution is elaborated, asking questions along the way.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Eduardo Shiota Yasuda		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1359</link>
+
+		<dc:creator><![CDATA[Eduardo Shiota Yasuda]]></dc:creator>
+		<pubDate>Wed, 26 Mar 2014 16:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1359</guid>
+
+					<description><![CDATA[Have you folks ever tried to do a live coding session with the candidate, either using a computer, whiteboard or pen and paper? If so, what were the results?
+
+I have mixed feelings about it. Some candidates might be caught by surprise, and react in different ways — some may naturally solve the problems without effort, some may get too nervous and do things they would normally avoid. Still not 100% certain this is a good way to assess one&#039;s skills.]]></description>
+			<content:encoded><![CDATA[<p>Have you folks ever tried to do a live coding session with the candidate, either using a computer, whiteboard or pen and paper? If so, what were the results?</p>
+<p>I have mixed feelings about it. Some candidates might be caught by surprise, and react in different ways — some may naturally solve the problems without effort, some may get too nervous and do things they would normally avoid. Still not 100% certain this is a good way to assess one&#8217;s skills.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: hugobarauna		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1358</link>
+
+		<dc:creator><![CDATA[hugobarauna]]></dc:creator>
+		<pubDate>Wed, 26 Mar 2014 15:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1358</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1357&quot;&gt;Nando Vieira&lt;/a&gt;.
+
+We think that starter projects it&#039;s a great idea for a developer hiring process and actually, we do that in our own process.
+
+
+We believe that in order to hire a developer, you need to see his code, even if because of that the process will take longer.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1357">Nando Vieira</a>.</p>
+<p>We think that starter projects it&#8217;s a great idea for a developer hiring process and actually, we do that in our own process.</p>
+<p>We believe that in order to hire a developer, you need to see his code, even if because of that the process will take longer.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nando Vieira		</title>
+		<link>/2014/03/tips-for-hiring-great-software-engineers/comment-page-1/#comment-1357</link>
+
+		<dc:creator><![CDATA[Nando Vieira]]></dc:creator>
+		<pubDate>Wed, 26 Mar 2014 12:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3694#comment-1357</guid>
+
+					<description><![CDATA[Nice post! 
+
+What do you think about having starter projects as part of the interview process? I recently had to create a &quot;hack and throw away&quot; app. I had 2 days and in the end I made a presentation to explain the decisions I made, difficultities, etc. It was the first time I actually did something like that and I thought it was really nice.]]></description>
+			<content:encoded><![CDATA[<p>Nice post! </p>
+<p>What do you think about having starter projects as part of the interview process? I recently had to create a &#8220;hack and throw away&#8221; app. I had 2 days and in the end I made a presentation to explain the decisions I made, difficultities, etc. It was the first time I actually did something like that and I thought it was really nice.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

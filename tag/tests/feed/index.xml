@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>tests « Plataformatec Blog</title>
+	<atom:link href="/tag/tests/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 03 Jan 2020 17:22:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Elixir: What about tests?</title>
+		<link>/2020/01/elixir-what-about-tests/</link>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Thu, 02 Jan 2020 16:22:45 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=9593</guid>
+
+					<description><![CDATA[<p>There is no arguing about how important tests are for our application. But from time to time, when we are dealing with it, some questions came up on a daily basis. A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test ... <a class="read-more-link" href="/2020/01/elixir-what-about-tests/">»</a></p>
+<p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="1024" src="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg" alt="" class="wp-image-9594" srcset="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg 1024w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-300x300.jpg 300w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-150x150.jpg 150w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-768x768.jpg 768w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1536x1536.jpg 1536w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-2048x2048.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>There is no arguing about how important tests are for our application.</p>
+
+
+
+<p>But from time to time, when we are dealing with it, some questions came up on a daily basis.</p>
+
+
+
+<p>A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test suite to do is to access the external world.</p>
+
+
+
+<p>This can lead us to many undesired scenarios, for example: if we have a connection problem on an API test that hits the internet, the test will fail, causing our test suite to be intermittent.</p>
+
+
+
+<h3 class="wp-block-heading">How do we mock or stub a request?</h3>
+
+
+
+<p>Some libs can help us, I will talk about two of them.</p>
+
+
+
+<h3 class="wp-block-heading">Bypass</h3>
+
+
+
+<p>The first one I wanna talk about is <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a>.<br>
+It is a lib that simulates an External Server, it works to stub the layer closer to the request. The idea is that you remove the external layer and start to call Bypass, so now, instead of talking to the internet, you are talking to a local server that you have control of. This way you can keep your tests protected.</p>
+
+
+
+<p>Let&#8217;s think about an example, we will build an application that needs to fetch data from an API, and we will create a <code>LastfmClient</code> module that will be responsible for doing that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @api_url <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span>
+
+  def search(term, url \\ @api_url) <span class="hljs-keyword">do</span>
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+end</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>What this client does is fetch the tracks from our API and according to the type of the response return something. Not that different from most of the clients we wrote on a daily basis. Let&#8217;s test it now.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span> <span class="hljs-keyword">do</span>
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the problem with this test?</h3>
+
+
+
+<p>It seems pretty straight forward we exercise the <a href="https://en.wikipedia.org/wiki/System_under_test">SUT</a> and verify the expected outcome, but this is a fragile test because it is accessing the external world.</p>
+
+
+
+<p>Every time we call the <code>Client.search/2</code> we are hitting the internet. A lot of problems can happen here: if the internet is down the test will fail, if the internet is slow your suit test will be slow, you won&#8217;t have the feedback as fast as you need and will be less inclined to run the test suit, or your suit test will become intermittent and you won&#8217;t trust your tests anymore, meaning that when a real failure happens you won&#8217;t care.</p>
+
+
+
+<h3 class="wp-block-heading">How can we fix it?</h3>
+
+
+
+<p>And that&#8217;s when <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a> comes to our aid.</p>
+
+
+
+<p>First, you will need to setup Bypass in your tests.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">setup <span class="hljs-keyword">do</span>
+  bypass = Bypass.open()
+
+  {:ok, <span class="hljs-attr">bypass</span>: bypass}
+end</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in your test, you will set up which scenarios you want to test. Is it a success call? A not found? How should your code behave in each scenario? Tell Bypass that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span>, %{bypass: bypass} <span class="hljs-keyword">do</span>
+    Bypass.expect bypass, fn conn -&gt;
+      Plug.Conn.resp(conn, <span class="hljs-number">200</span>, payload())
+    end
+
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>, <span class="hljs-string">"http://localhost:/#{bypass.port}/"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end
+
+defp payload <span class="hljs-keyword">do</span>
+  ~s(
+    {
+      <span class="hljs-string">"results"</span>: {
+        <span class="hljs-string">"@attr"</span>: {},
+        <span class="hljs-string">"opensearch:Query"</span>: {
+          <span class="hljs-string">"#text"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"role"</span>: <span class="hljs-string">"request"</span>,
+          <span class="hljs-string">"startPage"</span>: <span class="hljs-string">"1"</span>
+        },
+        <span class="hljs-string">"opensearch:itemsPerPage"</span>: <span class="hljs-string">"20"</span>,
+        <span class="hljs-string">"opensearch:startIndex"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-string">"opensearch:totalResults"</span>: <span class="hljs-string">"51473"</span>,
+        <span class="hljs-string">"trackmatches"</span>: {
+          <span class="hljs-string">"track"</span>: [
+            {
+              <span class="hljs-string">"artist"</span>: <span class="hljs-string">"The Kooks"</span>,
+              <span class="hljs-string">"image"</span>: [
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"small"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"medium"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"large"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"extralarge"</span>
+                }
+              ],
+              <span class="hljs-string">"listeners"</span>: <span class="hljs-string">"851783"</span>,
+              <span class="hljs-string">"mbid"</span>: <span class="hljs-string">"c9b89088-01cd-4d98-a1f4-3e4a00519320"</span>,
+              <span class="hljs-string">"name"</span>: <span class="hljs-string">"Seaside"</span>,
+              <span class="hljs-string">"streamable"</span>: <span class="hljs-string">"FIXME"</span>,
+              <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+            }
+          ]
+        }
+      }
+    }
+  )
+end</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">When to use Bypass?</h3>
+
+
+
+<p>When you have code that needs to make an HTTP request. You need to know how your application will behave. For instance, if the API is down, will your application stop working?</p>
+
+
+
+<p>But then comes some questions, if I have a module that depends on this <code>Client</code> implementation, will I need to repeat this Bypass code every time in my tests?<br>
+Why does another module need to know these implementation details if it is not dealing with the request?</p>
+
+
+
+<h3 class="wp-block-heading">Mox</h3>
+
+
+
+<p><a href="https://github.com/plataformatec/mox">Mox</a> can help us with that. It forces you to implement explicit contracts in your application so we know what to expect.</p>
+
+
+
+<p>Going back to our example, let&#8217;s implement a module called <code>Playlist</code> that will be responsible for fetching a list of songs by artist and give it a name.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  alias MyApp.Lastfm.Client
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = Client.search(name)
+
+    %{
+      <span class="hljs-attr">name</span>: <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-attr">songs</span>: songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The simplest test we can write to this code would be something like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Since the <code>Playlist</code> depends on the <code>Client</code>, to have an accurate test we would need to stub the request with the payload response from the Lastfm API so we can make sure the <code>Playlist</code> behaves accordingly.</p>
+
+
+
+<p>You don&#8217;t need to stub all the <code>Client</code> requests in the <code>Playlist</code> tests, you need to know what it returns and handle the responses, you need to have a <a href="/2015/10/mocks-and-explicit-contracts/">explicit contract</a>.</p>
+
+
+
+<p>Let&#8217;s see how we can implement those contracts.</p>
+
+
+
+<h3 class="wp-block-heading">Behaviours</h3>
+
+
+
+<p>Elixir uses <a href="https://elixir-lang.org/getting-started/typespecs-and-behaviours.html#behaviours">behaviours</a> as a way to define a set of functions that have to be implemented by a module. You can compare them to <a href="https://en.wikipedia.org/wiki/Interface_(computing)">interfaces</a> in OOP.</p>
+
+
+
+<p>Let&#8217;s create a file at <code>lib/my_app/music.ex</code> that says what our <code>Client</code> expects as an argument and what it returns:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Music <span class="hljs-keyword">do</span>
+  @callback search(<span class="hljs-built_in">String</span>.t()) :: map()
+end</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/config.exs</code> file, let&#8217;s include two lines. The first one says which client we are using and the second one is the Lastfm API that we will remove from the default argument, just to keep the callback simple.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">config :my_app, :music, MyApp.Lastfm.Client
+<span class="hljs-attr">config</span> :my_app, :lastfm_api, <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/test.exs</code> file, let&#8217;s include our mock module.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">config</span> <span class="hljs-selector-pseudo">:my_app</span>, <span class="hljs-selector-pseudo">:music</span>, <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In the <code>test/test_helper</code> file, let&#8217;s tell Mox which is the mock module that is responsible for mocking the calls to our behaviour.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">Mox</span><span class="hljs-selector-class">.defmock</span>(<span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span>, <span class="hljs-selector-tag">for</span>: <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.Music</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Let&#8217;s go back to our <code>Playlist</code> module, and let&#8217;s change the way we call the <code>Client</code> module, to use the config we just created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  @music Application.get_env(:my_app, :music)
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = @music.search(name)
+
+    %{
+      <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-string">"songs"</span> =&gt; songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>Client</code> module let&#8217;s adopt the behaviour we created, and let&#8217;s change the API url to fetch from the config we created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @behaviour MyApp.Music
+
+  def search(term) <span class="hljs-keyword">do</span>
+    url = lastfm_api_url()
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+
+  defp lastfm_api_url <span class="hljs-keyword">do</span>
+    Application.get_env(:my_app, :lastfm_api)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>We will need to change the <code>test/my_app/lastfm/client_test.exs</code> to change the env config for the API url on the setup of the test, but I&#8217;ll leave it to you to do that.</p>
+
+
+
+<p>Finally, in our <code>PlaylistTest</code> we will need to import <code>Mox</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">import Mox
+
+<span class="hljs-comment"># Make sure mocks are verified when the test exits</span>
+setup :verify_on_exit!</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in our test, we need to tell our <code>MusicMock</code> what is expected to return.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    MusicMock
+    |&gt; expect(:search, fn _name -&gt;
+      {
+        :ok,
+        [
+          %{
+            <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+            <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+            <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+          }
+        ]
+      }
+    end)
+
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the difference?</h3>
+
+
+
+<p>Looking at the code it seems that we still need to pass the list of music in the tests. But there is a difference, the music&#8217;s list is a dependency of the <code>Playlist</code> module, but we don&#8217;t know its internals, we don&#8217;t know from where we are fetching it, how the request response works, and all these details. The only thing we need to know at the <code>Playlist</code> module is that it depends on a list of songs.</p>
+
+
+
+<h3 class="wp-block-heading">One last thing before we go</h3>
+
+
+
+<p>We went through all that trouble to make sure the tests are protected from the outside world, but you know, Elixir has this amazing <code>Doctest</code> feature, and one can argue that this replaces the application tests.</p>
+
+
+
+<p>That&#8217;s not the case, <code>Doctests</code> are not <code>tests</code> and you shouldn&#8217;t rely on it to make sure your application behaves the way you expect it to. Make sure you don&#8217;t use any code that hits the external world when you are writing your documentation, there is no way to mock calls and this can cause all the problems we already discussed.</p>
+
+
+
+<h3 class="wp-block-heading">That&#8217;s all folks</h3>
+
+
+
+<p>The code from this example can be found <a href="https://github.com/amandasposito/my_app">here</a>, I hope it helps!</p><p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using the test pyramid to have better feedback from your test suite</title>
+		<link>/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Tue, 04 Oct 2016 20:39:50 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5734</guid>
+
+					<description><![CDATA[<p>In this blog post, I&#8217;ll explain the problem of developers spending too much time trying to discover a problem in a failing test suite. A cause of this issue may be the lack of a good test feedback. A good feedback is one that happens fast with a helpful message. To illustrate this problem, consider ... <a class="read-more-link" href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">»</a></p>
+<p>The post <a href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">Using the test pyramid to have better feedback from your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>In this blog post, I&#8217;ll explain the problem of developers spending too much time trying to discover a problem in a failing test suite. A cause of this issue may be the lack of a good test feedback. A good feedback is one that happens fast with a helpful message.</p>
+<p>To illustrate this problem, consider a simple application of storing and listing contacts. You have an actor user that can sign up, sign in, then can CRUD their contacts with first name, last name and phone number. We are in a context of multiple developers working together, programming and delivering features every day. For the examples below I&#8217;ll use Ruby, RSpec, Capybara and Ruby on Rails.</p>
+<p>Suppose we have a UI testing using <a href="https://www.relishapp.com/rspec/rspec-rails/docs/feature-specs/feature-spec">RSpec features test</a> like this:</p>
+<pre><code class="ruby">#spec/features/contacts_spec.rb
+feature 'User can create new contact' do
+  scenario 'when user provides valid contact information' do
+    login_with email: 'default@mail.com', password: 'default'
+
+    click_link 'Contacts'
+
+    expect(page).to have_content('Listing Contacts')
+    expect(page).to have_content("There're no contacts.")
+
+    click_link 'New Contact'
+
+    fill_in 'First name', with: 'Jon'
+    fill_in 'Last name', with: 'Doe'
+    fill_in 'Phone number', with: '1199999999'
+
+    click_on 'Create Contact'
+
+    expect(page).to have_content('Listing Contacts')
+    expect(page).to have_content('Jon Doe - (11) 9999-9999')
+  end
+end
+</code></pre>
+<p>Simple and straight forward. The good part of this test is it checks the entire application stack: authentication, rendering, storing stuff on the database and the logic of creating contacts. Some developer may be confident with this test and start to question: Should I add more unit tests? For phone number formatting? For displaying complete names? For user authentication? For contact validation and creation? If one of these features fail, this feature test will fail too. Why should I care to add more tests? Isn’t it redundancy? Waste of time? The short answer is you should add more unit and integration tests because of feedback. Now, let&#8217;s expand the topic.</p>
+<h2>Speed matters</h2>
+<p>We know the UI test brings confidence since it tests the entire stack of your application. But overusing this type of tests will severely impact your test suite speed.</p>
+<p>In our contacts creation test example, we have some edge cases that were not covered. What happens if we use a different size of numbers in the telephone number field? How will it be displayed? We can add a new UI test to cover this case, but a unit test suits better and faster. If the number formatting is a view helper we can check it with a helper test, for example:</p>
+<pre><code class="ruby">describe '#format_phone_number' do
+  it 'formats cell phones numbers of 10 digits in "(XX) XXXXX-XXXX" format' do
+    formatted_number = helper.format_phone_number('11999998888')
+    expect(formatted_number).to eq '(11) 99999-8888'
+  end
+
+  it 'does not format others digits different of 10' do
+    formatted_number = helper.format_phone_number('11888')
+    expect(formatted_number).to eq '11888'
+  end
+end
+</code></pre>
+<p>This test is way easier to write, read, cheaper and faster than adding a new UI to test this specific case. Keeping this practice, you will have fewer UI tests and more integration and unit tests. Such distribution of the different kind of tests resembles the format of a pyramid:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/10/test-pyramid.png" alt="pyramid" /></p>
+<p>Few UI tests on top and a solid base of unit tests. If you want more information about the test pyramid, I recommend you the following links:</p>
+<ul>
+<li><a href="https://www.mountaingoatsoftware.com/blog/the-forgotten-layer-of-the-test-automation-pyramid">The Forgotten Layer of the Test Automation Pyramid</a> by <a href="https://twitter.com/mikewcohn">Mike Cohn</a></li>
+<li><a href="https://www.kenneth-truyers.net/2015/06/27/the-test-pyramid/">The Test Pyramid</a> by <a href="https://twitter.com/kennethtruyers">Kenneth Truyers</a></li>
+<li><a href="http://martinfowler.com/bliki/TestPyramid.html">TestPyramid</a> by <a href="https://twitter.com/martinfowler">Martin Fowler</a></li>
+<li>We have a <a href="https://speakerdeck.com/plataformatec/piramide-de-testes-escrevendo-testes-com-qualidade-at-rubyconf-2015">talk</a> and <a href="https://www.youtube.com/watch?v=xgnF1hxwpBM">a video</a> explaining the test pyramid in portuguese.</li>
+</ul>
+<h2>Helpful messages</h2>
+<p>In the daily routine of a development team, the code is constantly evolving. The test server is running and warning when the test suite is passing or broken. A passing test suite is a requirement to deploy a new change in production in most of the clients that we have been working on. Then when the test suite fails, it is important for developers to act and fix the broken tests fast. Without helpful messages, it is critically hard.</p>
+<p>Let&#8217;s use again our contacts UI test, let&#8217;s use a scenario where we just have that test. The application has received new changes and the test server warns the team that we have an error, and the output is:</p>
+<pre><code>  1) User can create new contact when user provides valid contact information
+     Failure/Error: expect(page).to have_content("Jon Doe - (11) 9999-9999")
+       expected to find text "Jon Doe - (11) 9999-9999" in "default@mail.com Log out Contacts Contact was successfully created. Contact was successfully created. Listing Contacts Jon Doe - 1199999
+</code></pre>
+<p>We know the test failed in the last step, the step of checking the recent contact content in the listing page. In this sample application, we have a small text to search what&#8217;s going on. In a real world application, this content can be a lot bigger and unproductive to read. From here the developer has a lot of possibilities to search what the root cause of the problem. For example:</p>
+<ul>
+<li>Is it in the creation?</li>
+<li>Is it in the contacts listing?</li>
+<li>Is it in the telephone format method?</li>
+<li>Is it in the test?</li>
+<li>Had been changes to asynchronous request and expectation didn&#8217;t have time to assert the new content?</li>
+</ul>
+<p>The list can go on depending on your creativity. Now let&#8217;s build a scenario where we also have the <code>format_phone_number</code> helper unit test. The tests are failing, but now have this output:</p>
+<pre><code>1) User can create new contact when user provides valid contact information
+     Failure/Error: expect(page).to have_content("Jon Doe - (11) 9999-9999")
+       expected to find text "Jon Doe - (11) 9999-9999" in "default@mail.com Log out Contacts Contact was successfully created. Contact was successfully created. Listing Contacts Jon Doe - 1199999999 Show Edit Destroy New Contact"
+
+2) ContactsHelper#format_phone_number formats cell phones numbers of 10 digits in "(XX) XXXXX-XXXX" format
+   Failure/Error: expect(helper.format_phone_number('11999998888')).to eq '(11) 99999-8888'
+
+     expected: "(11) 99999-8888"
+          got: "11999998888"
+
+     (compared using ==)
+</code></pre>
+<p>Now we have two failing tests. The second error message is way easier to guess why it is broken. Some change on the <code>format_phone_number</code> helper has broken the cell phone formatting. Knowing it, looking again at the first error message you may connect the dots and find out the errors are connected.</p>
+<p>If two tests are failing for the same reason, this is not the same thing of worthless redundancy. Focused behavior tests bring you a lot more information for debugging, helping you solve problems fast. This is another benefit of the test pyramid.</p>
+<h1>Conclusion</h1>
+<p>Some people tend to be relaxed about worry too much about creating focused tests. I think the main reason is they are very used to code base context. If something fails they can navigate, debug and figure out fast what happened. But unfortunately, it not always true for everyone, specially for the newcomers.</p>
+<p>Another problem is when the team becomes careless about covering exceptional cases with unit and integrations tests.  The test suite is always green but problems are increasing in production. Your test suites become less reliable and leaving the entire team insecure about deploying new changes.</p>
+<p>To keep your test suite fast and worthy of trust I recommend you use the test pyramid technique. In Rails applications will be something like:</p>
+<ul>
+<li>Fewer UI tests with Capybara. Use them to test the user main journey and some exceptional cases.</li>
+<li>Test beyond the expected behavior. Exercise the exceptional behaviors with integration and unit tests. Write more models, controllers, requests, views, helpers, or mailers tests.</li>
+<li>Consider adding JavaScript unit tests in your test suite.</li>
+</ul>
+<p>These practices help us a lot to maintain a healthy code base and allow us to adapt and be more agile to change. What do you think of this practices? Which techniques and practices are you doing to keep your test suite fast and with helpful messages? Let me know with a comment below.</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/10/using-the-test-pyramid-to-have-better-feedback-from-your-test-suite/">Using the test pyramid to have better feedback from your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Experimenting with explicit contracts with Ruby</title>
+		<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/</link>
+					<comments>/2016/02/experimenting-with-explicit-contracts-with-ruby/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 13:25:59 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5132</guid>
+
+					<description><![CDATA[<p>A few months back, José Valim started a conversation on overusing mocks and coupling between components. That made me interested on revisiting how I design my code and it has changed my approach to testing a bit in one of our current Ruby projects. A Tale of Two Adapters Back in November, I worked on ... <a class="read-more-link" href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">»</a></p>
+<p>The post <a href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">Experimenting with explicit contracts with Ruby</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months back, José Valim <a href="/2015/10/mocks-and-explicit-contracts/">started a conversation</a> on overusing mocks and coupling between components. That made me interested on revisiting how I design my code and it has changed my approach to testing a bit in one of our current Ruby projects.</p>
+<h2>A Tale of Two Adapters</h2>
+<p>Back in November, I worked on integrating a payment gateway from scratch into one of our client projects, through a gem that abstracts the HTTP interface of this external service. On this payment flow we had to first authorize the payment data with the gateway, which would return the transaction data for us to capture the payment in the background and go on with the business logic that depended on a successful payment flow.</p>
+<p>If you ever worked on something similar, you probably remember a few rough edges that we need to deal in cases like this: how to test the integration with the right credit card numbers for each possible outcome? Do we have a sandbox available for development and test environments? How can we control the performance and stability costs that this external dependency might bring to our application, and the coupling between the code that supports this core feature and this gem?</p>
+<p>Our attempt to handle the coupling and maintenance cost of this dependency was to push all the integration code behind an abstraction layer responsible for dealing with this payment flow logic under a <code>Payments</code> namespace.</p>
+<pre><code class="ruby">require 'gateway-xyz-gem'
+
+module Payments
+  class GatewayXYZ
+    def authorize(order, credit_card)
+      # Uses the `Order` details and the user `CreditCard` data to authorize
+      # a new transaction on the XYZ Payment Gateway through the
+      # `gateway-xyz-gem` classes.
+    end
+
+    def capture(payment_id)
+      # Capture the payment information for a transaction that was previously
+      # authorized.
+    end
+  end
+end
+</code></pre>
+<p>Somewhere down our <code>orders#create</code> action (but not directly in the controller method itself) we call <code>GatewayXYZ#authorize</code> with the <code>order</code> record and a <code>credit_card</code> value object and our integration with the external service is done.</p>
+<p>We might have a nice set of well-defined methods on the <code>GatewayXYZ</code> class but our job on these abstractions is far from done. We might unit test it with something like <a href="https://github.com/bblimke/webmock">WebMock</a> or <a href="https://github.com/vcr/vcr">VCR</a> to handle the external service dependency, but every other piece of our system that interacts with this abstraction will also depend on the external API to work properly &#8211; the <code>OrdersController</code>, the background job that captures the payment and the <code>Order</code> model itself that might trigger the initial <code>authorize</code> call. Should we just sprinkle the existing stubs all over our test suite and call it a day?</p>
+<p>We added a gateway implementation that mimics the expected behavior of the <code>GatewayXYZ</code> (with the same method signatures as the real gateway) and doesn’t depend on external resources. It also has a predefined behavior for specific inputs so we can test different code paths of their collaborators based on the test input.</p>
+<pre><code class="ruby">module Payments
+  class Memory
+    def authorize(order, credit_card)
+      if BAD_CREDIT_CARD_NUMBERS.include?(credit_card.number)
+        bad_response
+      else
+        ok_response
+      end
+    end
+  end
+end
+</code></pre>
+<h2>Dealing with environment specific setups</h2>
+<p>Now we need to make our <code>Payments::Memory</code> the go-to implementation for our test cases that depend on our payment abstractions. There are a few different ways we can do this on a Rails app.</p>
+<h3><code>Rails.application.config</code></h3>
+<p>We can expose a configuration setting in app that says which implementation it should use, similar to how <code>Action Mailer</code> picks the delivery method for your emails or how <code>Active Job</code> might have different queue adapters for your background jobs.</p>
+<pre><code class="ruby"># config/application.rb
+Rails.application.config.x.payment_gateway = Payments::GatewayXYZ
+
+# config/environments/test.rb
+Rails.application.config.x.payment_gateway = Payments::Memory
+
+# app/models/order.rb
+class Order
+  def authorize(credit_card)
+    gateway = build_gateway
+    gateway.authorize(self, credit_card)
+  end
+
+  private
+
+  def build_gateway
+    klass = Rails.application.config.x.payment_gateway
+    klass.new
+  end
+end
+</code></pre>
+<h3><code>Module.mattr_accessor</code> macro</h3>
+<p>You can set a class level macro on the classes that depend on a configurable value and change as you want in your code. This approach can be useful if you want to keep the configuration closer to the implementation that relies on it, instead of jumping between app code and configuration code if you want to debug something or be able to change it during runtime.</p>
+<pre><code class="ruby"># app/models/order.rb
+class Order
+  cattr_accessor :payment_gateway do
+    Payments::GatewayXYZ
+  end
+
+  def authorize(credit_card)
+    gateway = payment_gateway.new
+    gateway.authorize(self, credit_card)
+  end
+end
+
+# test/test_helper.rb
+Order.payment_gateway = Payments::Memory
+</code></pre>
+<h2>Factory method</h2>
+<p>This approach is useful when you want to hide away how to create an instance of a gateway implementation, so other classes that depend on it can have a way to just ask for a gateway object without worrying on how to create it.</p>
+<pre><code class="ruby"># app/models/payments.rb
+module Payments
+  matt_accessor :gateway do
+    Payments::GatewayXYZ
+  end
+
+  def build_gateway
+    gateway.new
+  end
+
+  module_function :build_gateway
+end
+
+# test/test_helper.rb
+Payments.gateway = Payments::Memory
+</code></pre>
+<p>I don’t believe that there is a Single Way to Do It<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" /> this kind of dependency injection, so you should feel free to pick a strategy that suits the interfaces you are building and the coding style of your team &#8211; I’m personally a fan of the factory method and the <code>cattr_accessor</code> approaches as they feel more detached from the configuration and closer to the application code, although the configuration way feels more aligned with global APIs from 3rd party gems.</p>
+<h2>Skipping Hash driven development</h2>
+<p>Our <code>GatewayXYZ</code> and <code>Memory</code> implementations have the same methods with the same arguments but there is a second piece of making a uniform API that we need to think about: what those methods should return?</p>
+<p>Our <code>authorize</code> needs to return more than a <code>truthy</code>/<code>falsy</code> value, as we need to gather more information about the payment transaction on our end, like the <code>payment_id</code> from the transaction, or a reason of why it might have failed (was the credit card denied? There is invalid data in the request), details for logging or instrumentation, etc. And if we think about implementing this API for multiple services (let&#8217;s say we need a <code>Payments::PayPal</code> now, for instance), those services will return this data in different formats that we need to normalize so these differences don&#8217;t leak to the rest of the system.</p>
+<p>One might say that a <code>Hash</code> with all this junk would do it, but going that path opens too many doors for inconsistency and bugs as the hash is a weak abstraction that can be mutated anywhere and won&#8217;t enforce any specific format or requirements on the return values.</p>
+<p>For that, we can implement a <code>Payments::Result</code> struct/value object to represent the outcome of our <code>authorize</code> action, and return it from each gateway implementation in our system, enforcing the interface we want to have.</p>
+<pre><code class="ruby">module Payments
+  class Result &lt; Struct.new(:payment_id, :errors)
+    def ok?
+      errors.blank?
+    end
+
+    def failed?
+      !ok?
+    end
+  end
+end
+</code></pre>
+<p>Our <code>Result</code> class has the minimal information that our client code needs, and each gateway is responsible for constructing a <code>Result</code> from its own data. The <code>Memory</code> gateway can do something as straightforward as this:</p>
+<pre><code class="ruby">module Payments
+  class Memory
+    def authorize(order, credit_card)
+      Result.new(
+        payment_id: SecureRandom.hex,
+        errors: SAMPLE_ERRORS[credit_card.number])
+    end
+  end
+end
+</code></pre>
+<p>This approach is useful not just for enforcing the interface we want, but also to improve other areas of our code that could use more specific abstractions than a bare <code>Hash</code> instance.</p>
+<h2>Going forward with contracts and macros</h2>
+<p>This homemade approach for better contracts between our app and this external service can go a long way, but if you want, you can build strict checks on top of your APIs to ensure that your objects are collaborating as you expect. We haven&#8217;t tried yet, but the <a href="https://github.com/egonSchiele/contracts.ruby">contracts</a> gem looks very interesting if you want that kind of type constraints that are lacking on Ruby.</p>
+<p>You can even write your own checks by wrapping methods into type checking proxies, as <a href="https://github.com/refile/refile"><code>refile</code></a> does with its <a href="https://github.com/refile/refile/blob/v0.6.2/lib/refile/backend_macros.rb"><code>Refile::BackendMacros</code></a> module. When <a href="https://github.com/refile/refile/blob/v0.6.2/lib/refile/backend/file_system.rb">extended by a backend implementation</a>, it provides macros to validate the input for methods like <code>#upload(uploadable)</code> or <code>#delete(id)</code>, so custom implementations don&#8217;t need to worry about validating these arguments on their own.</p>
+<div style="padding: 40px 0 20px"><a href="/subscribe/"><img decoding="async" style="border: none" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2016/02/experimenting-with-explicit-contracts-with-ruby/">Experimenting with explicit contracts with Ruby</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/02/experimenting-with-explicit-contracts-with-ruby/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to setup CI to run Phoenix projects</title>
+		<link>/2016/02/how-to-setup-ci-to-run-phoenix-projects/</link>
+		
+		<dc:creator><![CDATA[Erich Kist]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2016 15:27:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5107</guid>
+
+					<description><![CDATA[<p>Writing tests is an important step in software development and everyone knows the benefits. In our last post, we took a look on how to write acceptance tests in Phoenix and today we will see how to configure CI to run the tests. Install Erlang and Elixir We use Jenkins to run ours builds and ... <a class="read-more-link" href="/2016/02/how-to-setup-ci-to-run-phoenix-projects/">»</a></p>
+<p>The post <a href="/2016/02/how-to-setup-ci-to-run-phoenix-projects/">How to setup CI to run Phoenix projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Writing tests is an important step in software development and everyone knows the benefits. In our last post, we took a look on <a href="/2016/01/writing-acceptance-tests-in-phoenix/">how to write acceptance tests in Phoenix</a> and today we will see how to configure CI to run the tests.</p>
+<h2>Install Erlang and Elixir</h2>
+<p>We use Jenkins to run ours builds and Ansible to setup the agents. The following code are snippets from the tasks used for machine provisioning. Our agents are using Ubuntu, but you can check the <a href="http://elixir-lang.org/install.html">Elixir Install section</a> to follow the steps for another OS.</p>
+<h3>Step 1: Add the Erlang Solutions repository:</h3>
+<p>First, we need to add the Erlang Solution repo and its GPG key before updating the repo. With this step we can find the Erlang and Elixir packages.</p>
+<pre><code class="yaml">- name: Add Erlang Solutions repository
+  apt_repository: &gt;
+    repo='deb https://packages.erlang-solutions.com/ubuntu/ {{ansible_distribution_release}} contrib'
+    state=present
+    update_cache=yes
+
+- name: Add the GPG key for Erlang Solutions
+  apt_key:
+    url: "https://packages.erlang-solutions.com/{{ ansible_distribution | lower }}/erlang_solutions.asc"
+    state: present
+</code></pre>
+<h3>Step 2: Install Erlang and Elixir packages.</h3>
+<p>We are using the latest version of Elixir but if you need to manage it you can take a look at a manager like <a href="https://github.com/taylor/kiex">kiex</a> or <a href="https://github.com/HashNuke/asdf">asdf</a>.</p>
+<pre><code class="yaml">- name: Install Erlang
+  apt: pkg=esl-erlang state=latest
+
+- name: Install Elixir
+  apt: pkg=elixir state=latest
+</code></pre>
+<h3>Step 3: Install Hex and Rebar.</h3>
+<p>If you are new to Elixir/Erlang, you probably don&#8217;t know about these tools. Hex is the package manager for the Erlang ecosystem and you can learn more at <a href="https://hex.pm/">https://hex.pm/</a>.</p>
+<p>Rebar is an Erlang build tool, and it&#8217;s necessary to build the dependency <code>poolboy</code>. The task <code>mix local.rebar</code> will install both <code>rebar</code> and <code>rebar3</code>. You can check the <a href="http://elixir-lang.org/docs/master/mix/Mix.Tasks.Local.Rebar.html">Mix.Tasks.Local.Rebar</a> documentation to install one of them if you need.</p>
+<pre><code class="yaml">- name: Install Elixir Hex
+  command: mix local.hex --force
+
+- name: Install Rebar
+  command: mix local.rebar
+</code></pre>
+<h2>Running your tests</h2>
+<p>We use <a href="https://github.com/github/janky">Janky</a>, along with Jenkins, which can execute a custom build configuration into <code>script/cibuild</code> that is stored at the root of the repository. Our Phoenix projects use the following script:</p>
+<pre><code class="bash">#!/bin/bash -ex
+env
+
+source /etc/profile
+
+export POSTGRESQL_USER="test"
+export POSTGRESQL_PASSWORD="test"
+
+mix ecto.reset
+mix deps.get
+mix test
+</code></pre>
+<h3>Exporting ENV variables</h3>
+<p>Our project is using Postgres and it isn&#8217;t a good practice to store the credentials in the version control. So, we export the credential to environment variables and get it in <code>config/test.exs</code>:</p>
+<pre><code class="elixir">config :my_app, MyApp.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: System.get_env("POSTGRESQL_USER") || "postgres",
+  password: System.get_env("POSTGRESQL_PASSWORD") || "postgres",
+  database: "my_app_test",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  port: System.get_env("POSTGRESQL_PORT") || 5432
+</code></pre>
+<p>You can read more about this practice at <a href="http://12factor.net/config">Twelve-Factor App</a>.</p>
+<h3>Reset your database</h3>
+<p>Usually, each builder is responsible for provision in a new machine. Instead of this, we setup a machine that will run several builds from different projects while there is activity. Therefore, we need to reset the database to avoid side-effects with different schemas.</p>
+<p>The task <code>mix test</code> will run the tasks <code>ecto.create</code> and <code>ecto.migrate</code> (you can check it in <code>test/test_helper.exs</code>). We could use <code>mix ecto.destroy</code> instead of <code>mix ecto.reset</code>, but we prefer to use the latter to be more explicit.</p>
+<h3>Install dependencies and run the tests</h3>
+<p>Now, <code>mix deps.get</code> and <code>mix test</code> will install the project dependencies and run your tests.</p>
+<p><em>Which tips do you have to install or use in CI to run Phoenix tests?</em></p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=elixir-radar&#038;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br />
+</a></p><p>The post <a href="/2016/02/how-to-setup-ci-to-run-phoenix-projects/">How to setup CI to run Phoenix projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Writing Acceptance tests in Phoenix</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/</link>
+					<comments>/2016/01/writing-acceptance-tests-in-phoenix/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2016 09:00:08 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=5007</guid>
+
+					<description><![CDATA[<p>Acceptance testing seems to be in its first steps in the Elixir ecosystem, but there are already some cool libs that can help us out to do it. I&#8217;m going to show you how we did it with Hound. In this blog post, we&#8217;ll write a few acceptance tests for an expenses report listing page, ... <a class="read-more-link" href="/2016/01/writing-acceptance-tests-in-phoenix/">»</a></p>
+<p>The post <a href="/2016/01/writing-acceptance-tests-in-phoenix/">Writing Acceptance tests in Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Acceptance testing seems to be in its first steps in the Elixir ecosystem, but there are already some cool libs that can help us out to do it. I&#8217;m going to show you how we did it with <a href="https://github.com/HashNuke/hound">Hound</a>.</p>
+<p>In this blog post, we&#8217;ll write a few acceptance tests for an expenses report listing page, where we&#8217;ll interact with the report and some form elements.</p>
+<p>To make possible to interact with the elements on the page, we&#8217;ll need a web browser driver. Hound accepts <code>chrome_driver</code>, <code>firefox</code>, <code>phantomjs</code> and <code>selenium</code>. My choice is <code>phantomjs</code> because I want to use a headless browser (I don&#8217;t want the driver to open a browser during the execution of the test suite).</p>
+<h2>Setup</h2>
+<p>First we&#8217;ll need to add Hound into our dependencies, so add the following line in your <code>mix.exs</code>:</p>
+<pre><code class="elixir">{:hound, "~&gt; 0.8"}
+</code></pre>
+<p>Make sure it&#8217;ll start during the test suite runtime. To do this we&#8217;ll need to add <code>Application.ensure_all_started(:hound)</code> before <code>ExUnit.start</code> in our test helper:</p>
+<pre><code class="elixir">Application.ensure_all_started(:hound)
+ExUnit.start
+</code></pre>
+<p>We&#8217;ll be using <code>phantomjs</code> as our web driver. <a href="http://phantomjs.org/download.html">Make sure it&#8217;s properly installed and that you can start it</a> with <code>phantomjs --wd</code>. To configure it, add this to the <code>config.exs</code> file:</p>
+<pre><code class="elixir">config :hound, driver: "phantomjs"
+</code></pre>
+<p>Take a look at <a href="https://github.com/HashNuke/hound/blob/master/notes/configuring-hound.md">this doc from Hound resources</a> to check if you&#8217;d like different configs.</p>
+<p>We&#8217;ll also need to set the server config in our <code>config/test.exs</code>to <code>true</code>.</p>
+<pre><code class="elixir">config :my_app, MyApp.Endpoint,
+  http: [port: 4001]
+  server: true
+</code></pre>
+<p>That should do it! Before writing our first test, let&#8217;s define an <code>IntegrationCase</code> module, similar to the <code>ModelCase</code> and <code>ConnCase</code> provided by Phoenix, which will include all functionality we need to write our integration tests. Create the <code>test/support/integration_case.ex</code> file and add the following content:</p>
+<pre><code class="elixir">defmodule MyApp.IntegrationCase do
+  use ExUnit.CaseTemplate
+
+  using do
+    quote do
+      use Hound.Helpers
+
+      import Ecto.Model
+      import Ecto.Query, only: [from: 2]
+      import MyApp.Router.Helpers
+
+      alias MyApp.Repo
+
+      # The default endpoint for testing
+      @endpoint MyApp.Endpoint
+
+      hound_session
+    end
+  end
+
+  setup tags do
+    unless tags[:async] do
+      Ecto.Adapters.SQL.restart_test_transaction(MyApp.Repo, [])
+    end
+
+    :ok
+  end
+end
+</code></pre>
+<p>There are a few lines that are worth commenting:</p>
+<ul>
+<li><code>use Hound.Helpers</code> will include the helpers necessary for us to interact with our interface (<a href="http://hexdocs.pm/hound/readme.html">take a look at the docs and explore them a little, they&#8217;ll be very helpful</a>);</li>
+<li><code>hound_session</code> will make sure that Hound will start and closes its session during the test execution;</li>
+<li><code>import MyApp.Router.Helpers</code> will include helpers so we can manipulate routes and URLs.</li>
+</ul>
+<h2>Exercise</h2>
+<p>Let&#8217;s test!</p>
+<p>We&#8217;re testing a simple list of expenses from a city (that example was extracted from an app we have been working on, but its scope was reduced so we can follow the steps more easily).</p>
+<p>Take a look at its template code:</p>
+<pre><code class="html">&lt;div&gt;
+  &lt;%= form_for @conn, city_expense_path(@conn, :index, @city.id), [as: :q, method: :get], fn f -&gt; %&gt;
+    &lt;div&gt;
+      &lt;label for=&quot;q_status&quot;&gt;Status&lt;/label&gt;
+      &lt;%=
+        select f, :status, [{&quot;Paid&quot;, &quot;paid&quot;}, {&quot;Cancelled&quot;, &quot;cancelled&quot;}], prompt: &quot;All&quot; %&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+      &lt;label for=&quot;q_supplier&quot;&gt;Supplier&lt;/label&gt;
+      &lt;%= text_input f, :supplier %&gt;
+    &lt;/div&gt;
+
+    &lt;%= submit &quot;Submit&quot; %&gt;
+  &lt;% end %&gt;
+&lt;/div&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;th&gt;ID&lt;/th&gt;
+    &lt;th&gt;Status&lt;/th&gt;
+    &lt;th&gt;Supplier&lt;/th&gt;
+    &lt;th&gt;Value&lt;/th&gt;
+    &lt;th&gt;Date&lt;/th&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;%= for expense &lt;- @expenses do %&gt;
+      &lt;tr&gt;
+        &lt;td&gt;&lt;%= expense.id %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.status %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.supplier.name %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.value %&gt;&lt;/td&gt;
+        &lt;td&gt;&lt;%= expense.date %&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;% end %&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<p>We&#8217;ll need a new test file, let&#8217;s put it at <code>test/integration/expenses_list_test.exs</code>. To use Hound’s facilities, we&#8217;ll need to use the <code>IntegrationCase</code> module that we have previously created.</p>
+<pre><code class="elixir">defmodule MyApp.ExpenseListTest do
+  use MyApp.IntegrationCase
+
+end
+</code></pre>
+<p>We&#8217;ll be using three private functions to help us making assertions and interacting with elements in our test file. The first one, <code>expense_on_the_list</code>, will check if a given expense, that is represented by the Ecto model called <code>MyApp.Expense</code>, is in there. The second function is just a helper for getting the expenses list and the third will help us interact with a select input within a form.</p>
+<pre><code class="elixir">defmodule MyApp.ExpenseListTest do
+  use MyApp.IntegrationCase
+
+  # ...
+
+  defp expense_on_the_list(expense, list) do
+    list
+    |&gt; visible_text
+    |&gt; String.contains?(expense.id)
+  end
+
+  defp expense_list_items do
+    find_element(:tag, "tbody")
+    |&gt; find_all_within_element(:tag, "tr")
+  end
+
+  defp select_status(form, status) do
+    form
+    |&gt; find_within_element(:id, "q_status")
+    |&gt; input_into_field(status)
+  end
+end
+</code></pre>
+<p>To interact with an element, you&#8217;ll always need to find the element on the page and for this, you need to know Hound&#8217;s <a href="http://hexdocs.pm/hound/Hound.Helpers.Page.html">page helpers</a>. I&#8217;ve noticed that we ended up using <code>find_element</code> and <code>find_all_within_element</code> most of the time to find the elements on the page or in a context (i.e inside a previously found element).</p>
+<p>Since this test is about the City resource, we&#8217;ve created just this city and navigated to it directly on the setup, since this would be a requirement for all the tests in this file, and shared it with all the tests through the setup context.</p>
+<pre><code class="elixir">setup do
+  city = insert_city!(%{name: "Winterfell"})
+
+  navigate_to("/cities/#{city.id}/expenses")
+
+  {:ok, city: city}
+end
+</code></pre>
+<p><a href="http://hexdocs.pm/hound/Hound.Helpers.Navigation.html#content">Navigation</a> is another important Hound module. It will help us go through our app easily and get info about the page, like the <code>current_path()</code> function that returns the path we&#8217;re navigating on that moment.</p>
+<p>Now that we&#8217;re on the page, we&#8217;ll be interacting with the form, by finding elements that are within it and filling or selecting values on them.</p>
+<pre><code class="elixir">test "filter by supplier", %{city: city} do
+  supplier = insert_supplier!(%{name: "Ned Stark"})
+  supplier_b = insert_supplier!(%{name: "Bell Tower Management"})
+  expense = insert_expense!(%{supplier: supplier, city: city, status: "paid"})
+  insert_expense!(%{supplier: supplier_b, city: city, status: "paid"})
+
+  search_form = find_element(:tag, "form")
+  search_form
+  |&gt; find_within_element(:id, "q_supplier")
+  |&gt; fill_field("Ned")
+
+  submit_element(search_form)
+
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(expense, items)
+end
+</code></pre>
+<p>The module responsible for these tasks is <a href="http://hexdocs.pm/hound/Hound.Helpers.Element.html">Element</a>. It has very useful functions, like <code>fill_field</code> we used above. All of its functions require an element.</p>
+<p>In the previous example, the interactions with the form ended with <code>submit_element</code>, but if we need any other action on it after this, we would need to re-assign it (otherwise, we&#8217;ll get a <code>** (RuntimeError) Element does not exist in cache</code> error), like in the following example:</p>
+<pre><code class="elixir">test "filter by statuses", %{city: city} do
+  supplier = insert_supplier!(%{name: "Jon Snow"})
+
+  cancelled_expense = insert_expense!(%{supplier: supplier, city: city, status: "cancelled"})
+  paid_expense = insert_expense!(%{supplier: supplier, city: city, status: "paid"})
+
+  search_form = find_element(:tag, "form")
+  select_status(search_form, "Cancelled")
+
+  submit_element(search_form)
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(cancelled_expense, items)
+
+  search_form = find_element(:tag, "form")
+  select_status(search_form, "Paid")
+  submit_element(search_form)
+
+  items = expense_list_items
+  assert length(items) == 1
+  assert expense_on_the_list(paid_expense, items)
+end
+</code></pre>
+<h2>Verify</h2>
+<h3>Runtime</h3>
+<p>One of the things I&#8217;ve paid a lot of attention during this experience was the test suite runtime. As expected, it can get slow with acceptance tests. The original app is still really tiny and before adding the acceptance tests, the runtime was:</p>
+<pre><code>Finished in 0.6 seconds (0.5s on load, 0.1s on tests)
+23 tests, 0 failures, 2 skipped
+</code></pre>
+<p>After including two tests (but with more interactions than the ones presented), it was noticeable the test suite became slower. It tripled the runtime.</p>
+<pre><code>Finished in 1.8 seconds (0.5s on load, 1.2s on tests)
+25 tests, 0 failures, 2 skipped
+</code></pre>
+<p>This effect is actually expected. We know that acceptance tests are expensive and that they should be a small portion of your <a href="http://martinfowler.com/bliki/TestPyramid.html">test pyramid</a></p>
+<p>There are a few things that can make acceptance tests faster:</p>
+<ul>
+<li>Upcoming Ecto v2.0 will allow us to <a href="https://github.com/elixir-lang/ecto/pull/1198">run tests that use database persistence asyncronously</a>;</p>
+</li>
+<li>
+<p>In my experience Phantom.js considerably faster than the other options, I recommend you to go with it.</p>
+</li>
+</ul>
+<p>You will definitely need to write some acceptance tests, but give preference to controller tests in most scenarios and use acceptance tests for important flows of your app (take a look at the <a href="https://www.techwell.com/2012/10/performing-effective-automated-acceptance-testing">user journey concept</a>, that can give you some good insights).</p>
+<h2>Web driver server execution</h2>
+<p>Currently, Hound doesn&#8217;t execute the browser automatically during tests. You&#8217;ll need to start it; otherwise, your tests will fail. There may be some workarounds to achieve it, if you&#8217;re on OS X, you can run <a href="http://blog.animascodelabs.com/2015/12/31/running-phantomjs-ghostdriver-as-an-osx-service/">Phantomjs as a service</a>.</p>
+<h2>Teardown</h2>
+<p>I really enjoyed playing with Hound, and I found very simple to work with it. Also, I see it as a potential project if you&#8217;re considering contributing to an Open Source Project.</p>
+<p>I hope this post was useful and gave you some ideas of how to write acceptance tests with Elixir and Phoenix. If you have any questions or suggestions, I&#8217;m all ears (or eyes).</p>
+<p><em>Which tool have you recently found to be useful when writing tests in Elixir?</em></p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=elixir-radar&#038;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br />
+</a></p><p>The post <a href="/2016/01/writing-acceptance-tests-in-phoenix/">Writing Acceptance tests in Phoenix</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/01/writing-acceptance-tests-in-phoenix/feed/</wfw:commentRss>
+			<slash:comments>15</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Mocks and explicit contracts</title>
+		<link>/2015/10/mocks-and-explicit-contracts/</link>
+					<comments>/2015/10/mocks-and-explicit-contracts/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2015 15:44:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[contracts]]></category>
+		<category><![CDATA[mocks]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=4914</guid>
+
+					<description><![CDATA[<p>Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.</p>
+<p>The post <a href="/2015/10/mocks-and-explicit-contracts/">Mocks and explicit contracts</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>UPDATE: Almost 2 years later we have released <a href="https://github.com/plataformatec/mox">a tiny library called Mox</a> for Elixir that follows the guidelines written in this article.</p>
+<p>A couple days ago I expressed my thoughts regarding mocks on Twitter:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en">Mocks/stubs do not remove the need to define an explicit interface between your components (modules, classes, whatever). [1/4]</p>
+<p>— José Valim (@josevalim) <a href="https://twitter.com/josevalim/status/641615663061159936">September 9, 2015</a></p></blockquote>
+<p><script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>The blame is not on mocks though, they are actually a useful technique for testing. However our test tools often makes it very easy to abuse mocks and the goal of this post is to provide better guidelines on using them.</p>
+<h2>What are mocks?</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Mock_object">wikipedia definition</a> is excellent: mocks are simulated entities that mimic the behavior of real entities in controlled ways. I will emphasize this later on but I always consider &#8220;mock&#8221; to be a noun, never a verb.</p>
+<h2>Case study: external APIs</h2>
+<p>Let&#8217;s see a common practical example: external APIs.</p>
+<p>Imagine you want to consume the Twitter API in your web application and you are using something like Phoenix or Rails. At some point, a web request will come-in, which will be dispatched to a controller which will invoke the external API. Let&#8217;s imagining this is happening directly from the controller:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    MyApp.TwitterClient.get_username(username)
+    # ...
+  end
+end
+</code></pre>
+<p>The code may work as expected but, when it comes to make the tests pass, a common practice is to just go ahead and <em>mock</em> (warning! mock as a verb!) the underlying <code>HTTPClient</code> used by <code>MyApp.TwitterClient</code>:</p>
+<pre><code class="elixir">mock(HTTPClient, :get, to_return: %{..., "username" =&gt; "josevalim", ...})
+</code></pre>
+<p>You proceed to use the same technique in a couple other places and your unit and integration test suites pass. Time to move on?</p>
+<p>Not so fast. The whole problem with mocking the <code>HTTPClient</code> is that you just coupled your application to that particular <code>HTTPClient</code>. For example, if you decide to use a new and faster HTTP client, a good part of your integration test suite will now fail because it all depends on mocking <code>HTTPClient</code> itself, <em>even when the application behaviour is the same</em>. In other words, the mechanics changed, the behaviour is the same, but your tests fail anyway. That&#8217;s a bad sign.</p>
+<p>Furthermore, because mocks like the one above change modules <em>globally</em>, they are particularly aggravating in Elixir as changing global values means you can no longer run that part of your test suite concurrently.</p>
+<h3>The solution</h3>
+<p>Instead of mocking the whole <code>HTTPClient</code>, we could replace the Twitter client (<code>MyApp.TwitterClient</code>) with something else during tests. Let&#8217;s explore how the solution would look like in Elixir.</p>
+<p>In Elixir, all applications ship with configuration files and a mechanism to read them. Let&#8217;s use this mechanism to be able to configure the Twitter client for different environments. The controller code should now look like this:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    twitter_api().get_username(username)
+    # ...
+  end
+
+  defp twitter_api do
+    Application.get_env(:my_app, :twitter_api)
+  end
+end
+</code></pre>
+<p>And now we can configure it per environment as:</p>
+<pre><code class="elixir"># In config/dev.exs
+config :my_app, :twitter_api, MyApp.Twitter.Sandbox
+
+# In config/test.exs
+config :my_app, :twitter_api, MyApp.Twitter.InMemory
+
+# In config/prod.exs
+config :my_app, :twitter_api, MyApp.Twitter.HTTPClient
+</code></pre>
+<p>This way we can choose the best strategy to retrieve data from Twitter per environment. The sandbox one is useful if Twitter provides some sort of sandbox for development. The <code>HTTPClient</code> is our previous implementation while the in memory avoids HTTP requests altogether, by simply loading and keeping data in memory. Its implementation could be defined in your test files and even look like:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.InMemory do
+  def get_username("josevalim") do
+    %MyApp.Twitter.User{
+      username: "josevalim"
+    }
+  end
+end
+</code></pre>
+<p>which is as clean and simple as you can get. At the end of the day, <strong><code>MyApp.Twitter.InMemory</code> is a mock</strong> (mock as a noun, yay!), except you didn&#8217;t need any fancy library to define one! The dependency on <code>HTTPClient</code> is gone as well.</p>
+<h3>The need for explicit contracts</h3>
+<p>Because a mock is meant to replace a real entity, such replacement can only be effective if we explicitly define how the real entity should behave. Failing this, you will find yourself in the situation where the mock entity grows more and more complex with time, increasing the coupling between the components being tested, but you likely won&#8217;t ever notice it because the contract was never explicit.</p>
+<p>Furthermore, we have already defined three implementations of the Twitter API, so we better make it all explicit. In Elixir we do so by defining a behaviour with callback functions:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter do
+  @doc "..."
+  @callback get_username(username :: String.t) :: %MyApp.Twitter.User{}
+  @doc "..."
+  @callback followers_for(username :: String.t) :: [%MyApp.Twitter.User{}]
+end
+</code></pre>
+<p>Now add <code>@behaviour MyApp.Twitter</code> on top of every module that implements the behaviour and Elixir will help you provide the expected API.</p>
+<p>It is interesting to note we rely on such behaviours <em>all the time</em> in Elixir: when you are using Plug, when talking to a repository in Ecto, when testing Phoenix channels, etc.</p>
+<h3>Testing the boundaries</h3>
+<p>Previously, because we didn&#8217;t have a explicit contract, our application boundaries looked like this:</p>
+<pre><code>[MyApp] -&gt; [HTTP Client] -&gt; [Twitter API]
+</code></pre>
+<p>That&#8217;s why changing the <code>HTTPClient</code> could break your integration tests. Now our app depends on a contract and only one implementation of such contract rely on HTTP:</p>
+<pre><code>[MyApp] -&gt; [MyApp.Twitter (contract)]
+[MyApp.Twitter.HTTP (contract impl)] -&gt; [HTTPClient] -&gt; [Twitter API]
+</code></pre>
+<p>Our application tests are now isolated from both the <code>HTTPClient</code> and the Twitter API. However, how can we make sure the system actually works as expected?</p>
+<p>Of the challenges in testing large systems is exactly in finding the proper boundaries. Define too many boundaries and you have too many moving parts. Furthermore, <strong>by writing tests that rely exclusively on mocks, your tests become less reliable</strong>.</p>
+<p>My general guideline is: for each test using a mock, you must have an integration test covering the usage of that mock. Without the integration test, there is no guarantee the system actually works when all pieces are put together. For example, some projects would use mocks to avoid interacting with the database during tests but in doing so, they would make their suites more fragile. These is one of the scenarios where a project could have 100% test coverage but still reveal obvious failures when put in production.</p>
+<p>By requiring the presence of integration tests, you can guarantee the different components work as expected when put together. Besides, the requirement of writing an integration test in itself is enough to make some teams evaluate if they should be using a mock in the first place, which is always a good question to ask ourselves!</p>
+<p>Therefore, in order to fully test our Twitter usage, we need at least two types of tests. Unit tests for <code>MyApp.Twitter.HTTP</code> and an integration test where <code>MyApp.Twitter.HTTP</code>&nbsp; is used as an adapter.</p>
+<p>Since depending on external APIs can be unreliably, we need to run those tests only when needed in development and configure them as necessary in our build system. The <code>@tag</code> system in ExUnit, Elixir&#8217;s test library, provides conveniences to help us with that. For the unit tests, one could do:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.HTTPTest do
+  use ExUnit.Case, async: true
+
+  # All tests will ping the twitter API
+  @moduletag :twitter_api
+
+  # Write your tests here
+end
+</code></pre>
+<p>In your test helper, you want to exclude the Twitter API test by default:</p>
+<pre><code class="elixir">ExUnit.configure exclude: [:twitter_api]
+</code></pre>
+<p>But you can still run the whole suite with the tests tagged <code>:twitter_api</code> if desired:</p>
+<pre><code class="bash">mix test --include twitter_api
+</code></pre>
+<p>Or run only the tagged tests:</p>
+<pre><code class="bash">mix test --only twitter_api
+</code></pre>
+<p>Although I prefer this approach, external conditions like rate limiting may make such solution impractical. In such cases, we may actually need a fake HTTPClient. This is fine as long as we follow the guidelines below:</p>
+<ol>
+<li>If you change your HTTP client, your application suite won&#8217;t break but only the tests for <code>MyApp.Twitter.HTTP</code></li>
+<li>You won&#8217;t mock (warning! mock as a verb) your HTTP client. Instead, you will pass it as a dependency via configuration, similar to how we did for the Twitter API</li>
+</ol>
+<p>Alternatively, you may avoid mocking the HTTP client by running a dummy webserver that emulates the Twitter API. <a href="https://github.com/pspdfkit-labs/bypass">bypass</a> is one of many projects that can help with that. Those are all options you should discuss with your team.</p>
+<h2>Other notes</h2>
+<p>I would like to finish this article by bringing up some common concerns and comments whenever the mock discussion comes up.</p>
+<h3>Making the code &#8220;testable&#8221;</h3>
+<p>Quoting from <a href="https://groups.google.com/d/msg/elixir-lang-talk/oYXyvEUi64Y/_sNnsoirCQAJ">elixir-talk mailing list</a>:</p>
+<blockquote><p>So the proposed solution is to change production code to be &#8220;testable&#8221; and making production code to call Application configuration for every function call? This doesn&#8217;t seem like a good option as it&#8217;s including a unnecessary overhead to make something &#8220;testable&#8221;.</p></blockquote>
+<p>I&#8217;d argue it is not about making the code &#8220;testable&#8221;, it is about improving the design of your code.</p>
+<p>A test is a consumer of your API like any other code you write. One of the ideas behind TDD is that tests are code and no different from code. If you are saying &#8220;I don&#8217;t want to make my code testable&#8221;, you are saying &#8220;I don&#8217;t want to decouple some modules&#8221; or &#8220;I don&#8217;t want to think about the contract behind these components&#8221;.</p>
+<p>Just to clarify, there is nothing wrong with &#8220;not wanting to decouple some modules&#8221;. For example, we invoke modules such as <code>URI</code> and <code>Enum</code> from Elixir&#8217;s standard library all the time and we don&#8217;t want to hide those behind contracts. But if we are talking about something as complex as an external API, defining an explicit contract and making the contract implementation configurable is going to do your code wonders and make it easier to manage its complexity.</p>
+<p>Finally, the overhead is also minimum. Application configuration in Elixir is stored in ETS tables which means they are directly read from memory.</p>
+<h3>Mocks as locals</h3>
+<p>Although we have used the application configuration for solving the external API issue, sometimes it is easier to just pass the dependency as argument. Imagine this example in Elixir where some function may perform heavy work which you want to isolate in tests:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function do
+    # ...
+    SomeDependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>You could remove the dependency by passing it as an argument, which can be done in multiple ways. If your dependency surface is tiny, an anonymous function will suffice:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(heavy_work \\ &amp;SomeDependency.heavy_work/2) do
+    # ...
+    heavy_work.(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>And in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  heavy_work = fn _, _ -&gt;
+    # Simulate heavy work by sending self() a message
+    send self(), :heavy_work
+  end
+
+  MyModule.my_function(heavy_work)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Or define the contract, as explained in the previous section of this post, and pass a module in:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(dependency \\ SomeDependency) do
+    # ...
+    dependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>Now in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  # Simulate heavy work by sending self() a message
+  defmodule TestDependency do
+    def heavy_work(_arg1, _arg2) do
+      send self(), :heavy_work
+    end
+  end
+
+  MyModule.my_function(TestDependency)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Finally, you could also make the dependency a data structure and define the contract with <a href="http://elixir-lang.org/getting-started/protocols.html">a protocol</a>.</p>
+<p>In fact, passing the dependency as argument is much simpler and should be preferred over relying on configuration files and <code>Application.get_env/3</code>. When not possible, the configuration system is a good fallback.</p>
+<h3>Mocks as nouns</h3>
+<p>Another way to think about mocks is to treat them as nouns. You shouldn&#8217;t mock an API (verb), instead you create a mock (noun) that implements a given API.</p>
+<p>Most of the bad uses of mocks come when they are used as verbs. That&#8217;s because, when you use mock as a verb, you are changing something that already exists, and often those changes are global. For example, when we say we will mock the <code>SomeDependency</code> module:</p>
+<pre><code class="elixir">mock(SomeDependency, :heavy_work, to_return: true)
+</code></pre>
+<p>When you use mock as a noun, you need to create something new, and by definition it cannot be the <code>SomeDependency</code> module because it already exists. So &#8220;mock&#8221; is not an action (verb), it is something you pass around (noun). I&#8217;ve found the noun-verb guideline to be very helpful when spotting bad use of mocks. Your mileage may vary.</p>
+<h3>Mock libraries</h3>
+<p>With all that said, should you discard your mock library?</p>
+<p>It depends. If your mock library uses mocks to replace global entities, to change static methods in OO or to replace modules in functional languages, you should definitely consider how the library is being used in your codebase and potentially discard it.</p>
+<p>However there are mock libraries that does not promote any of the &#8220;anti-patterns&#8221; above and are mostly conveniences to define &#8220;mock objects&#8221; or &#8220;mock modules&#8221; that you would pass to the system under the test. Those libraries adhere to our &#8220;mocks as nouns&#8221; rule and can provide handy features to developers.</p>
+<h2>Summing up</h2>
+<p>Part of testing your system is to find the proper contracts and boundaries between components. If you follow closely a guideline that mocks will be used only if you define a explicit contract, it will:</p>
+<ol>
+<li>protect you from overmocking as it will push you to define contracts for the parts of your system that matters&nbsp;</li>
+<li>help you manage the complexity between different components. Every time you need a new function from your dependency, you are required to add it to the contract (a new <code>@callback</code> in our Elixir code). If the list of <code>@callback</code>s are getting bigger and bigger, it will be noticeable as the knowledge is in one place and you will be able to act on it</li>
+<li>make it easier to test your system because it will push you to isolate the interaction between complex components</li>
+</ol>
+<p>Defining contracts allows us to see the complexity in our dependencies. Your application will always have complexity, so always make it as explicit as you can.</p>
+<div style="padding: 40px 0 20px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog"></a></div><p>The post <a href="/2015/10/mocks-and-explicit-contracts/">Mocks and explicit contracts</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/10/mocks-and-explicit-contracts/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

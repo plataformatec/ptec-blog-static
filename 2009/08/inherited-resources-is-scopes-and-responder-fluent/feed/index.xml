@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Inherited Resources is scopes and responder fluent	</title>
+	<atom:link href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 23 Dec 2009 15:09:47 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: One in Three: Inherited Resources, Has Scope and Responders &#124; Plataforma Tecnologia Blog		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-2/#comment-421</link>
+
+		<dc:creator><![CDATA[One in Three: Inherited Resources, Has Scope and Responders &#124; Plataforma Tecnologia Blog]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 15:09:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-421</guid>
+
+					<description><![CDATA[[...] that, Inherited Resources was outdated and envy. It needed to be updated and it was: responders has been available in Inherited Resources for more than four months, and consequently in Rails [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] that, Inherited Resources was outdated and envy. It needed to be updated and it was: responders has been available in Inherited Resources for more than four months, and consequently in Rails [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Controllers, mount up! The Plataforma way! &#124; Plataforma Tecnologia Blog		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-2/#comment-389</link>
+
+		<dc:creator><![CDATA[Controllers, mount up! The Plataforma way! &#124; Plataforma Tecnologia Blog]]></dc:creator>
+		<pubDate>Mon, 07 Dec 2009 16:55:45 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-389</guid>
+
+					<description><![CDATA[[...] It supports nested and/or polymorphic relationships, I18n and other stuff like named scopes. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] It supports nested and/or polymorphic relationships, I18n and other stuff like named scopes. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Oleh		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-1/#comment-329</link>
+
+		<dc:creator><![CDATA[Oleh]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2009 23:22:20 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-329</guid>
+
+					<description><![CDATA[Thanx! I must read docs more carefully :)]]></description>
+			<content:encoded><![CDATA[<p>Thanx! I must read docs more carefully 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Oleh		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-1/#comment-812</link>
+
+		<dc:creator><![CDATA[Oleh]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2009 23:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-812</guid>
+
+					<description><![CDATA[Thanx! I must read docs more carefully :)]]></description>
+			<content:encoded><![CDATA[<p>Thanx! I must read docs more carefully 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-1/#comment-328</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2009 22:52:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-328</guid>
+
+					<description><![CDATA[@Oleh, you have two options: 1) Move SecureController actions to a module or 2) use your SecureController and call inherit_resources inside your new controller:
+
+class MyController &lt; SecureController
+  inherit_resources
+end]]></description>
+			<content:encoded><![CDATA[<p>@Oleh, you have two options: 1) Move SecureController actions to a module or 2) use your SecureController and call inherit_resources inside your new controller:</p>
+<p>class MyController < SecureController
+  inherit_resources
+end
+</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/08/inherited-resources-is-scopes-and-responder-fluent/comment-page-1/#comment-811</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 27 Oct 2009 22:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=127#comment-811</guid>
+
+					<description><![CDATA[@Oleh, you have two options: 1) Move SecureController actions to a module or 2) use your SecureController and call inherit_resources inside your new controller:
+
+class MyController &#060; SecureController
+  inherit_resources
+end]]></description>
+			<content:encoded><![CDATA[<p>@Oleh, you have two options: 1) Move SecureController actions to a module or 2) use your SecureController and call inherit_resources inside your new controller:</p>
+<p>class MyController &lt; SecureController<br />
+  inherit_resources<br />
+end</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

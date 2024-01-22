@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments for Plataformatec Blog	</title>
+	<atom:link href="/comments/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 04 Jan 2019 20:08:06 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		Comment on Building a new MySQL adapter for Ecto, Part III: DBConnection Integration by luo.la		</title>
+		<link>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/comment-page-1/#comment-1812</link>
+
+		<dc:creator><![CDATA[luo.la]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2018 02:35:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=8158#comment-1812</guid>
+
+					<description><![CDATA[Ye ! This Is A Good Blog!]]></description>
+			<content:encoded><![CDATA[<p>Ye ! This Is A Good Blog!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Elixir, processes and this thing called OTP by Ricado		</title>
+		<link>/2018/04/elixir-processes-and-this-thing-called-otp/comment-page-1/#comment-1797</link>
+
+		<dc:creator><![CDATA[Ricado]]></dc:creator>
+		<pubDate>Fri, 13 Apr 2018 11:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7451#comment-1797</guid>
+
+					<description><![CDATA[Great article. congratulations!!!]]></description>
+			<content:encoded><![CDATA[<p>Great article. congratulations!!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Elixir, processes and this thing called OTP by bvjebin		</title>
+		<link>/2018/04/elixir-processes-and-this-thing-called-otp/comment-page-1/#comment-1796</link>
+
+		<dc:creator><![CDATA[bvjebin]]></dc:creator>
+		<pubDate>Thu, 12 Apr 2018 07:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7451#comment-1796</guid>
+
+					<description><![CDATA[Good introduction for processes in elixir. Worth a mention - erlang allows to connect nodes with simple steps and therefore we can communicate between processes from different nodes. Also process migrations are possible between nodes.]]></description>
+			<content:encoded><![CDATA[<p>Good introduction for processes in elixir. Worth a mention &#8211; erlang allows to connect nodes with simple steps and therefore we can communicate between processes from different nodes. Also process migrations are possible between nodes.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Elixir, processos e esse tal de OTP by Pedro Gomes		</title>
+		<link>/2018/04/elixir-processos-e-esse-tal-de-otp/comment-page-1/#comment-1795</link>
+
+		<dc:creator><![CDATA[Pedro Gomes]]></dc:creator>
+		<pubDate>Thu, 12 Apr 2018 02:12:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7439#comment-1795</guid>
+
+					<description><![CDATA[Ótimo post...adorei!]]></description>
+			<content:encoded><![CDATA[<p>Ótimo post&#8230;adorei!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Elixir, processos e esse tal de OTP by Adolfo Neto (UTFPR)		</title>
+		<link>/2018/04/elixir-processos-e-esse-tal-de-otp/comment-page-1/#comment-1794</link>
+
+		<dc:creator><![CDATA[Adolfo Neto (UTFPR)]]></dc:creator>
+		<pubDate>Wed, 11 Apr 2018 17:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7439#comment-1794</guid>
+
+					<description><![CDATA[Muito bom! Parabéns!]]></description>
+			<content:encoded><![CDATA[<p>Muito bom! Parabéns!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		Comment on Os desafios de desenvolver uma cultura ágil by George Moura		</title>
+		<link>/2018/03/os-desafios-de-desenvolver-uma-cultura-agil/comment-page-1/#comment-1792</link>
+
+		<dc:creator><![CDATA[George Moura]]></dc:creator>
+		<pubDate>Wed, 04 Apr 2018 03:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7420#comment-1792</guid>
+
+					<description><![CDATA[O maior problema que enfrento é fazer os superiores e a equipe entender os beneficios e entender o que e ser agil.
+
+Como vender o conceito ágil?
+Como fazer a equipe entender e aprender o que é ser ágil?]]></description>
+			<content:encoded><![CDATA[<p>O maior problema que enfrento é fazer os superiores e a equipe entender os beneficios e entender o que e ser agil.</p>
+<p>Como vender o conceito ágil?<br />
+Como fazer a equipe entender e aprender o que é ser ágil?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

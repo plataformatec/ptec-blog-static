@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: def ~; end	</title>
+	<atom:link href="/2009/12/def-til-end/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/12/def-til-end/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 21 Jan 2010 14:41:25 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jesse Storimer		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-463</link>
+
+		<dc:creator><![CDATA[Jesse Storimer]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2010 14:41:25 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-463</guid>
+
+					<description><![CDATA[Reminds of crazy Haskell syntax, although this is much saner :)
+
+http://briancarper.net/blog/real-confusing-haskell]]></description>
+			<content:encoded><![CDATA[<p>Reminds of crazy Haskell syntax, although this is much saner 🙂</p>
+<p><a href="http://briancarper.net/blog/real-confusing-haskell" rel="nofollow ugc">http://briancarper.net/blog/real-confusing-haskell</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jesse Storimer		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-923</link>
+
+		<dc:creator><![CDATA[Jesse Storimer]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2010 14:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-923</guid>
+
+					<description><![CDATA[Reminds of crazy Haskell syntax, although this is much saner :)
+
+http://briancarper.net/blog/real-confusing-haskell]]></description>
+			<content:encoded><![CDATA[<p>Reminds of crazy Haskell syntax, although this is much saner 🙂</p>
+<p><a href="http://briancarper.net/blog/real-confusing-haskell" rel="nofollow ugc">http://briancarper.net/blog/real-confusing-haskell</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Joe Grossberg		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-438</link>
+
+		<dc:creator><![CDATA[Joe Grossberg]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2009 18:38:03 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-438</guid>
+
+					<description><![CDATA[This is a neat trick, but not something I believe people should use in practice; I think it makes code unreadable.
+
+If I see +some_string in a codebase, I have to go digging through files to find where it&#039;s monkey-patched and what the method does. 
+
+If I run into all_caps(some_string), at least I have a hint as to what it&#039;s doing.
+
+And even better, some_string.upcase is in the standard library and I already know what it does.
+
+And good luck grepping for method names like &quot;+&quot;, &quot;-&quot; and &quot;~&quot; in your source code. :/
+
+So yeah, I&#039;d file this away as fun but impractical.]]></description>
+			<content:encoded><![CDATA[<p>This is a neat trick, but not something I believe people should use in practice; I think it makes code unreadable.</p>
+<p>If I see +some_string in a codebase, I have to go digging through files to find where it&#8217;s monkey-patched and what the method does. </p>
+<p>If I run into all_caps(some_string), at least I have a hint as to what it&#8217;s doing.</p>
+<p>And even better, some_string.upcase is in the standard library and I already know what it does.</p>
+<p>And good luck grepping for method names like &#8220;+&#8221;, &#8220;-&#8221; and &#8220;~&#8221; in your source code. :/</p>
+<p>So yeah, I&#8217;d file this away as fun but impractical.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Joe Grossberg		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-922</link>
+
+		<dc:creator><![CDATA[Joe Grossberg]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2009 18:38:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-922</guid>
+
+					<description><![CDATA[This is a neat trick, but not something I believe people should use in practice; I think it makes code unreadable.
+
+If I see +some_string in a codebase, I have to go digging through files to find where it&#039;s monkey-patched and what the method does. 
+
+If I run into all_caps(some_string), at least I have a hint as to what it&#039;s doing.
+
+And even better, some_string.upcase is in the standard library and I already know what it does.
+
+And good luck grepping for method names like &quot;+&quot;, &quot;-&quot; and &quot;~&quot; in your source code. :/
+
+So yeah, I&#039;d file this away as fun but impractical.]]></description>
+			<content:encoded><![CDATA[<p>This is a neat trick, but not something I believe people should use in practice; I think it makes code unreadable.</p>
+<p>If I see +some_string in a codebase, I have to go digging through files to find where it&#8217;s monkey-patched and what the method does. </p>
+<p>If I run into all_caps(some_string), at least I have a hint as to what it&#8217;s doing.</p>
+<p>And even better, some_string.upcase is in the standard library and I already know what it does.</p>
+<p>And good luck grepping for method names like &#8220;+&#8221;, &#8220;-&#8221; and &#8220;~&#8221; in your source code. :/</p>
+<p>So yeah, I&#8217;d file this away as fun but impractical.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jack Dempsey		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-437</link>
+
+		<dc:creator><![CDATA[Jack Dempsey]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2009 16:22:37 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-437</guid>
+
+					<description><![CDATA[Reminds me of things you can do with Sequel. Might be a good source of inspiration.
+
+http://sequel.rubyforge.org/]]></description>
+			<content:encoded><![CDATA[<p>Reminds me of things you can do with Sequel. Might be a good source of inspiration.</p>
+<p><a href="http://sequel.rubyforge.org/" rel="nofollow ugc">http://sequel.rubyforge.org/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jack Dempsey		</title>
+		<link>/2009/12/def-til-end/comment-page-1/#comment-921</link>
+
+		<dc:creator><![CDATA[Jack Dempsey]]></dc:creator>
+		<pubDate>Thu, 31 Dec 2009 16:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=555#comment-921</guid>
+
+					<description><![CDATA[Reminds me of things you can do with Sequel. Might be a good source of inspiration.
+
+http://sequel.rubyforge.org/]]></description>
+			<content:encoded><![CDATA[<p>Reminds me of things you can do with Sequel. Might be a good source of inspiration.</p>
+<p><a href="http://sequel.rubyforge.org/" rel="nofollow ugc">http://sequel.rubyforge.org/</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

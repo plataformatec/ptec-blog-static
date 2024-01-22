@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>exception handling « Plataformatec Blog</title>
+	<atom:link href="/tag/exception-handling/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 08 Mar 2012 13:05:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>My five favorite &#8220;hidden&#8221; features in Rails 3.2</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/</link>
+					<comments>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2012 16:31:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[exception handling]]></category>
+		<category><![CDATA[rails 3.2]]></category>
+		<guid isPermaLink="false">/?p=2451</guid>
+
+					<description><![CDATA[<p>Rails 3.2 is out with great features on spotlight: faster development reloading, faster router and explain queries. However, every Rails release ships with minor features that do not get that much attention but still would be a great fit to your application. This blog post is about my five favorites "hidden" features of Rails 3.2.</p>
+<p>The post <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/">My five favorite “hidden” features in Rails 3.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3.2 is out with <a href="http://weblog.rubyonrails.org/2011/12/20/rails-3-2-rc1-faster-dev-mode-routing-explain-queries-tagged-logger-store" title="Rails 3.2.rc1 announced">great features on spotlight</a>: faster development reloading, faster router and explain queries. However, every Rails release ships with minor features that do not get that much attention but still would be a great fit to your application. This blog post is about my five favorites &#8220;hidden&#8221; features of Rails 3.2.</p>
+<h3>1) Smarter <code>content_tag_for</code></h3>
+<p><a href="https://github.com/rails/rails/pull/2816">This feature written by Prem Sichanugrist</a> provides a very simple but welcome clean up to your views. Both <code>content_tag_for</code> and <code>div_for</code> now accepts an array of records and automatically loop over each record. Therefore, instead of writing this:</p>
+<pre lang="ruby">
+  @posts.each do |post|
+    content_tag_for(:li, post) do
+      ...
+    end
+  end
+</pre>
+<p>You can simply write:</p>
+<pre lang="ruby">
+  content_tag_for(:li, @posts) do |post|
+    ...
+  end
+</pre>
+<h3>2) Smarter migration generators</h3>
+<p>It is funny how some parts of Rails as old as the migration generators continue receiving improvements day after day. Rails 3.1 already added a feature that automatically generate indexes for associations, by simply invoking:</p>
+<p></p>
+<pre>
+rails g scaffold Comment post:references title:string body:text
+</pre>
+<p></p>
+<p>With the above, Rails will detect that post is a reference and it will automatically 1) add a <code>post_id</code> integer column, 2) add an association to your model and 3) add an index to that column.</p>
+<p>Right after 3.1 came out, I have pushed another small feature to the migration generator that simply makes the type attribute default to string. Therefore, you no longer need to write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name:string email:string
+</pre>
+<p></p>
+<p>You could simply write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name email
+</pre>
+<p></p>
+<p>Oddly enough, the idea for this feature came when I was preparing a presentation and the scaffold command could not fit in a slide (the so-called Presentation Driven Development). Anyhow, this small addition would not be enough to make to the best five &#8220;hidden&#8221; features of Rails 3.2. That&#8217;s when Dmitrii Samoilov comes in.</p>
+<p><a href="https://github.com/rails/rails/pull/2555">Dmitrii sent a pull request</a> that allows you to specify which columns should have an (unique) index. So one could write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name:index email:uniq
+</pre>
+<p></p>
+<p>And the generator will automatically generate an index for name and an unique index for e-mail. There are other features there as well, so don&#8217;t forget to checkout the CHANGELOG.</p>
+<h3>3) Flexible exception handling</h3>
+<p>When Rails 3.0 came out, one of the features that people suddenly missed was the ability to better handle exceptions. The issue was: since Rails 3 became a lot more Rack &#8220;fluent&#8221;, we had to move some features to the middleware stack and this forced us to move the whole exceptions handling as well. Rails 3.2 attempts to bring some customization back to the game by allowing you to set your own exceptions rack application that is invoked when a failure happens. For instance, you could set the exceptions application to your own router in your <code>config/application.rb</code>:</p>
+<pre lang="ruby">config.exceptions_app = self.routes</pre>
+<p>Now, every time there is an exception, your router is going to be invoked. Therefore, to render custom 404 pages, you could simply add to your router:</p>
+<pre lang="ruby">match "/404", :to => "errors#not_found"</pre>
+<p>And implement the logic in the controller as you wish! However, there are a few things to keep in mind if you go down this road:</p>
+<ol>
+<li>You need to use <code>match</code> in your routes and not <code>get/post/put/delete</code> because such exceptions can happen in any HTTP request;</li>
+<li>You won&#8217;t be able to see your custom exceptions in development unless you set <code>config.consider_all_requests_local</code> to false in your <code>config/environments/development.rb</code>. The reason is, if the request is considered local, Rails will always favor to show the debug exceptions page;</li>
+<li>You can always access the original exception in the controller at <code>env["action_dispatch.exception"]</code>;</li>
+<li>It is not possible to set cookies, the session nor the flash after an exception happens. They all were already serialized back to the client;</li>
+<li>Finally, the default exceptions application used by Rails that simply renders a page in <code>public/STATUS.html</code> is available here: <a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/public_exceptions.rb">action_dispatch/middleware/public_exceptions.rb</a></li>
+</ol>
+<p>Remember that whatever you do in the errors controller, it should not be anything &#8220;fancy&#8221;. Keep it simple because something already went wrong with your application!</p>
+<h3>4) Custom partial paths</h3>
+<p>In order to render a partial for a given model, Rails 3.0 retrieved the partial name by calling: <code>model.class.model_name.partial_path</code>. <a href="https://github.com/rails/rails/commit/bf812074fd55e7dcfa426d6c9bfd4d8d68922194">Grant Hutchins &#038; Peter Jaros noticed that this was not very flexible</a> because the class was responsible to define the partial path and therefore they decided to move this responsibility to the instance. In order to better understand how you can use this feature, let&#8217;s consider the following practical example.</p>
+<p>Imagine your application have an activity feed and each activity in the feed has a certain type. Usually, each type is rendered differently. For example, if you consider a to-do-list application, activities could be both &#8220;marking a list as favorite&#8221; or &#8220;marking a task as done&#8221;. Usually, applications solve this by looping for each item and rendering its respective partial, something like this:</p>
+<pre lang="ruby">@activities.each do |activity|
+  render :partial => "activities/#{activity.kind}",
+    :locals => { :activity =>  activity }
+end</pre>
+<p>Now, you can solve this problem by defining <code>to_partial_path</code> in the model (the method <code>to_partial_path</code> is part of the ActiveModel API and can be implemented in any object. The example above implements it in the model for convenience, but it could be a presenter, another ORM, etc):</p>
+<pre lang="ruby">
+class Activity < ActiveRecord::Base
+  def to_partial_path() "activities/#{kind}" end
+end
+</pre>
+<p>And then invoking:</p>
+<pre lang="ruby">render :partial => @activities, :as => :activity</pre>
+<p>This will now work on Rails 3.2 because even though all activities are of the same class, each instance is actually responsible for telling Rails which partial should be rendered.</p>
+<p>The difference here is not only in brevity, but also in performance. Although the first snippet works fine, it is slow. In the scenario where only one kind of activity happened, the first snippet will go through the render stack 30 times and lookup the same template in your filesystem 30 times. If you read <a href="http://pragprog.com/book/jvrails/crafting-rails-applications" title="Crafting Rails Applications">Crafting Rails Applications</a> you know that this lookup is cached, but even though it would certainly be faster if we didn't have to do this 30 times, but once.</p>
+<p>That's where <code>render :collection</code> or <code>render :partial</code> with an array comes in. In such cases Rails will retrieve all templates up front skipping duplicates, and this new feature allows us to take advantage of it even if the partial lookup is dynamic. So, in the scenario where all the activities are of the same kind, the template lookup will happen just once and no longer 30 times. In other words, best case scenario becomes <code>O(1)</code>, worst case scenario is still <code>O(n)</code>.</p>
+<h3>5) Filtered chain logging is back</h3>
+<p>Another very small change that will make development more pleasant is that Rails will now log "Filter chain halted as CALLBACK_NAME rendered or redirected" every time a before/around/after filter in your controller halts the request. This was the case in Rails 2.3 but somehow got lost when Rails 3 came out. It is one of those small things you don't know how much you missed until you see it again!</p>
+<p>And what is your favorite Rails 3.2 "hidden" feature? Don't forget to take a good look at the CHANGELOGs and check out many others improvements!</p><p>The post <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/">My five favorite “hidden” features in Rails 3.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/feed/</wfw:commentRss>
+			<slash:comments>14</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

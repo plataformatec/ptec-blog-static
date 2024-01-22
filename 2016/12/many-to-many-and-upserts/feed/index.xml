@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Many to many and upserts	</title>
+	<atom:link href="/2016/12/many-to-many-and-upserts/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/12/many-to-many-and-upserts/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 21 Feb 2017 10:18:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1707</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 21 Feb 2017 10:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1707</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1706&quot;&gt;Jesper Christiansen&lt;/a&gt;.
+
+I believe we forgot this:
+
+    many_to_many :tags, MyApp.Tag, join_through: &quot;posts_tags&quot;, on_replace: :delete
+
+I.e. if you follow the instructions in your error message, it will mention about the `:on_replace` option and in this case we want to delete tags we no longer pass.
+
+Thanks for the comment and let us know how it goes!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1706">Jesper Christiansen</a>.</p>
+<p>I believe we forgot this:</p>
+<p>    many_to_many :tags, MyApp.Tag, join_through: &#8220;posts_tags&#8221;, on_replace: :delete</p>
+<p>I.e. if you follow the instructions in your error message, it will mention about the `:on_replace` option and in this case we want to delete tags we no longer pass.</p>
+<p>Thanks for the comment and let us know how it goes!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jesper Christiansen		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1706</link>
+
+		<dc:creator><![CDATA[Jesper Christiansen]]></dc:creator>
+		<pubDate>Tue, 21 Feb 2017 02:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1706</guid>
+
+					<description><![CDATA[I&#039;m a bit confused.. So for the creation of a new record, I provide a list of tags as a string &quot;tag1, tag2&quot; etc. But when I go to edit the post I just created, do I need to do something special for the tags? I get an error the second I load the /edit route. 
+
+  def edit(conn, %{&quot;id&quot; =&#062; id}) do
+    post = Repo.get!(Post, id)
+    &#124;&#062; Repo.preload([:tags])
+
+    changeset = Post.changeset(post)
+    render(conn, &quot;edit.html&quot;, post: post, changeset: changeset)
+  end
+
+That gives me the following error on load:
+
+  you are attempting to change relation :tags of App.Post, but there is missing data.
+  If you are attempting to update an existing entry, please make sure
+  you include the entry primary key (ID) alongside the data. etc etc etc
+
+What am I doing wrong? :/]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m a bit confused.. So for the creation of a new record, I provide a list of tags as a string &#8220;tag1, tag2&#8221; etc. But when I go to edit the post I just created, do I need to do something special for the tags? I get an error the second I load the /edit route. </p>
+<p>  def edit(conn, %{&#8220;id&#8221; =&gt; id}) do<br />
+    post = Repo.get!(Post, id)<br />
+    |&gt; Repo.preload([:tags])</p>
+<p>    changeset = Post.changeset(post)<br />
+    render(conn, &#8220;edit.html&#8221;, post: post, changeset: changeset)<br />
+  end</p>
+<p>That gives me the following error on load:</p>
+<p>  you are attempting to change relation :tags of App.Post, but there is missing data.<br />
+  If you are attempting to update an existing entry, please make sure<br />
+  you include the entry primary key (ID) alongside the data. etc etc etc</p>
+<p>What am I doing wrong? :/</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1692</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2016 14:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1692</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1690&quot;&gt;Hassan Zaki&lt;/a&gt;.
+
+Fixed, thank you!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1690">Hassan Zaki</a>.</p>
+<p>Fixed, thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1691</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2016 14:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1691</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1689&quot;&gt;evuez&lt;/a&gt;.
+
+If the database is not returning it, then there is nothing Ecto can do. :S]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1689">evuez</a>.</p>
+<p>If the database is not returning it, then there is nothing Ecto can do. :S</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Hassan Zaki		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1690</link>
+
+		<dc:creator><![CDATA[Hassan Zaki]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2016 14:09:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1690</guid>
+
+					<description><![CDATA[Thanks for the great post.
+
+There&#039;s a missing &quot;(&quot; in insert_and_get_all/1
+
+Repo.all(from t in MyApp.Tag, where: t.name in ^names)]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the great post.</p>
+<p>There&#8217;s a missing &#8220;(&#8221; in insert_and_get_all/1</p>
+<p>Repo.all(from t in MyApp.Tag, where: t.name in ^names)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: evuez		</title>
+		<link>/2016/12/many-to-many-and-upserts/comment-page-1/#comment-1689</link>
+
+		<dc:creator><![CDATA[evuez]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2016 12:44:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5939#comment-1689</guid>
+
+					<description><![CDATA[Being able to do an upsert is pretty cool, but with binary ids if I do an upsert on an existing row, the  returned struct contains a newly generated id instead of the existing one (which kinda makes sense but is not that useful). Is there a way to get the actual id back in the same query?
+
+Thanks for the article anyway :)]]></description>
+			<content:encoded><![CDATA[<p>Being able to do an upsert is pretty cool, but with binary ids if I do an upsert on an existing row, the  returned struct contains a newly generated id instead of the existing one (which kinda makes sense but is not that useful). Is there a way to get the actual id back in the same query?</p>
+<p>Thanks for the article anyway 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

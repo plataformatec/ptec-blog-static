@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to config environment variables with Elixir and Exrm	</title>
+	<atom:link href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 31 Oct 2016 18:57:13 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Bradley		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1640</link>
+
+		<dc:creator><![CDATA[Bradley]]></dc:creator>
+		<pubDate>Sat, 23 Jul 2016 02:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1640</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1632&quot;&gt;Bradley&lt;/a&gt;.
+
+I threw this into a hex package
+https://hex.pm/packages/external_config
+
+There is an example how we are using it on git repo.
+
+Brad]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1632">Bradley</a>.</p>
+<p>I threw this into a hex package<br />
+<a href="https://hex.pm/packages/external_config" rel="nofollow ugc">https://hex.pm/packages/external_config</a></p>
+<p>There is an example how we are using it on git repo.</p>
+<p>Brad</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Paul Daigle		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1638</link>
+
+		<dc:creator><![CDATA[Paul Daigle]]></dc:creator>
+		<pubDate>Sat, 16 Jul 2016 15:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1638</guid>
+
+					<description><![CDATA[At Manheim we built a small app called env_helper (https://hex.pm/packages/env_helper) to handle environment variables and application variables. The motive was mostly to have default values defined for environment variables that might not be set in development.]]></description>
+			<content:encoded><![CDATA[<p>At Manheim we built a small app called env_helper (<a href="https://hex.pm/packages/env_helper" rel="nofollow ugc">https://hex.pm/packages/env_helper</a>) to handle environment variables and application variables. The motive was mostly to have default values defined for environment variables that might not be set in development.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Joshua		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1637</link>
+
+		<dc:creator><![CDATA[Joshua]]></dc:creator>
+		<pubDate>Fri, 15 Jul 2016 04:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1637</guid>
+
+					<description><![CDATA[Wish we could hot-config apps, as with the Lua config in Nginx Plus. :-)]]></description>
+			<content:encoded><![CDATA[<p>Wish we could hot-config apps, as with the Lua config in Nginx Plus. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Prodis		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1635</link>
+
+		<dc:creator><![CDATA[Prodis]]></dc:creator>
+		<pubDate>Thu, 23 Jun 2016 22:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1635</guid>
+
+					<description><![CDATA[Great! It solved my problem connecting a Phoenix application with Postgres via Ecto configuration.
+
+Thank you!]]></description>
+			<content:encoded><![CDATA[<p>Great! It solved my problem connecting a Phoenix application with Postgres via Ecto configuration.</p>
+<p>Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bradley		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1632</link>
+
+		<dc:creator><![CDATA[Bradley]]></dc:creator>
+		<pubDate>Wed, 01 Jun 2016 20:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1632</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1625&quot;&gt;Bradley&lt;/a&gt;.
+
+Igor, here is a high level view of what we are doing.  Please reach out to me if you want to discuss this further.
+We use two approaches: 
+
+The first, we use a gen_server that loads a configuration file upon application start--first child in our Supervisor.  To get information from config file just send gen_server call message.  We also create a &#039;reload&#039; function that will re-read configuration file and update state.  
+
+The second option is a copy of Mix.Config--slightly modified.  It is a module that can be included in our release.  This copy behaves the same way as Mix.Config.   Once again we use a gen_server here to load configuration from a file or directory and save state.  The good thing about second approach is we can use Config syntax in our configs.  This gives us much more flexibility. 
+
+Brad]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1625">Bradley</a>.</p>
+<p>Igor, here is a high level view of what we are doing.  Please reach out to me if you want to discuss this further.<br />
+We use two approaches: </p>
+<p>The first, we use a gen_server that loads a configuration file upon application start&#8211;first child in our Supervisor.  To get information from config file just send gen_server call message.  We also create a &#8216;reload&#8217; function that will re-read configuration file and update state.  </p>
+<p>The second option is a copy of Mix.Config&#8211;slightly modified.  It is a module that can be included in our release.  This copy behaves the same way as Mix.Config.   Once again we use a gen_server here to load configuration from a file or directory and save state.  The good thing about second approach is we can use Config syntax in our configs.  This gives us much more flexibility. </p>
+<p>Brad</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bradley		</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1625</link>
+
+		<dc:creator><![CDATA[Bradley]]></dc:creator>
+		<pubDate>Tue, 24 May 2016 13:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5417#comment-1625</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1623&quot;&gt;Igor Florian&lt;/a&gt;.
+
+Let me try to put something together.   I am always happy discussing code and systems =]]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/comment-page-1/#comment-1623">Igor Florian</a>.</p>
+<p>Let me try to put something together.   I am always happy discussing code and systems =]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

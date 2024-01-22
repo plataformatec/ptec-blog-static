@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Sanitize to the rescue!	</title>
+	<atom:link href="/2010/09/sanitize-to-the-rescue/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/09/sanitize-to-the-rescue/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 18 Aug 2017 14:56:24 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Alex Kahn		</title>
+		<link>/2010/09/sanitize-to-the-rescue/comment-page-1/#comment-1035</link>
+
+		<dc:creator><![CDATA[Alex Kahn]]></dc:creator>
+		<pubDate>Wed, 22 Sep 2010 19:55:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1450#comment-1035</guid>
+
+					<description><![CDATA[Here&#039;s something helpful to add to the list: http://github.com/hgimenez/truncate_html]]></description>
+			<content:encoded><![CDATA[<p>Here&#8217;s something helpful to add to the list: <a href="http://github.com/hgimenez/truncate_html" rel="nofollow ugc">http://github.com/hgimenez/truncate_html</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dorelal		</title>
+		<link>/2010/09/sanitize-to-the-rescue/comment-page-1/#comment-1034</link>
+
+		<dc:creator><![CDATA[Dorelal]]></dc:creator>
+		<pubDate>Tue, 21 Sep 2010 20:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1450#comment-1034</guid>
+
+					<description><![CDATA[What admin tool you guys recommend. Anyone from these http://ruby-toolbox.com/categories/rails_admin_interfaces.html ?]]></description>
+			<content:encoded><![CDATA[<p>What admin tool you guys recommend. Anyone from these <a href="http://ruby-toolbox.com/categories/rails_admin_interfaces.html" rel="nofollow ugc">http://ruby-toolbox.com/categories/rails_admin_interfaces.html</a> ?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

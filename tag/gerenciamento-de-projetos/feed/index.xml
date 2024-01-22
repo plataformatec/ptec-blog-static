@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>gerenciamento de projetos « Plataformatec Blog</title>
+	<atom:link href="/tag/gerenciamento-de-projetos/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 08 Dec 2017 16:02:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Estoques no desenvolvimento de software</title>
+		<link>/2017/12/estoques-no-desenvolvimento-de-software/</link>
+		
+		<dc:creator><![CDATA[Guilherme Fré]]></dc:creator>
+		<pubDate>Fri, 08 Dec 2017 14:32:41 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[refining]]></category>
+		<category><![CDATA[user story]]></category>
+		<guid isPermaLink="false">/?p=7003</guid>
+
+					<description><![CDATA[<p>Sempre ouvi e li que os grandes vilões da produtividade de um sistema são os delays ocasionados pelo tempo de espera em filas. Tenho certeza que você também já ouviu ou leu algo sobre isso. Da mesma forma, os estoques representam uma das maiores causas de desperdício, especialmente para a manufatura. Mas, pensando em desenvolvimento ... <a class="read-more-link" href="/2017/12/estoques-no-desenvolvimento-de-software/">»</a></p>
+<p>The post <a href="/2017/12/estoques-no-desenvolvimento-de-software/">Estoques no desenvolvimento de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sempre ouvi e li que os grandes vilões da produtividade de um sistema são os <em>delays</em> ocasionados pelo tempo de espera em filas. Tenho certeza que você também já ouviu ou leu algo sobre isso. Da mesma forma, os estoques representam uma das maiores causas de desperdício, especialmente para a manufatura.</p>
+<p>Mas, pensando em desenvolvimento de software, será que as filas e estoques de demandas (qualquer item de trabalho de uma equipe de software, como histórias de usuários, bugs, etc&#8230;) se comportam da mesma maneira e trazem as mesmas consequências em todos os estágios do fluxo de desenvolvimento? Serão essas consequências sempre negativas?</p>
+<p>Para respondermos essas questões, consideremos uma equipe que trabalha com o <em>workflow</em> composto pelas seguintes etapas:</p>
+<ul>
+<li><strong>Backlog</strong>: Itens já escritos pelo PO (<em>Product Owner</em>) e que ainda precisam ser refinados com a equipe;</li>
+<li><strong>Ready to Dev</strong>: Itens que já foram refinados com a equipe e estão aguardando o início do desenvolvimento;</li>
+<li><strong>In Development</strong>: Itens em desenvolvimento;</li>
+<li><strong>Ready to Test</strong>: Itens desenvolvidos e aguardando testes;</li>
+<li><strong>Testing</strong>: Itens sendo testados pelo time de QA (<em>Quality Assurance</em>);</li>
+<li><strong>Ready to Deploy</strong>: Itens já aprovados por QA e aguardando o deploy em produção;</li>
+<li><strong>In Production</strong>: Itens em produção.</li>
+</ul>
+<p>Da lista acima, conseguimos identificar algumas etapas de filas, onde seria possível acumular estoques de demandas aguardando as próximas etapas. São elas: <em>Backlog</em>, <em>Ready to Dev</em>, <em>Ready to Test</em> e <em>Ready to Deploy</em>.</p>
+<p>Como será que os estoques se comportam em cada uma dessas etapas?</p>
+<h3>Estoque em <em>Backlog</em>?</h3>
+<p><em>Cenário: como já tinha uma ideia do que seria trabalhado pelos próximos meses, o PO da equipe decidiu escrever uma grande quantidade de histórias de usuário.</em></p>
+<p>Para este cenário, há um risco considerável de desperdício do esforço do PO e até das histórias de usuário escritas, uma vez que que podem ocorrer mudanças na estratégia do produto. Por exemplo, um concorrente lançou uma nova feature que não estava mapeada e decidiu-se implementá-la também. Novas histórias precisarão ser escritas e outras possivelmente serão fechadas como obsoletas.</p>
+<h3>Estoque em <em>Ready to Dev</em>?</h3>
+<p><em>Cenário: o PO da equipe sairá de férias nos próximos dias e não haverá um substituto. Nos últimos dias de trabalho antes do descanso, o PO e a equipe se esforçaram para refinar uma grande quantidade de histórias de usuário para que a equipe trabalhasse durante o período.</em></p>
+<p>Neste caso, há um risco maior de que os acordos entre PO e equipe, discutidos durante os refinamentos, sejam esquecidos com o passar do tempo (é sempre melhor que esses acordos estejam frescos na cabeça da equipe).</p>
+<p>Porém, trata-se de uma opção bastante interessante para que a equipe não sofra de <em>starvation</em> durante a ausência do PO. Além de ser uma opção melhor do que deixar as histórias de usuários na etapa anterior (<em>Backlog</em>), o que poderia elevar o risco de desalinhamento entre o que era planejeado e o que será desenvolvido.</p>
+<p>No geral, é importante ter bem claro quem pode tomar as decisões do produto em caso de ausência do PO, pois, mesmo com a adoção dessa estratégia de estoque, dúvidas e incertezas certamente surgirão na sequência do processo. Em muitos casos, essa responsabilidade acaba ficando com alguém da equipe de design, um facilitador do processo ou mesmo com a própria equipe de desenvolvimento, que pode tomar as decisões em conjunto.</p>
+<h3>Estoque em <em>Ready to Test</em>?</h3>
+<p><em>Cenário: o responsável pelo QA da equipe ficará ausente por algumas semanas para realização de uma cirurgia. A equipe optou por continuar o desenvolvimento das histórias de usuário e deixá-las acumulando em &#8216;Ready to Test&#8217; até o retorno do QA.</em></p>
+<p>Para esta abordagem, como as funcionalidades não serão testadas até o retorno do responsável pelo QA, o ciclo de feedback será mais longo. Isso trará desvantagens como:</p>
+<ol>
+<li><strong>Aumento no WIP (trabalho em progresso)</strong>: das filas que discutimos até aqui, esta é a primeira em que há código em progresso sendo estocado (nas anteriores, já havia esforço de análise e design). Com isso, a quantidade de WIP no sistema tende a aumentar, e o Wesley Zapellini já nos explicou em seu e-book <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software">&#8220;5 Estratégias para otimizar o fluxo de desenvolvimento de software&#8221;</a> os principais efeitos colaterais de ter o WIP alto.</li>
+<li><strong>Redução da visibilidade do processo</strong>: com mais tarefas no board da equipe, tende a ficar mais complicado ter visibilidade do que está realmente em andamento.</li>
+<li><strong>Redução da previsibilidade do processo</strong>: com a pausa do processo de testes, todas as tarefas que estiverem ou chegarem na fila de <em>Ready to Test</em> durante o período de ausência do responsável de QA ficarão por lá até o retorno dele, é claro. O <em>lead time</em> do processo (tempo entre o início do trabalho da equipe na demanda e o término dela) será, portanto, impactado.</li>
+<li><strong>Aumento no número de bugs e não conformidades</strong>: como já mencionado no e-book <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software">&#8220;5 Estratégias para otimizar o fluxo de desenvolvimento de software&#8221;</a>, o aumento do WIP tende a impactar diretamente na qualidade do software. Neste cenário, há ainda um ponto adicional: a falta de feedback quanto à conformidade das histórias desenvolvidas faz com que histórias sejam iniciadas com uma base já fora de conformidade, o que tende a sobrepor os problemas.</li>
+</ol>
+<p>As imagens a seguir apresentam a distribuição do <em>lead time</em> das demandas da equipe imediatamente antes e após as férias do profissional de QA (para entender melhor os gráficos, recomendo o blogpost do Raphael Albino <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">&#8220;Métricas Ágeis: o que Lead Time fala sobre seu projeto&#8221;</a>). Na primeira delas, antes do início das férias do profissional, é possível ver que há pouca variabilidade no <em>lead time</em> das entregas e pouco WIP.</p>
+<p><img fetchpriority="high" decoding="async" class="alignleft size-full wp-image-7004" src="/wp-content/uploads/2017/12/ready-to-qa-before.png" alt="Antes das férias" width="1919" height="907" srcset="/wp-content/uploads/2017/12/ready-to-qa-before.png 1919w, /wp-content/uploads/2017/12/ready-to-qa-before-300x142.png 300w, /wp-content/uploads/2017/12/ready-to-qa-before-768x363.png 768w, /wp-content/uploads/2017/12/ready-to-qa-before-1024x484.png 1024w" sizes="(max-width: 1919px) 100vw, 1919px" /></p>
+<p>Já após as férias, é possível perceber uma tendência de aumento no <em>lead time</em> (média projetada já bastante acima do percentil 95%), o que deve contribuir para uma redução na previsibilidade das entregas. Além disso, é possível ver que a quantidade de trabalho em progresso também teve um aumento considerável:</p>
+<p><img decoding="async" class="alignleft size-full wp-image-7006" src="/wp-content/uploads/2017/12/ready-to-qa-after.png" alt="Após as férias" width="1919" height="907" srcset="/wp-content/uploads/2017/12/ready-to-qa-after.png 1919w, /wp-content/uploads/2017/12/ready-to-qa-after-300x142.png 300w, /wp-content/uploads/2017/12/ready-to-qa-after-768x363.png 768w, /wp-content/uploads/2017/12/ready-to-qa-after-1024x484.png 1024w" sizes="(max-width: 1919px) 100vw, 1919px" /></p>
+<p>Já vimos os possíveis impactos dessa estratégia, mas o que podemos fazer em uma situação como esta? Supondo que não haja outro profissional de QA disponível para a equipe, alguém do time pode assumir essa atividade ou, o que temos feito com sucesso em alguns contextos, a equipe como um todo pode se dividir para realizar os testes: sempre que alguém mover uma demanda para QA, antes de iniciar uma nova, pode verificar se há alguma pendente de testes e já puxá-la. A única sugestão é para que uma demanda não seja testada pela mesma pessoa que a desenvolveu.</p>
+<h3>Estoque em <em>Ready to Deploy</em>?</h3>
+<p><em>Cenário: por opção do PO, decidiu-se que todas as histórias mapeadas inicialmente precisariam estar prontas para que as novas features fossem para produção.</em></p>
+<p>Neste caso, o maior impacto do ponto de vista do processo é que será preciso garantir que essas histórias praticamente prontas não criem um empecilho para que outras linhas de desenvolvimento integrem código em produção. De maneira geral, a sugestão é integrar código pronto em produção sempre que possível (há técnicas para se fazer isso sem necessariamente liberar as funcionalidades para os usuários, como a técnica de <em>Feature Toggle</em>). Além de desbloquear futuros deploys que precisem &#8220;passar na frente&#8221; (como <em>bug fixes</em>, por exemplo), essa estratégia ainda permitirá que os deploys sejam mais tranquilos e sem grandes riscos.</p>
+<p>Do ponto de vista de produto, e considerando o Cost of Delay conforme nos apresentou o Lucas Colucci em seu blog post <a href="/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/">&#8220;Quanto a empresa perde financeiramente quando o projeto atrasa?&#8221;</a> sobre o assunto, é sempre interessante disponibilizar as novas features para o cliente, mesmo que todas as features planejadas no escopo de um projeto não tenham sido finalizadas.</p>
+<p>Um outro cenário muito comum, especialmente em equipes maiores, é o da existência de janelas e filas para deploy. Geralmente, essa estratégia é adotada quando:<br />
+1. o ferramental de deploy/rollback exige tempo e trabalho manual (frequentemente, com recursos compartilhados por várias equipes),<br />
+2. quando há falta de confiança quanto à qualidade do que está sendo colocado no ar (alguém se perguntaria: <em>será que o código está adicionando bugs?</em>)<br />
+3. ou quando há muitas equipes trabalhando em um mesmo produto.</p>
+<p>Essa burocracia para o deploy (horários pré-definidos, dias da semana permitidos, comitês para decidir o que vai e o que não vai pro ar&#8230;) contribuirá para atrasar a entrada das novas funcionalidades em produção. Para reverter esse cenário, o ideal é investir em cobertura de testes e em automações em geral (tanto da execução dos testes, quanto de deploy/rollback), o que fará com que o processo de colocar código novo no ar se torne mais simples e <em>indolor</em>, tanto para quem faz o deploy quanto para quem usa o produto.</p>
+<h2>Conclusão</h2>
+<p>Em geral, as filas e estoques no desenvolvimento de software, especialmente em contextos ágeis, trazem como consequência aumento no risco de desperdício de esforço e de oportunidades de negócio representadas pelas demandas em estoque, principalmente as que já estão mais próximas de serem finalizadas e que poderiam gerar receitas para a empresa ou melhorias para os usuários.</p>
+<p>Porém, como vimos acima, há também outras consequências que variam conforme o estágio do fluxo de desenvolvimento em que a demanda está, podendo impactar na qualidade do código e aumentar o número de bugs, ou até evitar uma possível situação de <em>starvation</em> da equipe.</p>
+<p>E você? Quais situações já enfrentou com estoques e filas em suas equipes? Deixe seus relatos e comentários abaixo!</p>
+<div style="border: 1px solid #009eaa; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+E-book gratuito:<br />
+<span style="font-size: 1.4em; line-height: 1.3em;">5 Estratégias para otimizar o fluxo de desenvolvimento de software</span><br />
+<a style="background: #009eaa; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 18px; padding: 8px 16px; text-align: center; text-decoration: none; font-weight: bold; letter-spacing: 0.05em;" href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-estratgias-para-fluxo&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">BAIXAR E-BOOK</a>
+</div><p>The post <a href="/2017/12/estoques-no-desenvolvimento-de-software/">Estoques no desenvolvimento de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>12 Erros comuns no uso de Métricas de Processo</title>
+		<link>/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 26 Oct 2017 13:49:38 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[métricas]]></category>
+		<guid isPermaLink="false">/?p=6874</guid>
+
+					<description><![CDATA[<p>Defendemos o uso de métricas há algum tempo, e já produzimos muito conteúdo sobre o assunto. No entanto, vemos times que usam métricas ativamente e não alcançam o resultado esperado. Neste post, compilei os erros mais comuns que os times cometem quando usam métricas, assim você saberá o que evitar quando adotá-las. 1 &#8211; Não ... <a class="read-more-link" href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">»</a></p>
+<p>The post <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">12 Erros comuns no uso de Métricas de Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Defendemos o uso de métricas há algum tempo, e já produzimos muito <a href="blog.plataformatec.com.br/tag/metrics">conteúdo sobre o assunto</a>. No entanto, vemos times que usam métricas ativamente e não alcançam o resultado esperado.</p>
+<p>Neste post, compilei os erros mais comuns que os times cometem quando usam métricas, assim você saberá o que evitar quando adotá-las.</p>
+<h2>1 &#8211; Não ter reação</h2>
+<p>Se você coleta métricas, você <strong>precisa</strong> usá-las de alguma maneira. Portanto, um dos erros mais comuns é não reagir ao que as métricas apontam. Métricas podem lhe dar <em>insights</em>  e, para reagir, você precisa entender como elas funcionam e o que significam.</p>
+<p>Para mais informações sobre como usá-las, dê uma olhada nesses posts:</p>
+<ul>
+<li><a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Cumulative Flow Diagrams e Lead Time Breakdown</a></li>
+<li><a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Throughput e gráfico de Burnup</a></li>
+<li><a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">O que Lead Time fala sobre seu projeto</a></li>
+</ul>
+<h2>2 &#8211; Usar métricas com poucos dados</h2>
+<p>Outro grande erro é utilizar métricas quando não existem dados suficientes para suportar suas conclusões. No começo de um projeto, ou quando começamos a coletar métricas, geralmente ficamos ansiosos para melhorarmos nosso processo. No entanto, com uma quantidade baixa de dados, as métricas não são tão confiáveis.</p>
+<p>Uma boa dica seria observar o comportamento dos dados e verificar se algum padrão já se formou. No caso de ter um padrão, você provavelmente já pode começar a usá-las e atuar em cima dos dados.</p>
+<p>É importante notar também, que esse não é o único método, mas em geral, eu esperaria no mínimo 3 semanas para começar a questionar o processo. &#8212; Mais sobre como agir baseado em métricas pode ser encontrado em nossos <a href="blog.plataformatec.com.br/tag/metrics">blog posts</a>.</p>
+<p>Uma possível saída, caso você tenha um projeto curto e precise de métricas o quanto antes, seria utilizar métricas diárias. Temos um post falando sobre isso também: <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">Pros and cons of using daily metrics</a></p>
+<h2>3 &#8211; Usar métricas sem considerar o contexto</h2>
+<p>Esse é um erro muito comum, não só no desenvolvimento de software, mas em toda conclusão construída estatisticamente. Números sozinhos são usados apenas em álgebra ou cálculo. Você precisa do contexto nos quais os números estão inseridos para entendê-los. Com isso em mente, para dizer se a vazão do seu projeto está saudável ou não, para entender se a variância do seu <em>lead time</em> é muito grande ou não, observe. o. contexto.</p>
+<h2>4 &#8211; Comparar métricas entre times</h2>
+<p>Esse problema está de certa forma relacionado com o 3. Não faz sentido falar algo como &#8220;time A está melhor que o time B pois eles têm uma vazão maior&#8221;. E se o time A possui 10 pessoas enquanto o time B possui 3? E se o time A trabalha com o desenvolvimento simples de um website e o time B com algum <em>deep learning</em> complexo? Tenha cuidado.</p>
+<h2>5 &#8211; Ter métricas individuais</h2>
+<p>Esse é um problema de microgerenciamento e está relacionado com os erros 3 e 4. Pessoas, tentando melhorar o máximo possível o processo, acabam medindo métricas de indivíduos. É praticamente impossível comparar pessoas diferentes. Apenas não o faça. Se o fizer, estará afetando o ambiente do seu time e vai até diminuir a produtividade geral. Além disso, as métricas do processo devem ser usadas para entender a <strong>saúde do processo</strong>.</p>
+<h2>6 &#8211; Simplificar demais a leitura das métricas</h2>
+<p>Ainda relacionado ao contexto, mas agora com o contexto dos números. Por exemplo, se você comunica às outras pessoas que um time entrega em média 4 histórias por semana, <em>é só isso</em>, você não está dizendo nada do time. Talvez os dados sejam {0, 0, 0, 0, 0, 24}, talvez sejam {4, 4, 4, 4, 4, 4}. Então, tenha certeza que você não está simplificando demais a leitura das suas métricas e que todo o seu ferramental constrói a imagem que você está tentando desenhar.</p>
+<h2>7 &#8211; Usar apenas as métricas convenientes</h2>
+<p>Relacionado ao erro anterior, pessoas reportam as métricas para seus gerentes/diretores mostrando apenas os &#8220;números bons&#8221;. Então, se a vazão aumenta, você mostra apenas a vazão. Se o backlog diminui, você mostra apenas isso. Seja transparente. Caso contrário, eles estarão vivendo uma mentira e, quando a verdade vier à tona, você não conseguirá se explicar.</p>
+<h2>8 &#8211; Usar apenas os dados convenientes</h2>
+<p>Outro problema é usar apenas métricas com os dados que você quer. Recortar os dados para ter resultados mais relevantes, como considerar apenas os últimos 2 meses em um projeto de 10 meses, pode fazer sentido já que o contexto de um projeto muda com o tempo e você quer ter certeza que está considerando o contexto certo nos seus resultados. No entanto, tenha cuidado quando fizer isso, pois você pode estar escondendo muitas informações úteis de você mesmo.</p>
+<h2>9 &#8211; Falsificar métricas</h2>
+<p>Este é de longe o mais comum que vejo. Pessoas tem medo de mostrar os gargalos ou problemas e mascaram resultados (às vezes sem perceber). Agrupam histórias para diminuir backlog, quebram histórias desnecessariamente para aumentar a vazão ou até mesmo mudam pontos de história (quando os usam) para manter a velocidade do time &#8220;constante&#8221;. Com isso, você está apenas enganando você mesmo e não está melhorando o processo.</p>
+<h2>10 &#8211; Ter metas baseadas em métricas</h2>
+<p>Esse é um assunto <em>muito</em> polêmico. As métricas não foram feitas para serem metas. Foram feitas para ajudar o time a entender como o processo está e tentar melhorar o fluxo. Metas relacionadas à métricas podem colocar muita pressão no time e ter o efeito contrário ao desejado, fazendo com que o time cumpra uma métrica mas desregule todo o processo. Então, antes de definir uma meta com base em métricas, pense se a meta precisa ser tão &#8220;baixo-nível&#8221; e, caso precise, confirme com o time se é possível, de fato, atingir essa meta ou se existe algum impedimento inerente ao precesso.</p>
+<h2>11 &#8211; Tentar diminuir o lead time à todo custo</h2>
+<p>Lead time (LT) é uma métrica que serve para entendermos quanto tempo um item leva para passar por todo o processo. Então, existem duas perguntas que podem ser feitas aos dados:</p>
+<ul>
+<li>O LT está muito alto?</li>
+<li>A variância do LT está muito alta?</li>
+</ul>
+<p>A segunda pergunta é muitas vezes mais importante para o time do que a primeira. Ter um LT com distribuição {0, 5, 2, 8} é geralmente pior do que ter uma como {4, 4, 4, 4}. Na primeira os dados não são confiáveis o suficiente para se ter uma predição assertiva, enquanto no segundo você tem maior probabilidade de acertar. No entanto, não esqueça de olhar para o seu contexto!</p>
+<h2>12 &#8211; Tentar aumentar a vazão ao invés de focar na eficácia</h2>
+<p>Ser eficaz é fazer a coisa certa. Vazão não é importante se você não está fazendo a coisa certa. Então, foque no seu produto, no que é melhor para ele, antes de se importar com o quão rápido você entrega.</p>
+<p>O que achou desses erros? Já cometeu algum deles? Deixe seus comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0 !important;">ContÁgil Newsletter</h3>
+<p style="margin-top: 0.5em !important;">Newsletter mensal <strong>gratuita</strong>, criada para ajudar você a se manter atualizado sobre o que está acontecendo na área de gerenciamento de projetos, metodologias e cultura ágil.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">ASSINAR NEWSLETTER GRÁTIS</a>
+</div><p>The post <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/">12 Erros comuns no uso de Métricas de Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</title>
+		<link>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/</link>
+					<comments>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2017 13:53:14 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6839</guid>
+
+					<description><![CDATA[<p>Uma das grandes questões que um Agile Coach pode enfrentar durante sua carreira é: como posso ajudar a equipe a melhorar continuamente o processo de desenvolvimento? Neste blog post, apresentarei 2 valiosas técnicas para que você possa compreender de forma holística o fluxo de desenvolvimento de software de uma equipe. 1. CFD Segundo Brodzinski, Cumulative ... <a class="read-more-link" href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">»</a></p>
+<p>The post <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Uma das grandes questões que um Agile Coach pode enfrentar durante sua carreira é: como posso ajudar a equipe a melhorar continuamente o processo de desenvolvimento?</p>
+<p>Neste blog post, apresentarei 2 valiosas técnicas para que você possa compreender de forma holística o fluxo de desenvolvimento de software de uma equipe.</p>
+<h2>1. CFD</h2>
+<p>Segundo <a href="http://brodzinski.com/2013/07/cumulative-flow-diagram.html">Brodzinski</a>, <strong>Cumulative Flow Diagram</strong> (CDF) é um dos gráficos que oferece rápida visão geral do que está acontecendo num projeto ou produto.</p>
+<p>O CFD é um instrumento valioso para rastrear e prever projetos ágeis. Ao usá-lo, você pode verificar rapidamente o status atual: quanto trabalho foi feito, o que está em andamento e quanto tempo será necessário para que determinado escopo seja concluído.</p>
+<p>A estrutura do gráfico é muito simples. O eixo horizontal representa um período de tempo (semanas, sprints, etc) e o vertical indica, de forma acumulada, o número de itens no processo (total de tarefas, total de histórias, etc.). Cada área pintada no gráfico está relacionada a uma etapa do fluxo de trabalho (backlog, em progresso, finalizado, etc) e as curvas são basicamente o número de itens acumulados em tais etapas.</p>
+<p><img decoding="async" class="alignleft size-large wp-image-6844" style="max-width: 100%;" src="/wp-content/uploads/2017/10/grafico-cfd-1024x408.png" alt="Gráfico CFD" width="1024" height="408" srcset="/wp-content/uploads/2017/10/grafico-cfd-1024x408.png 1024w, /wp-content/uploads/2017/10/grafico-cfd-300x119.png 300w, /wp-content/uploads/2017/10/grafico-cfd-768x306.png 768w, /wp-content/uploads/2017/10/grafico-cfd.png 1176w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Para demonstrar como usamos o CFD na Plataformatec, descreverei o exemplo de um projeto. Nesse caso, tivemos um fluxo de desenvolvimento composto pelas seguintes etapas:</p>
+<ul>
+<li><strong>Backlog:</strong> itens que precisavam ser refinados.</li>
+<li><strong>Ready to Dev:</strong> itens com critérios de aceite definidos e com uma definição explícita de &#8220;feito&#8221;.</li>
+<li><strong>Developing:</strong> itens em desenvolvimento.</li>
+<li><strong>Testing:</strong> itens sendo verificados e validados.</li>
+<li><strong>Accepted:</strong> itens lançados em produção.</li>
+</ul>
+<p>Neste projeto, utilizamos o CFD para: (1) comunicar o progresso; (2) identificar os gargalos do processo; (3) gerenciar as filas. Escolhemos acompanhar o andamento semanalmente, pois precisávamos informar o status do projeto para o CTO nessa frequência.</p>
+<p>Os próximos 3 diagramas representam o projeto no início (primeiras 7 semanas), no meio (11ª semana) e no final (semana 22).</p>
+<h2>O começo</h2>
+<p><img loading="lazy" decoding="async" class="alignleft size-large wp-image-5201" style="max-width: 100%;" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-1024x389.jpeg" alt="Global cumulative flow diagram" width="1024" height="389" srcset="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-1024x389.jpeg 1024w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-300x114.jpeg 300w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-768x292.jpeg 768w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning.jpeg 1273w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>No início do projeto, a equipe enfrentou uma situação em que a relação entre a chegada e a saída dos itens não era proporcional &#8212; o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/"><em>throughput</em> </a>médio da equipe era de 3 itens por semana e o escopo aumentava 7 itens por semana. Este comportamento é ruim, porque significa que o número de itens entregues dificilmente será igual ao número de itens do escopo. Naquele instante, a equipe e a PO discutiram soluções para que a taxa de crescimento do escopo acompanhasse a cadência de entrega.</p>
+<p>Outra informação que pode ser extraída do gráfico é que alguns itens foram criados (estágio de Backlog), mas não foram detalhados (Ready to Dev). Neste caso, o time refinou junto da PO um conjunto de itens e os deixou prontos para serem trabalhados.</p>
+<h2>O meio</h2>
+<p><img loading="lazy" decoding="async" class="alignleft size-large wp-image-5202" style="max-width: 100%;" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-1024x453.jpeg" alt="Global cumulative flow diagram" width="1024" height="453" srcset="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-1024x453.jpeg 1024w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-300x133.jpeg 300w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-768x340.jpeg 768w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle.jpeg 1554w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Ao analisar o CFD no meio do projeto, é possível observar que as etapas de desenvolvimento (Developing) e testes (Testing) não apresentavam acúmulo entre as etapas (sobrecarga). Comparado com as primeiras 6 semanas (início do projeto), a relação entre itens criados e entregues passou a ser a mesma: 3 itens por semana.</p>
+<p>A equipe sabia que o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/"><em>throughput</em> </a>precisava aumentar. Além disso, o projeto ainda apresentava indefinições &#8212; 15 itens não estavam preparados para serem desenvolvidos. Um dos causadores de tal situação foi a alta incerteza no design da aplicação.</p>
+<h2>O fim</h2>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-end.png" alt="" /></p>
+<p>Uma coisa interessante que percebemos no final deste projeto foi que o trabalho na etapa de teste fluiu bem. Olhando para o gráfico, é possível reconhecer que as linha azuis (etapa de Teste) desapareciam rapidamente. Isso ocorreu porque a interação dentro do time foi intensa. Na semana 19, a equipe e a PO alinharam que nenhum novo item seria incluído no escopo, porque o prazo de entrega estava chegando.</p>
+<p>Outra informação que pode ser observada no gráfico de CFD acima é que a equipe não concluiu todas as histórias previstas no escopo &#8212; a etapa &#8220;Accepted&#8221; não ocupou todo o diagrama. Nesse caso, a equipe de desenvolvimento do nosso cliente assumiu os 5 itens que estavam em progresso (2 em desenvolvimento e 3 em testes).</p>
+<p>Vale compartilhar que os itens entregues geraram uma solução de qualidade e alinhada com o que nosso cliente precisava.</p>
+<p>Adotamos como boa prática verificar o CFD semanalmente para impulsionar melhorias dos nossos processos. Tal diagrama se mostrou um excelente companheiro para discussões sobre limitação e gerenciamento de <a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">WIP</a>.</p>
+<h2>2. Lead time breakdown</h2>
+<p>Para aprimorar reuniões de acompanhamento do projeto ou retrospectivas, criamos uma visualização chamada &#8220;<em>lead time breakdown</em>&#8220;.</p>
+<p>Resumidamente, este gráfico permite que o time avalie, compare e analise em detalhes a latência entre o início e o término de cada uma das etapas do processo de desenvolvimento, para cada item de trabalho que passa pelo fluxo (bugs, histórias do usuário, etc).</p>
+<p>Esse tipo de visualização permite analisar o processo com mais detalhes se comparado com a análise do CFD. Geralmente, o <em>lead time breakdown</em> é utilizado para responder questões como:</p>
+<ul>
+<li>O que está acontecendo com os itens que estão em progresso?</li>
+<li>Existe algum tipo de impedimento atrapalhando a fluidez do time?</li>
+<li>O time está lidando com algum gargalo no processo (exemplo: sobrecarga na etapa de testes)?</li>
+</ul>
+<p>Criar a visualização é bem simples. No eixo vertical estão os dias de trabalho; no horizontal, os itens de trabalho em progresso ou já entregues pelo time (exemplo: o montante de histórias do usuário monitorados pelo quadro Kanban). Para representar cada uma das etapas do processo, é utilizado o gráfico de barra acumulado.</p>
+<p>Vamos ver um exemplo a partir de um projeto real. A equipe tinha o fluxo de trabalho com as seguintes etapas:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/lead-time-breakdown-label.jpeg" alt="" /></p>
+<p>Neste fluxo, há etapas com o objetivo de medir gargalos criados pelas etapas de QA (Waiting for QA) ou pelo responsável pelas aprovações das entregas dos itens (Waiting for Review). O gráfico de<em> lead time breakdown</em> do exemplo ficou assim representado:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/lead-time-breakdown.png" alt="" /></p>
+<p>Podemos identificar que quase todas os itens do exemplo necessitam de mais de 3 dias para serem revisados (comportamento visto pela barra roxa). Em alguns casos, tal tempo de passagem pode ser inaceitável, dado a criticidade da entrega.</p>
+<p>Outro ponto interessante é a alta variabilidade no <em>lead time</em> da etapa de codificação (barra azul). Neste caso, o time provavelmente trazia para o fluxo de desenvolvimento itens com pouca padronização.</p>
+<p>Durante este projeto, a equipe sofreu pois tinha que compartilhar um especialista de teste (repare na altura das barras exibidas em amarelo no gráfico). À medida que a equipe e os stakeholders acessavam periodicamente o gráfico, o problema ficava evidente para todos e soluções foram discutidas para resolvê-lo. Uma delas foi o Scrum Master exercer o papel de especialista em teste, em alguns períodos do ciclo de vida do projeto.</p>
+<p>Como boa prática, em todos os projetos que atuamos, temos utilizado o gráfico de<em> lead time breakdown</em> periodicamente para entender o status atual da equipe. Tal ferramenta tem sido útil para:</p>
+<ul>
+<li>Guiar discussões recorrentes de como remover desperdícios no processo.</li>
+<li>Promover melhorias no processo baseadas em dados.</li>
+<li>Deixar evidente o tempo de espera ao longo do desenvolvimento dos itens de trabalho.</li>
+<li>Analisar mais facilmente as demandas que estão próximas de serem finalizadas.</li>
+<li>Utilizar as informações para apoiar retrospectivas quando a pauta é relacionada ao processo.</li>
+<li>O que o time precisa manter?</li>
+<li>O que o time precisa mudar?</li>
+</ul>
+<h2>Concluindo</h2>
+<p>A visualização do fluxo através do CFD ou do <em>lead time breakdown</em> fornece uma visão quantitativa e qualitativa de problemas potenciais no processo de desenvolvimento de software. Encontrar soluções é uma outra história.</p>
+<p>Para aprender mais sobre o CFD, recomendo 4 boas referências:</p>
+<ul>
+<li>O excelente artigo, <a href="http://brodzinski.com/2013/07/cumulative-flow-diagram.html">Cumulative Flow Diagram</a> do Pawel Brodzinski.</li>
+<li>O livro do Daniel Vacanti, <a href="https://leanpub.com/actionableagilemetrics">Actionable Agile Metrics for Predictability</a>.</li>
+<li><a href="http://leanguru.pro/the-cumulative-flow-chart-cfd-in-a-nutshell/">The Cumulative Flow Diagram in a nutshell</a>.</li>
+<li>Minha publicação recente e em português, <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis&quot;">Métricas Ágeis – Obtenha melhores resultados em sua equipe</a>.</li>
+</ul>
+<p>E você, como tem utilizado o CFD? Qual a sua opinião sobre a visualização do <em>lead time breakdown</em>? Compartilhe sua opinião nos comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Curso: Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.5em !important;">Em 7 e-mails você vai aprender neste curso o que medir e como interpretar os dados. <strong>Curso gratuito</strong> criado pelo autor do livro “Métricas Ágeis”, Raphael Albino.</p>
+<p><a style="background: #e9af35; border: none; color: #fff; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRATUITAMENTE</a></p>
+</div><p>The post <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Estamos patrocinando o Lean Kanban Brazil 2017</title>
+		<link>/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/</link>
+		
+		<dc:creator><![CDATA[Sheila Chang]]></dc:creator>
+		<pubDate>Fri, 13 Oct 2017 16:13:18 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[kanban]]></category>
+		<guid isPermaLink="false">/?p=6774</guid>
+
+					<description><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência aqui no blog e no conteúdo dos nossos materiais. Tudo grátis! 😉 Nossa contribuição se expandiu. Palestras e workshops em eventos agile ... <a class="read-more-link" href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">»</a></p>
+<p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência <a href="/tag/agile/">aqui no blog</a> e no conteúdo dos <a href="/materiais-de-metodologias-ageis/">nossos materiais</a>. Tudo grátis! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Nossa contribuição se expandiu. Palestras e workshops em eventos agile tornaram-se parte das atividades do nosso time, e para firmar nosso compromisso com a comunidade ágil, estamos patrocinando o <a href="http://leankanban.com.br/">Lean Kanban Brazil 2017</a>. \o/</p>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6778" src="/wp-content/uploads/2017/10/logo-lean-kanban-brazil.png" alt="Lean Kanban Brazil" width="250" height="77" /></p>
+<h2>Lean Kanban Conferences</h2>
+<p>A <em><a href="http://leankanban.com/events/">Lean Kanban Conferences Internacional</a></em> apoia conferências em diversos países, e Brasil está na lista. Com temas relacionados a <strong>gestão</strong>, a <a href="http://leankanban.com.br/programa/">programação da segunda edição brasileira</a> está dividida em três.</p>
+<h3>1. Webinars</h3>
+<p>Democrático e inclusivo, a organização preocupou-se em eliminar a restrição geográfica. Quem não pode participar do evento em São Paulo, tem opção de webinars pré-conferência.</p>
+<p><img loading="lazy" decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/breno-campos.png" alt="Breno Campos" width="110" height="110" /> No dia <strong>17/10</strong>, nosso carismático <em>agile consultant</em>, <strong>Breno Campos</strong> falará sobre priorização de backlog e desenvolvimento de produtos/plataformas digitais no webinar <em><strong>Cost of Delay &#8211; Você perde por esperar</strong></em>. Ele vai mostrar que atrasos de projetos significam perda de grana $$$. Você levará um choque de realidade. o.O</p>
+<h3 style="clear: both;">2. Workshops</h3>
+<p>6 workshops focados em gestão, com duração de 4 horas, ocuparão salas no Espaço Franklin Covey (<a href="https://goo.gl/maps/oC6M4wLgwgs">mapa</a>).</p>
+<p><img loading="lazy" decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/raphael-albino.png" alt="Raphael Albino" width="110" height="110" />Claro que o <strong>Raphael Albino</strong> &#8212; professor, mestre, doutorando, <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">autor de livro</a> e nosso <em>agile consultant</em> &#8212; estará lá no dia <strong>27/10</strong> promovendo o workshop <em><strong>Vamos falar sobre Métricas de Processo?</strong></em> Você não terá moleza. Vai por a mão na massa, praticar de verdade! Se conhecimento é poder, você será poderoso(a) depois dessa aula. :bulb:</p>
+<h3 style="clear: both;">3. Palestras</h3>
+<p>Estão dividas em 2 tracks, marcadas para o dia <strong>28/10</strong>, no Grand Mercure Ibirapuera (<a href="https://goo.gl/maps/RqGJaxax8Ls">mapa</a>). Você terá oportunidade para networking nos coffee-breaks e almoço.</p>
+<p>Pensa que acabou? Tem mais!</p>
+<h2>Nosso estande</h2>
+<p>Vamos compartilhar mais conhecimento nas <strong><em>Coaching Sessions</em></strong> que teremos no nosso estande.</p>
+<p>Sério! Será imperdível! Sabe por quê? Porque não são <em>coaching sessions</em> sobre o que queremos ensinar. Abordaremos O QUE VOCÊ QUER APRENDER!</p>
+<p>Para isso, você precisa nos ajudar a te ajudar <small>(Tropa de Elite, caveiraaa!)</small>. Como? Basta responder <a href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=link">neste formulário</a> o tema do seu interesse.</p>
+<p>Você quer o &#8220;faz-me rir&#8221; <small>(faca na caveira)</small>? Que tal 20% de desconto na compra da entrada?</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; font: bold 12px arial; line-height: 1.8; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;" href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=button" target="_blank" rel="noopener">Clique aqui e responda o que você quer ver nas Coaching Sessions</a></p>
+<div style="height: 60px;"></div><p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: como definir OKRs em equipes ágeis</title>
+		<link>/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 05 Sep 2017 21:41:51 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business of software]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=6664</guid>
+
+					<description><![CDATA[<p>Continuando a série de posts referente aos dilemas da vida de gerentes de produto, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor. É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados ... <a class="read-more-link" href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">»</a></p>
+<p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Continuando a <a href="/?s=dilemas+de+po">série de posts referente aos dilemas da vida de gerentes de produto</a>, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor.</p>
+<p>É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados esperados e o planejamento de entregas. Se você convive com tais desafios, confira a seguir uma dinâmica na qual obtive ótimos resultados no processo de concepção de OKRs.</p>
+<h2>O que é OKR e para o que serve</h2>
+<p>Bom, antes de escrever sobre o assunto, vale a pena definir o <strong>termo OKR</strong>.</p>
+<p>Segundo definição do pessoal da <a href="http://leanperformance.com/pt-br/okr/o-que-e-okr/">Lean Performance</a>, OKR &#8212; do inglês <em>Objectives and Key Results</em> &#8211;, utilizado no Silicon Valley por empresas como Google, Facebook, Linkedin, Intel etc, <strong>é um <em>framework</em> para definir metas</strong>. Trata-se de um <strong>sistema simples para criar alinhamento e engajamento em torno de metas mensuráveis e dinâmicas</strong>, tipicamente definidas trimestralmente.</p>
+<p>OKRs são uma ótima forma das organizações criarem e comunicarem objetivos e resultados. <strong>Seu maior propósito é promover conexão entre os objetivos da empresa, do time e dos indivíduos a partir de resultados mensuráveis, fazendo com que todos se movam na mesma direção</strong>.</p>
+<p>Em resumo, utilizar OKRs adequadamente auxilia no aumento do alinhamento e do engajamento entre as pessoas, e torna o processo de planejamento estratégico mais ágil, com maior cadência de revisão, adaptação e participação de toda a equipe.</p>
+<p>O alinhamento e engajamento entre as pessoas aumentam, pois o time passa a fazer parte do direcionamento do produto, gerando maior senso de pertencimento em cada um.</p>
+<p>Certa vez, no projeto de um dos nossos clientes, após a equipe definir os OKRs, fui informado pelo QA que o bug que estava ocorrendo no ambiente de produção iria impactar diretamente um dos OKRs, se não fosse corrigido imediatamente. Esse fato me deixou realmente surpreso, pois jamais veria uma ação assim se não compartilhassemos a responsabilidade com todo o time.</p>
+<p>Com a aplicação de OKRs, ganhamos mais uma ferramenta na priorização do backlog e, mais importante, temos o escopo direcionado para um objetivo comum.</p>
+<p>Ao aplicar dinâmicas de OKRs, espera-se que a empresa, equipe ou pessoa tenha em mãos:</p>
+<ol>
+<li><strong>Objetivos:</strong> Possuem, por essência, característica qualitativa, inspiracional, com prazo definido e apontem para metas, ou seja, dizem para onde se deve ir.</li>
+<li><strong>Key results:</strong> Quantificam toda a ideia inspiracional. Devem ser atingíveis, mensuráveis e realistas. Em outras palavras, indicam como será possível atingir os objetivos.</li>
+</ol>
+<p><em>Beleza Raphael, entendi os conceitos e percebi que isso pode ser útil, mas você pode dar um exemplo?</em></p>
+<blockquote><p>
+  <strong>Objetivo:</strong> Aumentar o número de clientes a partir de melhor experiência de uso do aplicativo.</p>
+<p>  <strong>Período:</strong> Primeiro trimestre de 2017.</p>
+<p>  <strong>Key results:</strong></p>
+<ul>
+<li>Aumentar a taxa de conversão mobile global de 5% (último trimestre de 2016) para 10%.</li>
+<li>Aumentar o volume de sessões entrantes de 161 mil (último trimestre de 2016) para 240 mil.</li>
+<li>Vender 10.000 mil licenças básicas.</li>
+<li>Vender 500 licenças <em>premium</em>.</li>
+</ul>
+</blockquote>
+<p>De onde vamos tirar esses indicadores?</p>
+<p>Aqui vai um ponto importante: para definir bons <em>key results</em>, que sejam mensuráveis e reflitam a situação real, <strong>é essencial que a organização seja orientada a dados e indicadores</strong>. Basicamente, a empresa deve possuir métricas de produto que assegurem uma tomada de decisão assertiva, dando a real noção de direção e esforço; e não somente baseada em intuições e experiências. Esses dados ajudam a definir as estratégias do próximo período com maior segurança e a otimizar os recursos empreendidos.</p>
+<p>Os dados devem direcionar as seguintes questões:</p>
+<ul>
+<li>Quais desafios temos à frente? Quais indicadores estão ruins? O que devemos fazer para melhorar tal indicador? Ex: Diminuir o churn, aumentar prospects e leads, melhorar os processos operacionais etc.</li>
+<li>Qual frente do produto precisamos melhorar para atingir o objetivo X da organização?</li>
+<li>Quais riscos esses dados evidenciam e onde devemos manter a atenção?</li>
+</ul>
+<p>Feita essa introdução, vamos para a dinâmica de definição dos OKRs para que você possa aplicá-la e aprimorá-la.</p>
+<h2>Parte 1 &#8211; Compreendendo o negócio</h2>
+<p>O primeiro tópico a ser discutido diz respeito a revisão ou criação do modelo de negócios do produto.</p>
+<p>Baseado nas personas, a equipe poderá analisar os canais, formatos de relacionamento com o cliente, fontes de receita, atividades chave, recursos chave, parceiros chave e estrutura de custo.</p>
+<p>Para levantar tais informações, sugiro que você leve as seguintes perguntas:</p>
+<ul>
+<li>Personas: qual o perfil de clientes que utilizam o produto?</li>
+<li>Canais: como os clientes chegam ao produto, geralmente?</li>
+<li>Formatos de relacionamento: como ocorre o relacionamento dos usuários com o produto atualmente?</li>
+<li>Fontes de receita: quais são as fontes de receita atuais?</li>
+<li>Atividades chave: quais as principais atividades que precisam ser realizadas no dia a dia da operação para que o produto possa entregar o valor que se propõe?</li>
+<li>Recursos chave: o que o produto possui de diferencial competitivo?</li>
+<li>Parceiros chave: quais parceiros ajudam a empresa a viabilizar/alavancar o produto?</li>
+<li>Custos: qual a estrutura necessária para tornar a operação do produto viável?</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6668" src="/wp-content/uploads/2017/09/business-model-canvas.png" alt="Business model canvas" width="763" height="489" srcset="/wp-content/uploads/2017/09/business-model-canvas.png 763w, /wp-content/uploads/2017/09/business-model-canvas-300x192.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<p>Assim, a equipe terá maior clareza sobre o estágio atual do produto. Caso o produto não possua um modelo de negócios, não deixe de desenvolver um. Uma dica de leitura para que você possa construir um é o livro <a href="https://www.goodreads.com/book/show/7723797-business-model-generation">Business Model Generation</a>.</p>
+<p>Após a revisão do modelo de negócio, o próximo passo será analisar as principais métricas do produto. Cada pessoa da equipe poderá explorar o produto a partir de:</p>
+<ul>
+<li>Informações financeiras: churn, ticket médio, custo de aquisição do cliente etc;</li>
+<li>Comportamento de acesso: número de acessos, taxa de saída, tempo despendido nas páginas do fluxo de venda, origem do tráfego, dispositivo utilizado para acessar o fluxo de venda etc;</li>
+<li>Perfil do cliente: dados demográficos, nível de serviço contratado, faixa etária etc.</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6669" style="margin-right: 15px !important" src="/wp-content/uploads/2017/09/dashboard_metricas.jpg" alt="Exemplo de dashboard de produto" width="300" height="225" align="left" /> A partir das métricas de produto, cada membro da equipe deverá identificar pontos de melhoria e pontos onde o produto aparenta estar bem.</p>
+<div style="clear: both"></div>
+<h2>Parte 2 &#8211; Definindo os OKRs</h2>
+<p>Feita a análise das métricas de negócio e do modelo de negócio, levante com a equipe os potenciais objetivos que serão trabalhados no período de tempo (exemplo: próximo trimestre).</p>
+<p>Se você estiver facilitando a discussão, tenha em mãos as seguintes dicas antes da equipe determinar os objetivos:</p>
+<ul>
+<li>Tenha poucos objetivos (de 3 a 4). Motivo? O trimestre, por exemplo, é curto para se assumir muitos objetivos.</li>
+<li>Relacione os objetivos do produto com os objetivos da empresa.</li>
+<li>Relacione os objetivos com problemas e necessidades reais.</li>
+<li>Utilize as métricas de negócio para definir os objetivos.</li>
+</ul>
+<p>Caso os objetivos levantados sejam complexos ou grandes, vale a pena fomentar discussões para que a equipe simplifique. O mantra que deve ser pensado aqui é: <strong>pequenos incrementos que geram valor econômico para o negócio.</strong></p>
+<p>Para medir os objetivos, a equipe deverá elencar quais serão os <em>key results</em> que serão acompanhados ao longo do período. Para que a equipe tenha um norte:</p>
+<ul>
+<li>Defina poucos <em>key results</em> (de 3 à 4). Motivo? Se o objetivo precisa de muitos itens para ser medido é provável que ele seja complexo demais.</li>
+<li>Os <em>key results</em> devem ser expressos através de números.</li>
+<li>Quais resultados garantirão que alcancemos nossos objetivos?</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6670" src="/wp-content/uploads/2017/09/okr_todos.png" alt="Exemplo de OKRs definidos" width="400" height="300" srcset="/wp-content/uploads/2017/09/okr_todos.png 400w, /wp-content/uploads/2017/09/okr_todos-300x225.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Parte 3 &#8211; Definindo um roadmap</h2>
+<p>Dado que os objetivos e os <em>key results</em> estão definidos, a equipe pode se questionar: <em>bom, e agora, o que vamos fazer para atingir nossos OKRs?</em></p>
+<p>Sugiro como última parte da dinâmica o desenvolvimento de um roadmap, a fim de identificar entregáveis macro e quando eles deverão ser entregues ao longo do período (ex: trimestre).</p>
+<p>Técnicas de <em>brainstorming</em> e <em>story mapping</em> ajudam a ter uma ideia de cronologia e dependência entre as possíveis funcionalidades que serão construídas para alcançar os OKRs.</p>
+<p>Antes que alguém me crucifique dizendo que não estou sendo <em>lean</em>, gostaria de deixar algo claro. O roadmap criado será uma referência que COM CERTEZA (repita, <strong>C-O-M C-E-R-T-E-Z-A</strong>) sofrerá alterações ao longo do tempo por conta das mudanças e experimentações que acontecerão para atingir os objetivos e <em>key results</em> definidos.</p>
+<h2>Conclusão</h2>
+<p>A estrutura de OKR pode ser replicada no nível empresa, equipe e, até mesmo, indivíduo. Uma dica que sempre compartilho é: comece com poucos objetivos e trace em torno de 3 à 4 <em>key results</em>. O motivo? Foco. Quanto mais direcionado, mensurável e acionável for a sua estrutura de OKR, maiores serão as chances de alcançar o planejamento desenvolvido.</p>
+<p>Lembre-se que os OKRs devem ser revistos com frequência para que o time possa tê-los sempre em mente e, juntos, decidirem onde despender esforços para caminharem na direção correta.</p>
+<p>É essencial que a empresa possua uma cultura questionadora, desapegada de ferramentas e soluções revolucionárias e tenha um ambiente que promova aprendizado com as falhas, pois certamente haverão erros no início.</p>
+<p>A dinâmica que apresentei teve como objetivo conectar negócio, resultados atuais e futuro (OKRs + funcionalidades).</p>
+<p>E você, como tem aplicado dinâmicas de OKR? Compartilhe os resultados e desafios.</p>
+<p>Até próximo dilema <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Algumas referências: <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<ul>
+<li><a href="https://www.infoq.com/br/articles/agile-goals-okr">Metas Ágeis com OKR</a></li>
+<li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li>
+<li><a href="https://medium.com/startup-tools/okrs-5afdc298bc28">OKRs</a></li>
+<li><a href="https://www.slideshare.net/HenrikJanVanderPol/how-to-outperform-anyone-else-introduction-to-okr">The Basics of OKR &#8211; Google&#8217;s Secret Sauce</a></li>
+</ul>
+<div style="background-color: #fffdf9;border: 1px solid #e9af35;margin: 32px 0;padding: 22px 24px;font-family: sans-serif">
+<h3 style="font-size: 1.4em;line-height: 1.3em;margin-top: 0 !important">Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.7em !important"><strong>Curso gratuito em 7 e-mails</strong>, elaborado pelo autor do livro “Métricas Ágeis”, Raphael Albino.<br />
+<small>Indicado para Agile Coach, Gerente de Produtos, Gerente de Projetos, Product Owner, Scrum Master e CTO/CIO.</small></p>
+<p><a style="background: #e9af35;border: none;color: #fff;font-size: 12px;line-height: 1.5;margin-top: 5px;padding: 8px 16px;text-align: center;text-decoration: none;letter-spacing: 0.1em" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRÁTIS</a></p>
+</div><p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Métricas Ágeis: Throughput e gráfico de Burnup</title>
+		<link>/2017/08/metricas-ageis-throughput-e-graficos-burnup/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 28 Aug 2017 16:06:41 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6623</guid>
+
+					<description><![CDATA[<p>Desde que comecei a trabalhar com projetos de desenvolvimento de software, tenho lidado com dois aspectos importantes, mas nem sempre convergentes: escopo e prazo. O processo de alinhamento das expectativas quanto ao progresso das entregas e a capacidade de produção das equipes é árduo, mas quando acontece aumentam as chances de sucesso do projeto. Neste ... <a class="read-more-link" href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">»</a></p>
+<p>The post <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Métricas Ágeis: Throughput e gráfico de Burnup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Desde que comecei a trabalhar com projetos de desenvolvimento de software, tenho lidado com dois aspectos importantes, mas nem sempre convergentes: <strong>escopo</strong> e <strong>prazo</strong>. O processo de alinhamento das expectativas quanto ao <strong>progresso das entregas</strong> e a <strong>capacidade de produção das equipes</strong> é árduo, mas quando acontece <strong>aumentam as chances de sucesso do projeto</strong>.</p>
+<p>Neste post, vou apresentar como usamos os gráficos de <strong><em>Throughput</em></strong> e <strong><em>Burnup</em></strong> na Plataformatec, durante o ciclo de vida de um projeto.</p>
+<h2>Aprendendo a partir do Throughput</h2>
+<p>A <a href="https://leankit.com/learn/kanban/lean-flow-metrics/">LeanKit</a> define <em>Throughput</em> como o número médio de unidades processadas por unidade de tempo. No fluxo de desenvolvimento de uma equipe, os exemplos podem ser &#8220;cartões por dia&#8221;, &#8220;cartões por semana&#8221; ou &#8220;cartões por mês&#8221;.</p>
+<p>Uma observação importante a respeito o <em>Throughput</em> é que a métrica difere do &#8220;<em>Velocity</em>&#8221; (quantidade de <em>story points</em> entregue por iteração ou <em>sprint</em>) utilizado no Scrum.</p>
+<p>Na Plataformatec, consideramos <em>Throughput</em> como o número de itens (por exemplo, história do usuário) entregues por semana.</p>
+<p>Geralmente, analisamos o <em>Throughput</em> para responder questões como:</p>
+<ul>
+<li>Quantos itens de trabalho a equipe entrega por semana?</li>
+<li>O time está criando uma tendência crescente de entrega?</li>
+<li>Algum fator tem bloqueado a capacidade de entrega da equipe?</li>
+</ul>
+<p>Vamos ver um exemplo prático. Imagine uma situação que você, como Gerente de Desenvolvimento, precisa ajudar o time a explorar o <em>Throughput</em> passado a fim de gerar melhorias futuras.</p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/6e793268c190628c034493ce4a76c15e6a911345.png" alt="Throughput Series" /></p>
+<p>Primeiramente, podemos observar no gráfico acima que somente em 15% das semanas (4 de 27) a quantidade de itens entregues foi zero (0).</p>
+<p>Além disso, é possível extrair mais informações do gráfico de tendência. Caso o <em>Throughput</em> esteja em crescente, a equipe está aumentando o número de itens entregues em uma semana. Se a tendência é de queda, pode colocar em risco o prazo de entrega de um projeto. Um limite inferior pode ser estipulado como forma de fornecer um indicador de quando ações corretivas podem ser necessárias. Nesta equipe, o <em>Throughput</em> aumenta nas primeiras semanas, seguida de uma ligeira queda e, finalmente, estabiliza-se.</p>
+<p><img loading="lazy" decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/199de84644dc8d5f1b174befcd69d6cb1fc61c6e.png" alt="Throughput Histogram" width="1606" height="670" /></p>
+<p>Olhando para a distribuição de <em>Throughput</em> da equipe temos uma situação em que a média (linha verde), a moda (linha laranja) e a mediana (linha laranja) possuem quase o mesmo valor (aproximadamente dois). Portanto, é razoável dizer que o time, em geral, entrega dois itens por semana.</p>
+<p>Outra forma de validar o argumento sobre a capacidade de entrega da equipe é buscar o percentil 80 (linha cinza). Ele nos diz que apenas em 20% das semanas, a equipe conseguiu entregar mais de três itens por semana.</p>
+<p>Uma boa prática que definimos para os projetos na Plataformatec é uma verificação semanal do <em>Throughput</em>, como um processo de compreensão das causas que afetam o ritmo de entrega. Geralmente, o <em>Throughput</em> de uma equipe cai pelos seguintes motivos:</p>
+<ul>
+<li><strong>Requisitos ruins</strong> &#8212; exemplo, baixa qualidade nos critérios de aceite de histórias de usuário;</li>
+<li><strong>Dívidas técnicas</strong> &#8212; exemplo, necessidade de refatorações inesperadas;</li>
+<li><strong>Gargalos do processo</strong> &#8212; exemplos, especialista de testes sobrecarregado, pipeline de implantação falho;</li>
+<li><strong>Backlog com baixo nível de itens prontos para desenvolvimento</strong>;</li>
+<li><strong>Mudança de escopo</strong> &#8212; por exemplo, aumento no escopo de uma história de usuário.</li>
+</ul>
+<h2>Olhando para o gráfico de Burnup</h2>
+<p>O gráfico de <em>Burnup</em> é uma ferramenta valiosa para gerenciamento do escopo. Ele apresenta a quantidade de trabalho entregue por uma equipe e, fornece mais informações do que o <em>Burndown</em>, pois <strong>combina escopo e total de entrega na mesma visualização</strong>.</p>
+<p>É comum ver gráficos de <em>Burnup</em> com linha de tendência para estimar o prazo de entrega do escopo que está sendo analisado.</p>
+<p>Tenho visto Product Owners e Agile Coaches projetando cenários baseados em três perspectivas:</p>
+<ul>
+<li><strong>Pior caso:</strong> projetar a performance futura da equipe com base no menor <em>Throughput</em> histórico.</li>
+<li><strong>Melhor caso:</strong> considerar que a equipe atuará no futuro com base no maior <em>Throughput</em> histórico.</li>
+<li><strong>Caso mais provável:</strong> considerar que a equipe terá no futuro um comportamento semelhante ao <em>Throughput</em> &#8220;médio&#8221; (recomendo a leitura do post que escrevi sobre o motivo pelo qual você deve <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">ter cuidado ao usar a média como medida</a>).</li>
+</ul>
+<p>Em nosso contexto, o gráfico de Burnup está nos ajudando a responder perguntas como:</p>
+<ul>
+<li>O escopo do projeto está crescendo de forma saudável?</li>
+<li>Quando a equipe terminará o escopo atual do projeto?</li>
+</ul>
+<p>O exemplo abaixo aconteceu com um cliente da Plataformatec e as circunstâncias eram as seguintes:</p>
+<ul>
+<li><strong>Duração do projeto:</strong> 23 semanas (quase seis meses).</li>
+<li><strong>Expectativa do cliente:</strong> ter uma solução para resolver um problema de processo interno (projeto do zero, sem código legado).</li>
+<li><strong>Roadmap do produto:</strong> após a sessão inicial de <em>story mapping</em>, a equipe e o cliente reduziram o escopo da entrega.</li>
+<li><strong>Desafio do projeto:</strong> assegurar que o software estivesse disponível para uso na data acordada.</li>
+</ul>
+<p>Neste projeto, usamos o gráfico de <em>Burnup</em> como ferramenta para comunicar o progresso do projeto. O gráfico foi desenvolvido para exibir:</p>
+<ul>
+<li>O número de itens de trabalho planejado para a entrega (escopo);</li>
+<li>O número de itens entregues;</li>
+<li>Cenários para possíveis datas de entrega do projeto.</li>
+</ul>
+<p>Os próximos três gráficos representam o projeto no início (primeiras seis semanas), no meio (doze semanas) e no fim (semana 23).</p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/f0285ceca71f7e7e338f864ca18bd8869b514027.png" alt="Backlog x Entregas" /></p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/2bf010e470364b940be7223cbbaa6353b17c1727.png" alt="Backlog x Entregas" /></p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/d5447f4c1dec7f80d5ebad417e22018298934e5f.png" alt="Backlog x Entregas" /></p>
+<p>Analisando o início do projeto, tivemos um cenário de aumento do escopo e algumas entregas.</p>
+<p>Em relação ao escopo, o aumento aconteceu devido ao refinamento de um conjunto de histórias de usuário criadas após o <em>story mapping</em>.</p>
+<p>Um indicador útil para analisar o crescimento do backlog é calcular a taxa de aumento semanal de novas histórias de usuários (no exemplo, sete histórias de usuário foram criadas por semana no início do projeto). Aqui na Plataformac, usamos esse indicador como ferramenta para manter o aumento do escopo previsível.</p>
+<p>No meio do projeto, houve crescimento contínuo do escopo (seis novas histórias de usuário criadas por semana). Neste momento, tivemos que sentar com o cliente para alinharmos formas de simplificar o escopo, porque, caso o mesmo continuasse a crescer, dificilmente entregaríamos uma versão do software no final do contrato. O gráfico de <em>Burnup</em> foi útil para definir estratégias para melhorar o <em>Throughput</em> com base nos resultados das entregas realizadas.</p>
+<p>A técnica de projeção utilizada foi importante para chegar ao final do projeto entregando todas as funcionalidades necessárias para o software.</p>
+<p>Na conclusão do projeto, realizamos uma sessão de lições aprendidas e a equipe destacou que o gráfico de <em>Burnup</em> foi útil, pois:</p>
+<ul>
+<li>trouxemos visibilidade ao processo do desenvolvimento garantindo que o cliente estava alinhado com o progresso e o prazo de entrega;</li>
+<li>mostramos visualmente como o aumento do escopo influencia o prazo de entrega, sendo assim, uma boa ferramenta de negociação.</li>
+</ul>
+<h2>Conclusão</h2>
+<p>Monitorar o <em>Throughput</em> significa melhorias do processo com base em dados, que expõe o que está sendo feito com transparência à todos envolvidos no projeto.</p>
+<p>O gráfico de <em>Burnup</em> é uma ferramenta poderosa de comunicação que pode ser usada para negociar com stakeholders, visto que, revela como mudanças de escopo afetam o prazo de entrega desejado, ao mesmo tempo que informa o progresso real.</p>
+<p>Se você busca material avançado em métricas, recomendo o livro <em><a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">Métricas Ágeis &#8211; Obtenha melhores resultados em sua equipe</a></em>. &#8212; Tudo bem, é um jabá! Eu sou o autor do livro, mas acredite, minha recomendação é genuína. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0 !important;">ContÁgil Newsletter</h3>
+<p style="margin-top: 0.5em !important;">Newsletter mensal <strong>gratuita</strong>, criada para ajudar você a se manter atualizado sobre o que está acontecendo na área de gerenciamento de projetos, metodologias e cultura ágil.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">ASSINAR NEWSLETTER GRÁTIS</a></p>
+</div><p>The post <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Métricas Ágeis: Throughput e gráfico de Burnup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

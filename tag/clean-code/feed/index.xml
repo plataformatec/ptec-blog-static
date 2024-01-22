@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>clean code « Plataformatec Blog</title>
+	<atom:link href="/tag/clean-code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 03 Mar 2011 23:52:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Cognitive load and the importance of naming</title>
+		<link>/2011/03/cognitive-load-and-the-importance-of-naming/</link>
+					<comments>/2011/03/cognitive-load-and-the-importance-of-naming/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2011 17:13:35 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[clean code]]></category>
+		<guid isPermaLink="false">/?p=1901</guid>
+
+					<description><![CDATA[<p>There are only two hard things in Computer Science: cache invalidation and naming things. &#8212; Phil Karlton What is cognitive load? When I had Human-Computer Interaction classes in college, I got acquainted with the concepts of Cognition and Cognitive Load. My teacher showed us a very simple example to explain what are those concepts, compare ... <a class="read-more-link" href="/2011/03/cognitive-load-and-the-importance-of-naming/">»</a></p>
+<p>The post <a href="/2011/03/cognitive-load-and-the-importance-of-naming/">Cognitive load and the importance of naming</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<blockquote><p>
+There are only two hard things in Computer Science: cache invalidation and naming things. &#8212; Phil Karlton
+</p></blockquote>
+<h2>What is cognitive load?</h2>
+<p>When I had Human-Computer Interaction classes in college, I got acquainted with the concepts of Cognition and Cognitive Load. My teacher showed us a very simple example to explain what are those concepts, compare the following examples:</p>
+<ol>
+<li>551153219421</li>
+<li>55 11 5321 9421</li>
+</ol>
+<p>The second example is obviously more simpler to comprehend and also may lead us to think that they are maybe telephone numbers. That means the second example has much less cognitive load, i.e., you need less mental work to give those numbers context and meaning.</p>
+<h2>What does it mean in code writing?</h2>
+<p>That also applies to naming things in our projects, and heavily. Imagine a new co-worker in your project having to learn all the names and concepts. If you can ease the burden by naming things well, your fellow colleague will be a lot more productive.</p>
+<p>I&#8217;ve been working on my <a href="http://github.com/vinibaggio/outpost" rel="nofollow">Outpost gem </a> and there&#8217;s a part on it that verifies your system&#8217;s output in order to tell whether the system is failing or not. I called it &#8220;hooks&#8221;. This is a nice example on how bad naming can affect comprehension of a project.</p>
+<p>Let&#8217;s give it a little bit of thought. What does &#8220;hooks&#8221; mean? It means, in computing, something that will be called back eventually. Ok, we got that part right. But what does it mean in Outpost? In order to fully understand the concepts, I have to:</p>
+<ol>
+<li>Understand the meaning of hooks in computing (not troublesome, since it is pre-acquired knowledge and it has a broad meaning)</li>
+<li>Understand what Outpost does</li>
+<li>Understand what a Scout does</li>
+<li>Apply the concept of hooks in the context of Outpost since the &#8220;hook&#8221; concept does not add much value to me</li>
+<li>Understand what hooks do in the context of Outpost.</li>
+</ol>
+<p>Five &#8220;cognitive steps&#8221; in order to fully understand what the name &#8220;hook&#8221; mean in Outpost. But, after a while, during my work at <a href="http://university.rubymendicant.com/">Ruby Mendicant University</a>, Gregory Brown suggested me to rename from &#8220;hook&#8221; to &#8220;expectation&#8221;. Expectation is also a common knowledge in computing, but even more, it has a very strong meaning for people used to TDD. So, now, to understand how &#8220;expectations&#8221; fit in Outpost, I have to:</p>
+<ol>
+<li>Understand the meaning of the word &#8220;expectation&#8221; in TDD</li>
+<li>Understand what Outpost does</li>
+<li>Understand what a Scout does</li>
+<li>Understand what an expectation do in the context of Outpost.</li>
+</ol>
+<p>One less step. It is very hard to quantify how much did we gain in this simple name change, but we can feel there&#8217;s much less cognitive load involved. If you&#8217;re thinking the name you&#8217;ve chosen is good, try to think about the steps involved to understand the concept you&#8217;re trying to elucidate.</p>
+<p>If you need more practical advices, Uncle Bob&#8217;s written a whole chapter about naming in his &#8220;Clean Code&#8221; book. In there lies a bunch of rules and tips on how to improve your naming by reducing the cognitive load involved in understanding code, getting closer to the path of having cleaner code.</p>
+<p>Do you have this kind of philosophical thought about code as well? How do you make it practical and what are the improvements you&#8217;ve seen in your projects? Please share with us!</p><p>The post <a href="/2011/03/cognitive-load-and-the-importance-of-naming/">Cognitive load and the importance of naming</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/03/cognitive-load-and-the-importance-of-naming/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

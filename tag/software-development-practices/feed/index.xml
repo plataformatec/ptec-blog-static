@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>software development practices « Plataformatec Blog</title>
+	<atom:link href="/tag/software-development-practices/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 07 Aug 2017 21:21:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Definição de prazo em projetos de software</title>
+		<link>/2017/03/definicao-de-prazo-em-projetos-de-software/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 09 Mar 2017 21:04:35 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[process monitoring]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[software development practices]]></category>
+		<guid isPermaLink="false">/?p=6149</guid>
+
+					<description><![CDATA[<p>Este é um dos capítulos do nosso mais novo ebook &#8220;Como lidar com prazos em projetos de software&#8221;. Faça o download agora. É grátis! . Esta ação é mais indicada antes de começar um projeto ou nas primeiras semanas de desenvolvimento, pois é quando normalmente há mais flexibilidade para mudanças de prazos. Na nossa experiência, ... <a class="read-more-link" href="/2017/03/definicao-de-prazo-em-projetos-de-software/">»</a></p>
+<p>The post <a href="/2017/03/definicao-de-prazo-em-projetos-de-software/">Definição de prazo em projetos de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="border:solid 1px #FFE041; background-color:#FFF9CA; padding:10px 15px; font:13px Gotham, Helvetica Neue, Helvetica, Arial,' sans-serif';line-height:1.8em;">Este é um dos capítulos do nosso mais novo ebook &#8220;Como lidar com prazos em projetos de software&#8221;. <a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=link" target="_blank">Faça o download agora. <strong>É grátis!</strong></a> .</div>
+<p>Esta ação é mais indicada antes de começar um projeto ou nas primeiras semanas de desenvolvimento, pois é quando normalmente há mais flexibilidade para mudanças de prazos.</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2017/03/definicao-prazo-projetos-software.png" alt="" width="892" height="440" class="aligncenter size-full wp-image-6150" style="border:none;" srcset="/wp-content/uploads/2017/03/definicao-prazo-projetos-software.png 892w, /wp-content/uploads/2017/03/definicao-prazo-projetos-software-300x148.png 300w, /wp-content/uploads/2017/03/definicao-prazo-projetos-software-768x379.png 768w" sizes="(max-width: 892px) 100vw, 892px" /></p>
+<p>Na nossa experiência, já vimos diversos motivos para uma definição de prazo imprópria em um projeto, no entanto a mais recorrente é a falta ou falha de comunicação entre o CTO e o CEO. Com isso, vamos focar em como melhorar essa comunicação para que seja possível alinhar as decisões de negócio com as decisões de tecnologia.</p>
+<p>Sabe-se que a área de desenvolvimento de software segue processos que diferem não só do resto da indústria mas muitas vezes difere também das outras áreas na mesma empresa. A quantidade de incertezas são, geralmente, maiores e faz com que o tempo para terminar um projeto seja altamente variável mesmo quando, aparentemente, tenha natureza conhecida. E essa diferença precisa ser entendida por ambos CTO e CEO.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-middle" target=_blank""><br />
+<img decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p>
+<p>As causas desse desalinhamento podem ser:</p>
+<ol>
+<li><strong>Falta de comunicação</strong> quando decisões de negócio e tecnologia são tomadas. Essas duas decisões precisam estar em constante harmonia pois uma é o que impulsiona a outra.</li>
+<li><strong>Falta de priorização</strong> das demandas. Às vezes existem muitas features para serem desenvolvidas de uma vez, sem qualquer priorização. Isso faz com que o processo de desenvolvimento fique saturado e demore para dar vazão a toda essa demanda.</li>
+<li><strong>Conflito de mentalidade</strong>. Devido aos diferentes backgrounds dos envolvidos e, portanto, diferentes visões sobre a empresa, a relação entre CTO e CEO pode se tornar deficiente e conflitante. Isso impede a evolução do processo por não haver acordos.</li>
+</ol>
+<p>Por mais que seja possível dar um manual com um passo-a-passo do que se deve fazer para melhorar essa relação, tudo se resumiria a uma ação: melhorar a comunicação.</p>
+<p>Quando você se encontra em posições de alta responsabilidade, você precisa ter um entendimento maior dos seus pares e o trabalho que estes exercem para que consigam, juntos, traçar o futuro da empresa. Por isso, para melhorar a comunicação, é necessário entender melhor como funciona a tomada de decisões do CEO, quais são as estratégias da empresa para os próximos meses e anos e porque elas são importantes.</p>
+<p>Com isso feito, é necessária a explicação de como um processo de desenvolvimento de software difere de outros processos, e como lidar com isso da melhor maneira possível. Com ambas as partes a par dos caminhos que precisam ser tomados, é possível alinhar prazos de modo mais fácil.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-bottom" target=_blank""><br />
+<img decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="Como lidar com prazo em projetos de software [e-book gratuito]" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/03/definicao-de-prazo-em-projetos-de-software/">Definição de prazo em projetos de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Introducing Discrete Integration</title>
+		<link>/2015/02/introducing-discrete-integration/</link>
+					<comments>/2015/02/introducing-discrete-integration/#comments</comments>
+		
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Tue, 10 Feb 2015 11:00:11 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[software development practices]]></category>
+		<guid isPermaLink="false">/?p=4420</guid>
+
+					<description><![CDATA[<p>Continuous Integration has been out there for some years by now. The book, Continuous Integration: Improving Software Quality and Reducing Risk dates from 2007, but the first mention of the term has came up earlier in 1994. So, it’s been nearly 20 years since this idea is present in the software industry. During this time ... <a class="read-more-link" href="/2015/02/introducing-discrete-integration/">»</a></p>
+<p>The post <a href="/2015/02/introducing-discrete-integration/">Introducing Discrete Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Continuous Integration has been out there for some years by now. The book, <a href="http://www.amazon.com/gp/product/0321336380?ie=UTF8&amp;tag=martinfowlerc-20&amp;linkCode=as2&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0321336380">Continuous Integration: Improving Software Quality and Reducing Risk</a> dates from 2007, but the first mention of the term has came up <a href="http://en.wikipedia.org/wiki/Continuous_integration#History">earlier in 1994</a>.</p>
+<p>So, it’s been nearly 20 years since this idea is present in the software industry. During this time new tools, new practices and new possibilities appeared.</p>
+<p>“Continuous Integration is a development practice that requires developers to integrate code into a shared repository several times a day. Each check-in is then verified by an automated build, allowing teams to detect problems early”<sup id="fnref-ci"><a href="#fn-ci" rel="footnote">(1)</a></sup>.</p>
+<p>Its main goal is to detect errors earlier so they can be fixed. It helps in delivering software faster, because it allows you to deploy small changes with higher confidence due to automated tests.</p>
+<p>Continuous Integration forces committing to the master branch and for each commit, tests are run in a production-like environment, a build is generated and outputs a deployable package.</p>
+<p>Here at Plataformatec we do not follow Continuous Integration, although we’ve inherited some of its best practices. Some time ago, <a href="http://twitter.com/rlmflores">Rodrigo Flores</a> came out with the name of what we do, and since then, we’re calling it <strong>Discrete Integration</strong>.</p>
+<p>Discrete, as in discrete mathematics, means we’re working with fundamentally discrete structures rather than continuous, in other words, the objects studied by discrete mathematics do not vary smoothly, but have distinct, separated values<sup id="fnref-discrete-math"><a href="#fn-discrete-math" rel="footnote">(2)</a></sup>.</p>
+<p>One of those objects studied by discrete mathematics are graphs which can be representations of git branches. Git branches are the core of discrete integration. But in order to elucidate some important points, let me give you some context of Continuous Integration.</p>
+<p>Continuous Integration adopters push code to master branch on a daily basis. Because of that, you’re going to need a mechanism to hide incomplete code that is being pushed, such as <a href="http://martinfowler.com/bliki/FeatureToggle.html">Feature Toggles</a>. In other words, you will need to prevent pieces of code to be executed because they’re not yet ready for production.</p>
+<p>Using toggles increases the maintainability costs and adds complexity to the code and to the tests. It’ll add technical debts along the development, since it needs to be removed. You’ll need toggles in your front-end code too, like in Javascript and CSS. One of the problems here is that CSS doesn’t support conditionals, so you end up with a lot of styles that will need to be removed in the end.</p>
+<p>So, at Plataformatec, we tend to use toggles just when it is really required. For instance in an incremental rollout of a feature or when someone wants to control, for some reason, the software behaviour. And that’s because for Discrete Integration <strong>feature toggles are not necessary</strong>. Only fully implemented code is merged into the master branch.</p>
+<p>In order to keep your work tidy, <strong>branches need to be merged as soon as possible</strong>. I personally call it the “minimum mergeable state”. You can think of when a task is complete or a user story is done &#8211; actually, it can be done anytime -, but the idea is to reach this minimum state so that you avoid integration problems.</p>
+<p>To accomplish that, we use to shrink user stories to its smallest mergeable state. For instance, you could deliver firstly a page with a blog post form, then, you add a draft support, then an autosave feature and so on. Although autosave may be part of the draft feature, since autosave will be saved like a draft, it makes sense to be implemented afterwards. The three user stories are independent and deliverable, we’re just iteratively incrementing.</p>
+<p>Sometimes, when pulling master’s code, conflicts will happen, but there’s nothing to do about it. What I mean is that <strong>Discrete Integration does not fear conflicts</strong>, since it is part of a developer work, although we do mitigate conflicts to happen.</p>
+<p>As stated, shrinking user stories is not enough, that’s why <strong>Discrete Integration encourage developers to communicate</strong>. It can be done by a Chat tool, like Campfire, face to face, through Pull Requests or by a bit of each one. We even wrote a <a href="http://guidelines.plataformatec.com.br/pull-requests.html">guideline</a> where you can read more about its philosophies.</p>
+<p>For us, Pull Requests are an import source of knowledge sharing, it also spreads <a href="http://swreflections.blogspot.com.br/2013/04/code-ownership-who-should-own-code.html">collective code ownership</a>, allows asynchronous code architecture discussions, decreases bug ratios and increases engagement and business knowledge.</p>
+<p>It’s worth pointing out that commits into the master branch still happens. Sometimes you need to fix a typo, change a configuration line or other small changes. Although we would still send the commit link or ask for review before pushing, we’ve learned that it’s important to communicate all the changes, even small ones.</p>
+<p>So, if you don’t push code directly into the master branch, you’re not using Continuous Integration by definition.</p>
+<p><em>How close are you to Discrete Integration? Which practices did you miss? Please, let us know in the comments below!</em></p>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-ci">
+      Fragment from http://www.thoughtworks.com/continuous-integration.&nbsp;<a href="#fnref-ci" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a>
+    </li>
+<li id="fn-discrete-math">
+      From http://en.wikipedia.org/wiki/Discrete_mathematics.&nbsp;<a href="#fnref-ci" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a>
+    </li>
+</ol>
+</div>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2015/02/introducing-discrete-integration/">Introducing Discrete Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/02/introducing-discrete-integration/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

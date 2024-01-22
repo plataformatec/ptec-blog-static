@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Active Record scopes vs class methods « Plataformatec Blog</title>
+		<meta name="description" content="Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#039;s also not hard to find">
+		<meta name="robots" content="noindex, nofollow, max-image-preview:large">
+		<link rel="canonical" href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comments">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Active Record scopes vs class methods « Plataformatec Blog">
+		<meta property="og:description" content="Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#039;s also not hard to find">
+		<meta property="og:url" content="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comments">
+		<meta property="article:published_time" content="2013-02-07T17:51:06+00:00">
+		<meta property="article:modified_time" content="2013-02-07T17:51:06+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Active Record scopes vs class methods « Plataformatec Blog">
+		<meta name="twitter:description" content="Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#039;s also not hard to find">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#article","name":"Active Record scopes vs class methods « Plataformatec Blog","headline":"Active Record scopes vs class methods","author":{"@id":"\/author\/carlosantonio\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2013-02-07T15:51:06-02:00","dateModified":"2013-02-07T15:51:06-02:00","inLanguage":"en-US","commentCount":18,"mainEntityOfPage":{"@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#webpage"},"isPartOf":{"@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#webpage"},"articleSection":"English, activerecord, rails, rails 3.2, rails 4, scopes"},{"@type":"BreadcrumbList","@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2013\/#listItem"},{"@type":"ListItem","@id":"\/2013\/#listItem","position":2,"name":"2013","item":"\/2013\/","nextItem":"\/2013\/02\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2013\/02\/#listItem","position":3,"name":"February","item":"\/2013\/02\/","nextItem":"\/2013\/02\/active-record-scopes-vs-class-methods\/#listItem","previousItem":"\/2013\/#listItem"},{"@type":"ListItem","@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#listItem","position":4,"name":"Active Record scopes vs class methods","previousItem":"\/2013\/02\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/carlosantonio\/#author","url":"\/author\/carlosantonio\/","name":"Carlos Antônio","image":{"@type":"ImageObject","@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/77237b97a465ae5a293ad323b7296837?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Carlos Antônio"}},{"@type":"WebPage","@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#webpage","url":"\/2013\/02\/active-record-scopes-vs-class-methods\/","name":"Active Record scopes vs class methods « Plataformatec Blog","description":"Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It's also not hard to find","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2013\/02\/active-record-scopes-vs-class-methods\/#breadcrumblist"},"author":{"@id":"\/author\/carlosantonio\/#author"},"creator":{"@id":"\/author\/carlosantonio\/#author"},"datePublished":"2013-02-07T15:51:06-02:00","dateModified":"2013-02-07T15:51:06-02:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Active Record scopes vs class methods Comments Feed" href="/2013/02/active-record-scopes-vs-class-methods/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/3354">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=3354">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2013%2F02%2Factive-record-scopes-vs-class-methods%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2013%2F02%2Factive-record-scopes-vs-class-methods%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-3354 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2013/02/active-record-scopes-vs-class-methods/" rel="bookmark">Active Record scopes vs class methods</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2013-02-07T15:51:06-02:00">Feb 7, 2013</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=7" title="Posts by Carlos Antônio">Carlos Antônio</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#8217;s also not hard to <a href="http://lmgtfy.com/?q=rails+%2B+scope+vs+class+method">find discussions about it all over the internet</a>. The classic comment usually boils down to <em>&#8220;there is no difference between them&#8221;</em> or <em>&#8220;it is a matter of taste&#8221;</em>. I tend to agree with both sentences, but I&#8217;d like to show some slight differences that exist between both.</p>
+<h2>Defining a scope</h2>
+<p>First of all, lets get a better understanding about how scopes are used. In Rails 3 you can define a scope in two ways:</p>
+<pre lang="ruby">
+class Post  { where(status: 'draft') } 
+end
+</pre>
+<p>The main difference between both usages is that the <code>:published</code> condition is evaluated when the class is first loaded, whereas the <code>:draft</code> one is lazy evaluated when it is called. Because of that, in Rails 4 the first way is going to be deprecated which means you will always need to declare scopes with a callable object as argument. This is to avoid issues when trying to declare a scope with some sort of Time argument:</p>
+<pre lang="ruby">
+class Post = ?', 1.week.ago)
+end
+</pre>
+<p>Because this won&#8217;t work as expected: <code>1.week.ago</code> will be evaluated when the class is loaded, not every time the scope is called.</p>
+<h2>Scopes are just class methods</h2>
+<p>Internally Active Record converts a scope into a class method. Conceptually, its simplified implementation in Rails master looks something like this:</p>
+<pre lang="ruby">
+def self.scope(name, body)
+  singleton_class.send(:define_method, name, &body)
+end
+</pre>
+<p>Which ends up as a class method with the given name and body, like this:</p>
+<pre lang="ruby">
+def self.published
+  where(status: 'published')
+end
+</pre>
+<p>And I think that&#8217;s why most people think: <em>&#8220;Why should I use a scope if it is just syntax sugar for a class method?&#8221;</em>. So here are some interesting examples for you to think about.</p>
+<h2>Scopes are always chainable</h2>
+<p>Lets use the following scenario: users will be able to filter posts by statuses, ordering by most recent updated ones. Simple enough, lets write scopes for that:</p>
+<pre lang="ruby">
+class Post  status { where(status: status) }
+  scope :recent, -> { order("posts.updated_at DESC") }
+end
+</pre>
+<p>And we can call them freely like this:</p>
+<pre lang="ruby">
+Post.by_status('published').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Or with a user provided param:</p>
+<pre lang="ruby">
+Post.by_status(params[:status]).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>So far, so good. Now lets move them to class methods, just for the sake of comparing:</p>
+<pre lang="ruby">
+class Post 
+<p>Besides using a few extra lines, no big improvements. But now what happens if the <code>:status</code> parameter is <code>nil</code> or <code>blank</code>?</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" IS NULL 
+#   ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = '' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Oooops, I don't think we wanted to allow these queries, did we? With scopes, we can easily fix that by adding a presence condition to our scope:</p>
+<pre lang="ruby">
+scope :by_status, -> status { where(status: status) if status.present? }
+</pre>
+<p>There we go:</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>Awesome. Now lets try to do the same with our beloved class method:</p>
+<pre lang="ruby">
+class Post 
+<p>Running this:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+NoMethodError: undefined method `recent' for nil:NilClass
+</pre>
+<p>And :bomb:. The difference is that a scope will always return a relation, whereas our simple class method implementation will not. The class method should look like this instead:</p>
+<pre lang="ruby">
+def self.by_status(status)
+  if status.present?
+    where(status: status)
+  else
+    all
+  end
+end
+</pre>
+<p>Notice that I'm returning <code>all</code> for the <code>nil/blank</code> case, which in Rails 4 returns a relation (it previously returned the Array of items from the database). In Rails 3.2.x, you should use <code>scoped</code> there instead. And there we go:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>So the advice here is: never return <code>nil</code> from a class method that should work like a scope, otherwise you're breaking the chainability condition implied by scopes, that always return a relation.</p>
+<h2>Scopes are extensible</h2>
+<p>Lets get pagination as our next example and I'm going to use the <a href="https://github.com/amatsuda/kaminari">kaminari</a> gem as basis. The most important thing you need to do when paginating a collection is to tell which page you want to fetch:</p>
+<pre lang="ruby">
+Post.page(2)
+</pre>
+<p>After doing that you might want to say how many records per page you want:</p>
+<pre lang="ruby">
+Post.page(2).per(15)
+</pre>
+<p>And you may to know the total number of pages, or whether you are in the first or last page:</p>
+<pre lang="ruby">
+posts = Post.page(2)
+posts.total_pages # => 2
+posts.first_page? # => false
+posts.last_page?  # => true
+</pre>
+<p>This all makes sense when we call things in this order, but it doesn't make any sense to call these methods in a collection that is not paginated, does it? When you write scopes, you can add specific extensions that will only be available in your object if that scope is called. In case of kaminari, it only adds the <code>page</code> scope to your Active Record models, and <a href="https://github.com/amatsuda/kaminari/blob/v0.14.1/lib/kaminari/models/active_record_model_extension.rb#L12-L17">relies on the scope extensions feature to add all other functionality when <code>page</code> is called</a>. Conceptually, the code would look like this:</p>
+<pre lang="ruby">
+scope :page, -> num { # some limit + offset logic here for pagination } do
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>Scope extensions is a powerful and flexible technique to have in our toolchain. But of course, we can always go wild and get all that with class methods too:</p>
+<pre lang="ruby">
+def self.page(num)
+  scope = # some limit + offset logic here for pagination
+  scope.extend PaginationExtensions
+  scope
+end
+
+module PaginationExtensions
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>It is a bit more verbose than using a scope, but it yields the same results. And the advice here is: pick what works better for you but make sure you know what the framework provides before reinventing the wheel.</p>
+<h2>Wrapping up</h2>
+<p>I personally tend to use scopes when the logic is very small, for simple where/order clauses, and class methods when it involves a bit more complexity, but whether it receives an argument or not doesn't really matter much to me. I also tend to rely more on scopes when doing extensions like showed here, since it's a feature that Active Record already gives us for free.</p>
+<p>I think it's important to clarify the main differences between scopes and class methods, so that you can pick the <em>right tool for the job</em>™, or the tool that makes you more <em>comfortable</em>. Whether you use one or another, I don't think it really matters, as long as you write them clear and consistently throughout your application.</p>
+<p>Do you have any thought about using scopes vs class methods? Make sure to leave a comment below telling us what you think, we'd love to hear.</p>
+    </pre></pre></article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/activerecord/" rel="tag">activerecord</a>, <a href="/tag/rails/" rel="tag">rails</a>, <a href="/tag/rails-3-2/" rel="tag">rails 3.2</a>, <a href="/tag/rails-4/" rel="tag">rails 4</a>, <a href="/tag/scopes/" rel="tag">scopes</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2013/02/active-record-scopes-vs-class-methods/#comments"><span class="dsq-postid" data-dsqidentifier="3354 http://blog.plataformatec.com.br/?p=3354">18 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		18 responses to &#8220;Active Record scopes vs class methods&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1317">
+				<div id="div-comment-1317" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/1ccb5123d1af92e24b32cec62abcf9a8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/1ccb5123d1af92e24b32cec62abcf9a8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://jackdempsey.me/" class="url" rel="ugc external nofollow">Jack Dempsey</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1317">February 7, 2013 at 9:29 pm</a>		</div>
+
+		<p>Nice writeup. I still use scopes as it&#8217;s just felt like the write thing, and these are great examples of why I believe I&#8217;m correct 🙂 Thanks for sharing.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1318">
+				<div id="div-comment-1318" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/46fe65154c0d84f5a77ce6dc4dd3001c?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/46fe65154c0d84f5a77ce6dc4dd3001c?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://profiles.google.com/sadjow" class="url" rel="ugc external nofollow">Sadjow Medeiros Leão</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1318">February 8, 2013 at 3:18 am</a>		</div>
+
+		<p>Nice post.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1319">
+				<div id="div-comment-1319" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/pawelgoscicki" class="url" rel="ugc external nofollow">Paweł Gościcki</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1319">February 8, 2013 at 4:39 pm</a>		</div>
+
+		<p>Scopes should generally be avoided. You&#8217;ll be surprised to know that when you chain scopes dealing with the same column, like: `Post.published_before(date).published_after(date)` &#8211; the 2nd scope will completely override the first one, which is something that does not happen when using class methods.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1320">
+				<div id="div-comment-1320" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antonio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1320">February 8, 2013 at 4:56 pm</a>		</div>
+
+		<p>Yeah I&#8217;m aware of it, but I intentionally decided to left this bit out of the blog post because it&#8217;d generate more confusion than show a point, and it&#8217;s likely something that will change in Rails 4 &#8211; there are related issues opened about it, and I hope to be able to work on them if no one is able to do before me. So I&#8217;d not say scopes should be completely avoided, I&#8217;d rather say this is a bug and will hopefully get fixed :).<br>
+Anyway, thanks for sharing this information with others here as well.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1321">
+				<div id="div-comment-1321" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/galtenberg" class="url" rel="ugc external nofollow">C Galtenberg</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1321">February 9, 2013 at 6:47 pm</a>		</div>
+
+		<p>Good article, thanks </p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1322">
+				<div id="div-comment-1322" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/pawelgoscicki" class="url" rel="ugc external nofollow">Paweł Gościcki</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1322">February 11, 2013 at 4:46 pm</a>		</div>
+
+		<p>From what I understand there is no way to avoid this issue if you want to keep `default_scope` in. Only way is to remove the `default_scope`, which I&#8217;m all for doing, but not really sure if it will happen.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1323">
+				<div id="div-comment-1323" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/ACampolonghi" class="url" rel="ugc external nofollow">Andrea Campolonghi</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1323">February 13, 2013 at 8:53 am</a>		</div>
+
+		<p>Nice article. Thanks for sharing</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1324">
+				<div id="div-comment-1324" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/bd3f2f0e8ee0b2a4bb011cbb63635a91?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/bd3f2f0e8ee0b2a4bb011cbb63635a91?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Chuck Bergeron</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1324">February 14, 2013 at 5:51 pm</a>		</div>
+
+		<p>Nice article, I&#8217;ve had tackled this problem in the past.</p>
+<p>It&#8217;d be cool to mention how to return a relation from a class method as well, so you could keep it chainable instead of returning nil.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1325">
+				<div id="div-comment-1325" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antonio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1325">February 14, 2013 at 11:11 pm</a>		</div>
+
+		<p>Hey Chuck, thanks for your feedback.</p>
+<p>The last class method example in the chainable section adds a condition that returns a relation with &#8220;all&#8221; in case the given status is blank. In Rails 4, &#8220;all&#8221; returns a relation and not an array of records anymore, whereas in Rails 3 you should use &#8220;scoped&#8221; to receive a relation back. In short, this example should always return a relation making the method always chainable.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1326">
+				<div id="div-comment-1326" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antonio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1326">February 14, 2013 at 11:16 pm</a>		</div>
+
+		<p>Yeah, as you I think that default_scope is not going anywhere any time soon. But the problem of chaining two scopes that deal with the same condition is something I think we should be able to handle, lets see where it goes. Cheers.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1327">
+				<div id="div-comment-1327" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/0f710ec7beae2d92fdf2172fbbfb6bbc?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/0f710ec7beae2d92fdf2172fbbfb6bbc?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Peter Marreck</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1327">February 15, 2013 at 1:35 pm</a>		</div>
+
+		<p>Considering that&#8217;s a logical consequence of scoping on the same field twice, I don&#8217;t think that&#8217;s an argument against scopes. Are you saying it should raise an error instead, and doesn&#8217;t in order to support default_scope overriding?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1328">
+				<div id="div-comment-1328" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/pawelgoscicki" class="url" rel="ugc external nofollow">Paweł Gościcki</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1328">February 16, 2013 at 9:32 am</a>		</div>
+
+		<p>&gt; Considering that&#8217;s a logical consequence of scoping on the same field twice</p>
+<p>It&#8217;s not a logical consequence. I would expect them to work together the same way as the do when you normally chain Arel methods.</p>
+<p>All I&#8217;m saying is `default_scope` with all its quirks should be removed and then this changed.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1329">
+				<div id="div-comment-1329" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/198c78adce838305a8581a63e7ab6d61?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/198c78adce838305a8581a63e7ab6d61?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Oleg Keene</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1329">February 17, 2013 at 12:38 pm</a>		</div>
+
+		<p>Can someone explain why scopes are working weird when you inherit from STI class with scopes.</p>
+<p>For ex:</p>
+<p>class User<br>
+  scope :active, where(&#8230;)<br>
+class Admin &lt; User</p>
+<p>Admin.active.to_sql will have extra condition of type:<br>
+select * from users where type in (&#039;Admin&#039;, &#039;User&#039;)..</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1330">
+				<div id="div-comment-1330" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e19094cbaaad0c00ea36de14b395621e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e19094cbaaad0c00ea36de14b395621e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Giovanni Messina</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1330">February 17, 2013 at 5:35 pm</a>		</div>
+
+		<p>maybe I do not understand the point, when I write two scopes of type<br>
+  scope :created_after, -&gt; date { where(&#8220;created_at &gt; ? &#8220;, date )}<br>
+  scope :created_before, -&gt; data { where(&#8220;created_at  &#8216;2013-01-17&#8217; ) AND (created_at &lt; &#039;2013-02-03&#039; )</p>
+<p>Gio</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1331">
+				<div id="div-comment-1331" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/NewArtRiot" class="url" rel="ugc external nofollow">Amir</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1331">February 18, 2013 at 6:23 am</a>		</div>
+
+		<p>Good post, thanks 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1332">
+				<div id="div-comment-1332" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo avatar-default" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/pawelgoscicki" class="url" rel="ugc external nofollow">Paweł Gościcki</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1332">February 19, 2013 at 11:36 am</a>		</div>
+
+		<p>Yeah, my example wasn&#8217;t too good. But the issue is still there, just it manifests itself a little bit differently. Here are the details: https://github.com/rails/rails/issues/8511</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1333">
+				<div id="div-comment-1333" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antonio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1333">February 25, 2013 at 8:43 pm</a>		</div>
+
+		<p>Oleg, I&#8217;ve never seem this before, but if you think it&#8217;s a Rails issue I&#8217;d ask you to open an issue giving as much information as possible, with more code examples showing your issue there. Thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1334">
+				<div id="div-comment-1334" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antonio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1334">February 25, 2013 at 8:45 pm</a>		</div>
+
+		<p>Yup, I agree that we should make scopes work the same as chaining Arel methods, being combined in the same field instead of overriding the condition. And the same should happen for default_scope, it should combine using scopes or where methods, so that to override any condition you should be very specific about it.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/" rel="prev">Security announcement: Devise v2.2.3, v2.1.3, v2.0.5 and v1.5.4 released</a>          <a href="/2013/02/extending-customizing-3rd-party-code/" rel="next">Extending and customizing 3rd party code</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

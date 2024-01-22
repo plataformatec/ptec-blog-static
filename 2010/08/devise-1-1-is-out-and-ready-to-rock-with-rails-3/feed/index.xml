@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Devise 1.1 is out and ready to rock with Rails 3	</title>
+	<atom:link href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 31 Aug 2010 19:45:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Omar Garciapalencia		</title>
+		<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/comment-page-1/#comment-1033</link>
+
+		<dc:creator><![CDATA[Omar Garciapalencia]]></dc:creator>
+		<pubDate>Tue, 31 Aug 2010 19:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1312#comment-1033</guid>
+
+					<description><![CDATA[I try to install devise on windows 7 and rails 3 running on ruby 1.9.2p0 and i get this: C:&#062;gem install devise
+Building native extensions.  This could take a while...
+ERROR:  Error installing devise:
+        ERROR: Failed to build gem native extension.
+
+c:/Ruby/bin/ruby.exe extconf.rb
+creating Makefile extension
+make is not recognized as an internal/external command
+Please, help
+Cheers]]></description>
+			<content:encoded><![CDATA[<p>I try to install devise on windows 7 and rails 3 running on ruby 1.9.2p0 and i get this: C:&gt;gem install devise<br />
+Building native extensions.  This could take a while&#8230;<br />
+ERROR:  Error installing devise:<br />
+        ERROR: Failed to build gem native extension.</p>
+<p>c:/Ruby/bin/ruby.exe extconf.rb<br />
+creating Makefile extension<br />
+make is not recognized as an internal/external command<br />
+Please, help<br />
+Cheers</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jamil Daglees		</title>
+		<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/comment-page-1/#comment-770</link>
+
+		<dc:creator><![CDATA[Jamil Daglees]]></dc:creator>
+		<pubDate>Tue, 24 Aug 2010 02:57:39 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1312#comment-770</guid>
+
+					<description><![CDATA[Looking great! I&#039;ll be playing with this tonight.]]></description>
+			<content:encoded><![CDATA[<p>Looking great! I&#39;ll be playing with this tonight.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Dellacqua		</title>
+		<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/comment-page-1/#comment-769</link>
+
+		<dc:creator><![CDATA[Rodrigo Dellacqua]]></dc:creator>
+		<pubDate>Fri, 20 Aug 2010 05:52:57 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1312#comment-769</guid>
+
+					<description><![CDATA[Great job guys, being used this as my first stop for authentication. Kudos #plataforma]]></description>
+			<content:encoded><![CDATA[<p>Great job guys, being used this as my first stop for authentication. Kudos #plataforma</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iteamon		</title>
+		<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/comment-page-1/#comment-768</link>
+
+		<dc:creator><![CDATA[iteamon]]></dc:creator>
+		<pubDate>Fri, 20 Aug 2010 04:36:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1312#comment-768</guid>
+
+					<description><![CDATA[And finally my favourite part of merb-auth &#039;merged&#039; into devise.&lt;br&gt;+1,01 for authenticate :user do .. end in router! ;]]]></description>
+			<content:encoded><![CDATA[<p>And finally my favourite part of merb-auth &#39;merged&#39; into devise.<br />+1,01 for authenticate :user do .. end in router! ;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

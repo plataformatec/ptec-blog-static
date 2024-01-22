@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>floating point « Plataformatec Blog</title>
+	<atom:link href="/tag/floating-point/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 10 Sep 2014 13:38:42 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Floating Point and currency</title>
+		<link>/2014/09/floating-point-and-currency/</link>
+					<comments>/2014/09/floating-point-and-currency/#comments</comments>
+		
+		<dc:creator><![CDATA[Ricardo Cillo]]></dc:creator>
+		<pubDate>Wed, 10 Sep 2014 12:00:05 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[currency]]></category>
+		<category><![CDATA[floating point]]></category>
+		<guid isPermaLink="false">/?p=4168</guid>
+
+					<description><![CDATA[<p>&#8220;Do not use floating point for currency&#8221; This simple statement is useful for both novice and experienced developers alike. It avoids problems that might otherwise compromise the correctness of the software you&#8217;re building. But behind every piece of wisdom, every history of success, there is hard work from lots of people. Exploring this background is ... <a class="read-more-link" href="/2014/09/floating-point-and-currency/">»</a></p>
+<p>The post <a href="/2014/09/floating-point-and-currency/">Floating Point and currency</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<blockquote><p>
+  &#8220;Do not use floating point for currency&#8221;
+</p></blockquote>
+<p>This simple statement is useful for both novice and experienced developers alike. It avoids problems that might otherwise compromise the correctness of the software you&#8217;re building.</p>
+<p>But behind every piece of wisdom, every history of success, there is hard work from lots of people. Exploring this background is an enriching experience, the kind of thing that elevates the level of knowledge and makes you more confident about what you are doing.</p>
+<p>Do not expect to find here a complete guide to floating point or currency handling. There are enough references on each matter separately out there already. The idea is to provide a brief exploration in a top-down fashion, gradually digging each layer of the stack, from the perspective of someone that do not master floating point.</p>
+<p>Let’s start with a simple example in irb (Ruby&#8217;s Interactive Shell), which happens to be a common source of questions:</p>
+<pre lang="ruby">
+0.1 + 0.02 == 0.12
+ # => false
+
+(0.1 + 0.02) + 0.3 == 0.1 + (0.02 + 0.3)
+# => false
+</pre>
+<p>Wasn&#8217;t it supposed to return <code>true</code>? What&#8217;s going on behind the scenes?</p>
+<p>Debugging the results from each side of the first expression.</p>
+<pre lang="ruby">
+0.1 + 0.02
+ # => 0.12000000000000001
+
+  0.12
+ # => 0.12
+</pre>
+<p>It looks like there is something wrong with the operation <code>0.1 + 0.02</code>. Lets take a closer look, using a more accurate format.</p>
+<pre lang="ruby">
+sprintf("%0.50f", 0.12) 
+# => "0.11999999999999999555910790149937383830547332763672"
+
+  sprintf("%0.50f", 0.10 + 0.02) 
+# => "0.12000000000000000943689570931383059360086917877197"  
+
+sprintf("%0.50f", 0.02) 
+# => "0.02000000000000000041633363423443370265886187553406"  
+
+sprintf("%0.50f", 0.10)
+ # => "0.10000000000000000555111512312578270211815834045410"
+</pre>
+<p>So the error happens even before the arithmetic operations. It&#8217;s time to dive  deeper into the stack.</p>
+<h3>Conversions</h3>
+<p>Once the interpreter parses the decimal string <code>0.1</code>, for example, it converts that to an internal  representation, which we&#8217;ll review briefly. This is achieved with the help of C <code>strtod</code> function, in <a href="https://github.com/ruby/ruby/blob/trunk/object.c#L2830">MRI</a>.</p>
+<p>Curiously, this conversion step had already lead to <a href="https://www.ruby-lang.org/en/news/2013/11/22/heap-overflow-in-floating-point-parsing-cve-2013-4164/">security issues</a> before.</p>
+<p>Another conversion takes place when printing a float back to the decimal string. These transformations are not as trivial as one might think. There had been many studies in the development of the algorithms used in order to make it accurately and efficiently.</p>
+<p>Since all of this happens transparently, some might expect that all languages work this way by default. It does, but not always for free. For example, in the infant days of the Elixir language, a developer had the <a href="https://groups.google.com/d/topic/elixir-lang-core/RB3Qi6qEERw/discussion">following question</a> after typing a decimal string into IEx (Elixir&#8217;s Interactive Shell). This had been solved by borrowing functionality already present in Erlang.</p>
+<p>A counter intuitive fact is that even if a decimal number is not exactly representable as float, say <code>0.12</code>, we are able to convert it back and forth without ever seeing the rounding error due to such carefully designed algorithms.</p>
+<p>This automatic rounding behavior hides complexity but may encourage some to operate on floats expecting that the final conversion is going to provide a desired decimal result. But that is not always true due to rounding errors accumulation.</p>
+<p>But what&#8217;s this internal representation and why does it impose such limitations?</p>
+<h3>Thinking in terms of binaries</h3>
+<p>We are not going to dive into the details of the IEEE754 nor explain how to do such conversions. That’s an interesting topic but it has been <a href="#floating-references">covered before</a> and would end up being too extensive to fit in this post.</p>
+<p>Instead we are going to show some examples that provides a glimpse of the real problem.</p>
+<p>For instance, take the decimal number <code>0.625</code>. This number represents the sum of fractions <code>6/10^1 + 2/10^2 + 5/10^3</code>. The same reasoning can be used to find the binary representation replacing the denominator by powers of two <code>1/2^1 + 0/2^2 + 1/2^3 = 0.5 + 0.125 = 0.625</code>, which leads to the binary <code>0.101</code> when we place the numerators in a row.</p>
+<p>But if we had chosen another number, let&#8217;s say the decimal <code>0.1</code>, we would find that it&#8217;s not possible to write it as a finite sum of fractions whose denominator is a power of 2. E.g. it does not have a finite binary representation.</p>
+<p>Since the space to store a double precision float is limited to 64 bits, some sort of rounding would be required. And here we have one of the causes of precision loss.</p>
+<h3>What type should I use for representing currency?</h3>
+<p>The two most frequent answers include Integers or BigDecimals as the way to go. I&#8217;ve personally used both and it worked fine, but it would be too pretentious to say that one or another is the best for your problem.</p>
+<p>Most Rails applications use databases. If that&#8217;s your case, it&#8217;s important to understand the limitations offered by the types available and the conversions done by the adapter during information storage and retrieval.</p>
+<p>For example, Postgres recommends using its <a href="http://www.postgresql.org/docs/current/interactive/datatype-numeric.html#DATATYPE-NUMERIC-DECIMAL">numeric type</a> for currency, which Rails maps to BigDecimals. This type also supports the aggregation functions we are used to.</p>
+<p>Other databases may require other approaches, like <a href="http://alexanderwong.me/post/15705498896/currency-and-custom-data-types-in-mongoid">mongodb</a> that does not have a type compatible with BigDecimal. But it doesn&#8217;t mean that it&#8217;s impossible to use BigDecimals with mongodb either.</p>
+<p>Currency in cents, like $19.90 could be represented as the integer <code>1990</code>. It avoids precision problems and works well with most databases too. One inconvenience is formatting numbers as currency, but there are gems to make this task easier and coding your own helper methods is also an alternative.</p>
+<p>Some may experience performance issues when using BigDecimals, but I&#8217;ve never faced such issues  personally. One thing to be aware of is that BigDecimals are not as simple as Integers and I like to keep things as simple as possible.</p>
+<p>Even floating point may be required under some contexts if numerical methods get involved. The most important thing is to be aware of the limitations and make informed decisions.</p>
+<p><em>So have you ever had problems with currency handling? I&#8217;m really willing to hear about how you solve this problem. If you have an experience to share, please, leave a comment below or find me on twitter <a href="https://twitter.com/rcillo">@rcillo</a>.</em></p>
+<h3 id="floating-references">References</h3>
+<ul>
+<li>
+<p>Ruby Float documentation &#8211; <a href="http://www.ruby-doc.org/core-2.1.2/Float.html">http://www.ruby-doc.org/core-2.1.2/Float.html</a></p>
+</li>
+<li>
+<p>Ruby BigDecimal documentation &#8211; <a href="http://www.ruby-doc.org/stdlib-2.1.2/libdoc/bigdecimal/rdoc/BigDecimal.html">http://www.ruby-doc.org/stdlib-2.1.2/libdoc/bigdecimal/rdoc/BigDecimal.html</a></p>
+</li>
+<li>
+<p>How to perform binary division &#8211; <a href="http://www.exploringbinary.com/binary-division/">http://www.exploringbinary.com/binary-division</a></p>
+</li>
+<li>
+<p>Binary do decimal converter &#8211; <a href="http://www.binaryconvert.com/">http://www.binaryconvert.com/</a></p>
+</li>
+<li>
+<p>Good floating point tutorial &#8211; <a href="http://kipirvine.com/asm/workbook/floating_tut.htm">http://kipirvine.com/asm/workbook/floating_tut.htm</a></p>
+</li>
+<li>
+<p>Money in Rails &#8211; <a href="http://stackoverflow.com/questions/1019939/ruby-on-rails-best-method-of-handling-currency-money">http://stackoverflow.com/questions/1019939/ruby-on-rails-best-method-of-handling-currency-money</a></p>
+</li>
+<li>
+<p>Canonical reference &#8211; <a href="http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html">http://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html</a></p>
+</li>
+<li>
+<p>Another good reference on floats &#8211; <a href="http://www.toves.org/books/float">http://www.toves.org/books/float</a></p>
+</li>
+</ul>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/09/floating-point-and-currency/">Floating Point and currency</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/09/floating-point-and-currency/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

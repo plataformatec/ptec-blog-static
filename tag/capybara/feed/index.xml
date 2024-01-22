@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>capybara « Plataformatec Blog</title>
+	<atom:link href="/tag/capybara/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 16:38:26 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Improving the integration between Capybara and RSpec</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/</link>
+					<comments>/2012/06/improving-the-integration-between-capybara-and-rspec/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 12 Jun 2012 13:25:39 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rspec]]></category>
+		<guid isPermaLink="false">/?p=2804</guid>
+
+					<description><![CDATA[<p>When David Chelimsky was visiting São Paulo in last April, we invited him to go out for some coffee, beers and brazilian appetizers. We had a great time and we talked about different topics like OO, programming languages, authoring books and, as expected, about testing. One of the topics in our testing discussion was the ... <a class="read-more-link" href="/2012/06/improving-the-integration-between-capybara-and-rspec/">»</a></p>
+<p>The post <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/">Improving the integration between Capybara and RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When David Chelimsky was visiting São Paulo in last April, we invited him to go out for some coffee, beers and brazilian appetizers. We had a great time and we talked about different topics like OO, programming languages, authoring books and, as expected, about testing.</p>
+<p>One of the topics in our testing discussion was the current confusion in rspec-rails request specs when using Capybara. There is an open issue for this in <a href="https://github.com/rspec/rspec-rails/issues/406" target="_blank">rspec-rails&#8217; issues tracker</a> and discussing it personally allowed us to talk about some possible solutions, which could take months in internet time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>rspec-rails is a gem that wraps Rails testing behaviors into RSpec&#8217;s example groups. For example, <a href="https://github.com/rspec/rspec-rails/blob/master/lib/rspec/rails/example/controller_example_group.rb#L9" target="_blank">the controller example group is based on <code>ActionController::TestCase::Behavior</code></a>. There are also example groups for views, helpers and so forth, but for now we are interested in the request example group, which <a href="https://github.com/rspec/rspec-rails/blob/master/lib/rspec/rails/example/request_example_group.rb#L5" target="_blank">is as a wrapper for <code>ActionDispatch::Integration::Runner</code></a>. The Rails&#8217; integration runner is built on top of <code>rack-test</code>, a great small gem that adds support to methods like <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</code> and handle the rack request and response objects.</p>
+<p>This setup with the request example group running on top of Rails&#8217; Integration Runner works fine until you add Capybara to your application (which is always a good idea). The issue is that <a href="https://github.com/jnicklas/capybara/blob/master/lib/capybara/rspec.rb#L8" target="_blank">Capybara by default includes its DSL in the same request example group</a> and that&#8217;s when the confusion starts.</p>
+<p>Capybara, being an acceptance test framework, does not expose low-level details like a request or response object. In order to access a web page using Capybara, the developer needs to use the method <code>visit</code> (instead of <code>get</code>). To read the accessed page body, the developer must use <code>page</code> instead of manipulating the <code>response</code>.</p>
+<p>However, since both Capybara DSL and Rails&#8217; Integration Runner are included in the same example group, both methods <code>visit</code> and <code>get</code> are available! Not only that, even if I visit a web page using Capybara&#8217;s <code>visit</code>, I can still access the request and response object that comes from Rails, except that they will be blank since Capybara uses a completely different stack to access the application.</p>
+<p><a href="http://stackoverflow.com/questions/7260720/rspec2-and-capybara" target="_blank">This confusion not only happens inside each test</a> but it also leads to a poor testing suite. I have seen many, many files inside <code>spec/requests</code> that mixes both syntaxes.</p>
+<p>Talking to David, I have expressed a possible solution to this problem based on how we have been building applications at Plataformatec. First of all, we start by having two directories: <code>spec/requests</code> and <code>spec/acceptance</code>. Since both are supported by Capybara, this (mostly) works out of the box.</p>
+<p>Everything you want to test from the user/browser perspective goes under <code>spec/acceptance</code>. So if you want to test that by filling the body and the title fields and pressing the button &#8220;Publish&#8221; publishes a new blog post, you will test that under acceptance (protip: we usually have subdirectories inside <code>spec/acceptance</code> based on the application roles, like <code>spec/acceptance/guest</code>, <code>spec/acceptance/admin</code>, etc).</p>
+<p>Everything under <code>spec/requests</code> applies to the inner working of your application. Is it returning the proper http headers? Is this route streaming the correct JSON response? Also, <a href="http://elabs.se/blog/34-capybara-and-testing-apis" target="_blank">since APIs are not part of the user/browser perspective, they are also tested under <code>spec/requests</code> and not under <code>spec/acceptance</code></a>.</p>
+<p>This separation of concerns already helps solving the confusion above. Under <code>spec/acceptance</code>, you should use only Capybara helpers. Inside <code>spec/requests</code>, you are using Rails provided tools. However, this does not solve the underlying problem that both helpers are still included in <code>spec/requests</code>.</p>
+<p>Therefore, while this blog post means to provide some guidance for those that run into such problems, we also would like to propose a solution that we discussed with David. The solution goes like this:</p>
+<p>1) We change RSpec to no longer generate <code>spec/requests</code>, but both <code>spec/api</code> and <code>spec/features</code> (I have proposed <code>spec/acceptance</code> but David pointed out those are not strictly speaking acceptance tests). The Capybara DSL (<code>visit</code>, <code>page</code> and friends) should not be included in <code>spec/api</code> under any circumstance.</p>
+<p>2) We change Capybara to include by default its DSL and RSpec matchers under <code>spec/features</code> and change the <a href="https://github.com/jnicklas/capybara/blob/master/lib/capybara/rspec/features.rb#L15" target="_blank"><code>feature</code> method to rely on the type <code>:features</code> instead of <code>:requests</code></a>.</p>
+<p>The proposal suggests the addition of two new directories instead of changing the behavior of existing ones in order to be backwards compatible while ensuring a safe and more semantic future for everyone else. David asked me to outline our conversation in a blog post, so we can get some awareness and feedback before undergoing such changes. So, what do <strong>you</strong> think?</p><p>The post <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/">Improving the integration between Capybara and RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/06/improving-the-integration-between-capybara-and-rspec/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Three tips to improve the performance of your test suite</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/</link>
+					<comments>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 Dec 2011 15:41:37 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=1792</guid>
+
+					<description><![CDATA[<p>Three quick short tips to improve the performance of your test suite!</p>
+<p>The post <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/">Three tips to improve the performance of your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We, Rails developers, have always worried about <a href="http://lanyrd.com/2010/windycityrails/szzw/" title="Grease your test suite">improving the performance of our test suites</a>. Today I would like to share three quick tips we employ in our projects that can drastically speed up your test suite.</p>
+<h3>1. Reduce Devise.stretches</h3>
+<p>Add the following to your spec/test helper:</p>
+<pre lang="ruby">
+Devise.stretches = 1
+</pre>
+<p><strong>Explanation: </strong>Devise uses <a href="http://bcrypt-ruby.rubyforge.org/">bcrypt-ruby</a> by default to encrypt your password. Bcrypt is one of the best choices for such job because, different from other hash libraries like MD5, SHA1, SHA2, it was designed to be slow. So if someone steals your database it will take a long time for them to crack each password in it.</p>
+<p>That said, it is expected that Devise will also be slow during tests as many tests are generating and comparing passwords. For this reason, a very easy way to improve your test suite performance is to reduce the value in <code>Devise.stretches</code>, which represents the cost taken while generating a password with bcrypt. This will make your passwords less secure, but that is ok as long as it applies only to the test environment.</p>
+<p>Latest Devise versions already set stretches to one on test environments in your initializer, but if you have an older application, this will yield a nice improvement!</p>
+<h3>2. Increase your log level</h3>
+<p>Add the following to your spec/test helper:</p>
+<pre lang="ruby">
+Rails.logger.level = 4
+</pre>
+<p><strong>Explanation: </strong>Rails by default logs everything that is happening in your test environment to &#8220;log/test.log&#8221;. By increasing the logger level, you will be able to reduce the IO during your tests. The only downside of this approach is that, if a test is failing, you won&#8217;t have anything logged. In such cases, just comment the configuration option above and run your tests again.</p>
+<h3>3. Use shared connection with transactional fixtures</h3>
+<p>If you are using Capybara for javascript tests and Active Record, add the lines below to your spec/test helper and be sure you are running with transactional fixtures equals to true:</p>
+<pre lang="ruby">
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection = nil
+
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+
+# Forces all threads to share the same connection. This works on
+# Capybara because it starts the web server in a thread.
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+</pre>
+<p><strong>Explanation: </strong>A long time ago, when Rails was still in 1.x branch, a new configuration option called <code>use_transactional_fixtures</code> was added to Rails. This feature is very simple: before each test Active Record will issue a begin transaction statement and issue a rollback after the test is executed. This is awesome because Active Record will ensure that no data will be left in our database by simply using transactions, which is really, really fast.</p>
+<p>However, this approach may not work in all cases. Active Record connection pool works by creating a new connection to the database for each thread. And, by default, database connections do not share transactions state. This means that, if you create data inside a transaction in a thread (which has its own database connection), another thread cannot see the data created at all! This is usually not an issue, unless if you are using Capybara with Javascript tests.</p>
+<p>When using Capybara with javascript tests, Capybara starts your Rails application inside a thread so the underlying browser (Selenium, Webkit, Celerity, etc) can access it. Since the test suite and the server are running in different threads, if our test suite is running inside a transaction, all the data created inside the test suite will no longer be available in the server. Alternatively, since the server is outside the transaction, data created by the server won&#8217;t be cleaned up. For this reason, many people turn off <code>use_transactional_fixtures</code> and use Database Cleaner to clean up their database after each test. However, this affects your test suite performance badly.</p>
+<p>The patch above, however, provides a very simple solution to both problems. It forces Active Record to share the same connection between all threads. This is not a problem in your test suite because when the test thread is running, there is no request in the server thread. When the server thread is running, the test thread is waiting for a response from the server. So it is unlikely that both will use the connection at the same time. Therefore, with the patch above, you no longer need to use Database Cleaner (unless you are using another database like Mongo) and, more importantly, you must turn <code>use_transactional_fixtures</code> back to true, which will create a transaction wrapping both your test and server data, providing a great boost in your test suite performance.</p>
+<p>Finally, if any part of your code is using threads to access the database and you need to test it, you can just set <code>ActiveRecord::Base.shared_connection = nil</code> during that specific test and everything should work great!</p>
+<h3>Conclusion</h3>
+<p>That&#8217;s it! I hope you have enjoyed those tips and, if they helped you boost your test suite performance, please let us know in the comments the time your test suite took to run before and after those changes! Also, please share any tips you may have as well!</p><p>The post <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/">Three tips to improve the performance of your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/feed/</wfw:commentRss>
+			<slash:comments>15</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Configuring User Agents with Capybara + Selenium Webdriver</title>
+		<link>/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2011 14:44:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[selenium]]></category>
+		<category><![CDATA[tests]]></category>
+		<category><![CDATA[user agent]]></category>
+		<guid isPermaLink="false">/?p=1572</guid>
+
+					<description><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee ... <a class="read-more-link" href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">»</a></p>
+<p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee that we would also be testing the mobile version, we would have to simulate an iPhone user agent accessing the application.</p>
+<p>But wait, you might be thinking that we are not able to change browser headers while dealing with Selenium. Capybara has a nice API to define new drivers and Selenium allows us to define different profiles with custom configurations for each driver. Lets see how we can put all this together to handle that:</p>
+<pre lang="ruby">Capybara.register_driver :iphone do |app|
+  require 'selenium/webdriver'
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile['general.useragent.override'] = "iPhone"
+
+  Capybara::Driver::Selenium.new(app, :profile => profile)
+end</pre>
+<p>Yup, it&#8217;s that simple =). We are creating a new driver for Capybara called <code>:iphone</code>, that will use Selenium with Firefox, but with a different profile, overriding the user agent string. This way you can pretend to your application that you are accessing through a &#8220;real&#8221; iPhone, by giving the &#8220;iPhone&#8221; string as user agent. You could also configure an <code>:android</code> driver, for instance, by simply changing the user agent string.</p>
+<p>So now, how do we make use of that new driver in our specs? Here comes a simple example:</p>
+<pre lang="ruby">scenario 'access phone information using a modal box', :driver => :iphone do
+  visit root_path
+
+  page.should have_no_css "#fancybox-wrap"
+  page.should have_no_content "0800 123456"
+
+  within("header") { click_link "Telefones úteis" }
+
+  within("#fancybox-wrap") do
+    page.should have_content "0800 123456"
+  end
+end</pre>
+<p>We are just passing the <code>:driver =&gt; :iphone</code> option to our scenario. Remember that the latest Capybara versions use RSpec metadata options and will apply the <code>:driver</code> option automatically, changing the current driver to our registered <code>:iphone</code> in this case. For more info please refer to <a title="Capybara's README" href="https://github.com/jnicklas/capybara">Capybara&#8217;s README</a>.</p>
+<p>You are now able to configure different user agents based on your application requirements, and test it in a full stack way. How about you, do you have any quick hint on how to test different user agents using another driver? Let us know in the comments <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h3>Updates (04/04/2014)</h3>
+<p>We were told that if you&#8217;re using Selenium Webdriver version 2.41.0, the code above will raise an exception. In order to fix that problem, you just need to replace <code>Capybara::Driver::Selenium.new</code> by <code>Capybara::Selenium::Driver.new</code>. Thanks <a href="https://twitter.com/ohayitsmj">Michael Joseph</a> for suggesting that update.</p><p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Improving your tests with Capybara custom selectors</title>
+		<link>/2011/02/improving-your-tests-with-capybara-custom-selectors/</link>
+					<comments>/2011/02/improving-your-tests-with-capybara-custom-selectors/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 09 Feb 2011 16:31:53 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=1754</guid>
+
+					<description><![CDATA[<p>Here at PlataformaTec we like to use Capybara for acceptance tests. Recently we have discovered the custom selectors feature in Capybara and we would like to share with you how that feature helped us to improve our tests. Sometimes we need to implement features that involves showing some ordered items to the user, like a ... <a class="read-more-link" href="/2011/02/improving-your-tests-with-capybara-custom-selectors/">»</a></p>
+<p>The post <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/">Improving your tests with Capybara custom selectors</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Here at PlataformaTec we like to use Capybara for acceptance tests. Recently we have discovered the custom selectors feature in Capybara and we would like to share with you how that feature helped us to improve our tests.</p>
+<p>Sometimes we need to implement features that involves showing some ordered items to the user, like a ranking feature. The HTML for a feature like that could be:</p>
+<pre><code class="erb">&lt;ol id="overall-ranking"&gt;
+  &lt;% @top_users.each do |user| %&gt;
+    &lt;li&gt;&lt;%= user.name %&gt;&lt;/li&gt;
+  &lt;% end %&gt;
+&lt;/ol&gt;
+</code></pre>
+<p>The acceptance tests for this ranking could be written as follows:</p>
+<pre><code class="ruby">scenario "The user can see an overall ranking" do
+  Factory(:user, :name =&gt; "Hugo",  :score =&gt; 5000)
+  Factory(:user, :name =&gt; "Ozaki", :score =&gt; 3000)
+  Factory(:user, :name =&gt; "João",  :score =&gt; 4000)
+
+  visit overall_ranking_path
+
+  within("#overall-ranking") do
+    find(:xpath, './/li[1]').text.should match("Hugo")
+    find(:xpath, './/li[2]').text.should match("João")
+    find(:xpath, './/li[3]').text.should match("Ozaki")
+  end
+end
+</code></pre>
+<p>Generally, I don&#8217;t like to see those XPath selectors inside my acceptance tests. And sometimes it can get really ugly! So, in order to improve our tests, we can create a custom selector with Capybara as follows:</p>
+<pre><code class="ruby"># spec/spec_helper.rb
+
+RSpec.configure do |config|
+
+  Capybara.add_selector(:li) do
+    xpath { |num| ".//li[#{num}]" }
+  end
+
+end
+</code></pre>
+<p>After that, we can refactor our test as shown below:</p>
+<pre><code class="ruby">scenario "The user can see an overall ranking" do
+  Factory(:user, :name =&gt; "Hugo",  :score =&gt; 5000)
+  Factory(:user, :name =&gt; "Ozaki", :score =&gt; 3000)
+  Factory(:user, :name =&gt; "João",  :score =&gt; 4000)
+
+  visit overall_ranking_path
+
+  within("#overall-ranking") do
+    find(:li, 1).text.should match("Hugo")
+    find(:li, 2).text.should match("João")
+    find(:li, 3).text.should match("Ozaki")
+  end
+end
+</code></pre>
+<p>If you wanna know more about Capybara&#8217;s custom selectors, check its <a href="http://github.com/jnicklas/capybara" target="_blank">README</a>.</p>
+<p>And you? Any tips about using Capybara or improving your acceptance/integration tests?</p><p>The post <a href="/2011/02/improving-your-tests-with-capybara-custom-selectors/">Improving your tests with Capybara custom selectors</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/02/improving-your-tests-with-capybara-custom-selectors/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Best Ruby Open Source Test Suites Awards</title>
+		<link>/2010/04/best-ruby-open-source-test-suites-awards/</link>
+					<comments>/2010/04/best-ruby-open-source-test-suites-awards/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 29 Apr 2010 15:40:37 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[i18n]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[railties]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=974</guid>
+
+					<description><![CDATA[<p>One of the beauties in the Open Source world is the possibility of reading other people source code and learn new things. However, lately I found out that not only the library code, but the test suite of several open source projects are full lessons for us. In this post, I want to tell you ... <a class="read-more-link" href="/2010/04/best-ruby-open-source-test-suites-awards/">»</a></p>
+<p>The post <a href="/2010/04/best-ruby-open-source-test-suites-awards/">Best Ruby Open Source Test Suites Awards</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the beauties in the Open Source world is the possibility of reading other people source code and learn new things. However, lately I found out that not only the library code, but the test suite of several open source projects are full lessons for us.</p>
+<p>In this post, I want to tell you which are the three test suites that I admire the most and why.</p>
+<h3>Integration award: Railties</h3>
+<p><a href="http://github.com/rails/rails" target="_blank">Rails 3</a> has several improvements and not all of them may be visible to the application developer. One of the hidden unicorns is Railties test suite. As Yehuda stated <a href="http://yehudakatz.com/2009/07/01/new-rails-isolation-testing/" target="_blank">in a blog post</a> during the refactoring of version 2.3 to 3.0:</p>
+<blockquote><p>&#8220;Although the Rails initializer tests covered a fair amount of area, successfully getting the tests to pass did not guarantee that Rails booted.&#8221;</p></blockquote>
+<p>This happened because, in order to have fast tests, Rails 2.3 suite stubbed and mocked a significant part of the booting process. The new test suite is able to create a new application using the application generator, change configuration options, add plugins and engines, boot it and even make HTTP requests using Rack::Test.</p>
+<p>For instance, take a look at this test which ensures that app/metals inside plugins are successfully added to the application middleware stack:</p>
+<pre lang='ruby'>def test_plugin_metals_added_to_middleware_stack
+  @plugin.write 'app/metal/foo_metal.rb', <<-RUBY
+    class FooMetal
+      def self.call(env)
+        [200, { "Content-Type" => "text/html"}, ["FooMetal"]]
+      end
+    end
+  RUBY
+
+  boot_rails
+  require 'rack/test'
+  extend Rack::Test::Methods
+
+  get "/not/slash"
+  assert_equal 200, last_response.status
+  assert_equal "FooMetal", last_response.body
+end</pre>
+<p>The most important lesson here is: whenever mocking or stubbing in our tests, we still need to add tests without the mocks and stubs to ensure all API contracts are respected.</p>
+<h3>Readability award: Capybara</h3>
+<p><a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> is a tool to aid writing acceptance tests for web applications. <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> can use several drivers to interact with a web application, as Selenium, Celerity or even Rack::Test. Each driver needs a different setup and has different features. For instance, both Selenium and Celerity can handle javascript, but not Rack::Test.</p>
+<p>As you may imagine, all these different drivers can make a test suite become a real spaghetti. However, <a href="http://twitter.com/jncoward" target="_blank">Jonas Nicklas</a> was able to transform a potential problem into a very elegant and readable test suite with Rspec help. Here is, for instance, the tests for selenium:</p>
+<pre lang="ruby">describe Capybara::Driver::Selenium do
+  before do
+    @driver = Capybara::Driver::Selenium.new(TestApp)
+  end
+
+  it_should_behave_like "driver"
+  it_should_behave_like "driver with javascript support"
+end
+</pre>
+<p>Each behavior group above (&#8220;driver&#8221; and &#8220;driver with javascript support&#8221;) is inside <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> library allowing everyone to develop its own extensions using a shared suite. For instance, if a driver has javascript support, it means the following tests should pass:</p>
+<pre lang="ruby">shared_examples_for "driver with javascript support" do
+  before { @driver.visit('/with_js') }
+
+  describe '#find' do
+    it "should find dynamically changed nodes" do
+      @driver.find('//p').first.text.should == 'I changed it'
+    end
+  end
+
+  describe '#drag_to' do
+    it "should drag and drop an object" do
+      draggable = @driver.find('//div[@id="drag"]').first
+      droppable = @driver.find('//div[@id="drop"]').first
+      draggable.drag_to(droppable)
+      @driver.find('//div[contains(., "Dropped!")]').should_not be_nil
+    end
+  end
+
+  describe "#evaluate_script" do
+    it "should return the value of the executed script" do
+      @driver.evaluate_script('1+1').should == 2
+    end
+  end
+end</pre>
+<p><a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> test suite is one of the best examples of using tests as documentation. By skimming the test suite you can easily know which features are supported by each driver! Sweet, isn&#8217;t it?</p>
+<h3>Friendliness award: I18n</h3>
+<p>When you are a big Open Source project, your test suite needs to be easy to run in order to new developers can create patches without hassle. The <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> library for Ruby definitely meets the big Open Source project requirement since it&#8217;s widely used and provides several extensions.</p>
+<p>However, some of these extensions depends on <strong>ActiveRecord</strong>, some in <strong>ruby2ruby</strong>, others in <strong>ruby-cldr</strong>&#8230; and <a href="http://gist.github.com/381892" target="_blank">soon it will even support a few Key-Value stores</a>, as Tokyo and Redis. Due to all these dependencies, you would probably imagine that running I18n test suite would require several trials and a lot of configuration before it finally works, right?</p>
+<p>WRONG! If you don&#8217;t have ActiveRecord, <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> will say: &#8220;hey, you don&#8217;t have ActiveRecord&#8221; but still run the part of test suite that does not depend on it. So if a developer wants to fix or add something trivial, he doesn&#8217;t need to worry with installing all sorts of dependencies.</p>
+<p>Besides, as mentioned a couple months ago, <a href="/2009/12/run-i18n-run/">the I18n library allows you to create several combinations of backends</a>. In other words, the I18n test suite needs to ensure that all these different combinations work as expected.</p>
+<p>This problem is quite similar to the one in <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> which needs to test different drivers. However, <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> uses Test::Unit thus it cannot use shared examples groups as in Rspec. So how were I18n developers able to solve this issue? Using Ruby modules!</p>
+<p>Here are the tests for the upcoming KeyValue backend:</p>
+<pre lang="ruby">require 'test_helper'
+require 'api'
+
+class I18nKeyValueApiTest < Test::Unit::TestCase
+  include Tests::Api::Basics
+  include Tests::Api::Defaults
+  include Tests::Api::Interpolation
+  include Tests::Api::Link
+  include Tests::Api::Lookup
+  include Tests::Api::Pluralization
+  # include Tests::Api::Procs
+  include Tests::Api::Localization::Date
+  include Tests::Api::Localization::DateTime
+  include Tests::Api::Localization::Time
+  # include Tests::Api::Localization::Procs
+
+  STORE = Rufus::Tokyo::Cabinet.new('*')
+
+  def setup
+    I18n.backend = I18n::Backend::KeyValue.new(STORE)
+    super
+  end
+
+  test "make sure we use the KeyValue backend" do
+    assert_equal I18n::Backend::KeyValue, I18n.backend.class
+  end
+end</pre>
+<p>Each included module above adds a series of tests to the backend. Since key-value backends cannot store procs, we don't include any test related to procs.</p>
+<h3>Wrapping up</h3>
+<p>These three are my favorite test suites and also part of my favorite open source projects!</p>
+<p>We've adopted <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> as the official testing tool at PlataformaTec for some time already and I18n is one of the subjects of my upcoming book about Rails 3. In one specific chapter, we will build a tool that stores <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> translations into TokyoCabinet, which allows us to create and update translations through a web interface, similarly to ActiveRecord. The only difference is that <a href="http://gist.github.com/381892" target="_blank">TokyoCabinet is waaaay faster</a>.</p>
+<p>Finally, the fact you can mimic several of Rspec features using simple Ruby (like <a href="http://github.com/jnicklas/capybara" target="_blank">Capybara</a> using shared example groups and <a href="http://github.com/svenfuchs/i18n" target="_blank">I18n</a> simply using modules) will be part of my talk in <a href="http://euruko2010.org/" target="_blank">Euruko 2010</a> entitled <strong>DSL or NoDSL: The power is in the middle</strong>. The talk will show cases where DSLs mimics much of the behavior provided by Ruby and discuss what we are winning and/or losing in such cases.</p>
+<p>Keep following us and, until the next blog post is out, we would love to hear in the comments which are your favorite test suites!</p><p>The post <a href="/2010/04/best-ruby-open-source-test-suites-awards/">Best Ruby Open Source Test Suites Awards</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/best-ruby-open-source-test-suites-awards/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

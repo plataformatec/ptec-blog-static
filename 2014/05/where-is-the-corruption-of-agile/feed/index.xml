@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Where is the corruption of agile?	</title>
+	<atom:link href="/2014/05/where-is-the-corruption-of-agile/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/05/where-is-the-corruption-of-agile/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 16:13:37 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jeff Dickey		</title>
+		<link>/2014/05/where-is-the-corruption-of-agile/comment-page-1/#comment-1383</link>
+
+		<dc:creator><![CDATA[Jeff Dickey]]></dc:creator>
+		<pubDate>Mon, 12 May 2014 14:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3944#comment-1383</guid>
+
+					<description><![CDATA[Scrum is a project-managers&#039; employment program. Agile is a set of development practices. Where we&#039;ve gone seriously off the rails, so to speak, is to conflate one with the other. Going fast in the beginning is, at best, meaningless if your lack of test coverage dooms you to ever-increasing bug counts and riskier changes as the project progresses.]]></description>
+			<content:encoded><![CDATA[<p>Scrum is a project-managers&#8217; employment program. Agile is a set of development practices. Where we&#8217;ve gone seriously off the rails, so to speak, is to conflate one with the other. Going fast in the beginning is, at best, meaningless if your lack of test coverage dooms you to ever-increasing bug counts and riskier changes as the project progresses.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Gustavo Dutra		</title>
+		<link>/2014/05/where-is-the-corruption-of-agile/comment-page-1/#comment-1381</link>
+
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Tue, 06 May 2014 21:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3944#comment-1381</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/where-is-the-corruption-of-agile/comment-page-1/#comment-1380&quot;&gt;Niko Roberts&lt;/a&gt;.
+
+Fixed! Thanks =)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/where-is-the-corruption-of-agile/comment-page-1/#comment-1380">Niko Roberts</a>.</p>
+<p>Fixed! Thanks =)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Niko Roberts		</title>
+		<link>/2014/05/where-is-the-corruption-of-agile/comment-page-1/#comment-1380</link>
+
+		<dc:creator><![CDATA[Niko Roberts]]></dc:creator>
+		<pubDate>Tue, 06 May 2014 21:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3944#comment-1380</guid>
+
+					<description><![CDATA[*Martin Fowler]]></description>
+			<content:encoded><![CDATA[<p>*Martin Fowler</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rspec « Plataformatec Blog</title>
+	<atom:link href="/tag/rspec/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 25 Oct 2012 13:05:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Filtering examples in RSpec</title>
+		<link>/2012/10/filtering-examples-in-rspec/</link>
+					<comments>/2012/10/filtering-examples-in-rspec/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 13:05:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rspec]]></category>
+		<guid isPermaLink="false">/?p=3147</guid>
+
+					<description><![CDATA[<p>It is common for web applications to interface with external services. When testing, since depending on an external service is very fragile, we end up mocking the interaction with such services. However, once in a while, it is still a good idea to check if the contract between your application and the service is still ... <a class="read-more-link" href="/2012/10/filtering-examples-in-rspec/">»</a></p>
+<p>The post <a href="/2012/10/filtering-examples-in-rspec/">Filtering examples in RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is common for web applications to interface with external services. When testing, since depending on an external service is very fragile, we end up mocking the interaction with such services. However, once in a while, it is still a good idea to check if the contract between your application and the service is still valid.</p>
+<p>For example, this week we had to interact with a <a href="http://en.wikipedia.org/wiki/SOAP">SOAP service</a>, let&#8217;s call it <code>KittenInfo</code> (why would someone provide kitten information via a SOAP service is beyond the scope of this blog post). We only need to contact one end-point of the <code>KittenInfo</code> and it is called <code>get_details</code>, which receives a kitten identifier and returns kitten information:</p>
+<pre lang="ruby">
+KittenInfo::Client.new.get_details("gorbypuff")
+</pre>
+<p>Since this API is simple, it is very easy to mock the client whenever it is required by our application. On the other hand, we still need to verify that the integration between <code>KittenInfo</code> SOAP service and our application works correctly, so we write some tests for it:</p>
+<pre lang="ruby">
+describe KittenInfo::Client do
+  it "retrieves kitten details" do
+    client  = KittenInfo::Client.new
+    details = client.get_details("gorbypuff")
+    details[:owner].should == "tenderlove"
+  end
+end
+</pre>
+<p>However, since this is actually contacting the SOAP Service, it may make your test suite more fragile and slower, even more in this case, in which the SOAP Service responses take as long as kitten&#8217;s staring contests.</p>
+<p>One possible solution to this problem is to make use of filter tags to exclude the SOAP integration tests from running, except when explicitly desired. We could do this by simply setting:</p>
+<pre lang="ruby">
+describe KittenInfo::Client, external: true do
+  # ...
+end
+</pre>
+<p>Then, in your <code>spec_helper.rb</code>, just set:</p>
+<pre lang="ruby">
+RSpec.configure do |config|
+  config.filter_run_excluding external: true
+end
+</pre>
+<p>Now, running your specs will by default skip all groups that have <code>:external</code> set to <code>true</code>. Whenever you tweak the client, or in your builds, you can run those specific tests with:</p>
+<pre>
+$ rspec --tag external
+</pre>
+<p>Notice that filter mechanism is similar to how we enable JavaScript tests when using Capybara. This means that, when using Capybara, you could also run all JavaScript tests in your app via <code>$ rspec --tag js</code> or all non-JavaScript tests with <code>$ rspec --tag ~js</code>.</p>
+<p>What about you? What is your favorite RSpec trick?</p><p>The post <a href="/2012/10/filtering-examples-in-rspec/">Filtering examples in RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/10/filtering-examples-in-rspec/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Improving the integration between Capybara and RSpec</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/</link>
+					<comments>/2012/06/improving-the-integration-between-capybara-and-rspec/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 12 Jun 2012 13:25:39 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rspec]]></category>
+		<guid isPermaLink="false">/?p=2804</guid>
+
+					<description><![CDATA[<p>When David Chelimsky was visiting São Paulo in last April, we invited him to go out for some coffee, beers and brazilian appetizers. We had a great time and we talked about different topics like OO, programming languages, authoring books and, as expected, about testing. One of the topics in our testing discussion was the ... <a class="read-more-link" href="/2012/06/improving-the-integration-between-capybara-and-rspec/">»</a></p>
+<p>The post <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/">Improving the integration between Capybara and RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When David Chelimsky was visiting São Paulo in last April, we invited him to go out for some coffee, beers and brazilian appetizers. We had a great time and we talked about different topics like OO, programming languages, authoring books and, as expected, about testing.</p>
+<p>One of the topics in our testing discussion was the current confusion in rspec-rails request specs when using Capybara. There is an open issue for this in <a href="https://github.com/rspec/rspec-rails/issues/406" target="_blank">rspec-rails&#8217; issues tracker</a> and discussing it personally allowed us to talk about some possible solutions, which could take months in internet time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>rspec-rails is a gem that wraps Rails testing behaviors into RSpec&#8217;s example groups. For example, <a href="https://github.com/rspec/rspec-rails/blob/master/lib/rspec/rails/example/controller_example_group.rb#L9" target="_blank">the controller example group is based on <code>ActionController::TestCase::Behavior</code></a>. There are also example groups for views, helpers and so forth, but for now we are interested in the request example group, which <a href="https://github.com/rspec/rspec-rails/blob/master/lib/rspec/rails/example/request_example_group.rb#L5" target="_blank">is as a wrapper for <code>ActionDispatch::Integration::Runner</code></a>. The Rails&#8217; integration runner is built on top of <code>rack-test</code>, a great small gem that adds support to methods like <code>get</code>, <code>post</code>, <code>put</code> and <code>delete</code> and handle the rack request and response objects.</p>
+<p>This setup with the request example group running on top of Rails&#8217; Integration Runner works fine until you add Capybara to your application (which is always a good idea). The issue is that <a href="https://github.com/jnicklas/capybara/blob/master/lib/capybara/rspec.rb#L8" target="_blank">Capybara by default includes its DSL in the same request example group</a> and that&#8217;s when the confusion starts.</p>
+<p>Capybara, being an acceptance test framework, does not expose low-level details like a request or response object. In order to access a web page using Capybara, the developer needs to use the method <code>visit</code> (instead of <code>get</code>). To read the accessed page body, the developer must use <code>page</code> instead of manipulating the <code>response</code>.</p>
+<p>However, since both Capybara DSL and Rails&#8217; Integration Runner are included in the same example group, both methods <code>visit</code> and <code>get</code> are available! Not only that, even if I visit a web page using Capybara&#8217;s <code>visit</code>, I can still access the request and response object that comes from Rails, except that they will be blank since Capybara uses a completely different stack to access the application.</p>
+<p><a href="http://stackoverflow.com/questions/7260720/rspec2-and-capybara" target="_blank">This confusion not only happens inside each test</a> but it also leads to a poor testing suite. I have seen many, many files inside <code>spec/requests</code> that mixes both syntaxes.</p>
+<p>Talking to David, I have expressed a possible solution to this problem based on how we have been building applications at Plataformatec. First of all, we start by having two directories: <code>spec/requests</code> and <code>spec/acceptance</code>. Since both are supported by Capybara, this (mostly) works out of the box.</p>
+<p>Everything you want to test from the user/browser perspective goes under <code>spec/acceptance</code>. So if you want to test that by filling the body and the title fields and pressing the button &#8220;Publish&#8221; publishes a new blog post, you will test that under acceptance (protip: we usually have subdirectories inside <code>spec/acceptance</code> based on the application roles, like <code>spec/acceptance/guest</code>, <code>spec/acceptance/admin</code>, etc).</p>
+<p>Everything under <code>spec/requests</code> applies to the inner working of your application. Is it returning the proper http headers? Is this route streaming the correct JSON response? Also, <a href="http://elabs.se/blog/34-capybara-and-testing-apis" target="_blank">since APIs are not part of the user/browser perspective, they are also tested under <code>spec/requests</code> and not under <code>spec/acceptance</code></a>.</p>
+<p>This separation of concerns already helps solving the confusion above. Under <code>spec/acceptance</code>, you should use only Capybara helpers. Inside <code>spec/requests</code>, you are using Rails provided tools. However, this does not solve the underlying problem that both helpers are still included in <code>spec/requests</code>.</p>
+<p>Therefore, while this blog post means to provide some guidance for those that run into such problems, we also would like to propose a solution that we discussed with David. The solution goes like this:</p>
+<p>1) We change RSpec to no longer generate <code>spec/requests</code>, but both <code>spec/api</code> and <code>spec/features</code> (I have proposed <code>spec/acceptance</code> but David pointed out those are not strictly speaking acceptance tests). The Capybara DSL (<code>visit</code>, <code>page</code> and friends) should not be included in <code>spec/api</code> under any circumstance.</p>
+<p>2) We change Capybara to include by default its DSL and RSpec matchers under <code>spec/features</code> and change the <a href="https://github.com/jnicklas/capybara/blob/master/lib/capybara/rspec/features.rb#L15" target="_blank"><code>feature</code> method to rely on the type <code>:features</code> instead of <code>:requests</code></a>.</p>
+<p>The proposal suggests the addition of two new directories instead of changing the behavior of existing ones in order to be backwards compatible while ensuring a safe and more semantic future for everyone else. David asked me to outline our conversation in a blog post, so we can get some awareness and feedback before undergoing such changes. So, what do <strong>you</strong> think?</p><p>The post <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/">Improving the integration between Capybara and RSpec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/06/improving-the-integration-between-capybara-and-rspec/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

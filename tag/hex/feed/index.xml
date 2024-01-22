@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>hex « Plataformatec Blog</title>
+	<atom:link href="/tag/hex/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 15 Jan 2019 17:41:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Updating Hex.pm to Ecto 3.0</title>
+		<link>/2018/10/updating-hex-pm-to-ecto-3-0/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2018 18:50:01 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[hex]]></category>
+		<guid isPermaLink="false">/?p=7883</guid>
+
+					<description><![CDATA[<p>Ecto 3.0 is just around the corner and as you may already know it reached stable API. To make sure everything works properly I thought I&#8217;ll try updating one of the first projects that ever used Ecto: Hex.pm. The whole upgrade was done in a single pull request, which we will break down below. First, ... <a class="read-more-link" href="/2018/10/updating-hex-pm-to-ecto-3-0/">»</a></p>
+<p>The post <a href="/2018/10/updating-hex-pm-to-ecto-3-0/">Updating Hex.pm to Ecto 3.0</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Ecto 3.0 is just around the corner and as you may already know <a href="https://elixirforum.com/t/ecto-3-0-rc-is-out-and-stable-api/17306">it reached stable API</a>. To make sure everything works properly I thought I&#8217;ll try updating one of the first projects that ever used Ecto: <a href="https://github.com/hexpm/hexpm">Hex.pm</a>.</p>
+<p>The whole upgrade was done in a <a href="https://github.com/hexpm/hexpm/pull/728">single pull request</a>, which we will break down below.</p>
+<p>First, the required steps:</p>
+<ol>
+<li>Update mix.exs to depend on <code>ecto_sql</code> and bump the postgrex dependency. Note: SQL handling have been extracted out into a separate <a href="https://github.com/elixir-ecto/ecto_sql"><code>ecto_sql</code></a> project, so we need to add that new dependency. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/6b3b78cf48f9ba082752765f7c0ac20a8982d992"><code>6b3b78cf</code></a>)</li>
+<li>DBConnection 2.0 no longer ships with Sojourn and Poolboy pools, so we can remove the <code>pool</code> configuration and use the default pool implementation. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/760026f30ce4ffc46acdc01b166eb0d358d6115e"><code>760026f3</code></a>)</li>
+<li>Speaking of pools, we need to make sure <code>pool_size</code> is at least <code>2</code> when running migrations.</li>
+<li>JSON library is now set on the adapter and not on Ecto (<a href="https://github.com/hexpm/hexpm/pull/728/commits/e16ebd8fefe26364ab078969ef671762e92a0e45"><code>e16ebd8f</code></a>) and because we were already using the recommended package, <a href="https://github.com/michalmuskala/jason">Jason</a>, we don&#8217;t need that configuration anymore. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/66f9cbdfbbf43bf1c9299c42e764a97996f7ce4a"><code>66f9cbdf</code></a>)</li>
+<li>Ecto 3.0 makes date/time handling stricter with regards to precision. So we need to either update the types of our schema fields or make sure we truncate date/time values. For example, when we define a field as <code>time</code> we can&#8217;t put value with microsecond precision and similarly we can&#8217;t put into a <code>time_usec</code> field a value without microsecond precision. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/2e34b833d8d903220f7f6828f971f9ca1f33f923"><code>2e34b833</code></a>)</li>
+<li>Constraint handling functions like <a href="https://hexdocs.pm/ecto/3.0.0-rc.1/Ecto.Changeset.html#unique_constraint/3"><code>Ecto.Changeset.unique_constraint/3</code></a> are now including in the error metadata the type and the name of the constraint, which broke our test that was overly specific. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/3d19f90398374f43f40d9137b8441c88f90e0b59"><code>3d19f903</code></a>)</li>
+</ol>
+<p>Secondly, we got a couple deprecation warnings so here are the fixes:</p>
+<ol>
+<li>Adapter is now set when defining Repo module and not in the configuration. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/d3911953c98fa22e4258838c4f61bf13fe61ee4a"><code>d3911953</code></a>)</li>
+<li><a href="https://hexdocs.pm/ecto/3.0.0-rc.1/Ecto.Multi.html#run/3"><code>Ecto.Multi.run/3</code></a> now accepts a 2-arity function (first argument is now the Repo) instead of a 1-arity one before. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/95d11cc26d4996b69c51bb536bd3ec23ee7fbe67"><code>95d11cc2</code></a>)</li>
+</ol>
+<p>Finally, there were a few minor glitches (or redundancies!) specific to Hex.pm: <a href="https://github.com/hexpm/hexpm/pull/728/commits/c41689778182d53d06884468467030ba2069187d"><code>c4168977</code></a>, <a href="https://github.com/hexpm/hexpm/pull/728/commits/21eb0bf8a0c40ae1ccfd5cd2c79eba7d9359fabe"><code>21eb0bf8</code></a>, and <a href="https://github.com/hexpm/hexpm/pull/728/commits/0929cd9e09f5511652db4c90a3ba451a752a1428"><code>0929cd9e</code></a>.</p>
+<p>Overall the update process was pretty straightforward. There were a few minor bugs along the way which were promptly fixed upstream. Having <a href="https://github.com/hexpm/hexpm/pull/265">previously updated Hex.pm to Ecto 2.0</a>, which took a few months (we started it early on, which made it a fast moving target back then), I can really appreciate the level of maturity that Ecto achieved and how easy it was to update this time around. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Update: Add note about <code>pool_size</code> when running migrations.</p>
+<p><em>We are glad to be an active part of the process by contributing to the ecosystem and helping companies adopt Elixir at different stages of their adoption cycle. We would love to work with you too!</em></p>
+<p><em>Do you think that your company could benefit from our expertise and assistance? Just click the button below.</em></p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription"><img fetchpriority="high" decoding="async" class="aligncenter size-large wp-image-7816" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/10/updating-hex-pm-to-ecto-3-0/">Updating Hex.pm to Ecto 3.0</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

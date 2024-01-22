@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>thor « Plataformatec Blog</title>
+	<atom:link href="/tag/thor/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:57:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Discovering Rails 3 generators</title>
+		<link>/2010/01/discovering-rails-3-generators/</link>
+					<comments>/2010/01/discovering-rails-3-generators/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2010 17:50:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[generators]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[thor]]></category>
+		<guid isPermaLink="false">/?p=654</guid>
+
+					<description><![CDATA[<p>This weekend during Rails Bugmash I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments! First, David Trasbo wrote a nice guide about how to make your first Rails 3 generator, it covers up all the basic steps including setting it up in a gem. ... <a class="read-more-link" href="/2010/01/discovering-rails-3-generators/">»</a></p>
+<p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This weekend during <a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> I stumbled across some nice posts about Rails 3 generators which motivated me to share them and add some comments!</p>
+<p>First, David Trasbo wrote a nice guide about how to <a href="http://caffeinedd.com/guides/331-making-generators-for-rails-3-with-thor">make your first Rails 3 generator</a>, it covers up all the basic steps including setting it up in a gem. He also puts the deserved attention into <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, which contains most helpers you need in a generator, like <code>copy_file</code>, <code>template</code>, <code>create_file</code>, <code>empty_directory</code> and so on.</p>
+<p>On another post, Ben Scofield talks about <code>apply</code> method, which is also in <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a>, and <a href="http://benscofield.com/2009/09/application-templates-in-rails-3/">how to use it to dry your application templates</a>.</p>
+<p>Wait&#8230; so <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> is used both in generators and in Rails application templates? Exactly, Rails&#8217; new generators <strong>unifies both application templates and generators API into one</strong>. While <a href="http://rdoc.info/rdoc/wycats/thor/blob/f939a3e8a854616784cac1dcff04ef4f3ee5f7ff/Thor/Actions.html" target="_blank"><code>Thor::Actions</code></a> holds basic methods, all Rails specific methods like <code>environment</code>, <code>rakefile</code>, <code>generator</code> are in <a href="http://github.com/rails/rails/tree/master/railties/lib/rails/generators/actions.rb">Rails::Generators::Actions</a>. If you already wrote an application template, you will feel more at home when writing a Rails 3 generator.</p>
+<p>Paul Barry talks <a href="http://paulbarry.com/articles/2010/01/13/customizing-generators-in-rails-3" target="_blank">how easy it&#8217;s to customize your scaffold</a> to use Rspec, Haml and Factory Girl instead of Test::Unit, Erb and Fixtures. This all works because <strong>scaffold is just a meta generator which provides hooks</strong> for template engine, test framework, ORM and so forth. A good way to see the hooks system working is by running <code>script/generate scaffold --help</code> before and after Paul changes, so you can see exactly how generators options update depending on the configuration values you set. While I wrote Rspec generators used in the example, he implemented himself Haml and Factory Girl generators and they can all be used as example if you plan to build your own.</p>
+<p>Finally, Zigzag Chen wrote about <a href="http://zigzag.github.com/2010/01/18/customizing-your-scaffold-template-become-easier-in-rails3.html">templates customization</a> and how you can change your scaffold controller to use json instead of the xml format. New generators have source paths, so <strong>you can customize them simply by copying files to RAILS_ROOT/lib/templates</strong>.</p>
+<p><a href="http://bugmash.com/" target="_blank">Rails Bugmash</a> was excellent to gather feedback and we also got some tickets on Lighthouse, mainly about how generators help can be improved for people starting with Rails. Many thanks to <a href="http://www.railsbridge.org/">Rails Bridge</a> and besides the posts linked above, there is <a href="http://guides.rails.info/generators.html" target="_blank">a generator guide</a>, which may help you get started and maybe write your own post as well. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2010/01/discovering-rails-3-generators/">Discovering Rails 3 generators</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/01/discovering-rails-3-generators/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Creating your own generators with Thor</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/</link>
+					<comments>/2009/07/creating-your-own-generators-with-thor/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 31 Jul 2009 19:22:36 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[generators]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[thor]]></category>
+		<guid isPermaLink="false">/?p=31</guid>
+
+					<description><![CDATA[<p>This summer I was selected with Josh Peek, Emilio Tagua and Nelson Crespo to work with Rails on Google Summer of Code (GSoC), which Nelson named as the Rails Summer Quartet. 🙂 Here, at Plataforma, we use a set of tools on our projects, which includes Inherited Resources, Remarkable and Formtastic. At some point, we ... <a class="read-more-link" href="/2009/07/creating-your-own-generators-with-thor/">»</a></p>
+<p>The post <a href="/2009/07/creating-your-own-generators-with-thor/">Creating your own generators with Thor</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This summer I was selected with <a id="h_og" title="Josh Peek" href="http://joshpeek.com/">Josh Peek</a>, <a id="wjz_" title="Emilio Tagua" href="http://miloops.com/">Emilio Tagua</a> and <a id="dnx3" title="Nelson Crespo" href="http://ecin.tumblr.com/">Nelson Crespo</a> to work with Rails on Google Summer of Code (GSoC), which Nelson  named as the <a id="v9w6" title="Rails Summer Quartet" href="http://socghop.appspot.com/org/home/google/gsoc2009/rails">Rails Summer Quartet</a>. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here, at <a href="http://www.plataformatec.com.br/" target="_blank">Plataforma</a>, we use a set of tools on our projects, which includes <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a>, <a href="http://github.com/carlosbrando/remarkable" target="_blank">Remarkable</a> and <a href="http://github.com/justinfrench/formtastic">Formtastic</a>. At some point, we were planning on creating generators for each of those tools but still they couldn&#8217;t play along. If I wanted a generator that uses all three projects, I needed to create a inherited_remarkable_formtastic generator which is not DRY at all.</p>
+<p>For example, for those who wants to use Datamapper with Rspec, they need to call &#8220;ruby script/generate dm_rspec_model&#8221; instead of &#8220;ruby script/generate model&#8221;. Since Rails 3.0 is moving towards agnosticism, my GSoC proposal was exactly bring it to rails generators.</p>
+<h3>1. So, what about Thor?!</h3>
+<p>One day before the official coding period start, I was staring at <a id="nxn_" title="this Thor post" href="http://yehudakatz.com/2008/05/12/by-thors-hammer/">this Thor post</a> by Yehuda Katz. <a href="http://github.com/wycats/thor" target="_blank">Thor</a> is a rake replacement with support to options parsing:</p>
+<pre lang="rails">class Speak < Thor
+  desc "name", "the name to say hello to"
+  method_options :loudly => false
+
+  def hello(name)
+    name.upcase! if options[:loudly]
+    puts "Hello #{name}"
+  end
+end</pre>
+<p>And then can be invoked as:</p>
+<pre lang="ruby">> thor speak:hello jose
+Hello jose
+
+> thor speak:hello jose –-loudly
+Hello JOSE</pre>
+<p>At that point, I realized that a generator is nothing more than a scripting task (like rake or thor) with some extra methods which makes the creation and copy of files easy. Thor had several features which convinced me that it was the best solution to build generators on top of:</p>
+<ul>
+<li>It has a powerful options parser;</li>
+<li>Thor classes can be inherited and all tasks from the class are copied to the child;</li>
+<li>Thor classes are self contained. The example above can be invoked straight from your ruby code as Speak.new.hello(&#8220;jose&#8221;).</li>
+</ul>
+<p>Then I was able to create a ROADMAP to Thor:</p>
+<ul>
+<li>Add actions like copy_file, template, empty_directory to Thor;</li>
+<li>Move all user input and output logic to its own class, so anyone can customize it;</li>
+<li>Extend even more Thor options parser to add support to hashes (as in Rails name:string age:integer on generators) and arrays;</li>
+<li>Add an invocation mechanism, so I can invoke one task from another Thor task.</li>
+</ul>
+<h3>2. An example</h3>
+<p>Let&#8217;s see an example on how you can create your own generators with Thor. For example, a generators that stubs out a new gem structure:</p>
+<pre lang="rails">class NewgemGenerator < Thor::Group
+  include Thor::Actions
+
+  # Define arguments and options
+  argument :name
+  class_option :test_framework, :default => :test_unit
+
+  def self.source_root
+    File.dirname(__FILE__)
+  end
+
+  def create_lib_file
+    create_file "#{name}/lib/#{name}.rb" do
+      "class #{name.camelize}\nend"
+    end
+  end
+
+  def create_test_file
+    test = options[:test_framework] == "rspec" ? :spec : :test
+    create_file "#{name}/#{test}/#{name}_#{test}.rb"
+  end
+
+  def copy_licence
+    if yes? "Use MIT license?"
+      # Make a copy of the MITLICENSE file at the source root
+      copy_file "MITLICENSE", "#{name}/MITLICENSE"
+    else
+      say "Shame on you…", :red
+    end
+  end
+end</pre>
+<p>You can see from the example above that we are inheriting from Thor::Group and not Thor. In Thor, each method corresponds to a task, which can be invoked on its own. In Thor::Group, you invoke all tasks at once, in the order they are declared. This is interesting because you split your script/generator into several methods. It improves readability and allows anyone to inherit from your generator and change just one step in the process.</p>
+<p>The next step, on lines 4 and 5, is to define arguments and options for the class. Arguments are required to be given right after the executable while options are given with switches. The newgem above can be invoked as:</p>
+<pre lang="bash">newgem remarkable</pre>
+<p>And it will create two files: &#8220;remarkable/lib/remarkable.rb&#8221;, &#8220;remarkable/test/remarkable_test.rb&#8221; and prompt the user (with the use of the method <em>yes?</em>) if we wants to copy the MITLICENSE. If you want to change the test framework, you can give it as an option:</p>
+<pre lang="bash">newgem remarkable --test-framework=rspec</pre>
+<p>Now it generates &#8220;remarkable/lib/remarkable.rb&#8221; and &#8220;remarkable/spec/remarkable_spec.rb&#8221;.</p>
+<p>The generation methods are kept into the Thor::Actions module, which is included on top of our class. It holds all the scripting methods, which are: <em>copy_file</em>,<em> create_file</em>,<em> directory</em>,<em> empty_directory</em>,<em> get</em>,<em> inject_into_file</em> and <em>template</em>. All those actions can be revoked, so Thor knows how to do and undo the process (like in script/generate and script/destroy).</p>
+<p>Even more, some of Rails templates methods was moved to Thor, like: <em>inside</em>,<em> run</em>,<em> run_ruby_script</em>,<em> gsub_file</em>,<em> append_file </em>and<em> prepend_file</em>. So whenever creating scripts with Thor, those methods will be available to make your life easier.</p>
+<p>Finally, all user iteration methods are handled by Thor::Shell classes by <em>say</em>,<em> ask</em>,<em> yes? </em>and<em> no?</em> methods. Thor ships with two Shell implementations: Basic and Color. If you mantain an IDE for Rails, you can build your own shell and make the user interaction through it.</p>
+<h3>3. What is more?</h3>
+<p>Thor is used as base in Rails::Generators, where Rails extend it to provide Rails specific functionalities, as hooks for ORM, Test framework and so on. This will be my talk subject on <a id="p631" title="Rails Summit Latin America" href="http://railssummit.locaweb.com.br/en/pages/speakers">Rails Summit Latin America</a>, 13th October, in São Paulo, Brazil.</p>
+<p>If you can join us or not, be sure to grab our RSS feed and keep on checking, we will discuss about it here too.</p><p>The post <a href="/2009/07/creating-your-own-generators-with-thor/">Creating your own generators with Thor</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/07/creating-your-own-generators-with-thor/feed/</wfw:commentRss>
+			<slash:comments>11</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

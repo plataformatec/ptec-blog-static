@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Broken Windows. « Plataformatec Blog</title>
+	<atom:link href="/tag/broken-windows/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 28 Sep 2016 13:31:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>CI JOE, can you please watch my windows?</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/</link>
+					<comments>/2010/11/cijoe-can-you-please-watch-my-windows/#comments</comments>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 15:11:43 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Broken Windows.]]></category>
+		<category><![CDATA[CI]]></category>
+		<guid isPermaLink="false">/?p=1478</guid>
+
+					<description><![CDATA[<p>Suppose you park your car in a neighborhood with a lot of occurrences of vandalism and crimes. If you return two weeks later, there is a good chance that you will find the car in the same state that it were when you left it there.  Now imagine if you parked the same car but ... <a class="read-more-link" href="/2010/11/cijoe-can-you-please-watch-my-windows/">»</a></p>
+<p>The post <a href="/2010/11/cijoe-can-you-please-watch-my-windows/">CI JOE, can you please watch my windows?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Suppose you park your car in a neighborhood with a lot of occurrences of vandalism and crimes. If you return two weeks later, there is a good chance that you will find the car in the same state that it were when you left it there.  Now imagine if you parked the same car but with a broken window. There is a good chance that you will see an engineless car, without tires or many other parts. Of course, we did not conduct this social experiment, but we know about a theory called <a href="http://en.wikipedia.org/wiki/Broken_windows_theory" target="_blank">Broken windows theory</a> that says if we have something intact, it has a tendency to remain intact. But if we have something broken, there is a tendency that it will be even more damaged after some time.</p>
+<p>But how does it apply to software development? Suppose you have some developers working on a project with about a thousand tests covering all the code and all of them are passing. If a developer implements a feature and it breaks some tests, it seems reasonable that he will make an effort to make the necessary modifications so all tests pass, or maybe he&#8217;ll remove them if they don&#8217;t make sense anymore. Also, it is expected that he will write new tests to cover the new feature.</p>
+<p>Now suppose a different scenario: the project has a thousand tests and a hundred of them are not passing. Even worse, the code coverage is about 70%. As the developer writes the new feature, there is a tendency that he may not create tests and not fix the broken tests that this implementation caused. There is an analogy with the broken windows and failing tests: if you allow a failing test to stay there, there is a good chance that your team may not work on correcting tests and the number of failing tests may increase during time, leading to a poor quality software.</p>
+<p>OK, you have heard about the problem, but how can we solve that? A first idea is to hire a monkey that keeps an eye in the version control, and everytime there is an update there, it presses a key that runs all the tests. The monkey is actually very smart and it will scream if it sees red F&#8217;s in the screen. And every time the monkey screams, you know that somebody commited a broken test and you also know that every commit will make the monkey scream. So it&#8217;s time to fix the broken test. But you may have problems with Greenpeace doing that. So, it is a good idea to have something that does not depend on living animals. So maybe a robot? Yes, this is what we call Continuous Integration tools.</p>
+<p><a href="http://en.wikipedia.org/wiki/Continuous_integration" target="_blank">Continuous integration</a> is what we call the process where developers integrate their codes continuously. Continuous Integration tool is an application that executes the build every time it is updated in the version control. This build can watch for compilation/interpretations errors, not passing tests, performance issues or anything you may think reasonable to watch.</p>
+<p>There are lots of continuos integration solutions suitable for Ruby (and consequently Ruby on Rails). Some java-based (<a href="http://hudson-ci.org/" target="_blank">Hudson</a>) or some in Ruby (<a href="http://cruisecontrolrb.thoughtworks.com/" target="_blank">Cruise Control rb</a> or <a href="https://github.com/dcrec1/signal" target="_blank">Signal</a>). We tried using Signal at first, but we have some problems related to the gem environment (we could not make it change the environment to the project gemset instead of the Signal gemset environment). So we tried the minimalistic <a href="https://github.com/defunkt/cijoe" target="_blank">CI JOE</a>.</p>
+<p>CI JOE is a CI server created by the Githubber <a href="http://chriswanstrath.com/" target="_blank">Chris Wanstrath</a>. It is sinatra based and does not need even a database to run: all of its configurations are recorded in the .git/config file and it uses git hooks to run the desired actions. There are only two requirements: your project must use git for version control, and the build should return a zero shell status for success and anything different than zero for not successful builds. You can use it with any programming language or framework. I strongly encourage you to configure to pull the build trigger every time you do a git push (you can do that simply doing a POST to a URL).</p>
+<p>The most awesome thing about CI JOE is that it is dead simple to configure it to do almost anything. You can configure Campfire notifications, e-mail deliveries or an alarming buzzing when it fails. The only requirement is that a shell command exists (if it requires a sequence a of shell commands, you can join them using &#8216;;&#8217;). A great idea is to integrate electric devices like leds, buzzers or even a <a href="https://github.com/blog/653-our-new-build-status-indicator" target="_blank">semaphore</a>.</p>
+<p>The project comprehensive <a href="https://github.com/defunkt/cijoe" target="_blank">README</a> has a lot of examples, including how to protect it with HTTP basic authentication or how to configure a queue of build requests. For our projects, we usually customize it by setting a git after-reset hook to execute &#8220;bundle install&#8221; (it always execute this git hook before the build starts) and then we modify the html template to include the project logo. Next, CI is ready to rock and roll!</p>
+<p>And you? What do you think about CI JOE? Are you customizing it in any way? Are you using another CI solution for your Ruby on Rails projects?</p><p>The post <a href="/2010/11/cijoe-can-you-please-watch-my-windows/">CI JOE, can you please watch my windows?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/11/cijoe-can-you-please-watch-my-windows/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

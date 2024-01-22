@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Sharing large repositories with your team	</title>
+	<atom:link href="/2013/12/sharing-large-repositories-with-your-team/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/12/sharing-large-repositories-with-your-team/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 19 Sep 2014 15:05:37 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Gustavo Dutra		</title>
+		<link>/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1356</link>
+
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Tue, 14 Jan 2014 01:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3647#comment-1356</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1355&quot;&gt;Petteri Räty&lt;/a&gt;.
+
+Actually, Patteri, we have a flash drive available for that. So we can clone directly from the flash drive to someone&#039;s computer (there is a script that do all the dirty work inside this flash drive).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1355">Petteri Räty</a>.</p>
+<p>Actually, Patteri, we have a flash drive available for that. So we can clone directly from the flash drive to someone&#8217;s computer (there is a script that do all the dirty work inside this flash drive).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Petteri Räty		</title>
+		<link>/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1355</link>
+
+		<dc:creator><![CDATA[Petteri Räty]]></dc:creator>
+		<pubDate>Fri, 10 Jan 2014 17:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3647#comment-1355</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1354&quot;&gt;Gustavo Dutra&lt;/a&gt;.
+
+You still need to get the bundle copied from somewhere so you can&#039;t compare just the clone with a clone over the internet. If you keep a bundle around, (to avoid needing an other developer) in for example local network somewhere, you might as well have a clone there.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1354">Gustavo Dutra</a>.</p>
+<p>You still need to get the bundle copied from somewhere so you can&#8217;t compare just the clone with a clone over the internet. If you keep a bundle around, (to avoid needing an other developer) in for example local network somewhere, you might as well have a clone there.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Gustavo Dutra		</title>
+		<link>/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1354</link>
+
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Fri, 10 Jan 2014 15:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3647#comment-1354</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1353&quot;&gt;Petteri Räty&lt;/a&gt;.
+
+Hi, Petteri!
+
+It is faster cloning from a developer machine over intranet then over internet. Although, as git bundle does not require internet connection, cloning from a bundle package is faster then cloning from another developer repository. Also, it does not require any developer to be around when setting up a new project environment.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1353">Petteri Räty</a>.</p>
+<p>Hi, Petteri!</p>
+<p>It is faster cloning from a developer machine over intranet then over internet. Although, as git bundle does not require internet connection, cloning from a bundle package is faster then cloning from another developer repository. Also, it does not require any developer to be around when setting up a new project environment.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Petteri Räty		</title>
+		<link>/2013/12/sharing-large-repositories-with-your-team/comment-page-1/#comment-1353</link>
+
+		<dc:creator><![CDATA[Petteri Räty]]></dc:creator>
+		<pubDate>Thu, 05 Dec 2013 14:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3647#comment-1353</guid>
+
+					<description><![CDATA[For comparison how long does a local git clone take? If it&#039;s faster then the bundle packing / unpacking then you could just clone locally from another developer machine...]]></description>
+			<content:encoded><![CDATA[<p>For comparison how long does a local git clone take? If it&#8217;s faster then the bundle packing / unpacking then you could just clone locally from another developer machine&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

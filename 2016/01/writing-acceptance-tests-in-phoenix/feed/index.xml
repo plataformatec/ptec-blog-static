@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Writing Acceptance tests in Phoenix	</title>
+	<atom:link href="/2016/01/writing-acceptance-tests-in-phoenix/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/01/writing-acceptance-tests-in-phoenix/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 18 Feb 2016 04:34:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Sharath Kumar		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1566</link>
+
+		<dc:creator><![CDATA[Sharath Kumar]]></dc:creator>
+		<pubDate>Thu, 18 Feb 2016 04:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1566</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1565&quot;&gt;Igor Florian&lt;/a&gt;.
+
+@disqus_TKggmR6uN0:disqus Thanks for your reply. i have shared my test file and config file with this link. https://gist.github.com/sharathkumar3011/70d393fc35063ce06574 . Even if i start the selenium webdriver with &#039; java -jar selenium-server-standalone-2.51.0.jar &#039; command, I get same error.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1565">Igor Florian</a>.</p>
+<p>@disqus_TKggmR6uN0:disqus Thanks for your reply. i have shared my test file and config file with this link. <a href="https://gist.github.com/sharathkumar3011/70d393fc35063ce06574" rel="nofollow ugc">https://gist.github.com/sharathkumar3011/70d393fc35063ce06574</a> . Even if i start the selenium webdriver with &#8216; java -jar selenium-server-standalone-2.51.0.jar &#8216; command, I get same error.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Igor Florian		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1565</link>
+
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 13:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1565</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1564&quot;&gt;Igor Florian&lt;/a&gt;.
+
+Actually this could not be your solution, it looks like a session change problem.
+
+
+@sharathkumar3011:disqus, could you share your test file in a gist?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1564">Igor Florian</a>.</p>
+<p>Actually this could not be your solution, it looks like a session change problem.</p>
+<p>@sharathkumar3011:disqus, could you share your test file in a gist?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Igor Florian		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1564</link>
+
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 13:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1564</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1563&quot;&gt;Sharath Kumar&lt;/a&gt;.
+
+Hey Sharath o
+
+It looks like your driver isn&#039;t started. Maybe it&#039;s because you&#039;re starting it in docker and you have a different port for it. 
+
+Try to pass the port you&#039;re using in your config file:
+
+
+config :hound, driver: &quot;selenium&quot;, port: 5555]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1563">Sharath Kumar</a>.</p>
+<p>Hey Sharath o</p>
+<p>It looks like your driver isn&#8217;t started. Maybe it&#8217;s because you&#8217;re starting it in docker and you have a different port for it. </p>
+<p>Try to pass the port you&#8217;re using in your config file:</p>
+<p>config :hound, driver: &#8220;selenium&#8221;, port: 5555</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sharath Kumar		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1563</link>
+
+		<dc:creator><![CDATA[Sharath Kumar]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2016 04:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1563</guid>
+
+					<description><![CDATA[hi Igor, I followed the steps as specified in this article. but i am getting this error.
+
+...
+1) test GET / (HelloPhoenix.SampleTest)
+test/sample_test.exs:10
+** (exit) exited in: GenServer.call(Hound.SessionServer, {:change_session, #PID, :default, %{}}, 60000)
+** (EXIT) an exception was raised:
+** (MatchError) no match of right hand side value: {:error, %HTTPoison.Error{id: nil, reason: :econnrefused}}
+(hound) lib/hound/request_utils.ex:43: Hound.RequestUtils.send_req/4
+(hound) lib/hound/session_server.ex:67: Hound.SessionServer.handle_call/3
+(stdlib) gen_server.erl:629: :gen_server.try_handle_call/4
+(stdlib) gen_server.erl:661: :gen_server.handle_msg/5
+(stdlib) proc_lib.erl:240: :proc_lib.init_p_do_apply/3
+
+stacktrace:
+(elixir) lib/gen_server.ex:564: GenServer.call/3
+test/sample_test.exs:8: HelloPhoenix.SampleTest.__ex_unit_setup_1/1
+test/sample_test.exs:1: HelloPhoenix.SampleTest.__ex_unit__/2
+
+12:48:24.548 [error] GenServer Hound.SessionServer terminating
+
+** (MatchError) no match of right hand side value: {:error, %HTTPoison.Error{id: nil, reason: :econnrefused}}
+(hound) lib/hound/request_utils.ex:43: Hound.RequestUtils.send_req/4
+(hound) lib/hound/session_server.ex:67: Hound.SessionServer.handle_call/3
+(stdlib) gen_server.erl:629: :gen_server.try_handle_call/4
+(stdlib) gen_server.erl:661: :gen_server.handle_msg/5
+(stdlib) proc_lib.erl:240: :proc_lib.init_p_do_apply/3
+.
+Finished in 1.2 seconds (1.0s on load, 0.1s on tests)
+
+5 tests, 1 failure
+Randomized with seed 358869
+
+I am running selenium server using a docker container. I get the message as selenium up and running in that terminal. 
+Then what might be the problem?? Please help. I cannot understand the error message]]></description>
+			<content:encoded><![CDATA[<p>hi Igor, I followed the steps as specified in this article. but i am getting this error.</p>
+<p>&#8230;<br />
+1) test GET / (HelloPhoenix.SampleTest)<br />
+test/sample_test.exs:10<br />
+** (exit) exited in: GenServer.call(Hound.SessionServer, {:change_session, #PID, :default, %{}}, 60000)<br />
+** (EXIT) an exception was raised:<br />
+** (MatchError) no match of right hand side value: {:error, %HTTPoison.Error{id: nil, reason: :econnrefused}}<br />
+(hound) lib/hound/request_utils.ex:43: Hound.RequestUtils.send_req/4<br />
+(hound) lib/hound/session_server.ex:67: Hound.SessionServer.handle_call/3<br />
+(stdlib) gen_server.erl:629: :gen_server.try_handle_call/4<br />
+(stdlib) gen_server.erl:661: :gen_server.handle_msg/5<br />
+(stdlib) proc_lib.erl:240: :proc_lib.init_p_do_apply/3</p>
+<p>stacktrace:<br />
+(elixir) lib/gen_server.ex:564: GenServer.call/3<br />
+test/sample_test.exs:8: HelloPhoenix.SampleTest.__ex_unit_setup_1/1<br />
+test/sample_test.exs:1: HelloPhoenix.SampleTest.__ex_unit__/2</p>
+<p>12:48:24.548 [error] GenServer Hound.SessionServer terminating</p>
+<p>** (MatchError) no match of right hand side value: {:error, %HTTPoison.Error{id: nil, reason: :econnrefused}}<br />
+(hound) lib/hound/request_utils.ex:43: Hound.RequestUtils.send_req/4<br />
+(hound) lib/hound/session_server.ex:67: Hound.SessionServer.handle_call/3<br />
+(stdlib) gen_server.erl:629: :gen_server.try_handle_call/4<br />
+(stdlib) gen_server.erl:661: :gen_server.handle_msg/5<br />
+(stdlib) proc_lib.erl:240: :proc_lib.init_p_do_apply/3<br />
+.<br />
+Finished in 1.2 seconds (1.0s on load, 0.1s on tests)</p>
+<p>5 tests, 1 failure<br />
+Randomized with seed 358869</p>
+<p>I am running selenium server using a docker container. I get the message as selenium up and running in that terminal.<br />
+Then what might be the problem?? Please help. I cannot understand the error message</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Igor Florian		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1557</link>
+
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Mon, 01 Feb 2016 13:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1557</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1554&quot;&gt;SamuelMV&lt;/a&gt;.
+
+That&#039;s cool! 
+
+I have a good feeling that these tools will evolve nicely. A thing that makes me believe that is the possibility of running async test using database (with Ecto). I believe that this will have a good impact on our test performance.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1554">SamuelMV</a>.</p>
+<p>That&#8217;s cool! </p>
+<p>I have a good feeling that these tools will evolve nicely. A thing that makes me believe that is the possibility of running async test using database (with Ecto). I believe that this will have a good impact on our test performance.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: SamuelMV		</title>
+		<link>/2016/01/writing-acceptance-tests-in-phoenix/comment-page-1/#comment-1554</link>
+
+		<dc:creator><![CDATA[SamuelMV]]></dc:creator>
+		<pubDate>Sat, 30 Jan 2016 12:09:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5007#comment-1554</guid>
+
+					<description><![CDATA[Interesting, but I&#039;d prefer a more declarative way to define the acceptance tests. Maybe I&#039;m too used to Cucumber for ATDD and BDD ... but I&#039;m thinking in write my tests in Cucumber with steps implementation in ruby or javascript (nodejs).]]></description>
+			<content:encoded><![CDATA[<p>Interesting, but I&#8217;d prefer a more declarative way to define the acceptance tests. Maybe I&#8217;m too used to Cucumber for ATDD and BDD &#8230; but I&#8217;m thinking in write my tests in Cucumber with steps implementation in ruby or javascript (nodejs).</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

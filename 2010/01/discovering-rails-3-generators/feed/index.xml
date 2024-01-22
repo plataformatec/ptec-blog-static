@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Discovering Rails 3 generators	</title>
+	<atom:link href="/2010/01/discovering-rails-3-generators/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/01/discovering-rails-3-generators/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 07 Feb 2010 12:59:27 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Rails 3.0 Beta: 36 Links und Ressourcen To Get You Going &#171; hemju &#8211; homepage erstellen und webdesign		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-477</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta: 36 Links und Ressourcen To Get You Going &#171; hemju &#8211; homepage erstellen und webdesign]]></dc:creator>
+		<pubDate>Sun, 07 Feb 2010 12:59:27 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-477</guid>
+
+					<description><![CDATA[[...] Making Generatoren für Rails 3 Mit Thor &#8211; David Trasbo veranschaulicht, wie Thor verwenden (im Wesentlichen eine bessere Rake &#8211; sorta) auf die neuen Generatoren für Rails produzieren 3 Projekte. Dies ist ein Code schwere Lösungsweg. Es gibt mehr auf Generatoren hier. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Making Generatoren für Rails 3 Mit Thor &#8211; David Trasbo veranschaulicht, wie Thor verwenden (im Wesentlichen eine bessere Rake &#8211; sorta) auf die neuen Generatoren für Rails produzieren 3 Projekte. Dies ist ein Code schwere Lösungsweg. Es gibt mehr auf Generatoren hier. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rails 3.0 Beta: 36 Links und Ressourcen To Get You Going &#171; hemju &#8211; Linz Webdesign		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-476</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta: 36 Links und Ressourcen To Get You Going &#171; hemju &#8211; Linz Webdesign]]></dc:creator>
+		<pubDate>Sun, 07 Feb 2010 12:58:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-476</guid>
+
+					<description><![CDATA[[...] Making Generatoren für Rails 3 Mit Thor &#8211; David Trasbo veranschaulicht, wie Thor verwenden (im Wesentlichen eine bessere Rake &#8211; sorta) auf die neuen Generatoren für Rails produzieren 3 Projekte. Dies ist ein Code schwere Lösungsweg. Es gibt mehr auf Generatoren hier. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Making Generatoren für Rails 3 Mit Thor &#8211; David Trasbo veranschaulicht, wie Thor verwenden (im Wesentlichen eine bessere Rake &#8211; sorta) auf die neuen Generatoren für Rails produzieren 3 Projekte. Dies ist ein Code schwere Lösungsweg. Es gibt mehr auf Generatoren hier. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rails 3.0 Beta - 36 Links e artigos para você começar		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-474</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta - 36 Links e artigos para você começar]]></dc:creator>
+		<pubDate>Sat, 06 Feb 2010 17:52:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-474</guid>
+
+					<description><![CDATA[[...] Criando geradores para Rails 3 com Thor - David Trasbo mostra como usar o Thor, que é uma espécie de Rake melhorado, para criar novos geradores para projetos em Rails 3. É um tutorial com muito código e você pode ler mais sobre geradores aqui. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Criando geradores para Rails 3 com Thor &#8211; David Trasbo mostra como usar o Thor, que é uma espécie de Rake melhorado, para criar novos geradores para projetos em Rails 3. É um tutorial com muito código e você pode ler mais sobre geradores aqui. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rails 3.0 Beta: 36 Links and Resources To Get You Going		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-472</link>
+
+		<dc:creator><![CDATA[Rails 3.0 Beta: 36 Links and Resources To Get You Going]]></dc:creator>
+		<pubDate>Fri, 05 Feb 2010 23:28:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-472</guid>
+
+					<description><![CDATA[[...] Making Generators for Rails 3 With Thor - David Trasbo demonstrates how to use Thor (essentially a better Rake - sorta) to produce new generators for Rails 3 projects. This is a code heavy walkthrough. There&#039;s more on generators here. [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Making Generators for Rails 3 With Thor &#8211; David Trasbo demonstrates how to use Thor (essentially a better Rake &#8211; sorta) to produce new generators for Rails 3 projects. This is a code heavy walkthrough. There&#39;s more on generators here. [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: On the way to Rails 3 - a link list : Railslove		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-466</link>
+
+		<dc:creator><![CDATA[On the way to Rails 3 - a link list : Railslove]]></dc:creator>
+		<pubDate>Tue, 02 Feb 2010 13:59:47 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-466</guid>
+
+					<description><![CDATA[[...] Discovering Rails 3 generators [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Discovering Rails 3 generators [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: a work on process &#187; Weekend Links &#8211; 24nd January 2010		</title>
+		<link>/2010/01/discovering-rails-3-generators/comment-page-1/#comment-465</link>
+
+		<dc:creator><![CDATA[a work on process &#187; Weekend Links &#8211; 24nd January 2010]]></dc:creator>
+		<pubDate>Sun, 24 Jan 2010 22:27:15 +0000</pubDate>
+		<guid isPermaLink="false">/?p=654#comment-465</guid>
+
+					<description><![CDATA[[...] continued to be a stream of Rails 3 focussed blog entries. José Valim has a good round up of links regarding generators in Rails 3 &#8211; it looks like they and templates (now merged) could be much more useful than they have been [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] continued to be a stream of Rails 3 focussed blog entries. José Valim has a good round up of links regarding generators in Rails 3 &#8211; it looks like they and templates (now merged) could be much more useful than they have been [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

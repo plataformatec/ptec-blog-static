@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Active Record `attribute?` method	</title>
+	<atom:link href="/2012/05/active-record-attribute-method/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/05/active-record-attribute-method/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 31 May 2012 12:31:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Max		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1220</link>
+
+		<dc:creator><![CDATA[Max]]></dc:creator>
+		<pubDate>Thu, 31 May 2012 12:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1220</guid>
+
+					<description><![CDATA[i vote for this being semantically confusing
+
+if you have boolean field on your post, say named &#039;visible&#039; then asking post if it&#039;s visible or not using post.visible? is semantically perfect
+
+what does the question post.url? mean? are you trying to figure out if post is a url? because that is what my &quot;least surprise principle&quot; suggests you are doing
+
+i would say it&#039;s a mistake in rails to generate #{attribute}? for non-boolean attributes
+]]></description>
+			<content:encoded><![CDATA[<p>i vote for this being semantically confusing</p>
+<p>if you have boolean field on your post, say named &#8216;visible&#8217; then asking post if it&#8217;s visible or not using post.visible? is semantically perfect</p>
+<p>what does the question post.url? mean? are you trying to figure out if post is a url? because that is what my &#8220;least surprise principle&#8221; suggests you are doing</p>
+<p>i would say it&#8217;s a mistake in rails to generate #{attribute}? for non-boolean attributes</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ryan Bates		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1219</link>
+
+		<dc:creator><![CDATA[Ryan Bates]]></dc:creator>
+		<pubDate>Tue, 29 May 2012 17:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1219</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/05/active-record-attribute-method/comment-page-1/#comment-1217&quot;&gt;Andrew C. Greenberg&lt;/a&gt;.
+
+I don&#039;t consider @post.url.present? a violation of the Law of Demeter. It is a method present on every Ruby object, so it does not require special knowledge of that object to call it.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/05/active-record-attribute-method/comment-page-1/#comment-1217">Andrew C. Greenberg</a>.</p>
+<p>I don&#8217;t consider @post.url.present? a violation of the Law of Demeter. It is a method present on every Ruby object, so it does not require special knowledge of that object to call it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dennis Monsewicz		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1218</link>
+
+		<dc:creator><![CDATA[Dennis Monsewicz]]></dc:creator>
+		<pubDate>Tue, 29 May 2012 12:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1218</guid>
+
+					<description><![CDATA[I am certainly in favor of all things Ruby/Rails. I also believe that things like this becomes an issue of choice. Whether you use `@post.url.present?` or `@post.url?` is simply up to the programmer. I think using `@post.url.present?` will bode better results if someone comes in behind you to do some programming.]]></description>
+			<content:encoded><![CDATA[<p>I am certainly in favor of all things Ruby/Rails. I also believe that things like this becomes an issue of choice. Whether you use `@post.url.present?` or `@post.url?` is simply up to the programmer. I think using `@post.url.present?` will bode better results if someone comes in behind you to do some programming.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew C. Greenberg		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1217</link>
+
+		<dc:creator><![CDATA[Andrew C. Greenberg]]></dc:creator>
+		<pubDate>Tue, 29 May 2012 06:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1217</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/05/active-record-attribute-method/comment-page-1/#comment-1214&quot;&gt;Ryan Bates&lt;/a&gt;.
+
+Well, of course we have a conflict.  A conflict among principles!  @post.url.present? might seem clearer than   @post.url?  And it is.
+On the other hand,  @post.url.present? seems to be a violation of the law of Demeter, which is more than a trivial &quot;too many dots&quot; rule at the end of the day.  And it is.The solution to both concerns, might best be rendered thus: @post.url_present?  Clearer and no Demeter violation.  On the other hand, it seems a pain to be typing all of those ourselves, suggesting perhaps a change to the Rails structure, or at least, a concession to clarity for the sake of what we know to be a Rails convention.  Leading finally to the possibility that yet another OO design issue is presented -- that of not using the persistence layer itself as though it were the domain object.  Since it is highly unlikely that each and every attribute will be .present?-tested, perhaps if we simply entered these only on an as-needed basis to a distinct domain-object as part of our TDD then rely on automagic?  I leave these disputes to those more expert than I.Still, the more I read these nuanced discussions these days, the more I think that the DDD contingent may have it right, that this kind of logic really does belong at the end of the day in distinct business objects, which objects ultimately are used in connection with ActiveRecord through an architecture layer as a thin veneer over the database.Just saying.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/05/active-record-attribute-method/comment-page-1/#comment-1214">Ryan Bates</a>.</p>
+<p>Well, of course we have a conflict.  A conflict among principles!  @post.url.present? might seem clearer than   @post.url?  And it is.<br />
+On the other hand,  @post.url.present? seems to be a violation of the law of Demeter, which is more than a trivial &#8220;too many dots&#8221; rule at the end of the day.  And it is.The solution to both concerns, might best be rendered thus: @post.url_present?  Clearer and no Demeter violation.  On the other hand, it seems a pain to be typing all of those ourselves, suggesting perhaps a change to the Rails structure, or at least, a concession to clarity for the sake of what we know to be a Rails convention.  Leading finally to the possibility that yet another OO design issue is presented &#8212; that of not using the persistence layer itself as though it were the domain object.  Since it is highly unlikely that each and every attribute will be .present?-tested, perhaps if we simply entered these only on an as-needed basis to a distinct domain-object as part of our TDD then rely on automagic?  I leave these disputes to those more expert than I.Still, the more I read these nuanced discussions these days, the more I think that the DDD contingent may have it right, that this kind of logic really does belong at the end of the day in distinct business objects, which objects ultimately are used in connection with ActiveRecord through an architecture layer as a thin veneer over the database.Just saying.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: sameera207		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1216</link>
+
+		<dc:creator><![CDATA[sameera207]]></dc:creator>
+		<pubDate>Mon, 28 May 2012 21:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1216</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/05/active-record-attribute-method/comment-page-1/#comment-1214&quot;&gt;Ryan Bates&lt;/a&gt;.
+
++1 for the clear codes. Specially with a dynamic language like ruby I think we should always try to write clear codes. When I say clear, what I meant is that method names should implies what it does. 
+
+in the above case I prefer @post.url.present? over @post.url?
+
+anyway thanks @Rodrigo for the blog post, AR &#039;attribute&#039; indeed be useful  ]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/05/active-record-attribute-method/comment-page-1/#comment-1214">Ryan Bates</a>.</p>
+<p>+1 for the clear codes. Specially with a dynamic language like ruby I think we should always try to write clear codes. When I say clear, what I meant is that method names should implies what it does. </p>
+<p>in the above case I prefer @post.url.present? over @post.url?</p>
+<p>anyway thanks @Rodrigo for the blog post, AR &#8216;attribute&#8217; indeed be useful  </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rlmflores		</title>
+		<link>/2012/05/active-record-attribute-method/comment-page-1/#comment-1215</link>
+
+		<dc:creator><![CDATA[rlmflores]]></dc:creator>
+		<pubDate>Mon, 28 May 2012 20:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2786#comment-1215</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/05/active-record-attribute-method/comment-page-1/#comment-1214&quot;&gt;Ryan Bates&lt;/a&gt;.
+
+You have a point :). When developing an application, we should always measure conciseness over clarity. 
+
+But as this method is not widely used, it is not clear what it does, but maybe after getting used to it we may have it clear (like when we use [] instead of Array.new).  I like to say that it is some kind of sugar (and Rails is full of sugars) to create beautiful code :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/05/active-record-attribute-method/comment-page-1/#comment-1214">Ryan Bates</a>.</p>
+<p>You have a point :). When developing an application, we should always measure conciseness over clarity. </p>
+<p>But as this method is not widely used, it is not clear what it does, but maybe after getting used to it we may have it clear (like when we use [] instead of Array.new).  I like to say that it is some kind of sugar (and Rails is full of sugars) to create beautiful code 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

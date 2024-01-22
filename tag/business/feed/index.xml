@@ -1,0 +1,508 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>business « Plataformatec Blog</title>
+	<atom:link href="/tag/business/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 18 Jul 2018 17:52:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>8 pontos-chave para reescrever um software</title>
+		<link>/2017/07/8-pontos-chaves-para-reescrever-um-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Sat, 29 Jul 2017 00:34:15 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[reescrita de código]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6576</guid>
+
+					<description><![CDATA[<p>O terceiro post da série Baixa Qualidade Interna de Software. Assim como uma refatoração grande, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software. 1. As duas plataformas existirão juntas por um determinado período ou ... <a class="read-more-link" href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">»</a></p>
+<p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">O terceiro post da série Baixa Qualidade Interna de Software.</em></p>
+<p>Assim como uma <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">refatoração grande</a>, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software.</p>
+<h2>1. As duas plataformas existirão juntas por um determinado período ou não?</h2>
+<p>Você planeja manter a versão de legado e a nova versão em produção? Caso positivo, por quanto tempo? Você deve evitar manter duas versões em produção por muito tempo devido aos custos operacionais e de oportunidade.</p>
+<h2>2. Quem trabalhará na reescrita do código e quem trabalhará na versão do legado?</h2>
+<p>Geralmente, os desenvolvedores preferem trabalhar em projetos <em>greenfield</em>. Você deve considerar isto ao planejar quem trabalhará na versão do legado e quem trabalhará na nova.</p>
+<h2>3. É inviável reescrever todas as funcionalidades ao mesmo tempo</h2>
+<p>Mapear cada funcionalidade entre a versão do legado e a nova é inviável. Dito isto, que funcionalidades devem ser as primeiras a serem reescritas?</p>
+<p>Leve em consideração como os clientes atuais serão afetados por um produto com menos funcionalidades.</p>
+<h2>4. Reescrever o software diminuirá ou interromperá o lançamento de novas funcionalidades na versão do legado</h2>
+<p>É provável que você não lance novos recursos na versão legada durante o processo de reescrita do código. Assim como os usuários finais, os clientes internos (comercial, produtos, financeiro) não terão novas funcionalidades. Seus clientes internos e outras partes interessadas vão pressioná-lo para entregar novas funcionalidades.</p>
+<p>Certifique-se que a comunicação antes e durante o processo de reescrita do software seja clara e que cada stakeholder esteja alinhado com as metas.</p>
+<h2>5. O processo deve ser secreto ou público?</h2>
+<p>Imagine que você é um cliente potencial de um produto de software. Você planeja comprá-lo, mas descobriu que uma versão completamente nova será lançada em três meses. Você compraria a versão do legado ou esperaria por três meses? Multiplique isso por dezenas ou centenas de potenciais compradores. O fornecedor pode perder muito dinheiro.</p>
+<p>Por isso, se você é o fornecedor, deve pensar cuidadosamente sobre como e quando divulgar o lançamento da nova versão.</p>
+<h2>6. Migração de dados</h2>
+<p>O processo de reescrever um software não envolve apenas o desenvolvimento de funcionalidades. Você também precisa planejar a migração de dados. As pessoas costumam subestimar a complexidade e o esforço necessários para migrar dados da versão do legado para a nova versão. Essa atividade não deve ser apenas mais uma tarefa em seu quadro, chamado &#8220;migração de dados&#8221;. É muito maior que isso.</p>
+<p>Por exemplo, imagine que você precisa migrar as contas de seus usuários. Se a sua versão de legado é gerenciada por um terceiro, é provável que você não tenha acesso às senhas criptografadas dos usuários, portanto, não será possível migrá-las. Você terá de solicitar a cada usuário para redefinir a senha na nova versão. Isso também faz parte do processo de migração de dados.</p>
+<h2>7. Prepare-se para uma possível redução nas taxas de conversão</h2>
+<p>Você lançará uma nova versão com menos recursos. Quem garante que as taxas de conversão permanecerão as mesmas? As taxas de conversão são essenciais em algumas indústrias, como no e-commerce.</p>
+<p>Preferencialmente, você deve manter o suporte à versão legada e à nova por um tempo para que, no caso de redução drástica nas taxas de conversão, você tenha um plano de backup.</p>
+<h2>8. Planeje treinamento para os usuários internos</h2>
+<p>Este é outro ponto negligenciado. O plano de reescrever o software precisa ter uma fase de treinamento de usuários internos antes de disponibilizar seu novo produto em produção. Não subestime a importância deste item. Pode demorar algum tempo, pois seus usuários internos darão feedback sobre pontos que talvez precisem ser alterados.</p>
+<p>Usuários internos podem ser encontrados em várias áreas, como help desk e vendas.</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li><a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a></li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li>8 pontos-chaves para reescrever um software <spam style="background-color:#23ceff;color:#fff;padding:3px 5px 3px;border-radius:3px; text-transform:uppercase;font-size:10px;font-family:sans-serif;font-weight:bold;">você está lendo</spam></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>9 Pontos-chaves ao se fazer uma refatoração grande de software</title>
+		<link>/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 16 Jun 2017 14:45:53 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refatoração de código]]></category>
+		<category><![CDATA[refatoração de software]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6510</guid>
+
+					<description><![CDATA[<p>O segundo post da série Baixa Qualidade Interna de Software. Realizar uma refatoração grande1 de software não é algo simples. Há muitos pontos que você deve considerar, desde o planejamento e priorização até a motivação e execução da equipe. Entender esses pontos de forma estruturada e clara faz parte do processo. A boa notícia é que ... <a class="read-more-link" href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">»</a></p>
+<p>The post <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">O segundo post da série Baixa Qualidade Interna de Software.</em></p>
+<p>Realizar uma refatoração grande<sup id="fnref-refactor"><a href="#fn-refactor" rel="footnote">1</a></sup> de software não é algo simples. Há muitos pontos que você deve considerar, desde o planejamento e priorização até a motivação e execução da equipe. Entender esses pontos de forma estruturada e clara faz parte do processo. A boa notícia é que já passamos por essa situação antes e aprendemos quais os pontos principais com os quais você deve se preocupar.</p>
+<p>Aqui estão os pontos principais que você deve considerar ao planejar e executar uma <span style="font-weight: 400;">refatoração grande do seu sistema.</span></p>
+<h2>1. Defina metas de negócios</h2>
+<p><span style="font-weight: 400;">Uma refatoração grande de software</span> não deve ser iniciada sem metas de negócios claras, caso contrário, você pode sofrer com a falta de comprometimento das partes interessadas. Aqui estão alguns exemplos de metas:</p>
+<ul>
+<li>O objetivo da refatoração é possibilitar a conexão de vários gateways de pagamento.</li>
+<li>O objetivo da refatoração é melhorar a velocidade <span style="font-weight: 400;">de entrega.</span></li>
+<li>O objetivo da refatoração é viabilizar uma arquitetura multi-tenant para simplificar operações de infraestrutura.</li>
+</ul>
+<h2>2. Faça a medição do progresso</h2>
+<p>Em sua essência, o processo de refatoração de software é um esforço técnico, razão pela qual é comum não medir o progresso de forma estruturada, como <span style="font-weight: 400;">é medido</span> o progresso do desenvolvimento de novas features. Não caia nessa armadilha.</p>
+<p>Assim como cada tarefa em um projeto, uma refatoração deve sempre ser planejada e <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">medida</a>.</p>
+<h2>3. Preste atenção à motivação da sua equipe</h2>
+<p>Trabalhar em base de código legado pode desmotivar os desenvolvedores, especialmente se não conseguem <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=post-refatoracao&amp;utm_content=link">visualizar o progresso de suas atividades</a>, ou se <a href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=post-refatoracao&amp;utm_content=link">não sabem quando vão acabar</a>. Ao passar por um processo de refatoração, você deve ter isso em mente.</p>
+<p>Mostre à sua equipe que estão avançando. <a href="/2017/04/user-stories-quebrar-ou-nao-quebrar-eis-a-questao/">Planeje pequenas entregas</a>, para viabilizar liberações contínuas e celebrar o bom trabalho feito. Além disso, <span style="font-weight: 400;">pense </span><span style="font-weight: 400;">em rotacionar os</span><span style="font-weight: 400;"> desenvolvedores para essa tarefa de refatoração, pois pode ajudar a manter a motivação.</span></p>
+<h2>4. Defina sua abordagem: puxada ou empurrada?</h2>
+<p>Você vai melhorar a base de código apenas quando encontrar um problema, ou escolherá de forma proativa as partes a melhorar?</p>
+<p style="text-align: center;"><a style="background-color: #e9af35; border-radius: 3px; font-family: sans-serif; display: inline-block; line-height: 1.5; padding: 14px 40px; text-align: center; text-decoration: none; width: auto; color: #fff;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma-tdconf&amp;utm_content=cta-blog-post-middle" target="_blank" rel="noopener noreferrer">Clique aqui para assistir o webinar Migração de Plataforma Tecnológica. É grátis!</a></p>
+<h2>5. Priorização</h2>
+<p>Se você tem uma meta de negócios clara, é mais fácil escolher proativamente as partes que precisam ser melhoradas para alcançar a meta. Com as partes listadas, você pode priorizar, como de costume.</p>
+<p>Por outro lado, se você imagina que a base <span style="font-weight: 400;">de código </span><span style="font-weight: 400;">inteira</span><span style="font-weight: 400;"> deve ser refatorada</span>, priorizar torna-se complicado, porque não há uma ou duas partes principais que precisam de melhorias, há muitas. É difícil saber por onde começar.</p>
+<p>Uma solução é pedir ao time para avaliar a complexidade e churn do código para apontar as partes a refatorar. Para chegar numa conclusão se o código deve ou não ser refatorado, eles tem de se perguntar:</p>
+<ul>
+<li>A complexidade dessa classe é muito alta comparada às outras?</li>
+<li>Precisamos fazer mudanças constantes nesse arquivo?</li>
+</ul>
+<p>Se ambas as respostas forem sim, <span style="font-weight: 400;">essa parte do código </span>parece um bom candidato para refatoração. Trace um gráfico de &#8220;complexidade de classe X churn&#8221;, priorize as partes que são mais complexas e que passam por alterações com <span style="font-weight: 400;">frequência</span>.</p>
+<p><span style="font-weight: 400;">As partes do código que tem complexidade alta e que sofrem poucas modificações não são boas candidatas para serem refatoradas. Isso porque apesar de feias, funcionam. E também tem pouco impacto no desenvolvimento, já que a os desenvolvedores precisam modificá-las pouco no seu dia a dia.</span></p>
+<h2>6. Defina o &#8220;pronto&#8221;</h2>
+<p>O processo de refatoração de software pode se transformar em esforço infinito se você não planejar, priorizar e medir o progresso. Você deve tratá-lo como um projeto. Deve ter começo, meio e fim.</p>
+<h2>7. Cobertura da suíte de testes</h2>
+<p>A refatoração deve melhorar o que já está funcionando, sem quebrar nada. Certifique-se que a cobertura de testes está adequada, caso contrário, o processo pode gerar mais bugs do que melhorias de qualidade.</p>
+<h2>8. Desempenho da suíte de testes</h2>
+<p>Se a suíte de testes é lenta, refatorar também se tornará um processo lento, visto que a refatoração de software é fortemente baseada na execução contínua dos testes. Assegure que o desempenho da suíte de testes não seja um gargalo.</p>
+<h2>9. Compromisso dos patrocinadores</h2>
+<p>O processo de refatoração pode levar muito tempo: semanas, meses. Durante esse período, a velocidade das entregas de novas features será comprometida.</p>
+<p>Certifique-se que stakeholders das áreas de negócio entendam os objetivos e a natureza desse tipo de trabalho para evitar que eles desistam no meio do caminho.</p>
+<p>E você tem alguma dica além dessas para grande refatoração de software? Compartilhe conosco!</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li><a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a></li>
+<li>9 Pontos-chaves ao se fazer uma refatoração grande de software você está lendo</li>
+<li><a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chaves para reescrever um software</a></li>
+</ol>
+<hr />
+<div class="footnotes">
+<ol>
+<li id="fn-refactor"><em> Eu prefiro o termo &#8220;code refurbishment&#8221; ao invés de &#8220;refatoração grande&#8221;, já que refatoração por definição é pequena, mas as pessoas não estão acostumadas com essa terminologia. Então utilizarei o termo &#8220;refatoração&#8221; para fins de clareza. <a href="#fnref-refactor" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a></em></li>
+</ol>
+</div>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Quanto a empresa perde financeiramente quando o projeto atrasa?</title>
+		<link>/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 09 Jun 2017 14:50:17 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[gerenciamento do tempo]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6482</guid>
+
+					<description><![CDATA[<p>Motivação Um dos desafios mais comuns que você vai encarar na sua carreira, ou até mesmo em sua vida, é escolher entre uma coisa e outra. Pode ser a decisão entre ir ao restaurante japonês ou pizzaria, um projeto de 2 meses que custe $1M ou um projeto de 10 dias que custe $10k. O ... <a class="read-more-link" href="/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/">»</a></p>
+<p>The post <a href="/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/">Quanto a empresa perde financeiramente quando o projeto atrasa?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h2>Motivação</h2>
+<p>Um dos desafios mais comuns que você vai encarar na sua carreira, ou até mesmo em sua vida, é escolher entre uma coisa e outra. Pode ser a decisão entre ir ao restaurante japonês ou pizzaria, um projeto de 2 meses que custe $1M ou um projeto de 10 dias que custe $10k. O fato é: nós gastamos muito tempo decidindo o melhor caminho a ser seguido.</p>
+<div id="attachment_5787" style="width: 339px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-5787" src="/wp-content/uploads/2016/11/cost-of-choice.png" alt="Cost of Choice" width="329" height="214" class="size-full wp-image-5787" srcset="/wp-content/uploads/2016/11/cost-of-choice.png 329w, /wp-content/uploads/2016/11/cost-of-choice-300x195.png 300w" sizes="(max-width: 329px) 100vw, 329px" /><p id="caption-attachment-5787" class="wp-caption-text">source: [xkcd](http://xkcd.com/1445/)</p></div>
+<h2>O que é Custo de Atraso</h2>
+<p>Custo de Atraso (<em>Cost of Delay</em> ou CoD em inglês) é o impacto econômico do atraso de um projeto. Em outras palavras, é quanto você deixa de ganhar se o produto, ou <em>feature</em>, não estiver pronto em uma certa data. O benefício do cálculo é proporcionar mais informações para tomada de decisão, do ponto de vista econômico-financeiro.</p>
+<h2>Como calcular CoD?</h2>
+<p>Para calcular o CoD você pode simplesmente estimar quanto de lucro seria esperado do projeto depois de um certo período de tempo.</p>
+<p>Digamos que você espera que o projeto que está desenvolvendo, quando terminado, dê de retorno à empresa algo em torno de $10.000 por semana. Nesse contexto, o CoD é $10.000 / semana. Isto é, cada semana que o projeto atrasa a empresa &#8220;perde&#8221; $10.000. Não parece bom, né?</p>
+<p>Outra métrica relacionada ao CoD é o CD3 (Custo de Atraso dividido pela duração, do inglês <em>Cost of Delay Divided by Duration</em>). A diferença entre ambos é que o CD3 é o CoD dividido pela duração do projeto. Essa é uma boa métrica para priorização. Você pode calculá-la da seguinte maneira:</p>
+<ul>
+<li>Calcule o lucro semanal (ou mensal) esperado do projeto (CoD);</li>
+<li>Calcule, aproximadamente, quanto tempo demorará para implementá-lo;</li>
+<li>Divida o lucro pelo tempo estimado de duração do projeto.</li>
+</ul>
+<p>Quanto maior o CD3, mais importante o projeto é, já que o retorno sobre o investimento seria mais rápido.</p>
+<p style="text-align:center;"><a href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=planilha-monte-carlo-pt-br&#038;utm_content=cta-blog-post-middle" target="_blank" style="background-color:#009eaa; border-radius: 3px; font-family: sans-serif;display: inline-block;line-height: 1.5;padding: 8px 20px;text-align: center; text-decoration: none; font-family:sans-serif;width:auto;color:#fff">Planilha para calcular probabilidade de data de término de projetos<br /><span style="letter-spacing:0.05em;font-size: 11px;font-weight: bold;">BAIXAR PLANILHA GRÁTIS</span></a></p>
+<h2>Tipos de CoD</h2>
+<h3>Curva Padrão</h3>
+<p><img decoding="async" src="/wp-content/uploads/2016/11/standard-curve.png" alt="Standard Curve" width="335" height="277" class="aligncenter size-full wp-image-5788" srcset="/wp-content/uploads/2016/11/standard-curve.png 335w, /wp-content/uploads/2016/11/standard-curve-300x248.png 300w" sizes="(max-width: 335px) 100vw, 335px" /></p>
+<p>Em curvas padrões, o CoD do projeto aumenta quase linearmente com o tempo. Este é o jeito mais simples de calcular o CoD, já que não muda com o tempo.</p>
+<h3>Curva Urgente</h3>
+<p><img decoding="async" src="/wp-content/uploads/2016/11/urgent-curve.png" alt="Urgent Curve" width="373" height="283" class="aligncenter size-full wp-image-5789" srcset="/wp-content/uploads/2016/11/urgent-curve.png 373w, /wp-content/uploads/2016/11/urgent-curve-300x228.png 300w" sizes="(max-width: 373px) 100vw, 373px" /></p>
+<p>Em curvas urgentes, o projeto precisa ser entregue rápido para gerar valor para empresa, caso contrário perde-se muito. Isso acontece, por exemplo, quando um competidor lança um produto similar e não há tempo suficiente para reagir e competir no mercado. Provavelmente, o CoD será muito alto, começando na semana da entrega do projeto, aumentando pouco com o tempo.</p>
+<h3>Curva de Data Fixa</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/fixed-date-curve.png" alt="Fixed Date Curve" width="343" height="284" class="aligncenter size-full wp-image-5790" srcset="/wp-content/uploads/2016/11/fixed-date-curve.png 343w, /wp-content/uploads/2016/11/fixed-date-curve-300x248.png 300w" sizes="(max-width: 343px) 100vw, 343px" /></p>
+<p>Curvas de data fixa são o clássico exemplo de projetos com deadlines imutáveis. Nesses casos, o CoD está altamente ligado à uma data específica. O exemplo mencionado na curva urgente também é válido aqui. Outro exemplo seria um comercial de TV marcado para uma certa data, ou uma nova lei que afetará o projeto. O CoD será um pouco mais complexo. Nas primeiras semanas o CoD cresceria em ritmo moderado. Após certa semana, o custo receberia um grande impulso, depois retornaria ao crescimento moderado.</p>
+<h3>Curva Intangível</h3>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/11/intangible-curve.png" alt="Intangible Curve" width="339" height="269" class="aligncenter size-full wp-image-5791" srcset="/wp-content/uploads/2016/11/intangible-curve.png 339w, /wp-content/uploads/2016/11/intangible-curve-300x238.png 300w" sizes="(max-width: 339px) 100vw, 339px" /></p>
+<p>A curva intangível cobre os projetos que têm baixo CoD. Geralmente, os projetos têm baixa prioridade dentro da empresa, pois causam pouco ou nenhum impacto nos resultados. O CoD é quase estático, já que não existe muito risco em atrasar o projeto.</p>
+<h2>Como usar?</h2>
+<p>Além do conhecimento de quanto a empresa perde semanalmente caso o projeto seja atrasado, é possível utilizar o CoD como ferramenta de tomada de decisão ao priorizar projetos.</p>
+<h3>Exemplo</h3>
+<p>Digamos que você tenha dois projetos: A e B. Ambos com CoD de curvas padrão.</p>
+<table style="border-collapse: collapse; font-size: 13px; text-transform: uppercase; border: solid 1px #ccc; font-family: Arial, 'sans-serif';" cellspacing="0" cellpadding="0" align="center">
+<thead>
+<tr>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Projeto</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Lucro Semanal</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Duração Prevista</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">A</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$10,000</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">72 weeks</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">B</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$400</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">2 weeks</td>
+</tr>
+</tbody>
+</table>
+<p>Baseado nos detalhes do projeto, alguém poderia pensar que o projeto A é mais importante que o projeto B. No entanto, se você calcular o CD3, você verá que CD3_A = 138.8; enquanto o CD3_B = 200.</p>
+<p>Mas o que isso significa? Significa que caso você trabalhe no projeto B primeiro, você vai antecipar a geração de renda quando comparado com começar o projeto A. Ainda não acredita? Aqui está uma simulação de 75 semanas:</p>
+<table style="border-collapse: collapse; font-size: 13px; text-transform: uppercase; border: solid 1px #ccc; font-family: Arial, 'sans-serif';" cellspacing="0" cellpadding="0" align="center">
+<thead>
+<tr>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Número da semana</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Renda se A começa primeiro</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Renda se B começa primeiro</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">1</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0 &#8211; Começa A</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0 &#8211; Começa B</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0 &#8211; Termina  B</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$400 &#8211; Começa A</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">30</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$11,200</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">72</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$0 &#8211; Termina A</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$28,000</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">73</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$10,000 &#8211; Começa B</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$28,400</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">74</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$20,000 &#8211; Termina B</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$28,800 &#8211; Termina A</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">75</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$30,400</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">$39,200</td>
+</tr>
+</tbody>
+</table>
+<h3>Ponto de atenção</h3>
+<p>É importante notar que a curva de CoD de um projeto pode mudar com o tempo. Para ilustrar, digamos que um produto nunca antes visto no mercado está sendo desenvolvido. Como não há competidores, ele segue a curva padrão. Depois de um ano de desenvolvimento, chegam notícias de que um competidor está desenvolvendo algo similar, e vão lançar o produto no dia X. A curva do projeto provavelmente seguirá a curva de data fixa, com a reta íngreme começando no dia X.</p>
+<h2>Conclusão</h2>
+<p>Você pode, e deveria, calcular o CoD toda vez que houver dúvida de qual projeto priorizar. É uma método fácil de ser calculado e, pensar em todos esses detalhes, pode proporcionar intuições sobre os projetos.</p>
+<p>E você? O que acha de usar Custo de Atraso na priorização de projetos? Deixe seus comentários abaixo!</p>
+<div style="background-color:#fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: arial, sans-serif !important;">
+<h3 style="font-size: 1.2em; line-height: 1.3em;margin-top:0 !important;font-family:arial, sans-serif;font-weight:bold;">Planilha com Simulação de Monte Carlo</h3>
+<p style="margin-top:0.3em !important;font-size:0.85em;">Método estatístico para calcular probabilidade (realista, otimista e pessimista) de data de término de projetos. Basta inserir os dados e você terá o gráfico com as projeções!</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=planilha-monte-carlo-pt-br&#038;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">BAIXAR PLANILHA GRÁTIS</a>
+</div><p>The post <a href="/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/">Quanto a empresa perde financeiramente quando o projeto atrasa?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Sintomas da Baixa Qualidade Interna de Software</title>
+		<link>/2017/05/sintomas-da-baixa-qualidade-interna-de-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 31 May 2017 18:20:52 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refatoração de código]]></category>
+		<category><![CDATA[refatoração de software]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6400</guid>
+
+					<description><![CDATA[<p>Primeiro post da série Baixa Qualidade Interna de Software Não só bens físicos se deterioram, isso também ocorre com software. Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens ... <a class="read-more-link" href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">»</a></p>
+<p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">Primeiro post da série Baixa Qualidade Interna de Software</em></p>
+<h2>Não só bens físicos se deterioram, isso também ocorre com software.</h2>
+<p>Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens físicos, isso não acontece devido a algum fenômeno físico ou químico. Essa deterioração ocorre geralmente devido a mudanças de negócios ou de profissionais. Vou dar um exemplo.</p>
+<p>Imagine que você é o líder de uma equipe de produto ou tecnologia em uma startup; você é o CTO. Você já lançou a primeira versão do seu produto e foi um sucesso. Seu modelo de negócio foi validado e agora você está em fase de crescimento. Isso é fantástico! Mas tem seus custos, além de novos desafios.</p>
+<p>A primeira versão do seu produto está funcionando, mas a base de código não está como você precisa a partir de agora. Talvez sua equipe não seja tão veloz quanto antes. Sua equipe reclama continuamente da qualidade do código. O CEO e o diretor de produto querem novas features e suas estimativas atuais não atenderão às necessidades do negócio.</p>
+<p>Não raro, baixa qualidade da base de código está entre as principais origens de todos problemas. Talvez você precise refatorar (refactor) ou reescrever (rewrite) o software.</p>
+<h2>Quando a base de código não está em boas condições, todos podem ficar frustrados.</h2>
+<p>Sua equipe inteira, incluindo os desenvolvedores, se sentirão frustrados porque gostariam de liberar features com maior velocidade, porém a qualidade do código e a arquitetura atual não ajudam.</p>
+<p>Os departamentos de TI, produto e software sofrem por não atenderem às expectativas das outras áreas.</p>
+<p>O cliente também sofre devido aos bugs frequentes, o tempo gasto para que sejam corrigidos, além da demora para lançar novas features.</p>
+<p>Você conseguiu entender.</p>
+<h2>Identifique os sintomas</h2>
+<p>É papel do líder (por exemplo, o CTO) identificar quando é necessário refatorar ou reescrever o software. Para isso, ele(a) pode fazer uma análise em busca de alguns sintomas, como os listados abaixo:</p>
+<ul>
+<li style="font-weight: 400;"><b>Tudo é difícil: </b>Quase todas features novas ou correções de bugs que sua equipe precisa fazer são difíceis. Nem sempre foi assim. Você se lembra dos bons tempos em que sua equipe era rápida e a execução era perfeita.</li>
+<li style="font-weight: 400;"><b>Velocidade lenta: </b>a velocidade de sua equipe diminuiu ou está diminuindo. Quando vocês desenvolveram a primeira versão do produto, era rápido desenvolver uma nova feature. Sua equipe conseguia desenvolver um monte delas a cada iteração. Agora é diferente.</li>
+<li style="font-weight: 400;"><b>Suíte de testes lenta: </b>Sua suíte de testes apresenta tempo de execução 10x, 20x, 30x maior que antes.</li>
+<li style="font-weight: 400;"><b>Bugs que não desaparecem: </b>Sua equipe corrige um bug e em algumas semanas ele reaparece. É comum sua equipe corrigir bugs em testes de regressão.</li>
+<li style="font-weight: 400;"><b>Sua equipe está desmotivada: </b>Sua equipe reclama continuamente que trabalhar no projeto já não é tão produtivo como era no antes. Uma pessoa não consegue construir uma feature sozinha; há muitas partes em movimento.</li>
+<li style="font-weight: 400;"><b>Conhecimento isolado: </b>Existem algumas partes do software que apenas um desenvolvedor conhece bem o suficiente para mantê-las. O resto da equipe tem dificuldades em trabalhar com esse código específico.</li>
+<li style="font-weight: 400;"><b>O período de adaptação de um novo desenvolvedor é muito longo: </b>Quando novos desenvolvedores se juntam à equipe, demora demais para que eles se tornem totalmente produtivos.</li>
+</ul>
+<p>A razão pela qual você está em uma dessas situações provavelmente não é técnica. Talvez você precisasse entregar muitas features muito rápido, enquanto ainda estava desenvolvendo a primeira versão de seu produto. Talvez sua equipe não tinha maturidade e experiência que possuem agora. Analisar a causa raiz também é importante, mas você precisa fazer mais. Você precisa resolver o seu problema.</p>
+<p>Se você está enfrentando os sintomas acima, <strong>provavelmente você tem problema de baixa qualidade interna de software</strong>. Reconhecer os sintomas já é um grande passo. O próximo passo é pensar em soluções. Algumas soluções que você pode considerar incluem o processo de refatorar ou reescrever o software.</p>
+<h2>Refatorar ou reescrever?</h2>
+<p>Não existe um guia definitivo que aponte quando você deve refatorar ou reescrever o software, pois depende muito do seu contexto. Dito isto, existem algumas regras básicas que você deve considerar ao avaliar qual a melhor solução para sua situação:</p>
+<h3>Quando reescrever</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa está desatualizada e não possui mais manutenção;</li>
+<li style="font-weight: 400;">Se seu software é muito lento e mudar a arquitetura não é suficiente ou viável;</li>
+<li style="font-weight: 400;">Se a disponibilidade de desenvolvedores de software que conhecem a tecnologia que você usa é baixa e está diminuindo;</li>
+<li style="font-weight: 400;">Se existem novas tecnologias que oferecem vantagem significativa em relação a que você utiliza.</li>
+</ul>
+<h3>Quando refatorar</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa ainda possui manutenção e é relevante;</li>
+<li style="font-weight: 400;">Se é viável melhorar seu aplicativo gradualmente;</li>
+<li style="font-weight: 400;">Se o problema que você está resolvendo é apenas técnico, e não de negócio.</li>
+</ul>
+<p>Não é fácil decidir qual opção escolher. Ao optar por uma delas, você enfrentará um monte de novas preocupações. Fique atento, em nossos próximos posts vamos discutir o que levar em consideração antes de optar por refatoração ou reescrita do software.</p>
+<p>Agora eu gostaria de saber sobre suas experiências. Você já esteve nessa situação? Como você identificou que o problema era baixa qualidade interna de software? Compartilhe sua história conosco!</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li>Sintomas da Baixa Qualidade Interna de Software você está lendo</li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li><a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chaves para reescrever um software</a></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The Law of Diminishing Returns and its impact on projects</title>
+		<link>/2017/01/the-law-of-diminishing-returns-and-its-impact-on-projects/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 19 Jan 2017 17:01:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6038</guid>
+
+					<description><![CDATA[<p>It is common for people to think that all project-related problems will be solved if you hire more people. Some even think that, if you are doing X per week, and you double the number of people in your team, you&#8217;ll deliver 2X per week. Before we explain in details why that is not true, ... <a class="read-more-link" href="/2017/01/the-law-of-diminishing-returns-and-its-impact-on-projects/">»</a></p>
+<p>The post <a href="/2017/01/the-law-of-diminishing-returns-and-its-impact-on-projects/">The Law of Diminishing Returns and its impact on projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is common for people to think that all project-related problems will be solved if you hire more people. Some even think that, if you are doing X per week, and you double the number of people in your team, you&#8217;ll deliver 2X per week.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-6039" src="/wp-content/uploads/2017/01/meme.png" alt="meme" width="500" height="416" srcset="/wp-content/uploads/2017/01/meme.png 500w, /wp-content/uploads/2017/01/meme-300x250.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+<p>Before we explain in details why that is not true, we need to introduce a microeconomics law: <strong>The Law of Diminishing Returns</strong>. Don&#8217;t get discouraged by the &#8220;microeconomics&#8221; word&#8230; It will be fast and painless. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h2>Law of Diminishing Returns</h2>
+<p>Increase in process productivity is not directly proportional to the increase of people in the team. That happens because there is a limited number of ways to increase work parallelism (sometimes there is not a way to divide the tasks that are being held in more tasks), and because each additional worker may actually harm the team&#8217;s organization.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-7700 size-full" src="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas.jpg" alt="Gráfico de produtividade por número de pessoas." width="699" height="465" srcset="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas.jpg 699w, /wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-300x200.jpg 300w" sizes="(max-width: 699px) 100vw, 699px" /></p>
+<p>When a new person enters the team, the following results may be noticed:</p>
+<ul>
+<li>The team may actually need more capacity and, therefore, the throughput will increase a lot and the return on the investment will be fast reached &#8212; increasing returns.</p>
+</li>
+<li>
+<p>The team can still absorb an extra person, but the throughput gained with the addition is low, resulting on long term returns &#8212; decreasing returns.</p>
+</li>
+<li>
+<p>The team is saturated and the new teammate makes everyone compete for tasks and invest extra time to coordinate the activities, which causes a decrease in the team&#8217;s throughput &#8212; negative returns.</p>
+</li>
+</ul>
+<p><strong>What you are saying then is that I can’t do anything to improve my process throughput?</strong> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>No! There is a workaround to that law, and we&#8217;ll show you how to do it. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h2>Workaround</h2>
+<p>The diminishing returns curve has as a premise: you set the variables around your system, and you are only changing the amount of people. Therefore, if you change other variables, you may be able to stay longer in the increasing returns area.</p>
+<p><img loading="lazy" decoding="async" class="aligncenter wp-image-7701 size-full" src="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema.jpg" alt="Produtividade por número de pessoas." width="621" height="471" srcset="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema.jpg 621w, /wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema-300x228.jpg 300w" sizes="(max-width: 621px) 100vw, 621px" /></p>
+<p>These changes will not only make it more appropriate for people to join your team, but it may improve its throughput even if no one is hired as well.</p>
+<p>First, you should see if you are following a healthy process. We have a great blog post that summarizes how to improve your workflow: <a href="/2016/08/5-strategies-to-improve-software-development-workflow/">5 Strategies to improve software development workflow</a></p>
+<p>Second, to make sure you&#8217;ll get 100% of efficiency from the new hire, your project may need these characteristics:</p>
+<ul>
+<li>High quality code &#8211; if the code quality is bad, the addition of a new member will not change anything. The learning curve to develop new functionalities will be steep and the lead time will only increase with time, due to the complexity generated by the low quality.</p>
+</li>
+<li>
+<p>Software architecture &#8211; the software architecture needs to enable the addition of a new member without harming the global throughput.</p>
+</li>
+<li>
+<p>Team organization &#8211; the team needs to be correctly organized in order to not destabilize the team&#8217;s functioning with the addition. This includes keeping an eye on process bottlenecks to make sure everyone is working on the task that helps the process flow the most.</p>
+</li>
+<li>
+<p>Software documentation &#8211; the team needs a good documentation of the existing code so new members can understand the context faster and start working more efficiently right away.</p>
+</li>
+</ul>
+<p>To illustrate this whole idea of diminishing returns and changes in the system, we present a simple, and maybe even a little dumb, example.</p>
+<h2>Example</h2>
+<p>To easily understand what people saturation means in a team, imagine that John works selling hotdogs, with a hotdog cart, at a very busy avenue.</p>
+<p>He takes care of assembling the hot dogs as well as handling the cash. Since he has a huge line waiting in front of the cart, he often sees people leaving the line to eat elsewhere. Based on that fact, he decides to hire one more person to take care of the hotdog assembly, and he would only take care of the cash.</p>
+<p>After the arrival of the new member, sales <strong>increase more than 100%</strong>, because no one is leaving the queue anymore (example of increasing returns).</p>
+<p>However, John believes that one more member would still benefit the business, because the new person could clean the leftovers, so the assembler would be only focused in the assembly process. With that improvement, he is hoping to be fast enough to eliminate the line. Hence, John hires a new person and his revenue <strong>increases by 25%</strong>, instead of the 100% seen before (example of decreasing returns).</p>
+<p>But John still feels that the assembler spends too much time customizing each hotdog according to the customer&#8217;s taste. Therefore, he brings one more person to the team to handle the customization. However, with the new person, he sees his productivity <strong>decrease in 30%</strong>, and notices that the new member started to dispute space with the assembler and the cleaner. He disturbed the process more than helped the flow (example of negative returns).</p>
+<p>Nonetheless, John is a visionary and wants to grow his business. To accommodate 4 people and improve the flow even more, he decides to open a hotdog brick-and-mortar store. Now, he has enough space for everyone to work together, and even hires more people as waiters. With the new store, John&#8217;s <strong>revenue increases in 600%</strong> (example of changes in the system to maintain increasing returns).</p>
+<h2>Conclusion</h2>
+<p>It is necessary that, before making decisions about hiring or moving in someone new, you are aware of the team&#8217;s conditions so you know if the arrival of a new member will bring positive results or not.</p>
+<p>What did you think about this post? Did you already know about diminishing returns? Leave your comment below!</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2017/01/the-law-of-diminishing-returns-and-its-impact-on-projects/">The Law of Diminishing Returns and its impact on projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A Lei dos Rendimentos Decrescentes e seu impacto em projetos</title>
+		<link>/2017/01/a-lei-dos-rendimentos-decrescentes-e-seu-impacto-em-projetos/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 19 Jan 2017 13:32:53 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6029</guid>
+
+					<description><![CDATA[<p>Alguns gestores ainda pensam que todos os problemas relacionados a seus projetos podem ser solucionados se contratarem mais pessoas. Chega ao ponto de esperarem que, ao dobrar o número de integrantes de um time, sua performance dobre também. No entanto, isso não é verdade. Antes de explicarmos em detalhes o por que disso não funcionar, ... <a class="read-more-link" href="/2017/01/a-lei-dos-rendimentos-decrescentes-e-seu-impacto-em-projetos/">»</a></p>
+<p>The post <a href="/2017/01/a-lei-dos-rendimentos-decrescentes-e-seu-impacto-em-projetos/">A Lei dos Rendimentos Decrescentes e seu impacto em projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Alguns gestores ainda pensam que todos os problemas relacionados a seus projetos podem ser solucionados se contratarem mais pessoas. Chega ao ponto de esperarem que, ao dobrar o número de integrantes de um time, sua performance dobre também. No entanto, isso não é verdade.</p>
+<p>Antes de explicarmos em detalhes o por que disso não funcionar, precisamos introduzir uma lei da microeconomia: a <strong>Lei dos Rendimentos Decrescentes</strong>. Não se sinta desmotivado pela palavra &#8220;microeconomia&#8221;&#8230; Será rápido e indolor! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h2>Lei dos Rendimentos Decrescentes</h2>
+<p>O aumento na produtividade de um processo não é diretamente proporcional ao aumento no número de pessoas do time em questão. Isso acontece pois existe um limite no número de maneiras de paralelizar um trabalho (algumas vezes é impossivel dividir ainda mais uma tarefa). Além disso, cada membro adicional do time pode prejudicar a organização do mesmo.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas.png" alt="Gráfico - Produtividade por Número de pessoas" width="699" height="465" class="aligncenter size-full wp-image-6030" srcset="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas.png 699w, /wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-300x200.png 300w" sizes="(max-width: 699px) 100vw, 699px" /></p>
+<p>Quando um novo integrante se junta a um time, os seguintes resultados podem ser notados:</p>
+<ul>
+<li>O time pode realmente precisar de mais pessoas e, portanto, sua vazão de tarefas vai aumentar consideravelmente, fazendo com que seu investimento tenha retorno rapidamente &#8212; rendimentos crescentes.</p>
+</li>
+<li>
+<p>O time ainda consegue absorver uma nova pessoa, no entanto a produtividade gerada com essa entrada é baixa, resultando em um retorno lento de seu investimento &#8212; rendimentos decrescentes.</p>
+</li>
+<li>
+<p>O time está saturado e o novo membro do time faz com que as pessoas tenham que disputar espaço por tarefas e investir um tempo maior para coordenar o processo, o que causa diminuição na produtividade do time &#8212; rendimentos negativos.</p>
+</li>
+</ul>
+<p><strong>O que você está dizendo então é que eu não posso fazer nada para melhorar a vazão do meu time?</strong> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Não! Existem métodos que te ajudam a contornar essa lei, e nós mostraremos como alcançar isso. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h2>Ações de contorno</h2>
+<p>A curva de rendimento decrescente segue uma premissa: você fixa as variáveis do seu sistema e apenas varia a quantidade de pessoas. Portanto, caso mudemos as outras variáveis que outrora estavam fixas, podemos nos manter por mais tempo na área de rendimentos crescentes.</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema.png" alt="Gráfico - Mudança no sistema de produtividade por número de pessoas" width="621" height="471" class="aligncenter size-full wp-image-6031" srcset="/wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema.png 621w, /wp-content/uploads/2017/01/produtividade-por-numero-de-pessoas-sistema-300x228.png 300w" sizes="(max-width: 621px) 100vw, 621px" /></p>
+<p>Tais mudanças não vão apenas tornar seu time mais preparado para receber novos integrantes, mas pode também melhorar sua vazão por si só, sem a necessidade de novas contratações.</p>
+<p>Primeiramente, você deve observar se seu processo de desenvolvimento é saudável. Nós possuímos um ótimo blog post que sumariza como melhorar seu fluxo de trabalho: <a href="/2016/08/5-strategies-to-improve-software-development-workflow/">5 Strategies to improve software development workflow</a>.</p>
+<p>Além disso, para que seu time seja o mais eficiente possível com a nova contratação, seu projeto precisa das seguintes características:</p>
+<ul>
+<li>Alta qualidade de código – caso a qualidade do código esteja ruim, a adição de um novo membro em nada mudará pois a curva de aprendizado para desenvolver novas funcionalidades será grande e o seu lead time só aumentará com o tempo devido à complexidade gerada pela baixa qualidade.</p>
+</li>
+<li>
+<p>Arquitetura de software – a arquitetura do software precisa possibilitar que a adição de um novo integrante melhore o throughput global.</p>
+</li>
+<li>
+<p>Organização do time – o time precisa estar corretamente organizado para que a adição de um novo membro não desestabilize o funcionamento do time.</p>
+</li>
+<li>
+<p>Documentação &#8211; O time precisa de uma boa documentação do software existente, para que novos membros consigam entender seu contexto mais rapidamente e, portanto, comecem a trabalhar mais eficientemente.</p>
+</li>
+</ul>
+<p>Para ilustrar toda essa ideia de retornos decrescentes e as possíveis mudanças em um sistema, nós apresentamos aqui um simples exemplo.</p>
+<h2>Exemplo</h2>
+<p>Para que seja possível ver mais facilmente o que significa a saturação de pessoas em um time, imagine que Carlos trabalha em um carrinho de cachorros-quentes em uma rua movimentada.</p>
+<p>Ele cuida tanto da montagem do cachorro-quente quanto da venda do mesmo. Por ter uma fila muito grande de pessoas esperando pelo seu hot-dog, ele vê que algumas vezes as pessoas saem da fila. Com isso em mente, ele decidiu contratar mais uma pessoa para cuidar da parte de montagem enquanto ele cuida das vendas.</p>
+<p>Após a entrada do novo integrante, a venda de cachorros-quentes <strong>aumentou em 100%</strong> pois ninguém mais saia da fila (exemplo de rendimento crescente).</p>
+<p>Carlos, no entanto, acredita que mais um integrante ainda traria benefícios ao negócio, pois a nova pessoa poderia recolher o resto de comida que fica em torno do carrinho e organizar os ingredientes, para que o montador ficasse focado apenas na montagem. Assim ele poderia eliminar a fila. Carlos então contratou mais uma pessoa e sua venda de hot-dogs <strong>aumenta em 25%</strong>, ao invés dos 100% conseguidos com o primeiro novo integrante (exemplo de rendimento decrescente).</p>
+<p>Carlos ainda vê que o montador de hot-dogs gasta muito tempo customizando o final da montagem, pois algumas pessoas gostam de mostarda e ketchup e outras não. Pensou então em trazer ainda mais uma pessoa para o time, para cuidar apenas da customização dos produtos. No entanto, quando a pessoa chegou ele viu sua produtividade <strong>diminuir em 30%</strong>, e notou que o que acontecia era que o novo integrante tinha que dividir espaço com o montador e, portanto, atrapalhava mais do que ajudava no fluxo (exemplo de rendimento negativo).</p>
+<p>No entanto, Carlos era um homem de visão, queria crescer seu negócio. Para acomodar as 4 pessoas e aumentar ainda mais o fluxo, ele decidiu abrir uma loja de cachorro-quente. Nessa loja agora, ele tem espaço para todos e ainda conseguiu colocar mais duas pessoas como atendentes. Carlos <strong>fatura agora 600% mais</strong> do que anteriormente (exemplo de mudanças no sistema para manter um rendimento crescente).</p>
+<h2>Conclusão</h2>
+<p>É necessário que, antes de tomarmos decisões sobre contratação ou deslocamento interno de pessoas, tenhamos consciência das condições do time em questão para que a chegada de um novo membro tenha a maior eficiência possível.</p>
+<p>O que achou desse post? Você já conhecia a Lei de Retornos Decrescentes? Deixe seus comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0 !important;">ContÁgil Newsletter</h3>
+<p style="margin-top: 0.5em !important;">Newsletter mensal <strong>gratuita</strong>, criada para ajudar você a se manter atualizado sobre o que está acontecendo na área de gerenciamento de projetos, metodologias e cultura ágil.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=cta-blog-post-bottom" target="_blank">ASSINAR NEWSLETTER GRÁTIS</a>
+</div><p>The post <a href="/2017/01/a-lei-dos-rendimentos-decrescentes-e-seu-impacto-em-projetos/">A Lei dos Rendimentos Decrescentes e seu impacto em projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

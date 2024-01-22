@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to serialize Date and DateTime to JSON without losing information	</title>
+	<atom:link href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:21:25 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Fabio Yamate		</title>
+		<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1446</link>
+
+		<dc:creator><![CDATA[Fabio Yamate]]></dc:creator>
+		<pubDate>Mon, 10 Nov 2014 17:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4289#comment-1446</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1443&quot;&gt;Matt Melton&lt;/a&gt;.
+
+Yeah, dealing with date is not that simple. As you mentioned, geolocation is not encoded in Date/DateTime format, I see it as an extra data required to properly resolve the date value. For example, in Rails in order to properly parse a date time value on the desired timezone I could use:
+
+Time.use_zone(&quot;Hawaii&quot;) { Time.zone.parse(str) }
+# or
+Time.use_zone(&quot;Hawaii&quot;) { Time.zone.at(timestamp) }
+
+The idea of using Unix time or ISO8601 is to provide data that can be properly recovered no matter the consumer timezone, because it is not my concern.
+
+Not sure if I answered your question.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1443">Matt Melton</a>.</p>
+<p>Yeah, dealing with date is not that simple. As you mentioned, geolocation is not encoded in Date/DateTime format, I see it as an extra data required to properly resolve the date value. For example, in Rails in order to properly parse a date time value on the desired timezone I could use:</p>
+<p>Time.use_zone(&#8220;Hawaii&#8221;) { Time.zone.parse(str) }<br />
+# or<br />
+Time.use_zone(&#8220;Hawaii&#8221;) { Time.zone.at(timestamp) }</p>
+<p>The idea of using Unix time or ISO8601 is to provide data that can be properly recovered no matter the consumer timezone, because it is not my concern.</p>
+<p>Not sure if I answered your question.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Fabio Yamate		</title>
+		<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1445</link>
+
+		<dc:creator><![CDATA[Fabio Yamate]]></dc:creator>
+		<pubDate>Mon, 10 Nov 2014 17:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4289#comment-1445</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1444&quot;&gt;Matt Jones&lt;/a&gt;.
+
+Unix time considers positive integers since 1970, but negative ones represents prior to this date. There is not problem in using ISO8601, it is just a matter of preference. As I pointed, ISO8601 is human readable so it is easy to reason about the date, if debugging for example.
+
+However, in general this info is consumed programmatically, so it doesn’t need to be readable, it just need to correct.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1444">Matt Jones</a>.</p>
+<p>Unix time considers positive integers since 1970, but negative ones represents prior to this date. There is not problem in using ISO8601, it is just a matter of preference. As I pointed, ISO8601 is human readable so it is easy to reason about the date, if debugging for example.</p>
+<p>However, in general this info is consumed programmatically, so it doesn’t need to be readable, it just need to correct.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matt Jones		</title>
+		<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1444</link>
+
+		<dc:creator><![CDATA[Matt Jones]]></dc:creator>
+		<pubDate>Fri, 07 Nov 2014 19:54:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4289#comment-1444</guid>
+
+					<description><![CDATA[I&#039;m not following why the choice is between Unix time or an ISO8601-with-timezone. The Unix time is seconds since 1970-01-01T00:00:00Z, so it seems like you&#039;ve got the same &quot;was it actually the 13th or the 14th&quot; difficulty.
+
+
+Conversely, if Unix time is OK then what&#039;s wrong with ISO8601-normalized-to-UTC?]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m not following why the choice is between Unix time or an ISO8601-with-timezone. The Unix time is seconds since 1970-01-01T00:00:00Z, so it seems like you&#8217;ve got the same &#8220;was it actually the 13th or the 14th&#8221; difficulty.</p>
+<p>Conversely, if Unix time is OK then what&#8217;s wrong with ISO8601-normalized-to-UTC?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matt Melton		</title>
+		<link>/2014/11/how-to-serialize-date-and-datetime-without-losing-information/comment-page-1/#comment-1443</link>
+
+		<dc:creator><![CDATA[Matt Melton]]></dc:creator>
+		<pubDate>Fri, 07 Nov 2014 16:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4289#comment-1443</guid>
+
+					<description><![CDATA[Unfortunately this is an infuriating problem.
+
+While the offset in minutes (-0300) might accurately reflect Brazil, you&#039;ve actually lost the relevant time zone id of the country.
+
+For example, try resolving the local time taking into account the DST (daylight savings time), ie: can you accurately print 10am HAST or HADT? What about countries that share the same longitude but use different time suffixes for their language locale?
+
+While I&#039;ll be the first to admit that Date/DateTime don&#039;t actually encode a geographic location (whether it&#039;s a Windows TimeZone Id or IANA/Olson TZDB key), I wish it did.]]></description>
+			<content:encoded><![CDATA[<p>Unfortunately this is an infuriating problem.</p>
+<p>While the offset in minutes (-0300) might accurately reflect Brazil, you&#8217;ve actually lost the relevant time zone id of the country.</p>
+<p>For example, try resolving the local time taking into account the DST (daylight savings time), ie: can you accurately print 10am HAST or HADT? What about countries that share the same longitude but use different time suffixes for their language locale?</p>
+<p>While I&#8217;ll be the first to admit that Date/DateTime don&#8217;t actually encode a geographic location (whether it&#8217;s a Windows TimeZone Id or IANA/Olson TZDB key), I wish it did.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

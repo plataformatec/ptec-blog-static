@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Recurring events	</title>
+	<atom:link href="/2010/04/recurring-events/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/04/recurring-events/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 18:39:24 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2010/04/recurring-events/comment-page-1/#comment-563</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Thu, 22 Apr 2010 18:39:24 +0000</pubDate>
+		<guid isPermaLink="false">/?p=870#comment-563</guid>
+
+					<description><![CDATA[Cool! Personally, I like to use the whenever gem, which provides a nice DSL for defining cron jobs. This can also be combined with delayed_job or resque, so you might have a cron job that creates a bunch of background tasks. I&#039;ve used this technique for sending out weekly emails, etc.]]></description>
+			<content:encoded><![CDATA[<p>Cool! Personally, I like to use the whenever gem, which provides a nice DSL for defining cron jobs. This can also be combined with delayed_job or resque, so you might have a cron job that creates a bunch of background tasks. I&#8217;ve used this technique for sending out weekly emails, etc.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2010/04/recurring-events/comment-page-1/#comment-996</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Thu, 22 Apr 2010 18:39:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=870#comment-996</guid>
+
+					<description><![CDATA[Cool! Personally, I like to use the whenever gem, which provides a nice DSL for defining cron jobs. This can also be combined with delayed_job or resque, so you might have a cron job that creates a bunch of background tasks. I&#039;ve used this technique for sending out weekly emails, etc.]]></description>
+			<content:encoded><![CDATA[<p>Cool! Personally, I like to use the whenever gem, which provides a nice DSL for defining cron jobs. This can also be combined with delayed_job or resque, so you might have a cron job that creates a bunch of background tasks. I&#8217;ve used this technique for sending out weekly emails, etc.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

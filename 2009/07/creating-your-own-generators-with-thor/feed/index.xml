@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Creating your own generators with Thor	</title>
+	<atom:link href="/2009/07/creating-your-own-generators-with-thor/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/07/creating-your-own-generators-with-thor/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:57:45 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Resumão Rails Summit 2009 - Herbert G. Fischer		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-290</link>
+
+		<dc:creator><![CDATA[Resumão Rails Summit 2009 - Herbert G. Fischer]]></dc:creator>
+		<pubDate>Thu, 15 Oct 2009 13:58:25 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-290</guid>
+
+					<description><![CDATA[[...] quanto às tecnologias selecionadas para BD, testes, etc, em cada aplicação Rails. Encontrei este artigo do José Valim que está diretamente relacionado com a [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] quanto às tecnologias selecionadas para BD, testes, etc, em cada aplicação Rails. Encontrei este artigo do José Valim que está diretamente relacionado com a [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim no Rails Summit Latin America 2009 &#124; Plataforma Blog		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-285</link>
+
+		<dc:creator><![CDATA[José Valim no Rails Summit Latin America 2009 &#124; Plataforma Blog]]></dc:creator>
+		<pubDate>Mon, 05 Oct 2009 00:10:13 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-285</guid>
+
+					<description><![CDATA[[...] como adaptar os geradores de código da sua aplicação no Rails 3, falará também sobre o Thor (visto que os geradores de código do Rails 3 são desenvolvidos sobre o Thor) e como utilizá-lo [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] como adaptar os geradores de código da sua aplicação no Rails 3, falará também sobre o Thor (visto que os geradores de código do Rails 3 são desenvolvidos sobre o Thor) e como utilizá-lo [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-278</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:14:16 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-278</guid>
+
+					<description><![CDATA[@drnic, yes! In thor, we have the Thor::Actions (with create_file, copy_file,template and so on) and the Thor::Shell. The thor actions only delegates to a file_collision method in the thor shell.
+
+So besides providing a file collision menu by default, you can easily reimplement the file collision menu as you wish. :) For example, Thor ships with two shell implementations, one basic and another with color. The former is only used on Windows (where terminal colors does not work by default).]]></description>
+			<content:encoded><![CDATA[<p>@drnic, yes! In thor, we have the Thor::Actions (with create_file, copy_file,template and so on) and the Thor::Shell. The thor actions only delegates to a file_collision method in the thor shell.</p>
+<p>So besides providing a file collision menu by default, you can easily reimplement the file collision menu as you wish. 🙂 For example, Thor ships with two shell implementations, one basic and another with color. The former is only used on Windows (where terminal colors does not work by default).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-774</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-774</guid>
+
+					<description><![CDATA[@drnic, yes! In thor, we have the Thor::Actions (with create_file, copy_file,template and so on) and the Thor::Shell. The thor actions only delegates to a file_collision method in the thor shell.
+
+So besides providing a file collision menu by default, you can easily reimplement the file collision menu as you wish. :) For example, Thor ships with two shell implementations, one basic and another with color. The former is only used on Windows (where terminal colors does not work by default).]]></description>
+			<content:encoded><![CDATA[<p>@drnic, yes! In thor, we have the Thor::Actions (with create_file, copy_file,template and so on) and the Thor::Shell. The thor actions only delegates to a file_collision method in the thor shell.</p>
+<p>So besides providing a file collision menu by default, you can easily reimplement the file collision menu as you wish. 🙂 For example, Thor ships with two shell implementations, one basic and another with color. The former is only used on Windows (where terminal colors does not work by default).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dr Nic		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-277</link>
+
+		<dc:creator><![CDATA[Dr Nic]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:02:58 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-277</guid>
+
+					<description><![CDATA[If generators are created with thor, do you get the conflict resolution options that you currently get with rails generators when a file/folder already exists? (force, skip, show diff, etc)]]></description>
+			<content:encoded><![CDATA[<p>If generators are created with thor, do you get the conflict resolution options that you currently get with rails generators when a file/folder already exists? (force, skip, show diff, etc)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dr Nic		</title>
+		<link>/2009/07/creating-your-own-generators-with-thor/comment-page-1/#comment-773</link>
+
+		<dc:creator><![CDATA[Dr Nic]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=31#comment-773</guid>
+
+					<description><![CDATA[If generators are created with thor, do you get the conflict resolution options that you currently get with rails generators when a file/folder already exists? (force, skip, show diff, etc)]]></description>
+			<content:encoded><![CDATA[<p>If generators are created with thor, do you get the conflict resolution options that you currently get with rails generators when a file/folder already exists? (force, skip, show diff, etc)</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

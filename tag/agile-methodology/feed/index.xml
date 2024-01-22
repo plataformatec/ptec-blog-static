@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>agile methodology « Plataformatec Blog</title>
+	<atom:link href="/tag/agile-methodology/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 14 Feb 2018 17:35:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Do we need Story Points?</title>
+		<link>/2018/02/do-we-need-story-points/</link>
+					<comments>/2018/02/do-we-need-story-points/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 14 Feb 2018 17:35:31 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[story points]]></category>
+		<guid isPermaLink="false">/?p=7182</guid>
+
+					<description><![CDATA[<p>When story points were created, they quickly reached the hype peak (where they stood for too long, by the way). However, in the last years, they’ve entered the steep descending part of the hype curve. They have just begun their descending, but I&#8217;ve seen people already say that they are useless. So, after all, how ... <a class="read-more-link" href="/2018/02/do-we-need-story-points/">»</a></p>
+<p>The post <a href="/2018/02/do-we-need-story-points/">Do we need Story Points?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">When story points were created, they quickly reached the hype peak (where they stood for too long, by the way). However, in the last years, they’ve entered the steep descending part of the hype curve. They have just begun their descending, but I&#8217;ve seen people already say that they are useless. So, after all, how and when should I use them?</span></p>
+<p><span style="font-weight: 400;">Let me start saying that I&#8217;m not a hater. But I&#8217;m the devil&#8217;s advocate that likes to bring some discomfort into the room. I just believe that sometimes we stay in our comfort zone thinking that everything is working fine when it isn&#8217;t.</span></p>
+<h2><strong>A little history</strong></h2>
+<p><span style="font-weight: 400;">Story points were developed because human beings lack abilities to forecast the future. Our bosses were saying &#8220;ok, ok&#8230; you wanna use this &#8216;agile&#8217; thing, but I still wanna know at least when you are gonna finish this new feature!&#8221;, and we had to improve our forecasting beyond the &#8220;well it will be ready when it gets done&#8221; phrase.</span></p>
+<p><span style="font-weight: 400;">Then, we realized that we were actually good at checking whether something was the same size, bigger or smaller than another thing. With that in mind, we created one of the hardest concepts to explain to anyone new to agile: story points.</span></p>
+<h2><strong>Comparison or forecasting?</strong></h2>
+<p><span style="font-weight: 400;">Now we have a comparison tool that does not intend to forecast deadline. Right? Right. It wasn&#8217;t supposed to have a one-to-one relationship with time, right? Right. So how does that help to foretell when we will finish a project?</span></p>
+<p><span style="font-weight: 400;">Ok, so you&#8217;ll tell me that you use velocity, which is a sum of the comparison values of all the stories you&#8217;ve finished in a sprint (which already seems kind of odd). But now, tell me, how many times do you actually finish the entire backlog for a sprint in a sustainable manner (which means QA people not getting stressed and pressured, developers not building tons of technical debt and POs not accepting anything just because they don&#8217;t have time)? I&#8217;d say none or few. So, why is that?</span></p>
+<p><span style="font-weight: 400;">Well, for starters, we are able, as aforementioned, to see if something is larger, smaller or equal to other things (not so sure about the equal part, but let&#8217;s continue). However, we are not good at saying how bigger/smaller it is. Is it double the size/complexity? Is it triple? Who knows?!</span></p>
+<p><span style="font-weight: 400;">Another thing is that if you compare stories with the same points, you&#8217;ll see that they will take different times to be completed. And they should because, again, it is a comparison value, not a time-related one.</span></p>
+<p><span style="font-weight: 400;">Based on the last two paragraphs we can deduce that:</span></p>
+<ol>
+<li><em> A 1-point story will probably not take half the time a 2-point story takes. So how do we say our velocity is 3, if these two sets will not take the same time to be completed: {1,1,1} {1,2}?</em></li>
+<li><em> If we can&#8217;t even say that two 1-point stories will take the same time, how can we say our velocity is 3, even if we use the same sets: {1,1,1}, {1,1,1}?</em></li>
+</ol>
+<p><span style="font-weight: 400;">Likewise, it is difficult to compare sprint velocities of a team, another common mistake is to compare velocities between teams, or even have a metric for how many points a person can do in a sprint!</span></p>
+<p><span style="font-weight: 400;">We are just creating a false sense of control over our demands and, instead of helping the team, it might actually harm it.</span></p>
+<h2><strong>What now?</strong></h2>
+<p><span style="font-weight: 400;">Ok, Mr. Know-It-All, so when should I use them? Well, they were invented for comparisons! So, use them to compare! Points are not the only tool you have to compare stories. You might also use t-shirt sizes, which are a little bit easier to define than points. In this <a href="/2017/01/agile-requirements-talking-about-uncertainty-and-complexity/">blog post about complexity and uncertainty analysis</a>, we show a chart that could easily use t-shirt sizes or points in its axis!</span></p>
+<p><span style="font-weight: 400;">Besides that, the moment developers talk and compare stories is great for spreading knowledge among peers and aligning the whole team technically. Another meeting that does basically the same is what we call Task Breakdown, in which some developers get together and try to break a story into technical tasks. But exactly how to do it is a subject for another blog post.</span></p>
+<p><span style="font-weight: 400;">But what about forecasting! How can I answer my boss&#8217; question? We use throughput and lead time, with some statistics behind our answers&#8230; They work like a charm and, besides that, they also give us powerful tools to improve our process as well! We have a ton of posts on those topics if you are interested. Here are some of them:</span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Throughput</a><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/"> and Burnup charts</a></span></p>
+<p><span style="font-weight: 400;">*<a href="/2016/02/why-we-love-metrics-learning-with-lead-time/"> Lead Time</a></span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">Don&#8217;t use average to forecast deadlines</a></span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Use Monte Carlo!</a></span></p>
+<p><span style="font-weight: 400;">*<a href="/2017/10/12-common-mistakes-when-using-process-metrics/"> 12 mistakes you should avoid when using these metrics</a></span></p>
+<h2><strong>Conclusion</strong></h2>
+<p><span style="font-weight: 400;">The story points concept is useful. Comparing stories is needed, however using that concept to forecast delivery rate and deadlines is not the best option. So, open your spreadsheet, add your metrics to it and let&#8217;s start a sustainable development!</span></p>
+<p><span style="font-weight: 400;">What do you think? Do story points work for you? Leave your comments below!</span></p>
+<p><a href="/subscribe/"><img fetchpriority="high" decoding="async" class="alignnone size-full wp-image-5259" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" width="831" height="147" srcset="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png 831w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-300x53.png 300w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/02/do-we-need-story-points/">Do we need Story Points?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/02/do-we-need-story-points/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>WIP Limit &#8211; A further study</title>
+		<link>/2018/01/wip-limit-a-further-study/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 18 Jan 2018 17:43:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[Agile Software]]></category>
+		<category><![CDATA[process monitoring]]></category>
+		<guid isPermaLink="false">/?p=7112</guid>
+
+					<description><![CDATA[<p>One year ago I wrote a post talking about WIP limit and its importance. At the time, it was a case study and an introduction to the subject. However, after working on more projects and meeting different people, I saw that, maybe, you don&#8217;t need it. Introduction When we use WIP limit, we limit the ... <a class="read-more-link" href="/2018/01/wip-limit-a-further-study/">»</a></p>
+<p>The post <a href="/2018/01/wip-limit-a-further-study/">WIP Limit – A further study</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">One year ago I wrote a </span><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/"><span style="font-weight: 400;">post talking about WIP limit and its importance</span></a><span style="font-weight: 400;">. At the time, it was a case study and an introduction to the subject. However, after working on more projects and meeting different people, I saw that, maybe, you don&#8217;t need it.</span></p>
+<p><b>Introduction</b></p>
+<p><span style="font-weight: 400;">When we use WIP limit, we limit the number of concurrent tasks. It could be a limit to each column of a Kanban Board; it could be a limit to the whole system; or even a limit to a set of steps of the process.</span></p>
+<p><span style="font-weight: 400;">The idea behind limiting the work in progress is to work side-by-side with </span><a href="https://en.wikipedia.org/wiki/Little%27s_law"><span style="font-weight: 400;">Little&#8217;s Law</span></a><span style="font-weight: 400;"> and try to improve the flow of the system, diminishing the lead time (LT) of a work item. And that works like a charm for machines. For software development? The relationship between WIP, LT and throughput is not that straightforward.</span></p>
+<p><b>People are different</b></p>
+<p><span style="font-weight: 400;">When we have a chain of machines linked together, in which the output from one feeds the input of other, everything is easier to predict. Now, imagine a situation in which:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Items entering the first machine are not always the same size. And the machines don&#8217;t follow a linear relationship between size and time to complete a task.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Each machine can, unpredictably, change its behavior. One week, it may receive an input of size x and generate its outcome in 1 hour. In another week, it will, unpredictably, take 3 hours to produce the same result.</span></li>
+</ul>
+<p><span style="font-weight: 400;">Things start to get tricky, right?</span></p>
+<p><b>WIP Saturation Chart</b></p>
+<p><span style="font-weight: 400;">From my experience, some readings and even the way I work, I saw that different people work best with different workloads. I believe that a chart of WIP by the throughput of a person follow something like this:</span></p>
+<p><img decoding="async" class="size-medium wp-image-7113 aligncenter" src="/wp-content/uploads/2018/01/WIP-saturation-chart-300x187.png" alt="" width="300" height="187" srcset="/wp-content/uploads/2018/01/WIP-saturation-chart-300x187.png 300w, /wp-content/uploads/2018/01/WIP-saturation-chart.png 426w" sizes="(max-width: 300px) 100vw, 300px" /></p>
+<p><span style="font-weight: 400;">This chart was taken from </span><a href="https://www.infoq.com/articles/how-kanban-works"><span style="font-weight: 400;">https://www.infoq.com/articles/how-kanban-works</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Some people work best with more t</span>han one task at a time. For different reasons. They might get unmotivated with few responsibilities, or it might be easy for them to rapidly change focus between tasks, for example. On the other hand, other people have a really difficult time changing focus and handling many tasks at once.</p>
+<p><span style="font-weight: 400;">Other than depending on the person, it also depends on the project: it might involve third-parties that regularly block their work, it might have a testing process that takes weeks or months to finish, etc.</span></p>
+<p><span style="font-weight: 400;">So, how can we come up with a single number that will magically fit all those curves under the same process? You can&#8217;t. But that doesn&#8217;t mean you shouldn&#8217;t.</span></p>
+<p><b>So what? Should I just go crazy and forget limits?</b></p>
+<p><span style="font-weight: 400;">As I said, it is just impossible to get a number that limits the work of everyone in an optimal manner. But that doesn&#8217;t mean you shouldn&#8217;t use one. I see, until the time of this post, two options for two different contexts:</span></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">You have someone looking at your process. If you have a Project Manager, an Agile Coach, a Scrum Master or other person that takes care of your process, you don&#8217;t need WIP limits. You need WIP management. This person can better understand how each person works and alert people to the amount of WIP according to each individual necessity as well as the type of project. I&#8217;d only use WIP Limits here to give process ownership to the rest of the team. This means that the person looking at the process would be actually temporary.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">You don&#8217;t have a process guru. In this case, limiting the WIP with numbers and trying to tune it with time will give you a better process. It will </span><i><span style="font-weight: 400;">not</span></i><span style="font-weight: 400;"> give you the optimal outcome, but it will unquestionably give you a better result.</span></li>
+</ol>
+<p><b>Conclusion</b></p>
+<p><span style="font-weight: 400;">WIP limit works. It will improve your process. But it is not a silver-bullet (I feel like a parrot repeating this). Look at your context (people + project) and use whatever delivers a better outcome.</span></p>
+<p><span style="font-weight: 400;">What do you think? Do you believe in WIP Limits or not? Leave your comments below!</span></p>
+<p>&nbsp;</p>
+<div style="margin: 20px 0 60px;"><a href="http://pages.plataformatec.com.br/ebook-strategies-to-improve-software-development-workflow?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-strategies&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener"><img decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/08/blog-cta-strategies-to-improve-software-development-workflow.png" alt="5 Strategies to Improve a Software Development Workflow -- Reserve your copy" width="831" height="147" /></a></div><p>The post <a href="/2018/01/wip-limit-a-further-study/">WIP Limit – A further study</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Alinhando expectativas de prazo com o Reality Check</title>
+		<link>/2017/11/alinhando-expectativas-de-prazo-com-o-reality-check/</link>
+		
+		<dc:creator><![CDATA[Henrique A. de Oliveira]]></dc:creator>
+		<pubDate>Fri, 10 Nov 2017 17:47:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<guid isPermaLink="false">/?p=6968</guid>
+
+					<description><![CDATA[<p>Quando vocês irão finalizar a entrega do projeto? A equipe irá atender o prazo estipulado? Vocês conseguirão entregar até a data? Se você trabalha com projetos, certamente irá perder a conta se tentar somar quantas vezes precisou responder a esses tipos de questionamento. Quando estamos lidando com prazos, famosos deadlines (não poderiam ser successlines?!), essas ... <a class="read-more-link" href="/2017/11/alinhando-expectativas-de-prazo-com-o-reality-check/">»</a></p>
+<p>The post <a href="/2017/11/alinhando-expectativas-de-prazo-com-o-reality-check/">Alinhando expectativas de prazo com o Reality Check</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Quando vocês irão finalizar a entrega do projeto? A equipe irá atender o prazo estipulado? Vocês conseguirão entregar até a data? Se você trabalha com projetos, certamente irá perder a conta se tentar somar quantas vezes precisou responder a esses tipos de questionamento.</p>
+<p>Quando estamos lidando com prazos, famosos deadlines (não poderiam ser <em>successlines</em>?!), essas perguntas provavelmente irão surgir em vários momentos do projeto antes da entrega, e com certeza muitas outras vezes se o prazo inicial não for atendido. Independentemente do período em que esteja o projeto, você já pensou que muitos problemas relacionados com essas perguntas são causados por <strong>falta de alinhamento</strong> na expectativa da data de entrega?</p>
+<p>Aqui na <a href="http://www.plataformatec.com.br/">Ptec</a> estamos trabalhando com uma dinâmica chamada Reality Check, ou verificação de realidade. É uma dinâmica muito eficaz para quando há um prazo de entrega bem apertado. Meu amigo Lucas Colucci contou um pouco sobre como esta dinâmica funciona em seu blogpost <a href="/2017/02/desenvolvendo-melhoria-continua-em-seu-processo-agil-a-cerimonia-de-reality-check/">Desenvolvendo melhoria contínua em seu processo ágil: A cerimônia de Reality Check</a>. Nós testamos esta dinâmica e a <strong>evoluímos</strong> e, com isso, encontramos algumas novas práticas que podem agregar valor para esta ferramenta. Nos exemplos que serão apresentados a seguir, os resultados foram muito positivos! Vamos conhecer?</p>
+<h2>Salvando o prazo do seu projeto!</h2>
+<p>Arrisco defender o seguinte: <strong>na maioria das vezes, é mais relevante para o projeto deixar as expectativas de data de entrega bem alinhadas do que efetivamente cumprir um prazo inicialmente empurrado para a entrega do projeto</strong>. Defendo isso porque, no início do projeto, ou de alguma parte dele, dificilmente conseguimos prever uma data precisa de entrega, pois as diversas variáveis que interferem nessa promessa de data influenciam demais no que efetivamente irá acontecer, como, por exemplo, ausências diversas, feriados e as deliciosas emendas de sextas-feira, desmotivação, problemas novos não existentes no início do planejamento, mudanças de escopo não controladas, férias de colaboradores não programadas com antecedência, entre tantas outras. Entretanto, todos esses pontos não significam que não podemos mostrar o que realmente está acontecendo. Prazo não deve ser uma restrição, mas sim uma meta!</p>
+<p>É possível trabalhar a questão abordada de uma forma bem simples: deixe claro, de forma explítica e <strong>antecipada</strong>, quando a entrega irá efetivamente ocorrer. Dessa forma, seu cliente sempre terá o controle da situação, caso a equipe descubra antecipadamente que o prazo inicial não será atingido.</p>
+<p>A ideia é muito simples: <strong>mostrar a realidade do que está acontecendo no time, concedendo visibilidade quanto ao prazo!</strong> Apresentar a real situação ajuda a deixar as expectativas de data de entrega muito bem alinhadas, e de forma antecipada. De quebra, em um formato colaborativo, o Reality Check tem a capacidade de empoderar a equipe sobre a apresentação da data de entrega e, dessa forma, cria um vínculo de parceria e responsabilidade com seu cliente. A mensagem é que somos um único time, e estamos fazendo o melhor!</p>
+<h2>Explica como funciona?</h2>
+<p>Primeiramente, tenha o seguinte cenário: um escopo e um prazo. Bem simples, não? Segundo passo: obtenha o detalhe do escopo de alguma maneira. Isso pode ser feito via Story Mapping, decomposição do escopo para obter os pacotes de trabalho de uma EAP (Estrutura Analítica do Projeto), grupos de tarefas de um cronograma, etc. Enfim, tenha um conjunto de itens que, juntos, somam todo o escopo de sua entrega. É importante também que esses itens sejam, mais ou menos, de &#8220;tamanhos&#8221; semelhantes ou de mesma natureza técnica, evitando misturar demandas muito grandes com as muito pequenas, por exemplo. No nosso caso, usamos histórias de usuário de um Backlog de produto, todas oriundas de um Story Mapping e, na medida do possível, já priorizadas no contexto da próxima entrega do projeto.</p>
+<p>Em seguida, escreva todos os seus itens de escopo em post-its (existe algo melhor do que esses papeizinhos que grudam?). Depois, em um quadro branco, por exemplo, ao lado direito de todos os seus itens de escopo, desenhe faixas verticais de períodos iguais que representam a evolução temporal do projeto, ou, em outras palavras, faça várias faixas que mostrem cada semana até a data de entrega do projeto. A última faixa poderá corresponder à data de entrega. Não recomendo dividir esses períodos em dias ou meses, pois são distâncias curtas e longas demais, respectivamente. Depois, trace uma linha horizontal quase no topo do quadro e, em cada espaço de faixas verticais, declare qual é o respectivo período que aquele intervalo representa no projeto.</p>
+<p>Para facilitar, você poderá fazer essa dinâmica no primeiro dia de trabalho de uma semana. Não recomendo que o Reality Check seja feito para um período muito longo. Entendo que, no máximo, um trimestre (entre 12 e 14 semanas) seja aceitável para que a dinâmica funcione corretamente. Um período maior do que este fará com que a equipe não consiga ter uma visão adequada e acabe estimando o trabalho futuro de uma forma muito relativa. <strong>Quanto mais distante, menos assertivo</strong>. Dessa forma:</p>
+<p><img decoding="async" style="min-width: 100% !important; border: none;" src="/wp-content/uploads/2017/11/BlogPost-RealityCheck-Image1.png" alt="Estrutura inicial do Reality Check" /></p>
+<p>Feito isso, reúna o time, apresente o desenho e peça para a equipe mover os itens que estão no Backlog para dentro das faixas semanais, declarando em qual semana cada item irá ser <strong>finalizado</strong>, e não quando começam (faremos isso de outra maneira). Se o mesmo item for durar mais do que uma semana, não é necessário duplica-lo, mas somente coloca-lo na semana de término. O objetivo é distribuir todos os itens na linha do tempo, estimando o quanto de trabalho será feito em cada semana e, principalmente, descobrindo se é possível encaixar todo o esforço do projeto dentro do prazo solicitado pelo cliente. <strong>É extremamente importante que a equipe tenha a autonomia de distribuir seus respectivos trabalhos no quadro</strong>, e que o gestor do produto / PO esteja presente durante essa parte da dinâmica.</p>
+<p>A equipe não precisa buscar ser extremamente assertiva quanto a essa distribuição, mas sim tentar encontrar um volume de trabalho semanal que seja condizente com a realidade. É interessante que, neste momento, a equipe perceberá se será possivel atingir o prazo do projeto e quais são as dependências entre cada item do escopo. Vários outros debates podem surgir e, de repente, você poderá ter a primeira <strong>oportunidade de negociar o prazo do projeto ou, se este for inegociável, tentar reduzir o escopo para que ele se encaixe dentro do período mostrado no Reality Check</strong>.</p>
+<p>Ao final, para finalizar essa primeira parte da dinâmica, distribua um post-it para cada membro do time e, de forma individual, cada um (exceto o facilitador e o gestor do produto / PO) escreverá um valor de 1 a 4, sendo a menor nota representando que a data de entrega não é factível de ser atingida e, à medida que a nota aumenta, o prazo é plausível de ser atingido. Depois, o facilitador da dinâmica calcula a média dessas notas e apresenta para a equipe. Se a nota for 1 ou 2, é interessante rever o planejamento colocado no Reality Check. Se for 3 ou 4, é possivel entender que todos estão confortáveis quanto ao prazo da entrega do projeto. Também é válido conceder a oportunidade para quem colocou notas extremas (1 e 4) comentarem suas posições, visto que essas pessoas podem estar enxergando pontos que os demais membros do time deixaram passar despercebidos. Algum plano de ação poderá surgir neste momento, com o objetivo de melhorar alguma nota baixa, por exemplo.</p>
+<p>Na segunda semana, no primeiro dia de trabalho, todos se reúnem novamente para atualizar o Reality Check. É interessante que o cliente esteja presente nesses momentos de atualização do quadro. Agora, a equipe irá deixar os itens que foram concluídos na semana anterior e, caso todos não tenham sido concluídos, o time deverá pensar como irá realocar os itens remanescentes na semana corrente e/ou nas próximas e, portanto, movendo algo que estava nessa semana para a próxima, e assim sucessivamente. Repetindo isto em todas as semanas, a equipe conseguirá alocar os trabalhos do projeto nos períodos e, dependendo da situação, visualizará que a entrega não conseguirá ser desenvolvida até a data estipulada, ou que será necessário a alocação de mais pessoas para o projeto, ou reduzir o escopo, entre outros. Ou seja, <strong>o cliente terá visibilidade sobre o andamento do projeto e conseguirá apoiar a equipe a encontrar opções viáveis para solucionar a questão</strong>. A foto abaixo, tirada de um exemplo desta dinâmica, reflete a situação do projeto em uma sexta semana:</p>
+<p><img decoding="async" style="min-width: 100% !important; border: none;" src="/wp-content/uploads/2017/11/BlogPost-RealityCheck-Image3.jpg" alt="Exemplo do Reality Check em um projeto" /></p>
+<p>Para complementar a dinâmica, a equipe poderá adotar alguns mecanismos visuais para ajudar a interpretar cada item do Reality Check. Como sugestão, colocamos:</p>
+<ul>
+<li>Um adesivo azul, no canto superior esquerdo do post-it, para mostrar quando aquele item (no nosso caso, histórias de usuário) estava em desenvolvimento;</li>
+<li>Um adesivo vermelho, no canto inferior esquerdo do post-it, para representar algum bloqueio naquela história de usuário (algo que esteja atrapalhando o andamento do desenvolvimento, ou algum impedimento que precisa ser removido);</li>
+<li>Um adesivo retangular, no canto superior direito do post-it, para declarar em qual semana aquela história de usuário tinha começado a ser desenvolvida (somente para quando a semana de início não era a mesma de término da história);</li>
+<li>Um post-it amarelo menor, no canto inferior direito do post-it principal, que representava alguma pendência daquela história (com um pequeno texto explicativo).</li>
+</ul>
+<p>Além disso, quando havia dependências entre os itens, como, por exemplo, a história de usuário B somente poderá começar após o término da história A, a equipe desenhava uma seta de ligação, a fim de representar esta dependência. Post-its de cores diferentes também podem ser utilizados para que haja uma identificação de tema, como, no nosso exemplo, uma cor para representar histórias de desenvolvimento de código e uma outra cor para demandas relacionadas com layout. O &#8220;tamanho&#8221; de cada item também poderá ser declarado, evitando que a equipe planeje desenvolver demandas muito grandes na mesma semana, por exemplo. Para ajudar no entendimento de tudo isso, crie uma legenda ao lado do quadro, semelhante a esta foto:</p>
+<p><img decoding="async" style="min-width: 100% !important; border: none;" src="/wp-content/uploads/2017/11/BlogPost-RealityCheck-Image2.png" alt="Exemplo de legenda do Reality Check" /></p>
+<p>Portanto, a dinâmica de Reality Check tem o potencial de agregar valor de gestão para toda a equipe, minimizando problemas de alinhamento quanto às expectativas de entrega dentro de determinado prazo, bem como mostrando como está a realidade do desenvolvimento do projeto.</p>
+<h2>Dicas extras</h2>
+<p>Algumas práticas podem facilitar a utilização dessa dinâmica:</p>
+<ul>
+<li>O facilitador do projeto pode manter o quadro atualizado durante a semana. Depois, no início da próxima, o time poderá focar em distribuir os post-its. Para isso, sempre tenha por perto todos os utensílios necessários (adesivos, caneta de quadro, etc.);</li>
+<li>O facilitador precisa apoiar o time em momentos de debates quanto a prazos, pois é normal que o cliente queira a entrega dentro do prazo inicial. Logo, conversas sobre horas extras, por exemplo, podem surgir, caso a equipe não consiga encaixar todo o escopo dentro do prazo. Cabe à equipe decidir se vale a pena esse esforço adicional, pois, talvez, é melhor tentar negociar um novo prazo, ou mesmo &#8220;quebrar&#8221; partes do escopo e encaixar o que for possível dentro da data desejada;</li>
+<li>Evite identificar a pessoa que está desenvolvendo cada item do escopo. O Reality Check não pode se transformar em uma ferramenta de cobrança, ou mesmo que exponha algo irrelevante para o projeto/time. O quadro, o progresso e as decisões são do time, e não de atores individuais;</li>
+<li>Tenha outras ferramentas para a gestão do projeto. O Reality Check é um item adicional e funciona muito bem quando sincronizado com um quadro Kanban, por exemplo. Ele também poderá agregar valor quando seu projeto ainda não possuir dados históricos para a utilização de métricas, sendo uma potencial ferramenta para conceder, no início do projeto, previsibilidade sem dados;</li>
+<li>O Reality Check não precisa ser utilizado em todas as entregas do projeto. Talvez ele seja naturalmente demandado quando o contexto do projeto (um prazo apertado, por exemplo) justificar sua utilização, ou mesmo quando os membros da equipe encontrarem alguma motivação;</li>
+<li>Se você estiver trabalhando com Scrum, o Reality Check poderá ajudar o time durante a Daily. O próprio time poderá identificar essa oportunidade.</li>
+</ul>
+<p>E você, gostou dessa dinâmica? Fique à vontade para comentar, feedbacks e opiniões são sempre bem-vindos!</p><p>The post <a href="/2017/11/alinhando-expectativas-de-prazo-com-o-reality-check/">Alinhando expectativas de prazo com o Reality Check</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Hard skills on project management</title>
+		<link>/2017/05/hard-skills-on-project-management/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 15 May 2017 18:08:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=6343</guid>
+
+					<description><![CDATA[<p>If you are an Agile devotee (capital A, see We are not necessarily Agile… but we are certainly agile!), keep an open mind to read what is coming next. Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill Before we start, if you are ... <a class="read-more-link" href="/2017/05/hard-skills-on-project-management/">»</a></p>
+<p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>If you are an Agile devotee (capital A, see <a href="/2016/12/we-are-not-necessarily-agile-but-we-are-certainly-agile/">We are not necessarily Agile… but we are certainly agile!</a>), keep an open mind to read what is coming next.</p>
+<blockquote><p>
+  Society is defined not only by what it creates but by what it refuses to destroy. &#8211; John C. Sawhill
+</p></blockquote>
+<p>Before we start, if you are not familiarized with the terminology, here is a short explanation:</p>
+<ul>
+<li><strong>Soft Skills</strong>: personal attributes that enable someone to interact effectively and harmoniously with other people (<a href="https://www.google.com.br/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#q=soft+skills">Google</a>).</li>
+<li><strong>Hard Skills</strong>: specific, teachable abilities that can be defined and measured, such as typing, writing, math, reading and the ability to use software programs (<a href="http://www.investopedia.com/terms/h/hard-skills.asp">Investopedia</a>). In this case, we are using the analytical part of it.</li>
+</ul>
+<h2>The rise</h2>
+<p>Before the agile mindset, project managers used to apply the classical engineering style to handle software projects. The PMBOK (Project Management Body of Knowledge) was, and still is, the source of very good practices and tools for project management. And most of them work in regular industries, the ones that are not as organic as the software area.</p>
+<p>However, the software industry misused the PMBOK. They thought all the practices that are mentioned in it were too hard-skilled and wouldn&#8217;t work in a fast-paced environment as the software industry. And yes, it has all those hard-skilled practices (and some of them do not work with software development), but they were all glued together by team-building actions that people ignored at the time (some of which can be seen in the <a href="https://4squareviews.com/2013/06/13/5th-edition-pmbok-guide-chapter-8-human-resources-management-knowledge-area/">Human Resources chapter</a>). But, as I presented in the aforementioned blog, a revolution took place, and made the industry crucify and bury those practices, without even look if they were all really that bad. As a result, they saw themselves tool-less and decided to react and build their own tools.</p>
+<h2>The death</h2>
+<p>With that, came all the Agile methodologies and their toolsets. Moreover, since the industry lacked soft skills at that time (the trend was to act like bosses: telling other people what, when and how to do stuff), a natural path for the revolution was clear: improving soft skills.</p>
+<p>And it happened! At least the new practices facilitate that&#8230; if people apply it or not on a daily basis, it&#8217;s another story. With that mindset in place, the boss image was abandoned and leader figures were created. Focusing on the code quality and not so much on documenting everything. Letting developers get much closer to product stakeholders than before because that communication between them needs to be proxy-less (in a perfect world at least).</p>
+<p>But things were still not smooth. Most companies started using Scrum, improved their process, but reached a stagnation point in which something was wrong, but they didn&#8217;t know what. The team felt better, working this way, but it was more difficult to spot problems in the process. Talking about deadlines with clients became taboo. And scrum masters would basically annoy the business area of the companies, which wanted predictions to improve their plans.</p>
+<p>Basically, the process improved inward: the development team was happier and more effective. But they forgot to improve the technical communication outward: with other areas, with business, marketing, clients, etc. These areas need more data about the software in order to build their plans. And with that in mind, some hard skills, that got lost years ago, came back.</p>
+<h2>The rebirth</h2>
+<p>At Plataformatec we embraced hard skills, as most of our <a href="/tag/metrics/">agile blog posts</a> show it. We think that having good and advanced hard skills is not a sin, we can and should have as many metrics as possible. However, with metrics, comes great responsibility (this is somehow familiar&#8230; <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f914.png" alt="🤔" class="wp-smiley" style="height: 1em; max-height: 1em;" />).</p>
+<p>Metrics serve as a way to ease the conversation between areas (or with an external client) and to improve our processes inside the team as well. For both, we need to be cautious and not present loose metrics (showing them without the proper explanation and contextualization). If that happens, they can become a way to demand more work and to micromanage the team&#8217;s deliveries, which, usually, is not healthy. (Another post on the common mistakes when using metrics is on its way&#8230;)</p>
+<p>If you wanna take a step further and improve your hard skills toolset, you can take a look at our <a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=post-hard-skills">free Monte Carlo spreadsheet</a>, which uses Monte Carlo simulations to inform you the probability of finishing your project in each of the next weeks!</p>
+<h2>So&#8230; Which one is more important?</h2>
+<p>Both are extremely important. Soft skills without hard skills make the team happy at work but probably inefficient. Hard skills with no soft skills make the team aware of their problems but with no motivation to change. We need to balance both. I’ve already heard questions like: <em>Oh but should it be like, 50/50? 80/20?</em> And I answer with this question: <em>How would you even measure how much soft skills and hard skills you have?!</em></p>
+<p>So, the conclusion is: have both, improve both, care for both. If you think you already have enough of each, you are likely wrong. This should be the mantra of all project managers/Agile coaches out there&#8230; You must have a motivated team and enough data to facilitate communication and improvement.</p>
+<p>What about you? Do you prefer one skill over the other? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/05/hard-skills-on-project-management/">Hard skills on project management</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

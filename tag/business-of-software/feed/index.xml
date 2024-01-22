@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>business of software « Plataformatec Blog</title>
+	<atom:link href="/tag/business-of-software/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 25 Sep 2017 22:07:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Dilemas de PO: como definir OKRs em equipes ágeis</title>
+		<link>/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 05 Sep 2017 21:41:51 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business of software]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=6664</guid>
+
+					<description><![CDATA[<p>Continuando a série de posts referente aos dilemas da vida de gerentes de produto, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor. É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados ... <a class="read-more-link" href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">»</a></p>
+<p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Continuando a <a href="/?s=dilemas+de+po">série de posts referente aos dilemas da vida de gerentes de produto</a>, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor.</p>
+<p>É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados esperados e o planejamento de entregas. Se você convive com tais desafios, confira a seguir uma dinâmica na qual obtive ótimos resultados no processo de concepção de OKRs.</p>
+<h2>O que é OKR e para o que serve</h2>
+<p>Bom, antes de escrever sobre o assunto, vale a pena definir o <strong>termo OKR</strong>.</p>
+<p>Segundo definição do pessoal da <a href="http://leanperformance.com/pt-br/okr/o-que-e-okr/">Lean Performance</a>, OKR &#8212; do inglês <em>Objectives and Key Results</em> &#8211;, utilizado no Silicon Valley por empresas como Google, Facebook, Linkedin, Intel etc, <strong>é um <em>framework</em> para definir metas</strong>. Trata-se de um <strong>sistema simples para criar alinhamento e engajamento em torno de metas mensuráveis e dinâmicas</strong>, tipicamente definidas trimestralmente.</p>
+<p>OKRs são uma ótima forma das organizações criarem e comunicarem objetivos e resultados. <strong>Seu maior propósito é promover conexão entre os objetivos da empresa, do time e dos indivíduos a partir de resultados mensuráveis, fazendo com que todos se movam na mesma direção</strong>.</p>
+<p>Em resumo, utilizar OKRs adequadamente auxilia no aumento do alinhamento e do engajamento entre as pessoas, e torna o processo de planejamento estratégico mais ágil, com maior cadência de revisão, adaptação e participação de toda a equipe.</p>
+<p>O alinhamento e engajamento entre as pessoas aumentam, pois o time passa a fazer parte do direcionamento do produto, gerando maior senso de pertencimento em cada um.</p>
+<p>Certa vez, no projeto de um dos nossos clientes, após a equipe definir os OKRs, fui informado pelo QA que o bug que estava ocorrendo no ambiente de produção iria impactar diretamente um dos OKRs, se não fosse corrigido imediatamente. Esse fato me deixou realmente surpreso, pois jamais veria uma ação assim se não compartilhassemos a responsabilidade com todo o time.</p>
+<p>Com a aplicação de OKRs, ganhamos mais uma ferramenta na priorização do backlog e, mais importante, temos o escopo direcionado para um objetivo comum.</p>
+<p>Ao aplicar dinâmicas de OKRs, espera-se que a empresa, equipe ou pessoa tenha em mãos:</p>
+<ol>
+<li><strong>Objetivos:</strong> Possuem, por essência, característica qualitativa, inspiracional, com prazo definido e apontem para metas, ou seja, dizem para onde se deve ir.</li>
+<li><strong>Key results:</strong> Quantificam toda a ideia inspiracional. Devem ser atingíveis, mensuráveis e realistas. Em outras palavras, indicam como será possível atingir os objetivos.</li>
+</ol>
+<p><em>Beleza Raphael, entendi os conceitos e percebi que isso pode ser útil, mas você pode dar um exemplo?</em></p>
+<blockquote><p>
+  <strong>Objetivo:</strong> Aumentar o número de clientes a partir de melhor experiência de uso do aplicativo.</p>
+<p>  <strong>Período:</strong> Primeiro trimestre de 2017.</p>
+<p>  <strong>Key results:</strong></p>
+<ul>
+<li>Aumentar a taxa de conversão mobile global de 5% (último trimestre de 2016) para 10%.</li>
+<li>Aumentar o volume de sessões entrantes de 161 mil (último trimestre de 2016) para 240 mil.</li>
+<li>Vender 10.000 mil licenças básicas.</li>
+<li>Vender 500 licenças <em>premium</em>.</li>
+</ul>
+</blockquote>
+<p>De onde vamos tirar esses indicadores?</p>
+<p>Aqui vai um ponto importante: para definir bons <em>key results</em>, que sejam mensuráveis e reflitam a situação real, <strong>é essencial que a organização seja orientada a dados e indicadores</strong>. Basicamente, a empresa deve possuir métricas de produto que assegurem uma tomada de decisão assertiva, dando a real noção de direção e esforço; e não somente baseada em intuições e experiências. Esses dados ajudam a definir as estratégias do próximo período com maior segurança e a otimizar os recursos empreendidos.</p>
+<p>Os dados devem direcionar as seguintes questões:</p>
+<ul>
+<li>Quais desafios temos à frente? Quais indicadores estão ruins? O que devemos fazer para melhorar tal indicador? Ex: Diminuir o churn, aumentar prospects e leads, melhorar os processos operacionais etc.</li>
+<li>Qual frente do produto precisamos melhorar para atingir o objetivo X da organização?</li>
+<li>Quais riscos esses dados evidenciam e onde devemos manter a atenção?</li>
+</ul>
+<p>Feita essa introdução, vamos para a dinâmica de definição dos OKRs para que você possa aplicá-la e aprimorá-la.</p>
+<h2>Parte 1 &#8211; Compreendendo o negócio</h2>
+<p>O primeiro tópico a ser discutido diz respeito a revisão ou criação do modelo de negócios do produto.</p>
+<p>Baseado nas personas, a equipe poderá analisar os canais, formatos de relacionamento com o cliente, fontes de receita, atividades chave, recursos chave, parceiros chave e estrutura de custo.</p>
+<p>Para levantar tais informações, sugiro que você leve as seguintes perguntas:</p>
+<ul>
+<li>Personas: qual o perfil de clientes que utilizam o produto?</li>
+<li>Canais: como os clientes chegam ao produto, geralmente?</li>
+<li>Formatos de relacionamento: como ocorre o relacionamento dos usuários com o produto atualmente?</li>
+<li>Fontes de receita: quais são as fontes de receita atuais?</li>
+<li>Atividades chave: quais as principais atividades que precisam ser realizadas no dia a dia da operação para que o produto possa entregar o valor que se propõe?</li>
+<li>Recursos chave: o que o produto possui de diferencial competitivo?</li>
+<li>Parceiros chave: quais parceiros ajudam a empresa a viabilizar/alavancar o produto?</li>
+<li>Custos: qual a estrutura necessária para tornar a operação do produto viável?</li>
+</ul>
+<p><img fetchpriority="high" decoding="async" class="alignleft size-full wp-image-6668" src="/wp-content/uploads/2017/09/business-model-canvas.png" alt="Business model canvas" width="763" height="489" srcset="/wp-content/uploads/2017/09/business-model-canvas.png 763w, /wp-content/uploads/2017/09/business-model-canvas-300x192.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<p>Assim, a equipe terá maior clareza sobre o estágio atual do produto. Caso o produto não possua um modelo de negócios, não deixe de desenvolver um. Uma dica de leitura para que você possa construir um é o livro <a href="https://www.goodreads.com/book/show/7723797-business-model-generation">Business Model Generation</a>.</p>
+<p>Após a revisão do modelo de negócio, o próximo passo será analisar as principais métricas do produto. Cada pessoa da equipe poderá explorar o produto a partir de:</p>
+<ul>
+<li>Informações financeiras: churn, ticket médio, custo de aquisição do cliente etc;</li>
+<li>Comportamento de acesso: número de acessos, taxa de saída, tempo despendido nas páginas do fluxo de venda, origem do tráfego, dispositivo utilizado para acessar o fluxo de venda etc;</li>
+<li>Perfil do cliente: dados demográficos, nível de serviço contratado, faixa etária etc.</li>
+</ul>
+<p><img decoding="async" class="alignleft size-full wp-image-6669" style="margin-right: 15px !important" src="/wp-content/uploads/2017/09/dashboard_metricas.jpg" alt="Exemplo de dashboard de produto" width="300" height="225" align="left" /> A partir das métricas de produto, cada membro da equipe deverá identificar pontos de melhoria e pontos onde o produto aparenta estar bem.</p>
+<div style="clear: both"></div>
+<h2>Parte 2 &#8211; Definindo os OKRs</h2>
+<p>Feita a análise das métricas de negócio e do modelo de negócio, levante com a equipe os potenciais objetivos que serão trabalhados no período de tempo (exemplo: próximo trimestre).</p>
+<p>Se você estiver facilitando a discussão, tenha em mãos as seguintes dicas antes da equipe determinar os objetivos:</p>
+<ul>
+<li>Tenha poucos objetivos (de 3 a 4). Motivo? O trimestre, por exemplo, é curto para se assumir muitos objetivos.</li>
+<li>Relacione os objetivos do produto com os objetivos da empresa.</li>
+<li>Relacione os objetivos com problemas e necessidades reais.</li>
+<li>Utilize as métricas de negócio para definir os objetivos.</li>
+</ul>
+<p>Caso os objetivos levantados sejam complexos ou grandes, vale a pena fomentar discussões para que a equipe simplifique. O mantra que deve ser pensado aqui é: <strong>pequenos incrementos que geram valor econômico para o negócio.</strong></p>
+<p>Para medir os objetivos, a equipe deverá elencar quais serão os <em>key results</em> que serão acompanhados ao longo do período. Para que a equipe tenha um norte:</p>
+<ul>
+<li>Defina poucos <em>key results</em> (de 3 à 4). Motivo? Se o objetivo precisa de muitos itens para ser medido é provável que ele seja complexo demais.</li>
+<li>Os <em>key results</em> devem ser expressos através de números.</li>
+<li>Quais resultados garantirão que alcancemos nossos objetivos?</li>
+</ul>
+<p><img decoding="async" class="size-full wp-image-6670" src="/wp-content/uploads/2017/09/okr_todos.png" alt="Exemplo de OKRs definidos" width="400" height="300" srcset="/wp-content/uploads/2017/09/okr_todos.png 400w, /wp-content/uploads/2017/09/okr_todos-300x225.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Parte 3 &#8211; Definindo um roadmap</h2>
+<p>Dado que os objetivos e os <em>key results</em> estão definidos, a equipe pode se questionar: <em>bom, e agora, o que vamos fazer para atingir nossos OKRs?</em></p>
+<p>Sugiro como última parte da dinâmica o desenvolvimento de um roadmap, a fim de identificar entregáveis macro e quando eles deverão ser entregues ao longo do período (ex: trimestre).</p>
+<p>Técnicas de <em>brainstorming</em> e <em>story mapping</em> ajudam a ter uma ideia de cronologia e dependência entre as possíveis funcionalidades que serão construídas para alcançar os OKRs.</p>
+<p>Antes que alguém me crucifique dizendo que não estou sendo <em>lean</em>, gostaria de deixar algo claro. O roadmap criado será uma referência que COM CERTEZA (repita, <strong>C-O-M C-E-R-T-E-Z-A</strong>) sofrerá alterações ao longo do tempo por conta das mudanças e experimentações que acontecerão para atingir os objetivos e <em>key results</em> definidos.</p>
+<h2>Conclusão</h2>
+<p>A estrutura de OKR pode ser replicada no nível empresa, equipe e, até mesmo, indivíduo. Uma dica que sempre compartilho é: comece com poucos objetivos e trace em torno de 3 à 4 <em>key results</em>. O motivo? Foco. Quanto mais direcionado, mensurável e acionável for a sua estrutura de OKR, maiores serão as chances de alcançar o planejamento desenvolvido.</p>
+<p>Lembre-se que os OKRs devem ser revistos com frequência para que o time possa tê-los sempre em mente e, juntos, decidirem onde despender esforços para caminharem na direção correta.</p>
+<p>É essencial que a empresa possua uma cultura questionadora, desapegada de ferramentas e soluções revolucionárias e tenha um ambiente que promova aprendizado com as falhas, pois certamente haverão erros no início.</p>
+<p>A dinâmica que apresentei teve como objetivo conectar negócio, resultados atuais e futuro (OKRs + funcionalidades).</p>
+<p>E você, como tem aplicado dinâmicas de OKR? Compartilhe os resultados e desafios.</p>
+<p>Até próximo dilema <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Algumas referências: <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<ul>
+<li><a href="https://www.infoq.com/br/articles/agile-goals-okr">Metas Ágeis com OKR</a></li>
+<li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li>
+<li><a href="https://medium.com/startup-tools/okrs-5afdc298bc28">OKRs</a></li>
+<li><a href="https://www.slideshare.net/HenrikJanVanderPol/how-to-outperform-anyone-else-introduction-to-okr">The Basics of OKR &#8211; Google&#8217;s Secret Sauce</a></li>
+</ul>
+<div style="background-color: #fffdf9;border: 1px solid #e9af35;margin: 32px 0;padding: 22px 24px;font-family: sans-serif">
+<h3 style="font-size: 1.4em;line-height: 1.3em;margin-top: 0 !important">Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.7em !important"><strong>Curso gratuito em 7 e-mails</strong>, elaborado pelo autor do livro “Métricas Ágeis”, Raphael Albino.<br />
+<small>Indicado para Agile Coach, Gerente de Produtos, Gerente de Projetos, Product Owner, Scrum Master e CTO/CIO.</small></p>
+<p><a style="background: #e9af35;border: none;color: #fff;font-size: 12px;line-height: 1.5;margin-top: 5px;padding: 8px 16px;text-align: center;text-decoration: none;letter-spacing: 0.1em" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRÁTIS</a></p>
+</div><p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

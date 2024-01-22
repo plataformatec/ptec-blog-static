@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>simple form « Plataformatec Blog</title>
+	<atom:link href="/tag/simple-form/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:28:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>XSS vulnerability on Simple Form</title>
+		<link>/2014/11/xss-vulnerability-on-simple-form-2/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 26 Nov 2014 15:18:28 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[security fix]]></category>
+		<category><![CDATA[simple form]]></category>
+		<guid isPermaLink="false">/?p=4316</guid>
+
+					<description><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options. Versions affected: >= 2.0.0 Not affected: &#60; 2.0.0 Fixed versions: 3.1.0, 3.0.3, 2.1.2 Impact When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided ... <a class="read-more-link" href="/2014/11/xss-vulnerability-on-simple-form-2/">»</a></p>
+<p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options.</p>
+<ul>
+<li>Versions affected: >= 2.0.0</li>
+<li>Not affected: &lt; 2.0.0</li>
+<li>Fixed versions: 3.1.0, 3.0.3, 2.1.2</li>
+</ul>
+<h2>Impact</h2>
+<p>When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided by the users, malicious values can be provided and Simple Form will mark them as safe.</p>
+<h2>Changes at the behavior</h2>
+<p>To fix this vulnerability error messages are now always escaped. If users need to mark them as safe they will need to use explicitly the <code>:error</code> option:</p>
+<pre><code class="ruby">f.input :name, error: raw("My &lt;b&gt;error&lt;/b&gt;")
+</code></pre>
+<h2>Releases</h2>
+<p>The 3.1.0, 3.0.3 and 2.1.2 releases are available at the regular locations.</p>
+<h2>Workarounds</h2>
+<p>There are no feasible workarounds for this issue. We recommend all users to upgrade as soon as possible.</p>
+<h2>Patches</h2>
+<p>To aid users who aren&#8217;t able to upgrade immediately we have provided patches. They are in git-am format and consist of a single changeset.</p>
+<ul>
+<li><a href="https://gist.github.com/rafaelfranca/843f7ec77cec39aabe75">Patch for 3.0 series</a></li>
+<li><a href="https://gist.github.com/rafaelfranca/dc65bb34659e6027c24e">Patch for 2.1 series</a></li>
+</ul>
+<h2>Credits</h2>
+<p>Thanks to Jake Goulding, from WhiteHat Security and Nicholas Rutherford from Medify Ltd. for reporting the issue and working with us in a fix.</p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Take a look at Simple Form and Devise brand new logos</title>
+		<link>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/</link>
+					<comments>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 26 Feb 2013 21:23:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[logos]]></category>
+		<category><![CDATA[simple form]]></category>
+		<guid isPermaLink="false">/?p=3422</guid>
+
+					<description><![CDATA[<p>We are very glad to announce the logos for two of our favorite Rails open source projects&#8230; Simple Form: And Devise: We would like to congratulate our designer, Bruna Kochi, who was able to capture the essence of each project in their logos. We will write about their design process soon! Those projects have been ... <a class="read-more-link" href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">»</a></p>
+<p>The post <a href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">Take a look at Simple Form and Devise brand new logos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We are very glad to announce the logos for two of our favorite Rails open source projects&#8230;</p>
+<p><a href="https://github.com/plataformatec/simple_form">Simple Form</a>:</p>
+<div style="margin: 20px auto; text-align: center;">
+   <img decoding="async" src="https://raw.github.com/plataformatec/simple_form/master/simple_form.png" alt="Simple Form Logo">
+</div>
+<p>And <a href="https://github.com/plataformatec/devise">Devise</a>:</p>
+<div style="margin: 20px auto; text-align: center;">
+   <img decoding="async" src="https://raw.github.com/plataformatec/devise/master/devise.png" alt="Devise Logo">
+</div>
+<p>We would like to congratulate our designer, <a href="https://twitter.com/brutiko">Bruna Kochi</a>, who was able to capture the essence of each project in their logos. We will write about their design process soon!</p>
+<p>Those projects have been in the Rails community for almost 4 years and it was about time for them to have their own visual identity! We would like to thank all contributors and users who have helped those projects to be more robust, flexible and popular!</p><p>The post <a href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">Take a look at Simple Form and Devise brand new logos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Experimenting with explicit contracts with Ruby	</title>
+	<atom:link href="/2016/02/experimenting-with-explicit-contracts-with-ruby/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 09 Mar 2016 14:11:24 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Mazza		</title>
+		<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/comment-page-1/#comment-1584</link>
+
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Wed, 09 Mar 2016 14:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5132#comment-1584</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/experimenting-with-explicit-contracts-with-ruby/comment-page-1/#comment-1583&quot;&gt;suryart&lt;/a&gt;.
+
+Fixed, thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/experimenting-with-explicit-contracts-with-ruby/comment-page-1/#comment-1583">suryart</a>.</p>
+<p>Fixed, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: suryart		</title>
+		<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/comment-page-1/#comment-1583</link>
+
+		<dc:creator><![CDATA[suryart]]></dc:creator>
+		<pubDate>Sun, 06 Mar 2016 14:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5132#comment-1583</guid>
+
+					<description><![CDATA[Nice article.
+There&#039;s a type though. I think it should be `module Payments` instead of `module Payment` under &quot;Skipping Hash driven development&quot; where you&#039;re creating `Payments::Result` class.]]></description>
+			<content:encoded><![CDATA[<p>Nice article.<br />
+There&#8217;s a type though. I think it should be `module Payments` instead of `module Payment` under &#8220;Skipping Hash driven development&#8221; where you&#8217;re creating `Payments::Result` class.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Philip Sampaio		</title>
+		<link>/2016/02/experimenting-with-explicit-contracts-with-ruby/comment-page-1/#comment-1578</link>
+
+		<dc:creator><![CDATA[Philip Sampaio]]></dc:creator>
+		<pubDate>Wed, 02 Mar 2016 14:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5132#comment-1578</guid>
+
+					<description><![CDATA[Great article, Lucas! Thanks for sharing.
+
+We have a similar gateway integration, and at the beginning of the implementation we ignored the cost of using the &quot;real&quot; implementation in our tests. We had to use mocks/stubs or VCR in a lot of places.
+
+The memory adapter would avoid a lot of pain (with VCR) and repetition (mocks/stubs) in our code.]]></description>
+			<content:encoded><![CDATA[<p>Great article, Lucas! Thanks for sharing.</p>
+<p>We have a similar gateway integration, and at the beginning of the implementation we ignored the cost of using the &#8220;real&#8221; implementation in our tests. We had to use mocks/stubs or VCR in a lot of places.</p>
+<p>The memory adapter would avoid a lot of pain (with VCR) and repetition (mocks/stubs) in our code.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

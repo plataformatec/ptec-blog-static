@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>postgresql « Plataformatec Blog</title>
+	<atom:link href="/tag/postgresql/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 12 Feb 2019 11:59:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Migrations in databases with large amount of data</title>
+		<link>/2019/02/migrations-in-databases-with-large-amount-of-data/</link>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Mon, 11 Feb 2019 12:58:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<guid isPermaLink="false">/?p=8581</guid>
+
+					<description><![CDATA[<p>There is a discussion that always comes up when dealing with database migrations. Should I use the migrations to also migrate data? I mean, I&#8217;ve already altered the structure so it would be easy to change the data by including an SQL as well, and this would guarantee that everything is working after the deploy. ... <a class="read-more-link" href="/2019/02/migrations-in-databases-with-large-amount-of-data/">»</a></p>
+<p>The post <a href="/2019/02/migrations-in-databases-with-large-amount-of-data/">Migrations in databases with large amount of data</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a discussion that always comes up when dealing with database migrations.</p>
+<p>Should I use the migrations to also migrate data? I mean, I&#8217;ve already altered the structure so it would be easy to change the data by including an SQL as well, and this would guarantee that everything is working after the deploy. Right?</p>
+<p>It could work, but in most cases, it could also cause a database lock and a major production problem.</p>
+<p>In general, the guidelines are to move the commands responsible to migrate the data to a separate task and then execute it after the migrations are up to date.</p>
+<p>In some cases, this could also take an eternity when you are dealing with a database with millions of records. Update statements are expensive to the database and sometimes it is preferable to create a new table with the right info and after everything is ok to rename after the right one. But sometimes we don&#8217;t want or we simply just can’t rename the table for N reasons.</p>
+<p>When you are dealing with millions of records and need to migrate data, one thing you can do is to create a SQL script responsible to migrate the data in batches. This is faster because you won’t create a single transaction in the database to migrate all records and will consume less memory.</p>
+<p>One thing to consider when using migration scripts is to disable all indexes in the table, indexes are meant to improve the read performance but can slow down the write action significantly. This happens because every time you write a new record in the table, the database will re-organize the data. Now imagine this in a scenario of millions of records, it could take way too much then it should.</p>
+<p>Every database has its own characteristics, but most of the things you can do in one, you can do in another, this is due to the SQL specification that every database implements. So when you are writing these scripts, it is important to always look at the documentation. I’ll be using PostgreSQL in this example, but the idea can be applied to most databases.</p>
+<h3>Let’s take a look into one example</h3>
+<p>Suppose we are dealing with e-commerce and we are noticing a slowness in the orders page, and by analyzing the query we notice an improvement can be done by denormalizing one of its tables. Let’s work with some data to show how this could be done.</p>
+<pre><code class="sql">CREATE TABLE "users" (
+id serial PRIMARY KEY,
+account_id int not NULL,
+name varchar(10)
+);
+
+CREATE TABLE orders (
+id SERIAL PRIMARY KEY,
+data text not NULL,
+user_id int not NULL
+);
+
+-- Generates 200_000_000 orders
+INSERT INTO "users" (account_id)
+SELECT generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 't-shirt' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'backpack' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'sunglass' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'sketchbook' AS data,
+       generate_series(1,50000000);
+
+CREATE index ON "users" ("account_id");
+CREATE index ON "orders" ("user_id");
+</code></pre>
+<pre><code class="sql">SELECT
+  "orders"."id",
+  "orders"."data"
+FROM "orders"
+INNER JOIN "users" ON ("orders"."user_id" = "users"."id")
+WHERE "users".account_id = 4500000;
+</code></pre>
+<p>The results from this query take about <strong>45s</strong> to return. If we run the explain analyze in this query, we will see that the <code>join</code> is taking too long, even though it is a simple query.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8594 size-full" src="/wp-content/uploads/2019/02/first_explain_analyze-2.png" alt="" width="2784" height="1778" srcset="/wp-content/uploads/2019/02/first_explain_analyze-2.png 2784w, /wp-content/uploads/2019/02/first_explain_analyze-2-300x192.png 300w, /wp-content/uploads/2019/02/first_explain_analyze-2-768x490.png 768w, /wp-content/uploads/2019/02/first_explain_analyze-2-1024x654.png 1024w" sizes="(max-width: 2784px) 100vw, 2784px" /></p>
+<p>One of the things we can do to improve this query is to denormalize the <code>orders</code> table and create another column <code>user_account_id</code> that will be a copy of the <code>account_id</code> column from the <code>users</code> table. This way we can remove the <code>join</code> and make it easier to read the info.</p>
+<pre><code class="sql">ALTER TABLE "orders" ADD COLUMN "user_account_id" integer;
+</code></pre>
+<p>If we weren’t dealing with such large data, the easiest way of doing it would be to write a simple <code>UPDATE FROM</code> and go on with life, but with this much of data it could take too long to finish.</p>
+<pre><code class="sql">UPDATE orders
+SET user_account_id = users.account_id
+FROM users
+WHERE orders.user_id = users.id;
+</code></pre>
+<h3>Updating records in batches</h3>
+<p>One way that we will explore in this blog post is to migrate this amount of data using a script that performs the update in batches.</p>
+<p>We will need to control the items to be updated, if your table has a sequential id column it will be easy, otherwise, you will need to find a way to iterate through the records. One way you can control this is through creating another <code>table</code> or <code>temp table</code>, to store the data that needs to be changed, you could use a <code>ROW_NUMBER</code> function to generate the sequential ID or just create a sequential column. The only limitation with <code>temp table</code> is the database hardware that needs to be able to handle this much of records in memory.</p>
+<p><a href="https://www.postgresql.org/docs/9.3/sql-createtable.html" target="_blank" rel="noopener">PostgreSQL: Documentation: 9.3: CREATE TABLE</a></p>
+<p>Lucky us, we have a sequential column in our table that we can use to control the items. To iterate through the records in PostgreSQL you can use some control structures such as <code>FOR</code> or <code>WHILE</code>.</p>
+<p><a href="https://www.postgresql.org/docs/9.2/plpgsql-control-structures.html" target="_blank" rel="noopener">PostgreSQL: Documentation: 9.2: Control Structures</a></p>
+<p>You can also print some messages during the process to provide some feedback while the queries are running, chances are that it may take a while to finish if you are dealing with a large dataset.</p>
+<p><a href="https://www.postgresql.org/docs/9.6/plpgsql-errors-and-messages.html" target="_blank" rel="noopener">https://www.postgresql.org/docs/9.6/plpgsql-errors-and-messages.html</a></p>
+<pre><code class="plsql">DO $
+DECLARE
+   row_count integer := 1;
+   batch_size  integer := 50000; -- HOW MANY ITEMS WILL BE UPDATED AT TIME
+   from_number integer := 0;
+   until_number integer := batch_size;
+   affected integer;
+BEGIN
+
+row_count := (SELECT count(*) FROM orders WHERE user_account_id IS NULL);
+
+RAISE NOTICE '% items to be updated', row_count;
+
+-- ITERATES THROUGH THE ITEMS UNTIL THERE IS NO MORE RECORDS TO BE UPDATED
+WHILE row_count &gt; 0 LOOP
+  UPDATE orders
+  SET user_account_id = users.account_id
+  FROM users
+  WHERE orders.user_id = users.id
+  AND orders.id BETWEEN from_number AND until_number;
+
+  -- OBTAINING THE RESULT STATUS
+  GET DIAGNOSTICS affected = ROW_COUNT;
+  RAISE NOTICE '-&gt; % records updated!', affected;
+
+  -- UPDATES THE COUNTER SO IT DOESN'T TURN INTO AN INFINITE LOOP
+  from_number := from_number + batch_size;
+  until_number := until_number + batch_size;
+  row_count := row_count - batch_size;
+
+  RAISE NOTICE '% items to be updated', row_count;
+END LOOP;
+
+END $;
+</code></pre>
+<p>Given us a message output will be like this until the script finishes:</p>
+<pre><code>NOTICE:  200000000 items to be updated
+CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+NOTICE:  -&gt; 50000 records updated!
+CONTEXT:  PL/pgSQL function inline_code_block line 23 at RAISE
+NOTICE:  199950000 items to be updated
+CONTEXT:  PL/pgSQL function inline_code_block line 30 at RAISE
+NOTICE:  -&gt; 50001 records updated!
+</code></pre>
+<p>After the script finishes, we can create an index in the new column since it will be used for reading purposes.</p>
+<p><code>CREATE index ON "orders" ("user_account_id");</code></p>
+<p>If we ran the <code>EXPLAIN ANALYZE</code> command again we can see the performance improvements.</p>
+<p><img decoding="async" class="aligncenter wp-image-8595 size-full" src="/wp-content/uploads/2019/02/final_explain_analyze.png" alt="" width="2784" height="1778" srcset="/wp-content/uploads/2019/02/final_explain_analyze.png 2784w, /wp-content/uploads/2019/02/final_explain_analyze-300x192.png 300w, /wp-content/uploads/2019/02/final_explain_analyze-768x490.png 768w, /wp-content/uploads/2019/02/final_explain_analyze-1024x654.png 1024w" sizes="(max-width: 2784px) 100vw, 2784px" /></p>
+<p>We can see that before, only the <code>join</code> was taking a little bit more than <code>7s</code> in the query, approximately 15% of the loading time. If we look closer, we can also notice that the next three lines were related to the <code>join</code>, and after we denormalized the table they were gone too.</p>
+<p>You can follow the <code>EXPLAIN ANALYZE</code> evolution <a href="https://explain.depesz.com/s/IwjF" target="_blank" rel="noopener">here</a></p>
+<p>Hope it helps!</p><p>The post <a href="/2019/02/migrations-in-databases-with-large-amount-of-data/">Migrations in databases with large amount of data</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Rails 4 and PostgreSQL Arrays</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/</link>
+					<comments>/2014/07/rails-4-and-postgresql-arrays/#comments</comments>
+		
+		<dc:creator><![CDATA[Bernardo Chaves]]></dc:creator>
+		<pubDate>Tue, 15 Jul 2014 12:00:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=4115</guid>
+
+					<description><![CDATA[<p>Rails 4 supports arrays fields for PostgreSQL in a nice way, although it is not a very known feature. In order to demonstrate its usage it&#8217;s useful to explain the context where this was used. PostgreSQL Arrays and Rails Migrations Suppose we have a Product model with the following fields: name, category_id and tags. The ... <a class="read-more-link" href="/2014/07/rails-4-and-postgresql-arrays/">»</a></p>
+<p>The post <a href="/2014/07/rails-4-and-postgresql-arrays/">Rails 4 and PostgreSQL Arrays</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 4 supports arrays fields for PostgreSQL in a nice way, although it is not a very known feature. In order to demonstrate its usage it&#8217;s useful to explain the context where this was used.</p>
+<h3>PostgreSQL Arrays and Rails Migrations</h3>
+<p>Suppose we have a <i>Product model</i> with the following fields: <i>name</i>, <i>category_id</i> and <i>tags</i>. The <i>name </i>field will be a simple string, <i>category_id </i>will be the <i>foreign key</i> of a record in the <i>Category model </i>and <i>tags </i>will be created by inputting a string of comma-separated words, so: <i>&#8220;one, two, forty two&#8221;</i> will become the tags: <i>&#8220;one&#8221;</i>,<i> &#8220;two&#8221; </i>and<i> &#8220;forty two&#8221; </i>respectively<i>.</i></p>
+<p>Creating these tables via migrations is nothing new, except for the column <i>tags </i>which will have the Array type in this case. To create this kind of column we use the following syntax in our migration:</p>
+<pre lang="ruby">create_table :categories do |t|
+  t.string :name, null: false
+end
+
+create_table :products do |t|
+  t.string :name, null: false
+  t.references :category, null: false
+  t.text :tags, array: true, default: []
+end
+</pre>
+<p>Let&#8217;s explore what we can do with this kind of field using the postgres console:</p>
+<pre lang="plsql">$ rails db
+> insert into products(name, category_id, tags) values('T-Shirt', 3, '{clothing, summer}');
+> insert into products(name, category_id, tags) values('Sweater', 3, ARRAY['clothing', 'winter']);
+> select * from products;
+1  |  T-Shirt  |  3  | {clothing, summer}
+2  |  Sweater  |  3  | {clothing, winter}
+</pre>
+<p>As we can see we need to specify each tag following this syntax:</p>
+<p><i>&#8216;{ val1, val2, … }&#8217; </i>or <i>ARRAY[&#8216;val1&#8217;, &#8216;val2&#8217;, &#8230;]</i></p>
+<p>Let&#8217;s play a little more to understand how this column behaves when queried:</p>
+<pre lang="plsql">
+> select * from products where tags = '{clothing, summer}';
+1  |  T-Shirt  |  3  | {clothing, summer}
+
+> select * from products where tags = '{summer, clothing}';
+(0 rows)
+
+> select * from products where 'winter' = ANY(tags);
+2  |  Sweater  |  3  |  {clothing, winter}
+</pre>
+<p>As this example demonstrates, searching for records by an array with its values in the order they were inserted works, but with the same values in a different order does not. We were also able to find a record searching for a specific tag using the ANY function.</p>
+<p>There&#8217;s a lot more to talk about arrays in PostgreSQL, but for our example this is enough. You can find more information at the PostgreSQL official documentation about <a href="http://www.postgresql.org/docs/current/static/arrays.html">arrays</a> and its <a href="http://www.postgresql.org/docs/current/static/functions-array.html">functions</a>.</p>
+<h3>How Rails treats PostgreSQL arrays</h3>
+<p>It&#8217;s also valuable to see how to use the array field within Rails, let&#8217;s try:</p>
+<pre lang="rails">$ rails c
+
+Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b', 'c'])
+#> 
+
+Product.find(26).tags
+#> ["a", "b", "c"]
+</pre>
+<p>So Rails treats an array column in PostgreSQL as an Array in Ruby, pretty reasonable!</p>
+<h3>Validations</h3>
+<p>We want each product to be unique, let&#8217;s see some examples to clarify this concept.</p>
+<p>Given we have the following product:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b', 'c'])
+</pre>
+<p>We can easily create another one if we change the <i>name</i> attribute:</p>
+<pre lang="rails">Product.create(name: 'Slippers', category: Category.first, tags: ['a', 'b', 'c'])
+</pre>
+<p>We can also create another product with different tags:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b'])
+</pre>
+<p>But we don&#8217;t want to create a product with the same attributes, even if the tags are in a different order:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'c', 'b'])
+#> false
+</pre>
+<p>As PostgreSQL only finds records by tags given the exact order in which they were inserted, then how can we ensure the uniqueness of a product with tags in an order-independent way?</p>
+<p>After much thought we decided that a good approach would involve creating an unique index with all the columns in the products table but with tags sorted when a row is inserted in the database. Something like:</p>
+<pre lang="plsql">CREATE UNIQUE INDEX index_products_on_category_id_and_name_and_tags
+ON products USING btree (category_id, name, sort_array(tags));
+</pre>
+<p>And <i>sort_array </i>is our custom function responsible for sorting the array, since PostgreSQL does not have a built in function like this.</p>
+<h3>Creating a custom function in PostgreSQL using PL/pgSQL</h3>
+<p>To create a custom function we used the <i>PL/pgSQL</i> language, and since we are adding database specific code like this we can&#8217;t use the default <i>schema.rb </i>anymore. Let&#8217;s change this in <i>config/application.rb</i>:</p>
+<pre lang="rails"># Use SQL instead of AR schema dumper when creating the database
+config.active_record.schema_format = :sql
+</pre>
+<p>With this configuration set, our <i>schema.rb</i> file will be replaced by a <i>structure.sql</i> file without side effects, our current migrations don&#8217;t need to be changed at all. Now we can create a migration with our <i>sort_array </i>code:</p>
+<pre lang="rails">
+def up
+  execute <<-SQL
+    CREATE FUNCTION sort_array(unsorted_array anyarray) RETURNS anyarray AS $$
+      BEGIN
+        RETURN (SELECT ARRAY_AGG(val) AS sorted_array
+        FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+      END;
+    $$ LANGUAGE plpgsql IMMUTABLE STRICT;
+
+    CREATE UNIQUE INDEX index_products_on_category_id_and_name_and_tags ON products USING btree (category_id, name, sort_array(tags));
+  SQL
+end
+
+def down
+  execute <<-SQL
+    DROP INDEX IF EXISTS index_products_on_category_id_and_name_and_tags;
+    DROP FUNCTION IF EXISTS sort_array(unsorted_array anyarray);
+  SQL
+end
+</pre>
+<p>Now, let's take it slow and understand step by step</p>
+<pre lang="plsql">CREATE FUNCTION sort_array(unsorted_array anyarray) RETURNS anyarray
+</pre>
+<p>The line above tells that we are creating a function named <i>sort_array </i>and that it receives a parameter named <i>unsorted_array </i>of type <i>anyarray </i>and returns something of this same type. This <i>anyarray,</i> in fact, is a <i>pseudo-type </i>that indicates that a function accepts any array data type.</p>
+<pre lang="plsql">RETURN (SELECT ARRAY_AGG(val) AS sorted_array
+FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+</pre>
+<p>The trick here is the use of the function <i>unnest </i>that expands an Array to a set of rows. Now we can order these rows and after that we use another function called <i>array_agg </i>that concatenates the input into a new Array.</p>
+<pre lang="plsql">$$ LANGUAGE plpgsql IMMUTABLE STRICT;
+</pre>
+<p>The last trick is the use of the keywords <i>IMMUTABLE</i>  and <i>STRICT</i>. With the first one we guarantee that our function will always return the same output given the same input, we can't use it in our index if we don't specify so. The other one tells that our function will always return <i>null </i>if some of the parameters are not specified.</p>
+<p>And that's it! With this we can check for uniqueness in a performant way with some method like:</p>
+<pre lang="rails">def duplicate_product_exists?
+  relation = self.class.
+    where(category_id: category_id).
+    where('lower(name) = lower(?)', name).
+    where('sort_array(tags) = sort_array(ARRAY[?])', tags)
+
+  relation = relation.where.not(id: id) if persisted?
+
+  relation.exists?
+end
+</pre>
+<h3>Case insensitive arrays</h3>
+<p>There is still a problem with our code though, the index is not case insensitive!  What if a user inserts a product with tags ['a', 'b'] and another one inserts the same product but with tags ['A', 'b']? Now we have duplication in our database! We have to deal with this, but unfortunately this will increase the complexity of our <i>sort_array </i>function a little bit. To fix this problem we only need to change one single line:</p>
+<p>From this:</p>
+<pre lang="plsql">
+FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+</pre>
+<p>To:</p>
+<pre lang="plsql">
+FROM
+(SELECT
+  UNNEST(string_to_array(lower(array_to_string(unsorted_array, ',')), ','))
+  AS val ORDER BY val)
+AS sorted_vals);
+</pre>
+<p>The difference is that instead of passing unsorted_array directly to the function <i>unnest </i>we are transforming it in an String, calling lower on it and transforming it back to an Array before passing it on. With this change it doesn't matter if the user inserts ['a'] or ['A'], every tag will be saved in lowercase in the index. Problem solved!</p>
+<p>As we can see, it's not an easy task to deal with uniqueness and arrays in the database, but the overall result was great.</p>
+<p><i>Would you solve this problem in a different way? Share with us!</i></p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span></p><p>The post <a href="/2014/07/rails-4-and-postgresql-arrays/">Rails 4 and PostgreSQL Arrays</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/07/rails-4-and-postgresql-arrays/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

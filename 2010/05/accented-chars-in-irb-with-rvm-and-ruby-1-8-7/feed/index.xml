@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Accented chars in IRB with RVM and ruby 1.8.7	</title>
+	<atom:link href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 07 May 2010 22:23:11 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: John		</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/comment-page-1/#comment-606</link>
+
+		<dc:creator><![CDATA[John]]></dc:creator>
+		<pubDate>Fri, 07 May 2010 22:23:11 +0000</pubDate>
+		<guid isPermaLink="false">/?p=990#comment-606</guid>
+
+					<description><![CDATA[Actually it would be much better to build / install the RVM readline package and build your RVM rubies against that instead of linking a brew / macports readline. This way nothing breaks, not even the stuff you don&#039;t know about.
+
+The reason for all this nonsense is that OS X does not use readline but a similar tool with a different name. Forgot the name but its really a pain. Anyhow - RVM has a solution for this: http://rvm.beginrescueend.com/packages/readline/]]></description>
+			<content:encoded><![CDATA[<p>Actually it would be much better to build / install the RVM readline package and build your RVM rubies against that instead of linking a brew / macports readline. This way nothing breaks, not even the stuff you don&#8217;t know about.</p>
+<p>The reason for all this nonsense is that OS X does not use readline but a similar tool with a different name. Forgot the name but its really a pain. Anyhow &#8211; RVM has a solution for this: <a href="http://rvm.beginrescueend.com/packages/readline/" rel="nofollow ugc">http://rvm.beginrescueend.com/packages/readline/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roger Leite		</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/comment-page-1/#comment-598</link>
+
+		<dc:creator><![CDATA[Roger Leite]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 21:02:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=990#comment-598</guid>
+
+					<description><![CDATA[Now I got too! ;D]]></description>
+			<content:encoded><![CDATA[<p>Now I got too! ;D</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/comment-page-1/#comment-597</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 20:48:14 +0000</pubDate>
+		<guid isPermaLink="false">/?p=990#comment-597</guid>
+
+					<description><![CDATA[Yeah, cool, but I got a Rails 3 logger! :P]]></description>
+			<content:encoded><![CDATA[<p>Yeah, cool, but I got a Rails 3 logger! 😛</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roger Leite		</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/comment-page-1/#comment-596</link>
+
+		<dc:creator><![CDATA[Roger Leite]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 18:19:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=990#comment-596</guid>
+
+					<description><![CDATA[Boa George!
+
+My irbrc is here http://gist.github.com/276299
+I use irb/completion, a &quot;home made&quot; history, awesome print (if exists) and rails2 logger.
+
+success!]]></description>
+			<content:encoded><![CDATA[<p>Boa George!</p>
+<p>My irbrc is here <a href="http://gist.github.com/276299" rel="nofollow ugc">http://gist.github.com/276299</a><br />
+I use irb/completion, a &#8220;home made&#8221; history, awesome print (if exists) and rails2 logger.</p>
+<p>success!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/comment-page-1/#comment-595</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 17:51:08 +0000</pubDate>
+		<guid isPermaLink="false">/?p=990#comment-595</guid>
+
+					<description><![CDATA[nice article!
+
+anyway, I use wirble, hirb and awesome_print, and a colorful IRB-prompt:
+
+http://gist.github.com/368237]]></description>
+			<content:encoded><![CDATA[<p>nice article!</p>
+<p>anyway, I use wirble, hirb and awesome_print, and a colorful IRB-prompt:</p>
+<p><a href="http://gist.github.com/368237" rel="nofollow ugc">http://gist.github.com/368237</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

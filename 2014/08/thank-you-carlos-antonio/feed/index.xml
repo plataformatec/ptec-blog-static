@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Thank you, Carlos Antonio!	</title>
+	<atom:link href="/2014/08/thank-you-carlos-antonio/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/08/thank-you-carlos-antonio/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 18 Aug 2014 13:04:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2014/08/thank-you-carlos-antonio/comment-page-1/#comment-1432</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 13:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4159#comment-1432</guid>
+
+					<description><![CDATA[Puxa, isso é muito bacana de sua parte. Estamos tão acostumados a criticar e lembrar dos defeitos e daquilo que nos incomoda que frequentemente esquecemos de destacar as partes boas das pessoas. Receber um feedback fantástico desses, e ainda publicamente, não tem preço. Parabéns ao Carlos pelas conquistas e ao José pela iniciativa do feedback. Boa sorte em sua nova trilha, Carlos!]]></description>
+			<content:encoded><![CDATA[<p>Puxa, isso é muito bacana de sua parte. Estamos tão acostumados a criticar e lembrar dos defeitos e daquilo que nos incomoda que frequentemente esquecemos de destacar as partes boas das pessoas. Receber um feedback fantástico desses, e ainda publicamente, não tem preço. Parabéns ao Carlos pelas conquistas e ao José pela iniciativa do feedback. Boa sorte em sua nova trilha, Carlos!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

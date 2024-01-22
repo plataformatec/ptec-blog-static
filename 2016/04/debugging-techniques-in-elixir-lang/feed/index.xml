@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Debugging techniques in Elixir	</title>
+	<atom:link href="/2016/04/debugging-techniques-in-elixir-lang/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/04/debugging-techniques-in-elixir-lang/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 27 Apr 2016 20:04:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Luke Imhoff		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1599</link>
+
+		<dc:creator><![CDATA[Luke Imhoff]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2016 20:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1599</guid>
+
+					<description><![CDATA[How do you evaluate expressions in the evaluator window after attaching to the process?  I have variable names listed like `resource@1`, but that&#039;s not a valid Erlang variable name, so I can&#039;t do `resource@1#{relationships}` to get the `relationships` value out of the `resource@1` map.  I seem to only be able to evaluate variables by clicking on their name.  Is there someway to refer to Elixir variables, so the Erlang evaluator can parse them?]]></description>
+			<content:encoded><![CDATA[<p>How do you evaluate expressions in the evaluator window after attaching to the process?  I have variable names listed like `resource@1`, but that&#8217;s not a valid Erlang variable name, so I can&#8217;t do `resource@1#{relationships}` to get the `relationships` value out of the `resource@1` map.  I seem to only be able to evaluate variables by clicking on their name.  Is there someway to refer to Elixir variables, so the Erlang evaluator can parse them?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: scott hamilton		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1597</link>
+
+		<dc:creator><![CDATA[scott hamilton]]></dc:creator>
+		<pubDate>Fri, 22 Apr 2016 15:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1597</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1594&quot;&gt;Erich Kist&lt;/a&gt;.
+
+THANKS!!! I figured it was possible. Just wanted to see if there was any advice on the subject. Thanks, I&#039;ll take a stab at it over the weekend.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1594">Erich Kist</a>.</p>
+<p>THANKS!!! I figured it was possible. Just wanted to see if there was any advice on the subject. Thanks, I&#8217;ll take a stab at it over the weekend.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Erich Kist		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1594</link>
+
+		<dc:creator><![CDATA[Erich Kist]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 14:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1594</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1591&quot;&gt;scott hamilton&lt;/a&gt;.
+
+HI Scott, you can use debugger with docker.
+
+Probably, the debugger will not run in the docker. So, my suggestion is to start a locally shell and connect with your node in docker and then use the debugger. Our next post will cover this strategy. Stay tuned for more details.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1591">scott hamilton</a>.</p>
+<p>HI Scott, you can use debugger with docker.</p>
+<p>Probably, the debugger will not run in the docker. So, my suggestion is to start a locally shell and connect with your node in docker and then use the debugger. Our next post will cover this strategy. Stay tuned for more details.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bryan Hunt		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1593</link>
+
+		<dc:creator><![CDATA[Bryan Hunt]]></dc:creator>
+		<pubDate>Wed, 20 Apr 2016 10:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1593</guid>
+
+					<description><![CDATA[I&#039;ve written a convenience script to make patching the beam file easier (tested on OS-X)- you can grab it from here : https://gist.github.com/ef1830f3f7ce2fcdbda2cf9aa781b68f]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve written a convenience script to make patching the beam file easier (tested on OS-X)- you can grab it from here : <a href="https://gist.github.com/ef1830f3f7ce2fcdbda2cf9aa781b68f" rel="nofollow ugc">https://gist.github.com/ef1830f3f7ce2fcdbda2cf9aa781b68f</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: davidcotter		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1592</link>
+
+		<dc:creator><![CDATA[davidcotter]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2016 16:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1592</guid>
+
+					<description><![CDATA[Great article.
+I got it working on Windows with the int.erl compile and the --werl. I tried debugging a Phoenix app and it worked but I don&#039;t quit know what I am doing. To debug the Phoenix app: 
+
+c:devhello_phoenix&#062; iex --werl -S mix phoenix.server
+iex(1)&#062; :debugger.start()
+iex(2)&#062; :int.ni(HelloPhoenix.PageController) 
+iex(3)&#062; :int.break(HelloPhoenix.PageController, 5)
+
+Refresh browser and it breaks at the controller. The &quot;:int.ni&quot; interprets the module for debugging purposes.  Does this mean that I need to call ni and break for every module I want to step through - I guess so. Do you know if it is possible &quot;Step over&quot; - I can&#039;t see any difference between &quot;Next&quot; and &quot;Step&quot; in the debugger. Am I doing it right?
+
+I had no idea this was possible with elixir/phoenix so it&#039;s great for tracking down elusive issues.]]></description>
+			<content:encoded><![CDATA[<p>Great article.<br />
+I got it working on Windows with the int.erl compile and the &#8211;werl. I tried debugging a Phoenix app and it worked but I don&#8217;t quit know what I am doing. To debug the Phoenix app: </p>
+<p>c:devhello_phoenix&gt; iex &#8211;werl -S mix phoenix.server<br />
+iex(1)&gt; :debugger.start()<br />
+iex(2)&gt; :int.ni(HelloPhoenix.PageController)<br />
+iex(3)&gt; :int.break(HelloPhoenix.PageController, 5)</p>
+<p>Refresh browser and it breaks at the controller. The &#8220;:int.ni&#8221; interprets the module for debugging purposes.  Does this mean that I need to call ni and break for every module I want to step through &#8211; I guess so. Do you know if it is possible &#8220;Step over&#8221; &#8211; I can&#8217;t see any difference between &#8220;Next&#8221; and &#8220;Step&#8221; in the debugger. Am I doing it right?</p>
+<p>I had no idea this was possible with elixir/phoenix so it&#8217;s great for tracking down elusive issues.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: scott hamilton		</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/comment-page-1/#comment-1591</link>
+
+		<dc:creator><![CDATA[scott hamilton]]></dc:creator>
+		<pubDate>Mon, 18 Apr 2016 14:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5280#comment-1591</guid>
+
+					<description><![CDATA[I&#039;m a big docker fan for dev. Does anybody know if you can get the debugger to work with docker?]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m a big docker fan for dev. Does anybody know if you can get the debugger to work with docker?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

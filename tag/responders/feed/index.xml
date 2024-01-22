@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>responders « Plataformatec Blog</title>
+	<atom:link href="/tag/responders/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Mar 2014 21:46:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Devise and Rails 4</title>
+		<link>/2013/05/devise-and-rails-4/</link>
+					<comments>/2013/05/devise-and-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 10 May 2013 20:36:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[mail_form]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3440</guid>
+
+					<description><![CDATA[<p>Devise 3.0 rc version with Rails 4 compatibility and new 2.2.4 stable version. Simple Form, Responders, Show For and Mail Form versions with Rails 4 compatibility.</p>
+<p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This week we released the first release candidate version of Devise that is fully compatible with Rails 4, and we&#8217;re bumping its version to 3.0. This version completely drops support for Rails 3.1 and Ruby 1.8.7, only keeping compatibility with both Rails 3.2 and Rails 4, running with Ruby 1.9.3 and 2.0.</p>
+<p>This rc version took some time to get ready, we&#8217;ve been running a <em>rails4</em> branch for some time already and one of the reasons was because of the changes required to <a href="https://github.com/plataformatec/devise/commit/c63483ae2409ba44889756796930f5d45630d7b3">make it compatible with the new <strong>strong parameters</strong> API from Rails 4</a>. We are aware that some people have been using this branch since Rails 4.0 beta1 with success, and we&#8217;re now inviting you to try 3.0 rc with the <a href="http://weblog.rubyonrails.org/2013/5/1/Rails-4-0-release-candidate-1/">recent release of Rails 4.0 rc1</a>.</p>
+<h3>Devise stable</h3>
+<p>Together with the 3.0 beta version, we&#8217;ve released Devise 2.2.4 with a few enhancements and bug fixes, make sure to <a href="https://github.com/plataformatec/devise/blob/v2.2.4/CHANGELOG.rdoc">check the changelog</a> to see the new goodies. All changes are also included in the rc version.</p>
+<h3>Simple Form</h3>
+<p>Simple Form has been running a 3.0 rc version for a couple months already, fully compatible with Rails 4 as well, and today we are releasing its release candidate version. In Simple Form master we just dropped support to the 3.x Rails series, focusing our work on Rails 4 compatibility from now on, due to a series of improvements in Rails 4 regarding form helpers &#8211; but don&#8217;t worry, we will be keeping a v2.1 branch with Rails 3.2 compatibility for a while.</p>
+<p>We have some cool plans to improve the wrappers API even further, but that&#8217;s subject for another blog post :).</p>
+<h3>Responders</h3>
+<p>Responders has been around for quite some time already and we use it in most of our projects, so today we&#8217;re celebrating its 1.0 release candidate version, specially to support Rails 4.</p>
+<h3>Show For</h3>
+<p>Show For just got a new stable release, v0.2.6, with all the enhancements and bug fixes that were in master, plus a v0.3.0 rc version that adds Rails 4 support.</p>
+<h3>Mail Form</h3>
+<p>Mail Form also got a new 1.5 rc release with Rails 4.0 compatibility. Nothing else has changed from the current 1.4 version.</p>
+<h3>Has Scope</h3>
+<p>Has Scope is getting a new 0.6 rc version with Rails 4.0 compatibility, including a couple of fixes that were already present in master.</p>
+<h2>Compatibility</h2>
+<p>All these new releases are officially dropping support to Rails 3.0 and 3.1, and Ruby 1.8.7. We&#8217;ll keep compatibility with Rails 3.2 and 4.0 from now on, all of them on the same branches except for Simple Form which has different branches for each Rails version.</p>
+<h2>Wrapping up</h2>
+<p>We&#8217;ve got new hot releases for you to try out with Rails 4, please give them a try and let us know if you find any issue or have any feedback.</p>
+<p>We&#8217;d also like to specially thank everyone involved in helping us getting these projects up and running in Rails 4, without you folks that&#8217;d have never been possible.</p>
+<p>Enjoy &lt;3</p><p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/devise-and-rails-4/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>2010 &#8211; A year in review</title>
+		<link>/2010/12/2010-a-year-in-review/</link>
+					<comments>/2010/12/2010-a-year-in-review/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 17:18:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[dsl]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railsconf]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1612</guid>
+
+					<description><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few. Open Source The year has begun on fire. In February, José Valim made his way into the Rails Core team and has been ... <a class="read-more-link" href="/2010/12/2010-a-year-in-review/">»</a></p>
+<p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few.</p>
+<h3>Open Source</h3>
+<p>The year has begun on fire. In February, <a href="http://weblog.rubyonrails.org/2010/2/13/jos-e-valim-and-carl-lerche-joins-rails-core">José Valim made his way into the Rails Core team</a> and has been doing a great work since then, including many contributions to the Rails 3 release.</p>
+<p>We are also really proud with <a href="http://www.github.com/plataformatec/devise">Devise</a>. It got very mature, achieving the 1.0 version this February. Since then, Devise is becoming one of the best solutions for authentication in Rails and also one of the most watched repositories on GitHub. </p>
+<p>In August, <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1</a> was released with Rails 3 support and a bunch of cool features. Recently, a lot of work is being done towards the 1.2 version, which includes full support to the awesome <a href="http://www.github.com/intridea/omniauth">OmniAuth</a> gem.</p>
+<p>We also released <a href="http://www.github.com/plataformatec/simple_form">SimpleForm</a> this year. SimpleForm is our take on building forms in a simplified way lead by Carlos Antônio who recently did a great work on HTML 5 support.</p>
+<p>Other gems were released, such as <a href="/2010/03/show-your-objects-baby/">ShowFor</a>, which is a DSL to simplify how you show your objects in views and also <a href="https://github.com/plataformatec/responders">Responders</a>, a collection of Rails 3 responders.</p>
+<h3>Book</h3>
+<p>Eariler this month, José Valim&#8217;s book entitled <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> has been released by the highly acclaimed publisher <a href="http://www.pragprog.com/">Pragmatic Bookstore</a>! The book covers internal aspects of Rails 3 and how you can bend it to your will. The reviews and buzz has been great so far, even though still in beta. <a href="http://plataformatec.com.br/crafting-rails-applications/">Grab your copy now!</a></p>
+<h3>Events</h3>
+<p>This year was also very productive in terms of events. We&#8217;ve been to a lot of events, heck, George was even able to go to RailsConf, in Baltimore! Also, José Valim has spoken in various events, including <a href="/2010/06/dsl-or-nodsl-at-euruko-2010/">Euruko 2010 (includes video)</a>, <a href="http://vimeo.com/17088248">RubyConf Brazil 2010 (talk in portuguese)</a> and OxenteRails 2010. </p>
+<p>Carlos, Hugo and George did their share as well, speaking at various events, from smaller and user-group events to bigger ones such as OxenteRails, RS on Rails and QCon SP.</p>
+<h3>Company</h3>
+<p>The company itself is getting more mature and increasing. At January 2010, PlataformaTec was composed of 6 people, and up until December 2010, 5 other people joined the company (including myself)! We also have started playing with iOS development, something we believe to have a great future, expect future blog posts on the subject.</p>
+<h3>Great 2011!</h3>
+<p>Have a great New Year! We wish you all the best for year to come. We have high expectations for 2011, so stay tuned!</p><p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/2010-a-year-in-review/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>One in Three: Inherited Resources, Has Scope and Responders</title>
+		<link>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/</link>
+					<comments>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 14:06:04 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[inherited_resources]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[respond_with]]></category>
+		<category><![CDATA[responders]]></category>
+		<guid isPermaLink="false">/?p=525</guid>
+
+					<description><![CDATA[<p>Inherited Resources always had a hate/love history with Rails Edge. Just after DHH posted about respond_with, it was already there in Inherited Resources. This initial implementation provided a nice test suite and several use cases for a improved Rails&#8217; implementation, based in Responders, which encapsulates all the behavior in one class, and can be added, ... <a class="read-more-link" href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">»</a></p>
+<p>The post <a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">One in Three: Inherited Resources, Has Scope and Responders</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> always had a hate/love history with <a href="http://github.com/rails/rails">Rails Edge</a>. Just after <a href="http://www.loudthinking.com/posts/37">DHH posted about respond_with</a>, it was already there in Inherited Resources. This initial implementation provided a nice test suite and several use cases for a <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">improved Rails&#8217; implementation</a>, based in <a href="http://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/responder.rb" target="_blank">Responders</a>, which encapsulates all the behavior in one class</a>, and can be added, modified or updated.</p>
+<p>After that, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> was outdated and envy. It needed to be updated and it was: <a href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/">responders has been available in Inherited Resources</a> for more than four months, and consequently in Rails 2.3.</p>
+<p>Everything looked great until we started to develop a fresh Rails 3 application. The main purpose of this fresh application is to be a sample of Rails 3 features, including generators and responders. Based on that, it doesn&#8217;t make sense to use a tool like <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a>, since it would abstract almost all controllers away and the application would no longer fit as an example.</p>
+<p>So we were there, building an application based on scaffold, and as we saw duplicated code we started to realize <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> contains a lot of tools that could be used outside its context. And this is what is happening right now, two new gems are being launched: <a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> and <a href="http://github.com/plataformatec/has_scope" target="_blank">HasScope</a>.</p>
+<h3>Responders</h3>
+<p><a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> is a repository of Rails 3 <a href="http://github.com/rails/rails/blob/master/actionpack/lib/action_controller/metal/responder.rb" target="_blank">responders</a>, mainly based <a href="http://weblog.rubyonrails.org/2009/8/31/three-reasons-love-responder">on this post on Ruby on Rails weblog</a>. And as a proof of concept, we wrote two Responders: <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/flash_responder.rb" target="_blank">FlashResponder</a> and <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/http_cache_responder.rb" target="_blank">HttpCacheResponder</a>.</p>
+<p><a href="http://github.com/plataformatec/responders/blob/master/lib/responders/flash_responder.rb" target="_blank">FlashResponder</a> uses I18n to automatically look up flash messages for you, even allowing you to set generic messages. In other words, your old create action:</p>
+<pre lang="ruby" line="1">
+  def create
+    @post = Post.new(params[:post])
+    flash[:notice] = "Post was successfully created" if @post.save
+    respond_with(@post)
+  end
+</pre>
+<p>Can now be written as:</p>
+<pre lang="ruby" line="1">
+  def create
+    @post = Post.new(params[:post])
+    @post.save
+    respond_with(@post)
+  end
+</pre>
+<p>Your locale just needs to have the following configuration:</p>
+<pre lang="yaml">
+  flash:
+    actions:
+      create:
+        notice: "{resource_name} was successfully created"
+      update:
+        notice: "{resource_name} was successfully updated"
+      destroy:
+        notice: "{resource_name} was successfully destroyed"
+        alert: "{resource_name} could not be destroyed"
+</pre>
+<p>If you want to change a message, let&#8217;s say, the success message when creating a post, there are several ways to achieve that. You can give :notice to <em>respond_with</em> or even update your I18n under the key: <em>&#8220;flash.posts.create.notice&#8221;</em>.</p>
+<p>For us it came as a nice tool to provide I18n by default in our controllers and decouple messages from code.</p>
+<p>The <a href="http://github.com/plataformatec/responders/blob/master/lib/responders/http_cache_responder.rb" target="_blank">HttpCacheResponder</a> automatically adds a Last-Modified header to API requests without any extra configuration. This allows clients to easily query the server if a resource changed and also replies with 304 (Not Modified) status.</p>
+<p>As usual, the code for both implementations came from <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a>. And since it contains a Rails 3.0 Responders shim, those responders can already be used in <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> and they are!</p>
+<p>In other words, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> code got simplified and such features can now be used by any Rails 3 application without a need to load all <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> stack. Besides, as more Responders appears, they can be added to <a href="http://github.com/plataformatec/responders" target="_blank">Responders</a> repository and be used in <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> easily.</p>
+<h3>HasScope</h3>
+<p>The other tool extracted from <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> is <a href="http://github.com/plataformatec/has_scope">HasScope</a>. </p>
+<p>Let&#8217;s suppose that we have a ProjectsController and at some point you want to add some filters on the index action like showing just featured projects, selecting projects by methodology or even let the user choose how many projects he can see per page. The first thing to do? Add named scopes to your model:</p>
+<pre lang="ruby" line="1">
+class Project < ActiveRecord::Base
+  named_scope :featured, :conditions => { :featured => true }
+  named_scope :by_methodology, proc {|methodology| { :conditions => { :methodology => methodology } } }
+  named_scope :limit, proc{|limit| :limit => limit.to_i }
+end
+</pre>
+<p>The next step would be to add a lot of code in your controllers that check which named scopes you should call, based on the parameters sent right? Well, not anymore. Your controller can be as simple as:</p>
+<pre lang="ruby" line="1">
+class ProjectsController < ApplicationController
+  has_scope :featured, :type => :boolean
+  has_scope :by_methodology
+  has_scope :limit, :default => 10, :only => :index
+
+  def index
+    @projects = apply_scopes(Project).all
+  end
+end
+</pre>
+<p>Then for each request:</p>
+<pre>
+/projects
+#=> acts like a normal request, but returning only 10 projects
+
+/projects?featured=true
+#=> calls the featured named scope and bring 10 featured projects
+
+/projects?featured=true&by_methodology=agile&limit=20
+#=> brings 20 featured projects with methodology agile
+</pre>
+<p>If you configure your routes, you could even have pretty urls with it:</p>
+<pre>
+/projects/agile/featured
+#=> brings 10 featured projects with methodology agile
+</pre>
+<p>All in all, you can now call has_scope in any controller  and in case you are using it inside an Inherited Resources controller, everything gets handled automatically, so enjoy!</p>
+<h3>So Inherited Resources finally reaches 1.0</h3>
+<p>After this refactoring and a complete clean up of <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> issues, it finally reaches 1.0! When you install it, responders and has_scope gems should be installed as well. Responders is always loaded, since it&#8217;s a dependency, but if you want to use has_scope you will need to add it to your environment as well.</p>
+<p>After you install the gem, the upgrade process in any application can be handled in three steps:</p>
+<p>1) Add config.gem <em>&#8220;has_scope&#8221;</em> to your <em>&#8220;config/environment.rb&#8221;</em>.</p>
+<p>2) Configure which flash keys are used by your application. At first, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> used :notice and :error. Then we changed to :success and :failure, but just after this DHH established :notice and :alert as Rails default.</p>
+<p>From 1.0 on, <a href="http://github.com/josevalim/inherited_resources" target="_blank">Inherited Resources</a> will be using :notice and :alert, but it allows you to change it:</p>
+<pre lang="ruby">
+  InheritedResources.flash_keys = [ :success, :failure ]
+</pre>
+<p>3) Finally, you may need to do a final change in your application due to how responders work. The default way a resource tells a responder if it was created/updated/destroyed with success or not, is through errors. If the errors are empty, it assumes it succeeded, otherwise it failed.</p>
+<p>This will be true in all create/update scenarios, but not in destroy. In other words, if you have a code with similar structure in your model (please don&#8217;t!):</p>
+<pre lang="ruby">
+  def before_destroy
+    if some_condition_is_not_valid?
+      false
+    else
+      true
+    end
+  end
+</pre>
+<p>It won&#8217;t work anymore. You need to add an error to your model to really invalidate it:</p>
+<pre lang="ruby">
+  def before_destroy
+    if some_condition_is_not_valid?
+      errors.add(fault_attribute, :invalid)
+      false
+    else
+      true
+    end
+  end
+</pre>
+<p>Now you should be ready to go. Enjoy!</p><p>The post <a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/">One in Three: Inherited Resources, Has Scope and Responders</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/12/one-in-three-inherited-resources-has-scope-and-responders/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Embracing REST with mind, body and soul</title>
+		<link>/2009/08/embracing-rest-with-mind-body-and-soul/</link>
+					<comments>/2009/08/embracing-rest-with-mind-body-and-soul/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 07 Aug 2009 18:35:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[http]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[respond_with]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[REST]]></category>
+		<guid isPermaLink="false">/?p=49</guid>
+
+					<description><![CDATA[<p>UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we&#8217;ve added map.resources to our ... <a class="read-more-link" href="/2009/08/embracing-rest-with-mind-body-and-soul/">»</a></p>
+<p>The post <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">Embracing REST with mind, body and soul</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong>UPDATE:</strong> ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes.</p>
+<p>About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about <a href="http://weblog.rubyonrails.org/2007/1/19/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations" target="_blank">RESTful admiration and HTTP Lovefest</a>. Since then we&#8217;ve added <em>map.resources</em> to our routes, started to use different formats in <em>respond_to</em> and really learned how to love all HTTP verbs.</p>
+<p>Your application entry point (the router) has become completely RESTful, but it still haven&#8217;t reached ActionPack core. Today we are bringing the missing ingredient: make your controllers more resource aware.</p>
+<h3>The first step: respond_with(@resource)</h3>
+<p>About one week ago <a href="http://github.com/rails/rails/commit/09de34ca56598ae5d0302a14715b2a11b6cc9845" target="_blank">the first step was given</a>. We brought Merb&#8217;s provide/display into Rails, <a href="http://loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3" target="_blank">just as DHH proposed</a>: you can define supported formats at the class level and tell in the instance the resource to be represented by those formats. Let&#8217;s see some code:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+  end</pre>
+<p>It works like this: when a request comes, for example with format xml, it will first search for a template at users/index.xml. If the template is not available, it tries to render the resource given (in this case, @users) by calling :to_xml on it. Before Rails 3.0, the equivalent to the index action above would be:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+  end</pre>
+<p>The gain with respond_with introduction is more obvious if you compare index, new and show actions:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+
+    def new
+      @user = User.new
+      respond_with(@user)
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_with(@user)
+    end
+  end</pre>
+<p>With older version:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+
+    def new
+      @user = User.new
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+  end</pre>
+<p>However, even if respond_with is full featured (Ryan Daigle has done <a href="http://ryandaigle.com/articles/2009/8/6/what-s-new-in-edge-rails-cleaner-restful-controllers-w-respond_with/" target="_blank">an excellent job covering all respond_with features</a>), it started to show some flaws on create, update and destroy actions. A default create action could be written with respond_with as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    if @user.save
+      flash[:notice] = "User was created successfully."
+      respond_with(@user, :status =&gt; :created, :location =&gt; @user) do |format|
+        format.html { redirect_to @user }
+      end
+    else
+      respond_with(@user.errors, :status =&gt; :unprocessable_entity) do |format|
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>You can notice that:</p>
+<ol>
+<li>You have to call respond_with twice;</li>
+<li>On the first respond_with, you have to give the location twice. One as a hash and other as parameter to redirect_to;</li>
+<li>And by giving a block to respond_with, you focus more on the exception than on the default behavior.</li>
+</ol>
+<p>Suddenly we realized that respond_with is useful just for GET requests. There was no HTTP Lovefest, it was more like HTTP monotheism.</p>
+<h3>2. Second step: Love all</h3>
+<p>At this point, we started to ask ourselves: why can&#8217;t respond_with include HTTP verb semantics? Isn&#8217;t that what RESTful is all about?</p>
+<p>After <a href="http://github.com/rails/rails/commit/5b7e81efec649b424037c68a93bddad1bc4e0c23" target="_blank">this commit</a>, we brought all HTTP verbs to respond_with, but only for resourceful formats like xml and json (ie. formats that don&#8217;t need to render a template). Then our create action with POST request could be rewritten as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    respond_with(@user) do |format|
+      if @user.save
+        flash[:notice] = "User was created successfully."
+        format.html { redirect_to @user }
+      else
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>Internally, when a xml request happened, respond_with would check the current request method (in this case, POST) and whether the resource has errors or not. Depending on these values, it will render the resource or the resource errors, setting accordingly the status and location headers. Now we just have to worry with non-RESTful requests, like html, mobile and iphone&#8230; (which we call navigational formats).</p>
+<p>Personally, I was quite happy with the results at this iteration, since it solves two of the three problems exposed previously. However, Jeremy Kemper and Yehuda Katz wanted more. And they were right, yeah!</p>
+<h3>3. Third step: Responder</h3>
+<p>In step 2, we were able to abstract POST, PUT and DELETE requests for formats like xml and json, but we still would have to repeat html behavior through all controllers, even if almost all of them behave similarly.</p>
+<p>So what we want is a simple way to tell the controller <strong>how to render our resources depending on the format AND HTTP verb</strong>. <a href="http://github.com/rails/rails/commit/aed135d3e261cbee153a35fcfbeb47e2e02b12e4" target="_blank">In this commit</a>, we&#8217;ve added <strong>ActionController::Responder</strong>.</p>
+<p>By default, ActionController::Responder holds all formats behavior in a method called to_format. It&#8217;s similar to this:</p>
+<pre lang="ruby">  def to_format
+    return render unless resource.respond_to?(:"to_#{format}")
+
+    if get?
+      render format =&gt; resource
+    elsif has_errors?
+      render format =&gt; resource.errors, :status =&gt; :unprocessable_entity
+    elsif post?
+      render format =&gt; resource, :status =&gt; :created, :location =&gt; resource
+    else
+      head :ok
+    end
+  end</pre>
+<p>As you can see, it renders the resource based on the HTTP verb and whether it has errors or not. If some format, like :html, does not fall into the to_format behavior, we just need to define a to_html in ActionController::Responder, which by default is:</p>
+<pre lang="ruby">  def to_html
+    if get?
+      render
+    elsif has_errors?
+      render :action =&gt; (post? ? :new : :edit)
+    else
+      redirect_to resource
+    end
+  end</pre>
+<p>As result, you have your resources representation encapsulated in one place. Your controller code just have to send the resource using <strong>respond_with(@resource)</strong> and respond_with will call <strong>ActionController::Responder</strong> which will know what to do. Our create action (POST request) can then be written as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user)
+  end</pre>
+<p>If you need to change the redirect URL, you can overwrite just the html behavior:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user) do |format|
+      format.html { redirect_to user_confirmation_url }
+    end
+  end</pre>
+<p>On the other hand, if you want to change the redirect url and the Location header for XML and JSON, you can simply give :location as option:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user, :location =&gt; user_confirmation_url)
+  end</pre>
+<p>The best of all is that the responder implementation is quite simple and straight-forward, but still powerful. We haven&#8217;t enforced any restriction in the API. Anything that responds to :call can be a responder, so you can create your custom classes or even give procs, fibers and so on.</p>
+<p>Embrace REST in your design and enjoy a consistent behavior through all your controllers. Spread the word!</p><p>The post <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">Embracing REST with mind, body and soul</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/08/embracing-rest-with-mind-body-and-soul/feed/</wfw:commentRss>
+			<slash:comments>34</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

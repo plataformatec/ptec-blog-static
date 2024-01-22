@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>New Active Record scoping syntax « Plataformatec Blog</title>
+		<meta name="description" content="You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2010/07/new-active-record-scoping-syntax/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="New Active Record scoping syntax « Plataformatec Blog">
+		<meta property="og:description" content="You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how">
+		<meta property="og:url" content="/2010/07/new-active-record-scoping-syntax/">
+		<meta property="article:published_time" content="2010-07-05T15:19:46+00:00">
+		<meta property="article:modified_time" content="2011-02-21T12:35:01+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="New Active Record scoping syntax « Plataformatec Blog">
+		<meta name="twitter:description" content="You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2010\/07\/new-active-record-scoping-syntax\/#article","name":"New Active Record scoping syntax « Plataformatec Blog","headline":"New Active Record scoping syntax","author":{"@id":"\/author\/josevalim\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2010-07-05T12:19:46-03:00","dateModified":"2011-02-21T09:35:01-03:00","inLanguage":"en-US","commentCount":5,"mainEntityOfPage":{"@id":"\/2010\/07\/new-active-record-scoping-syntax\/#webpage"},"isPartOf":{"@id":"\/2010\/07\/new-active-record-scoping-syntax\/#webpage"},"articleSection":"English, activerecord, arel, rails 3, scopes"},{"@type":"BreadcrumbList","@id":"\/2010\/07\/new-active-record-scoping-syntax\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2010\/#listItem"},{"@type":"ListItem","@id":"\/2010\/#listItem","position":2,"name":"2010","item":"\/2010\/","nextItem":"\/2010\/07\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2010\/07\/#listItem","position":3,"name":"July","item":"\/2010\/07\/","nextItem":"\/2010\/07\/new-active-record-scoping-syntax\/#listItem","previousItem":"\/2010\/#listItem"},{"@type":"ListItem","@id":"\/2010\/07\/new-active-record-scoping-syntax\/#listItem","position":4,"name":"New Active Record scoping syntax","previousItem":"\/2010\/07\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/josevalim\/#author","url":"\/author\/josevalim\/","name":"José Valim","image":{"@type":"ImageObject","@id":"\/2010\/07\/new-active-record-scoping-syntax\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/e837f6b7fd146ab16ed3d663476c063e?s=96&d=mm&r=pg","width":96,"height":96,"caption":"José Valim"}},{"@type":"WebPage","@id":"\/2010\/07\/new-active-record-scoping-syntax\/#webpage","url":"\/2010\/07\/new-active-record-scoping-syntax\/","name":"New Active Record scoping syntax « Plataformatec Blog","description":"You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2010\/07\/new-active-record-scoping-syntax\/#breadcrumblist"},"author":{"@id":"\/author\/josevalim\/#author"},"creator":{"@id":"\/author\/josevalim\/#author"},"datePublished":"2010-07-05T12:19:46-03:00","dateModified":"2011-02-21T09:35:01-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; New Active Record scoping syntax Comments Feed" href="/2010/07/new-active-record-scoping-syntax/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/1181">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=1181">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2010%2F07%2Fnew-active-record-scoping-syntax%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2010%2F07%2Fnew-active-record-scoping-syntax%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-1181 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2010/07/new-active-record-scoping-syntax/" rel="bookmark">New Active Record scoping syntax</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2010-07-05T12:19:46-03:00">Jul 5, 2010</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=4" title="Posts by José Valim">José Valim</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>You probably know that <a href="http://www.railsdispatch.com/posts/activerelation" target="_blank">Active Record got a facelift</a> and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, <a href="https://rails.lighthouseapp.com/projects/8994/tickets/3838" target="_blank">a small incompatibility between the old and new syntax was found</a>. This post explains this incompatibility and how it was solved.</p>
+<h3>The issue</h3>
+<p>Quoting the Lighthouse ticket, imagine the following scenario in Rails 2.3:</p>
+<pre lang="ruby">
+class Page  { :deleted_at => nil }
+
+  def self.deleted
+    with_exclusive_scope :find => { :conditions => "pages.deleted_at IS NOT NULL" } do
+      all
+    end
+  end
+end
+</pre>
+<p>If you rewrite it to the new 3.0 syntax, your first attempt would probably be:</p>
+<pre lang="ruby">
+class Page  nil)
+
+  def self.deleted
+    with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+      all
+    end
+  end
+end
+</pre>
+<p>However, if you try it out on console, you will find out it does not work as expected:</p>
+<pre lang="ruby">
+Page.all         #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL)
+Page.deleted.all #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL) AND ("pages"."deleted_at" IS NOT NULL)
+</pre>
+<p>To understand why it does not work, let&#8217;s take a look at the source code!</p>
+<h3>Investigating the issue</h3>
+<p>With Active Relation, Active Record is no longer responsible to build queries. That said, <code>ActiveRecord::Base</code> is not the one that implements <code>where()</code> and friends, in fact, it simply delegates to an <code>ActiveRecord::Relation</code> object. From <a href="http://github.com/rails/rails/blob/master/activerecord/lib/active_record/base.rb" target="_blank">ActiveRecord::Base source code</a>:</p>
+<pre lang="ruby">
+delegate :select, :group, :order, :limit, :joins, :where, :preload, :eager_load, :includes, :from, :lock, :readonly, :having, :create_with, :to => :scoped
+</pre>
+<p>And the <code>scoped</code> implementation is shown below:</p>
+<pre lang="ruby">
+def scoped(options = nil)
+  if options.present?
+    scoped.apply_finder_options(options)
+  else
+    current_scoped_methods ? relation.merge(current_scoped_methods) : relation.clone
+  end
+end
+
+def relation
+  @relation ||= ActiveRecord::Relation.new(self, arel_table)
+  finder_needs_type_condition? ? @relation.where(type_condition) : @relation
+end
+</pre>
+<p>As you can see, <code>scoped</code> always returns an ActiveRecord::Relation that you build your query on top of (notice that <a href="http://metautonomo.us/2010/05/11/activerecord-relation-vs-arel/">ARel::Relation is not the same as ActiveRecord::Relation</a>).</p>
+<p>Besides, if there is any <code>current_scoped_methods</code>, the <code>scoped</code> method is responsible to merge this current scope into the raw relation. This is where things get interesting.</p>
+<p>When you create your model, <code>current_scoped_methods</code> returns by default nil. However, when you define a <code>default_scope</code>, the current scope now becomes the relation given to <code>default_scope</code>, meaning that, every time you call <code>scoped</code>, it returns the raw relation merged with your default scope.</p>
+<p>The whole idea of <code>with_exclusive_scope</code> is to be able to make a query without taking the default scope into account, just the relation you give in as argument. That said, it basically sets the <code>current_scope_methods</code> back to nil, so every time you call <code>scoped</code> to build your queries, it will be built on top of the raw relation without the default scope.</p>
+<p>With that in mind, if we look again at the code which we were trying to port from Rails 2.3, we can finally understand what was happening:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+    self
+  end
+end
+</pre>
+<p>When we called <code>where('pages.deleted_at IS NOT NULL')</code> above, we were doing the same as: <code>scoped.where('pages.deleted_at IS NOT NULL')</code>. But, as <code>scoped</code> was called <strong>outside</strong> the <code>with_exclusive_scope</code> block, it means that the relation given as argument to <code>:find</code> was built on top of <code>default_scope</code> explaining the query we saw as results.</p>
+<p>For example, the following syntax would work as expected:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>Since we are calling <code>where</code> inside the block, the <code>scoped</code> method no longer takes the default scope into account. However, moving the relation inside the block is not the same as specifying it to <code>:find</code>, because if we were doing three queries inside the block, we would have to specify the same relation three times (or refactor the whole code to always do a query on top of this new relation).</p>
+<p>That said, it seems the previous <code>with_exclusive_scope</code> syntax does not suit very well with ActiveRecord&#8217;s new API. Maybe is it time for change? Can we provide a better API? Which are the use cases?</p>
+<h3>Identifying the use cases</h3>
+<p>The <code>with_exclusive_scope</code> method has mainly two use cases. The first one, which we just discussed above, is to allow us to make a query without taking the default scope into account inside our models:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>While this code looks ok, if we think about relations, we will realize that we don&#8217;t need to give a block to achieve the behavior we want. If the <code>scoped</code> method returns a raw relation with the default scope, couldn&#8217;t we have a method that always returns the raw relation? Allowing us to build our query without taking the default scope into account?</p>
+<p>In fact, this method was already implemented in Active Record and it is called <code>unscoped</code>. That said, the code above could simply be rewritten as:</p>
+<pre lang="ruby">
+def self.deleted
+  unscoped.where('pages.deleted_at IS NOT NULL').all
+end
+</pre>
+<p>Much simpler! So, it seems that we don&#8217;t need to support the block usage at all, confirm?</p>
+<p>Deny! Going back to the <code>Page</code> example above, it seems we should never see deleted pages, that&#8217;s why we set the <code>default_scope</code> to <code>:deleted_at => nil</code>. However, if this application has an admin section, the admin may want to see all pages, including the deleted ones.</p>
+<p>That said, what we could do is to have one controller for the normal User and another for the Admin. In the former, we would always use <code>Page.all</code>, and <code>Page.unscoped.all</code> in the latter.</p>
+<p>However, if these controllers and views are very similar, you may not want do duplicate everything. Maybe it would be easier if we do something like this:</p>
+<pre lang="ruby">def resource_class
+  if current_user.is_admin?
+    Page.unscoped
+  else
+    Page
+  end
+end</pre>
+<p>And, instead of always referencing the <code>Page</code> class directly in our actions, we could call <code>resource_class</code>. While this solution is also ok, there is a final alternative, that would require no changes to the current code. If you want to use the same controller for different roles, but changing the scope of what they are allowed to see, you could simply use an <code>around_filter</code> to change the model scope during the execution of an action. Here is an example:</p>
+<pre lang="ruby">
+class PagesController 
+<p>That said, being allowed to give a block to <code>with_exclusive_scope</code> is actually useful and since we want to deprecate <code>with_exclusive_scope</code> in favor of <code>unscoped</code> in the future, we brought this very same syntax to <code>unscoped</code> as well:</p>
+<pre lang="ruby">def apply_scope
+  if current_user.admin?
+    Page.unscoped { yield }
+  else
+    yield
+  end
+end</pre>
+<h3>Tidying it up</h3>
+<p>Well, after the behavior in <code>with_exclusive_scope</code> was properly ported to the new API, we need to be sure we are not forgetting about anything... wait, actually we are.</p>
+<p><code>with_exclusive_scope</code> has an evil twin brother called <code>with_scope</code> which behaves very similarly, except that it always build the query on top of the <code>scoped</code> relation. It works like this:</p>
+<pre lang="ruby">
+class Page  nil)
+end
+
+Page.with_scope :find => { :conditions => { :active => true } } do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>However, this feels way too hash-ish. Of course, we could use relations to make it a bit prettier:</p>
+<pre lang="ruby">
+Page.with_scope :find => where(:active => true) do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>This is ok, but it seems that we could improve it even more. That said, we added a new method to relations, called <code>scoping</code>:</p>
+<pre lang="ruby">
+Page.where(:active => true).scoping do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>Yeah! Sign me up 'cause this looks way better than the previous syntax! And, if you check <a href="http://github.com/rails/rails/commit/bd1666ad1de88598ed6f04ceffb8488a77be4385">the original commit</a>, you will notice the <code>unscoped</code> method with a block simply delegates <code>scoping</code>:</p>
+<pre lang="ruby">
+def unscoped
+  block_given? ? relation.scoping { yield } : relation
+end
+</pre>
+<p>So, with <code>unscoped</code> and <code>scoping</code> implemented, we just need to commit, git push and be happy, confirm? Deny! There is one last case to check.</p>
+<h3>create_with</h3>
+<p>If you payed attention properly, you can notice that every time we called <code>with_exclusive_scope</code> and <code>with_scope</code>, we always passed <code>{ :find => relation }</code> as hash, instead of simply giving the relation. This happens because these methods accept two hash keys: find and create.</p>
+<p>As you may expect, one specifies the behavior for create and the other for finding. In most of the cases, they are exactly the same and work with the new syntax:</p>
+<pre lang="ruby">
+page = Page.where(:active => true).new
+page.active #=> true
+</pre>
+<p>However, for obvious reasons, this only works if the conditions are given as a hash. Consider this case:</p>
+<pre lang="ruby">
+page = Page.where("active = true").new
+page.active #=> nil
+</pre>
+<p>That said, there may be a few scenarios where you want to specify the creation conditions on its own, explaining the :find and :create options in <code>with_exclusive_scope</code> and <code>with_scope</code> methods. So, how can I achieve it with the new syntax? Easy!</p>
+<pre lang="ruby">
+page = Page.create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>If you provide both conditions as a hash and <code>create_with</code>, <code>create_with</code> always have higher priority:</p>
+<pre lang="ruby">
+page = Page.where(:active => false).create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>Note this syntax already existed, we are just making it explicit now as part of the new API! That said, commit, push and be happy!</p>
+<h3>Wrapping up</h3>
+<p>All in all, <code>with_exclusive_scope</code> and <code>with_scope</code> are now part of the old ActiveRecord API giving place to the new, strong and vibrant <code>unscoped</code> and <code>scoping</code> methods!</p>
+<p>However, they are not going to be deprecated now. They will follow the same <a href="http://m.onkey.org/2010/1/22/active-record-query-interface" target="_blank">deprecation strategy as all the current methods</a>.</p>
+<p>And you? What do you think about this new scoping API?</p>
+    </pre></article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/activerecord/" rel="tag">activerecord</a>, <a href="/tag/arel/" rel="tag">arel</a>, <a href="/tag/rails-3/" rel="tag">rails 3</a>, <a href="/tag/scopes/" rel="tag">scopes</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2010/07/new-active-record-scoping-syntax/#comments"><span class="dsq-postid" data-dsqidentifier="1181 http://blog.plataformatec.com.br/?p=1181">5 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		5 responses to &#8220;New Active Record scoping syntax&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1031">
+				<div id="div-comment-1031" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/251f50cb522721ff7e5bc8a9e29bb1b1?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/251f50cb522721ff7e5bc8a9e29bb1b1?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Sohan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/07/new-active-record-scoping-syntax/#comment-1031">July 5, 2010 at 3:59 pm</a>		</div>
+
+		<p>DrinkRails.com linked to your post as one of the top ruby on rails related blogs of the day.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-756">
+				<div id="div-comment-756" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://twitter.com/jacek_becela" class="url" rel="ugc external nofollow">Jacek Becela</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/07/new-active-record-scoping-syntax/#comment-756">July 5, 2010 at 5:19 pm</a>		</div>
+
+		<p>This whole un-hashing to method-chaining changes fit really well in ActiveRelation, yet I kinda don&#39;t like RSpec syntax (after using it for one year)&#8230;</p>
+<p>Great article Jose!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-757">
+				<div id="div-comment-757" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/godfoca" class="url" rel="ugc external nofollow">Nicolás Sanguinetti</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/07/new-active-record-scoping-syntax/#comment-757">July 5, 2010 at 6:05 pm</a>		</div>
+
+		<p>Awesome! Thanks José 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-759">
+				<div id="div-comment-759" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/334c4a4c42fdb79d7ebc3e73b517e6f8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://twitter.com/mcmire" class="url" rel="ugc external nofollow">Elliot Winkler</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/07/new-active-record-scoping-syntax/#comment-759">July 5, 2010 at 6:58 pm</a>		</div>
+
+		<p>I guess we&#39;ll will find out once everyone really starts using with this stuff, but all of that sounds like a natural progression, so, I like it.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-765">
+				<div id="div-comment-765" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/48409ce1953c290351fcb875b20eccbb?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://darkhax.com/" class="url" rel="ugc external nofollow">Daniel Huckstep</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/07/new-active-record-scoping-syntax/#comment-765">July 13, 2010 at 5:05 pm</a>		</div>
+
+		<p>Very nice. This stuff has been bugging/biting me for a while.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2010/06/simpleform-forms-made-easy/" rel="prev">SimpleForm: forms made easy</a>          <a href="/2010/07/estamos-contratando-de-novo/" rel="next">Estamos contratando! de novo =D</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

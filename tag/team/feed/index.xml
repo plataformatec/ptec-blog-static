@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>team « Plataformatec Blog</title>
+	<atom:link href="/tag/team/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 13 Dec 2017 19:47:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How to work with distributed teams</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/</link>
+					<comments>/2017/12/how-to-work-with-distributed-teams/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 13 Dec 2017 18:25:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[how we work]]></category>
+		<category><![CDATA[remote]]></category>
+		<category><![CDATA[team]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<category><![CDATA[timezone]]></category>
+		<guid isPermaLink="false">/?p=7021</guid>
+
+					<description><![CDATA[<p>For most people, especially old-school Agile devotees, distributed work is just impossible. According to some of them, interactions won&#8217;t be as productive, there will be knowledge silos, physical kanbans will not be possible, no one will pay attention to the flow, and everything is going to explode! Well, those are all good points. Really. However, ... <a class="read-more-link" href="/2017/12/how-to-work-with-distributed-teams/">»</a></p>
+<p>The post <a href="/2017/12/how-to-work-with-distributed-teams/">How to work with distributed teams</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>For most people, especially old-school Agile devotees, distributed work is just impossible. According to some of them, interactions won&#8217;t be as productive, there will be knowledge silos, physical kanbans will not be possible, no one will pay attention to the flow, and everything is going to explode!</p>
+<p>Well, those are all good points. Really. However, all of those are remediable. Nowadays you <strong>cannot</strong> say that distributed teams don&#8217;t work. You need to make it work! That is the reality of the world.</p>
+<p>But enough of whys, let&#8217;s get to how. How can we remediate all those problems? Or even avoid them? How can we be agile without ever seeing each other?</p>
+<h2>Communicate, talk, say, share!</h2>
+<p>The first thing that you need to think about when working with distributed teams is <strong>communication</strong>. And since it is already difficult to improve it in a colocated team, you may imagine that the difficulty adjusting it in a distributed team is even higher, right? Not necessarily, actually. Those are different environments, with different challenges. And this difference is the key.</p>
+<p>If you try to adapt what you do in a colocated team to use it in a distributed one, you&#8217;ll likely fail. Things like talking to someone at their desk is not the same as a private message on a channel, for example. In the first example, other people can hear you and enter the conversation if needed. A private message is like going to a sound-proof room with your colleague and talking about something. Therefore, keep an open mind and try new things. Below I list four things that you could change to improve your communication.</p>
+<h3>No more poking</h3>
+<p><a href="https://zachholman.com/posts/remote-first/">Zach Holman</a> calls that &#8220;remote first&#8221;. The idea is that you need to prioritize the use of asynchronous communication tools when in a distributed team. That means that those poking-and-talking meetings will be converted into written discussions, or video conferences, using your preferred communication tool.</p>
+<p><em>&#8220;Oh, but we already use Slack!&#8221;</em></p>
+<p>It is not about using it; it is prioritizing its use. And that is extremely difficult. Let&#8217;s say that you have five people on site and two offshore. Those onsite need to communicate <strong>every</strong> minimally important thing through the communication tool, with the preference for open channels and not private chats. Otherwise, you&#8217;ll develop an information silo, will decrease trust between people from different locations, etc.</p>
+<h3>Online meetings? Really?</h3>
+<p>Ceremonies and meetings are usually a dreadful experience when online, and there&#8217;s not much we can do about that&#8230; After all, the internet connection fails, you need to repeat everything ten times, the audio quality is never perfect, and it is just annoying to not interact with people.</p>
+<p>However, there are some things that you can do to improve that experience. You need to have the right tools, and a clear goal for the meeting, you&#8217;ll find more on that in <a href="/2016/01/how-to-do-remote-meetings-effectively/">this blog post</a>.</p>
+<p>Besides that, each person should preferably be in their own machine, even if you have some people together in the same building. In my experience, people that are together in a room tend to share information while the microphone is muted. However, that information could be useful to the offshore team.</p>
+<p>But one thing that I want to demystify is the necessity of meetings.</p>
+<p>Please, only have meetings if you need them! And that is something to consider even in a colocated team. Most people start working with Scrum, Kanban or whatever methodology that comes with their set of <em>necessary</em> ceremonies. You need to think, and re-think, all the meetings objectives and check if they are necessary for your context. And if they are, check if all invited people are required. Don&#8217;t waste people’s time with unnecessary meetings.</p>
+<h3>But I&#8217;m in LA and she is in China!</h3>
+<p>If you have distributed teams in just one time zone, you are a lucky one. However, people usually have distributed teams across the entire world, going from 1 to sometimes 12 hours of difference. And each team needs to adapt their process to make sure that everyone receives the same information and participates in decisions over the future of the project.</p>
+<p>The important point here is to stay as a team and try to have at least part of the day (or of the week if the time zones are too different), like an hour, that everyone is online. With that synchronized time you can put everyone on the same page.</p>
+<h3>Fly!</h3>
+<p>You&#8217;ll need to meet in person eventually. Not frequently though. Once a month, or even once a year, might be good enough. The idea of this encounter is to humanize people since we will often only interact with faces and texts on screen. That improves trust among everyone and brings the team back together. Think of it as a reset for group relationship. Bringing everyone together will relieve stress and improve interactions.</p>
+<h2>Different places, different cultures</h2>
+<p>Culture is a crucial point to consider when having distributed teams. We often expect people to behave as similarly as we would in the same circumstances, and it can break our expectations, hence, causing stress. I&#8217;ll detail two points that I often face in distributed teams that could help you.</p>
+<h3>Can I invite everyone to Carnival?</h3>
+<p>Whether you are hiring someone that will work remotely or are entering a team that has people from other countries, you need first to understand the countries’ differences. I&#8217;d suggest a comprehensive analysis of the country&#8217;s culture, how people usually behave when facing difficulties, how they say things (if directly or indirectly), what are their working times and related subjects. With all that information, you can manage your expectations and change your actions accordingly.</p>
+<h3>Hola, how você esta?</h3>
+<p>That is a very tough subject to address. What if you are working with team members that don&#8217;t speak the same language? Well, we&#8217;ve been there, and the answer is pretty simple: you need to communicate somehow, and it doesn&#8217;t matter how. Sometimes we opt for a common language, Esperanto most of the time (just kidding), and sometimes we try to learn the other person&#8217;s language if it is possible, like Spanish. But it doesn&#8217;t matter if you speak English, Latin or whatever. What is important is that, at the end of the day, you understood each other.</p>
+<h2>Just give them this bunch of tasks!</h2>
+<p>Especially when you have part of a team distributed in another region, it is common to have them as a &#8220;black-box team.&#8221; It is important to avoid scenarios in which you select demands for that team, instead of having the stories being pulled by whoever is free at the time. It is better not to have this kind of differentiation.</p>
+<h2>Ok, but what tools should I use?!</h2>
+<p>Before surrendering yourself to products that claim to be the silver-bullet for distributed teams, think about your process and how you can improve it. Then, if you need a tool, you&#8217;ll know what to search for.</p>
+<p>However, if you want to know some of the tools you may need, we have an already extensive guide in <a href="/2016/01/how-to-do-remote-meetings-effectively/">this blog post</a>. To make it easier for you, I&#8217;ll just mention some of the tools we use.</p>
+<ul>
+<li>A video conference tool, like <a href="hangouts.google.com">Hangouts</a> with a microphone handler like <a href="http://mizage.com/shush/">Shoosh</a></li>
+<li>An asynchronous conversation tool, like <a href="slack.com">Slack</a></li>
+<li>A place to put findings and documents, like <a href="drive.google.com">Google Drive</a> and/or <a href="basecamp.com">Basecamp</a></li>
+<li>A wiki like <a href="https://www.atlassian.com/software/confluence">Confluence</a> may also be useful</li>
+<li>For your Kanban board, you may use something simpler like <a href="trello.com">Trello</a> or something with more options (but less customizable), like <a href="https://www.atlassian.com/software/jira">Jira</a>.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The takeaway from this post is to improve communication and have empathy to understand the other. It is all about the process, not the tools you use.</p>
+<p>I presented a <strong>huge</strong> number of things to do in a distributed team. Ergo, if you are seeking perfection you would need all of them, but to be better than yesterday, you just need to implement one at a time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Do you agree with our approach? Leave your thoughts below!</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=blog-subscription&amp;utm_content=cta-blog-post-bottom"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2017/12/how-to-work-with-distributed-teams/">How to work with distributed teams</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/12/how-to-work-with-distributed-teams/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The hero syndrome and how to deal with it</title>
+		<link>/2017/02/the-hero-syndrome-and-how-to-deal-with-it/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2017 18:06:10 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[team]]></category>
+		<guid isPermaLink="false">/?p=6065</guid>
+
+					<description><![CDATA[<p>Alex Payne wrote in his blog, in 2010, a post about the hero syndrome. However, even though some people are aware of it, we sometimes face some heroes and they end up harming the development process. Therefore, we are here to expand on what Payne said in his post, and try to convince you that ... <a class="read-more-link" href="/2017/02/the-hero-syndrome-and-how-to-deal-with-it/">»</a></p>
+<p>The post <a href="/2017/02/the-hero-syndrome-and-how-to-deal-with-it/">The hero syndrome and how to deal with it</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Alex Payne wrote in his blog, in 2010, a <a href="https://al3x.net/2010/01/09/dont-be-a-hero.html">post about the hero syndrome</a>. However, even though some people are aware of it, we sometimes face some heroes and they end up harming the development process. Therefore, we are here to expand on what Payne said in his post, and try to convince you that being a hero is not healthy for your body or work.</p>
+<h2>Definition</h2>
+<p>Let&#8217;s start with the definition of hero. To define it, we use here a part of Payne&#8217;s post:</p>
+<blockquote style="border-left: solid 4px #bbb; padding-left: 15px; color: #888;"><p>
+    <cite style="font-size:1.3em;">The guy or gal eager and willing to pull all-nighters, work weekends, and take over on-call duty when nobody else wants to.</cite>
+</p>
+</blockquote>
+<p>So, what is the problem with heroes? We divide it here health-wise and work-wise.</p>
+<h2>Health</h2>
+<p>Well, we are not doctors here, but it seems that there is enough information out there on why working too much may harm your body.</p>
+<p>The health problem is directly related to some of the hero&#8217;s actions: usually he/she sleeps too little and works too much. There are <strong>tons</strong> of information on the internet and even in academia that show what workaholism and sleep deprivation can do to our bodies. To list some of them, here is a short list:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Effects_of_sleep_deprivation_on_cognitive_performance">Effects of sleep deprivation on cognitive performance</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1046/j.1365-2869.2000.00225.x/full">Neural basis of alertness and cognitive performance impairments during sleepiness. Effects of 24h of sleep deprivation on waking human regional brain activity</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2869.1995.tb00220.x/abstract">An overview of sleepiness and accidents</a></li>
+<li><a href="http://www.huffingtonpost.com/2014/11/07/workaholic-bad_n_6093658.html">Why Being A Workaholic Is Awful For You and Everyone Around You</a></li>
+</ul>
+<p>Besides those, the hero will probably not practice proper physical activities and will likely have a poor nutrition.</p>
+<p>And if you are thinking, &#8220;oh, I drink coffee&#8230; So I can deal with many of the problems that they list&#8221;, here is some extra information on coffee overconsumption:</p>
+<ul>
+<li><a href="http://www.sciencedirect.com/science/article/pii/S0025619613005788">Association of Coffee Consumption With All-Cause and Cardiovascular Disease Mortality</a></li>
+<li><a href="https://www.researchgate.net/profile/Jana_Sawynok/publication/47644325_Caffeine_and_pain/links/00b49534bd0f8c8d27000000.pdf">Caffeine and pain</a></li>
+</ul>
+<h2>Work</h2>
+<p>Ok, so you are part of the <a href="https://en.wikipedia.org/wiki/YOLO_(aphorism)">YOLO</a> people and don&#8217;t actually care about your health as long as it is worth it. Well, here is the deal: you are actually harming your project/product/work by acting as a hero.</p>
+<p>First of all, usually heroes are not needed if you plan your project correctly. I mean, no one, while planning a project, accounts for a programmer working 12 hours per day. So, what happens is that you probably didn&#8217;t predict well the effort and time needed to complete the project. We have some blogposts talking about metrics and how to predict the completion date of a project:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and Burnup charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with Lead time</a></li>
+<li><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a></li>
+<li><a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">Power of the metrics: Don&#8217;t use average to forecast deadlines</a></li>
+<li><a href="/2016/03/looking-at-lead-time-in-a-different-way/">Looking at lead time in a different way</a></li>
+</ul>
+<p>Secondly, when a team contains a hero, the other teammates may have two different behaviors:</p>
+<ul>
+<li>They may think that the hero will do all the hard work, so they can stop working as hard as before and just handle the easy tasks.</li>
+<li>They may start to work overtime to try to get to the same level of workaholism as the hero, so their image is not blurred by the hero&#8217;s shine.</li>
+</ul>
+<p>Either way, your team will be affected in a bad way. It may seem good at first, since things may get done faster at the beginning, but then your productivity and quality will fall again and your team will be soon overstressed.</p>
+<p>Moreover, there are other nonbehavioral consequences that may affect your team:</p>
+<ul>
+<li>A hero in the team will generate more work to his colleagues. There will be more code to review, more features to test and so on. To put it short: more WIP (Work In Progress).
+<ul>
+<li>It may reach an unsustainable state of system overload;</li>
+<li>The non-heroes may be perceived as not-as-committed-as-the-hero, since they are always overwhelmed with work;</li>
+</ul>
+</li>
+<li>Depending on the architecture, the &#8220;extra code&#8221; may impact the existing code or active pull requests.
+<ul>
+<li>It may demand more work to resolve the conflicts;</li>
+</ul>
+</li>
+</ul>
+<p>In addition, a study from the London School of Economics and Harvard, &#8220;<a href="http://rstb.royalsocietypublishing.org/content/371/1690/20150192">Innovation in the collective brain</a>&#8220;, talks about the importance of collective work on great innovative ideas. Not even people that are considered &#8220;heroes&#8221;, like Einstein, Steve Jobs and Darwin, did it alone. A summary of the study can be seen on Inc&#8217;s post: <a href="http://www.inc.com/jessica-stillman/social-beats-smart-when-it-comes-to-creativity-new-study-says.html">The Heroic Inventor Is a Myth: Great Ideas Are Group Efforts</a>.</p>
+<h2>Handling heroes</h2>
+<p>First let&#8217;s say you already noticed that a person in your team is a hero. What to do about it? Well, the first thing is to talk to the manage, or the person that recognizes effort, and show him/her the problem. Explain how it affects your team and try to encourage the manager to stop rewarding the hero for its workaholism and actually prohibit unnecessary overtime.</p>
+<p>Secondly, if you don&#8217;t have a hero yet, please do the best you can to forecast a deadline that will be doable and not impossible to reach. Base your decision not only on estimates but also on numbers, simulations and history. If you see you made a mistake on your forecast during the project, redo it and adapt your deadline. Not all deadlines are immutable, so work hard to make sure the team is comfortable with the time they have.</p>
+<p>What about you? Are you the hero of your team? Have you ever worked with one? How was it? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/02/the-hero-syndrome-and-how-to-deal-with-it/">The hero syndrome and how to deal with it</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to improve trust among team members</title>
+		<link>/2016/11/how-to-improve-trust-among-team-members/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 10 Nov 2016 14:57:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[team]]></category>
+		<guid isPermaLink="false">/?p=5810</guid>
+
+					<description><![CDATA[<p>You may be facing lack of trust among your team members and you have not noticed it yet. Actually, it is very difficult to notice it, since trust is often something unconscious for us. In this post, I will highlight the importance of trust in a team and, then, list a few actions that you ... <a class="read-more-link" href="/2016/11/how-to-improve-trust-among-team-members/">»</a></p>
+<p>The post <a href="/2016/11/how-to-improve-trust-among-team-members/">How to improve trust among team members</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You may be facing lack of trust among your team members and you have not noticed it yet. Actually, it is very difficult to notice it, since trust is often something unconscious for us.</p>
+<p>In this post, I will highlight the importance of trust in a team and, then, list a few actions that you should take to improve trust among teammates.</p>
+<h2>Why you should care</h2>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>You may be deceived if you trust too much, but you will live in torment if you don&#8217;t trust enough.<span style="font-style: normal !important;"> &#8212; Frank Crane, American minister and author</span></p></blockquote>
+<p>Teams with trust deficiency tend to take longer to deliver their tasks. They will hesitate on asking for help, hold grudges, avoid spending time together and have other behaviors that contribute on slowing the team down.</p>
+<p>As you can see in this pyramid from Patrick Lencioni&#8217;s book &#8220;The Five Dysfunctions of a Team&#8221;, without trust your team doesn&#8217;t have the foundation for being a high-performance team.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-5811" src="/wp-content/uploads/2016/11/Pyramid-The-Five-Dysfunctions-of-a-Team.png" alt="Pyramid - The Five Dysfunctions of a Team" width="507" height="424" srcset="/wp-content/uploads/2016/11/Pyramid-The-Five-Dysfunctions-of-a-Team.png 507w, /wp-content/uploads/2016/11/Pyramid-The-Five-Dysfunctions-of-a-Team-300x251.png 300w" sizes="(max-width: 507px) 100vw, 507px" /></p>
+<p>There are a few indicators of trust absence and I&#8217;ll try to explain them in more details, so you can identify the problem in your teams. Later I&#8217;ll talk about the actions that you can start taking in order to build trust.</p>
+<h2>Lack of Trust Indicators</h2>
+<p>The hints that I&#8217;m going to discuss in this post are not only related to lack of trust, but if you see one or more of them, you might want to start thinking if you have this problem or not.</p>
+<h3>Information Silos</h3>
+<p>People usually hide information from the ones they don&#8217;t trust. That is natural and many times you are unaware of doing so. But as a team member, you can probably see the effects of that trust deficiency.</p>
+<p>The first thing you will notice is that some information will be siloed in a small group of people or just one person. It is common to have specialists in a team, but if you have someone that is the only specialist in a task that the team performs daily, then the person is probably not sharing that knowledge with others. That behavior can be due to fear of being replaced by someone with the same knowledge, being compared etc.</p>
+<h3>Dread meetings</h3>
+<p>If you feel people are never comfortable when they receive the announcement of a meeting, they might have trust issues. Since they are not fond of sharing information, meetings become useless and boring for them.</p>
+<h3>Cliques</h3>
+<p><a href="https://en.wikipedia.org/wiki/Clique">Wikipedia defines clique</a> as:</p>
+<blockquote style="font-size: 1.1em; font-style: italic !important; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>&#8220;&#8230; a formation of two or more individuals who share bonding characteristics that allow them to identify with one another to form a social network. <strong>Those within the group communicate and associate with each other more so than with those outside of the group</strong>.&#8221;</p></blockquote>
+<p>Cliques are a classic example of trust issues. If you have a team that is divided in different cliques, they will prefer to handle work themselves than share work with &#8220;outside&#8221; people.</p>
+<h3>Preference for individual work</h3>
+<p>The same way as cliques, you can spot lack of trust if people in your team prefer to work alone without asking or sharing any information. However, it is important to not confuse introspection with trust issues. Usually, introspective people tend to do things on their own, but when faced with difficulties they will probably share them to complete the task. On the other hand, a person with trust issues might just try to solve it by herself.</p>
+<h3>Workload disparity</h3>
+<p>This is common to see when there&#8217;s lack of trust. The workload given to some people is much higher than to other people. Moreover, usually not only the amount is different but also the importance of the tasks.</p>
+<h2>Actions</h2>
+<p>Ok, we know how to detect the problem, but how are we going to solve it? Well, as all management problems, there is no silver bullet to it. However, I&#8217;ll show some actions that you can apply on your team that are best practices and, depending on the roots of the problem, it might help you boost trust among teammates.</p>
+<h3>Start by&#8230; trusting</h3>
+<p>The first thing that you should do is trust. <em>Well, thank you captain obvious</em>. You might think that it sounds stupid or obvious, but what I mean here is that, not only <strong>you</strong> need to start trusting other people, but you need to also promote this behavior in order to disseminate it. Leading by example is the key here.</p>
+<p>One way to improve this would be to explicitly demonstrate trust by saying phrases like: &#8220;I agree with you&#8221;, or &#8220;I know you can handle this&#8221;. It will make people see the change in your behavior and start imitating it, even if unaware of it.</p>
+<p>According to Dr. Henry Cloud’s book, <em>Boundaries for Leaders</em>, you can improve making these explicit changes by:</p>
+<ul>
+<li>showing people that you understand them;
+<ul>
+<li>people may react in different ways to different information, show them that you know them and can handle that difference;</li>
+</ul>
+</li>
+<li>showing people that you intend to help them;
+<ul>
+<li>show that you are not talking to them in order to blame or something similar; you are talking to them to help them;</li>
+</ul>
+</li>
+<li>believing in people&#8217;s capacity and ability;
+<ul>
+<li>show people that you know they can do it, and if they ever failed, show you did not lose belief in their capacity. Show you understand that those things happen and you still count on them.</li>
+</ul>
+</li>
+</ul>
+<h3>Encourage transparency</h3>
+<p>Sometimes we stop trusting each other because we know little or nothing about others. To solve that, we need to improve transparency in our work, making sure everyone knows what each one is doing. This can be achieved by using a Kanban Board, having weekly meetings where everyone says what they are doing or any other thing that explicitly shows that everyone is working <strong>together</strong> towards the same goal.</p>
+<h3>Make a connection</h3>
+<p>People enter the company with a predefined set of friends in their lives and they are not at the company to make friends&#8230; right? Well, yes. But that doesn&#8217;t mean everyone needs to act like strangers with each other.</p>
+<p>At the beginning, people might avoid sharing their life details, and that is fine. But you can counteract this by letting them get to know you better, which might involve talking about random topics like where you came from, what sports do you follow or why you spent $300 on a collection of The Twilight Saga. The important thing here is not the content of the conversation, but the conversation itself.</p>
+<h3>Create a culture in which mistakes are allowed</h3>
+<p>If you are the kind of person that, when someone does something wrong, you yell at her/him you might want to stop that. A culture of retaliation and personal blaming is the opposite of what you need to build trust.</p>
+<p>As W. Edwards Deming would say:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>&#8220;Blame the process not the people&#8221;</p></blockquote>
+<p>That doesn&#8217;t help only to improve trust among peers, it also ensures that you are monitoring your process and that you give to it the importance it deserves.</p>
+<h3>Engage offshore members</h3>
+<p>When working in a geographically distributed team, trust is much harder to build. That happens because you may have never met the other person face to face, or you haven’t even heard the other person&#8217;s voice yet. How will you build trust in that way? Well, the same way technology allowed us to work from different places, it provided us with tons of new technologies to improve communication.</p>
+<p>In this other blog post, we give a brief list of technologies that we use at Plataformatec to increase the quality of our communication: <a href="/2016/01/how-to-do-remote-meetings-effectively/">How to do remote meetings effectively</a>.</p>
+<p>An extra detail here is that sometimes people are in different time zones. Therefore, arrange everyone&#8217;s schedules, so important and decisive meetings are held at a time where everyone can be online. Moreover, they are in different countries, with different cultures. You need to be aware of the cultural differences in order to be respectful and build trust with each other.</p>
+<h2>Conclusion</h2>
+<p>We talked about changes regarding judgments, work environment, perception, encouragement, etc. However, there&#8217;s also an important point that I would like to reinforce as the giveaway from this post: improve communication.</p>
+<p>It may be cliché to say it but, as you saw, and you will see in many problems that you&#8217;ll have throughout your career, the answer to many of them is to improve communication. Every now and then, it is important to check how the communication in your workplace is being held and if it can be improved somehow. Because, in the end, enhancing communication will <strong>always</strong> improve your process.</p>
+<p>Bill Gates has a very good quote:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>&#8220;I&#8217;m a great believer that any tool that enhances communication has profound effects in terms of how people can learn from each other, and how they can achieve the kind of freedoms that they&#8217;re interested in.&#8221;</p></blockquote>
+<p>Or, if you want something more&#8230; popular, Ashley Tisdale quote works as well:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>&#8220;Communication is <strong>so</strong> key&#8221;</p></blockquote>
+<p>&nbsp;</p>
+<hr />
+<div style="margin: 20px 0 60px;"><a href="http://pages.plataformatec.com.br/ebook-strategies-to-improve-software-development-workflow?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-strategies&amp;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/08/blog-cta-strategies-to-improve-software-development-workflow.png" alt="5 Strategies to Improve a Software Development Workflow -- Reserve your copy" width="831" height="147" /></a></div><p>The post <a href="/2016/11/how-to-improve-trust-among-team-members/">How to improve trust among team members</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A praise for a hard, sweaty and great work done</title>
+		<link>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/</link>
+					<comments>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 17 May 2012 21:38:06 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<category><![CDATA[team]]></category>
+		<guid isPermaLink="false">/?p=2728</guid>
+
+					<description><![CDATA[<p>Congratulations to our fellow Carlos Antonio (@cantoniodasilva) and Rafael França (@rafaelfranca) for honorably earning the commit access to the Ruby on Rails repository!</p>
+<p>The post <a href="/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/">A praise for a hard, sweaty and great work done</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is no secret that our team has a great passion for contributing to the open source community and once in a while we receive compliments &#8211; it is great to have our work recognized; thank you all for always being supportive. =D</p>
+<p>We&#8217;d proudly like to announce that, due to their contributions, two specific members of our team were recently awarded by the Ruby on Rails community (by the Rails Core Team, to be more precise).</p>
+<p>Without further ado we&#8217;d like to congratulate our fellow Carlos Antonio (<a href="http://twitter.com/cantoniodasilva">@cantoniodasilva</a>) and Rafael França (<a href="http://twitter.com/rafaelfranca">@rafaelfranca</a>) for honorably earning the commit access to the Ruby on Rails repository!</p>
+<div id="attachment_2740" style="width: 522px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-2740" class=" wp-image-2740 " title="@cantoniodasilva and @rafaelfranca" src="/wp-content/uploads/2012/05/Screen-shot-2012-05-018.jpg" alt="" width="512" height="257" srcset="/wp-content/uploads/2012/05/Screen-shot-2012-05-018.jpg 640w, /wp-content/uploads/2012/05/Screen-shot-2012-05-018-300x150.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /><p id="caption-attachment-2740" class="wp-caption-text">@cantoniodasilva and @rafaelfranca</p></div>
+<p>Guys, congratulations! \o/</p>
+<p>We are all very happy for this great achievement. Great work!<br />
+From your friends at Plataformatec.</p><p>The post <a href="/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/">A praise for a hard, sweaty and great work done</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

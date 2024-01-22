@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>gerente de produto « Plataformatec Blog</title>
+	<atom:link href="/tag/gerente-de-produto/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 12 Jun 2019 22:51:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Onde foi parar o Gerente de Projetos?</title>
+		<link>/2018/04/onde-foi-parar-o-gerente-de-projetos/</link>
+		
+		<dc:creator><![CDATA[Felipe Gimenes]]></dc:creator>
+		<pubDate>Wed, 25 Apr 2018 14:34:37 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[contagil]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<guid isPermaLink="false">/?p=7475</guid>
+
+					<description><![CDATA[<p>Com a evolução dos modelos de gestão motivado pela necessidade de adaptação ao ambiente de desenvolvimento de software, o papel do Gerente de Projetos nas empresas de tecnologia tem se transformado bastante nos últimos tempos. Responsabilidades como alocação de equipes, controle de recursos financeiros, desenvolvimento de cronogramas e elaboração de enormes Planos de Projetos passaram ... <a class="read-more-link" href="/2018/04/onde-foi-parar-o-gerente-de-projetos/">»</a></p>
+<p>The post <a href="/2018/04/onde-foi-parar-o-gerente-de-projetos/">Onde foi parar o Gerente de Projetos?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Com a evolução dos modelos de gestão motivado pela necessidade de adaptação ao ambiente de desenvolvimento de software, o papel do Gerente de Projetos nas empresas de tecnologia tem se transformado bastante nos últimos tempos. </span></p>
+<p><span style="font-weight: 400;">Responsabilidades como alocação de equipes, controle de recursos financeiros, desenvolvimento de cronogramas e elaboração de enormes Planos de Projetos passaram a ser responsabilidades de outros papéis.</span></p>
+<p><span style="font-weight: 400;">Alavancado pelo uso das metodologias ágeis, o conceito de gestão distribuída tem levado uma nova característica aos times: mais autonomia para tomar decisões de negócio, cuja participação do time no direcionamento de um produto tem sido essencial para que a mudança constante, inerente desse ambiente, tenha menor impacto sobre a qualidade do projeto. </span></p>
+<p><span style="font-weight: 400;">Então, eu lhe pergunto: com o empoderamento dos times nas organizações, onde foi parar o Gerente de Projetos com perfil &#8220;manda-chuva&#8221;? Para ficar mais claro o que quero dizer com esse termo, imagine o tradicional gestor de uma estrutura funcional e hierarquizada, onde funcionários, coordenadores, gerentes, diretores e presidente se baseiam no conceito comando-controle e estes respondem diretamente ao seu gerente funcional.</span></p>
+<div id="attachment_7476" style="width: 972px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-7476" class=" wp-image-7476" src="/wp-content/uploads/2018/04/Screen-Shot-2018-04-17-at-16.02.29-1024x626.png" alt="" width="962" height="588" srcset="/wp-content/uploads/2018/04/Screen-Shot-2018-04-17-at-16.02.29-1024x626.png 1024w, /wp-content/uploads/2018/04/Screen-Shot-2018-04-17-at-16.02.29-300x183.png 300w, /wp-content/uploads/2018/04/Screen-Shot-2018-04-17-at-16.02.29-768x469.png 768w, /wp-content/uploads/2018/04/Screen-Shot-2018-04-17-at-16.02.29.png 1296w" sizes="(max-width: 962px) 100vw, 962px" /><p id="caption-attachment-7476" class="wp-caption-text">Diagrama representando uma estrutura funcional</p></div>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">O dinamismo, a necessidade de adaptação rápida e resposta às mudanças, embasadas pelo modelo de gestão ágil, fez com que os profissionais da antiga estrutura funcional se adequassem aos times multidisciplinares focados na entrega de valor, que saibam responder imediatamente à imprevisibilidade deste ambiente e que se adaptem constantemente a novos contextos. </span></p>
+<p><span style="font-weight: 400;">O papel do tradicional Gerente de Projetos pode ser comparado ao papel exigido pela necessidade requerida nesse novo ambiente: o Gerente de Produto, Product Manager, ou qualquer nome da moda que se dê ao cargo do responsável pela evolução do produto. Limito-me aqui a chamar de Gerente de Produtos. O que faz esse tal Gerente de Produtos então, se não cobrar e exigir produtividade?</span></p>
+<p><span style="font-weight: 400;">O Gerente de Produtos deve ter como objetivo ser a sustentação e prover o suporte necessário ao time de desenvolvimento. Se o time tem que ser capaz de tomar as decisões e se auto-organizar para desenvolver e entregar o máximo de valor nas entregas ao cliente, o Gerente de Produtos deve ser o canal de comunicação entre o time e os interessados pelo projeto (</span><i><span style="font-weight: 400;">stakeholders</span></i><span style="font-weight: 400;">), definir os objetivos e visão estratégica, construir um roadmap sólido dos entregáveis, priorizar as demandas e intermediar a integração e o entendimento das principais áreas de desenvolvimento de um produto: </span><i><span style="font-weight: 400;">UX</span></i><span style="font-weight: 400;">, </span><i><span style="font-weight: 400;">Business</span></i><span style="font-weight: 400;"> e Tecnologia.</span></p>
+<div id="attachment_7486" style="width: 820px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-7486" class=" wp-image-7486" src="/wp-content/uploads/2018/04/skitch-1.png" alt="" width="810" height="539" srcset="/wp-content/uploads/2018/04/skitch-1.png 554w, /wp-content/uploads/2018/04/skitch-1-300x200.png 300w" sizes="(max-width: 810px) 100vw, 810px" /><p id="caption-attachment-7486" class="wp-caption-text">Papel de um gerente de produto</p></div>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Diferentemente do tradicional Gerente de Projetos, o Gerente de Produtos deve focar no </span><b>&#8220;o que deve ser feito&#8221;</b><span style="font-weight: 400;"> e menos em </span><b>&#8220;como deve ser feito</b><span style="font-weight: 400;">&#8220;, sendo essa responsabilidade compartilhada com o time, o que inclui definir processo de desenvolvimento, remover impedimentos, tomar decisões sobre mudança de escopo e detalhar requisitos das tarefas. Os times que antes eram considerados times de desenvolvedores, passaram a ser times de produto com membros multidisciplinares, responsáveis por validar, testar e desenvolvê-lo, como uma &#8220;mini-startup&#8221;.</span></p>
+<p><span style="font-weight: 400;">Assumindo este como sendo o rumo que o papel do Gerente de Projetos tem tomado, é fato que o engajamento e a participação do time têm se tornado cada vez mais importante, o que mostra também o quanto os princípios ágeis têm influenciado na transformação desse papel nas empresas que trabalham com desenvolvimento de software.  </span></p>
+<p><span style="font-weight: 400;">Para aprofundar um pouco mais nesse assunto, recomendo dois blogposts que foram escritos aqui na Plataformatec sobre </span><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/"><span style="font-weight: 400;">definição de objetivos</span></a><span style="font-weight: 400;"> e </span><a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/"><span style="font-weight: 400;">priorização de features e projeção de entregas</span></a><span style="font-weight: 400;">.</span></p><p>The post <a href="/2018/04/onde-foi-parar-o-gerente-de-projetos/">Onde foi parar o Gerente de Projetos?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Guia de um Agilista: Analisando a saúde do Processo</title>
+		<link>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/</link>
+					<comments>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 22 Feb 2018 19:51:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[product owner]]></category>
+		<guid isPermaLink="false">/?p=7210</guid>
+
+					<description><![CDATA[<p>Independente se você é um agilista experiente ou iniciante, existem desafios que fazem parte do dia a dia de qualquer equipe que esteja em busca da criação de software com qualidade e com o mínimo de previsibilidade quanto ao prazo para a entrega de uma demanda (ex: nova funcionalidade, correção de um bug, melhoria técnica, ... <a class="read-more-link" href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">»</a></p>
+<p>The post <a href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">Guia de um Agilista: Analisando a saúde do Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Independente se você é um agilista experiente ou iniciante, existem desafios que fazem parte do dia a dia de qualquer equipe que esteja em busca da criação de software com qualidade e com o mínimo de previsibilidade quanto ao prazo para a entrega de uma demanda (ex: nova funcionalidade, correção de um bug, melhoria técnica, etc.).</p>
+<p>Desenvolver uma visão que possibilite enxergar e compreender o todo por meio da análise das partes que o formam é um grande desafio ao lidar com ambientes de incerteza.</p>
+<p>Uma das formas de compreender e analisar o sistema de trabalho de uma equipe ágil se dá através das métricas de processo (<a href="/?s=m%C3%A9tricas" rel="nofollow">há uma coletânea de conteúdo bacana sobre o assunto aqui no blog da Ptec</a>).</p>
+<p>Entender o fluxo a partir dos dados é uma maneira pragmática de incorporar uma filosofia de melhoria contínua, sem mudanças abruptas e caóticas e de forma transparente para todos que estão envolvidos no contexto (equipe, stakeholders, área de produtos, gestores, etc.). Parafraseando a comunidade Kanban, medir é uma ferramenta que ajudará a evoluir e não revolucionar um processo já existente.</p>
+<p>Pessoalmente, eu gosto de quantificar o processo quando estou mapeando a realidade de uma equipe, pois exponho fatos (dados) para discussão e análise. Na minha experiência com equipes de desenvolvimento de software, venho percebendo que ter esse tipo de conduta ajuda a diminuir uma carga subjetiva que possa existir na equipe e é um jeito de confrontar crenças como &#8220;não precisamos melhorar&#8221;, &#8220;não temos problemas no processo&#8221; e &#8220;atuamos de forma colaborativa&#8221;.</p>
+<p>No blog post de hoje, compartilharei uma coleção de métricas que ajudarão você a diagnosticar a saúde do proceso de uma equipe ágil.</p>
+<h2><a id="user-content-premissas" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#premissas"></a>Premissas</h2>
+<p>Antes de qualquer coisa, preciso deixar algumas ressalvas quanto ao uso das métricas.</p>
+<p><strong>Métricas devem ser usadas para evoluir o processo e não para gerar cobranças e comparações destrutivas.</strong></p>
+<p>Não caia na tentação de comparar equipes e medir o desempenho de um indivíduo. Se você ou a empresa no qual trabalha estão interessados em premiar resultados individuais, formulem um método que proponha avaliar o desempenho da pessoa a partir da opinião dos gestores, pares e clientes que tenham interagido com o resultado do trabalho do indivíduo. No caso de recompensar individualmente as equipes por seu resultado, fuja de métricas que não tenham relação direta com o resultado do negócio (ex: do que adianta a equipe ter entregue um número de funcionalidades no semestre sendo que o produto não teve um aumento de receita?).</p>
+<p>Compartilho essa premissa para que você e sua equipe não se comportem de acordo como estão sendo medidos. Afinal, já diria Goldratt: <a href="https://en.wikipedia.org/wiki/Eliyahu_M._Goldratt" rel="nofollow">&#8220;diga-me como serei avaliado e eu lhe direi como me comporto&#8221;</a>.</p>
+<p><strong>Números sem contextos são perigosos.</strong></p>
+<p>Qualquer análise feita sem compreender as variáveis que compõe um cenário se torna superficial, enviesada e pobre. Se alguém lhe contar que o número de funcionalidades entregues em uma equipe é de 10 itens por semana, é possível concluir algo? Tal métrica é boa ou ruim? Qual o significado de entregue para aquela equipe? É software em produção ou entrega em um ambiente de homologação? Bem, pelos questionamentos anteriores é possível concluir que um número solto nada mais é do que um símbolo privado de qualquer significado.</p>
+<p><strong>Procure tendências e fuja da precisão. Dada a complexidade que é criar um produto de software, não busque ser determinístico em um mundo que é receptivo por natureza a uma realidade probabilística.</strong></p>
+<p>A lógica por trás da última premissa é: vivemos em um ambiente onde há risco, isto é, existe a probabilidade de insucesso em função de algum acontecimento incerto, cuja ocorrência não depende exclusivamente da vontade da equipe. Portanto, é pouco provável que a equipe saiba ao certo o prazo de entrega de uma demanda ou projeto. Ao invés de nos enganarmos com prazos que ratificam que as entregas acontecerão sempre na mesma data e na mesma forma, passemos a analisar o histórico de dados da equipe para projetarmos a chance de entregarmos algo.</p>
+<p>As premissas compartilhadas ajudarão você a utilizar as métricas de forma efetiva. O <a href="https://twitter.com/lucasrcolucci1" rel="nofollow">Lucas Colucci</a> escreveu um texto muito importante que apresenta alguns <a href="/2017/10/12-erros-comuns-no-uso-de-metricas-de-processo/" rel="nofollow">erros comuns ao utilizar métricas de processo</a>.</p>
+<h2><a id="user-content-diagnóstico-do-processo" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#diagn%C3%B3stico-do-processo"></a>Diagnóstico do processo</h2>
+<p>Dada as premissas compartilhadas acima, vamos ao que de fato interessa. As métricas listadas a seguir servirão para você mapear como está a saúde do processo de uma equipe. Como agilista, considero que as visualizações abaixo compõem o painel de análise (cockpit) de um fluxo de trabalho e devem estar disponíveis para que as equipes utilizem como material para a promoção de melhorias no processo (ex: uso das métricas em retrospectivas, análise do processo em reuniões diárias, etc.).</p>
+<p><strong>Trabalho em progresso</strong></p>
+<p>Monitorar o trabalho em progresso ajudará a equipe a ter consciência de qual é o montante de trabalho que o processo tem suportado ao longo do tempo. Gosto desse tipo de visualização, pois ela demonstra, por exemplo, se as equipes estão respeitado uma política de limite do trabalho em progresso.</p>
+<p><img decoding="async" class="alignnone wp-image-7212" src="/wp-content/uploads/2018/02/wip_history1-1024x469.png" alt="" width="1046" height="479" srcset="/wp-content/uploads/2018/02/wip_history1-1024x469.png 1024w, /wp-content/uploads/2018/02/wip_history1-300x137.png 300w, /wp-content/uploads/2018/02/wip_history1-768x352.png 768w, /wp-content/uploads/2018/02/wip_history1.png 1665w" sizes="(max-width: 1046px) 100vw, 1046px" /></p>
+<p>No exemplo acima, temos uma situação onde a equipe estava com a quantidade de itens em progresso próximo de 10 por semana até que em determinado momento houve uma reconfiguração no número de pessoas, o que fez com que a quantidade de trabalho em progresso diminuísse. Um insight aqui é que essa visualização apresenta um histórico interessante da equipe, ajudando a identificar momentos em que ocorreram mudanças na estrutura do time, mudanças de rumo (as famosas pivotadas), impedimentos, etc.</p>
+<p>Visando estabilizar o processo a partir da capacidade produtiva, é importante que o número de itens em WIP não entre em uma tendência de crescimento. Caso isso esteja acontecendo, é bem provável que a equipe precise de otimizações para que o WIP passe a diminuir. Como agilista, monitorar o WIP apoiará você a reverberar o seguinte mantra com a equipe: &#8220;vamos parar de começar e comecemos a terminar&#8221;.</p>
+<p>Uma outra análise de WIP que tenho começando a fazer diz respeito ao tempo de vida dos itens que estão em WIP dentro de uma determinada semana. Essencialmente, a visualização leva em consideração os itens que estão em progresso naquela semana e contabiliza há quanto tempo eles se encontram dentro do fluxo de trabalho. Para facilitar a leitura do gráfico, faço um agrupamento por categoria onde considero as seguintes faixas: (1) 1 dia em WIP; (2) até uma semana em WIP; (3) de 1 à 2 semanas em WIP; (4) de 2 à 3 semanas em WIP; (5) de 3 à 4 semanas em WIP; (6) acima de 4 semanas em WIP.</p>
+<p>Ainda sobre a estrutura da visualização, para as semanas que já passaram, é feita a contabilização e a classificação dos itens que estão em WIP no final do período. Já para a semana corrente, é realizada uma análise dos itens que estão em WIP no momento.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7218" src="/wp-content/uploads/2018/02/wip_age2-1024x429.png" alt="" width="1055" height="442" srcset="/wp-content/uploads/2018/02/wip_age2-1024x429.png 1024w, /wp-content/uploads/2018/02/wip_age2-300x126.png 300w, /wp-content/uploads/2018/02/wip_age2-768x322.png 768w, /wp-content/uploads/2018/02/wip_age2.png 1847w" sizes="(max-width: 1055px) 100vw, 1055px" /></p>
+<p>Aplicando em um exemplo, é possível perceber que, na quinta semana de monitoramento do tempo de vida do WIP da equipe acima, existiam dois itens que estavam há mais de um mês dentro do fluxo. Se a equipe, ao acompanhar sistematicamente seu fluxo de trabalho, perceber que as categorias de mais idade estão crescendo é bem provável que um gargalo esteja se formando em alguma etapa do processo e uma intervenção será necessária.</p>
+<p>Tenha em mente que WIP representa esforço e energia que ainda não foram validados e quanto mais tempo a equipe passar carregando-o, menos <em>feedback</em> será recebido, mais lento será o processo de validação das hipóteses por detrás das iniciativas que originaram o trabalho e maior será o risco da empresa estar perdendo uma oportunidade de mercado.</p>
+<p>Caso queira saber mais sobre WIP, não deixe de ler post <a href="/2018/01/wip-limit-a-further-study/">Um estudo mais profundo sobre Limites WIP</a></p>
+<p><strong>Tempo de entrega</strong></p>
+<p>O <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/" rel="nofollow">lead time</a> é uma métrica importante para que as equipes desenvolvam a capacidade de entender quanto tempo elas têm levado para concluir um item de trabalho. Além disso, equipes que desenvolvem a habilidade de analisar tal métrica conseguem identificar situações que geraram variabilidade no processo (ex: problemas em ambientes, saída de membros da equipe, falta de critérios de aceite claros nas demandas).</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7214" src="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png" alt="" width="1071" height="430" srcset="/wp-content/uploads/2018/02/leadtime_distribution3-1024x411.png 1024w, /wp-content/uploads/2018/02/leadtime_distribution3-300x120.png 300w, /wp-content/uploads/2018/02/leadtime_distribution3-768x308.png 768w, /wp-content/uploads/2018/02/leadtime_distribution3.png 1880w" sizes="(max-width: 1071px) 100vw, 1071px" /></p>
+<p>A primeira visualização que recomendo estar disponível para a equipe é o gráfico de dispersão do lead time. Ele oferecerá uma ideia se o tempo para que os itens sejam entregues está diminuindo ou não ao longo do tempo.</p>
+<p>Conforme ilustrado no gráfico acima, gosto de combinar nessa visualização as seguintes informações: itens finalizados (representados no gráfico pelos pontos em azul) e em progresso (representados no gráfico pelos pontos em vermelho); a média móvel que leva em consideração os últimos 5 itens entregues (esse é um parâmetro totalmente arbitrário); e as informações de percentil 50 (mediana), percentil 75 e percentil 95.</p>
+<p>Tais medidas de referência são úteis, pois, a partir do exemplo, trazem a tona constatações como:</p>
+<ul>
+<li>A média móvel tem variado ao longo do tempo.</li>
+<li>Baseado no histórico de itens concluídos, 50% deles foram finalizados em até 10 dias, 75% levaram até 16 dias para serem finalizados e 95% foram concluídos em até 34 dias.</li>
+</ul>
+<p>Além disso, o gráfico de dispersão pode gerar respostas para questionamentos como:</p>
+<ul>
+<li>O que a equipe está fazendo para tratar os itens em progresso que estão se tornando casos extremos de lead time?</li>
+<li>O que é possível melhorar no processo para que haja uma diminuição no lead time?</li>
+</ul>
+<p>Outra visualização benéfica para entender o tempo de entrega é o gráfico de histograma, pois, ao considerar cada lead time como uma categoria, o mesmo apresenta os dados de uma maneira mais concisa e que permite extrair informação sobre o comportamento da distribuição.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-large wp-image-7215" src="/wp-content/uploads/2018/02/leadtime_histogram4-1024x427.png" alt="" width="1024" height="427" srcset="/wp-content/uploads/2018/02/leadtime_histogram4-1024x427.png 1024w, /wp-content/uploads/2018/02/leadtime_histogram4-300x125.png 300w, /wp-content/uploads/2018/02/leadtime_histogram4-768x320.png 768w, /wp-content/uploads/2018/02/leadtime_histogram4.png 1865w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Conforme ilustrado no exemplo acima, o histograma permite que a equipe tenha resposta para indagações do tipo:</p>
+<ul>
+<li>Qual tem sido o lead time mais frequente?</li>
+<li>Os casos extremos de lead time são muito frequentes?</li>
+<li>Qual o formato da distribuição? Há uma concentração do lead time a esquerda ou a direita da distribuição? Existe mais do que uma moda? Geralmente distribuições bimodais representam fluxos de equipes que lidam com mais de um tipo de demanda em seu processo, pois apresentam concentrações semelhantes em diferentes categorias de lead time.</li>
+</ul>
+<p><strong>Ritmo das entregas</strong></p>
+<p>Medir e visualizar o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/" rel="nofollow">throughput (vazão)</a> é importante para que a equipe compreenda qual tem sido o montante de trabalho entregue em um período de tempo (exemplo: semana, quinzena, mês), bem como para que ela identifique se há a criação de uma tendência de aumento no número de entregas. Ao perceber que o throughput está em queda, a equipe pode buscar entender quais fatores estão afetando a vazão do processo.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7217" src="/wp-content/uploads/2018/02/throughput_variation-1024x436.png" alt="" width="1069" height="455" srcset="/wp-content/uploads/2018/02/throughput_variation-1024x436.png 1024w, /wp-content/uploads/2018/02/throughput_variation-300x128.png 300w, /wp-content/uploads/2018/02/throughput_variation-768x327.png 768w, /wp-content/uploads/2018/02/throughput_variation.png 1713w" sizes="(max-width: 1069px) 100vw, 1069px" /></p>
+<p>Recomendo sempre que possível a quebra da visualização do throughput por tipo de demanda. Dessa forma, fica explícito para todos se a equipe está conseguindo:</p>
+<ul>
+<li>Equilibrar o número de entregas de valor (ex: funcionalidades) com demandas de falha (ex: bugs).</li>
+<li>Lidar com o <em>urgente</em> de forma sustentável. Volta e meia me deparo com equipes que classificam todo tipo de demanda que entra no fluxo de trabalho como urgente e atuam em cima delas, deixando de lado itens que serão importantes para o negócio no médio prazo.</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7216" src="/wp-content/uploads/2018/02/throughput_break6-1024x443.png" alt="" width="1073" height="464" srcset="/wp-content/uploads/2018/02/throughput_break6-1024x443.png 1024w, /wp-content/uploads/2018/02/throughput_break6-300x130.png 300w, /wp-content/uploads/2018/02/throughput_break6-768x332.png 768w, /wp-content/uploads/2018/02/throughput_break6.png 1823w" sizes="(max-width: 1073px) 100vw, 1073px" /></p>
+<p>No exemplo acima a equipe conseguiu equilibrar em grande parte das semanas entregas de história do usuário com correções de bug. Na semanas sinalizadas com as setas em vermelho, a equipe precisou atuar e entregar problemas críticos que estavam afetando a operação da empresa e por isso entregou apenas correções de bugs.</p>
+<p><strong>Análise da taxa de entrada e saída do fluxo</strong></p>
+<p>Além do uso do gráfico de CFD (<a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" rel="nofollow">escrevi um blog post completo para falar sobre essa visualização</a>), gostaria de apresentar uma análise que não tenho visto muitos agilistas fazerem: relação entre as taxas de entrada e saída do fluxo de trabalho. Basicamente essa visualização compara a quantidade de itens que a equipe se comprometeu entregar com o número de itens entregues ao longo do tempo.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-7213" src="/wp-content/uploads/2018/02/arrival_throughput_rate7-1024x433.png" alt="" width="1116" height="472" srcset="/wp-content/uploads/2018/02/arrival_throughput_rate7-1024x433.png 1024w, /wp-content/uploads/2018/02/arrival_throughput_rate7-300x127.png 300w, /wp-content/uploads/2018/02/arrival_throughput_rate7-768x325.png 768w, /wp-content/uploads/2018/02/arrival_throughput_rate7.png 1817w" sizes="(max-width: 1116px) 100vw, 1116px" /></p>
+<p>O que esse tipo de visualização pode trazer de insight? Vamos analisar um exemplo.</p>
+<p>Baseado na imagem acima é possível fazer algumas deduções:</p>
+<ul>
+<li>Das 27 semanas analisadas, 10 delas tiveram uma taxa de entrada (itens que a equipe se comprometeu) maior do que a quantidade de itens entregues.</li>
+<li>Na semana 17 a equipe teve um pico de itens comprometidos para serem entregues. Isso ocorreu pelo fato da pessoa que era PO da equipe estar em vias de entrar de férias. Falando em <a href="/2017/12/estoques-no-desenvolvimento-de-software/" rel="nofollow">estoques, sugiro a leitura do blog post do Guilherme Fré sobre o assunto</a>.</li>
+</ul>
+<p>Analisar a taxa de entrada e saída do processo apoiará a equipe no entendimento de se o ritmo de entrega está acompanhando a quantidade de itens comprometidos. Tenho visto equipes assumindo mais do que sua real capacidade. Tal tipo de comportamento gera desconfiança dos stakeholders pelo fato da equipe entregar menos do que é pedido e frustação da equipe por nunca conseguir entregar &#8220;tudo&#8221;.</p>
+<p>Em um sistema perfeitamente estável, a taxa de entrada e saída deveria ser a mesma. Se você e sua equipe conseguirem desenvolver um processo onde na maior parte das semanas as taxas forem equivalentes (ex: para cada 4 semanas, 3 tiveram as taxas de entrada e saída iguais), isso demonstrará maturidade do fluxo de trabalho e representará um contexto altamente previsível.</p>
+<h2><a id="user-content-conclusão" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/c8fc4b93e4e9a0a811f9d60af218d75d96bcff0f/2018-metricas-agilista.md#conclus%C3%A3o"></a>Conclusão</h2>
+<p>Incorporar uma cultura que traga dados para sua equipe fará com que você monitore um processo que possui uma natureza essencialmente complexa (software) trazendo visibilidade do progresso para quaisquer interessados no que está sendo construído ou mantido.</p>
+<p>Além disso, propor melhorias e evoluções baseadas em dados é um excelente caminho para a remoção de análises subjetivas e, até certo ponto, vazias. No fundo, espero que com esse blog post você, agilista, estimule que as pessoas utilizem menos o recurso do <em>feeling</em> quando estiverem analisando o comportamento do fluxo de trabalho de uma equipe.</p>
+<p>Se você busca um material avançado em métricas, recomendo o livro que escrevi sobre o assunto <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis" rel="nofollow">Métricas Ágeis – Obtenha melhores resultados em sua equipe</a>. Aproveite para dar uma olhada nas <a href="https://www.goodreads.com/book/show/35341623-m-tricas-geis" rel="nofollow">revisões feitas por quem já leu</a> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60f.png" alt="😏" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>E você? Quais métricas tem utilizado para acompanhar a saúde do processo? Deixe suas experiências nos comentários abaixo!</p>
+<div id="nurturing-agile-blog-post-guia-de-um-agilista-analisando-saude-do-processo-1d8b67d69ba6b19eaca3"></div>
+<p>
+jQuery( document ).ready(function() {<br />
+  new RDStationForms(&#8216;nurturing-agile-blog-post-guia-de-um-agilista-analisando-saude-do-processo-1d8b67d69ba6b19eaca3-html&#8217;, &#8216;UA-8268430-1&#8217;).createForm();<br />
+  });</p><p>The post <a href="/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/">Guia de um Agilista: Analisando a saúde do Processo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/02/guia-de-um-agilista-analisando-a-saude-do-processo/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: como definir OKRs em equipes ágeis</title>
+		<link>/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 05 Sep 2017 21:41:51 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[business of software]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<guid isPermaLink="false">/?p=6664</guid>
+
+					<description><![CDATA[<p>Continuando a série de posts referente aos dilemas da vida de gerentes de produto, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor. É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados ... <a class="read-more-link" href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">»</a></p>
+<p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Continuando a <a href="/?s=dilemas+de+po">série de posts referente aos dilemas da vida de gerentes de produto</a>, gostaria de compartilhar uma técnica para que você e a sua equipe possam se planejar melhor.</p>
+<p>É comum no ambiente de equipes que trabalham com a construção ou evolução de produtos a necessidade da definição de objetivos, a projeção de resultados esperados e o planejamento de entregas. Se você convive com tais desafios, confira a seguir uma dinâmica na qual obtive ótimos resultados no processo de concepção de OKRs.</p>
+<h2>O que é OKR e para o que serve</h2>
+<p>Bom, antes de escrever sobre o assunto, vale a pena definir o <strong>termo OKR</strong>.</p>
+<p>Segundo definição do pessoal da <a href="http://leanperformance.com/pt-br/okr/o-que-e-okr/">Lean Performance</a>, OKR &#8212; do inglês <em>Objectives and Key Results</em> &#8211;, utilizado no Silicon Valley por empresas como Google, Facebook, Linkedin, Intel etc, <strong>é um <em>framework</em> para definir metas</strong>. Trata-se de um <strong>sistema simples para criar alinhamento e engajamento em torno de metas mensuráveis e dinâmicas</strong>, tipicamente definidas trimestralmente.</p>
+<p>OKRs são uma ótima forma das organizações criarem e comunicarem objetivos e resultados. <strong>Seu maior propósito é promover conexão entre os objetivos da empresa, do time e dos indivíduos a partir de resultados mensuráveis, fazendo com que todos se movam na mesma direção</strong>.</p>
+<p>Em resumo, utilizar OKRs adequadamente auxilia no aumento do alinhamento e do engajamento entre as pessoas, e torna o processo de planejamento estratégico mais ágil, com maior cadência de revisão, adaptação e participação de toda a equipe.</p>
+<p>O alinhamento e engajamento entre as pessoas aumentam, pois o time passa a fazer parte do direcionamento do produto, gerando maior senso de pertencimento em cada um.</p>
+<p>Certa vez, no projeto de um dos nossos clientes, após a equipe definir os OKRs, fui informado pelo QA que o bug que estava ocorrendo no ambiente de produção iria impactar diretamente um dos OKRs, se não fosse corrigido imediatamente. Esse fato me deixou realmente surpreso, pois jamais veria uma ação assim se não compartilhassemos a responsabilidade com todo o time.</p>
+<p>Com a aplicação de OKRs, ganhamos mais uma ferramenta na priorização do backlog e, mais importante, temos o escopo direcionado para um objetivo comum.</p>
+<p>Ao aplicar dinâmicas de OKRs, espera-se que a empresa, equipe ou pessoa tenha em mãos:</p>
+<ol>
+<li><strong>Objetivos:</strong> Possuem, por essência, característica qualitativa, inspiracional, com prazo definido e apontem para metas, ou seja, dizem para onde se deve ir.</li>
+<li><strong>Key results:</strong> Quantificam toda a ideia inspiracional. Devem ser atingíveis, mensuráveis e realistas. Em outras palavras, indicam como será possível atingir os objetivos.</li>
+</ol>
+<p><em>Beleza Raphael, entendi os conceitos e percebi que isso pode ser útil, mas você pode dar um exemplo?</em></p>
+<blockquote><p>
+  <strong>Objetivo:</strong> Aumentar o número de clientes a partir de melhor experiência de uso do aplicativo.</p>
+<p>  <strong>Período:</strong> Primeiro trimestre de 2017.</p>
+<p>  <strong>Key results:</strong></p>
+<ul>
+<li>Aumentar a taxa de conversão mobile global de 5% (último trimestre de 2016) para 10%.</li>
+<li>Aumentar o volume de sessões entrantes de 161 mil (último trimestre de 2016) para 240 mil.</li>
+<li>Vender 10.000 mil licenças básicas.</li>
+<li>Vender 500 licenças <em>premium</em>.</li>
+</ul>
+</blockquote>
+<p>De onde vamos tirar esses indicadores?</p>
+<p>Aqui vai um ponto importante: para definir bons <em>key results</em>, que sejam mensuráveis e reflitam a situação real, <strong>é essencial que a organização seja orientada a dados e indicadores</strong>. Basicamente, a empresa deve possuir métricas de produto que assegurem uma tomada de decisão assertiva, dando a real noção de direção e esforço; e não somente baseada em intuições e experiências. Esses dados ajudam a definir as estratégias do próximo período com maior segurança e a otimizar os recursos empreendidos.</p>
+<p>Os dados devem direcionar as seguintes questões:</p>
+<ul>
+<li>Quais desafios temos à frente? Quais indicadores estão ruins? O que devemos fazer para melhorar tal indicador? Ex: Diminuir o churn, aumentar prospects e leads, melhorar os processos operacionais etc.</li>
+<li>Qual frente do produto precisamos melhorar para atingir o objetivo X da organização?</li>
+<li>Quais riscos esses dados evidenciam e onde devemos manter a atenção?</li>
+</ul>
+<p>Feita essa introdução, vamos para a dinâmica de definição dos OKRs para que você possa aplicá-la e aprimorá-la.</p>
+<h2>Parte 1 &#8211; Compreendendo o negócio</h2>
+<p>O primeiro tópico a ser discutido diz respeito a revisão ou criação do modelo de negócios do produto.</p>
+<p>Baseado nas personas, a equipe poderá analisar os canais, formatos de relacionamento com o cliente, fontes de receita, atividades chave, recursos chave, parceiros chave e estrutura de custo.</p>
+<p>Para levantar tais informações, sugiro que você leve as seguintes perguntas:</p>
+<ul>
+<li>Personas: qual o perfil de clientes que utilizam o produto?</li>
+<li>Canais: como os clientes chegam ao produto, geralmente?</li>
+<li>Formatos de relacionamento: como ocorre o relacionamento dos usuários com o produto atualmente?</li>
+<li>Fontes de receita: quais são as fontes de receita atuais?</li>
+<li>Atividades chave: quais as principais atividades que precisam ser realizadas no dia a dia da operação para que o produto possa entregar o valor que se propõe?</li>
+<li>Recursos chave: o que o produto possui de diferencial competitivo?</li>
+<li>Parceiros chave: quais parceiros ajudam a empresa a viabilizar/alavancar o produto?</li>
+<li>Custos: qual a estrutura necessária para tornar a operação do produto viável?</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6668" src="/wp-content/uploads/2017/09/business-model-canvas.png" alt="Business model canvas" width="763" height="489" srcset="/wp-content/uploads/2017/09/business-model-canvas.png 763w, /wp-content/uploads/2017/09/business-model-canvas-300x192.png 300w" sizes="(max-width: 763px) 100vw, 763px" /></p>
+<p>Assim, a equipe terá maior clareza sobre o estágio atual do produto. Caso o produto não possua um modelo de negócios, não deixe de desenvolver um. Uma dica de leitura para que você possa construir um é o livro <a href="https://www.goodreads.com/book/show/7723797-business-model-generation">Business Model Generation</a>.</p>
+<p>Após a revisão do modelo de negócio, o próximo passo será analisar as principais métricas do produto. Cada pessoa da equipe poderá explorar o produto a partir de:</p>
+<ul>
+<li>Informações financeiras: churn, ticket médio, custo de aquisição do cliente etc;</li>
+<li>Comportamento de acesso: número de acessos, taxa de saída, tempo despendido nas páginas do fluxo de venda, origem do tráfego, dispositivo utilizado para acessar o fluxo de venda etc;</li>
+<li>Perfil do cliente: dados demográficos, nível de serviço contratado, faixa etária etc.</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="alignleft size-full wp-image-6669" style="margin-right: 15px !important" src="/wp-content/uploads/2017/09/dashboard_metricas.jpg" alt="Exemplo de dashboard de produto" width="300" height="225" align="left" /> A partir das métricas de produto, cada membro da equipe deverá identificar pontos de melhoria e pontos onde o produto aparenta estar bem.</p>
+<div style="clear: both"></div>
+<h2>Parte 2 &#8211; Definindo os OKRs</h2>
+<p>Feita a análise das métricas de negócio e do modelo de negócio, levante com a equipe os potenciais objetivos que serão trabalhados no período de tempo (exemplo: próximo trimestre).</p>
+<p>Se você estiver facilitando a discussão, tenha em mãos as seguintes dicas antes da equipe determinar os objetivos:</p>
+<ul>
+<li>Tenha poucos objetivos (de 3 a 4). Motivo? O trimestre, por exemplo, é curto para se assumir muitos objetivos.</li>
+<li>Relacione os objetivos do produto com os objetivos da empresa.</li>
+<li>Relacione os objetivos com problemas e necessidades reais.</li>
+<li>Utilize as métricas de negócio para definir os objetivos.</li>
+</ul>
+<p>Caso os objetivos levantados sejam complexos ou grandes, vale a pena fomentar discussões para que a equipe simplifique. O mantra que deve ser pensado aqui é: <strong>pequenos incrementos que geram valor econômico para o negócio.</strong></p>
+<p>Para medir os objetivos, a equipe deverá elencar quais serão os <em>key results</em> que serão acompanhados ao longo do período. Para que a equipe tenha um norte:</p>
+<ul>
+<li>Defina poucos <em>key results</em> (de 3 à 4). Motivo? Se o objetivo precisa de muitos itens para ser medido é provável que ele seja complexo demais.</li>
+<li>Os <em>key results</em> devem ser expressos através de números.</li>
+<li>Quais resultados garantirão que alcancemos nossos objetivos?</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-6670" src="/wp-content/uploads/2017/09/okr_todos.png" alt="Exemplo de OKRs definidos" width="400" height="300" srcset="/wp-content/uploads/2017/09/okr_todos.png 400w, /wp-content/uploads/2017/09/okr_todos-300x225.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+<h2>Parte 3 &#8211; Definindo um roadmap</h2>
+<p>Dado que os objetivos e os <em>key results</em> estão definidos, a equipe pode se questionar: <em>bom, e agora, o que vamos fazer para atingir nossos OKRs?</em></p>
+<p>Sugiro como última parte da dinâmica o desenvolvimento de um roadmap, a fim de identificar entregáveis macro e quando eles deverão ser entregues ao longo do período (ex: trimestre).</p>
+<p>Técnicas de <em>brainstorming</em> e <em>story mapping</em> ajudam a ter uma ideia de cronologia e dependência entre as possíveis funcionalidades que serão construídas para alcançar os OKRs.</p>
+<p>Antes que alguém me crucifique dizendo que não estou sendo <em>lean</em>, gostaria de deixar algo claro. O roadmap criado será uma referência que COM CERTEZA (repita, <strong>C-O-M C-E-R-T-E-Z-A</strong>) sofrerá alterações ao longo do tempo por conta das mudanças e experimentações que acontecerão para atingir os objetivos e <em>key results</em> definidos.</p>
+<h2>Conclusão</h2>
+<p>A estrutura de OKR pode ser replicada no nível empresa, equipe e, até mesmo, indivíduo. Uma dica que sempre compartilho é: comece com poucos objetivos e trace em torno de 3 à 4 <em>key results</em>. O motivo? Foco. Quanto mais direcionado, mensurável e acionável for a sua estrutura de OKR, maiores serão as chances de alcançar o planejamento desenvolvido.</p>
+<p>Lembre-se que os OKRs devem ser revistos com frequência para que o time possa tê-los sempre em mente e, juntos, decidirem onde despender esforços para caminharem na direção correta.</p>
+<p>É essencial que a empresa possua uma cultura questionadora, desapegada de ferramentas e soluções revolucionárias e tenha um ambiente que promova aprendizado com as falhas, pois certamente haverão erros no início.</p>
+<p>A dinâmica que apresentei teve como objetivo conectar negócio, resultados atuais e futuro (OKRs + funcionalidades).</p>
+<p>E você, como tem aplicado dinâmicas de OKR? Compartilhe os resultados e desafios.</p>
+<p>Até próximo dilema <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Algumas referências: <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<ul>
+<li><a href="https://www.infoq.com/br/articles/agile-goals-okr">Metas Ágeis com OKR</a></li>
+<li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li>
+<li><a href="https://medium.com/startup-tools/okrs-5afdc298bc28">OKRs</a></li>
+<li><a href="https://www.slideshare.net/HenrikJanVanderPol/how-to-outperform-anyone-else-introduction-to-okr">The Basics of OKR &#8211; Google&#8217;s Secret Sauce</a></li>
+</ul>
+<div style="background-color: #fffdf9;border: 1px solid #e9af35;margin: 32px 0;padding: 22px 24px;font-family: sans-serif">
+<h3 style="font-size: 1.4em;line-height: 1.3em;margin-top: 0 !important">Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.7em !important"><strong>Curso gratuito em 7 e-mails</strong>, elaborado pelo autor do livro “Métricas Ágeis”, Raphael Albino.<br />
+<small>Indicado para Agile Coach, Gerente de Produtos, Gerente de Projetos, Product Owner, Scrum Master e CTO/CIO.</small></p>
+<p><a style="background: #e9af35;border: none;color: #fff;font-size: 12px;line-height: 1.5;margin-top: 5px;padding: 8px 16px;text-align: center;text-decoration: none;letter-spacing: 0.1em" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRÁTIS</a></p>
+</div><p>The post <a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Dilemas de PO: como definir OKRs em equipes ágeis</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dilemas de PO: priorizar features e projetar entregas</title>
+		<link>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/</link>
+					<comments>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Thu, 20 Apr 2017 18:43:37 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gerente de produto]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[produto digital]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=6241</guid>
+
+					<description><![CDATA[<p>Se você gerencia um produto de software que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação: Como priorizá-las? Quando elas serão entregues? Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos ... <a class="read-more-link" href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">»</a></p>
+<p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Se você gerencia um produto de <em>software</em> que já está em uso, é bem provável que já tenha se deparado com duas perguntas ao pensar em evoluções e melhorias da aplicação:</p>
+<ul>
+<li>Como priorizá-las?</li>
+<li>Quando elas serão entregues?</li>
+</ul>
+<p>Neste blog post, teremos a oportunidade de discutir algumas abordagens que poderão ajudar você a responder tais questionamentos (neste ano, falarei mais sobre o assunto aqui no blog).</p>
+<p>Tenho observado um movimento de gestão de produtos que vem concretizando os princípios por trás do <em>Lean Startup</em> que diziam: construa, meça e aprenda. A partir da ótica de <strong>medir</strong> e <strong>aprender</strong>, é perceptível que gestoras e gestores de produto começam a levantar hipóteses de negócio a partir de métricas como taxa de conversão, recorrência mensal, taxa de evasão, análise da interação dos usuários nos fluxos críticos da aplicação, etc.</p>
+<p>Voltando para a primeira pergunta que abriu o texto, nos deparamos com atributos quantitativos que nos permitem priorizar o que precisamos construir. Tal ferramental sustenta a ideia de que estamos interessados em melhorar os resultados do produto a partir de números.</p>
+<p>Antes que alguém me crucifique, nem só baseados em números devem ser os fatores para a priorização de novas <em>features</em> dos produtos que trabalhamos. Caso você tenha a possibilidade de se aproximar do seu usuário para perguntá-lo o que ele deseja, você também estará aumentando a probabilidade de construir algo que traga valor para ele. Dados qualitativos podem ser coletados através de questionários <em>online</em>, pesquisas de campo, análises de interação a partir de protótipos, etc.</p>
+<p>Ao priorizarmos uma funcionalidade, estamos em busca de gerarmos uma solução que traga valor para nossos usuários, clientes, acionistas e empresa. Em outras palavras, podemos dizer que estamos em busca de encontrarmos uma relação positiva na equação de valor que nada mais é do que a diferença entre o valor criado pela solução menos o preço pago por ela #maisvalorporfavor.</p>
+<div id="attachment_6242" style="width: 506px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6242" class="wp-image-6242 size-full" src="/wp-content/uploads/2017/04/blog_quadro_metodos.png" alt="" width="496" height="168" srcset="/wp-content/uploads/2017/04/blog_quadro_metodos.png 496w, /wp-content/uploads/2017/04/blog_quadro_metodos-300x102.png 300w" sizes="(max-width: 496px) 100vw, 496px" /><p id="caption-attachment-6242" class="wp-caption-text">Quadro de abordagens quali e quantitativa</p></div>
+<p>Dado que priorizamos aquilo que é mais importante para a saúde do produto e para os usuários, um segundo questionamento que por vezes fica na cabeça é: quanto tempo levaremos para entregar essa nova <em>feature</em>?</p>
+<p>Partindo do pressuposto que vivemos em um contexto incerto (sim, acredite, desenvolver <em>softwar</em>e não é algo determinístico), trabalhar com cenários de entrega passa a ser uma abordagem mais confiável. Ao utilizar projeções você passa a calcular ou predizer um evento futuro a partir da análise dos dados disponíveis (passado).</p>
+<p>Para que isso seja possível, sugiro que você e a sua equipe passem a monitorar uma métrica de processo: lead time (número de dias entre o início e o fim do processo de entrega de uma história do usuário, um bug, etc.).</p>
+<p>Em outras oportunidades tivemos a chance de discutir formas de analisar o lead time (<a href="/2016/03/looking-at-lead-time-in-a-different-way/">“Looking at Lead Time in a different way”</a> e <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">“Why we love metrics? Learning with Lead time”</a>), porém, gostaria de compartilhar como o percentil pode ser uma referência útil para desenhar cenários futuros a partir de referências do passado.</p>
+<p>Se você não conhece, percentil é uma medida que divide a amostra ordenada (por ordem crescente dos dados) em 100 partes, cada uma com uma percentagem de dados aproximadamente igual. Traduzindo e relacionando com uma distribuição de <em>lead time</em>, é como se analisássemos o <em>lead time</em> das demandas que foram entregues e discutíssemos qual o percentual de chances de um determinado valor ser atingido a partir do percentil.</p>
+<p>Em um projeto recente utilizamos a informação de percentil para projetar possíveis prazos de entrega de uma demanda de negócio que havia sido priorizada pelo Product Owner (PO) da célula em que trabalhamos.</p>
+<div id="attachment_6244" style="width: 1034px" class="wp-caption alignnone"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6244" class="wp-image-6244 size-large" src="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png" alt="" width="1024" height="353" srcset="/wp-content/uploads/2017/04/blog_post_exemplo-1024x353.png 1024w, /wp-content/uploads/2017/04/blog_post_exemplo-300x103.png 300w, /wp-content/uploads/2017/04/blog_post_exemplo-768x265.png 768w, /wp-content/uploads/2017/04/blog_post_exemplo.png 1080w" sizes="(max-width: 1024px) 100vw, 1024px" /><p id="caption-attachment-6244" class="wp-caption-text">Histograma de lead time</p></div>
+<p>A equipe utilizou o histograma acima e passou a seguinte análise do cenário ao PO:</p>
+<ul>
+<li>50% das demandas levaram até 6 dias para serem concluídas (mediana).</li>
+<li>75% das demandas levaram até 12 dias para serem concluídas ou seja apenas 25% levaram mais do que tal limite para serem concluídas (percentil 75).</li>
+<li>95% das demandas levaram até 18 dias para serem concluídas, o que nos leva a afirmar que apenas 5% delas levaram mais tempo do que isso para serem finalizadas (percentil 95).</li>
+</ul>
+<p>A partir dos dados acima, o time demonstrou confiança de entregar a demanda entre 6 e 12 dias. Com tal informação em mãos, o PO traçou o plano de comunicação e promoção do novo recurso do produto. Se você ficou curioso em saber, a demanda foi entregue em 8 dias.</p>
+<p>Ao utilizar tal abordagem de projeção, o time e o PO se sentiram mais confortáveis e confiantes. Caso o PO tivesse imposto para o time que a nova demanda deveria ser entregue em 3 dias, com posse das informações de percentil, o time teria insumos para dizer que seria muito difícil entregá-la pelo simples fato de que apenas 25% das demandas entregues foram concluídas no prazo determinado (percentil 25).</p>
+<p>Fecho esse texto com algumas sugestões:</p>
+<ol>
+<li>Crie hipóteses através de fatos que podem ser originados por dados quanti ou qualitativos.</li>
+<li>Projete cenários de entrega a partir de uma referência (histórico do time).</li>
+<li>Desenvolva pequenas entregas de valor, pois elas permitirão que você mude de direção mais rápido.</li>
+<li>Não acredite que métrica de produto ou processo é algo burocrático, pois elas servem como uma base para você construir um futuro melhor.</li>
+</ol>
+<p>E você? Como tem priorizado e projetado suas entregas? Quais métricas e abordagens tem utilizado? Compartilhe sua opinião nos comentários abaixo. Estou curioso para aprender com o seu exemplo.</p>
+<p>Se está interessado saber mais como lidar com prazos de projetos de <em>software</em> não deixe de conferir nosso <a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-middle">e-book gratuito sobre o assunto</a>.</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-como-lidar-com-prazos&amp;utm_content=cta-blog-post-bottom" target="_blank&quot;&quot;"><br />
+<img loading="lazy" decoding="async" class="aligncenter size-full wp-image-6158" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="" width="831" height="147" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/">Dilemas de PO: priorizar features e projetar entregas</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Small data with Elixir	</title>
+	<atom:link href="/2017/03/small-data-with-elixir/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/03/small-data-with-elixir/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 09 Jun 2017 20:26:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1744</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Fri, 09 Jun 2017 20:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1744</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/small-data-with-elixir/comment-page-1/#comment-1743&quot;&gt;Matías Reyes&lt;/a&gt;.
+
+It may or may not be a performance issue. While writing Flow and GenStage itself, I ran only once into a situation which required speeding up and I used the process dictionary in those cases. ETS tables would also have worked though.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/small-data-with-elixir/comment-page-1/#comment-1743">Matías Reyes</a>.</p>
+<p>It may or may not be a performance issue. While writing Flow and GenStage itself, I ran only once into a situation which required speeding up and I used the process dictionary in those cases. ETS tables would also have worked though.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matías Reyes		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1743</link>
+
+		<dc:creator><![CDATA[Matías Reyes]]></dc:creator>
+		<pubDate>Fri, 09 Jun 2017 19:44:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1743</guid>
+
+					<description><![CDATA[This is a great topic! and Flow is amazing!
+I have read that immutability has bad performance for data &#038; number crunching. I don&#039;t know if It&#039;s proven, but if it&#039;s true, we should be using ETS tables all over?]]></description>
+			<content:encoded><![CDATA[<p>This is a great topic! and Flow is amazing!<br />
+I have read that immutability has bad performance for data &amp; number crunching. I don&#8217;t know if It&#8217;s proven, but if it&#8217;s true, we should be using ETS tables all over?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tamori Hirofumi		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1734</link>
+
+		<dc:creator><![CDATA[Tamori Hirofumi]]></dc:creator>
+		<pubDate>Wed, 26 Apr 2017 04:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1734</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/small-data-with-elixir/comment-page-1/#comment-1727&quot;&gt;josevalim&lt;/a&gt;.
+
+As I told to you at Elixirconf Japan, I translated this blog into Japanese.
+http://qiita.com/HirofumiTamori/items/8e076d28ef40d98d99f1
+Sorry for late notice. I&#039;m looking forward to your next post.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/small-data-with-elixir/comment-page-1/#comment-1727">josevalim</a>.</p>
+<p>As I told to you at Elixirconf Japan, I translated this blog into Japanese.<br />
+<a href="http://qiita.com/HirofumiTamori/items/8e076d28ef40d98d99f1" rel="nofollow ugc">http://qiita.com/HirofumiTamori/items/8e076d28ef40d98d99f1</a><br />
+Sorry for late notice. I&#8217;m looking forward to your next post.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1727</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Fri, 14 Apr 2017 18:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1727</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/small-data-with-elixir/comment-page-1/#comment-1726&quot;&gt;Tamori Hirofumi&lt;/a&gt;.
+
+Thank you! I have fixed the example!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/small-data-with-elixir/comment-page-1/#comment-1726">Tamori Hirofumi</a>.</p>
+<p>Thank you! I have fixed the example!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tamori Hirofumi		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1726</link>
+
+		<dc:creator><![CDATA[Tamori Hirofumi]]></dc:creator>
+		<pubDate>Fri, 14 Apr 2017 16:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1726</guid>
+
+					<description><![CDATA[Hello, it is a quite suggestive post, thanks!
+I found the bug in the sample code, File.stream!(&quot;path/to/file&quot;, :line) should be File.stream!(&quot;path/to/file&quot;, [], :line) or File.stream!(&quot;path/to/file&quot;) as stream!/3&#039;s signature is stream!(path, modes \ [], line_or_bytes \ :line).]]></description>
+			<content:encoded><![CDATA[<p>Hello, it is a quite suggestive post, thanks!<br />
+I found the bug in the sample code, File.stream!(&#8220;path/to/file&#8221;, :line) should be File.stream!(&#8220;path/to/file&#8221;, [], :line) or File.stream!(&#8220;path/to/file&#8221;) as stream!/3&#8217;s signature is stream!(path, modes \ [], line_or_bytes \ :line).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Boshan Sun		</title>
+		<link>/2017/03/small-data-with-elixir/comment-page-1/#comment-1712</link>
+
+		<dc:creator><![CDATA[Boshan Sun]]></dc:creator>
+		<pubDate>Thu, 23 Mar 2017 19:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6185#comment-1712</guid>
+
+					<description><![CDATA[Looking forward to the coming series!]]></description>
+			<content:encoded><![CDATA[<p>Looking forward to the coming series!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

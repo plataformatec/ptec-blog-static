@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>NoEstimates « Plataformatec Blog</title>
+	<atom:link href="/tag/noestimates/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 16 Oct 2017 14:01:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</title>
+		<link>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/</link>
+					<comments>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/#comments</comments>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 16 Oct 2017 13:53:14 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6839</guid>
+
+					<description><![CDATA[<p>Uma das grandes questões que um Agile Coach pode enfrentar durante sua carreira é: como posso ajudar a equipe a melhorar continuamente o processo de desenvolvimento? Neste blog post, apresentarei 2 valiosas técnicas para que você possa compreender de forma holística o fluxo de desenvolvimento de software de uma equipe. 1. CFD Segundo Brodzinski, Cumulative ... <a class="read-more-link" href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">»</a></p>
+<p>The post <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Uma das grandes questões que um Agile Coach pode enfrentar durante sua carreira é: como posso ajudar a equipe a melhorar continuamente o processo de desenvolvimento?</p>
+<p>Neste blog post, apresentarei 2 valiosas técnicas para que você possa compreender de forma holística o fluxo de desenvolvimento de software de uma equipe.</p>
+<h2>1. CFD</h2>
+<p>Segundo <a href="http://brodzinski.com/2013/07/cumulative-flow-diagram.html">Brodzinski</a>, <strong>Cumulative Flow Diagram</strong> (CDF) é um dos gráficos que oferece rápida visão geral do que está acontecendo num projeto ou produto.</p>
+<p>O CFD é um instrumento valioso para rastrear e prever projetos ágeis. Ao usá-lo, você pode verificar rapidamente o status atual: quanto trabalho foi feito, o que está em andamento e quanto tempo será necessário para que determinado escopo seja concluído.</p>
+<p>A estrutura do gráfico é muito simples. O eixo horizontal representa um período de tempo (semanas, sprints, etc) e o vertical indica, de forma acumulada, o número de itens no processo (total de tarefas, total de histórias, etc.). Cada área pintada no gráfico está relacionada a uma etapa do fluxo de trabalho (backlog, em progresso, finalizado, etc) e as curvas são basicamente o número de itens acumulados em tais etapas.</p>
+<p><img fetchpriority="high" decoding="async" class="alignleft size-large wp-image-6844" style="max-width: 100%;" src="/wp-content/uploads/2017/10/grafico-cfd-1024x408.png" alt="Gráfico CFD" width="1024" height="408" srcset="/wp-content/uploads/2017/10/grafico-cfd-1024x408.png 1024w, /wp-content/uploads/2017/10/grafico-cfd-300x119.png 300w, /wp-content/uploads/2017/10/grafico-cfd-768x306.png 768w, /wp-content/uploads/2017/10/grafico-cfd.png 1176w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Para demonstrar como usamos o CFD na Plataformatec, descreverei o exemplo de um projeto. Nesse caso, tivemos um fluxo de desenvolvimento composto pelas seguintes etapas:</p>
+<ul>
+<li><strong>Backlog:</strong> itens que precisavam ser refinados.</li>
+<li><strong>Ready to Dev:</strong> itens com critérios de aceite definidos e com uma definição explícita de &#8220;feito&#8221;.</li>
+<li><strong>Developing:</strong> itens em desenvolvimento.</li>
+<li><strong>Testing:</strong> itens sendo verificados e validados.</li>
+<li><strong>Accepted:</strong> itens lançados em produção.</li>
+</ul>
+<p>Neste projeto, utilizamos o CFD para: (1) comunicar o progresso; (2) identificar os gargalos do processo; (3) gerenciar as filas. Escolhemos acompanhar o andamento semanalmente, pois precisávamos informar o status do projeto para o CTO nessa frequência.</p>
+<p>Os próximos 3 diagramas representam o projeto no início (primeiras 7 semanas), no meio (11ª semana) e no final (semana 22).</p>
+<h2>O começo</h2>
+<p><img decoding="async" class="alignleft size-large wp-image-5201" style="max-width: 100%;" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-1024x389.jpeg" alt="Global cumulative flow diagram" width="1024" height="389" srcset="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-1024x389.jpeg 1024w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-300x114.jpeg 300w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning-768x292.jpeg 768w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-beginning.jpeg 1273w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>No início do projeto, a equipe enfrentou uma situação em que a relação entre a chegada e a saída dos itens não era proporcional &#8212; o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/"><em>throughput</em> </a>médio da equipe era de 3 itens por semana e o escopo aumentava 7 itens por semana. Este comportamento é ruim, porque significa que o número de itens entregues dificilmente será igual ao número de itens do escopo. Naquele instante, a equipe e a PO discutiram soluções para que a taxa de crescimento do escopo acompanhasse a cadência de entrega.</p>
+<p>Outra informação que pode ser extraída do gráfico é que alguns itens foram criados (estágio de Backlog), mas não foram detalhados (Ready to Dev). Neste caso, o time refinou junto da PO um conjunto de itens e os deixou prontos para serem trabalhados.</p>
+<h2>O meio</h2>
+<p><img decoding="async" class="alignleft size-large wp-image-5202" style="max-width: 100%;" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-1024x453.jpeg" alt="Global cumulative flow diagram" width="1024" height="453" srcset="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-1024x453.jpeg 1024w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-300x133.jpeg 300w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle-768x340.jpeg 768w, /wp-content/uploads/2016/03/global-cumulative-flow-diagram-middle.jpeg 1554w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>Ao analisar o CFD no meio do projeto, é possível observar que as etapas de desenvolvimento (Developing) e testes (Testing) não apresentavam acúmulo entre as etapas (sobrecarga). Comparado com as primeiras 6 semanas (início do projeto), a relação entre itens criados e entregues passou a ser a mesma: 3 itens por semana.</p>
+<p>A equipe sabia que o <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/"><em>throughput</em> </a>precisava aumentar. Além disso, o projeto ainda apresentava indefinições &#8212; 15 itens não estavam preparados para serem desenvolvidos. Um dos causadores de tal situação foi a alta incerteza no design da aplicação.</p>
+<h2>O fim</h2>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/global-cumulative-flow-diagram-end.png" alt="" /></p>
+<p>Uma coisa interessante que percebemos no final deste projeto foi que o trabalho na etapa de teste fluiu bem. Olhando para o gráfico, é possível reconhecer que as linha azuis (etapa de Teste) desapareciam rapidamente. Isso ocorreu porque a interação dentro do time foi intensa. Na semana 19, a equipe e a PO alinharam que nenhum novo item seria incluído no escopo, porque o prazo de entrega estava chegando.</p>
+<p>Outra informação que pode ser observada no gráfico de CFD acima é que a equipe não concluiu todas as histórias previstas no escopo &#8212; a etapa &#8220;Accepted&#8221; não ocupou todo o diagrama. Nesse caso, a equipe de desenvolvimento do nosso cliente assumiu os 5 itens que estavam em progresso (2 em desenvolvimento e 3 em testes).</p>
+<p>Vale compartilhar que os itens entregues geraram uma solução de qualidade e alinhada com o que nosso cliente precisava.</p>
+<p>Adotamos como boa prática verificar o CFD semanalmente para impulsionar melhorias dos nossos processos. Tal diagrama se mostrou um excelente companheiro para discussões sobre limitação e gerenciamento de <a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">WIP</a>.</p>
+<h2>2. Lead time breakdown</h2>
+<p>Para aprimorar reuniões de acompanhamento do projeto ou retrospectivas, criamos uma visualização chamada &#8220;<em>lead time breakdown</em>&#8220;.</p>
+<p>Resumidamente, este gráfico permite que o time avalie, compare e analise em detalhes a latência entre o início e o término de cada uma das etapas do processo de desenvolvimento, para cada item de trabalho que passa pelo fluxo (bugs, histórias do usuário, etc).</p>
+<p>Esse tipo de visualização permite analisar o processo com mais detalhes se comparado com a análise do CFD. Geralmente, o <em>lead time breakdown</em> é utilizado para responder questões como:</p>
+<ul>
+<li>O que está acontecendo com os itens que estão em progresso?</li>
+<li>Existe algum tipo de impedimento atrapalhando a fluidez do time?</li>
+<li>O time está lidando com algum gargalo no processo (exemplo: sobrecarga na etapa de testes)?</li>
+</ul>
+<p>Criar a visualização é bem simples. No eixo vertical estão os dias de trabalho; no horizontal, os itens de trabalho em progresso ou já entregues pelo time (exemplo: o montante de histórias do usuário monitorados pelo quadro Kanban). Para representar cada uma das etapas do processo, é utilizado o gráfico de barra acumulado.</p>
+<p>Vamos ver um exemplo a partir de um projeto real. A equipe tinha o fluxo de trabalho com as seguintes etapas:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/lead-time-breakdown-label.jpeg" alt="" /></p>
+<p>Neste fluxo, há etapas com o objetivo de medir gargalos criados pelas etapas de QA (Waiting for QA) ou pelo responsável pelas aprovações das entregas dos itens (Waiting for Review). O gráfico de<em> lead time breakdown</em> do exemplo ficou assim representado:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/03/lead-time-breakdown.png" alt="" /></p>
+<p>Podemos identificar que quase todas os itens do exemplo necessitam de mais de 3 dias para serem revisados (comportamento visto pela barra roxa). Em alguns casos, tal tempo de passagem pode ser inaceitável, dado a criticidade da entrega.</p>
+<p>Outro ponto interessante é a alta variabilidade no <em>lead time</em> da etapa de codificação (barra azul). Neste caso, o time provavelmente trazia para o fluxo de desenvolvimento itens com pouca padronização.</p>
+<p>Durante este projeto, a equipe sofreu pois tinha que compartilhar um especialista de teste (repare na altura das barras exibidas em amarelo no gráfico). À medida que a equipe e os stakeholders acessavam periodicamente o gráfico, o problema ficava evidente para todos e soluções foram discutidas para resolvê-lo. Uma delas foi o Scrum Master exercer o papel de especialista em teste, em alguns períodos do ciclo de vida do projeto.</p>
+<p>Como boa prática, em todos os projetos que atuamos, temos utilizado o gráfico de<em> lead time breakdown</em> periodicamente para entender o status atual da equipe. Tal ferramenta tem sido útil para:</p>
+<ul>
+<li>Guiar discussões recorrentes de como remover desperdícios no processo.</li>
+<li>Promover melhorias no processo baseadas em dados.</li>
+<li>Deixar evidente o tempo de espera ao longo do desenvolvimento dos itens de trabalho.</li>
+<li>Analisar mais facilmente as demandas que estão próximas de serem finalizadas.</li>
+<li>Utilizar as informações para apoiar retrospectivas quando a pauta é relacionada ao processo.</li>
+<li>O que o time precisa manter?</li>
+<li>O que o time precisa mudar?</li>
+</ul>
+<h2>Concluindo</h2>
+<p>A visualização do fluxo através do CFD ou do <em>lead time breakdown</em> fornece uma visão quantitativa e qualitativa de problemas potenciais no processo de desenvolvimento de software. Encontrar soluções é uma outra história.</p>
+<p>Para aprender mais sobre o CFD, recomendo 4 boas referências:</p>
+<ul>
+<li>O excelente artigo, <a href="http://brodzinski.com/2013/07/cumulative-flow-diagram.html">Cumulative Flow Diagram</a> do Pawel Brodzinski.</li>
+<li>O livro do Daniel Vacanti, <a href="https://leanpub.com/actionableagilemetrics">Actionable Agile Metrics for Predictability</a>.</li>
+<li><a href="http://leanguru.pro/the-cumulative-flow-chart-cfd-in-a-nutshell/">The Cumulative Flow Diagram in a nutshell</a>.</li>
+<li>Minha publicação recente e em português, <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis&quot;">Métricas Ágeis – Obtenha melhores resultados em sua equipe</a>.</li>
+</ul>
+<p>E você, como tem utilizado o CFD? Qual a sua opinião sobre a visualização do <em>lead time breakdown</em>? Compartilhe sua opinião nos comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Curso: Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.5em !important;">Em 7 e-mails você vai aprender neste curso o que medir e como interpretar os dados. <strong>Curso gratuito</strong> criado pelo autor do livro “Métricas Ágeis”, Raphael Albino.</p>
+<p><a style="background: #e9af35; border: none; color: #fff; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=curso-metricas-agile&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">INSCREVA-SE GRATUITAMENTE</a></p>
+</div><p>The post <a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/">Métricas Ágeis: Cumulative Flow Diagrams e Lead Time Breakdown</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Métricas Ágeis: Throughput e gráfico de Burnup</title>
+		<link>/2017/08/metricas-ageis-throughput-e-graficos-burnup/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 28 Aug 2017 16:06:41 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6623</guid>
+
+					<description><![CDATA[<p>Desde que comecei a trabalhar com projetos de desenvolvimento de software, tenho lidado com dois aspectos importantes, mas nem sempre convergentes: escopo e prazo. O processo de alinhamento das expectativas quanto ao progresso das entregas e a capacidade de produção das equipes é árduo, mas quando acontece aumentam as chances de sucesso do projeto. Neste ... <a class="read-more-link" href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">»</a></p>
+<p>The post <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Métricas Ágeis: Throughput e gráfico de Burnup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Desde que comecei a trabalhar com projetos de desenvolvimento de software, tenho lidado com dois aspectos importantes, mas nem sempre convergentes: <strong>escopo</strong> e <strong>prazo</strong>. O processo de alinhamento das expectativas quanto ao <strong>progresso das entregas</strong> e a <strong>capacidade de produção das equipes</strong> é árduo, mas quando acontece <strong>aumentam as chances de sucesso do projeto</strong>.</p>
+<p>Neste post, vou apresentar como usamos os gráficos de <strong><em>Throughput</em></strong> e <strong><em>Burnup</em></strong> na Plataformatec, durante o ciclo de vida de um projeto.</p>
+<h2>Aprendendo a partir do Throughput</h2>
+<p>A <a href="https://leankit.com/learn/kanban/lean-flow-metrics/">LeanKit</a> define <em>Throughput</em> como o número médio de unidades processadas por unidade de tempo. No fluxo de desenvolvimento de uma equipe, os exemplos podem ser &#8220;cartões por dia&#8221;, &#8220;cartões por semana&#8221; ou &#8220;cartões por mês&#8221;.</p>
+<p>Uma observação importante a respeito o <em>Throughput</em> é que a métrica difere do &#8220;<em>Velocity</em>&#8221; (quantidade de <em>story points</em> entregue por iteração ou <em>sprint</em>) utilizado no Scrum.</p>
+<p>Na Plataformatec, consideramos <em>Throughput</em> como o número de itens (por exemplo, história do usuário) entregues por semana.</p>
+<p>Geralmente, analisamos o <em>Throughput</em> para responder questões como:</p>
+<ul>
+<li>Quantos itens de trabalho a equipe entrega por semana?</li>
+<li>O time está criando uma tendência crescente de entrega?</li>
+<li>Algum fator tem bloqueado a capacidade de entrega da equipe?</li>
+</ul>
+<p>Vamos ver um exemplo prático. Imagine uma situação que você, como Gerente de Desenvolvimento, precisa ajudar o time a explorar o <em>Throughput</em> passado a fim de gerar melhorias futuras.</p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/6e793268c190628c034493ce4a76c15e6a911345.png" alt="Throughput Series" /></p>
+<p>Primeiramente, podemos observar no gráfico acima que somente em 15% das semanas (4 de 27) a quantidade de itens entregues foi zero (0).</p>
+<p>Além disso, é possível extrair mais informações do gráfico de tendência. Caso o <em>Throughput</em> esteja em crescente, a equipe está aumentando o número de itens entregues em uma semana. Se a tendência é de queda, pode colocar em risco o prazo de entrega de um projeto. Um limite inferior pode ser estipulado como forma de fornecer um indicador de quando ações corretivas podem ser necessárias. Nesta equipe, o <em>Throughput</em> aumenta nas primeiras semanas, seguida de uma ligeira queda e, finalmente, estabiliza-se.</p>
+<p><img loading="lazy" decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/199de84644dc8d5f1b174befcd69d6cb1fc61c6e.png" alt="Throughput Histogram" width="1606" height="670" /></p>
+<p>Olhando para a distribuição de <em>Throughput</em> da equipe temos uma situação em que a média (linha verde), a moda (linha laranja) e a mediana (linha laranja) possuem quase o mesmo valor (aproximadamente dois). Portanto, é razoável dizer que o time, em geral, entrega dois itens por semana.</p>
+<p>Outra forma de validar o argumento sobre a capacidade de entrega da equipe é buscar o percentil 80 (linha cinza). Ele nos diz que apenas em 20% das semanas, a equipe conseguiu entregar mais de três itens por semana.</p>
+<p>Uma boa prática que definimos para os projetos na Plataformatec é uma verificação semanal do <em>Throughput</em>, como um processo de compreensão das causas que afetam o ritmo de entrega. Geralmente, o <em>Throughput</em> de uma equipe cai pelos seguintes motivos:</p>
+<ul>
+<li><strong>Requisitos ruins</strong> &#8212; exemplo, baixa qualidade nos critérios de aceite de histórias de usuário;</li>
+<li><strong>Dívidas técnicas</strong> &#8212; exemplo, necessidade de refatorações inesperadas;</li>
+<li><strong>Gargalos do processo</strong> &#8212; exemplos, especialista de testes sobrecarregado, pipeline de implantação falho;</li>
+<li><strong>Backlog com baixo nível de itens prontos para desenvolvimento</strong>;</li>
+<li><strong>Mudança de escopo</strong> &#8212; por exemplo, aumento no escopo de uma história de usuário.</li>
+</ul>
+<h2>Olhando para o gráfico de Burnup</h2>
+<p>O gráfico de <em>Burnup</em> é uma ferramenta valiosa para gerenciamento do escopo. Ele apresenta a quantidade de trabalho entregue por uma equipe e, fornece mais informações do que o <em>Burndown</em>, pois <strong>combina escopo e total de entrega na mesma visualização</strong>.</p>
+<p>É comum ver gráficos de <em>Burnup</em> com linha de tendência para estimar o prazo de entrega do escopo que está sendo analisado.</p>
+<p>Tenho visto Product Owners e Agile Coaches projetando cenários baseados em três perspectivas:</p>
+<ul>
+<li><strong>Pior caso:</strong> projetar a performance futura da equipe com base no menor <em>Throughput</em> histórico.</li>
+<li><strong>Melhor caso:</strong> considerar que a equipe atuará no futuro com base no maior <em>Throughput</em> histórico.</li>
+<li><strong>Caso mais provável:</strong> considerar que a equipe terá no futuro um comportamento semelhante ao <em>Throughput</em> &#8220;médio&#8221; (recomendo a leitura do post que escrevi sobre o motivo pelo qual você deve <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">ter cuidado ao usar a média como medida</a>).</li>
+</ul>
+<p>Em nosso contexto, o gráfico de Burnup está nos ajudando a responder perguntas como:</p>
+<ul>
+<li>O escopo do projeto está crescendo de forma saudável?</li>
+<li>Quando a equipe terminará o escopo atual do projeto?</li>
+</ul>
+<p>O exemplo abaixo aconteceu com um cliente da Plataformatec e as circunstâncias eram as seguintes:</p>
+<ul>
+<li><strong>Duração do projeto:</strong> 23 semanas (quase seis meses).</li>
+<li><strong>Expectativa do cliente:</strong> ter uma solução para resolver um problema de processo interno (projeto do zero, sem código legado).</li>
+<li><strong>Roadmap do produto:</strong> após a sessão inicial de <em>story mapping</em>, a equipe e o cliente reduziram o escopo da entrega.</li>
+<li><strong>Desafio do projeto:</strong> assegurar que o software estivesse disponível para uso na data acordada.</li>
+</ul>
+<p>Neste projeto, usamos o gráfico de <em>Burnup</em> como ferramenta para comunicar o progresso do projeto. O gráfico foi desenvolvido para exibir:</p>
+<ul>
+<li>O número de itens de trabalho planejado para a entrega (escopo);</li>
+<li>O número de itens entregues;</li>
+<li>Cenários para possíveis datas de entrega do projeto.</li>
+</ul>
+<p>Os próximos três gráficos representam o projeto no início (primeiras seis semanas), no meio (doze semanas) e no fim (semana 23).</p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/f0285ceca71f7e7e338f864ca18bd8869b514027.png" alt="Backlog x Entregas" /></p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/2bf010e470364b940be7223cbbaa6353b17c1727.png" alt="Backlog x Entregas" /></p>
+<p><img decoding="async" style="border: none; max-width: 100%;" src="http://plataformatec-lore-upload.s3.amazonaws.com/original/1X/d5447f4c1dec7f80d5ebad417e22018298934e5f.png" alt="Backlog x Entregas" /></p>
+<p>Analisando o início do projeto, tivemos um cenário de aumento do escopo e algumas entregas.</p>
+<p>Em relação ao escopo, o aumento aconteceu devido ao refinamento de um conjunto de histórias de usuário criadas após o <em>story mapping</em>.</p>
+<p>Um indicador útil para analisar o crescimento do backlog é calcular a taxa de aumento semanal de novas histórias de usuários (no exemplo, sete histórias de usuário foram criadas por semana no início do projeto). Aqui na Plataformac, usamos esse indicador como ferramenta para manter o aumento do escopo previsível.</p>
+<p>No meio do projeto, houve crescimento contínuo do escopo (seis novas histórias de usuário criadas por semana). Neste momento, tivemos que sentar com o cliente para alinharmos formas de simplificar o escopo, porque, caso o mesmo continuasse a crescer, dificilmente entregaríamos uma versão do software no final do contrato. O gráfico de <em>Burnup</em> foi útil para definir estratégias para melhorar o <em>Throughput</em> com base nos resultados das entregas realizadas.</p>
+<p>A técnica de projeção utilizada foi importante para chegar ao final do projeto entregando todas as funcionalidades necessárias para o software.</p>
+<p>Na conclusão do projeto, realizamos uma sessão de lições aprendidas e a equipe destacou que o gráfico de <em>Burnup</em> foi útil, pois:</p>
+<ul>
+<li>trouxemos visibilidade ao processo do desenvolvimento garantindo que o cliente estava alinhado com o progresso e o prazo de entrega;</li>
+<li>mostramos visualmente como o aumento do escopo influencia o prazo de entrega, sendo assim, uma boa ferramenta de negociação.</li>
+</ul>
+<h2>Conclusão</h2>
+<p>Monitorar o <em>Throughput</em> significa melhorias do processo com base em dados, que expõe o que está sendo feito com transparência à todos envolvidos no projeto.</p>
+<p>O gráfico de <em>Burnup</em> é uma ferramenta poderosa de comunicação que pode ser usada para negociar com stakeholders, visto que, revela como mudanças de escopo afetam o prazo de entrega desejado, ao mesmo tempo que informa o progresso real.</p>
+<p>Se você busca material avançado em métricas, recomendo o livro <em><a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">Métricas Ágeis &#8211; Obtenha melhores resultados em sua equipe</a></em>. &#8212; Tudo bem, é um jabá! Eu sou o autor do livro, mas acredite, minha recomendação é genuína. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0 !important;">ContÁgil Newsletter</h3>
+<p style="margin-top: 0.5em !important;">Newsletter mensal <strong>gratuita</strong>, criada para ajudar você a se manter atualizado sobre o que está acontecendo na área de gerenciamento de projetos, metodologias e cultura ágil.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">ASSINAR NEWSLETTER GRÁTIS</a></p>
+</div><p>The post <a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/">Métricas Ágeis: Throughput e gráfico de Burnup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Métricas Ágeis: o que Lead Time fala sobre seu projeto</title>
+		<link>/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Tue, 08 Aug 2017 22:01:34 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6601</guid>
+
+					<description><![CDATA[<p>Todas as vezes que penso em indicadores e métricas, lembro da frase de H. James Harrington: Medir é o primeiro passo para controlar e eventualmente promover melhorias. Se você não pode mensurar algo, você não pode entendê-lo. Se você não consegue capturá-lo, você não consegue controlá-lo. Se você não consegue controlá-lo, você não consegui melhorá-lo. ... <a class="read-more-link" href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">»</a></p>
+<p>The post <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">Métricas Ágeis: o que Lead Time fala sobre seu projeto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Todas as vezes que penso em indicadores e métricas, lembro da frase de H. James Harrington:</p>
+<blockquote><p>
+  Medir é o primeiro passo para controlar e eventualmente promover melhorias. Se você não pode mensurar algo, você não pode entendê-lo. Se você não consegue capturá-lo, você não consegue controlá-lo. Se você não consegue controlá-lo, você não consegui melhorá-lo.
+</p></blockquote>
+<p>Apenas para deixar claro, meu interesse é melhorar processos e sistemas, portanto defino &#8220;controle&#8221; como habilidade que uma equipe desenvolve para construir ferramentas que fomentem a auto-gestão, ao invés da cultura de comando e controle.</p>
+<p>Desde que comecei a trabalhar com desenvolvimento de software, tenho visto métricas a partir de dois pontos de vista:</p>
+<ol>
+<li>No lado negro da força, as métricas são aplicadas como ferramentas que enxergam equipes como números e, a única razão para coletá-las visa cobrar respostas e criar conflitos destrutivos. Exemplos de métricas desse tipo são: número de testes unitários escritos, velocidade individual, etc. (dê uma olhada no texto <a href="http://www.infoq.com/articles/not-destroy-team-metrics">“How To Not Destroy your Agile Team with Metrics”</a>).</p>
+</li>
+<li>
+<p>Do outro lado da força, as métricas promovem ações de melhoria continua e trazem visibilidade para a equipe.</p>
+</li>
+</ol>
+<p>Aqui na Plataformatec, <strong>utilizamos as métricas para compreender como podemos fazer o nosso trabalho melhor baseado em dados</strong>, como um exercício de evolução.</p>
+<p>Este é o primeiro post da série &#8220;Métricas Ágeis, em que compartilharei algumas métricas e gráficos que usamos nos projetos dos nossos clientes.</p>
+<p>Se você busca material avançado em métricas, escrevi o livro <em><a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">Métricas Ágeis &#8211; Obtenha melhores resultados em sua equipe</a></em>, um guia de aprendizado e boas práticas.</p>
+<h1>Vamos falar sobre Lead time</h1>
+<p>Segundo o <a href="https://en.wikipedia.org/wiki/Lead_time">Wikipedia</a>, &#8220;é possível definir <em>lead time</em> como a latência entre o início e a execução de um processo. Por exemplo, o <em>lead time</em> entre o pedido e a entrega de um carro novo de um fabricante pode ser de 2 semanas à 6 meses. No setor de bens industriais, a redução do <em>lead time</em> é uma parte importante da produção enxuta.&#8221;</p>
+<p>No contexto do desenvolvimento de software, consideramos o <strong><em>lead time</em> como o número de dias entre o início e o fim de uma entrega</strong> &#8212; por exemplo, história do usuário, bugs, etc. Para medir o <em>lead time</em> deve-se estabelecer os limites de começo e fim.</p>
+<p>Para algumas equipes, <strong>&#8220;feito&#8221;</strong> pode significar uma história de usuário lançada em produção, para outras pode ser a liberação de uma funcionalidade em ambiente de homologação.</p>
+<p>Uso o gráfico de <em>lead time</em> para responder perguntas, como:</p>
+<ul>
+<li>Quanto tempo a equipe precisa para desenvolver um novo item?</li>
+<li>A equipe está conseguindo desenvolver as funcionalidades planejadas dentro do <em>timebox</em> de uma iteração?</li>
+<li>Existe algo afetando a previsibilidade dos itens que são trabalhados pela equipe (por exemplo, tamanho, complexidade, incerteza)? A variabilidade vem aumentando nas últimas semanas?</li>
+</ul>
+<p>Bom, agora que definimos as coisas, vamos ver um exemplo prático. Imagine uma situação em que você, como Agile Coach, está aconselhando a equipe C3PO. Que tipo de insight é possível obter do gráfico abaixo?</p>
+<p><img decoding="async" src="https://plataformatec-lore-upload.s3.amazonaws.com/original/1X/4be3432d3ab0e77ee981cabda28f6813e85823ee.png" alt="Gráfico - Lead time distribuition" style="min-width:100% !important; border:none;"/></p>
+<p>Ao traçar a linha do percentil 75 (linha verde), notamos que 75% dos itens que passaram pelo processo da equipe levaram 20 dias ou menos para serem concluídos.</p>
+<p>Outra linha que podemos desenhar é a do percentil 95. Com base nela, é possível assumir que um novo item tem 95% de chance de ser completado em 37 dias ou menos.</p>
+<p>Então, o que deduzimos disso tudo?</p>
+<p>Se alguém pedir ao time para estimar o tempo necessário para desenvolver um novo item, um palpite pode ser um número dentro do intervalo de 20 à 37 dias. Uma vez que temos alta amplitude, as estimativas não serão muito confiáveis.</p>
+<p>Indo um pouco além nas investigações, é possível identificar que após a primeira release, algo aconteceu, afinal, o <em>lead time</em> aumentou. Provavelmente, nas releases posteriores, a equipe lidou com itens mais complexos ou incertos.</p>
+<p>Outro ponto interessante para se analisar no gráfico são os casos extremos (<em>lead times</em> que estão nos extremos superior e inferior). Na maioria das vezes, esses valores atípicos são causados ​​por circunstâncias que estão além do controle da equipe, porém, é um ótimo material para retrospectivas como insumo de aprendizado.</p>
+<p>Para concluir, gostaria de compartilhar cinco dicas sobre como otimizar o <em>lead time</em>:</p>
+<ol>
+<li>Eduque a pessoa que estiver vestindo o chapéu de <em>Product Owner</em> para que ela consiga conceber itens que gerem valor com soluções simples (foco: diminuir o <em>lead time</em>).</li>
+<li>Desenvolva ferramentas para que a equipe diminua a complexidade e remova incertezas técnicas ou de negócio (falo mais sobre isso no post <em><a href="/2017/01/requisitos-em-equipes-ageis-falando-sobre-complexidade-e-incerteza/">Requisitos em equipes ágeis: Falando sobre complexidade e incerteza</a>)</em>.</li>
+<li>Analise a distribuição de <em>lead time</em> com freqüência. No início, a variabilidade alta será normal, mas, depois de algum tempo, é importante buscar um padrão para que seja possível ter um processo de desenvolvimento previsível.</li>
+<li>Comunique qualquer variação no <em>lead time</em> para os stakeholders e implemente ações para controlar o crescimento do <em>lead time</em>.</li>
+<li>Use os casos extremos como uma oportunidade para aprender e melhorar o processo.</li>
+</ol>
+<p>E você? Que tipo de pergunta você está respondendo com base no <em>lead time</em>? Compartilhe conosco seus aprendizados nos comentários abaixo!</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Curso: Métricas para Projetos Agile</h3>
+<p style="margin-top: 0.5em !important;">Em 7 e-mails você vai aprender neste curso o que medir e como interpretar os dados. <strong>Curso gratuito</strong> criado pelo autor do livro “Métricas Ágeis”, Raphael Albino.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-ecto-2-1&#038;utm_content=cta-blog-post-bottom" target="_blank">INSCREVA-SE GRATUITAMENTE</a>
+</div><p>The post <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">Métricas Ágeis: o que Lead Time fala sobre seu projeto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</title>
+		<link>/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 21 Jun 2017 17:33:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[livro]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project manager]]></category>
+		<guid isPermaLink="false">/?p=6533</guid>
+
+					<description><![CDATA[<p>Aqui na Plataformatec, temos a cultura de compartilhamento de conhecimento muito forte. Faz parte do nosso DNA. Depois de um tempo, entendemos que essa característica da nossa cultura está por trás do que nos move desde o começo da empresa: fazer software de qualidade, que traz resultado&#8230; e ajudar os outros a fazer o mesmo. ... <a class="read-more-link" href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">»</a></p>
+<p>The post <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Aqui na Plataformatec, temos a cultura de compartilhamento de conhecimento muito forte. Faz parte do nosso DNA. Depois de um tempo, entendemos que essa característica da nossa cultura está por trás do que nos move desde o começo da empresa: fazer software de qualidade, que traz resultado&#8230; e ajudar os outros a fazer o mesmo.</p>
+<p>Ao longo dos mais de 8 anos de vida da nossa empresa, nosso time já compartilhou muito conhecimento:</p>
+<ul>
+<li>mais de 250 blog posts</li>
+<li>dezenas de palestras</li>
+<li>4 livros (2 no Brasil, 2 nos EUA)</li>
+</ul>
+<p>Este post é para falar do mais novo livro que um membro do nosso time está lançando: <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">Métricas Ágeis</a>, do <a href="/author/raphael-albino/">Raphael Albino</a>.</p>
+<div id="attachment_6538" style="width: 460px" class="wp-caption alignright"><a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-6538" class="wp-image-6538" src="/wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código.png" alt="Livro: Métricas Ágeis" width="450" height="395" srcset="/wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código.png 566w, /wp-content/uploads/2017/06/Livro_de_Métricas_Ágeis_-_Casa_do_Código-300x263.png 300w" sizes="(max-width: 450px) 100vw, 450px" /></a><p id="caption-attachment-6538" class="wp-caption-text">www.casadocodigo.com.br/products/livro-metricas-ageis</p></div>
+<p>Mas antes de falar do livro em si, vamos entender um pouco dos panos de fundo por trás do livro.</p>
+<h2>Primeiro, um pouco de contexto</h2>
+<p>Na Plataformatec, nós gostamos de uma frase de efeito que os <em>US Marine Corps</em> utilizam:</p>
+<blockquote><p>
+  <em>&#8220;Improvise, Adapt and Overcome&#8221;</em>
+</p></blockquote>
+<p>Especialmente das últimas duas palavras: se adaptar e superar. Por que digo isso? Pois acreditamos que o processo de melhoria contínua em um projeto segue esse mantra. Nós não temos a ingenuidade de que, para melhorar um processo, basta apenas implementar uma caixa preta de metodologias. Nós respondemos a quase todas as perguntas com &#8220;depende&#8221;. Depende do seu contexto, ambiente, pessoas, economia, estratégia. Tudo, em termos de gerenciamento de projetos de software, depende.</p>
+<p>E é aí que muitas empresas se perdem. Decidem implementar Scrum, Kanban, XP ou outra metodologia e acreditam que todos os seus problemas estarão solucionados&#8230; não é bem assim. Você precisa analisar como está seu processo para que consiga entender quais práticas, ou conjunto de práticas, seu time está preparado para aderir e, a partir de então, fazer pequenos ajustes rumo a um processo melhor (a famosa melhoria contínua). Com isso em mente, nós aderimos a uma filosofia parecida com a descrita acima:</p>
+<blockquote><p>
+  <em>&#8220;Analise, se adapte e supere&#8221;</em>
+</p></blockquote>
+<p>E como fazemos isso? Bom, uma das maneiras é através de métricas de processo. Nós coletamos uma série de métricas de processo assim que entramos em um cliente. Não chegamos mudando as coisas, chegamos analisando. Assim que temos as métricas em mãos, as lemos, analisamos e mudamos os pontos necessários para melhorar o processo pouco a pouco de maneira <strong>sustentável</strong>. E essa é a palavra chave de uma melhoria de processo. Ela precissa ser sustentável, ou seja, não pode incomodar demais a entropia do time, senão tudo se perde.</p>
+<h2>Por que um livro de métricas ágeis?</h2>
+<p>Pode parecer difícil e complicado esse processo de coleta de métricas, análise, adaptação e superação. Nós tratamos desse assunto no <a href="/tag/metrics/">nosso blog</a>, mas, se quiser realmente &#8220;beber da fonte&#8221; de tudo isso &#8211; saber de onde as métricas vieram, como coletar, ler e, principalmente, como melhorá-las &#8211; eu indico o <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">novo livro do Albino</a>.</p>
+<p>Não é jabá. É fato. Na minha opinião, é o livro que melhor explica as métricas de processo, todos os tipos de leitura de gráficos e a melhor maneira de utilizar esses dados. Aliás, este é o maior valor do livro. É muito fácil você começar a coletar métricas&#8230; Mas isso não traz resultados se você não souber utilizar os dados que você coletou!</p>
+<p>Albino aborda no livro toda a parte processual, matemática e heurística que os métodos trazem, sem nunca deixar de lado o valor de negócio atrelado. Resumindo, o livro não trata de &#8220;métricas por métricas&#8221;&#8230; trata de métricas para obter os <em>melhores resultados possíveis no seu negócio</em>. Entre os assuntos abordados estão o Throughput, Lead Time, Simulação de Monte Carlo, Eficiência de Fluxo e muito mais.</p>
+<p>Então, se quiser entender melhor como nós fazemos para ter sucesso com nossos clientes e a metodologia por trás das nossas ações, não esqueçam de comprar o <a href="https://www.casadocodigo.com.br/products/livro-metricas-ageis">livro do Albino</a>, acompanhar os novos <a href="/tag/agile/">blog posts</a> e se cadastrar na nossa <a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=link">newsletter de ágil</a>.</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/curso-metricas-para-projetos-agile?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=curso-metricas-agile&#038;utm_content=cta-blog-post-bottom" target="_blank"><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png" alt="Métricas para Projetos Agile em 7 e-mails" width="831" height="147" class="aligncenter size-full wp-image-5972" srcset="/wp-content/uploads/2016/12/CTA-curso-metricas-agile.png 831w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-300x53.png 300w, /wp-content/uploads/2016/12/CTA-curso-metricas-agile-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">Estamos lançando mais um livro: Métricas Ágeis, do nosso consultor Raphael Albino</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Por que usamos Simulações de Monte Carlo para gerenciar projetos</title>
+		<link>/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 12 Jun 2017 16:48:40 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[métricas]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<guid isPermaLink="false">/?p=6431</guid>
+
+					<description><![CDATA[<p>Ultimamente, temos usado uma abordagem mais probabilística do que determinística para gerenciar nossos processos. Isso significa que usamos diferentes métodos estatísticos para prever o futuro ao invés de estimativas cegas. Mas&#8230; imprevisibilidade não era exatamente uma das razões de termos mudado de Waterfall para Ágil? Sim, imprevisibilidade é inerente ao desenvolvimento de software. Seria impossível ... <a class="read-more-link" href="/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/">»</a></p>
+<p>The post <a href="/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/">Por que usamos Simulações de Monte Carlo para gerenciar projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Ultimamente, temos usado uma abordagem mais probabilística do que determinística para gerenciar nossos processos. Isso significa que usamos diferentes métodos estatísticos para prever o futuro ao invés de estimativas cegas. Mas&#8230; imprevisibilidade não era exatamente uma das razões de termos mudado de Waterfall para Ágil?</p>
+<p>Sim, imprevisibilidade é inerente ao desenvolvimento de software. Seria impossível prever todas as <em>features</em> de um sistema no começo de um projeto, por exemplo.</p>
+<p>Mas e se nós pudéssemos prever como <strong>as próximas semanas</strong> se comportariam?</p>
+<p>Isso é o que tentamos alcançar ao compilar métricas e rodar simulações de Monte Carlo.</p>
+<p>Para entender mais sobre as métricas que utilizamos, veja:</p>
+<ul>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with lead time</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and burnup charts</a></li>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+</ul>
+<p>A maioria das pessoas não usa métrica alguma para gerenciar projetos. Então, imagine quantas usam modelos estatísticos complexos para prever o fim de um projeto. No entanto, aplicar esse conhecimento em seu projeto ajudará entregar mais rápido e melhor.</p>
+<p>Neste post, você verá como evoluímos de uma abordagem ingênua de predição para uma mais precisa e robusta utilizando a simulação de Monte Carlo. Mais ainda, explicarei de uma maneira fácil como esta simulação funciona, fazendo analogia entre um jogo de dados e projeto de desenvolvimento de software. Saber quando o projeto, provavelmente, vai acabar pode ajudar você a gerenciar as despesas da empresa, melhorar feedbacks a <em>stakeholders</em> e passar mais confiança de que você está no controle do projeto.</p>
+<h2>Por que não outros métodos?</h2>
+<p>Nós passamos por diferentes métodos de predição desde o início da empresa, e todos eles tinham algum ponto fraco. Aqui, listei alguns deles e o porque optamos por abandoná-los.</p>
+<h3><em>Throughput</em> médio</h3>
+<p>Alguns podem pensar em um método simples, no qual usaria o <em>throughput</em> médio para prever o final de um projeto. No entanto, como você pode ver neste post <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">Power of the metrics: Don’t use average to forecast deadlines</a>, isso seria um método ingênuo e não funcionaria.</p>
+<h3>Regressão Linear</h3>
+<p>Este foi nosso primeiro método. Regressão linear baseada no <em>throughput</em> acumulado para prever quando um projeto seria finalizado:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/08/linear-regression-project-completion-date.png" alt="Linear regression" style="max-width:100% !important;" /></p>
+<p>No entanto, identificamos dois pontos diferentes que não estávamos considerando quando fazíamos esse tipo de análise:</p>
+<ul>
+<li>Nós mantínhamos o número de itens no backlog constante para que a predição funcionasse, o que causa muito viés.</li>
+<li>Nós descobrimos, depois de algumas análises, que tanto o nosso <em>throughput</em> quanto <em>lead times</em> não seguem distribuição normal, portanto não faz sentido calcular regressão linear (veja em <a href="/2016/03/looking-at-lead-time-in-a-different-way/">Looking at Lead Time in a different way</a> e <a href="http://www.statisticssolutions.com/assumptions-of-linear-regression/">Assumptions of Linear Regression</a>)</li>
+</ul>
+<h3>Configuração Manual</h3>
+<p>Primeiramente, focamos em evitar erros estatísticos, como o caso da regressão linear. Começamos a utilizar um modelo mais compreensível, que usa métodos que sabemos que estão enviesados, mas que podemos controlar de acordo com o contexto do projeto.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/08/percentile-chart-project-completion-date.png" alt="Percentile Chart" style="max-width:100% !important;" /></p>
+<p>Adicionamos manualmente diferentes retas de predições de <em>throughput</em> baseados em percentis do histórico do projeto.</p>
+<p>Nós tivemos melhores resultados com isso, já que podíamos mudar a previsão manualmente e, portanto, ajustá-la de acordo com o contexto específico do projeto. Porém, o fato de desconsiderarmos mudanças no backlog, nos motivou a dar um passo a mais e testar Simulações de Monte Carlo.</p>
+<p style="text-align:center;"><a href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=planilha-monte-carlo-pt-br&#038;utm_content=cta-blog-post-middle" target="_blank" style="background-color:#009eaa; border-radius: 3px; font-family: sans-serif;display: inline-block;line-height: 1.5;padding: 8px 30px;text-align: center; text-decoration: none; font-family:sans-serif;width:auto;color:#fff">Planilha Simulação de Monte Carlo<br /><span style="letter-spacing:0.05em;font-size: 11px;font-weight: bold;">BAIXAR PLANILHA GRÁTIS</span></a></p>
+<h3>Simulação de Monte Carlo</h3>
+<p><a href="https://pt.wikipedia.org/wiki/M%C3%A9todo_de_Monte_Carlo">Wikipedia</a> define Monte Carlo como:</p>
+<blockquote><p><cite>Qualquer método de uma classe de métodos estatísticos que se baseiam em amostragens aleatórias massivas para obter resultados numéricos, isto é, repetindo sucessivas simulações um elevado número de vezes, para calcular probabilidades heuristicamente.</cite></p></blockquote>
+<p>Pode parecer complexo ou difícil inicialmente, mas é muito mais simples do que parece. Você pode considerar que é o método de força bruta das previsões. Vou apresentar um simples exemplo, e então, mostrar como nós aplicamos na vida real. Existe uma <a href="http://lumenize.com/">simulação feita por Larry Maccherone,</a> que pode facilitar o entendimento ainda mais.</p>
+<h4>Jogo de dados</h4>
+<p>Imagine que você está jogando um jogo de dados, no qual o objetivo é alcançar a soma de 12 pontos com o menor número de jogadas. A melhor jogada, no caso, seria jogar 2 dados consecutivos nos quais você tiraria o número 6 em ambos. A pior seria jogar o dado 12 vezes e caísse no 1 todas as vezes. O que queremos calcular com Monte Carlo é a probabilidade de finalizar o jogo depois de N rodadas.</p>
+<p>Considerando que temos 6 possíveis resultados para cada jogada de dado (6 faces) qual é a probabilidade de terminar o jogo na primeira rodada?</p>
+<p>Zero. Já que é impossível tirar 12 pontos se o dado vai até 6.</p>
+<p>E na segunda rodada?</p>
+<p>É a probabilidade de conseguir dois 6 consecutivos, e que, em estatística básica, é:</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/08/dice-game-eq1.png" alt="Dice game" width="172" height="63" style="border:none;" /></p>
+<p>E na terceira rodada?</p>
+<p>Você pode alcançar 12 pontos de diferentes maneiras: (3,3,6), (3,4,5), (3,5,4), (3,4,6), (5,5,2), (4,4,4), etc. Agora, o cálculo estatístico não são tão fáceis, certo? É aí que entra a simulação de Monte Carlo.</p>
+<p>O que Monte Carlo faz é simular milhares de rodadas de dados, para então, analisar o resultado. Por exemplo, para saber a probabilidade de terminar o jogo na terceira rodada, a simulação rodaria o dado três vezes, somaria os pontos, e guardaria o resultado. Depois disso, iria repetir esses passos 5000 vezes e resumir quantas rodadas cada soma de pontos obteve:</p>
+<table style="border-collapse: collapse; font-size: 13px; text-transform: uppercase; border: solid 1px #ccc; font-family: Arial, 'sans-serif';" cellspacing="0" cellpadding="0" align="center">
+<thead>
+<tr>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Soma de 3 rodadas</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea;" align="center">Quantas vezes apareceu</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">21</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">4</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">70</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">5</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">134</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">6</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">240</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">7</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">370</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">8</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">509</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">9</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">581</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">10</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">586</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">11</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">636</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">12</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">538</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">13</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">476</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">14</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">375</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">15</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">226</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">16</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">139</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">17</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">74</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">18</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">25</td>
+</tr>
+</tbody>
+</table>
+<p>Agora, o algoritmo soma todas as ocorrências que geraram soma maior do que 12 e divide o resultado pelo número total de ocorrências (5000). Neste caso:</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/08/dice-game-eq2.png" alt="Dice game" width="528" height="62" style="border:none;" /></p>
+<p>O mesmo que fizemos para o terceiro round, faríamos para o quarto, quinto, etc.</p>
+<h4>Mundo Real</h4>
+<p>A solução do mundo real é muito similar ao exemplo dos dados. A única diferença é que o objetivo varia também (os 12 pontos no cenário do jogo), para considerar mudanças no backlog.</p>
+<p>Então, o possível resultado de cada rodada (os lados do dado) são o histórico de <em>throughput</em>. E, do mesmo jeito que nós &#8220;rodamos dados&#8221; para o <em>throughput</em> , nós precisamos rodar os dados para o backlog, para dar chances do mesmo crescer também. Nesse caso, os possíveis resultados são chamados de <em>Backlog Growth Rates (BGR)</em>.</p>
+<p>Comecemos devagar. Digamos que nosso histórico do projeto é o seguinte:</p>
+<table style="border-collapse: collapse; font-size: 13px; border: solid 1px #ccc; font-family: Arial, 'sans-serif';" cellspacing="0" cellpadding="0" align="center">
+<thead>
+<tr>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Número da Semana</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Histórico do <em>throughput</em></th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Histórico do Backlog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">1</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">2 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">15 stories (BGR: 0)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">17 stories (BGR: 2)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">0 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">18 stories (BGR: 1)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">4</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">2 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">19 stories (BGR: 1)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">5</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">5 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">21 stories (BGR: 2)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">6</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">0 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">22 stories (BGR: 1)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">7</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">1 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">22 stories (BGR: 0)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">8</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">24 stories (BGR: 2)</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">9</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">3 stories</td>
+<td style="border-collapse: collapse; padding: 5px 3px; border: solid 1px #ccc;" align="center">24 stories (BGR: 0)</td>
+</tr>
+</tbody>
+</table>
+<p>Então, as possíveis jogadas para cada rodada de <em>throughput</em> seria o conjunto {2,3,0,2,5,0,1,3,3} e para backlog seria {0,2,1,1,2,1,0,2,0}. Não excluímos números repetidos, pois com eles mantemos a maior probabilidade de sair esses números, ao invés de outros.</p>
+<p>Podemos aplicar o mesmo racional que esta por trás do jogo dos dados. Qual a probabilidade do <em>throughput</em> acumulado alcançar a mesma quantidade que o backlog, ou mais, na primeira semana? Alguns dos possíveis resultados são os seguintes:</p>
+<table style="border-collapse: collapse; font-size: 13px; border: solid 1px #ccc; font-family: Arial, 'sans-serif';" cellspacing="0" cellpadding="0" align="center">
+<thead>
+<tr>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Rodada de <em>Throughput</em></th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Rodada de BGR</th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Soma de <em>Throughput</em></th>
+<th style="border-collapse: collapse; padding: 5px 10px; border: solid 1px #ccc; background-color: #eaeaea; text-transform: uppercase;" align="center">Soma do Backlog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">0</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+2 = 21</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 0 = 24</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+2 = 21</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 2 = 26</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">1</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+2 = 21</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 1 = 25</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">0</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+3 = 22</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 0 = 24</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+3 = 22</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 2 = 26</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">3</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">1</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+3 = 22</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 1 = 25</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">0</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">0</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+0 = 19</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 0 = 24</td>
+</tr>
+<tr>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">0</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">2</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">19+0 = 19</td>
+<td style="border-collapse: collapse; padding: 5px; border: solid 1px #ccc;" align="center">24 + 2 = 26</td>
+</tr>
+</tbody>
+</table>
+<p>Então, rodaríamos muitos como esses e veríamos quantos deles tem soma de <em>throughput</em> maior do que a soma do backlog, e dividiríamos o resultado pelo número de simulações. Fazendo isso, teríamos a probabilidade do projeto ser finalizado na primeira semana. Para a próxima semana, nós faríamos a mesma coisa, mas rodando dois dados em cada simulação (dois para BGR e dois para <em>throughput</em>) somando-os.</p>
+<p>Um problema que esse método tem é que o backlog, no começo do projeto, se comporta diferente do que no meio ou final do mesmo. No começo, o backlog cresce muito mais rápido pois estamos tendo melhor conhecimento dos problemas e nuances do projeto. Já no final, o crescimento é de basicamente por causa de refinamento de histórias.</p>
+<p>Para resolver este problema, ao invés de considerar todo o histórico de backlog para os cálculos, nós consideramos apenas os últimos 10 pontos, o que nos dá melhor perspectiva de como o backlog está se comportando ultimamente.</p>
+<p>O resultado para as próximas 10 semanas, utilizando a abordagem acima, é representada no gráfico:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/08/monte-carlo-project-completion-date.png" alt="Monte Carlo" style="max-width:100% !important;" /></p>
+<p>Como podem ver, realcei três áreas do gráfico para ilustrar o que poderia ser o entendimento do mesmo:</p>
+<ul>
+<li>A primeira área, a vermelha, são as semanas nas quais temos 50% ou menos probabilidade de terminar o projeto. O que significa que seria arriscado demais dizer aos stakeholders que seu projeto seria finalizado nessas 4 semanas.</li>
+<li>A próxima área, laranja, ilustra as semanas que têm probabilidade entre 50% e 75% de terminar o projeto. Eu diria que, se os <em>stakeholders</em> estão te pressionando para entregar rápido, seria possível terminar nessas semanas, mas alguns ajustes de processos seriam necessários.</li>
+<li>A área verde é a mais livre de riscos, onde a probabilidade de terminar o projeto é maior do que 75%. Eu sugiro que você sempre dê preferência para estimar o fim do seu projeto baseado nesta área. No entanto, sabemos que nem sempre podemos ser tão flexíveis assim.</li>
+</ul>
+<p>Nós testamos Monte Carlo em projetos passados, e parece funcionar muito bem, no entanto, como em todo método estatístico, ele se torna melhor depois de algumas semanas que o projeto já começou, por ter mais dados para trabalhar.</p>
+<h2>Conclusão</h2>
+<p>Prever quando um projeto irá acabar parece muito mágico, mas este método é extremamente simples de ser implementado; aumenta nosso entendimento e predição em relação ao projeto. É importante deixar claro que este método é estatístico e heurístico, portanto, não é a prova de falha. O objetivo principal é adicionar mais um elemento ao seu conjunto de ferramentas e deixar o gerenciamento de projetos um pouco mais fácil.</p>
+<p>Para executar simulações sem muito trabalho, disponibilizamos uma <a href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=planilha-monte-carlo-pt-br&#038;utm_content=link">versão simples da nossa planilha para você baixar</a>.</p>
+<p>Se quiser aprender mais sobre simulações de Monte Carlo, recomendo essas referências:</p>
+<ul>
+<li>Troy Magennis &#8211; <a href="http://focusedobjective.com/wp-content/uploads/2013/05/Modeling-and-Simulating-Software-Projects-Troy-Magennis.pdf">Forecasting and Simulating Software Development Projects: Effective Modeling of Kanban &amp; Scrum Projects using Monte-carlo Simulation</a></li>
+<li>Daniel Vacanti e seus website, livro e blog: <a href="https://www.actionableagile.com/">Actionable Agile</a></li>
+<li><a href="https://www.joelonsoftware.com/2007/10/26/evidence-based-scheduling/">Joel Spolsky’s blog post on Evidence Based Scheduling</a></li>
+</ul>
+<p>Como você faz sua projeção de fim de projeto? Qual sua opinião sobre nossa abordagem? Compartilhe seus pensamentos conosco nos comentários abaixo!</p>
+<div style="background-color:#fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: arial, sans-serif !important;">
+<h3 style="font-size: 1.2em; line-height: 1.3em;margin-top:0 !important;font-family:arial, sans-serif;font-weight:bold;">Planilha com Simulação de Monte Carlo</h3>
+<p style="margin-top:0.3em !important;font-size:0.85em;">Método estatístico para calcular probabilidade (realista, otimista e pessimista) de data de término de projetos. Basta inserir os dados e você terá o gráfico com as projeções!</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/simulacoes-de-monte-carlo-para-projetos?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=planilha-monte-carlo-pt-br&#038;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">BAIXAR PLANILHA GRÁTIS</a>
+</div><p>The post <a href="/2017/06/por-que-usamos-simulacoes-de-monte-carlo-para-gerenciar-projetos/">Por que usamos Simulações de Monte Carlo para gerenciar projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The pros and cons of using daily metrics</title>
+		<link>/2016/12/the-pros-and-cons-of-using-daily-metrics/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 09 Dec 2016 14:28:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[metrics]]></category>
+		<category><![CDATA[NoEstimates]]></category>
+		<category><![CDATA[project management]]></category>
+		<guid isPermaLink="false">/?p=5983</guid>
+
+					<description><![CDATA[<p>As you may have noticed, we took advantage of the new Elixir Radar channel development to run some project management experiments, so we could improve our methods and toolset. Some of those can be found in these blog posts: Forecasting software project’s completion date through Monte Carlo Simulation Lead Time Experiment: Calculating Lead Time of ... <a class="read-more-link" href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">»</a></p>
+<p>The post <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">The pros and cons of using daily metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As you may have noticed, we took advantage of the <a href="http://plataformatec.com.br/elixir-radar/" target="_blank">new Elixir Radar channel</a> development to run some project management experiments, so we could improve our methods and toolset. Some of those can be found in these blog posts:</p>
+<ul>
+<li><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a></li>
+<li><a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">Lead Time Experiment: Calculating Lead Time of the whole process</a></li>
+<li><a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a></li>
+</ul>
+<p>Another experiment that we did was to analyze the metrics that we generally use, however, instead of tracking them on a weekly basis, doing it daily. The project was supposed to be very short and weekly metrics would have shown us the problems when it was already too late to act. The intention here was to see if with a shorter feedback cycle, the metrics would make us notice problems faster: like bottlenecks, queues etc.</p>
+<p>If you are not aware of the metrics we use, here are some blog posts about them:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and Burnup charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with Lead time</a></li>
+</ul>
+<p>We will present next our opinion on the effectiveness of using each one of those metrics on a daily basis.</p>
+<h2>Cumulative Flow Diagram (CFD)</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/cumulative-flow-diagram.png" alt="Cumulative Flow Diagram" width="1034" height="640" class="aligncenter size-full wp-image-5954" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/cumulative-flow-diagram.png 1034w, /wp-content/uploads/2016/12/cumulative-flow-diagram-300x186.png 300w, /wp-content/uploads/2016/12/cumulative-flow-diagram-768x475.png 768w, /wp-content/uploads/2016/12/cumulative-flow-diagram-1024x634.png 1024w" sizes="(max-width: 1034px) 100vw, 1034px" /></p>
+<p>The daily CFD was the most used daily metric for us. In the first weeks, it was too difficult to find bottlenecks only by seeing the weekly metrics. But as you can see on our daily CFD chart, we spotted some queue growth throughout our project and could act on them on a daily basis to avoid losses.</p>
+<h2>Burnup chart</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/burnup.png" alt="Burnup" width="1379" height="618" class="aligncenter size-full wp-image-5961" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/burnup.png 1379w, /wp-content/uploads/2016/12/burnup-300x134.png 300w, /wp-content/uploads/2016/12/burnup-768x344.png 768w, /wp-content/uploads/2016/12/burnup-1024x459.png 1024w" sizes="(max-width: 1379px) 100vw, 1379px" /></p>
+<p>We didn&#8217;t use much the daily burnup chart, but we believe that it can be very helpful in case your client and/or product owner want faster feedbacks on how the project health is.</p>
+<p>It is possible to see that the backlog changed on a daily basis in the beginning of the project, that information could help the stakeholders take faster actions to mitigate possible delays.</p>
+<h2>Throughput and Predictions</h2>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/12/throughput-histogram.png" alt="Throughput Histogram" width="1402" height="708" class="aligncenter size-full wp-image-5956" style="max-width: 98% !important;" srcset="/wp-content/uploads/2016/12/throughput-histogram.png 1402w, /wp-content/uploads/2016/12/throughput-histogram-300x151.png 300w, /wp-content/uploads/2016/12/throughput-histogram-768x388.png 768w, /wp-content/uploads/2016/12/throughput-histogram-1024x517.png 1024w" sizes="(max-width: 1402px) 100vw, 1402px" /></p>
+<p>Our Monte Carlo simulation didn&#8217;t work well with &#8220;daily throughputs&#8221;, that are actually the number of deployed stories per day. That happened because, if you remember how we use Monte Carlo from our blog post <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a>, we base our simulation on our throughput history. Moreover, if you see our throughput histogram, you&#8217;ll be able to notice that on most of the days there weren’t deploys, which means that the simulation would be extremely pessimistic and skewed to zero.</p>
+<h2>Conclusion</h2>
+<p>At the beginning of projects, we usually feel we don&#8217;t have enough data to make decisions, but if you start gathering data on a daily basis you might have enough information to perform fast changes on your process and guarantee an even better cadence to your deliveries.</p>
+<p>At the end of the project, after we already had enough weekly input, we abandoned the idea of a daily metric. We did that because with the progress of the project, the daily data became more noisy than helpful, and the weekly data was already reliable enough. Therefore, this approach seems to work best at the beginning of a project.</p>
+<p>What do you think of daily metrics? Would you use them? Leave your comments below! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2016/12/the-pros-and-cons-of-using-daily-metrics/">The pros and cons of using daily metrics</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

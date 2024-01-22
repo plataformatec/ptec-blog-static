@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Security announcement: Devise v2.2.3, v2.1.3, v2.0.5 and v1.5.4 released	</title>
+	<atom:link href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 30 Jan 2013 17:24:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1316</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Wed, 30 Jan 2013 17:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1316</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1314&quot;&gt;josevalim&lt;/a&gt;.
+
+Obrigado pela resposta José. No momento eu prefiro não atualizar o Devise visto que eu tenho uma estratégia personalizada, bem como um encoder personalizado e quero evitar de ter problemas com eles agora, já que estou no meio de uma série de alterações no momento... De qualquer forma, minha aplicação não faz a autenticação usando Devise, mas usando o framework Shiro em uma aplicação Grails. O Devise é usado apenas em algumas urls que são redirecionadas pelo nginx e uma estratégia vai enviar os cookies para a aplicação Grails usando um endereço interno para obter o id do usuário atual. Essa autenticação é armazenada então nos cookies do Devise com session timeout de 10 minutos. Como não vi muitos detalhes de como essa falha de segurança afeta o Devise, não sei bem se ela se aplicaria ao meu caso... Mas certamente quando as coisas desacelerarem um pouco por aqui eu pretendo atualizar o Devise para a versão mais nova. O Sequel já está na versão mais nova...]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1314">josevalim</a>.</p>
+<p>Obrigado pela resposta José. No momento eu prefiro não atualizar o Devise visto que eu tenho uma estratégia personalizada, bem como um encoder personalizado e quero evitar de ter problemas com eles agora, já que estou no meio de uma série de alterações no momento&#8230; De qualquer forma, minha aplicação não faz a autenticação usando Devise, mas usando o framework Shiro em uma aplicação Grails. O Devise é usado apenas em algumas urls que são redirecionadas pelo nginx e uma estratégia vai enviar os cookies para a aplicação Grails usando um endereço interno para obter o id do usuário atual. Essa autenticação é armazenada então nos cookies do Devise com session timeout de 10 minutos. Como não vi muitos detalhes de como essa falha de segurança afeta o Devise, não sei bem se ela se aplicaria ao meu caso&#8230; Mas certamente quando as coisas desacelerarem um pouco por aqui eu pretendo atualizar o Devise para a versão mais nova. O Sequel já está na versão mais nova&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1315</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 30 Jan 2013 02:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1315</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1312&quot;&gt;nicholaides&lt;/a&gt;.
+
+We did not evaluate it. Although 1.1.9 came out less than 2 years ago, the first release of the v1.1 series is more than 2 years and a half old.
+
+The first release of the series is what matters. For example, just because we had released 1.5.4 yesterday, it does not mean we are going to maintain the whole series for more two years due to yesterday&#039;s release.
+
+Upgrade to Devise 1.2 (or more recent) immediately.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1312">nicholaides</a>.</p>
+<p>We did not evaluate it. Although 1.1.9 came out less than 2 years ago, the first release of the v1.1 series is more than 2 years and a half old.</p>
+<p>The first release of the series is what matters. For example, just because we had released 1.5.4 yesterday, it does not mean we are going to maintain the whole series for more two years due to yesterday&#8217;s release.</p>
+<p>Upgrade to Devise 1.2 (or more recent) immediately.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1313</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 30 Jan 2013 01:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1313</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1311&quot;&gt;Maxime Raverdy&lt;/a&gt;.
+
+You are not required to upgrade immediately but please do upgrade when possible.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1311">Maxime Raverdy</a>.</p>
+<p>You are not required to upgrade immediately but please do upgrade when possible.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1314</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 30 Jan 2013 01:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1314</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1310&quot;&gt;Rodrigo Rosenfeld Rosas&lt;/a&gt;.
+
+I have tried the latest Sequel and DM version and they did not manifest the issue for PostgreSQL and SQLite3 as well. But upgrading eventually is always a good idea.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1310">Rodrigo Rosenfeld Rosas</a>.</p>
+<p>I have tried the latest Sequel and DM version and they did not manifest the issue for PostgreSQL and SQLite3 as well. But upgrading eventually is always a good idea.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: nicholaides		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1312</link>
+
+		<dc:creator><![CDATA[nicholaides]]></dc:creator>
+		<pubDate>Tue, 29 Jan 2013 19:28:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1312</guid>
+
+					<description><![CDATA[Was the 1.1 series evaluated? 1.1.9 came out in March 2013, which is less than 2 years ago.]]></description>
+			<content:encoded><![CDATA[<p>Was the 1.1 series evaluated? 1.1.9 came out in March 2013, which is less than 2 years ago.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Maxime Raverdy		</title>
+		<link>/2013/01/security-announcement-devise-v2-2-3-v2-1-3-v2-0-5-and-v1-5-3-released/comment-page-1/#comment-1311</link>
+
+		<dc:creator><![CDATA[Maxime Raverdy]]></dc:creator>
+		<pubDate>Tue, 29 Jan 2013 14:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3334#comment-1311</guid>
+
+					<description><![CDATA[Hello, 
+I use PostgreSQL, why I don&#039;t need to upgrade on 1.5.4 ? ]]></description>
+			<content:encoded><![CDATA[<p>Hello, <br />
+I use PostgreSQL, why I don&#8217;t need to upgrade on 1.5.4 ? </p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

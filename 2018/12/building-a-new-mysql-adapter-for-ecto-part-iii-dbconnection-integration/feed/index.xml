@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Building a new MySQL adapter for Ecto, Part III: DBConnection Integration	</title>
+	<atom:link href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/feed/" rel="self" type="application/rss+xml" />
+	<link>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 04 Jan 2019 20:08:06 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: luo.la		</title>
+		<link>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/comment-page-1/#comment-1812</link>
+
+		<dc:creator><![CDATA[luo.la]]></dc:creator>
+		<pubDate>Sat, 29 Dec 2018 02:35:34 +0000</pubDate>
+		<guid isPermaLink="false">/?p=8158#comment-1812</guid>
+
+					<description><![CDATA[Ye ! This Is A Good Blog!]]></description>
+			<content:encoded><![CDATA[<p>Ye ! This Is A Good Blog!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rails 3 « Plataformatec Blog</title>
+	<atom:link href="/tag/rails-3/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 25 Feb 2015 18:07:27 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>SimpleForm 1.4 is out</title>
+		<link>/2011/05/simpleform-1-4-is-out/</link>
+					<comments>/2011/05/simpleform-1-4-is-out/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 17:10:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=2051</guid>
+
+					<description><![CDATA[<p>I&#8217;m pleased to say that we released SimpleForm 1.4. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features: Custom Form Builders Now you can set a custom form builder that inherits from SimpleForm::FormBuilder: ... <a class="read-more-link" href="/2011/05/simpleform-1-4-is-out/">»</a></p>
+<p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m pleased to say that we released <a href="https://github.com/plataformatec/simple_form">SimpleForm 1.4</a>. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features:</p>
+<h3>Custom Form Builders</h3>
+<p>Now you can set a custom form builder that inherits from <code>SimpleForm::FormBuilder</code>:</p>
+<pre lang="ruby">class CustomBuilder < SimpleForm::FormBuilder
+  def input(attribute_name, options={}, &#038;block)
+    options[:input_html].merge! :class => 'custom'
+    super
+  end
+end</pre>
+<p>And use it straight in the <code>simple_form_for</code> helper, like the example below:</p>
+<pre lang="ruby"><%= simple_form_for(@user, :builder => CustomBuilder) do |f| %>
+  <%= f.input :name %>
+<% end %></pre>
+<h3>Custom Inputs</h3>
+<p>SimpleForm has many different inputs available in its source code. But, sometimes, depending on the business logic the application requires, we need to add new inputs to make our work easier. Before this version, you had to explicitly define your new input inside SimpleForm namespace for it to work. Furthermore, customizing existing SimpleForm inputs could only be achieved through monkey patching.</p>
+<p>Inspired by a similar feature in the <a href="https://github.com/justinfrench/formtastic">Formtastic</a> gem, from now on you will be able to create new input types inside <code>app/inputs</code> folder in your application. The only restriction to create such inputs is that the class name must end with <code>Input</code>. See some examples:</p>
+<pre lang="ruby"># app/inputs/currency_input.rb
+class CurrencyInput < SimpleForm::Inputs::StringInput
+  def input
+    "$ #{super}".html_safe
+  end
+end</pre>
+<p>And the usage:</p>
+<pre lang="ruby">f.input :money, :as => :currency</pre>
+<p>You can also redefine existing SimpleForm inputs by creating a new class with the same name. For instance, if you want to wrap date/time/datetime inputs in a div, you can do:</p>
+<pre lang="ruby"># app/inputs/date_time_input.rb
+class DateTimeInput < SimpleForm::Inputs::DateTimeInput
+  def input
+    "<div>#{super}</div>".html_safe
+  end
+end</pre>
+<h3>HTML 5</h3>
+<p>SimpleForm allows you to add many HTML 5 features to your applications, like placeholders, inline browser validations and more. The problem is: most browsers are still experimenting some HTML 5 features, and people started having lots of troubles with the automatic browser validation.</p>
+<p>For this reason, SimpleForm now has an option to easily disable such form validations. You have to add this line to your SimpleForm initializer:</p>
+<pre lang="ruby">config.browser_validations = false</pre>
+<p>But, if HTML 5 is still not for you, you can disable all the HTML 5 stuff, by adding the configuration below to your initializer:</p>
+<pre lang="ruby">config.html5 = false</pre>
+<p>Notice that this option does not disable the `placeholder` component, because we believe this option is very well supported currently in mostly browsers. If you don't want to use it as well, just remove it from the `components` option in your initializer.</p>
+<h3>More Helpers</h3>
+<p>In this version we also add two new form helpers to SimpleForm: <code>input_field</code> and <code>full_error</code>.</p>
+<p>The <code>full_error</code> helper shows errors in an attribute prepending its human name. This can be used when you want to show errors on hidden fields, for instance. You can see how it works in this example:</p>
+<pre lang="ruby">f.full_error :token #=> <span class="error">Token is invalid</span></pre>
+<p>The <code>input_field</code> helper renders only the input tag with all the facilities of SimpleForm's input helper. It means no wrapper, error or hint will be rendered. A good example of using this helper is inside an input block:</p>
+<pre lang="ruby"><%= f.input :max_time, :as => :integer do %>
+  <%= f.input_field :max_time, :as => :integer, :type => :range %>
+  <%= content_tag :span, '1', :id => 'max_time_value' %>
+<% end %></pre>
+<p>It will render:</p>
+<pre lang="html">
+<div class="input integer required">
+  <label class="integer required for="model_max_time">Max time <abbr title="required">*</abbr></label>
+  <input class="numeric integer required" id="model_max_time" name="model[max_time]" required="required" size="50" type="range" />
+  <span id="max_time_value">1</span>
+</div>
+</pre>
+<h3>Wrapping up</h3>
+<p>This version allows you to do more customizations in SimpleForm based on your applications needs. We encourage you to take a look at the <a title="SimpleForm Changelog" href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc">CHANGELOG</a> and also review the <a title="SimpleForm Readme" href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a title="SimpleForm contributors" href="https://github.com/plataformatec/simple_form/contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>Right now, we are working on Rails 3.1 compatibility for the next version. If you feel like helping us or just want to see a new feature, feel free to send us a pull request. And last, but not least, we look forward to know how SimpleForm is changing your life. Is it being helpful? How does it improve your applications? Don't be shy, comments are welcome.</p><p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/simpleform-1-4-is-out/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Default views in Rails 3.0 with custom resolvers</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/</link>
+					<comments>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 18:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[resolvers]]></category>
+		<category><![CDATA[template inheritance]]></category>
+		<guid isPermaLink="false">/?p=1959</guid>
+
+					<description><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the Admin namespace and you would like each action to fallback to a default template. So if you are rendering the index action for Admin::PostsController and &#8220;app/views/admin/posts/index.html.*&#8221; ... <a class="read-more-link" href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">»</a></p>
+<p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the <code>Admin</code> namespace and you would like each action to fallback to a default template. So if you are rendering the index action for <code>Admin::PostsController</code> and &#8220;app/views/admin/posts/index.html.*&#8221; is not available, it should then render &#8220;app/views/admin/defaults/index.html&#8221;.</p>
+<p>There are several ways to implement this feature at the controller level. It mainly relies on trying to render the original template and then rescue <code>ActionView::MissingTemplate</code>. If this error is rescued, you then render the default one. However, there is a considerable performance overhead in this approach as it needs to pass through the rendering and template lookup stack twice.</p>
+<p>Luckily, since Rails 3.0, we have a new abstraction called <strong>resolvers</strong> that holds the logic to find a template. I explain comprehensively how resolvers work and their API in my book <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>. So here I would just show the basics to get this functionality working.<br />
+First, we need to define a <code>DefaultResolver</code>, it could be done inside the lib directory:</p>
+<pre lang="ruby">
+class MyResolver < ::ActionView::FileSystemResolver
+  def initialize
+    super("app/views")
+  end
+
+  def find_templates(name, prefix, partial, details)
+    super(name, "admin/defaults", partial, details)
+  end
+end
+</pre>
+<p>Our new resolver simply inherits from <code>ActionView::FileSystemResolver</code> and does two changes: Overrides the <code>initialize</code> method so the view path defaults to "app/views" inside our application and overrides <code>find_templates</code>. The <code>find_templates</code> method receives the template name, a prefix (i.e. the controller path), a boolean marking if the template is a partial or not and a hash of details. In the example above, we simply ignore the prefix given and hardcode it to "admin/defaults".</p>
+<p>Now, assuming that all controllers inside the Admin namespace inherit from an <code>Admin::ApplicationController</code>, we can add default views to all of them by adding the following line:</p>
+<pre lang="ruby">
+class Admin::ApplicationController < ActionController::Base
+  append_view_path MyResolver.new
+end
+</pre>
+<p>And we are done! The <code>view_paths</code> holds a list of paths and/or resolvers that the controller will look for templates until one is found. If none is found, an <code>ActionView::MissingTemplate</code> is raised. Since we used <code>append_view_paths</code>, our resolver was added after the "app/views" path, used by default in all controllers.</p>
+<p>As you may have guessed, resolvers are a powerful abstraction that allows you to retrieve templates from anywhere, including the database, which is the example given in <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>.</p>
+<p>Finally, template inheritance was a feature recently added to Rails master (upcoming Rails 3.1), so you won't need to create your custom resolver as above. <a href="http://edgerails.info/articles/what-s-new-in-edge-rails/2011/01/12/template-inheritance/index.html">There is a good wrap up about this feature in Rails Edge</a>.</p><p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm 1.3: more HTML 5 goodness and new stuff</title>
+		<link>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/</link>
+					<comments>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 08 Dec 2010 19:49:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1529</guid>
+
+					<description><![CDATA[<p>We have been working on SimpleForm for some time since the last release and have got a lot of contributions from community. Now it is time for a new release with more HTML 5 compatibility plus some new cool features. So, without further ado, lets take a ride on the new stuff. HTML 5 One ... <a class="read-more-link" href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">»</a></p>
+<p>The post <a href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">SimpleForm 1.3: more HTML 5 goodness and new stuff</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We have been working on SimpleForm for some time since the last release and have got a lot of contributions from community. Now it is time for a new release with more HTML 5 compatibility plus some new cool features. So, without further ado, lets take a ride on the new stuff.</p>
+<h3>HTML 5</h3>
+<p>One of the most useful features coming in HTML 5, in my opinion, is the placeholder option. This option allows us to configure a text to be shown inside the input when it is empty. This is really nice to help the user while filling out forms. SimpleForm now gives us the possibility to pass in a placeholder option in the same way we are used to do with use hints:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :username, :label => 'Your username please' %>
+  <%= f.input :password, :hint => 'No special characters.' %>
+  <%= f.input :email, :placeholder => 'user@domain.com' %>
+  <%= f.button :submit %>
+<% end %>
+</pre>
+<p>As you can see here, the placeholder is given as String, but it can also be fetched from I18n, as labels/hints does.</p>
+<p>Another addition is the automatic lookup of min/max values from numericality validations, for <code>number</code> inputs. For instance:</p>
+<pre lang="ruby">
+class User
+  validates_numericality_of :age, :greater_than_or_equal_to => 18,
+    :less_than_or_equal_to => 99, :only_integer => true
+end
+</pre>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :age %>
+<% end %>
+</pre>
+<p>Would generate an input with type number, and the min/max attributes configured with 18 and 99, respectively.</p>
+<p>Besides that SimpleForm also adds:</p>
+<ul>
+<li>the <code>:required</code> html attribute for required inputs (it is retrieved automatically from your presence validations);</li>
+<li>the <code>:search</code> and <code>:tel</code> input types, with <code>:tel</code> mapping automatically for attributes matching <code>/phone/</code>.</li>
+</ul>
+<h3>Collections</h3>
+<p>From now on, radio and check box collections will wrap the input element inside the label, making it pretty straightforward to associate both elements. Besides that, SimpleForm now comes with two new configurations:</p>
+<ul>
+<li><code>collection_wrapper_tag</code> wraps the entire collection in the configured tag;</li>
+<li><code>item_wrapper_tag</code> wraps each item in the collection using the configured tag.</li>
+</ul>
+<p>An example:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.association :roles, :as => :check_boxes, 
+    :collection_wrapper_tag => :ul, :item_wrapper_tag => :li %>
+<% end %>
+</pre>
+<p>This should be kind of self explanatory =).</p>
+<h3>New input options</h3>
+<p>It&#8217;s now possible to give the <code>:disabled</code> option straight to the input, which will also add the <code>disabled</code> css class to both input and wrapper elements:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email, :disabled => true %>
+<% end %>
+</pre>
+<p>And also the <code>:components</code> option, which will only render the given components in the given order:</p>
+<pre lang="ruby">
+<%= simple_form_for @user do |f| %>
+  # Generates the label after the input, and ignores errors/hints/placeholders
+  <%= f.input :email, :components => [:input, :label] %>
+<% end %>
+</pre>
+<h3>New configuration options</h3>
+<p>If you are not using any label / hint / placeholder with I18n, you can now completely disable the translation lookup of these components by setting the <code>config.translate</code> to <code>false</code> in your SimpleForm initializer. This should improve performance a bit in these cases.</p>
+<p>Another nice improvement is the ability to add custom input mappings to SimpleForm. If you ever needed to map a specific attribute to a default input, now you can:</p>
+<pre lang="ruby">
+  config.input_mappings = { /_count$/ => :integer }
+</pre>
+<p>This configuration expects a hash containing a regexp to match as key, and the input type that will be used when the field name matches the regexp as value. In this example we match all attributes ending with <code>_count</code>, such as <code>comments_count</code>, to be rendered as integer input by SimpleForm.</p>
+<h3>New docs and mailing list</h3>
+<p>SimpleForm now has its own <a href="http://groups.google.com/group/plataformatec-simpleform" title="SimpleForm Google Group">google group</a> where you can ask questions, search for already answered questions and also help others. Besides that, you can also navigate and search the entire <a href="http://rubydoc.info/github/plataformatec/simple_form/master/frames" title="SimpleForm RDoc">RDoc</a>.</p>
+<h3>Wrapping up</h3>
+<p>As you can see, there are plenty of new and cool stuff in this release. We encourage you to take a look at the <a href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc" title="SimpleForm Changelog">CHANGELOG</a> and also review the <a href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc" title="SimpleForm Readme">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a href="https://github.com/plataformatec/simple_form/contributors" title="SimpleForm contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>What about you? Do you want any cool feature in SimpleForm? Help us improve it by forking and sending us a pull request, we will be really glad to apply it. We hope to see your name in the contributors page soon!</p>
+<p>Finally, in your opinion, what is the coolest feature SimpleForm has? And what idea you have you might want to be added to SimpleForm? Feel free to comment <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/">SimpleForm 1.3: more HTML 5 goodness and new stuff</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/simpleform-1-3-more-html-5-goodness-and-new-stuff/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Devise 1.1 is out and ready to rock with Rails 3</title>
+		<link>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/</link>
+					<comments>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 19 Aug 2010 19:48:54 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<guid isPermaLink="false">/?p=1312</guid>
+
+					<description><![CDATA[<p>A couple weeks ago we finally released Devise 1.1 which is fully-compatible with Rails 3! Not only that, we&#8217;ve been working with Rails 3 since the first betas and several features were added along the way! Let&#8217;s take a look at those, some architectural changes and see how Devise 1.1 and Rails 3 will change ... <a class="read-more-link" href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">»</a></p>
+<p>The post <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1 is out and ready to rock with Rails 3</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A couple weeks ago we finally released <a href="http://github.com/plataformatec/devise" target="_blank">Devise 1.1</a> which is fully-compatible with Rails 3! Not only that, we&#8217;ve been working with Rails 3 since the first betas and several features were added along the way! Let&#8217;s take a look at those, some architectural changes and see how Devise 1.1 and Rails 3 will change how you handle authentication.</p>
+<h3>Pretty URLs with Metal</h3>
+<p>A common complaint in Devise 1.0 (for Rails 2.3) was, in order to know which message to show to the user when sign in failed, we had to pass a parameter in the URL as in <code>/users/sign_in?unauthenticated=true</code> while one would expect us to simply use flash messages. This happened because the redirection was done not from inside a controller, but a Rack application set up in <a href="http://github.com/hassox/warden" target="_blank">Warden</a> (a Rack authentication framework Devise relies on) and we could not access flash messages from it.</p>
+<p>However, since Rails 3 moved several responsibilities to the Rack layer, including flash messages, we can easily access flash messages from any Rack application, allowing us to remove the parameter from the URL! Even more, Rails 3 provides small, fast, bare bone controllers through <code>ActionController::Metal</code>, which we used in Devise to clean and speed up the code considerably.</p>
+<h3>Locking goodness</h3>
+<p>The <strong>lockable</strong> module in Devise also went through a major overhaul. Previously, it already supported <code>:unlock_strategy</code> as option, allowing you to specify if the user could be automatically unlocked after a time period, through an e-mail token or both. Now, it also supports <code>:none</code> as option, meaning that all unlocking should be done manually.</p>
+<p>Even more, there is a new option called :lock_strategy, that allows you to specify whether the lock happens only manually or after an amount of invalid sign in attempts.</p>
+<h3>HTTP Authentication on by default</h3>
+<p>In Devise 2.3, you may remember that we had a module called <code>:http_authenticable</code> along with <code>:database_authenticatable</code> and <code>:token_authenticatable</code>. While all three worked great, it was confusing that all HTTP authentication features were built on top of the database authentication and it was not possible to do HTTP authentication using a token unless we created a forth module called <code>:http_token_authenticatable</code>. We quickly noticed this could be improved by providing a better design and better abstract Devise authentication strategies.</p>
+<p>And that is what happened in Devise 1.1. Now both database and token authentication work through HTTP with no extra work and the http authenticatable module was deprecated. Besides, if you are creating a new strategy on your own, you get both authentication through parameters (form) and HTTP with no extra work!</p>
+<h3>Routing customizations</h3>
+<p>We built Devise to be a full stack solution with customization in mind. In Devise 1.1, the customization abilities from Devise were taken to the next level. Now the <code>devise_for</code> method in routes accepts to extra options: <code>:skip</code> and <code>:controllers</code>. The first one allows you to skip the routes generation for a given controller/module in case you want to define them on your own, while the second allows you to change the router to point to a given controller in your application, like <code>Users::ConfirmationsController</code> instead of Devise&#8217;s internal controller.</p>
+<p>Talking about Devise&#8217;s internal controller, Devise 1.1 namespaced all controllers classes, so now we have <code>Devise::ConfirmationsController</code> instead of <code>ConfirmationsController</code>.</p>
+<p>Another limitation removed from Devise in this new version is related to URLs customizations. In prior versions, Devise used the URL to retrieve which scope is being accessed. That said, if you were accessing &#8220;/users/sign_in&#8221;, Devise had to inspect this URL and find the &#8220;/users&#8221; bit to specify the current scope is &#8220;users&#8221;. The same happened to &#8220;/admin/sign_in&#8221;.</p>
+<p>This had a huge impact in URL customization, because if you wanted to have an URL like &#8220;/some_prefix/users/sign_in&#8221;, you had to tell Devise you were appending a prefix. Things could get even uglier if you wanted to prepend dynamic prefixes like &#8220;/:locale&#8221;.</p>
+<p>In Devise 1.1, we use the new contraints API and Rack capabilities from the new router to specify which scope to use. So, instead of inspecting the URL, Devise retrieves the user from the request&#8217;s env hash as <code>request.env["devise.mapping"]</code>.</p>
+<p>For all the routes generated by <code>devise_for</code>, Devise automatically sets this value in the env hash. However, if you are creating your own routes, you need to set it manually using the constraints API:</p>
+<pre lang="ruby">
+constraints lambda { |r| r.env["devise.mapping"] = Devise.mappings[:user] } do
+  # Add a custom sign in route for user sign in
+  get "/sign_in", :to => "devise/sessions"
+end
+</pre>
+<p>Of course, since this is rather a common pattern, we encapsulated it in a nice API:</p>
+<pre lang="ruby">
+devise_scope :user do
+  # Add a custom sign in route for user sign in
+  get "/sign_in", :to => "devise/sessions"
+end
+</pre>
+<p>You can simply give a block to <code>devise_for</code> as well and get the same result:</p>
+<pre lang="ruby">
+devise_for :users do
+  # Add a custom sign in route for user sign in
+  get "/sign_in", :to => "devise/sessions"
+end
+</pre>
+<p>All the routes specified in the block have higher priority than the ones generated by <code>devise_for</code>.</p>
+<h3>Awesomeness pack</h3>
+<p>The last feature we want to discuss is also a routing customization, but we decided to leave it up for last because it shows all the potential coming with Rails 3 and Devise 1.1.</p>
+<p>In Devise 1.1, we added the ability to require authentication for a given url in the router, besides the existing before filters in controllers. This allow us to easily require authentication for third party rack application without a need to hack into them. <a href="http://blog.kiskolabs.com/post/776939029/rails3-resque-devise">Kisko Labs posted</a> an interesting case where you can use Devise to require authentication to a Resque application in very few lines of code:</p>
+<pre lang="ruby">
+authenticate :admin do
+  mount Resque::Server.new, :at => "/resque"
+end
+</pre>
+<p>Devise simply uses the constraints API discussed above, allowing the request to continue only if the user is already authenticated. Otherwise, it redirects the admin to the sign page managed by Devise inside your Rails application. Indeed, when you have Rack, Rails 3 and Devise 1.1 playing along, great things can be accomplished quite easily!</p>
+<p>There are several other features, bug fixes and deprecations included in this release, we invite you to check the <a href="http://github.com/plataformatec/devise/blob/master/CHANGELOG.rdoc">CHANGELOG</a> and take a look at them!</p>
+<p>And we are happy to say this is not all, there is much more to come in Devise 1.2, including OAuth2 support which is already added in the master branch. Enjoy!</p><p>The post <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1 is out and ready to rock with Rails 3</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>New Active Record scoping syntax</title>
+		<link>/2010/07/new-active-record-scoping-syntax/</link>
+					<comments>/2010/07/new-active-record-scoping-syntax/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 15:19:46 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[arel]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[scopes]]></category>
+		<guid isPermaLink="false">/?p=1181</guid>
+
+					<description><![CDATA[<p>You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how ... <a class="read-more-link" href="/2010/07/new-active-record-scoping-syntax/">»</a></p>
+<p>The post <a href="/2010/07/new-active-record-scoping-syntax/">New Active Record scoping syntax</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You probably know that <a href="http://www.railsdispatch.com/posts/activerelation" target="_blank">Active Record got a facelift</a> and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, <a href="https://rails.lighthouseapp.com/projects/8994/tickets/3838" target="_blank">a small incompatibility between the old and new syntax was found</a>. This post explains this incompatibility and how it was solved.</p>
+<h3>The issue</h3>
+<p>Quoting the Lighthouse ticket, imagine the following scenario in Rails 2.3:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope :conditions => { :deleted_at => nil }
+
+  def self.deleted
+    with_exclusive_scope :find => { :conditions => "pages.deleted_at IS NOT NULL" } do
+      all
+    end
+  end
+end
+</pre>
+<p>If you rewrite it to the new 3.0 syntax, your first attempt would probably be:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope where(:deleted_at => nil)
+
+  def self.deleted
+    with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+      all
+    end
+  end
+end
+</pre>
+<p>However, if you try it out on console, you will find out it does not work as expected:</p>
+<pre lang="ruby">
+Page.all         #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL)
+Page.deleted.all #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL) AND ("pages"."deleted_at" IS NOT NULL)
+</pre>
+<p>To understand why it does not work, let&#8217;s take a look at the source code!</p>
+<h3>Investigating the issue</h3>
+<p>With Active Relation, Active Record is no longer responsible to build queries. That said, <code>ActiveRecord::Base</code> is not the one that implements <code>where()</code> and friends, in fact, it simply delegates to an <code>ActiveRecord::Relation</code> object. From <a href="http://github.com/rails/rails/blob/master/activerecord/lib/active_record/base.rb" target="_blank">ActiveRecord::Base source code</a>:</p>
+<pre lang="ruby">
+delegate :select, :group, :order, :limit, :joins, :where, :preload, :eager_load, :includes, :from, :lock, :readonly, :having, :create_with, :to => :scoped
+</pre>
+<p>And the <code>scoped</code> implementation is shown below:</p>
+<pre lang="ruby">
+def scoped(options = nil)
+  if options.present?
+    scoped.apply_finder_options(options)
+  else
+    current_scoped_methods ? relation.merge(current_scoped_methods) : relation.clone
+  end
+end
+
+def relation
+  @relation ||= ActiveRecord::Relation.new(self, arel_table)
+  finder_needs_type_condition? ? @relation.where(type_condition) : @relation
+end
+</pre>
+<p>As you can see, <code>scoped</code> always returns an ActiveRecord::Relation that you build your query on top of (notice that <a href="http://metautonomo.us/2010/05/11/activerecord-relation-vs-arel/">ARel::Relation is not the same as ActiveRecord::Relation</a>).</p>
+<p>Besides, if there is any <code>current_scoped_methods</code>, the <code>scoped</code> method is responsible to merge this current scope into the raw relation. This is where things get interesting.</p>
+<p>When you create your model, <code>current_scoped_methods</code> returns by default nil. However, when you define a <code>default_scope</code>, the current scope now becomes the relation given to <code>default_scope</code>, meaning that, every time you call <code>scoped</code>, it returns the raw relation merged with your default scope.</p>
+<p>The whole idea of <code>with_exclusive_scope</code> is to be able to make a query without taking the default scope into account, just the relation you give in as argument. That said, it basically sets the <code>current_scope_methods</code> back to nil, so every time you call <code>scoped</code> to build your queries, it will be built on top of the raw relation without the default scope.</p>
+<p>With that in mind, if we look again at the code which we were trying to port from Rails 2.3, we can finally understand what was happening:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+    self
+  end
+end
+</pre>
+<p>When we called <code>where('pages.deleted_at IS NOT NULL')</code> above, we were doing the same as: <code>scoped.where('pages.deleted_at IS NOT NULL')</code>. But, as <code>scoped</code> was called <strong>outside</strong> the <code>with_exclusive_scope</code> block, it means that the relation given as argument to <code>:find</code> was built on top of <code>default_scope</code> explaining the query we saw as results.</p>
+<p>For example, the following syntax would work as expected:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>Since we are calling <code>where</code> inside the block, the <code>scoped</code> method no longer takes the default scope into account. However, moving the relation inside the block is not the same as specifying it to <code>:find</code>, because if we were doing three queries inside the block, we would have to specify the same relation three times (or refactor the whole code to always do a query on top of this new relation).</p>
+<p>That said, it seems the previous <code>with_exclusive_scope</code> syntax does not suit very well with ActiveRecord&#8217;s new API. Maybe is it time for change? Can we provide a better API? Which are the use cases?</p>
+<h3>Identifying the use cases</h3>
+<p>The <code>with_exclusive_scope</code> method has mainly two use cases. The first one, which we just discussed above, is to allow us to make a query without taking the default scope into account inside our models:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>While this code looks ok, if we think about relations, we will realize that we don&#8217;t need to give a block to achieve the behavior we want. If the <code>scoped</code> method returns a raw relation with the default scope, couldn&#8217;t we have a method that always returns the raw relation? Allowing us to build our query without taking the default scope into account?</p>
+<p>In fact, this method was already implemented in Active Record and it is called <code>unscoped</code>. That said, the code above could simply be rewritten as:</p>
+<pre lang="ruby">
+def self.deleted
+  unscoped.where('pages.deleted_at IS NOT NULL').all
+end
+</pre>
+<p>Much simpler! So, it seems that we don&#8217;t need to support the block usage at all, confirm?</p>
+<p>Deny! Going back to the <code>Page</code> example above, it seems we should never see deleted pages, that&#8217;s why we set the <code>default_scope</code> to <code>:deleted_at => nil</code>. However, if this application has an admin section, the admin may want to see all pages, including the deleted ones.</p>
+<p>That said, what we could do is to have one controller for the normal User and another for the Admin. In the former, we would always use <code>Page.all</code>, and <code>Page.unscoped.all</code> in the latter.</p>
+<p>However, if these controllers and views are very similar, you may not want do duplicate everything. Maybe it would be easier if we do something like this:</p>
+<pre lang="ruby">def resource_class
+  if current_user.is_admin?
+    Page.unscoped
+  else
+    Page
+  end
+end</pre>
+<p>And, instead of always referencing the <code>Page</code> class directly in our actions, we could call <code>resource_class</code>. While this solution is also ok, there is a final alternative, that would require no changes to the current code. If you want to use the same controller for different roles, but changing the scope of what they are allowed to see, you could simply use an <code>around_filter</code> to change the model scope during the execution of an action. Here is an example:</p>
+<pre lang="ruby">
+class PagesController < ApplicationController
+  around_filter :apply_scope
+
+  # some code ...
+
+  protected
+
+  def apply_scope
+    if current_user.admin?
+      Page.with_exclusive_scope { yield }
+    else
+      yield
+    end
+  end
+end</pre>
+<p>That said, being allowed to give a block to <code>with_exclusive_scope</code> is actually useful and since we want to deprecate <code>with_exclusive_scope</code> in favor of <code>unscoped</code> in the future, we brought this very same syntax to <code>unscoped</code> as well:</p>
+<pre lang="ruby">def apply_scope
+  if current_user.admin?
+    Page.unscoped { yield }
+  else
+    yield
+  end
+end</pre>
+<h3>Tidying it up</h3>
+<p>Well, after the behavior in <code>with_exclusive_scope</code> was properly ported to the new API, we need to be sure we are not forgetting about anything... wait, actually we are.</p>
+<p><code>with_exclusive_scope</code> has an evil twin brother called <code>with_scope</code> which behaves very similarly, except that it always build the query on top of the <code>scoped</code> relation. It works like this:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope where(:deleted_at => nil)
+end
+
+Page.with_scope :find => { :conditions => { :active => true } } do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>However, this feels way too hash-ish. Of course, we could use relations to make it a bit prettier:</p>
+<pre lang="ruby">
+Page.with_scope :find => where(:active => true) do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>This is ok, but it seems that we could improve it even more. That said, we added a new method to relations, called <code>scoping</code>:</p>
+<pre lang="ruby">
+Page.where(:active => true).scoping do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>Yeah! Sign me up 'cause this looks way better than the previous syntax! And, if you check <a href="http://github.com/rails/rails/commit/bd1666ad1de88598ed6f04ceffb8488a77be4385">the original commit</a>, you will notice the <code>unscoped</code> method with a block simply delegates <code>scoping</code>:</p>
+<pre lang="ruby">
+def unscoped
+  block_given? ? relation.scoping { yield } : relation
+end
+</pre>
+<p>So, with <code>unscoped</code> and <code>scoping</code> implemented, we just need to commit, git push and be happy, confirm? Deny! There is one last case to check.</p>
+<h3>create_with</h3>
+<p>If you payed attention properly, you can notice that every time we called <code>with_exclusive_scope</code> and <code>with_scope</code>, we always passed <code>{ :find => relation }</code> as hash, instead of simply giving the relation. This happens because these methods accept two hash keys: find and create.</p>
+<p>As you may expect, one specifies the behavior for create and the other for finding. In most of the cases, they are exactly the same and work with the new syntax:</p>
+<pre lang="ruby">
+page = Page.where(:active => true).new
+page.active #=> true
+</pre>
+<p>However, for obvious reasons, this only works if the conditions are given as a hash. Consider this case:</p>
+<pre lang="ruby">
+page = Page.where("active = true").new
+page.active #=> nil
+</pre>
+<p>That said, there may be a few scenarios where you want to specify the creation conditions on its own, explaining the :find and :create options in <code>with_exclusive_scope</code> and <code>with_scope</code> methods. So, how can I achieve it with the new syntax? Easy!</p>
+<pre lang="ruby">
+page = Page.create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>If you provide both conditions as a hash and <code>create_with</code>, <code>create_with</code> always have higher priority:</p>
+<pre lang="ruby">
+page = Page.where(:active => false).create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>Note this syntax already existed, we are just making it explicit now as part of the new API! That said, commit, push and be happy!</p>
+<h3>Wrapping up</h3>
+<p>All in all, <code>with_exclusive_scope</code> and <code>with_scope</code> are now part of the old ActiveRecord API giving place to the new, strong and vibrant <code>unscoped</code> and <code>scoping</code> methods!</p>
+<p>However, they are not going to be deprecated now. They will follow the same <a href="http://m.onkey.org/2010/1/22/active-record-query-interface" target="_blank">deprecation strategy as all the current methods</a>.</p>
+<p>And you? What do you think about this new scoping API?</p><p>The post <a href="/2010/07/new-active-record-scoping-syntax/">New Active Record scoping syntax</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/07/new-active-record-scoping-syntax/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm: forms made easy</title>
+		<link>/2010/06/simpleform-forms-made-easy/</link>
+					<comments>/2010/06/simpleform-forms-made-easy/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 29 Jun 2010 20:01:53 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1143</guid>
+
+					<description><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the ... <a class="read-more-link" href="/2010/06/simpleform-forms-made-easy/">»</a></p>
+<p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sometime ago we were working on a project together with a designer, and that specific application was full of forms, each one having a different layout, but most of them sharing the same features: inline errors, hints, specific label markup for required fields, etc. To start prototyping the application faster, we used the markup the designer created with similar forms, duplicating the code. But we don&#8217;t like code duplication, we weren&#8217;t feeling comfortable with it. So we decided to move on and create a tool to help us, that should be flexible enough to let us define the markup that fits better for each application, or even no extra markup at all. Here is SimpleForm!</p>
+<h3>SimpleForm inputs</h3>
+<p>From the README:</p>
+<blockquote><p>Forms made easy (for Rails)!</p>
+<p>SimpleForm aims to be as flexible as possible while helping you with powerful components to create your forms. The basic goal of simple form is to not touch your way of defining the layout, letting you find the better design for your eyes. Good part of the DSL was inherited from Formtastic, which we are thankful for and should make you feel right at home.</p></blockquote>
+<p>As the README says, <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">SimpleForm is a tool to help you build forms easily in Rails</a>. Let&#8217;s see some examples:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :username, :label =&gt; 'Your username please' %&gt;
+  &lt;%= f.input :password, :hint =&gt; 'No special characters.' %&gt;
+  &lt;%= f.input :remember_me, :as =&gt; :boolean %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>There are plenty of things going on here: we create a form using <code>simple_form_for</code> helper, then we use the <code>:input</code> method to create input elements based on column type. For instance, <code>:username</code> will create a default text input, while <code>:password</code> attribute will render an input type password. For the <code>:username</code> attribute, we are specifying a label manually. For <code>:password</code>, the label will be taken from I18n, and we are adding a hint message to the field. For <code>:remember_me</code>, we are explicitly saying to render it as a checkbox, using the <code>:as => :boolean</code> option (that is the default for boolean attributes). Also, there is a <code>button</code> helper that simply delegates to Rails helpers, in this case <code>submit</code>.</p>
+<p>The output for a new <code>@user</code> would be:</p>
+<pre><code class="html">&lt;form action="/users" class="simple_form user" id="new_user" method="post"&gt;
+  &lt;div class="input string required"&gt;
+    &lt;label class="string required" for="user_username"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Your username please&lt;/label&gt;
+    &lt;input class="string required" id="user_username" maxlength="255" name="user[username]" size="50" type="text" /&gt;
+  &lt;/div&gt; 
+  &lt;div class="input password required"&gt;
+    &lt;label class="password required" for="user_password"&gt;&lt;abbr title="required"&gt;*&lt;/abbr&gt; Password&lt;/label&gt;
+    &lt;input class="password required" id="user_password" name="user[password]" size="30" type="password" /&gt;
+    &lt;span class="hint"&gt;No special characters.&lt;/span&gt;
+  &lt;/div&gt; 
+  &lt;div class="input boolean optional"&gt;
+    &lt;label class="boolean optional" for="user_remember_me"&gt; Remember me&lt;/label&gt;
+    &lt;input name="user[remember_me]" type="hidden" value="0" /&gt;
+    &lt;input class="boolean optional" id="user_remember_me" name="user[remember_me]" type="checkbox" value="1" /&gt;
+  &lt;/div&gt; 
+  &lt;input id="user_submit" name="commit" type="submit" value="Create User" /&gt; 
+&lt;/form&gt; 
+</code></pre>
+<p>You may have noticed there is some additional css classes added to the markup, like <code>string</code> and <code>required</code>. They are added automatically by SimpleForm to help us style and plug some javascript in. There are specific css classes for each available input type. Also, pay some attention to the <code>label</code>: inside it there is an <code>abbr</code> tag with an asterisk (*) showing that the field is required. SimpleForm uses the new validations reflection API from Rails 3 to check if the attribute has the <code>presence</code> validator, and mark the field as required if so. And we are able to say that a field is required or disable the required mark, by passing the option <code>:required => true|false</code>.</p>
+<p>Furthermore, there is the <code>hint</code> tag for the <code>:password</code> attribute that SimpleForm creates based on the <code>:hint</code> option we have defined. Also notice that the gem has automatically added a <code>div</code> wrapper to each input, with the same css classes. SimpleForm allows us to configure this wrapper as well, using for instance <code>p</code> instead of <code>div</code>. We are going to see more about configuration later.</p>
+<p>SimpleForm is already prepared to generate some of the new HTML 5 input tags, such as <code>email</code>, <code>url</code> and <code>number</code> inputs:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :website, :as =&gt; :url %&gt;
+  &lt;%= f.input :email %&gt;
+  &lt;%= f.input :age, :hint =&gt; "This defaults to 'number' input based on field type" %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>Based on the attribute name, SimpleForm will generate <code>url</code> or <code>email</code> input types, and we can always set a specific type with the <code>:as</code> option. Numeric attributes will always be rendered as input type number.</p>
+<h3>Working with associations</h3>
+<p>SimpleForm adds a custom and straightforward method to render select tags for associations, called <code>association</code>. For now, consider our <code>User</code> belongs to a <code>Company</code>, and has and belongs to many <code>Roles</code>. Let&#8217;s go straight to the example:</p>
+<pre><code class="ruby">&lt;%= simple_form_for @user do |f| %&gt;
+  &lt;%= f.input :name %&gt;
+  &lt;%= f.association :company %&gt;
+  &lt;%= f.association :roles %&gt;
+  &lt;%= f.button :submit %&gt;
+&lt;% end -%&gt;
+</code></pre>
+<p>It will detect the association type and render a <code>select</code> tag for choosing the company, listing all companies in the database, and another <code>select</code> for roles, with <code>multiple</code> option enabled.</p>
+<p>SimpleForm also has some add-ons, letting us render associations as a collection of radios or check boxes. Using the same example:</p>
+<pre><code class="ruby">  f.association :company, :as =&gt; :radio
+  f.association :roles, :as =&gt; :check_boxes
+</code></pre>
+<p>Now we are rendering a collection of radios for choosing the <code>Company</code>, and another collection of check boxes for choosing <code>Roles</code>.</p>
+<h3>Configuration</h3>
+<p>SimpleForm lets us do some customizations by running its install generator:</p>
+<pre><code>rails generate simple_form:install
+
+# Output
+  create  config/initializers/simple_form.rb
+  create  config/locales/simple_form.en.yml
+  create  lib/templates/erb/scaffold/_form.html.erb
+</code></pre>
+<p>As we can see, running this generator will copy an initializer file, responsible for configuring SimpleForm; a locale file, to let us change some I18n messages; and a form template inside our lib dir. This template will be used instead of the default Rails scaffold form template, so it will create our form already using SimpleForm. Easy, right?</p>
+<p>Let&#8217;s take a look at some configuration options:</p>
+<ul>
+<li><strong>components</strong>: defines the components used by the form builder. We can remove any of them, change the order, or add new ones. Defaults to <code>[ :label, :input, :hint, :error ]</code>.</li>
+<li><strong>hint_tag</strong>: tag used for hints, defaults to <code>span</code>.</li>
+<li><strong>error_tag</strong>: tag used for errors, defaults to <code>span</code>.</li>
+<li><strong>wrapper_tag</strong>: tag used as wrapper to all inputs, defaults to <code>div</code></li>
+<li><strong>label_text</strong>: determines how the label text should be generated altogether with the required text. It must be a lambda/proc that receives both label and required texts. Defaults to <code>"required label"</code>.</li>
+</ul>
+<p>There are a lot more options available in the initializer file, such as default input size and priority countries for generating country selects. Also, the locale file lets us determine the required text and mark, or even the entire required html tag.</p>
+<h3>Internationalization</h3>
+<p>SimpleForm is ready for I18n, supporting <code>labels</code> and <code>hints</code>. In addition, it lets us set different content for each action, <code>new</code> and <code>edit</code>. Here is an example locale file:</p>
+<pre><code class="yml">en:
+  simple_form:
+    labels:
+      user:
+        username: 'User name'
+        password: 'Password'
+        edit:
+          username: 'Change user name'
+          password: 'Change password'
+    hints:
+      user:
+        username: 'User name to sign in.'
+        password: 'No special characters, please.'
+</code></pre>
+<p>Simple, right? If it does not find any specific translation using I18n for the <code>label</code>, it will fallback to <code>human_attribute_name</code>.</p>
+<h3>Here we go!</h3>
+<p>SimpleForm has much more to offer. We would like to invite you to take a <a href="http://github.com/plataformatec/simple_form" title="SimpleForm on Github">better look at the examples and possibilities</a>. Remember, SimpleForm aims to be flexible and powerful to help you easily build forms, without saying how you should create your markup.</p>
+<p>Also, feel free to explore the source code and extend SimpleForm even further. Since it&#8217;s based on components, creating a new component which moves the current hints to inside the input (using javascript or the new placehoder attribute in HTML 5), should be easy!</p>
+<p>It&#8217;s worth saying SimpleForm is Rails 3 compatible in the master branch. If you are using Rails 2.3.x, <a href="http://github.com/plataformatec/simple_form/tree/v1.0" title="SimpleForm for Rails 2.3.x">there is a v1.0 branch and version</a> that you might want to take a look.</p>
+<p>SimpleForm has been helping us a lot so far, we hope you enjoy it. Moreover, we would like to enjoy other tools that help your productivity day by day, please leave a comment and let us know, we would appreciate a lot!</p><p>The post <a href="/2010/06/simpleform-forms-made-easy/">SimpleForm: forms made easy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/06/simpleform-forms-made-easy/feed/</wfw:commentRss>
+			<slash:comments>46</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

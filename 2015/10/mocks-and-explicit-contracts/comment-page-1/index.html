@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Mocks and explicit contracts « Plataformatec Blog</title>
+		<meta name="description" content="Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.">
+		<meta name="robots" content="noindex, nofollow, max-image-preview:large">
+		<link rel="canonical" href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comments">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Mocks and explicit contracts « Plataformatec Blog">
+		<meta property="og:description" content="Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.">
+		<meta property="og:url" content="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comments">
+		<meta property="article:published_time" content="2015-10-14T15:44:42+00:00">
+		<meta property="article:modified_time" content="2019-11-21T19:44:44+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Mocks and explicit contracts « Plataformatec Blog">
+		<meta name="twitter:description" content="Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#article","name":"Mocks and explicit contracts « Plataformatec Blog","headline":"Mocks and explicit contracts","author":{"@id":"\/author\/josevalim\/#author"},"publisher":{"@id":"\/#organization"},"image":{"@type":"ImageObject","url":"\/wp-content\/uploads\/2014\/11\/subscribe-to-our-blog.png","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#articleImage","width":498,"height":36,"caption":"Subscribe to our blog"},"datePublished":"2015-10-14T12:44:42-03:00","dateModified":"2019-11-21T17:44:44-03:00","inLanguage":"en-US","commentCount":18,"mainEntityOfPage":{"@id":"\/2015\/10\/mocks-and-explicit-contracts\/#webpage"},"isPartOf":{"@id":"\/2015\/10\/mocks-and-explicit-contracts\/#webpage"},"articleSection":"English, contracts, mocks, tests"},{"@type":"BreadcrumbList","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2015\/#listItem"},{"@type":"ListItem","@id":"\/2015\/#listItem","position":2,"name":"2015","item":"\/2015\/","nextItem":"\/2015\/10\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2015\/10\/#listItem","position":3,"name":"October","item":"\/2015\/10\/","nextItem":"\/2015\/10\/mocks-and-explicit-contracts\/#listItem","previousItem":"\/2015\/#listItem"},{"@type":"ListItem","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#listItem","position":4,"name":"Mocks and explicit contracts","previousItem":"\/2015\/10\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/josevalim\/#author","url":"\/author\/josevalim\/","name":"José Valim","image":{"@type":"ImageObject","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/e837f6b7fd146ab16ed3d663476c063e?s=96&d=mm&r=pg","width":96,"height":96,"caption":"José Valim"}},{"@type":"WebPage","@id":"\/2015\/10\/mocks-and-explicit-contracts\/#webpage","url":"\/2015\/10\/mocks-and-explicit-contracts\/","name":"Mocks and explicit contracts « Plataformatec Blog","description":"Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2015\/10\/mocks-and-explicit-contracts\/#breadcrumblist"},"author":{"@id":"\/author\/josevalim\/#author"},"creator":{"@id":"\/author\/josevalim\/#author"},"datePublished":"2015-10-14T12:44:42-03:00","dateModified":"2019-11-21T17:44:44-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Mocks and explicit contracts Comments Feed" href="/2015/10/mocks-and-explicit-contracts/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/4914">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=4914">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2015%2F10%2Fmocks-and-explicit-contracts%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2015%2F10%2Fmocks-and-explicit-contracts%2F#038;format=xml">
+            </head>
+  <body class="post-template-default single single-post postid-4914 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2015/10/mocks-and-explicit-contracts/" rel="bookmark">Mocks and explicit contracts</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2015-10-14T12:44:42-03:00">Oct 14, 2015</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=4" title="Posts by José Valim">José Valim</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>UPDATE: Almost 2 years later we have released <a href="https://github.com/plataformatec/mox">a tiny library called Mox</a> for Elixir that follows the guidelines written in this article.</p>
+<p>A couple days ago I expressed my thoughts regarding mocks on Twitter:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en">Mocks/stubs do not remove the need to define an explicit interface between your components (modules, classes, whatever). [1/4]</p>
+<p>— José Valim (@josevalim) <a href="https://twitter.com/josevalim/status/641615663061159936">September 9, 2015</a></p>
+</blockquote>
+<p><script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>The blame is not on mocks though, they are actually a useful technique for testing. However our test tools often makes it very easy to abuse mocks and the goal of this post is to provide better guidelines on using them.</p>
+<h2>What are mocks?</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Mock_object">wikipedia definition</a> is excellent: mocks are simulated entities that mimic the behavior of real entities in controlled ways. I will emphasize this later on but I always consider &#8220;mock&#8221; to be a noun, never a verb.</p>
+<h2>Case study: external APIs</h2>
+<p>Let&#8217;s see a common practical example: external APIs.</p>
+<p>Imagine you want to consume the Twitter API in your web application and you are using something like Phoenix or Rails. At some point, a web request will come-in, which will be dispatched to a controller which will invoke the external API. Let&#8217;s imagining this is happening directly from the controller:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    MyApp.TwitterClient.get_username(username)
+    # ...
+  end
+end
+</code></pre>
+<p>The code may work as expected but, when it comes to make the tests pass, a common practice is to just go ahead and <em>mock</em> (warning! mock as a verb!) the underlying <code>HTTPClient</code> used by <code>MyApp.TwitterClient</code>:</p>
+<pre><code class="elixir">mock(HTTPClient, :get, to_return: %{..., "username" =&gt; "josevalim", ...})
+</code></pre>
+<p>You proceed to use the same technique in a couple other places and your unit and integration test suites pass. Time to move on?</p>
+<p>Not so fast. The whole problem with mocking the <code>HTTPClient</code> is that you just coupled your application to that particular <code>HTTPClient</code>. For example, if you decide to use a new and faster HTTP client, a good part of your integration test suite will now fail because it all depends on mocking <code>HTTPClient</code> itself, <em>even when the application behaviour is the same</em>. In other words, the mechanics changed, the behaviour is the same, but your tests fail anyway. That&#8217;s a bad sign.</p>
+<p>Furthermore, because mocks like the one above change modules <em>globally</em>, they are particularly aggravating in Elixir as changing global values means you can no longer run that part of your test suite concurrently.</p>
+<h3>The solution</h3>
+<p>Instead of mocking the whole <code>HTTPClient</code>, we could replace the Twitter client (<code>MyApp.TwitterClient</code>) with something else during tests. Let&#8217;s explore how the solution would look like in Elixir.</p>
+<p>In Elixir, all applications ship with configuration files and a mechanism to read them. Let&#8217;s use this mechanism to be able to configure the Twitter client for different environments. The controller code should now look like this:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    twitter_api().get_username(username)
+    # ...
+  end
+
+  defp twitter_api do
+    Application.get_env(:my_app, :twitter_api)
+  end
+end
+</code></pre>
+<p>And now we can configure it per environment as:</p>
+<pre><code class="elixir"># In config/dev.exs
+config :my_app, :twitter_api, MyApp.Twitter.Sandbox
+
+# In config/test.exs
+config :my_app, :twitter_api, MyApp.Twitter.InMemory
+
+# In config/prod.exs
+config :my_app, :twitter_api, MyApp.Twitter.HTTPClient
+</code></pre>
+<p>This way we can choose the best strategy to retrieve data from Twitter per environment. The sandbox one is useful if Twitter provides some sort of sandbox for development. The <code>HTTPClient</code> is our previous implementation while the in memory avoids HTTP requests altogether, by simply loading and keeping data in memory. Its implementation could be defined in your test files and even look like:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.InMemory do
+  def get_username("josevalim") do
+    %MyApp.Twitter.User{
+      username: "josevalim"
+    }
+  end
+end
+</code></pre>
+<p>which is as clean and simple as you can get. At the end of the day, <strong><code>MyApp.Twitter.InMemory</code> is a mock</strong> (mock as a noun, yay!), except you didn&#8217;t need any fancy library to define one! The dependency on <code>HTTPClient</code> is gone as well.</p>
+<h3>The need for explicit contracts</h3>
+<p>Because a mock is meant to replace a real entity, such replacement can only be effective if we explicitly define how the real entity should behave. Failing this, you will find yourself in the situation where the mock entity grows more and more complex with time, increasing the coupling between the components being tested, but you likely won&#8217;t ever notice it because the contract was never explicit.</p>
+<p>Furthermore, we have already defined three implementations of the Twitter API, so we better make it all explicit. In Elixir we do so by defining a behaviour with callback functions:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter do
+  @doc "..."
+  @callback get_username(username :: String.t) :: %MyApp.Twitter.User{}
+  @doc "..."
+  @callback followers_for(username :: String.t) :: [%MyApp.Twitter.User{}]
+end
+</code></pre>
+<p>Now add <code>@behaviour MyApp.Twitter</code> on top of every module that implements the behaviour and Elixir will help you provide the expected API.</p>
+<p>It is interesting to note we rely on such behaviours <em>all the time</em> in Elixir: when you are using Plug, when talking to a repository in Ecto, when testing Phoenix channels, etc.</p>
+<h3>Testing the boundaries</h3>
+<p>Previously, because we didn&#8217;t have a explicit contract, our application boundaries looked like this:</p>
+<pre><code>[MyApp] -&gt; [HTTP Client] -&gt; [Twitter API]
+</code></pre>
+<p>That&#8217;s why changing the <code>HTTPClient</code> could break your integration tests. Now our app depends on a contract and only one implementation of such contract rely on HTTP:</p>
+<pre><code>[MyApp] -&gt; [MyApp.Twitter (contract)]
+[MyApp.Twitter.HTTP (contract impl)] -&gt; [HTTPClient] -&gt; [Twitter API]
+</code></pre>
+<p>Our application tests are now isolated from both the <code>HTTPClient</code> and the Twitter API. However, how can we make sure the system actually works as expected?</p>
+<p>Of the challenges in testing large systems is exactly in finding the proper boundaries. Define too many boundaries and you have too many moving parts. Furthermore, <strong>by writing tests that rely exclusively on mocks, your tests become less reliable</strong>.</p>
+<p>My general guideline is: for each test using a mock, you must have an integration test covering the usage of that mock. Without the integration test, there is no guarantee the system actually works when all pieces are put together. For example, some projects would use mocks to avoid interacting with the database during tests but in doing so, they would make their suites more fragile. These is one of the scenarios where a project could have 100% test coverage but still reveal obvious failures when put in production.</p>
+<p>By requiring the presence of integration tests, you can guarantee the different components work as expected when put together. Besides, the requirement of writing an integration test in itself is enough to make some teams evaluate if they should be using a mock in the first place, which is always a good question to ask ourselves!</p>
+<p>Therefore, in order to fully test our Twitter usage, we need at least two types of tests. Unit tests for <code>MyApp.Twitter.HTTP</code> and an integration test where <code>MyApp.Twitter.HTTP</code>&nbsp; is used as an adapter.</p>
+<p>Since depending on external APIs can be unreliably, we need to run those tests only when needed in development and configure them as necessary in our build system. The <code>@tag</code> system in ExUnit, Elixir&#8217;s test library, provides conveniences to help us with that. For the unit tests, one could do:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.HTTPTest do
+  use ExUnit.Case, async: true
+
+  # All tests will ping the twitter API
+  @moduletag :twitter_api
+
+  # Write your tests here
+end
+</code></pre>
+<p>In your test helper, you want to exclude the Twitter API test by default:</p>
+<pre><code class="elixir">ExUnit.configure exclude: [:twitter_api]
+</code></pre>
+<p>But you can still run the whole suite with the tests tagged <code>:twitter_api</code> if desired:</p>
+<pre><code class="bash">mix test --include twitter_api
+</code></pre>
+<p>Or run only the tagged tests:</p>
+<pre><code class="bash">mix test --only twitter_api
+</code></pre>
+<p>Although I prefer this approach, external conditions like rate limiting may make such solution impractical. In such cases, we may actually need a fake HTTPClient. This is fine as long as we follow the guidelines below:</p>
+<ol>
+<li>If you change your HTTP client, your application suite won&#8217;t break but only the tests for <code>MyApp.Twitter.HTTP</code>
+</li>
+<li>You won&#8217;t mock (warning! mock as a verb) your HTTP client. Instead, you will pass it as a dependency via configuration, similar to how we did for the Twitter API</li>
+</ol>
+<p>Alternatively, you may avoid mocking the HTTP client by running a dummy webserver that emulates the Twitter API. <a href="https://github.com/pspdfkit-labs/bypass">bypass</a> is one of many projects that can help with that. Those are all options you should discuss with your team.</p>
+<h2>Other notes</h2>
+<p>I would like to finish this article by bringing up some common concerns and comments whenever the mock discussion comes up.</p>
+<h3>Making the code &#8220;testable&#8221;</h3>
+<p>Quoting from <a href="https://groups.google.com/d/msg/elixir-lang-talk/oYXyvEUi64Y/_sNnsoirCQAJ">elixir-talk mailing list</a>:</p>
+<blockquote><p>So the proposed solution is to change production code to be &#8220;testable&#8221; and making production code to call Application configuration for every function call? This doesn&#8217;t seem like a good option as it&#8217;s including a unnecessary overhead to make something &#8220;testable&#8221;.</p></blockquote>
+<p>I&#8217;d argue it is not about making the code &#8220;testable&#8221;, it is about improving the design of your code.</p>
+<p>A test is a consumer of your API like any other code you write. One of the ideas behind TDD is that tests are code and no different from code. If you are saying &#8220;I don&#8217;t want to make my code testable&#8221;, you are saying &#8220;I don&#8217;t want to decouple some modules&#8221; or &#8220;I don&#8217;t want to think about the contract behind these components&#8221;.</p>
+<p>Just to clarify, there is nothing wrong with &#8220;not wanting to decouple some modules&#8221;. For example, we invoke modules such as <code>URI</code> and <code>Enum</code> from Elixir&#8217;s standard library all the time and we don&#8217;t want to hide those behind contracts. But if we are talking about something as complex as an external API, defining an explicit contract and making the contract implementation configurable is going to do your code wonders and make it easier to manage its complexity.</p>
+<p>Finally, the overhead is also minimum. Application configuration in Elixir is stored in ETS tables which means they are directly read from memory.</p>
+<h3>Mocks as locals</h3>
+<p>Although we have used the application configuration for solving the external API issue, sometimes it is easier to just pass the dependency as argument. Imagine this example in Elixir where some function may perform heavy work which you want to isolate in tests:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function do
+    # ...
+    SomeDependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>You could remove the dependency by passing it as an argument, which can be done in multiple ways. If your dependency surface is tiny, an anonymous function will suffice:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(heavy_work \\ &amp;SomeDependency.heavy_work/2) do
+    # ...
+    heavy_work.(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>And in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  heavy_work = fn _, _ -&gt;
+    # Simulate heavy work by sending self() a message
+    send self(), :heavy_work
+  end
+
+  MyModule.my_function(heavy_work)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Or define the contract, as explained in the previous section of this post, and pass a module in:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(dependency \\ SomeDependency) do
+    # ...
+    dependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>Now in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  # Simulate heavy work by sending self() a message
+  defmodule TestDependency do
+    def heavy_work(_arg1, _arg2) do
+      send self(), :heavy_work
+    end
+  end
+
+  MyModule.my_function(TestDependency)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Finally, you could also make the dependency a data structure and define the contract with <a href="http://elixir-lang.org/getting-started/protocols.html">a protocol</a>.</p>
+<p>In fact, passing the dependency as argument is much simpler and should be preferred over relying on configuration files and <code>Application.get_env/3</code>. When not possible, the configuration system is a good fallback.</p>
+<h3>Mocks as nouns</h3>
+<p>Another way to think about mocks is to treat them as nouns. You shouldn&#8217;t mock an API (verb), instead you create a mock (noun) that implements a given API.</p>
+<p>Most of the bad uses of mocks come when they are used as verbs. That&#8217;s because, when you use mock as a verb, you are changing something that already exists, and often those changes are global. For example, when we say we will mock the <code>SomeDependency</code> module:</p>
+<pre><code class="elixir">mock(SomeDependency, :heavy_work, to_return: true)
+</code></pre>
+<p>When you use mock as a noun, you need to create something new, and by definition it cannot be the <code>SomeDependency</code> module because it already exists. So &#8220;mock&#8221; is not an action (verb), it is something you pass around (noun). I&#8217;ve found the noun-verb guideline to be very helpful when spotting bad use of mocks. Your mileage may vary.</p>
+<h3>Mock libraries</h3>
+<p>With all that said, should you discard your mock library?</p>
+<p>It depends. If your mock library uses mocks to replace global entities, to change static methods in OO or to replace modules in functional languages, you should definitely consider how the library is being used in your codebase and potentially discard it.</p>
+<p>However there are mock libraries that does not promote any of the &#8220;anti-patterns&#8221; above and are mostly conveniences to define &#8220;mock objects&#8221; or &#8220;mock modules&#8221; that you would pass to the system under the test. Those libraries adhere to our &#8220;mocks as nouns&#8221; rule and can provide handy features to developers.</p>
+<h2>Summing up</h2>
+<p>Part of testing your system is to find the proper contracts and boundaries between components. If you follow closely a guideline that mocks will be used only if you define a explicit contract, it will:</p>
+<ol>
+<li>protect you from overmocking as it will push you to define contracts for the parts of your system that matters&nbsp;</li>
+<li>help you manage the complexity between different components. Every time you need a new function from your dependency, you are required to add it to the contract (a new <code>@callback</code> in our Elixir code). If the list of <code>@callback</code>s are getting bigger and bigger, it will be noticeable as the knowledge is in one place and you will be able to act on it</li>
+<li>make it easier to test your system because it will push you to isolate the interaction between complex components</li>
+</ol>
+<p>Defining contracts allows us to see the complexity in our dependencies. Your application will always have complexity, so always make it as explicit as you can.</p>
+<div style="padding: 40px 0 20px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog"></a></div>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/contracts/" rel="tag">contracts</a>, <a href="/tag/mocks/" rel="tag">mocks</a>, <a href="/tag/tests/" rel="tag">tests</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2015/10/mocks-and-explicit-contracts/#comments"><span class="dsq-postid" data-dsqidentifier="4914 http://blog.plataformatec.com.br/?p=4914">18 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		18 responses to &#8220;Mocks and explicit contracts&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1518">
+				<div id="div-comment-1518" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/25a07538df2545604409a6216b4a3bc8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/25a07538df2545604409a6216b4a3bc8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">pcreux</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1518">October 14, 2015 at 2:13 pm</a>		</div>
+
+		<p>Hey José,</p>
+<p>Thanks for sharing this. In my experience, injecting dependencies make testing way easier an cleaner. As long as your dependency has a simple API, it&#8217;s really easy to swap it for a mock in test environment. I rely on this technique heavily for service objects in the Rails world. For instance:</p>
+<p><code><br>
+class GetReport<br>
+  include Virtus.model</code></p>
+<p>  attribute :api_key, String<br>
+  attribute :newsletter_uuid, String</p>
+<p>  attribute :mandrill_client, Object, default: proc do<br>
+    Rails.env.test? ? MandrillClientMock.new : MandrillClient.new<br>
+  end<br>
+end</p>
+<p></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1519">
+				<div id="div-comment-1519" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/bf0fff8fae81e3c672f03e000bb7d307?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/bf0fff8fae81e3c672f03e000bb7d307?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Dexter Miguel</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1519">October 14, 2015 at 2:21 pm</a>		</div>
+
+		<p>Great article. This is useful in all languages, not just Elixir. Thanks.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1520">
+				<div id="div-comment-1520" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1520">October 14, 2015 at 2:21 pm</a>		</div>
+
+		<p>+1. In the example above you are creating a mock, you are not mocking an existing entity (noun, not a verb). However, I wouldn&#8217;t use &#8220;Rails.env.test?&#8221; in my code. I&#8217;d use the Rails configuration and read &#8220;Rails.config.mandrill_client&#8221; in the attribute. The configuration would be set to the mock in the config/test.rb (or in the test helper).</p>
+<p>You are absolutely right when you said &#8220;as long as your dependency has a simple API&#8221;. The whole idea behind explicit contracts is to help you guarantee the API continues simple in the long term, as it will be explicitly defined in a single place. It is a pity Ruby does not provide anything for this out of the box but there are certainly packages that could help with that.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1521">
+				<div id="div-comment-1521" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/25a07538df2545604409a6216b4a3bc8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/25a07538df2545604409a6216b4a3bc8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">pcreux</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1521">October 14, 2015 at 3:30 pm</a>		</div>
+
+		<p>+1 to not use `Rails.env.test?` but use the Rails config instead. 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1522">
+				<div id="div-comment-1522" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/c43de925cb5b3b0fda6046ceac6d8611?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/c43de925cb5b3b0fda6046ceac6d8611?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">rcillo</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1522">October 14, 2015 at 10:39 pm</a>		</div>
+
+		<p>I would like to know if do you usually add `@spec` to function definitions so to make contracts stricter. I feel like it would produce even safer mock tests.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1523">
+				<div id="div-comment-1523" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/eb2a506c1cc435c6c367f3eb6fcf561b?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/eb2a506c1cc435c6c367f3eb6fcf561b?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">samueltonini</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1523">October 15, 2015 at 3:11 am</a>		</div>
+
+		<p>Great article! Thanks for writing it. 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1524">
+				<div id="div-comment-1524" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1524">October 15, 2015 at 8:35 am</a>		</div>
+
+		<p>You could but they are usually the same as the `@callback` so there is no need. Unless they are meant to accept only a subset of the callback. So you could use `@spec` to restrict it further.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1525">
+				<div id="div-comment-1525" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/9306d7ec2b42792e2067c685a521b64f?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/9306d7ec2b42792e2067c685a521b64f?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">X4lldux</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1525">October 15, 2015 at 4:50 pm</a>		</div>
+
+		<p>And even when someone is still worried about the overhead of calling to a function which is calling to Application which is calling to ETS, you can always use macros like `defmacro twitter_api, do: unquote( Application.get_env :my_app, :twitter_api )` .</p>
+<p>@josevalim:disqus can you name some of those &#8220;good&#8221; not_anti_pattern_mock libraries?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1526">
+				<div id="div-comment-1526" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1526">October 15, 2015 at 4:55 pm</a>		</div>
+
+		<p>I personally don&#8217;t use any. With Elixir it is easy enough to create a module whenever you want to track stuff.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1527">
+				<div id="div-comment-1527" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/833fbd3f58a8ebbeb43756e8634334ed?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/833fbd3f58a8ebbeb43756e8634334ed?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.firsthand.ca/" class="url" rel="ugc external nofollow">Nicholas Henry</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1527">October 16, 2015 at 5:29 pm</a>		</div>
+
+		<p>From what I have observed, the current discussion around &#8220;mocks&#8221; seems to be isolating ourselves from inconvenient dependencies such as external API&#8217;s. Does anyone have any opinions regarding using mocks as a discovery tool for TDD (aka London-style, GOOS)? Even better any links? It seems that José is touching on some issues addressed in the paper &#8220;Mock Roles, not Objects&#8221; such as only mock what you own (i.e don&#8217;t mock third-party libraries). Cheers!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1528">
+				<div id="div-comment-1528" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/bb9333f2099396cbe6abee7de56475cf?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/bb9333f2099396cbe6abee7de56475cf?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Pedro Assumpcao</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1528">October 23, 2015 at 6:44 pm</a>		</div>
+
+		<p>Great article! Thanks.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1529">
+				<div id="div-comment-1529" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/071dfc99240ae231c94093899c223b36?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/071dfc99240ae231c94093899c223b36?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Brenton Annan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1529">November 8, 2015 at 10:30 pm</a>		</div>
+
+		<p>Hey José,</p>
+<p>Great article, just what I&#8217;ve been looking for &#8211; I&#8217;d felt a bit strange about using dependency inject for testing, but your thoughts on tests being an equal client of code make a lot of sense.</p>
+<p>Is it possible to use this sort of methodology to build mocks when `use`ing  a module, e.g. when testing that callbacks are working correctly in `HTTPoison.Base` ( <a href="https://github.com/edgurgel/httpoison/blob/master/lib/httpoison/base.ex" rel="nofollow ugc">https://github.com/edgurgel/httpoison/blob/master/lib/httpoison/base.ex</a> ), as I&#8217;d like to do in this gist: <a href="https://gist.github.com/brentonannan/5f3150b99f4f73973bc0" rel="nofollow ugc">https://gist.github.com/brentonannan/5f3150b99f4f73973bc0</a> ?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1531">
+				<div id="div-comment-1531" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/31bf5259b72ea8b7c9b09bea9ab83cc8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/31bf5259b72ea8b7c9b09bea9ab83cc8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">TheFirstAvenger</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1531">December 24, 2015 at 3:26 pm</a>		</div>
+
+		<p>If I wanted to use a different auth plug for test, and I defined the module in my config, how would I go about using that plug in a phoenix router? My first attempt was this, which failed:<br>
+<code>  import Application.get_env(:server_commander, :auth_plug)</code></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1532">
+				<div id="div-comment-1532" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1532">December 24, 2015 at 9:31 pm</a>		</div>
+
+		<p>That&#8217;s because import works at expansion/compile time and the Application.get_env is performed at runtime. You won&#8217;t be able to use import. You will need to use the `module.function(args)` syntax.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1533">
+				<div id="div-comment-1533" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/31bf5259b72ea8b7c9b09bea9ab83cc8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/31bf5259b72ea8b7c9b09bea9ab83cc8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">TheFirstAvenger</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1533">December 31, 2015 at 2:37 pm</a>		</div>
+
+		<p>How exactly would the pipeline definition look in the Phoenix Router. For example, I have the following two pipelines defined which functioned correctly before adding in this test mock config:</p>
+<p><code>  pipeline :secure do<br>
+    plug :fetch_access_token<br>
+    plug :authenticate_user<br>
+    plug :fetch_user<br>
+    plug :validate_permission, [level: :user, action: :edit]<br>
+    plug :validate_permission, [level: :user, action: :view]<br>
+  end</code></p>
+<p>  pipeline :admin_edit do<br>
+    plug :validate_permission, [level: :admin, action: :edit]<br>
+  end</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1534">
+				<div id="div-comment-1534" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/5e51025069b220f088a79559dc22a519?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/5e51025069b220f088a79559dc22a519?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Andrew Bruce</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1534">January 5, 2016 at 7:47 am</a>		</div>
+
+		<p>Hi José,</p>
+<p>You mention using data structures and defining protocols. On day one of learning Elixir this was what I reached for, but ran into a problem loading the fake implementation in test.</p>
+<p>I created my project with &#8216;mix new&#8217;. It has a protocol named <code>RemoteCaller</code>, and I&#8217;m passing in a <code>%FakeRemoteCaller{}</code> to a function. That fake looks like this:</p>
+<p><code><br>
+defmodule FakeRpcCaller do<br>
+  defstruct []<br>
+end</code></p>
+<p>defimpl RemoteCaller, for: FakeRpcCaller do<br>
+  def call(node, mod, fun, args) do<br>
+    [0, [:something], nil]<br>
+  end<br>
+end<br>
+</p>
+<p>The test is doing <code>Code.load_file("test/fake_remote_caller.ex")</code>. With fake_remote_caller.ex (or .exs) in the test/ dir, I get:</p>
+<p>** (Protocol.UndefinedError) protocol RemoteCaller not implemented for %FakeRpcCaller{}</p>
+<p>However, when it&#8217;s in the lib/ dir, all works fine. What&#8217;s going on here? Thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1535">
+				<div id="div-comment-1535" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1535">January 5, 2016 at 9:22 am</a>		</div>
+
+		<p>Excellent question! I am assuming you are using Elixir v1.2 as since this version Elixir consolidate protocols by default during compilation, which means that any protocol defined during tests won&#8217;t be part of the consolidation. You have two options here.</p>
+<p>1. The first is to include &#8220;test/support&#8221; in your compilation paths for the test environment. Phoenix for examples does it for new applications: <a href="https://github.com/phoenixframework/phoenix/blob/master/installer/templates/new/mix.exs#L30-L31" rel="nofollow ugc">https://github.com/phoenixframework/phoenix/blob/master/installer/templates/new/mix.exs#L30-L31</a></p>
+<p>2. The second option is to disable protocol consolidation for tests. Just set &#8220;consolidate_protocols: Mix.env != :test&#8221; in def project in your mix.exs.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1536">
+				<div id="div-comment-1536" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/5e51025069b220f088a79559dc22a519?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/5e51025069b220f088a79559dc22a519?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Andrew Bruce</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/10/mocks-and-explicit-contracts/comment-page-1/#comment-1536">January 5, 2016 at 10:10 am</a>		</div>
+
+		<p>Great, I chose (1), as it&#8217;s a bit more explicit. This also removed the need for the <code>Code.load_file</code>. Thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2015/09/rubyconf-br-2015-te-esperamos-la/" rel="prev">RubyConf BR 2015, te esperamos lá</a>          <a href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/" rel="next">Ecto v1.1 released and Ecto v2.0 plans</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+                <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

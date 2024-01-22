@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>eager load « Plataformatec Blog</title>
+	<atom:link href="/tag/eager-load/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 28 Aug 2012 21:01:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Eager loading for greater good</title>
+		<link>/2012/08/eager-loading-for-greater-good/</link>
+					<comments>/2012/08/eager-loading-for-greater-good/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 28 Aug 2012 21:01:56 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[eager load]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=3043</guid>
+
+					<description><![CDATA[<p>A couple weeks ago, Aaron Patterson (aka @tenderlove) wrote about getting rid of config.threadsafe! on Rails 4. When discussing multi-process and multi-threaded servers in production, one important aspect of the discussion that came up in the blog post was code loading. This blog post is about which code loading strategies exist in a Rails application, ... <a class="read-more-link" href="/2012/08/eager-loading-for-greater-good/">»</a></p>
+<p>The post <a href="/2012/08/eager-loading-for-greater-good/">Eager loading for greater good</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A couple weeks ago, Aaron Patterson (aka <a href="https://twitter.com/tenderlove">@tenderlove</a>) <a href="http://tenderlovemaking.com/2012/06/18/removing-config-threadsafe.html">wrote about getting rid of <code>config.threadsafe!</code> on Rails 4</a>. When discussing multi-process and multi-threaded servers in production, one important aspect of the discussion that came up in the blog post was code loading.</p>
+<p>This blog post is about which code loading strategies exist in a Rails application, how they affect multi-process and multi-threaded servers, and how to build libraries that will behave well in both environments.</p>
+<h3>Require</h3>
+<p>The most common form of loading code in Ruby is via requires.</p>
+<pre lang="ruby">
+require "some/library"
+</pre>
+<p>Some libraries work great by simply using requires, but as they grow, some of them tend to rely on autoload techniques to avoid loading all up-front. <code>autoload</code> is particularly important on Rails applications because it helps boot time to stay low in development and test environments, since we will load modules as we need them.</p>
+<h3>Ruby autoload</h3>
+<p>One of the strategies used by Rails and libraries is Ruby autoload:</p>
+<pre lang="ruby">
+module Foo
+  autoload :Bar, "path/to/bar"
+end
+</pre>
+<p>Now, the first time <code>Foo::Bar</code> is accessed, it will be automatically loaded. The issue with this approach is that it is not thread-safe, except for latest JRuby versions (since 1.7) and Ruby master (2.0).</p>
+<p>This means that eager loading these modules on boot (i.e. loading it all up-front) is essential for multi-threaded production servers, otherwise it could lead to scenarios where your application tries to access a module that does not exist yet when it just booted.</p>
+<p>In multi-process servers, we may or may not want to eager load them. For instance, if your web server uses fork to handle each request (like Unicorn, Passenger), loading them up-front will become more important as we move towards Ruby 2.0 which will provide copy-on-write semantics. In such cases, if we load <code>Foo::Bar</code> on boot, we will have one copy of <code>Foo::Bar</code> shared between all processes otherwise each process will end up loading its own copy of <code>Foo::Bar</code> possibly leading to higher memory usage.</p>
+<p>The downside of eager loading is that we may eventually load code that your application never uses, increasing memory usage. This not a problem if your server uses fork or threads, it is exactly what we want (share and load the most we can), but in case you server doesn&#8217;t (for example, Thin) nothing bad is going to happen.</p>
+<h3>Rails autoload</h3>
+<p>Another strategy used to load code is the one provided by <code>ActiveSupport::Dependencies</code>. In this mode, you don&#8217;t need to specify which module to load and its file, but instead Rails tracks a series of directories and tries to load missing constants based on it.</p>
+<p>For instance, when you first access the constant <code>User</code>, Rails tries to find it in many directories, including <code>app/models</code> in your application. If a <code>user.rb</code> exists in it, it is loaded.</p>
+<p>This approach is not thread safe, so regardless of using Ruby master or JRuby for a threaded server, it needs to be eager loaded. For multi-process servers, the trade-offs are the same as in the previous section.</p>
+<h3>So, eager loading</h3>
+<p>In other words, if you are using Unicorn, Puma, Passenger or any JRuby server, you probably want to eager load. Geez, so it basically means that most of us probably do want to eager load.</p>
+<p>Although Rails has been taking care of eager loading its frameworks (defined using Ruby autoload) and its application and engines (defined using Rails autoload), the Rails ecosystem has not taken care of eager loading its libraries. This blame is shared with Rails, which could have provided better mechanisms to do so.</p>
+<p>In order to better understand the problem, let&#8217;s take a template engine like HAML as an example. If the template engine uses Ruby autoload and it is not eager loaded, one of these things will happen:</p>
+<ol>
+<li>
+<p>On multi-threaded servers, it won&#8217;t be thread-safe depending on the Ruby version, leading to crashes on the first requests;</p>
+</li>
+<li>
+<p>On multi-process servers with fork, HAML will have to be loaded on every request, unnecessarily taking response time and memory on each process instance;</p>
+</li>
+<li>
+<p>On multi-process servers without fork, it will be loaded when its needed the first time, without extra-hassle;</p>
+</li>
+</ol>
+<p>To avoid problems with 1) and 2), Rails 4 will provide tools and mechanisms to make it easier for libraries to eager load code.</p>
+<p>First, Rails 4 will ship with a <code>config.eager_load</code> option. Today, eager loading an application is coupled with the <code>config.cache_classes</code> configuration. This means that every time we cache classes, we eager load the app. This is not necessarily the best configuration. For example, in the test environment, an application could benefit by lazily loading the application when running a single test file.</p>
+<p>Second, Rails will include a <code>config.eager_load_namespaces</code> option to allow libraries to register namespaces that Rails should eager load. For instance, for Rails 4, <a href="https://github.com/plataformatec/simple_form">Simple Form</a> will probably execute:</p>
+<pre lang="ruby">
+config.eager_load_namespaces << SimpleForm
+</pre>
+<p>Rails will invoke <code>eager_load!</code> on all objects in the <code>config.eager_load_namespaces</code> list whenever <code>config.eager_load</code> is set to true. For Simple Form, eager loading will load inputs, form builder and others on boot, instead of loading when they are first used in production.</p>
+<p>The idea of registering namespaces (and not blocks) is that a user should be able to remove a namespace from the list if it is causing problems or if they don't really need to eager load it.</p>
+<p>Rails engines and applications will be automatically added to <code>config.eager_load_namespaces</code>. This is because engines and applications rely on the Rails autoload for everything inside the <code>app</code> directory, which is not thread-safe and should always run on production.</p>
+<p>As an extra, Rails will also provide a convenience module called <code>ActiveSupport::Autoload</code> to make it easier to define which modules are auto and eager loaded. We'll see how to use it next.</p>
+<h3>The recipe</h3>
+<p>In order to make your libraries eager load ready, here is an easy recipe:</p>
+<p>1) Don't worry about <code>app</code>. Everything in <code>app</code> is automatically taken care by Rails applications and engines since they are always added to <code>config.eager_load_namespaces</code>;</p>
+<p>2) If you only use <code>require</code> inside <code>lib</code>, you are good to go! This is the recommended for Rails applications and small libraries. However, if your library is considerably big, you may want to use Ruby autoload (next step) to avoid loading your library up-front on boot (which affects rake tasks, development, etc).</p>
+<p>3) If you are using autoload in <code>lib</code>, you need to eager load your code. In order to do that, you can use <code>ActiveSupport::Autoload</code> to annotate which modules to eager load. For example, here is the <code>SimpleForm</code> module before being eager load ready:</p>
+<pre lang="ruby">
+module SimpleForm
+  autoload :Components,        'simple_form/components'
+  autoload :ErrorNotification, 'simple_form/error_notification'
+  autoload :FormBuilder,       'simple_form/form_builder'
+  autoload :Helpers,           'simple_form/helpers'
+  autoload :I18nCache,         'simple_form/i18n_cache'
+  autoload :Inputs,            'simple_form/inputs'
+  autoload :MapType,           'simple_form/map_type'
+  autoload :Wrappers,          'simple_form/wrappers'
+end
+</pre>
+<p>And now eager load ready:</p>
+<pre lang="ruby">
+module SimpleForm
+  extend ActiveSupport::Autoload
+  
+  # Helpers are modules that are included on inputs.
+  # Usually we don't need to worry about eager loading
+  # modules because we will usually eager load a class
+  # that uses the module.
+  autoload :Helpers
+  
+  # Wrappers are loaded on boot, it is part of Simple Form
+  # configuration API, so no need to worry about them.
+  autoload :Wrappers
+  
+  # We need to eager load these otherwise they will
+  # be rendered the first time just when a form is
+  # first rendered.
+  eager_autoload do
+    # Notice ActiveSupport::Autoload allows us to skip
+    # the file name as it guesses it from the module.
+    autoload :Components
+    autoload :ErrorNotification
+    autoload :FormBuilder
+    autoload :I18nCache
+    autoload :Inputs
+    autoload :MapType
+  end
+  
+  # ActiveSupport::Autoload automatically defines
+  # an eager_load! method. In this case, we are
+  # extending the method to also eager load the
+  # inputs and components inside Simple Form.
+  def self.eager_load!
+    super
+    SimpleForm::Inputs.eager_load!
+    SimpleForm::Components.eager_load!
+  end
+end
+</pre>
+<p>The comments above explain part of the decision process taken in choosing if a module should be eager loaded or not. To be clear, the question you should be asking is: "if I don't eager load this module, when will it be autoloaded"? If the answer is: "during a request", you have to eager load it.</p>
+<p>This is the reason we don't need to eager load something like <code>ActionController::Base</code>. Because Rails already eager loads your models, controllers, etc and if you are actually using Action Controller, you will have a controller inheriting from <code>ActionController::Base</code> which then forces it to be loaded on boot.</p>
+<p>Similar reasoning applies to most of Active Model modules. There is no need to eager load <code>ActiveModel::Validations</code> because if an application is using it, it will load a framework or a model that actually requires it on boot. You will find that this reasoning will probably apply to most modules in your library.</p>
+<p>After defining your eager loads, all you need to do is to define a Railtie and include your eager load namespace in it:</p>
+<pre lang="ruby">
+module SimpleForm
+  class Railtie < Rails::Railtie
+    config.eager_load_namespaces << SimpleForm
+  end
+end
+</pre>
+<h3>Summing up</h3>
+<p>Although Ruby is moving to a direction where autoload is threadsafe, which makes eager load not a requirement, improvements to the language, garbage collectors and web-servers make eager load a "nice to have" feature.</p>
+<p>Today, it is very likely that you want to eager load the majority of your code when deploying applications to production. Although Rails has always been eager load friendly, the majority of the tools in the ecosystem are not. Rails 4 will change this panorama by not only giving flexible configuration options to app developers but also convenient abstraction for library developers.</p>
+<p>The general recommendation is to use <code>require</code> to load code inside the <code>lib</code> directory if the project is small. Engines and applications do not need to worry about the <code>app</code> directory, since it is automatically taken care by Rails.</p>
+<p>The more complex libraries probably already use autoload in the <code>lib</code> directory to avoid loading unnecessary amount of code in development. In such cases they need to provide custom <code>eager_load!</code> instructions for productions environment, which can be done with the help of the recipe above and Rails modules.</p>
+<p>This blog post ended up too long but the subject is important and should be considered with care by the authors who maintain the most used libraries out there. Cheers to them!</p><p>The post <a href="/2012/08/eager-loading-for-greater-good/">Eager loading for greater good</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/08/eager-loading-for-greater-good/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

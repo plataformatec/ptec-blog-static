@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: CI JOE, can you please watch my windows?	</title>
+	<atom:link href="/2010/11/cijoe-can-you-please-watch-my-windows/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/11/cijoe-can-you-please-watch-my-windows/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 28 Sep 2016 13:31:38 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Philippe Creux		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1047</link>
+
+		<dc:creator><![CDATA[Philippe Creux]]></dc:creator>
+		<pubDate>Tue, 23 Nov 2010 19:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1047</guid>
+
+					<description><![CDATA[We&#039;ve been using TeamCity for a while. It comes with custom formatters for RSpec and Cucumber which allows it to display the number of test passed / failed / pending while running the tests. You get alerted as soon as one test fails. You can also see each test duration and all kind of metrics which helps... sometimes. :)
+
+However, TeamCity does not provide autobranching of git repository. Since we create a topic branch for every feature / bug / refactoring we do, we want each branch to be green before we code review them.
+
+The only CI server with auto-branching we found was Integrity. It&#039;s pretty much like CI Joe. It&#039;s very simple, it&#039;s also quite buggy but we really missed all the metrics (duration / code coverage / fog results...)
+
+We decided to make a small sinatra app which would copy projects on a CI server for every branch we push too. TeamCity does not provide any REST API so we moved to Hudson. It&#039;s ugly, quite complex, but very easy to setup, damn easy to setup agents (Hudson would connect via ssh to an agent, bootstrap it and run builds) and we get all the metrics back!
+
+Those willing to autobranch on Hudson using Github Post Commit Hook can use this little sinatra app: https://github.com/versapay/hudson-github-autobranch]]></description>
+			<content:encoded><![CDATA[<p>We&#8217;ve been using TeamCity for a while. It comes with custom formatters for RSpec and Cucumber which allows it to display the number of test passed / failed / pending while running the tests. You get alerted as soon as one test fails. You can also see each test duration and all kind of metrics which helps&#8230; sometimes. 🙂</p>
+<p>However, TeamCity does not provide autobranching of git repository. Since we create a topic branch for every feature / bug / refactoring we do, we want each branch to be green before we code review them.</p>
+<p>The only CI server with auto-branching we found was Integrity. It&#8217;s pretty much like CI Joe. It&#8217;s very simple, it&#8217;s also quite buggy but we really missed all the metrics (duration / code coverage / fog results&#8230;)</p>
+<p>We decided to make a small sinatra app which would copy projects on a CI server for every branch we push too. TeamCity does not provide any REST API so we moved to Hudson. It&#8217;s ugly, quite complex, but very easy to setup, damn easy to setup agents (Hudson would connect via ssh to an agent, bootstrap it and run builds) and we get all the metrics back!</p>
+<p>Those willing to autobranch on Hudson using Github Post Commit Hook can use this little sinatra app: <a href="https://github.com/versapay/hudson-github-autobranch" rel="nofollow ugc">https://github.com/versapay/hudson-github-autobranch</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Flores		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1046</link>
+
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 23:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1046</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1043&quot;&gt;drnic&lt;/a&gt;.
+
+Well, I think a good protection against destroying production databases is to not have them configured in your version control. Only in a folder in the production environment and capistrano does a symbolic link on each deploy. I believe that we do not need to do that in a production-similar environment. We usually have an approval environment similar to production. Of course it is not fully tested as a CI environment, but we usually approve each feature with our clients. And we only do the deploy when tests pass, so we think that there is no need for an isolated VM for each CI server instance. And of course, since Bundler exists, configuring an Rails environment is dead simple, so we have to be less concerned about environment problems :-).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1043">drnic</a>.</p>
+<p>Well, I think a good protection against destroying production databases is to not have them configured in your version control. Only in a folder in the production environment and capistrano does a symbolic link on each deploy. I believe that we do not need to do that in a production-similar environment. We usually have an approval environment similar to production. Of course it is not fully tested as a CI environment, but we usually approve each feature with our clients. And we only do the deploy when tests pass, so we think that there is no need for an isolated VM for each CI server instance. And of course, since Bundler exists, configuring an Rails environment is dead simple, so we have to be less concerned about environment problems :-).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcin Kulik		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1045</link>
+
+		<dc:creator><![CDATA[Marcin Kulik]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 20:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1045</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1041&quot;&gt;Francisco J.&lt;/a&gt;.
+
+It&#039;s always worth setting up. Even for such small teams. From my experience I know that people sometimes forget running tests and CI server catches all these situations. And if setting up CI Joe involves almost no effort you have no excuse to not try it ;)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1041">Francisco J.</a>.</p>
+<p>It&#8217;s always worth setting up. Even for such small teams. From my experience I know that people sometimes forget running tests and CI server catches all these situations. And if setting up CI Joe involves almost no effort you have no excuse to not try it 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: drnic		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1044</link>
+
+		<dc:creator><![CDATA[drnic]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 17:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1044</guid>
+
+					<description><![CDATA[Hudson is trivial to setup. Wonderful CI platform.]]></description>
+			<content:encoded><![CDATA[<p>Hudson is trivial to setup. Wonderful CI platform.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: drnic		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1043</link>
+
+		<dc:creator><![CDATA[drnic]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 17:29:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1043</guid>
+
+					<description><![CDATA[For all your projects do you run the tests in the same environment as the CI master or us VMs or slaves to have isolated, production-similar environments for running tests?
+
+Bonus question - how do you protect against destroying your production databases? :)]]></description>
+			<content:encoded><![CDATA[<p>For all your projects do you run the tests in the same environment as the CI master or us VMs or slaves to have isolated, production-similar environments for running tests?</p>
+<p>Bonus question &#8211; how do you protect against destroying your production databases? 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bryce Thornton		</title>
+		<link>/2010/11/cijoe-can-you-please-watch-my-windows/comment-page-1/#comment-1042</link>
+
+		<dc:creator><![CDATA[Bryce Thornton]]></dc:creator>
+		<pubDate>Tue, 16 Nov 2010 17:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1478#comment-1042</guid>
+
+					<description><![CDATA[I love cijoe for it&#039;s simplicity.  The fact that it doesn&#039;t use a database makes it really easy to install. 
+
+We actually run all of our PHP tests using cijoe via a github hook.  cijoe then posts the results to our Campfire room.  Nothing fancy, but it gives our team immediate feedback on our test suite and has caught quite a few issues before they were pushed to production.]]></description>
+			<content:encoded><![CDATA[<p>I love cijoe for it&#8217;s simplicity.  The fact that it doesn&#8217;t use a database makes it really easy to install. </p>
+<p>We actually run all of our PHP tests using cijoe via a github hook.  cijoe then posts the results to our Campfire room.  Nothing fancy, but it gives our team immediate feedback on our test suite and has caught quite a few issues before they were pushed to production.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>story points « Plataformatec Blog</title>
+	<atom:link href="/tag/story-points/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 14 Feb 2018 17:35:31 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Do we need Story Points?</title>
+		<link>/2018/02/do-we-need-story-points/</link>
+					<comments>/2018/02/do-we-need-story-points/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 14 Feb 2018 17:35:31 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[agile methodology]]></category>
+		<category><![CDATA[story points]]></category>
+		<guid isPermaLink="false">/?p=7182</guid>
+
+					<description><![CDATA[<p>When story points were created, they quickly reached the hype peak (where they stood for too long, by the way). However, in the last years, they’ve entered the steep descending part of the hype curve. They have just begun their descending, but I&#8217;ve seen people already say that they are useless. So, after all, how ... <a class="read-more-link" href="/2018/02/do-we-need-story-points/">»</a></p>
+<p>The post <a href="/2018/02/do-we-need-story-points/">Do we need Story Points?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">When story points were created, they quickly reached the hype peak (where they stood for too long, by the way). However, in the last years, they’ve entered the steep descending part of the hype curve. They have just begun their descending, but I&#8217;ve seen people already say that they are useless. So, after all, how and when should I use them?</span></p>
+<p><span style="font-weight: 400;">Let me start saying that I&#8217;m not a hater. But I&#8217;m the devil&#8217;s advocate that likes to bring some discomfort into the room. I just believe that sometimes we stay in our comfort zone thinking that everything is working fine when it isn&#8217;t.</span></p>
+<h2><strong>A little history</strong></h2>
+<p><span style="font-weight: 400;">Story points were developed because human beings lack abilities to forecast the future. Our bosses were saying &#8220;ok, ok&#8230; you wanna use this &#8216;agile&#8217; thing, but I still wanna know at least when you are gonna finish this new feature!&#8221;, and we had to improve our forecasting beyond the &#8220;well it will be ready when it gets done&#8221; phrase.</span></p>
+<p><span style="font-weight: 400;">Then, we realized that we were actually good at checking whether something was the same size, bigger or smaller than another thing. With that in mind, we created one of the hardest concepts to explain to anyone new to agile: story points.</span></p>
+<h2><strong>Comparison or forecasting?</strong></h2>
+<p><span style="font-weight: 400;">Now we have a comparison tool that does not intend to forecast deadline. Right? Right. It wasn&#8217;t supposed to have a one-to-one relationship with time, right? Right. So how does that help to foretell when we will finish a project?</span></p>
+<p><span style="font-weight: 400;">Ok, so you&#8217;ll tell me that you use velocity, which is a sum of the comparison values of all the stories you&#8217;ve finished in a sprint (which already seems kind of odd). But now, tell me, how many times do you actually finish the entire backlog for a sprint in a sustainable manner (which means QA people not getting stressed and pressured, developers not building tons of technical debt and POs not accepting anything just because they don&#8217;t have time)? I&#8217;d say none or few. So, why is that?</span></p>
+<p><span style="font-weight: 400;">Well, for starters, we are able, as aforementioned, to see if something is larger, smaller or equal to other things (not so sure about the equal part, but let&#8217;s continue). However, we are not good at saying how bigger/smaller it is. Is it double the size/complexity? Is it triple? Who knows?!</span></p>
+<p><span style="font-weight: 400;">Another thing is that if you compare stories with the same points, you&#8217;ll see that they will take different times to be completed. And they should because, again, it is a comparison value, not a time-related one.</span></p>
+<p><span style="font-weight: 400;">Based on the last two paragraphs we can deduce that:</span></p>
+<ol>
+<li><em> A 1-point story will probably not take half the time a 2-point story takes. So how do we say our velocity is 3, if these two sets will not take the same time to be completed: {1,1,1} {1,2}?</em></li>
+<li><em> If we can&#8217;t even say that two 1-point stories will take the same time, how can we say our velocity is 3, even if we use the same sets: {1,1,1}, {1,1,1}?</em></li>
+</ol>
+<p><span style="font-weight: 400;">Likewise, it is difficult to compare sprint velocities of a team, another common mistake is to compare velocities between teams, or even have a metric for how many points a person can do in a sprint!</span></p>
+<p><span style="font-weight: 400;">We are just creating a false sense of control over our demands and, instead of helping the team, it might actually harm it.</span></p>
+<h2><strong>What now?</strong></h2>
+<p><span style="font-weight: 400;">Ok, Mr. Know-It-All, so when should I use them? Well, they were invented for comparisons! So, use them to compare! Points are not the only tool you have to compare stories. You might also use t-shirt sizes, which are a little bit easier to define than points. In this <a href="/2017/01/agile-requirements-talking-about-uncertainty-and-complexity/">blog post about complexity and uncertainty analysis</a>, we show a chart that could easily use t-shirt sizes or points in its axis!</span></p>
+<p><span style="font-weight: 400;">Besides that, the moment developers talk and compare stories is great for spreading knowledge among peers and aligning the whole team technically. Another meeting that does basically the same is what we call Task Breakdown, in which some developers get together and try to break a story into technical tasks. But exactly how to do it is a subject for another blog post.</span></p>
+<p><span style="font-weight: 400;">But what about forecasting! How can I answer my boss&#8217; question? We use throughput and lead time, with some statistics behind our answers&#8230; They work like a charm and, besides that, they also give us powerful tools to improve our process as well! We have a ton of posts on those topics if you are interested. Here are some of them:</span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Throughput</a><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/"> and Burnup charts</a></span></p>
+<p><span style="font-weight: 400;">*<a href="/2016/02/why-we-love-metrics-learning-with-lead-time/"> Lead Time</a></span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">Don&#8217;t use average to forecast deadlines</a></span></p>
+<p><span style="font-weight: 400;">* <a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Use Monte Carlo!</a></span></p>
+<p><span style="font-weight: 400;">*<a href="/2017/10/12-common-mistakes-when-using-process-metrics/"> 12 mistakes you should avoid when using these metrics</a></span></p>
+<h2><strong>Conclusion</strong></h2>
+<p><span style="font-weight: 400;">The story points concept is useful. Comparing stories is needed, however using that concept to forecast delivery rate and deadlines is not the best option. So, open your spreadsheet, add your metrics to it and let&#8217;s start a sustainable development!</span></p>
+<p><span style="font-weight: 400;">What do you think? Do story points work for you? Leave your comments below!</span></p>
+<p><a href="/subscribe/"><img fetchpriority="high" decoding="async" class="alignnone size-full wp-image-5259" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" width="831" height="147" srcset="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png 831w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-300x53.png 300w, /wp-content/uploads/2016/03/CTA-subscribe-blog-1-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a></p><p>The post <a href="/2018/02/do-we-need-story-points/">Do we need Story Points?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/02/do-we-need-story-points/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

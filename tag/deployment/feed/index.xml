@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>deployment « Plataformatec Blog</title>
+	<atom:link href="/tag/deployment/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 17 Dec 2019 20:12:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Kubernetes and the Erlang VM: orchestration on the large and the small</title>
+		<link>/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 01 Oct 2019 17:05:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[kubernetes]]></category>
+		<guid isPermaLink="false">/?p=9398</guid>
+
+					<description><![CDATA[<p>If you look at the features listed by Kubernetes (K8s) and compare it to languages that run on the Erlang VM, such as Erlang and Elixir, the impression is that they share many keywords. This sharing often leads to confusion. Do they provide distinct behaviors? Do they overlap? For instance, is there any purpose to Elixir's fault tolerance if Kubernetes also provides self-healing?</p>
+<p>The post <a href="/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/">Kubernetes and the Erlang VM: orchestration on the large and the small</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>If you look at the features listed by Kubernetes (K8s) and compare it to languages that run on the Erlang VM, such as Erlang and Elixir, the impression is that they share many keywords, such as &#8220;self-healing&#8221;, &#8220;horizontal scaling&#8221;, &#8220;distribution&#8221;, etc.</p>
+
+
+
+<p>This sharing often leads to confusion. Do they provide distinct behaviors? Do they overlap? For instance, is there any purpose to Elixir&#8217;s fault tolerance if Kubernetes also provides self-healing?</p>
+
+
+
+<p>In this article, I will go over many of these topics and show how they are mostly complementary and discuss the rare case where they do overlap.</p>
+
+
+
+<h2 class="wp-block-heading">Self-healing</h2>
+
+
+
+<p>Kubernetes automatically restarts or replaces containers that fail. It can also kill containers that don’t respond to your user-defined health check. Similarly, in Erlang and Elixir, you structure your code with the help of supervisors, which automatically restart parts of your application in case of failures.</p>
+
+
+
+<p>Kubernetes provides fault-tolerance within the cluster, Erlang/Elixir provide it within your application. To understand this better, let&#8217;s take an application that has to talk to a database (or any other external system). Most languages handle this by keeping a pool of database connections.</p>
+
+
+
+<p>If your database goes offline, because of a bad configuration or a hardware failure, both the database and the Erlang/Elixir systems will respond negatively to health checks, which would cause Kubernetes to act and potentially relocate them. This is a node-wide failure and Kubernetes got your back.</p>
+
+
+
+<p>However, what happens when part of your connections to the database are sporadically failing? For example, imagine your system is under load and you suddenly started running into connection limits, such as MySQL&#8217;s prepared statement limit. This failure likely won&#8217;t cause any health check to fail but your code will fail whenever one of its many connections reach said limit. Can you reason about this error today in your applications? Can you confidently say that the faulty connection will be dropped? Will another connection be started in place of the faulty one? Can you comfortably say this error won&#8217;t cascade in the application bringing the remaining of the connection pool down?</p>
+
+
+
+<p>Erlang/Elixir&#8217;s abstractions for fault tolerance allow you to reason about those questions at the language level. It provides a mechanism for you to reason about connections, resources, in-memory state, background workers, etc. You can explicitly say how they are started, how they are shut down, and what should happen when things go wrong. These features can also be extremely helpful in face of partial failures. For example, imagine you have a news website and the live stock ticker is down. Should the website continue running, potentially serving stale data, or should everything crash down? The mental model provided by Erlang/Elixir allows us to reason about these scenarios. And of course, you can always let failures bubble up after a few retries, or even immediately, so it becomes a node-wide failure to be handled by K8s.</p>
+
+
+
+<p>In a nutshell, Kubernetes and containers provide isolation and an ability to restart individual nodes when they fail, but it is not a replacement for isolation and fault handling within your own software, regardless of your language of choice. Using K8s and Erlang/Elixir allow you to apply similar self-healing and fault-tolerance principles in the large (cluster) and in the small (language/instance).</p>
+
+
+
+<h2 class="wp-block-heading">Service discovery and Distributed Erlang</h2>
+
+
+
+<p>The Erlang VM also provides Distributed Erlang, which allows you to exchange messages between different instances running on the same or different machines. In Elixir, this is as easy as:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-keyword">for</span> node &lt;- Node.<span class="hljs-keyword">list</span>() <span class="hljs-keyword">do</span>
+  <span class="hljs-comment"># Send :hello_world message to named process "MyProcess" in each node</span>
+  send {node, MyProcess}, :hello_world
+end</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>When running in distributed mode (which is not a requirement in any way and you need to explicitly enable it), the Erlang VM will automatically serialize and deserialize the data as well as make sure the connection between nodes is alive, but it does not provide any node discovery. It is the programmer responsibility to say exactly where each node is located and connect the nodes together.</p>
+
+
+
+<p>Luckily, Kubernetes provides service discovery out of the box. This means that, K8s allows us to fully automate the node discovery, which would otherwise be manual and error prone. Libraries like <a href="https://github.com/bitwalker/libcluster" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">libcluster</a> do exactly that (and rolling your own wouldn&#8217;t be complicated either). This is another great example of where Kubernetes and the Erlang VM complement each other!</p>
+
+
+
+<p>However, you may still be wondering, is there a benefit to running Distributed Erlang when Kubernetes&#8217; Service Discovery makes it relatively easy to have systems communicating with each other? Especially when considering RPC protocols such as Thrift, gRPC, and others?</p>
+
+
+
+<p>When we are talking about different languages and different systems communicating with each other, picking one of the existing RPC mechanisms is likely the best choice, and they will also work fine with Erlang/Elixir. The scenario where the Erlang VM really shines, in my opinion, is for building homogeneous systems, i.e. when you have multiple deployments of the same container and they exchange information. For example, imagine you are building a real-time application when you want to track which users are in the same chat room, or in the same city block, or in the same mountain track. As users connect and disconnect and as nodes are brought up and down, you could somehow update the database or communicate via a complex RPC mechanism, while carefully watching the cluster for topology changes.</p>
+
+
+
+<p>With the Erlang VM, you can just broadcast or exchange this information directly, without having to worry about serialization protocols, connection management, etc, as everything is provided by the VM. All without external dependencies. This is one of the many features that <a href="https://phoenixframework.org/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">makes Phoenix a breeze to build distributed web-realtime systems</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Automated rollouts vs Hot code swapping</h2>
+
+
+
+<p>When it comes to deployment, Kubernetes automatically rolls out changes to your application or its configuration, avoiding changing all instances at the same time. At the same time, the Erlang VM supports hot code swapping, which allows you to change the code that is running in production within a single instance without shutting said instance down.</p>
+
+
+
+<p>Those two deployments techniques are obviously conflicting. In fact, hot code swapping does not go well in general with the whole idea of immutable containers. Does it mean that Kubernetes and the Erlang VM are a poor fit? Not really, because <strong>you don&#8217;t have to use hot code swapping</strong>. In fact, most people do not. Most Elixir applications are deployed using blue-green, canary, or similar techniques.</p>
+
+
+
+<p>The truth about hot code swapping is that it is actually complicated to pull off in practice. Let&#8217;s use the database as an example once again. When you are deploying a new version of your software, whenever you update your database, you should never perform destructive changes. For example, if you want to rename a column, you have to add a new column, migrate the data over, and then remove the column. If you just rename the column, then you will have failures whenever doing rollouts, because you will have two versions of the software running at the same (one using the old column and the other using the new one). In hot code swapping, we have precisely the same issue, except it applies to all states inside your application. Companies that use hot code swapping often report they spend as much time developing the software as testing the upgrades themselves.</p>
+
+
+
+<p>Of course, it doesn&#8217;t mean hot code swapping is useless. The Erlang VM development is mostly driven by business needs and there was a legitimate need for hot code swapping. In particular, when building telephone switches, there is never an appropriate moment to shut down an instance for updates, because at any given time a system is full of long running connections, perhaps days or even weeks. So being able to upgrade a live system is extremely helpful. If you have a similar need, then hot code swapping may be an option. Another option is to <a href="https://www.youtube.com/watch?v=5LRDICEETRE" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">have smarter clients and migrate client connections between nodes when deploying</a>.</p>
+
+
+
+<p>Hot code swapping can also be used under other circumstances, such as during development to provide live code loading, without a need to restart your server, or to replace smaller components in production that don&#8217;t require replacing the whole instance.</p>
+
+
+
+<h2 class="wp-block-heading">Configuration management and Configuration providers</h2>
+
+
+
+<p>Another feature provided by both Elixir and Kubernetes is configuration management. However, as seen before, they work at very distinct levels. While Elixir provides a <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://hexdocs.pm/elixir/Config.html" target="_blank">unified API for configuring applications</a>, it is relatively low-level. In a production system, you often want both configuration and secrets to be managed by higher level tools, such as the ones provided by Kubernetes. Luckily, you can incorporate said configuration tools into your deployment workflow with the help of <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://hexdocs.pm/elixir/Config.Provider.html" target="_blank">Configuration Providers</a>. This functionality is part of Elixir releases, which were <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://elixir-lang.org/blog/2019/06/24/elixir-v1-9-0-released/" target="_blank">officially made part of the Elixir language in version 1.9</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Stay alert: pod resources</h2>
+
+
+
+<p>When provisioning Erlang and Elixir with Kubernetes, it is important to stay alert to one particular configuration: pod resources.</p>
+
+
+
+<p>When using other technologies, it is common practice to break a large node into a bunch of small pods/containers. For example, if you have a node with 8 cores, you could allocate half of each CPU to a pod and split the memory equally between them, on a total of 16 pods.</p>
+
+
+
+<p>This approach makes sense in many technologies that cannot exploit CPU and I/O concurrency simultaneously. However, the Erlang VM excels at managing system resources and your system will most likely be more efficient if you assign large pods to your Erlang and Elixir applications instead of breaking it apart into a bunch of small ones.</p>
+
+
+
+<p> If the Erlang VM is sharing a machine with other applications you may want to consider <a href="https://stressgrid.com/blog/beam_cpu_usage/">reducing busy waiting</a>. By doing so, the VM will optimize for lower CPU usage, making it a better neighbor, but with slightly higher latencies.</p>
+
+
+
+<h2 class="wp-block-heading">Summing up</h2>
+
+
+
+<p>Kubernetes and the Erlang VM work at distinct levels. Kubernetes orchestrates within a cluster, the Erlang VM orchestrates at the language level within an instance. Fred Hebert summed up this distinction well in a tweet:</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Still seeing bad comparisons between kubernetes and <a href="https://twitter.com/hashtag/Erlang?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#Erlang</a>/OTP. K8s is to OTP what region failover is to k8s. They operate on different layers of abstraction and impact distinct components.<br><br>OTP allows handling partial failures WITHIN an instance, something k8s can&#8217;t help with.— Fred Hebert (@mononcqc) <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/mononcqc/status/1122872187894018048?ref_src=twsrc%5Etfw" target="_blank">April 29, 2019</a></p></blockquote>
+
+
+
+<p>If you are using Erlang/Elixir and you wonder how Kubernetes applies compared to other languages, you can use Kubernetes for the Erlang VM as you would with any other technology. Given that Erlang/Elixir software can typically scale both horizontally and vertically, it gives you many options on how you want to allocate your resources within K8s.</p>
+
+
+
+<p>On other areas, Kubernetes and the Erlang VM can nicely complement each other, such as using K8s Service Discovery to connect Erlang VM instances. Of course, Distributed Erlang is not a requirement and Erlang/Elixir are great languages even for stateless apps, thanks to its scalability and reliability.</p>
+
+
+
+<p>If you are one of the few who really need hot code swapping in production, then the Erlang VM may be one of the best platforms to do so, but keep in mind you will be straying away from the common path in both technologies.</p>
+
+
+
+<p>Finally, if you appreciate Kubernetes and its concepts, you may enjoy working with Erlang and Elixir, as they will give you an opportunity to apply similar idioms on the small and on the large.</p>
+
+
+
+<p><em>Thanks to Fernando Tapia Rico, Fred Hebert, George Guimarães, Tristan Sloughter, and Wojtek Mach for reviewing this article.</em></p><p>The post <a href="/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/">Kubernetes and the Erlang VM: orchestration on the large and the small</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Deploying Elixir applications with Edeliver</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/</link>
+					<comments>/2016/06/deploying-elixir-applications-with-edeliver/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 07 Jun 2016 20:32:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5457</guid>
+
+					<description><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like how to run migrations on top of a release or how to deal with environment variables. Now it&#8217;s time to discover another tool that can help us release our Elixir application. After practicing deploy and tracing through nodes with Exrm, we got more comfortable ... <a class="read-more-link" href="/2016/06/deploying-elixir-applications-with-edeliver/">»</a></p>
+<p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We&#8217;ve been talking about deploy and releases with Elixir lately, like <a href="/2016/04/running-migration-in-an-exrm-release/">how to run migrations on top of a release</a> or <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">how to deal with environment variables</a>. Now it&#8217;s time to discover another tool that can help us release our Elixir application.</p>
+<p>After practicing deploy and <a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/">tracing through nodes</a> with <a href="https://github.com/bitwalker/exrm" target="_blank">Exrm</a>, we got more comfortable knowing that there is a tool we can count on for managing production releases. Our next biggest concern was how could we make the deploy process more manageable. We couldn&#8217;t stop thinking about Capistrano, which we normally use for our Rails projects, then we found <a href="https://github.com/boldpoker/edeliver" target="_blank">Edeliver</a>. From Edeliver&#8217;s README description:</p>
+<blockquote style="font-size: 1.1em; font-style: italic; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p>edeliver is based on deliver and provides a bash script to build and deploy Elixir and Erlang applications and perform hot-code upgrades.</p></blockquote>
+<p>Trying the whole deploy process manually was a bit harsh with some repetitive tasks. Using Edeliver for our first <code>script/deploy</code> was awkwardly easy! In the end, the whole manual process was simplified to:</p>
+<pre><code class="bash">    #!/bin/bash -ex
+
+    BRANCH=${1:-master};
+
+    mix edeliver build release --branch=BRANCH --verbose
+    mix edeliver deploy release to production --verbose
+    mix edeliver start production --verbose
+    mix edeliver migrate production up --verbose
+</code></pre>
+<p>You&#8217;re probably going to need to customize this script, adapting it for your needs. In this case, we&#8217;re using this script only for production deploys, but you can customize it for staging servers pretty easily. We&#8217;ll explain how environments work further along.</p>
+<h2>How it works</h2>
+<p>As we saw before in the README quote, Edeliver makes pretty much everything with bash scripts. The Mix tasks we saw above will be executed with Elixir, but they&#8217;ll result in bash script instructions. Part of the instructions are executed in the scripts locally, which will build new instructions that will run remotely via RPC (Remote procedure call).</p>
+<p>Let&#8217;s go deeper in some aspects of the lib.</p>
+<h2>Environments</h2>
+<p>Edeliver is a cool option for launching and distributing releases in multiple environments. It has a concept of three environments: build, staging and production. Among these, only the build environment should get a bit more of attention.</p>
+<p>For a release to work in a server, it must have been built in a machine with the same architecture where the release will run. That&#8217;s because Edeliver uses Exrm for building its releases. Exrm will internally use its local <a href="http://erlang.org/doc/tutorial/nif.html" target="_blank">NIFs</a> (C functions used by Erlang) which may vary in a different architecture, thus causing, for example, an OSX release not working on Linux. You can read more about it in <a href="https://github.com/phoenixframework/phoenix_guides/issues/254" target="_blank">this Phoenix issue</a> where people are discussing cross-compiling issues and there are some other <a href="https://github.com/bitwalker/exrm/issues?utf8=%E2%9C%93&#038;q=is%3Aissue+cross+compiling+" target="_blank">issues in Exrm</a> as well.</p>
+<p>In order to use the build environment in our own development machine, it needs to use the same architecture of our staging and production servers, otherwise it won&#8217;t work.</p>
+<p>To configure our environments, we&#8217;ll need to create a <code>.deliver</code> directory in our project and add a <code>config</code> file. Let&#8217;s see the suggested configs from Edeliver&#8217;s README for this file:</p>
+<pre><code class="bash">#!/usr/bin/env bash
+
+APP="your-erlang-app" # name of your release
+
+BUILD_HOST="build-system.acme.org" # host where to build the release
+BUILD_USER="build" # local user at build host
+BUILD_AT="/tmp/erlang/my-app/builds" # build directory on build host
+
+STAGING_HOSTS="test1.acme.org test2.acme.org" # staging / test hosts separated by space
+STAGING_USER="test" # local user at staging hosts
+TEST_AT="/test/my-erlang-app" # deploy directory on staging hosts. default is DELIVER_TO
+
+PRODUCTION_HOSTS="deploy1.acme.org deploy2.acme.org" # deploy / production hosts separated by space
+PRODUCTION_USER="production" # local user at deploy hosts
+DELIVER_TO="/opt/my-erlang-app" # deploy directory on production hosts
+</code></pre>
+<p>It&#8217;s pretty easy to configure our environments, we only need to make sure we have <code>ssh</code> permission for these servers specified. A cool thing about this whole configuration, as mentioned before, is that it&#8217;s possible to distribute the releases through several servers.</p>
+<h2>How can I include extra tasks to my deploy process?</h2>
+<p>What Edeliver does is generic for Elixir and Erlang applications. When we&#8217;re using Phoenix, for example, we need to run some tasks before generating the release. The most important tasks are <code>brunch build --production</code> and <code>mix phoenix.digest</code> so we can have our assets working on our release.</p>
+<p>To make these work, we&#8217;ll need to define a hook in our <code>.deliver/config</code> file:</p>
+<pre><code class="bash">pre_erlang_clean_compile() {
+  status "Preparing assets with: brunch build and phoenix.digest"
+  __sync_remote "
+    # runs the commands on the build host
+    [ -f ~/.profile ] &amp;&amp; source ~/.profile # load profile (optional)
+
+    # fail if any command fails (recommended)
+    set -e
+
+    # enter the build directory on the build host (required)
+    cd '$BUILD_AT'
+
+    mkdir -p priv/static # required by the phoenix.digest task
+
+    # installing npm dependencies
+    npm install
+
+    # building brunch
+    brunch build --production
+
+    # run your custom task
+    APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+  "
+} 
+</code></pre>
+<p>This was extracted from an Edeliver doc sample, which explains all the possibilities of hooks.</p>
+<h2>What about my environment variables?</h2>
+<p>We shared a tip on <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">dealing with environment variables with Exrm</a> in order to avoid exporting them in our build environment and it&#8217;s still up! Although, there&#8217;s an important detail we&#8217;ll need to pay attention.</p>
+<p>In order to make the environments replaceable we needed to set <code>RELX_REPLACE_OS_VARS=true</code> before our start command. But that&#8217;s not possible with Edeliver because the start task runs locally.</p>
+<p><code>mix edeliver start production</code></p>
+<p>Then a possible solution is to export the <code>RELX_REPLACE_OS_VARS</code> in your production environment.</p>
+<h2>Considerations</h2>
+<p>Edeliver seems like a cool option for dealing with our releases and deploy process, I found it really easy to use. I didn&#8217;t enter in implementation details in this post, so make sure to read its <a href="https://github.com/boldpoker/edeliver" target="_blank">README</a> and docs, they&#8217;re very useful and well-explained.</p>
+<p>This was a solution we found to ease our deploy process. How have you been managing your process? Did this post help you?</p>
+<hr>
+<div style="margin:30px 0 60px;">
+<p style="text-align:center; margin-bottom:0; padding-bottom:0; font-weight:bold; font-size:1em; color:#444;">If you are into Elixir-Phoenix, you may also like&#8230;</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom-with-title" target="_blank"><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-5371" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /></a>
+</div><p>The post <a href="/2016/06/deploying-elixir-applications-with-edeliver/">Deploying Elixir applications with Edeliver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/06/deploying-elixir-applications-with-edeliver/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>How to config environment variables with Elixir and Exrm</title>
+		<link>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/</link>
+					<comments>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Tue, 17 May 2016 19:02:05 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[config]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5417</guid>
+
+					<description><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using ENV vars (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it on its Configuration section: The twelve-factor app stores config in environment variables ... <a class="read-more-link" href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">»</a></p>
+<p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s very common (and highly recommended) that application keeps its configuration values separated from its version control. A way of doing this is by using <strong>ENV vars</strong> (environment variables). They&#8217;re being used for improvements mostly on maintainability. The 12-factor app manifesto explains it <a href="http://12factor.net/config" target="_blank">on its Configuration section</a>:</p>
+<blockquote style="font-size: 1.1em; border-left: solid 4px #ccc; padding-left: 15px; color: #888;"><p><em>The twelve-factor app stores config in environment variables (often shortened to env vars or env). Env vars are easy to change between deploys without changing any code; unlike config files, there is little chance of them being checked into the code repo accidentally; and unlike custom config files, or other config mechanisms such as Java System Properties, they are a language- and OS-agnostic standard.</em></p></blockquote>
+<p>In an Elixir project, the config goes in <code>Mix.Config</code> files. Some examples are: <code>config.exs</code> and environment config files (<code>dev.exs</code>, <code>test.exs</code> and <code>prod.exs</code>). These files are generally used by frameworks and libraries, but they have already proven useful for <a href="/2015/10/mocks-and-explicit-contracts/" target="_blank">using mocks in our tests</a>.</p>
+<p>Let&#8217;s take an <a href="https://github.com/elixir-lang/ecto" target="_blank"><strong>Ecto</strong></a> config as example:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: "postgres",
+password: "postgres",
+database: "myapp_dev",
+hostname: "localhost",
+pool_size: 10
+</code></pre>
+<p>A well-known approach is using <a href="https://en.wikipedia.org/wiki/Environment_variable" target="_blank"><strong>Environment variables</strong></a> to hide and scope these values through different environments. To use it, we just need to have a configured variable and get it in our application. In Elixir we do this easily with <a href="http://elixir-lang.org/docs/stable/elixir/System.html#get_env/1" target="_blank"><code>System.get_env("ENV_VAR")</code></a>.</p>
+<p>We could configure our last example with this approach:</p>
+<pre><code class="elixir"># config/dev.exs
+config :myapp, MyApp.Repo,
+adapter: Ecto.Adapters.Postgres,
+username: System.get_env("DB_USER"),
+password: System.get_env("DB_PASSWORD"),
+database: System.get_env("DB_NAME"),
+hostname: System.get_env("DB_HOST"),
+pool_size: 10
+</code></pre>
+<p>This way you won&#8217;t expose your database configs and will actually make things more dynamic. In development this is useful because the developers won&#8217;t need to make changes on this file, they&#8217;ll just need to export these vars.</p>
+<p>So far this isn&#8217;t much different from what we do in other languages. However, things start to happen differently when we try to generate an Exrm release to deploy our app in production.</p>
+<h2>ENV vars need to be present during compile time</h2>
+<p>We all already know that Elixir is a compiled language. And in order to deploy or generate a release we need to compile our application. So everything is compiled, even our config files! Then, there&#8217;s an interesting behavior while compiling our config files.</p>
+<p>Our <code>System.get_env()</code> calls will be evaluated during the compilation, so the binaries will be generated with the current value of the ENV var. Because of this, we need all of our environment variables to be exported during compiling. When we don&#8217;t have them, their value will be <code>nil</code> and we won&#8217;t be able to connect to our database, for example. This way, to build a release we&#8217;d need all our environment variables where we&#8217;re building it (our own machine or a build server).</p>
+<p>If we&#8217;re <strong>working with Phoenix</strong>, there is an exception. Phoenix has a special way of configuring an HTTP port with ENV vars that evaluates it during runtime.</p>
+<pre><code class="elixir">config :myapp, MyApp.Endpoint,
+http: [port: {:system, "PORT"}],
+# ...
+</code></pre>
+<p>It works great and data won&#8217;t be fixed in the release, but it&#8217;s <a href="https://github.com/phoenixframework/phoenix/blob/v1.1.4/lib/phoenix/endpoint/server.ex#L45" target="_blank">specific for this Phoenix config</a>. But don&#8217;t be sad! There are already some <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">mature discussions</a> around this in the Exrm repo, take a look, you may be able to help!</p>
+<h2>There&#8217;s a way when using Exrm release</h2>
+<p>I was chatting around <a href="https://elixir-lang.slack.com/" target="_blank">Elixir Slack channel</a><a href=""></a> when our friend <a href="https://twitter.com/renanranelli" target="_blank">Ranelli</a> mentioned that there was a simple technique that we could use to solve this when we build an Exrm release. Instead of using <code>System.get_env</code> in our configs, we must use <code>"${ENV_VAR}"</code>. Then, we just need to run our release with <code>RELX_REPLACE_OS_VARS=true</code>.</p>
+<p><code>RELX_REPLACE_OS_VARS=true rel/myapp/bin/myapp start</code></p>
+<p>This will make our release to use the values represented by these special strings. I&#8217;ll explain.</p>
+<p>An Exrm release has two important files: <code>sys.config</code> and <code>vm.args</code>. These files are responsible by the data used in production (usually what&#8217;s in <code>config.exs</code> and <code>prod.exs</code>) and specific configs that we can make of the Erlang VM respectively.</p>
+<h3>sys.config</h3>
+<pre><code class="erlang">[{sasl,[{errlog_type,error}]},
+{logger,
+[{console,
+[{format,&lt;&lt;"$time $metadata[$level] $message\n"&gt;&gt;},
+{metadata,[request_id]}]},
+{level,info}]},
+{myapp,
+[{'Elixir.MyApp.Endpoint',
+[{root,&lt;&lt;"/Users/igorffs/src/myapp"&gt;&gt;},
+{render_errors,[{accepts,[&lt;&lt;"html"&gt;&gt;,&lt;&lt;"json"&gt;&gt;]}]},
+{pubsub,
+[{name,'Elixir.MyApp.PubSub'},
+{adapter,'Elixir.Phoenix.PubSub.PG2'}]},
+{http,[{port,&lt;&lt;"${PORT}"&gt;&gt;}]},
+{url,[{host,&lt;&lt;"localhost"&gt;&gt;}]},
+{cache_static_manifest,&lt;&lt;"priv/static/manifest.json"&gt;&gt;},
+{server,true},
+{secret_key_base,
+&lt;&lt;"${SECRET_KEYBASE}"&gt;&gt;}]},
+{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}]},
+{phoenix,[{generators,[{migration,true},{binary_id,false}]}]}].
+</code></pre>
+<h3>vm.args</h3>
+<pre><code class="erlang">## Name of the node
+-sname myapp
+
+## Cookie for distributed erlang
+-setcookie myapp
+
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+##-heart
+
+## Enable kernel poll and a few async threads
+##+K true
+##+A 5
+
+## Increase number of concurrent ports/sockets
+##-env ERL_MAX_PORTS 4096
+
+## Tweak GC to run more often
+##-env ERL_FULLSWEEP_AFTER 10
+</code></pre>
+<p>Exrm is using a lib called <a href="https://github.com/erlware/relx" target="_blank"><strong>relx</strong></a> under the hood to build its releases. When we exported <code>RELX_REPLACE_OS_VARS=true</code> <code>relx</code> will make a replace of the strings by their correspondent ENV var values in the config files.</p>
+<pre><code class="erlang">{'Elixir.MyApp.Repo',
+[{adapter,'Elixir.Ecto.Adapters.Postgres'},
+{username,&lt;&lt;"${DB_USER}"&gt;&gt;},
+{password,&lt;&lt;"${DB_PASSWORD}"&gt;&gt;},
+{database,&lt;&lt;"${DB_NAME}"&gt;&gt;},
+{hostname,&lt;&lt;"localhost"&gt;&gt;},
+{pool_size,10},
+{port,&lt;&lt;"15432"&gt;&gt;}]}
+</code></pre>
+<p>You&#8217;ve noticed where our special strings are in the <code>sys.config</code>, and if you guessed that this process can be done manually, you got it! But this replace really makes things easier for us. Otherwise, we would have to edit every option in the file. It&#8217;s very important to mention, if you change those files, you&#8217;ll have to reboot your application.</p>
+<h2>Considerations</h2>
+<p>This subject is very important if we&#8217;re going on production. It concerned us a bit when we&#8217;ve noticed that we couldn&#8217;t have more dynamic configs. This replacement solution was a relief. Make sure to keep following <a href="https://github.com/bitwalker/exrm/issues/90" target="_blank">the discussion I mentioned before</a>, things are probably going to change after it.</p>
+<p>Have you already been in trouble dealing with ENV vars? How did you solve it?</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom" target="_blank"><br />
+<img decoding="async" class="aligncenter size-full wp-image-5371" style="max-width: 100%;" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What's new in Ecto 2.0 -- Reserve your copy" width="831" height="147" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/">How to config environment variables with Elixir and Exrm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/how-to-config-environment-variables-with-elixir-and-exrm/feed/</wfw:commentRss>
+			<slash:comments>10</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Running migration in an Exrm release</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/</link>
+					<comments>/2016/04/running-migration-in-an-exrm-release/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 28 Apr 2016 18:50:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=5349</guid>
+
+					<description><![CDATA[<p>Exrm is a great tool for building releases for Elixir applications so you can deploy them on the web and even in an embedded hardware. We have been using Exrm here at Plataformatec. It is the chosen tool for deploying our projects and the contributors are doing a great job maintaining and developing new features. ... <a class="read-more-link" href="/2016/04/running-migration-in-an-exrm-release/">»</a></p>
+<p>The post <a href="/2016/04/running-migration-in-an-exrm-release/">Running migration in an Exrm release</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="https://github.com/bitwalker/exrm">Exrm</a> is a great tool for building releases for Elixir applications so you can deploy them on the web and even in an embedded hardware.</p>
+<p>We have been using Exrm here at Plataformatec. It is the chosen tool for deploying our projects and the contributors are doing a great job maintaining and developing new features. However, since Exrm is in its early days, it&#8217;s natural that there are some features that aren&#8217;t completely covered yet. One of these features was the possibility to run migration tasks on a release.</p>
+<p>An Exrm release is a package with binaries, dependencies and tools so you can run and manage it independently. All needed dependencies are compiled within the releases. Even Erlang and Elixir binaries are compiled within the release, so we don&#8217;t need to install it in the machine. It&#8217;s a self-contained package! As we don&#8217;t have the source code included in our release, we can&#8217;t run Mix tasks because it needs a <code>mix.exs</code> file.</p>
+<p>To run our migrations without Mix, an approach is using the Exrm console. There you can call <a href="https://hexdocs.pm/ecto/Ecto.Migrator.html#up/4">Ecto Migrator</a>.</p>
+<p>However, since the 1.0.3 version, <a href="https://github.com/bitwalker/exrm/pull/295">we have a <code>command</code> task available</a> for Exrm releases. With this interface, we can call a module defined within our Elixir application.</p>
+<p>Example:</p>
+<pre><code>rel/my_app/bin/my_app command &lt;Module&gt; &lt;function&gt; &lt;args&gt;
+</code></pre>
+<h3>How does it work?</h3>
+<p>Well, under the hood, what this task does is basically the same we needed to do before. It opens a console and runs the code we&#8217;ve sent. Although, it runs an Erlang console (through the <code>erlexec</code> binary contained in the release).</p>
+<h3>To the migration!</h3>
+<p>We&#8217;ve defined an Elixir module in our app and a <code>migrate</code> function:</p>
+<pre><code class="elixir">defmodule Release.Tasks do
+  def migrate do
+    {:ok, _} = Application.ensure_all_started(:my_app)
+
+    path = Application.app_dir(:my_app, "priv/repo/migrations")
+
+    Ecto.Migrator.run(MyApp.Repo, path, :up, all: true)
+
+    :init.stop()
+  end
+end
+</code></pre>
+<p>Notice that in order to run the migrations, we&#8217;ll need to ensure that our app or the supervisor tree that Ecto counts in. In this example, we&#8217;ve just ensured that the entire app has started, but you could get only <code>ecto</code>, <code>postgrex</code> and <code>logger</code>. Also, we need to call <code>:init.stop</code> in order to close the console, otherwise our buffer will remain opened, waiting for something.</p>
+<p>To call this function we&#8217;ll need to:</p>
+<pre><code>rel/my_app/bin/my_app command Elixir.Release.Tasks migrate
+</code></pre>
+<p>We need to include the <code>Elixir</code> namespace because we&#8217;re running it in an Erlang console, as explained above. Otherwise, we can&#8217;t reach the module.</p>
+<p>Another possible approach is defining an Erlang module instead of Elixir&#8217;s:</p>
+<pre><code class="elixir">defmodule :release_tasks do
+  def migrate do
+    {:ok, _} = Application.ensure_all_started(:my_app)
+
+    path = Application.app_dir(:my_app, "priv/repo/migrations")
+
+    Ecto.Migrator.run(MyApp.Repo, path, :up, all: true)
+
+    :init.stop()
+  end
+end
+</code></pre>
+<p>This way our call gets a bit prettier:</p>
+<pre><code>rel/my_app/bin/my_app command release_tasks migrate
+</code></pre>
+<h3>Conclusion</h3>
+<p>Since Elixir&#8217;s early days, several people are contributing and developing great tools. We&#8217;re certain that this is one of the reasons that makes Elixir so attractive. And because of this, things are getting better for us in Elixir when dealing with releases and deployments.</p>
+<p>This blog post is highly inspired by an <a href="https://github.com/bitwalker/exrm/issues/67">Exrm issue discussion</a>. Make sure to read or cooperate with it if you feel like it. There are plenty of great tips in it and they&#8217;ll probably have tons more as this idea grows.</p>
+<p>How are you currently dealing with these tasks? Are there any tips to share?</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" /><br />
+</a></p><p>The post <a href="/2016/04/running-migration-in-an-exrm-release/">Running migration in an Exrm release</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/04/running-migration-in-an-exrm-release/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>The pros and cons of 4 deployment process techniques</title>
+		<link>/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/</link>
+					<comments>/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/#comments</comments>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Tue, 02 Dec 2014 11:00:34 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[deployment]]></category>
+		<guid isPermaLink="false">/?p=4327</guid>
+
+					<description><![CDATA[<p>The way of deliver your product code to your customer is commonly called &#8220;deployment&#8221;. It is an important matter because it will impact in how fast your product will respond to changes and the quality of each change. Depending on which deployment decision you take, it will impact your team and how you use your ... <a class="read-more-link" href="/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/">»</a></p>
+<p>The post <a href="/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/">The pros and cons of 4 deployment process techniques</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The way of deliver your product code to your customer is commonly called &#8220;deployment&#8221;. It is an important matter because it will impact in how fast your product will respond to changes and the quality of each change.</p>
+<p>Depending on which deployment decision you take, it will impact your team and how you use your version control system.</p>
+<p>As a consultancy, we have worked in lots of projects, and together with our customers we have devised many ways to deliver their product to their customers. We have seen some patterns, advantages and challenges on each way, and today I would like to discuss some of them:</p>
+<ol>
+<li><a href="#open-source">The open-source way</a></li>
+<li><a href="#pipeline">The pipeline way</a></li>
+<li><a href="#support-branch">The support branch way</a></li>
+<li><a href="#feature-toggle">The feature toggle way</a></li>
+</ol>
+<h2 id="open-source">The open-source way</h2>
+<p>In the open-source world most of the times we should maintain many versions of a same product. For example, Ruby on Rails has many versions released, like 2, 3.2, 4.0, 4.1. Bugs happens, new features are created, so news releases must be delivered, but in a set of supported released versions. Still on RoR example, the supported releases are 4.1, 4.0 and 3.2 (<a href="http://guides.rubyonrails.org/maintenance_policy.html">http://guides.rubyonrails.org/maintenance_policy.html</a>). But how this releasing works?</p>
+<p>The most recent version of the product is maintained on the master branch, the previous major releases have their own branches. On RoR we have the master for the new 4.2 version release, and we still have 4-1-stable, 4-0-stable, 3-2-stable branches. By following this  organization we can easily apply changes on the desired versions.</p>
+<p>For each release a tag must be created. For example, there&#8217;s a tag for RoR 4.0.0, one for 4.1.0 and so on. With tags it is possible to navigate between the released versions and if the worst happens, like losing the &#8220;version-stable&#8221; branch, it&#8217;s easy to create another one from the last released version.</p>
+<p>Usually, a web product has just one version to be maintained, so usually we don&#8217;t need the &#8220;version-stable&#8221; branches. We can keep the new product releases on the master branch and generate a tag when we want to package and release a new product version.</p>
+<p>When we need a &#8220;hotfix&#8221; or an urgent feature and the master is not ready yet for production, we can easily create a branch from the latest tagged version, apply the desired changes, create a new tag and release a new version. By the way, using this way you can release any branch you want. All that manipulation of applying commits, merging and creating branches and tags, can be simplified with a powerful version control system like &#8220;Git&#8221;.</p>
+<h3>Strong points</h3>
+<ul>
+<li>The flexible package creation and release.</li>
+<li>It works for large teams, primarily when there are planned releases.</li>
+</ul>
+<h3>The challenges</h3>
+<ul>
+<li>It requires the infra to be flexible enough to support it.</li>
+<li>It requires time to control what can be merged on master before the package creation.</li>
+<li>It will require good ability with the version control system.</li>
+<li>Manage the release versions.</li>
+</ul>
+<h3>Common phrases with this approach</h3>
+<ul>
+<li>&#8220;Sorry pals, I forgot to apply that hot fix patch on master&#8221;. &#8211; A developer after releasing a new product version.</li>
+</ul>
+<h2 id="pipeline">The pipeline way</h2>
+<p>Using a pipeline in your deployment process means you have well defined steps and all steps must be accomplished in order to do a deployment.</p>
+<p>Usually the steps are: run the automated tests, release on test/qa environment, create the release tag, release on production. After the steps are defined, you need some software that allows the team to automate some steps and to add the option of requiring a approval for the next step. For example, you only want to release the package to production when your QA team and PO have approved the version on QA.</p>
+<p>Having a pipeline means your master branch is always production ready. Any new code inserted on master branch must pass the pipeline, then it is very important that the team and the pipeline to be able to quickly respond to changes.</p>
+<p>One important precaution is to be sure that only wanted features are on master, because all code on master will always be deployed on the next software release. I have seen some confusion in this aspect, because some companies are a bit more bureaucratic and have some strict deployment rules.</p>
+<p>Per example, a feature can only go to production when the QA team and PO approves. Placing the QA process on pipeline means you&#8217;ll put the feature on master that is not ready yet for production. It generates a problem I see regularly with this approach, I&#8217;ll call it for now the &#8220;release lock&#8221;.</p>
+<h3>Release lock</h3>
+<p>The release lock can be better understood with an example:</p>
+<ol>
+<li>The developers have released on master the Feature A and B.</li>
+<li>The QA team finds a BUG on Feature A.</li>
+<li>The developers release a Feature C on master</li>
+<li>The developers fix the BUG.</li>
+<li>PO approves Feature A and B and wants a deploy.</li>
+</ol>
+<p>Can we deploy a release with Feature C untested and unapproved by PO? Most of the time the companies answer is no.</p>
+<p>Some approaches we can do here are: revert Feature C commits, or simply lock code changes on master and the entire team focus on finishing the release with Feature C.</p>
+<p>Of course there are other approaches we can incorporate in the pipeline process, and we&#8217;ll see a further discussion about it later in this post.</p>
+<h3>Strong points</h3>
+<ul>
+<li>With the pipeline it is easier for everyone in the team to understand how the deployment works.</li>
+<li>The pipeline gives accessibility for anyone in the team to launch a release.</li>
+<li>Less time managing versioning.</li>
+</ul>
+<h3>The challenges</h3>
+<ul>
+<li>You lose the flexibility to deploy any branches.</li>
+<li>In large teams and some companies rules can produce release locks often.</li>
+</ul>
+<h3>Common phrases with this approach</h3>
+<ul>
+<li>&#8220;What? This feature is already in production?&#8221; &#8211; A member from QA team looking at the version in production.</li>
+<li>&#8220;Hey, stop merging on master! We need a release today!&#8221; &#8211; The product manager after receiving pressure from stakeholders.</li>
+</ul>
+<h2 id="support-branch">The support branch way</h2>
+<p>You define a branch as QA or test branch. This branch is useful to test features which aren&#8217;t ready for production. For example, if your deployment process needs QA/PO features approval.</p>
+<p>With this approach you&#8217;ll send the features to support branch. When the feature is approved you send them to the master branch and use the normal deployment process flow. It is important to do a regression test of the merged features on master. When a regression test finds a defect, it is easy to apply them on master, since the master is clear of unwanted features.</p>
+<p>While using this approach you should be aware that now you have two points of integration. Resolving the merging conflicts twice is a problem that can happen often, but the most troublesome issue is when the integration on the support branch breaks the application functionality.</p>
+<p>When the support branch integration is broken you need to analyze when and where the patch with the fix will be applied.</p>
+<p>If you apply the fix on support branch, you must remember to apply it on master again.</p>
+<p>The other option is to find out which changes made the features incompatible together. When you find that, you can apply those changes to the branch that doesn&#8217;t have those changes. Be aware that depending on the way you do this, you may end up needing to release both features together.</p>
+<h3>Strong points</h3>
+<ul>
+<li>You can easily apply the support branch in any deployment process you choose.</li>
+<li>You mitigate the release lock problem.</li>
+</ul>
+<h3>The challenges</h3>
+<ul>
+<li>Two points of features integration.</li>
+<li>Requires good abilities with version control system.</li>
+<li>The support branch maintenance.</li>
+</ul>
+<h3>Common phrases with this approach</h3>
+<ul>
+<li>&#8220;Gosh! I need to fix that merge conflict again.&#8221; &#8211; Developer merging on master the QA approved feature.</li>
+</ul>
+<h2 id="feature-toggle">The feature toggle way</h2>
+<p>Sometimes you are using the feature toggle without knowing you are doing it. For example: when you enable some features only for beta users, or enable some application routes only for some network IPs, or create A/B tests for the users. In general, you are using a feature toggle when your application is restricting in some way the access for some features.</p>
+<p>To solve the release lock problem, some teams apply the feature toggle in every feature that needs approval. In this way the team can send unapproved features to production. When the feature is approved, the feature can be turned on without a new deploy. Be aware that sending turned off features to production also means that unapproved feature code will be sended too.</p>
+<p>Creating toggles for your features means more code and tests to control what your software does with and without the toggles. Each feature toggle you add increases the complexity and the maintenance cost of your codebase.</p>
+<p>Thus, it is important to remove them after the feature approval before it starts damaging your software. I know what you&#8217;re thinking, yes, it is true, most of the times the QA/PO team want to test the toggle removal and you might face the release lock problem again.</p>
+<h3>Strong points</h3>
+<ul>
+<li>You can use the pipeline with only one point of integration.</li>
+<li>You reduce the release lock problem.</li>
+</ul>
+<h3>The Challenges</h3>
+<ul>
+<li>You may increase the cost of development because of maintenance and removal of feature toggles.</li>
+<li>The feature toggle management.</li>
+</ul>
+<h3>Common phrases with this approach</h3>
+<ul>
+<li>&#8220;What this method does?&#8221; &#8211; A developer asking for his pal.</li>
+<li>&#8220;It depends, which toggles are on?&#8221; &#8211; The answer of the first question.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Most of the challenges of each deployment process requires team engagement and organization. It&#8217;s hard to decide which one is better, because it fully depends on how your team adapt to the process.</p>
+<p>Each person perceive problems in different ways. What is a huge matter for someone, for the other is just a small itch. But if you still want answers for &#8220;What is the best option?&#8221;, I would say it is the same answer for &#8220;Which challenge your team will endure more?&#8221;.</p>
+<p>Given that you prefer one deployment process over the others, I still think that no one should be attached totally with one process forever. Your problems can change, your team can change, your company rules can change, your application can change. Therefore, your deployment process should change together to deal with the new challenges. You can change your deployment in many ways, for example mixing ideas from each the of processes we discussed.</p>
+<p><em>I&#8217;m curious to know how your team deliver features. If you use one of these options, if you mix them or if you do something different. If you want share this knowledge, please leave a comment below.</em></p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/">The pros and cons of 4 deployment process techniques</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/12/the-pros-and-cons-of-4-deployment-process-techniques/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

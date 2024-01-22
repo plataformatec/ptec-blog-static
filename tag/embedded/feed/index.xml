@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>embedded « Plataformatec Blog</title>
+	<atom:link href="/tag/embedded/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 14:23:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Build embedded and start permanent in Elixir 1.0.4</title>
+		<link>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/</link>
+					<comments>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 10 Apr 2015 12:00:54 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[embedded]]></category>
+		<category><![CDATA[protocols]]></category>
+		<guid isPermaLink="false">/?p=4454</guid>
+
+					<description><![CDATA[<p>Elixir v1.0.4 ships with two new important options for new projects. If you generate a new application with mix new, you will see in your mix.exs: [build_embedded: Mix.env == :prod, start_permanent: Mix.env == :prod] Although those options were originally meant to be in Elixir v1.1, we have decided to bring them into v1.0.4 and do ... <a class="read-more-link" href="/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/">»</a></p>
+<p>The post <a href="/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/">Build embedded and start permanent in Elixir 1.0.4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Elixir v1.0.4 ships with two new important options for new projects. If you generate a new application with <code>mix new</code>, you will see in your <code>mix.exs</code>:</p>
+<pre><code class="elixir">[build_embedded: Mix.env == :prod,
+ start_permanent: Mix.env == :prod]
+</code></pre>
+<p>Although those options were originally meant to be in Elixir v1.1, we have decided to bring them into v1.0.4 and do a new release. In this post, we will explain why.</p>
+<h2>Protocol consolidation</h2>
+<p>One of Elixir&#8217;s most important features are <a href="http://elixir-lang.org/getting-started/protocols.html">protocols</a>. Protocols allow developers to write code that accept any data type, dispatching to the appropriate implementation of the protocol at runtime. For example:</p>
+<pre><code class="elixir">defprotocol JSON do
+  def encode(data)
+end
+
+defimpl JSON, for: List do
+  def encode(list) do
+    # ...
+  end
+end
+</code></pre>
+<p>We have <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/">written about protocols before</a> and I recently explored on my Erlang Factory talk <a href="https://www.youtube.com/watch?v=Lqo9-pQuRKE">the foundation protocols have allowed us to build</a>.</p>
+<p>However, in order to play nicely with the dynamic nature of the Erlang VM where modules can be loaded at any time by the VM, as well as any protocol implementation, protocols need to check on every dispatch if a new implementation is available for any given data type.</p>
+<p>While we would gladly pay this price in development as it gives developers flexibility, we would like to avoid such in production as deployments gives us a consolidated view of all modules in the system allowing us to skip those runtime checks. For this reason, Elixir provides a feature called protocol consolidation, that consolidates all protocols with their implementations, giving protocols a fast dispatch to use in production.</p>
+<p>Prior to Elixir v1.0.4, protocol consolidation had to be manually invoked by calling <code>mix compile.protocols</code>, which would consolidate protocols into a predefined directory, and this directory had to be explicitly added to your load path when starting your project. Due to the manual nature of such commands, a lot of developers ended-up not running them in production, or were often confused when doing so.</p>
+<p>For this reason, Elixir v1.0.4 introduces a <code>:consolidate_protocols</code> option to your projects which will take care of consolidating and loading all protocols before your application starts. This option is also set to true when <code>:build_embedded</code> is true.</p>
+<h2>Build embedded</h2>
+<p>When compiling your projects, Elixir will place all compiled artifacts into the <code>_build</code> directory:</p>
+<pre><code>_build/
+  dev/
+    lib/
+      your_app/
+        ebin/
+        priv/
+      dep1/
+      dep2/
+  test/
+  prod/
+</code></pre>
+<p>Many of those applications and dependencies have artifacts in their source that are required during runtime. Such artifacts are placed in the <code>priv</code> directory in Elixir applications. By default, Elixir will symlink to their source directories during development.</p>
+<p>In production, though, we could copy those contents to avoid symlink traversal, <em>embedding</em> all relevant files to run your application into the <code>_build</code> directory, without a need for their sources.</p>
+<p>That&#8217;s what the <code>:build_embedded</code> option does and it defaults to true in production for new applications.</p>
+<h2>Start permanent</h2>
+<p>Elixir code is packaged into applications. For example, each entry we saw under <code>_build/dev/lib</code> above is a different application. When an application is started, it can be started in one of the three following modes:</p>
+<ul>
+<li><code>permanent</code> &#8211; if app terminates, all other applications and the entire node are also terminated</li>
+<li><code>transient</code> &#8211; if app terminates with :normal reason, it is reported but no other applications are terminated. If a transient application terminates abnormally, all other applications and the entire node are also terminated</li>
+<li><code>temporary</code> &#8211; if app terminates, it is reported but no other applications are terminated</li>
+</ul>
+<p>The default mode is temporary, which again, makes sense for development. For example, our test library called ExUnit, is also an application. If the application being tested crashes, we still want the ExUnit application to continue running in order to finish all tests and generate the proper reports. In this case, you definitely do not want your application to run as permanent.</p>
+<p>However, in production, once your application crashes permanently, beyond recovery, we want the whole node to terminate, otherwise whatever you have monitoring your application at the operating system level won&#8217;t notice any change.</p>
+<p>The <code>:start_permanent</code> option starts your application as <code>:permanent</code> and it defaults to true in production for new applications.</p>
+<h2>Summing up</h2>
+<p>Those new options have been introduced into Elixir v1.0.4 because they are very important for running Elixir in production. They bring more performance and stability to your Elixir-based systems.</p>
+<p>There are other smaller changes in this release, like support for Erlang 17.5 and 18.0-rc1, as well as bug fixes. <a href="https://github.com/elixir-lang/elixir/releases/tag/v1.0.4">Check the release notes</a> for more information and enjoy!</p>
+<p><a href="http://plataformatec.com.br/elixir-radar"><img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:none;" /></a></p><p>The post <a href="/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/">Build embedded and start permanent in Elixir 1.0.4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

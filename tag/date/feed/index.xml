@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>date « Plataformatec Blog</title>
+	<atom:link href="/tag/date/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 08 May 2012 18:13:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>I18n Alchemy &#8211; localization and parsing</title>
+		<link>/2012/05/i18n-alchemy-localization-and-parsing/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 08 May 2012 17:23:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[date]]></category>
+		<category><![CDATA[i18n]]></category>
+		<category><![CDATA[localization]]></category>
+		<category><![CDATA[number]]></category>
+		<category><![CDATA[parsing]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[time]]></category>
+		<guid isPermaLink="false">/?p=2328</guid>
+
+					<description><![CDATA[<p>Today I want to show you a project I&#8217;ve started over a year ago, during Mendicant University core skills course. For those who don&#8217;t know, Mendicant University is a group of skilled software developers that offer courses, mentoring, and help out the community, started by Gregory Brown, and that nowadays counts with some other awesome ... <a class="read-more-link" href="/2012/05/i18n-alchemy-localization-and-parsing/">»</a></p>
+<p>The post <a href="/2012/05/i18n-alchemy-localization-and-parsing/">I18n Alchemy – localization and parsing</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today I want to show you a project I&#8217;ve started over a year ago, during <a href="http://mendicantuniversity.org/" title="Mendicant University" target="_blank">Mendicant University</a> core skills course. For those who don&#8217;t know, Mendicant University is a group of skilled software developers that offer courses, mentoring, and help out the community, started by <a href="http://majesticseacreature.com/" target="_blank" title="Gregory Brown">Gregory Brown</a>, and that nowadays counts with some other awesome folks as part of the staff. I highly recommend taking a look at and enrolling.</p>
+<p>Back to I18n, during Mendicant University we were supposed to create a project in Ruby, not specifically with Rails, and I decided to scratch my own itch by trying to solve a problem we usually have in Brazil: receiving date/time/numeric input from user interface. I know and have already used the <a href="https://github.com/clemens/delocalize" title="delocalized">delocalized gem</a>, and it works quite nice, but sometimes I felt a bit uncomfortable about how it handled some parts of localization/parsing. This is mainly due to the need to monkey patch both ActiveRecord to handle input, and ActionView to handle output. Besides that, and most important, I had to come up with some project and I thought that&#8217;d be a good challenge :D.</p>
+<p>The main goal of this project is to provide a proxy object to use with your ORM (currently ActiveRecord only) that will be responsible for localizing and parsing the date/time/numeric attributes when getting or setting their values, respectively. Lets see some quick examples:</p>
+<pre lang="ruby">
+# Include the proxy in your model
+class Product < ActiveRecord::Base
+  include I18n::Alchemy
+end
+
+# Grab your object from the database
+@product   = Product.first
+# Instantiate the localized proxy
+@localized = @product.localized
+</pre>
+<p>Now that we have a localized proxy for the <code>@product</code> object, we can get/set numeric attributes with localized values, such as:</p>
+<pre lang="ruby">
+@localized.price = "1.99"
+
+@product.price   # => 1.99
+@localized.price # => "1.99"
+
+I18n.with_locale :pt do
+  @localized.price = "1,88"
+
+  @product.price   # => 1.88
+  @localized.price # => "1,88"
+end
+</pre>
+<p>And also date/time attributes, for instance:</p>
+<pre lang="ruby">
+@localized.released_at = "12/31/2011"
+
+@product.released_at   # => Date.new(2011, 12, 31)
+@localized.released_at # => "12/31/2011"
+
+I18n.with_locale :pt do
+  @localized.released_at = "31/12/2011"
+
+  @product.released_at   # => Date.new(2011, 12, 31)
+  @localized.released_at # => "31/12/2011"
+end
+</pre>
+<p>I18n Alchemy can also receive a hash of attributes, the same way you use with your models when calling <code>new</code>. That means you can use it like this:</p>
+<pre lang="ruby">
+# You could be using params[:product] for instance.
+I18n.with_locale :pt do
+  @localized = @product.localized(:price => "1,88") 
+
+  @product.price   # => 1.88
+  @localized.price # => "1,88"
+end
+</pre>
+<p>The parsing/localization formats are basically the same ones you already use in your Rails application. You can check the basic locale configuration for <a href="https://github.com/carlosantoniodasilva/i18n_alchemy" title="I18n Alchemy - date/number parsing/localization">I18n Alchemy in its README on github</a>.</p>
+<h2>Wrapping up</h2>
+<p>I18n Alchemy is a small and new project which solves most of the problems we commonly face when dealing with localization and parsing of date/time/numeric values. It is tested with Rails 3.0, 3.1 and 3.2 and works with all the basic methods, such as <code>attributes=</code>, <code>assign_attributes</code>, <code>update_attributes</code> and nested attributes as well.</p>
+<p>It was a really fun time creating it during Mendicant University, and it took a long time until I decided to release it as a gem. There is still a bunch of things to do, but I wanted to ask you to give it a try and let me know about any feedback you have.</p>
+<p>As a side note, if you are interested in knowing more about the design decisions that led this project, you may want to take a look at <a href="http://blog.rubybestpractices.com/posts/gregory/055-issue-23-solid-design.html" title="Ruby Best Practices: Issue #23: SOLID Design Principles">Gregory Brown's post on Ruby Best Practices, entitled "Issue #23: SOLID Design Principles"</a>, more specifically in the Open/closed principle topic.</p>
+<p>I'm releasing the first 0.0.1 version today, and I hope you find it useful. Have any comments? Let us know!</p><p>The post <a href="/2012/05/i18n-alchemy-localization-and-parsing/">I18n Alchemy – localization and parsing</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

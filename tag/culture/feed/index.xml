@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>culture « Plataformatec Blog</title>
+	<atom:link href="/tag/culture/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:27:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>What I have learned in my first three months at Plataformatec</title>
+		<link>/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/</link>
+					<comments>/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/#comments</comments>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 23 Apr 2015 12:00:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<guid isPermaLink="false">/?p=4522</guid>
+
+					<description><![CDATA[<p>It hasn&#8217;t passed too much since I&#8217;ve begun working at Plataformatec, but I&#8217;ve learned a lot already! I work with great professionals which are gathered not only by common goals but also by an awesome culture. I&#8217;ll list a few points that I think are being great so far. Be pragmatic and agile Plataformatec is ... <a class="read-more-link" href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">»</a></p>
+<p>The post <a href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">What I have learned in my first three months at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It hasn&#8217;t passed too much since I&#8217;ve begun working at Plataformatec, but I&#8217;ve learned a lot already! I work with great professionals which are gathered not only by common goals but also by an awesome culture. I&#8217;ll list a few points that I think are being great so far.</p>
+<h2>Be pragmatic and agile</h2>
+<p>Plataformatec is a very pragmatic company that is in a constant learning process. We are always alert for possible knowledge acquirement. <a href="/2015/01/empirical-knowledge-formalization-in-project-retrospectives/">Empirical knowledge is analyzed with care</a>, we try to document everything for further usage. A good experience is always a candidate for a practice and when it&#8217;s not, it becomes useful for future projects or similar situations.</p>
+<p>Our practices are continuously being re-evaluated to assure that they still fulfill their purpose. We&#8217;re not afraid of deprecating them when it&#8217;s needed, but we always collect data from them for continuous improvement.</p>
+<h2>Teams should share without being afraid</h2>
+<p>Sharing what you&#8217;ve learned is great for helping people and get feedback from them. In the other hand, sharing doubts isn&#8217;t easy as it seems. People tend to ask for help in a private context so fewer people know about it. I always remember my teachers saying in the class: &#8220;Don&#8217;t be ashamed of asking any doubts&#8221;. But that happened anyway, because being mocked was never good.</p>
+<p>Our team is composed of really nice and helpful people. We enjoy helping people and we share with each other pretty much everything we think it&#8217;s interesting.  It&#8217;s very common to hear someone here saying &#8220;a doubt from one person could be the same from another person&#8221; or &#8220;I may have a right answer for you, but it&#8217;s quite possible that someone has a better way to do this&#8221;. Doubts can be a great source of feedback and knowledge when they are public. That&#8217;s why we don&#8217;t usually use private communication tools unless it is something personal.</p>
+<h2>Open source culture</h2>
+<p>Like many people, I got to know Plataformatec for its contributions to the open source community. But when I joined the company, I noticed that the open source ideas go even deeper here. I&#8217;d say that Plataformatec&#8217;s soul is open source not only because of its software contributions but also because of its way to approach everything else.</p>
+<p>I&#8217;m sure that I have learned a lot about code review and documentation, but the contribution practices here goes beyond that. Lots of things we do are made with the help of the whole team: from pull requests to blog posts, to ceremonies and company decisions. We are very communicative! Take a look at this <a href="/2015/03/continuous-communication/">blog post to know more about our communication processes</a>.</p>
+<p>These were the points that I think are the most interesting to share so far. I hope I can contribute more and more to this team and to share what I learn with you along this journey.</p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">What I have learned in my first three months at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/feed/</wfw:commentRss>
+			<slash:comments>13</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Continuous communication</title>
+		<link>/2015/03/continuous-communication/</link>
+					<comments>/2015/03/continuous-communication/#comments</comments>
+		
+		<dc:creator><![CDATA[Kassio Borges]]></dc:creator>
+		<pubDate>Wed, 11 Mar 2015 12:00:45 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<guid isPermaLink="false">/?p=4443</guid>
+
+					<description><![CDATA[<p>After continuous integration, which evolved to discrete integration, and continuous delivery, why not try continuous communication to avoid misleading messages inside your team? Why communication matters? It&#8217;s known that communication issues results in many software development problems. Some agile frameworks, such as Scrum, have well defined communication activities like daily meetings and sprint plannings. Communication ... <a class="read-more-link" href="/2015/03/continuous-communication/">»</a></p>
+<p>The post <a href="/2015/03/continuous-communication/">Continuous communication</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>After <a href="http://www.thoughtworks.com/continuous-integration">continuous integration</a>, which evolved to <a href="/2015/02/introducing-discrete-integration/">discrete integration</a>, and <a href="http://www.thoughtworks.com/continuous-delivery">continuous delivery</a>, why not try continuous communication to avoid misleading messages inside your team?</p>
+<h2>Why communication matters?</h2>
+<p>It&#8217;s known that communication issues results in many <a href="http://en.wikipedia.org/wiki/The_Mythical_Man-Month#Communication">software development problems</a>.</p>
+<p>Some agile frameworks, such as Scrum, have well defined communication activities like daily meetings and sprint plannings.</p>
+<p>Communication is an important subject, not only for software development, but also in many other areas. There are some social frameworks, such as <a href="http://collectiveimpactforum.org/what-collective-impact">colletive impact</a> and <a href="http://www.collaborationforimpact.com/">collaboration for impact</a>, that use <a href="http://www.collaborationforimpact.com/collective-impact/continuous-communication/">continuous communication</a> to help people achieve their goals.</p>
+<p>Here at Plataformatec, we take this quite seriously as well. We&#8217;re always evolving our communication practices, to achieve our goals and to keep our culture strong.</p>
+<h2>Continuous communication at Plataformatec</h2>
+<p>We talk a lot to each other. We use Campfire for team chatting, Basecamp for persistent messages and hangouts or skype for face-to-face calls.</p>
+<p>Besides the day-to-day communication, we use some agile practices such as daily meetings and retrospectives. Some of these meetings/tools are used inside projects, others inter-projects and finally, we have company-wide meetings. Let&#8217;s see how these practices evolved to fit our current Modus Operandi.</p>
+<h3>Inside projects</h3>
+<h4>Dailies</h4>
+<p>In order to keep everyone inside the project on the same page we use daily meetings. An important detail here is the client presence. The client&#8217;s daily presence helps to avoid re-working tasks, since they know what is happening on a day-to-day basis.</p>
+<h4>Weekly project meetings</h4>
+<p>Once a week, every project team also has a meeting with the Account Manager. Our Account Manager is the person who helps the team solve problems at a higher level, typically overseeing multiple projects at a time, so they are not directly involved in the project&#8217;s day-to-day tasks.</p>
+<p>We have an open communication channel with them, but it&#8217;s important to make a follow-up with all the team together. This is to ensure that the team exchanges more information and keep the Account Manager better informed about the project. Then he can provide the team with better advice on how to solve day-to-day challenges.</p>
+<h3>Inter-projects</h3>
+<h4><a name="dashboard"></a>Dashboard meetings</h4>
+<p>Every Friday our <a href="#daily">company daily</a> meeting gets a new attribution. In addition to company announcements, we also share the projects status, what happened in the current week, new technical challenges, applied techniques, releases delivered, and so on.</p>
+<p>Everyone in projects assigns a grade to the project, which can be a value between -1 and 2. A -1 grade means &#8220;We are performing really bad&#8221; and 2 means &#8220;We are performing really well&#8221;. Together with the grade we write a brief explanation justifying it.</p>
+<p>We start the dashboard meeting analyzing the current and past grades so we can check how the project is evolving. This is important because everyone can have a basic knowledge of how the other projects are moving on and new things that our colleagues are using. Having a big picture of each project paves a way for advice and knowledge sharing.</p>
+<h3>Company-wide</h3>
+<h4><a name="daily"></a>Company Dailies</h4>
+<p>Back when the Plataformatec team was smaller, we used to do dailies to exchange projects information and other company announcements, such as new employees or new clients. But as the team got bigger, we had more and more projects teams, and exchanging all that information became complex.</p>
+<p>Our dailies couldn&#8217;t involve sharing project information anymore, so we changed its purpose, and today we use it to share information at a company level. Information about projects is now shared in the <a href="#dashboard">dashboard meetings, weekly</a>.</p>
+<h4>Weekly reports</h4>
+<p>We also have a weekly summary email, where we point our project highlights, new leads, new employees, next events. It&#8217;s a very good tool for those who lost some meeting during the week.</p>
+<h4>Monthly retrospectives</h4>
+<p>Back when our team was smaller, we used to have biannual retrospectives, where we listed our good points, things to be maintained, and points we needed to improve. We also used the retrospectives meetings to do team appreciation, where everyone has the opportunity to congratulate or appreciate someone else&#8217;s work in the team.</p>
+<p>We used to have one day for this meeting, but as new members joined the team, it was not enough anymore. So we changed to have a monthly retrospective, focused on the good points and the points to improve. Every month we select one or more subjects to be discussed, and quarterly we re-prioritize and list new subjects, if necessary. The appreciation now is done in the <a href="#review">Biannual reviews</a>.</p>
+<h4><a name="review"></a>Biannual reviews</h4>
+<p>With the retrospectives occurring monthly, now we have more time in our biannual reviews. We keep doing the team appreciation, and we also:</p>
+<ul>
+<li>check our goal status (Mid-Year review, usually in June or July) and</li>
+<li>present the year analysis in the ending of the year, usually in November.</li>
+</ul>
+<h4>Kick-Off</h4>
+<p>At the very beginning of each year, the partners share the company goals and the strategic vision. This is the moment to review where we were last year, where we are now and where we want to be in the near future. It is also at this meeting that we get last year&#8217;s balance and financial projections.</p>
+<h4>One-on-one conversations</h4>
+<p>The main reason of all these meetings is to give and receive feedback. The communication problem occurs when some information is not crystal clear; the feedback mitigates this problem since everyone has more opportunities to solve one&#8217;s doubts.</p>
+<p>However, some people have difficulty talking in crowded places, so we created an opportunity for those people too. We have a face-to-face meeting with the HR bi-monthly. Also, all partners have a weekly hour slot on their agendas to receive anyone who wants to talk about any subject.</p>
+<h2>How to evolve</h2>
+<p>It&#8217;s part of our culture to have good and clear communication. The practices we are using now certainly will not stay the same way forever. Our team is still growing; every year we have more and more projects and people joining us. Adapting and improving these practices are required to keep the company communication evolving.</p>
+<p>It may appear that we have a lot of meetings, but they are organized and prepared to be efficient and avoid problems that having only ad-hoc communication could cause. All cited meetings here are timeboxed and have a specific goal. We work hard to achieve the meetings goals in the given timeframe for each meeting.</p>
+<p>But beware! This is not about creating new formal meetings per se. You should focus on  promoting a healthy culture of good and clear communication, and keeping feedback channels wide open within the whole company is crucial.</p>
+<p>And what about you? What are your communication practices? Do you ever changed them?</p><p>The post <a href="/2015/03/continuous-communication/">Continuous communication</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/03/continuous-communication/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>1 year working at Plataformatec</title>
+		<link>/2014/05/1-year-working-at-plataformatec/</link>
+					<comments>/2014/05/1-year-working-at-plataformatec/#comments</comments>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Tue, 27 May 2014 12:00:43 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<guid isPermaLink="false">/?p=3987</guid>
+
+					<description><![CDATA[<p>One year ago I joined Plataformatec and today, I’m going to tell you some practices that I have learned while working here during all this year. I hope you’ll find something helpful to improve your team or your company. Sustainable work hours Some companies expect their employees to work overtime when a project gets close ... <a class="read-more-link" href="/2014/05/1-year-working-at-plataformatec/">»</a></p>
+<p>The post <a href="/2014/05/1-year-working-at-plataformatec/">1 year working at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One year ago I joined Plataformatec and today, I’m going to tell you some practices that I have learned while working here during all this year. I hope you’ll find something helpful to improve your team or your company.</p>
+<h3>Sustainable work hours</h3>
+<p>Some companies expect their employees to work overtime when a project gets close to the deadline and it&#8217;s not finished yet. When I came to Plataformatec, I discovered that the default here is to work in a sustainable way (40 hours/week). There have been a few exceptions, but we are not encouraged to do so, and the extra hours can be compensated as well.</p>
+<h3>Software development tools and practices</h3>
+<p>At Plataformatec we choose to start with a small set of basic tools and practices, adapting as we learn about the project and the customer.</p>
+<p>One of the practices that I liked the most and had no previous experience with is the retrospective meetings. If you never heard about it, it&#8217;s simple! It&#8217;s a meeting that we do at the end of an iteration, reviewing everything that happened: not only the good things, but also the ones that we need to make better, so that we can plan actions to continually improve. For me, it is a very pleasant meeting because it&#8217;s an opportunity to recognize the good work someone has done or to search for a solution to a recurring problem. One interesting fact is that we also use retrospective meetings internally, for the whole company itself.</p>
+<h3>We don&#8217;t cut corners</h3>
+<p>We really care about our customer&#8217;s products and the code quality. We don&#8217;t like adding ineffective, incomprehensible or quick-and-dirty code (also known in Brazil as “gambiarra”), because we know that it may cause problems in the future.</p>
+<p>We know that it&#8217;s not that easy to avoid bad code and beginners mistakes, but there is no definitive solution for this kind of problem. Here at Plataformatec we use two tools to achieve a greater level of code quality: our <a title="Plataformatec Guidelines" href="http://guidelines.plataformatec.com.br/" target="_blank">guidelines </a>and a simple process called code review via <a title="Pull Requests - Plataformatec Blog Post" href="http://guidelines.plataformatec.com.br/pull-requests.html" target="_blank">pull request</a>. If you&#8217;re going to adopt just one of these practices, choose Code Review.</p>
+<p>Every single line of code matters, that&#8217;s why it&#8217;s better not to put all that responsibility on just one person&#8217;s shoulders. The code review process can help with that. When doing code reviews, everyone in the team is accountable for the code that is being shipped, not just the developer that created the pull request.</p>
+<p>Before working here, I thought pull requests were only an open source practice, that it didn&#8217;t have place in commercial projects. It was really mind blowing to see how it works on a daily basis. We reduce errors, ask for help to an experienced programmer, learn about features of frameworks and languages, discuss algorithms… it is an awesome communication tool, and the best part is, all that communication happens in the context of the source code.</p>
+<h3>Focus</h3>
+<p>It&#8217;s simple: we do software development, we work hard to improve the way we do it and to become one of the best references on it. The whole company works as a team, and everyone shares the same goal. It means that the salespeople close the deals with terms that developers and managers can work in a healthy and challenging environment, and, most importantly, the customers know what to expect from us.</p>
+<h3>Knowledge sharing</h3>
+<p>It was a surprise to me when I came here and saw that all of my new coworkers love the programming community and that most of open source work is done during their free time. We are frequently encouraged to contribute to open source, attend to local and international events, write blog posts, present talks and discuss software development subjects on our Hacking Evening every Tuesday. Best of all, you don’t need to do it alone, there is always someone to lend you a hand. Knowing these people and working with them motivates me and help me love more what I do every day.</p>
+<p>That&#8217;s all I had to say for now. Working at Plataformatec has taught me a lot of good lessons and I know I still have a lot of things to learn. I selected the practices that I liked the most and wanted to share.</p>
+<p>Do you have any practice that you appreciate? Tell us about in the comments below!</p><p>The post <a href="/2014/05/1-year-working-at-plataformatec/">1 year working at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/05/1-year-working-at-plataformatec/feed/</wfw:commentRss>
+			<slash:comments>7</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Estamos contratando! E o nosso melhor job description é a nossa história.</title>
+		<link>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/</link>
+					<comments>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 10 Jan 2013 09:00:45 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[hiring]]></category>
+		<guid isPermaLink="false">/?p=3272</guid>
+
+					<description><![CDATA[<p>Se você acredita em colaboração, tem alta capacidade de aprendizado e tem vontade de trabalhar com um time com histórico de sucesso comprovado, participe do nosso processo seletivo. Você pode ser o nosso próximo integrante do nosso time. :)</p>
+<p>Como participar do processo seletivo<br />
+Para participar do processo seletivo visite http://plataformatec.com.br/careers ou também veja http://www.facebook.com/plataformatec.com.br para conhecer mais sobre o nosso time.</p>
+<p>The post <a href="/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/">Estamos contratando! E o nosso melhor job description é a nossa história.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Em 2009, quando fundamos a Plataformatec, havia muita incerteza e desafios pela frente. Por outro lado havia pontos claros para nós fundadores, principalmente quando o assunto eram as contratações do nosso time. Era unânime que não contrataríamos &#8220;recursos&#8221; e sim pessoas com as quais nós teríamos prazer e confiança em trabalhar juntos. Afinal de contas, o nosso modelo de negócios sempre foi lastreado na construção da nossa marca através da qualidade dos serviços que prestamos. Sendo assim, faz total sentido investir nossos esforços na retenção e desenvolvimento do nosso time.</p>
+<p>Quatro anos depois aqui estamos, com um considerável histórico de projetos bem sucedidos e algo que consideramos muito valioso: o nosso Time. Quem conhece um pouco sobre empresas de &#8220;Outsourcing de TI&#8221; sabe que o <a href="https://www.google.com.br/search?q=turnover+em+TI">turnover é altíssimo</a>, mais que o triplo da média de outros setores. Honestamente, é uma lógica que nunca entendemos. Aqui na Plataformatec, não tivemos nenhum desligamento em 2012 e em nossos quatro anos de existência, somente um dos nossos engenheiros optou em sair da Plataformatec (aliás, ele é um grande amigo nosso e sempre que está no Brasil aparece para comer uma pizza conosco). Já houve pessoas que nos perguntaram qual é a mágica. A resposta é óbvia: não tem mágica. Nós somente convidamos pessoas a juntarem-se ao nosso time quando sentimos que há um grande fit cultural.</p>
+<p style="text-align: center;"><img fetchpriority="high" decoding="async" class="aligncenter  wp-image-3274" title="Time Plataformatec" alt="Plataformatec_team" src="/wp-content/uploads/2013/01/Plataformatec_team.jpg" width="518" height="289" srcset="/wp-content/uploads/2013/01/Plataformatec_team.jpg 647w, /wp-content/uploads/2013/01/Plataformatec_team-300x167.jpg 300w" sizes="(max-width: 518px) 100vw, 518px" /></p>
+<p>Portanto se você acredita em colaboração, tem alta capacidade de aprendizado e tem vontade de trabalhar com um time com histórico de sucesso comprovado, continue lendo. Você pode ser o próximo integrante do nosso time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p><strong>Como participar do processo seletivo</strong><br />
+Para participar do processo seletivo visite <strong><a title="Plataformatec Careers" href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers</a></strong> ou também veja <strong><a title="Plataformatec Facebook page" href="http://www.facebook.com/plataformatec.com.br">http://www.facebook.com/plataformatec.com.br</a></strong> para conhecer mais sobre o nosso time.</p>
+<p><strong>Vagas abertas</strong><br />
+Estamos à procura de:</p>
+<ul>
+<li>Desenvolvedores de Software (Ruby e Rails)</li>
+<li>Front-end Developers</li>
+<li>Scrum Masters / Gerente de Projetos</li>
+<li>Business Analysts (extração de requisitos)</li>
+</ul>
+<p><strong>Requisitos para candidatar-se (todas as vagas)</strong></p>
+<p>Para qualquer uma das vagas:<br />
+&#8211; Inglês Intermediário<br />
+&#8211; Local de trabalho: São Paulo, bairro Vila Madalena<br />
+&#8211; Pelo menos um ano de experiência na sua área</p>
+<p><strong>Requisitos complementares para candidatos a Desenvolvedores de Software</strong><br />
+&#8211; Background em programação orientada a objetos<br />
+&#8211; Pelo menos um ano de experiência com desenvolvimento de aplicativos web em qualquer linguagem<br />
+&#8211; Pelo menos seis meses de experiência com Ruby e Rails<br />
+&#8211; OS Linux ou Mac<br />
+Mesmo que você não tenha todos os requisitos acima, mas realmente quer trabalhar conosco e ama programação, você está convidado a participar do nosso processo seletivo.</p>
+<p>Estamos esperando por você!</p>
+<p>Processo seletivo &#8211; <a title="Plataformatec Careers" href="http://plataformatec.com.br/careers">http://plataformatec.com.br/careers<br />
+</a>Facebook page &#8211; <a title="Plataformatec Facebook page" href="http://www.facebook.com/plataformatec.com.br">http://www.facebook.com/plataformatec.com.br</a>.</p>
+<p>[curiosidade] No <a href="/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/">blog post de dois anos atrás</a> ainda dava para enxergar o sofá nas fotos. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/">Estamos contratando! E o nosso melhor job description é a nossa história.</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Carlos Antonio da Silva joins the Rails Core team \o/</title>
+		<link>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/</link>
+					<comments>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 03 Jan 2013 09:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails core]]></category>
+		<guid isPermaLink="false">/?p=3250</guid>
+
+					<description><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael's achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we'd only dream of, but in 2012 it became reality. I must say that it didn't happen by chance, not at all.</p>
+<p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael&#8217;s achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we&#8217;d only dream of, but in 2012 it became reality. I must say that it didn&#8217;t happen by chance, not at all.</p>
+<div id="attachment_3251" style="width: 160px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3251" class="size-full wp-image-3251" alt="Carlos Antonio da Silva Rails Core team member" src="/wp-content/uploads/2013/01/carlos-antonio.jpeg" width="150" height="175" /><p id="caption-attachment-3251" class="wp-caption-text">@cantoniodasilva</p></div>
+<p>Carlos has always been an outstanding software developer and a great teammate. He is someone we all deeply trust to solve hard problems and deliver mission critical projects. We&#8217;ve always watched Carlos working really hard and we must say that he deserved every bit of such achievement. You can check out his contributions into many other open source projects at <a href="http://github.com/carlosantoniodasilva">http://github.com/carlosantoniodasilva</a></p>
+<p>Kudos to our friend @cantoniodasilva!!! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p><p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rafael França joins the Rails Core Team</title>
+		<link>/2012/10/rafael-franca-joins-the-rails-core-team/</link>
+					<comments>/2012/10/rafael-franca-joins-the-rails-core-team/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 30 Oct 2012 12:27:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=3165</guid>
+
+					<description><![CDATA[<p>Last May we happily announced that Rafael França and Carlos Antonio earned commit access to the Ruby on Rails repository &#8211; it was a great accomplishment that deserved its own blog post. Today, we have some great news and we want to share with our readers. Just a few days ago, our team mate Rafael ... <a class="read-more-link" href="/2012/10/rafael-franca-joins-the-rails-core-team/">»</a></p>
+<p>The post <a href="/2012/10/rafael-franca-joins-the-rails-core-team/">Rafael França joins the Rails Core Team</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last May we happily announced that Rafael França and Carlos Antonio earned commit access to the Ruby on Rails repository &#8211; it was a great accomplishment that deserved its own blog post. Today, we have some great news and we want to share with our readers. Just a few days ago, our team mate Rafael França (<a href="http://twitter.com/rafaelfranca">@rafaelfranca</a>) received an invitation to join the Rails Core Team. And, of course, he accepted!</p>
+<p>Rafael contributed to different features coming up in the next Rails 4 release and worked extensively with other Rails contributors to smash bugs and provide many improvements to the framework. I am personally happy to have a friend joining me in the <a href="http://rubyonrails.org/core">Rails Core Team</a>.</p>
+<p>Furthermore, Rafael França&#8217;s contributions go beyond Rails. Lately he has also contributed to many other open source projects, like <a href="http://mongoid.org/">Mongoid</a>, <a href="https://github.com/github/janky">Janky</a> and <a href="https://github.com/mperham/dalli">Dalli</a> besides Plataformatec&#8217;s own projects like <a href="https://github.com/plataformatec/devise">Devise</a>, <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and <a href="https://elixir-lang.org/">Elixir</a>.</p>
+<p><img decoding="async" src="/wp-content/uploads/2012/10/rafaelfranca.jpeg" alt="" title="Rafael França" width="150" height="175" class="aligncenter size-full wp-image-3169" /></p>
+<p>Rafael, congratulations! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>From all your friends at Plataformatec.</p><p>The post <a href="/2012/10/rafael-franca-joins-the-rails-core-team/">Rafael França joins the Rails Core Team</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/10/rafael-franca-joins-the-rails-core-team/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

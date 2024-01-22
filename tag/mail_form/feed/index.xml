@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>mail_form « Plataformatec Blog</title>
+	<atom:link href="/tag/mail_form/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 10 May 2013 20:36:15 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Devise and Rails 4</title>
+		<link>/2013/05/devise-and-rails-4/</link>
+					<comments>/2013/05/devise-and-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 10 May 2013 20:36:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[mail_form]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3440</guid>
+
+					<description><![CDATA[<p>Devise 3.0 rc version with Rails 4 compatibility and new 2.2.4 stable version. Simple Form, Responders, Show For and Mail Form versions with Rails 4 compatibility.</p>
+<p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This week we released the first release candidate version of Devise that is fully compatible with Rails 4, and we&#8217;re bumping its version to 3.0. This version completely drops support for Rails 3.1 and Ruby 1.8.7, only keeping compatibility with both Rails 3.2 and Rails 4, running with Ruby 1.9.3 and 2.0.</p>
+<p>This rc version took some time to get ready, we&#8217;ve been running a <em>rails4</em> branch for some time already and one of the reasons was because of the changes required to <a href="https://github.com/plataformatec/devise/commit/c63483ae2409ba44889756796930f5d45630d7b3">make it compatible with the new <strong>strong parameters</strong> API from Rails 4</a>. We are aware that some people have been using this branch since Rails 4.0 beta1 with success, and we&#8217;re now inviting you to try 3.0 rc with the <a href="http://weblog.rubyonrails.org/2013/5/1/Rails-4-0-release-candidate-1/">recent release of Rails 4.0 rc1</a>.</p>
+<h3>Devise stable</h3>
+<p>Together with the 3.0 beta version, we&#8217;ve released Devise 2.2.4 with a few enhancements and bug fixes, make sure to <a href="https://github.com/plataformatec/devise/blob/v2.2.4/CHANGELOG.rdoc">check the changelog</a> to see the new goodies. All changes are also included in the rc version.</p>
+<h3>Simple Form</h3>
+<p>Simple Form has been running a 3.0 rc version for a couple months already, fully compatible with Rails 4 as well, and today we are releasing its release candidate version. In Simple Form master we just dropped support to the 3.x Rails series, focusing our work on Rails 4 compatibility from now on, due to a series of improvements in Rails 4 regarding form helpers &#8211; but don&#8217;t worry, we will be keeping a v2.1 branch with Rails 3.2 compatibility for a while.</p>
+<p>We have some cool plans to improve the wrappers API even further, but that&#8217;s subject for another blog post :).</p>
+<h3>Responders</h3>
+<p>Responders has been around for quite some time already and we use it in most of our projects, so today we&#8217;re celebrating its 1.0 release candidate version, specially to support Rails 4.</p>
+<h3>Show For</h3>
+<p>Show For just got a new stable release, v0.2.6, with all the enhancements and bug fixes that were in master, plus a v0.3.0 rc version that adds Rails 4 support.</p>
+<h3>Mail Form</h3>
+<p>Mail Form also got a new 1.5 rc release with Rails 4.0 compatibility. Nothing else has changed from the current 1.4 version.</p>
+<h3>Has Scope</h3>
+<p>Has Scope is getting a new 0.6 rc version with Rails 4.0 compatibility, including a couple of fixes that were already present in master.</p>
+<h2>Compatibility</h2>
+<p>All these new releases are officially dropping support to Rails 3.0 and 3.1, and Ruby 1.8.7. We&#8217;ll keep compatibility with Rails 3.2 and 4.0 from now on, all of them on the same branches except for Simple Form which has different branches for each Rails version.</p>
+<h2>Wrapping up</h2>
+<p>We&#8217;ve got new hot releases for you to try out with Rails 4, please give them a try and let us know if you find any issue or have any feedback.</p>
+<p>We&#8217;d also like to specially thank everyone involved in helping us getting these projects up and running in Rails 4, without you folks that&#8217;d have never been possible.</p>
+<p>Enjoy &lt;3</p><p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/devise-and-rails-4/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

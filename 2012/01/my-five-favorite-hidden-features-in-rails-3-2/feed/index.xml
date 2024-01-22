@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: My five favorite &#8220;hidden&#8221; features in Rails 3.2	</title>
+	<atom:link href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 08 Mar 2012 13:05:55 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Chris Bloom		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1197</link>
+
+		<dc:creator><![CDATA[Chris Bloom]]></dc:creator>
+		<pubDate>Tue, 14 Feb 2012 14:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1197</guid>
+
+					<description><![CDATA[I wanted to say thank you, because you made me realize that I&#039;ve been incorrectly expecting rails to magically add indexes for me. I had no reason to expect this - I know the framework well enough. But it suddenly occurred to me as I was reading tip #2 that I had an app that had been in production for months, one that I was in the process of trying to work out the apparent bottlenecks in throughput, and which had no indexes on any foreign keys. I nearly kicked myself. Hopefully these generator enhancements will save me from a good self-kicking in the future.]]></description>
+			<content:encoded><![CDATA[<p>I wanted to say thank you, because you made me realize that I&#8217;ve been incorrectly expecting rails to magically add indexes for me. I had no reason to expect this &#8211; I know the framework well enough. But it suddenly occurred to me as I was reading tip #2 that I had an app that had been in production for months, one that I was in the process of trying to work out the apparent bottlenecks in throughput, and which had no indexes on any foreign keys. I nearly kicked myself. Hopefully these generator enhancements will save me from a good self-kicking in the future.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris Hunter		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1196</link>
+
+		<dc:creator><![CDATA[Chris Hunter]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2012 15:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1196</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1188&quot;&gt;Hernán Schmidt <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2714.png" alt="✔" class="wp-smiley" style="height: 1em; max-height: 1em;" />&lt;/a&gt;.
+
+Although given that the view path was derived from the mode&#039;s class name, you could argue that it already was. I&#039;ve had need of this feature for rendering diverse collections of objects, so I&#039;m glad to see it implemented.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1188">Hernán Schmidt ✔</a>.</p>
+<p>Although given that the view path was derived from the mode&#8217;s class name, you could argue that it already was. I&#8217;ve had need of this feature for rendering diverse collections of objects, so I&#8217;m glad to see it implemented.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: donaldball		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1195</link>
+
+		<dc:creator><![CDATA[donaldball]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2012 15:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1195</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1194&quot;&gt;Ken Collins&lt;/a&gt;.
+
+That&#039;s something else altogether. #cache_key is a bona fide general purpose model method; it&#039;s the model identifying itself a short name that&#039;s consistent in certain conditions.
+
+#to_partial_path, by contrast, is strongly tied to the ActionView layer. Were it an ActiveRecord method, I&#039;d be bothered, but Jose rightly points out that it&#039;s ActiveModel, so could and should be implemented on presenter objects instead of AR objects.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1194">Ken Collins</a>.</p>
+<p>That&#8217;s something else altogether. #cache_key is a bona fide general purpose model method; it&#8217;s the model identifying itself a short name that&#8217;s consistent in certain conditions.</p>
+<p>#to_partial_path, by contrast, is strongly tied to the ActionView layer. Were it an ActiveRecord method, I&#8217;d be bothered, but Jose rightly points out that it&#8217;s ActiveModel, so could and should be implemented on presenter objects instead of AR objects.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ken Collins		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1194</link>
+
+		<dc:creator><![CDATA[Ken Collins]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2012 13:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1194</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1190&quot;&gt;donaldball&lt;/a&gt;.
+
+Does a model defining #cache_key which can be leveraged by view code  also break concerns? I do not think so.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1190">donaldball</a>.</p>
+<p>Does a model defining #cache_key which can be leveraged by view code  also break concerns? I do not think so.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Obie Fernandez		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1193</link>
+
+		<dc:creator><![CDATA[Obie Fernandez]]></dc:creator>
+		<pubDate>Tue, 31 Jan 2012 14:29:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1193</guid>
+
+					<description><![CDATA[Thanks for the great writeup. I elaborate a bit on item #4 in my blog post http://blog.obiefernandez.com/content/2012/01/rendering-collections-of-heterogeneous-objects-in-rails-32.html]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the great writeup. I elaborate a bit on item #4 in my blog post http://blog.obiefernandez.com/content/2012/01/rendering-collections-of-heterogeneous-objects-in-rails-32.html</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Prabesh Shrestha		</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1192</link>
+
+		<dc:creator><![CDATA[Prabesh Shrestha]]></dc:creator>
+		<pubDate>Mon, 30 Jan 2012 11:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2451#comment-1192</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1188&quot;&gt;Hernán Schmidt <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2714.png" alt="✔" class="wp-smiley" style="height: 1em; max-height: 1em;" />&lt;/a&gt;.
+
+Can you explain a bit. I hope this is useful .]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/comment-page-1/#comment-1188">Hernán Schmidt ✔</a>.</p>
+<p>Can you explain a bit. I hope this is useful .</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

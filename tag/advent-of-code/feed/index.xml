@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>advent of code « Plataformatec Blog</title>
+	<atom:link href="/tag/advent-of-code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 05 Dec 2018 23:04:33 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Let&#8217;s learn Elixir together on Advent of Code!</title>
+		<link>/2018/11/lets-learn-elixir-together-with-advent-of-code/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 21 Nov 2018 18:08:28 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[advent of code]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=8019</guid>
+
+					<description><![CDATA[<p>Hi everyone, Advent of Code is a series of small programming puzzles for a variety of skill sets and skill levels in any programming language you like. Advent of Code was created by Eric Wastl and it starts on December 1st of every year. We get one new puzzle per day, until December 25th, with ... <a class="read-more-link" href="/2018/11/lets-learn-elixir-together-with-advent-of-code/">»</a></p>
+<p>The post <a href="/2018/11/lets-learn-elixir-together-with-advent-of-code/">Let’s learn Elixir together on Advent of Code!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Hi everyone,</p>
+<p><a href="https://adventofcode.com/">Advent of Code</a> is a series of small programming puzzles for a variety of skill sets and skill levels in any programming language you like. Advent of Code was created by Eric Wastl and it starts on December 1st of every year. We get one new puzzle per day, until December 25th, with a total of 25 puzzles.</p>
+<p>In previous editions, many people have used Advent of Code to learn a new programming language, including Elixir. This year we will be joining you so we can all learn Elixir together! In particular, José Valim (that&#8217;s me!), the creator of Elixir, will live stream and solve the puzzle from the previous day and share it with everyone. This gives everyone time to try the puzzle on their own so we can discuss different approaches live.</p>
+<p>The live stream will happen daily on <a href="https://www.twitch.tv/josevalim">Twitch</a>, for 25 days, at 15:00 CET / 14:00 UTC / 12:00 BRT / 9:00 EST. During the streams, I will go over my solution, step by step, explaining Elixir concepts and the thought process behind it. This is a great opportunity to join, ask questions, give feedback, propose solutions, help me get unstuck, etc. If you can&#8217;t make it to the live stream, the videos will be available online on Twitch for 14 days.</p>
+<p>How can you prepare?</p>
+<ul>
+<li>The first step is to read <a href="http://elixir-lang.org/">Elixir&#8217;s Getting Started guide</a> or one of our many Learning Resources</p>
+</li>
+<li>
+<p>Do the exercises from <a href="https://adventofcode.com/2017">last year</a> or from <a href="https://exercism.io/">exercism.io</a> to warm up. As a template, I have <a href="https://gist.github.com/josevalim/978771f4f5c948504db1e88383cac8d0">solved the first puzzle from Advent of Code 2017</a>. Save the file locally and run it from your command line with <code>elixir path/to/file.exs</code></p>
+</li>
+<li>
+<p>Sign up to our special occasion mailing list below (or <a href="https://pages.plataformatec.com.br/together-on-advent-of-code-2018">click here</a> if you can&#8217;t see the form) to receive an e-mail at the end of each live stream with a link to the video recording of the solution</p>
+</li>
+</ul>
+<div role="main" id="lead-generation-together-on-advent-of-code-2018-c14cb5a041cc8e6a75b9"></div>
+<p><script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script></p>
+<p><script type="text/javascript">
+jQuery( document ).ready(function() {
+  new RDStationForms('lead-generation-together-on-advent-of-code-2018-c14cb5a041cc8e6a75b9-html', 'UA-8268430-1').createForm();
+  });
+</script></p>
+<p>If you know someone who has been planning to get into Elixir, now is a great time!</p>
+<p>See you on December 1st!</p><p>The post <a href="/2018/11/lets-learn-elixir-together-with-advent-of-code/">Let’s learn Elixir together on Advent of Code!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

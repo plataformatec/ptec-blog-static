@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: 1 year working at Plataformatec	</title>
+	<atom:link href="/2014/05/1-year-working-at-plataformatec/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/05/1-year-working-at-plataformatec/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 10 Jun 2014 20:49:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: matheusml		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1396</link>
+
+		<dc:creator><![CDATA[matheusml]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 20:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1396</guid>
+
+					<description><![CDATA[Retrospective meetings are great! Here at www.passeidireto.com, we do it every first and third friday of the month, but we have something different that I like very much. We all choose someone that we considered to be the &#039;best of the sprint&#039;. This gives a lot of motivation for the team for the next sprint.]]></description>
+			<content:encoded><![CDATA[<p>Retrospective meetings are great! Here at <a href="http://www.passeidireto.com/" rel="nofollow ugc">http://www.passeidireto.com/</a>, we do it every first and third friday of the month, but we have something different that I like very much. We all choose someone that we considered to be the &#8216;best of the sprint&#8217;. This gives a lot of motivation for the team for the next sprint.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ulisses Almeida		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1395</link>
+
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Fri, 30 May 2014 14:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1395</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1390&quot;&gt;Flavia&lt;/a&gt;.
+
+Of course I don&#039;t mind, actually, I&#039;m excited to know about the practices that you have learning working at HE:Labs. :D
+
+
+
+I hope when you start to use PR in your daily basis let you improve the code, knowledge share and make programming even more joyful. Please, when you start to use let us know about your experiences. 
+
+
+Thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1390">Flavia</a>.</p>
+<p>Of course I don&#8217;t mind, actually, I&#8217;m excited to know about the practices that you have learning working at HE:Labs. 😀</p>
+<p>I hope when you start to use PR in your daily basis let you improve the code, knowledge share and make programming even more joyful. Please, when you start to use let us know about your experiences. </p>
+<p>Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcelo Jacobus		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1394</link>
+
+		<dc:creator><![CDATA[Marcelo Jacobus]]></dc:creator>
+		<pubDate>Thu, 29 May 2014 16:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1394</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1393&quot;&gt;Ulisses Almeida&lt;/a&gt;.
+
+Nice. Thank you for your response!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1393">Ulisses Almeida</a>.</p>
+<p>Nice. Thank you for your response!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ulisses Almeida		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1393</link>
+
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Thu, 29 May 2014 16:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1393</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1392&quot;&gt;Marcelo Jacobus&lt;/a&gt;.
+
+Hi Marcelo, thank your for your asking. We do pair programming occasionally, mainly in tasks when a developer needs some help. But even when we do pair programming, we also open a pull request for everyone in the team to review.
+
+The thing I like the most in pair programming is seeing how a experienced team member works. For example, I can find some anwsers for how they approach the task and start to type the code, how they debug, what are they editor shortcuts, the bash alias, git commands and other tools they use. 
+
+This practice is also useful for me when I have a lot of doubts in a task, with a partner at my side we can avoid misconceptions, create a better code for review and :shipit:.
+
+I like this way, not 100% of time, only when someone or task really need a special attention.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1392">Marcelo Jacobus</a>.</p>
+<p>Hi Marcelo, thank your for your asking. We do pair programming occasionally, mainly in tasks when a developer needs some help. But even when we do pair programming, we also open a pull request for everyone in the team to review.</p>
+<p>The thing I like the most in pair programming is seeing how a experienced team member works. For example, I can find some anwsers for how they approach the task and start to type the code, how they debug, what are they editor shortcuts, the bash alias, git commands and other tools they use. </p>
+<p>This practice is also useful for me when I have a lot of doubts in a task, with a partner at my side we can avoid misconceptions, create a better code for review and :shipit:.</p>
+<p>I like this way, not 100% of time, only when someone or task really need a special attention.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcelo Jacobus		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1392</link>
+
+		<dc:creator><![CDATA[Marcelo Jacobus]]></dc:creator>
+		<pubDate>Thu, 29 May 2014 11:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1392</guid>
+
+					<description><![CDATA[Congratulations Ulisses! You are very lucky to work with the most wise rails ninjas!
+
+I was wondering if you guys do pair programming on daily bases, and if you do so, how that has contributed for your professional growth.
+
+Thank you for sharing your experience.]]></description>
+			<content:encoded><![CDATA[<p>Congratulations Ulisses! You are very lucky to work with the most wise rails ninjas!</p>
+<p>I was wondering if you guys do pair programming on daily bases, and if you do so, how that has contributed for your professional growth.</p>
+<p>Thank you for sharing your experience.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Soraia Andrade		</title>
+		<link>/2014/05/1-year-working-at-plataformatec/comment-page-1/#comment-1391</link>
+
+		<dc:creator><![CDATA[Soraia Andrade]]></dc:creator>
+		<pubDate>Thu, 29 May 2014 04:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3987#comment-1391</guid>
+
+					<description><![CDATA[So cool !! Its a lot of knkowledge for just only one year worked!! Nice culture]]></description>
+			<content:encoded><![CDATA[<p>So cool !! Its a lot of knkowledge for just only one year worked!! Nice culture</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

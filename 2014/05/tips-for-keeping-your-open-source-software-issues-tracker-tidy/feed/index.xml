@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Tips for keeping your Open Source Software issues tracker tidy	</title>
+	<atom:link href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 04:13:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: apotonick		</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1389</link>
+
+		<dc:creator><![CDATA[apotonick]]></dc:creator>
+		<pubDate>Fri, 16 May 2014 04:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4004#comment-1389</guid>
+
+					<description><![CDATA[Cool, thanks for sharing that. I find the &quot;Close Early Policy&quot; interesting, the reasons you guys bring up for that are valid. So far I tried to do the opposite:
+
+
+* When a question, I try to reply until sorted (often by other users) and then close it as soon as possible.
+* I always leave feature requests open (when I like them), even when they imply huge refactorings. That is actually annoying as I lose track, and here I kinda like your suggestion.
+* Sometimes people don&#039;t come back. I close them then.
+
+
+I guess a problem is Github&#039;s issue tracker itself. I would like to have different &quot;channels&quot; (as you called them) in there, so I could categorize stuff into
+
+
+* Questions/Support
+* Feature Request
+* Bug!!!!
+
+
+Thanks again guys and keep rockin&#039;!!!]]></description>
+			<content:encoded><![CDATA[<p>Cool, thanks for sharing that. I find the &#8220;Close Early Policy&#8221; interesting, the reasons you guys bring up for that are valid. So far I tried to do the opposite:</p>
+<p>* When a question, I try to reply until sorted (often by other users) and then close it as soon as possible.<br />
+* I always leave feature requests open (when I like them), even when they imply huge refactorings. That is actually annoying as I lose track, and here I kinda like your suggestion.<br />
+* Sometimes people don&#8217;t come back. I close them then.</p>
+<p>I guess a problem is Github&#8217;s issue tracker itself. I would like to have different &#8220;channels&#8221; (as you called them) in there, so I could categorize stuff into</p>
+<p>* Questions/Support<br />
+* Feature Request<br />
+* Bug!!!!</p>
+<p>Thanks again guys and keep rockin&#8217;!!!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1388</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 17:56:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4004#comment-1388</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1387&quot;&gt;josevalim&lt;/a&gt;.
+
+I guess this really comes down to each maintainer preferences. I know that by no means my little OSS projects get much activities like the projects you maintain, so of course I have no idea how I would deal with tickets if I were maintaing some largely used software.
+
+But currently, I simply don&#039;t stress if my projects have many open issues and I avoid closing any issue until the discussion is over or until I&#039;m already decided on not to accept some feature request cause I don&#039;t think it fits the project goals and then I state that when closing the tickets.
+
+My take is that GitHub&#039;s issues is usually used even by large projects, like Rails, when it probably shouldn&#039;t as it lacks some interesting features.
+
+For my private projects we use Redmine and we have a few subprojects as well and I can easily filter the open tickets by priority, type (bug, feature, etc) or basically anything I need.
+
+I find it very helpful to concentrate discussions on the tickets rather than on mailing lists or StackOverflow. But I realize that this is my personal take on it and that you probably prefer a simpler issue tracker like GitHub&#039;s one and only handle bugs there.
+
+For my private projects we have tons of feature requests and I don&#039;t feel stressed about that. I work on them by priority order or some other criteria but it simply doesn&#039;t stress me if I can&#039;t get all of them down to zero until the end of the week or the year.
+
+&quot;The issues tracker should focus on *actionable issues*.&quot;
+
+
+
+The two examples I pointed out (and I could point others as well if you prefer) were actionable in my opinion. And yes, after posting the comment I noticed one of them was still open... I just got confused by other &quot;closed&quot; mentions while reading the ticket.
+
+
+With regards to incomplete bug reports, I&#039;d give some time for the reporter to fill out the missing information and after a while without feedback I&#039;d then close the ticket. Just not immediately. When that happens for my private projects, I check such issues with the &quot;Feedback&quot; status so that I don&#039;t look at them again until it changes or when I&#039;m doing some clean-up on old tickets...
+
+
+I feel most of the reasons for the guideline you suggest in this article comes from the lacking of the GitHub issues system. Also they seem to be required by large projects, but maybe not at all for smaller ones. Maybe the reasons wouldn&#039;t apply for other projects using more feature-complete issues tracker systems.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1387">josevalim</a>.</p>
+<p>I guess this really comes down to each maintainer preferences. I know that by no means my little OSS projects get much activities like the projects you maintain, so of course I have no idea how I would deal with tickets if I were maintaing some largely used software.</p>
+<p>But currently, I simply don&#8217;t stress if my projects have many open issues and I avoid closing any issue until the discussion is over or until I&#8217;m already decided on not to accept some feature request cause I don&#8217;t think it fits the project goals and then I state that when closing the tickets.</p>
+<p>My take is that GitHub&#8217;s issues is usually used even by large projects, like Rails, when it probably shouldn&#8217;t as it lacks some interesting features.</p>
+<p>For my private projects we use Redmine and we have a few subprojects as well and I can easily filter the open tickets by priority, type (bug, feature, etc) or basically anything I need.</p>
+<p>I find it very helpful to concentrate discussions on the tickets rather than on mailing lists or StackOverflow. But I realize that this is my personal take on it and that you probably prefer a simpler issue tracker like GitHub&#8217;s one and only handle bugs there.</p>
+<p>For my private projects we have tons of feature requests and I don&#8217;t feel stressed about that. I work on them by priority order or some other criteria but it simply doesn&#8217;t stress me if I can&#8217;t get all of them down to zero until the end of the week or the year.</p>
+<p>&#8220;The issues tracker should focus on *actionable issues*.&#8221;</p>
+<p>The two examples I pointed out (and I could point others as well if you prefer) were actionable in my opinion. And yes, after posting the comment I noticed one of them was still open&#8230; I just got confused by other &#8220;closed&#8221; mentions while reading the ticket.</p>
+<p>With regards to incomplete bug reports, I&#8217;d give some time for the reporter to fill out the missing information and after a while without feedback I&#8217;d then close the ticket. Just not immediately. When that happens for my private projects, I check such issues with the &#8220;Feedback&#8221; status so that I don&#8217;t look at them again until it changes or when I&#8217;m doing some clean-up on old tickets&#8230;</p>
+<p>I feel most of the reasons for the guideline you suggest in this article comes from the lacking of the GitHub issues system. Also they seem to be required by large projects, but maybe not at all for smaller ones. Maybe the reasons wouldn&#8217;t apply for other projects using more feature-complete issues tracker systems.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1387</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 17:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4004#comment-1387</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1386&quot;&gt;Rodrigo Rosenfeld Rosas&lt;/a&gt;.
+
+Rodrigo, that depends on the team, but in my opinion the issues tracker is not the place to have a discussion about features in project of the size of Rails. It has very low visibility (mostly because only the project maintainers receive notifications) so it always end-up being a decision in between the maintainers of the project and the contributor.
+
+That is exactly the point of the blog post. The issues tracker should focus on *actionable issues*. The point is not to remove all discussions but to *move discussions to the appropriate medium*. It is much healthier for an open source project to have its bugs clearly laid out in the tracker than in a mixture of personal feature requests, questions and incomplete bug reports.
+
+Note the second issue you linked has not been closed but still there is no discussion. Why aren&#039;t other people being part of the conversation and answering your questions? Maybe in part because there are other 600 open issues? And once you reach this point, it is much harder to improve because the maintainer motivation decreases and the response time gets even worse. Many projects today resort to expiring issues with no comments after 3 months or even resetting the whole issues tracker by declaring bankruptcy! How is that better for the community?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1386">Rodrigo Rosenfeld Rosas</a>.</p>
+<p>Rodrigo, that depends on the team, but in my opinion the issues tracker is not the place to have a discussion about features in project of the size of Rails. It has very low visibility (mostly because only the project maintainers receive notifications) so it always end-up being a decision in between the maintainers of the project and the contributor.</p>
+<p>That is exactly the point of the blog post. The issues tracker should focus on *actionable issues*. The point is not to remove all discussions but to *move discussions to the appropriate medium*. It is much healthier for an open source project to have its bugs clearly laid out in the tracker than in a mixture of personal feature requests, questions and incomplete bug reports.</p>
+<p>Note the second issue you linked has not been closed but still there is no discussion. Why aren&#8217;t other people being part of the conversation and answering your questions? Maybe in part because there are other 600 open issues? And once you reach this point, it is much harder to improve because the maintainer motivation decreases and the response time gets even worse. Many projects today resort to expiring issues with no comments after 3 months or even resetting the whole issues tracker by declaring bankruptcy! How is that better for the community?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/comment-page-1/#comment-1386</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 16:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4004#comment-1386</guid>
+
+					<description><![CDATA[Personally, I don&#039;t enjoy such guide rules. I much prefer to encourage discussion over the &quot;always closing&quot; approach. For example, take this ticket on Rails: https://github.com/rails/rails/pull/14299
+
+There was simply no discussion around it. &quot;I don&#039;t like it&quot; -&#062; &quot;Yeah, me too&quot; -&#062; &quot;closed&quot;.
+
+I simply don&#039;t see how this is good for the community...
+
+This is yet another example where the discussion has ended prematurely by closing the ticket: https://github.com/rails/rails/pull/11071
+
+And those are not exceptions from what I&#039;ve seen with regards to tickets handling in Rails at least. Also, the way the Rails core team approaches the issues and bug requests are mostly the reason why I stopped trying to contribute to Rails long ago.
+
+I sincerely hope other OSS projects don&#039;t follow this guidelines...]]></description>
+			<content:encoded><![CDATA[<p>Personally, I don&#8217;t enjoy such guide rules. I much prefer to encourage discussion over the &#8220;always closing&#8221; approach. For example, take this ticket on Rails: <a href="https://github.com/rails/rails/pull/14299" rel="nofollow ugc">https://github.com/rails/rails/pull/14299</a></p>
+<p>There was simply no discussion around it. &#8220;I don&#8217;t like it&#8221; -&gt; &#8220;Yeah, me too&#8221; -&gt; &#8220;closed&#8221;.</p>
+<p>I simply don&#8217;t see how this is good for the community&#8230;</p>
+<p>This is yet another example where the discussion has ended prematurely by closing the ticket: <a href="https://github.com/rails/rails/pull/11071" rel="nofollow ugc">https://github.com/rails/rails/pull/11071</a></p>
+<p>And those are not exceptions from what I&#8217;ve seen with regards to tickets handling in Rails at least. Also, the way the Rails core team approaches the issues and bug requests are mostly the reason why I stopped trying to contribute to Rails long ago.</p>
+<p>I sincerely hope other OSS projects don&#8217;t follow this guidelines&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

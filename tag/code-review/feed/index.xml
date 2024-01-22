@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>code review « Plataformatec Blog</title>
+	<atom:link href="/tag/code-review/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 02 Jul 2018 13:26:41 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</title>
+		<link>/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/</link>
+		
+		<dc:creator><![CDATA[gersonscanapieco]]></dc:creator>
+		<pubDate>Mon, 02 Jul 2018 16:30:22 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[code review]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=7675</guid>
+
+					<description><![CDATA[<p>Priorização é sempre algo complicado, não é mesmo? O tempo está sempre contra a gente, e as vezes precisamos fazer escolhas difíceis sobre onde devemos focar a nossa atenção e o nosso esforço. Com code reviews não é diferente. Por isso é muito importante traçar uma estratégia para investir seu tempo de revisão de maneira ... <a class="read-more-link" href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">»</a></p>
+<p>The post <a href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Priorização é sempre algo complicado, não é mesmo? O tempo está sempre contra a gente, e as vezes precisamos fazer escolhas difíceis sobre onde devemos focar a nossa atenção e o nosso esforço. Com code reviews não é diferente. Por isso é muito importante traçar uma estratégia para investir seu tempo de revisão de maneira eficiente.</p>
+<p>Conforme a organização em que trabalhamos cresce, vai ficando cada vez mais difícil acompanhar tudo o que está acontecendo. Pessoas novas vão entrando na equipe, ao mesmo tempo em que a base de código cresce numa velocidade ainda maior. O conhecimento técnico e de negócios, que antes era de conhecimento de todos os desenvolvedores, começa a se concentrar nas equipes, podendo gerar uma série de problemas:</p>
+<ul>
+<li>Diminuição da qualidade dos code reviews, pois algumas equipes podem estar desfalcadas de pessoas com conhecimento técnico ou de negócios</li>
+<li>Diminuição no número de code reviews em projetos de pouca visiblidade</li>
+<li>Redução no alinhamento entre as equipes, podendo resultar em retrabalho ou até mesmo bugs</li>
+<li>Risco de perda de conhecimento e dificuldade na realocação dos membros das equipes, já que alguns contextos podem se tornar muito dependentes de pessoas específicas</li>
+</ul>
+<p>Como reduzir esses problemas?</p>
+<h2><a id="user-content-nem-todos-os-code-reviews-são-iguais" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#nem-todos-os-code-reviews-s%C3%A3o-iguais" aria-hidden="true"></a>Nem todos os code reviews são iguais</h2>
+<p>Os code reviews são uma excelente prática para <strong><a href="https://medium.com/javascript-scene/the-outrageous-cost-of-skipping-tdd-codereviews-57887064c412">melhorar a qualidade do código e diminuir o número de erros</a>.</strong> Mas um outro benefício, tão importante quanto estes, é o compartilhamento de conhecimento entre os desenvolvedores.</p>
+<p>Quando eu reviso um PR (Pull Request ou Change request, dependendo da ferramenta), sinto que conhecendo o seu contexto fica mais fácil fazer uma revisão mais aprofundada e assertiva. Dúvidas do tipo:</p>
+<ul>
+<li>Essa solução realmente resolve o problema?</li>
+<li>Existem maneiras melhores de resolver o problema?</li>
+<li>Essa funcionalidade faz sentido do ponto de vista de negócios?</li>
+<li>É viável prosseguir com essa funcionalidade agora?</li>
+</ul>
+<p>Ficam mais mais fáceis de serem enxergadas e respondidas. Mas, para ter essas respostas, ter um bom conhecimento sobre o negócio é fundamental. Por isso, as vezes acabamos revisando apenas os PRs nos quais já temos contexto, sejam eles da nossa equipe ou de partes do sistema que já conhecemos. Se pensarmos no nível organizacional, esse tipo de comportamento pode resultar nos problemas citados, muitas vezes difíceis de serem diagnosticados.</p>
+<h2><a id="user-content-apresentando-a-pirâmide-de-code-reviews" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#apresentando-a-pir%C3%A2mide-de-code-reviews" aria-hidden="true"></a>Apresentando a Pirâmide de Code Reviews</h2>
+<p>Uma prática que pode ajudar a resolver esses problemas é a Pirâmide de Code Reviews.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter size-large wp-image-7678" src="/wp-content/uploads/2018/07/pyramid-1024x545.png" alt="pirâmide de revisão de código" width="1024" height="545" srcset="/wp-content/uploads/2018/07/pyramid-1024x545.png 1024w, /wp-content/uploads/2018/07/pyramid-300x160.png 300w, /wp-content/uploads/2018/07/pyramid-768x408.png 768w, /wp-content/uploads/2018/07/pyramid.png 1600w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Essa pirâmide, inspirada na <a href="https://martinfowler.com/bliki/TestPyramid.html" rel="nofollow">Pirâmide de Testes</a>, nos ajuda na priorização do que devemos fazer.</p>
+<p>Pull Requests da nossa equipe são a base da pirâmide, pois são neles onde dedicaremos mais tempo. Como já possuímos o conhecimento necessário para fazer um bom code review, é provável que essas revisões sejam feitas mais rapidamente. Dessa forma, ajudamos os outros desenvolvedores a entregar seu trabalho com mais qualidade mais rapidamente.</p>
+<p>No segundo nível da pirâmide temos dois grupos de PRs: aqueles em que já possuímos contexto e os chamados &#8220;PRs críticos&#8221;.</p>
+<p>Os PRs que já possuímos contexto são mais óbvios: eles envolvem uma parte do código ou do negócio já conhecida pelo desenvolvedor, fazendo com que ele(a) se sinta confortável na revisão. Eles não diferem muito dos Pull Requests do próprio squad, porém como são externos, consideramos que haverão outras pessoas da squad envolvida ajudando na revisão. Por isso gastamos menos tempo neles.</p>
+<p>Já os chamados &#8220;Pull Requests Críticos&#8221; são um pouco diferentes. Esses PRs podem implementar diferentes tipos de funcionalidades, desde resolver um erro crítico até mudanças na arquitetura, e é essencial que os desenvolvedores estejam alinhados com suas alterações. Esse tipo de Pull Request geralmente requer uma atenção imediata dos desenvolvedores, por isso é importante separar um tempo para revisá-los.</p>
+<p>O que a pirâmide traz de diferente é tornar explícito que devemos inserir no nosso processo de trabalho as revisões exploratórias. Ou seja, não precisamos mais nos sentir restritos a(s) parte(s) do sistema onde trabalhamos. Pelo contrário, tendo a pirâmide em mente, nos sentimos incentivados a revisar outras partes do código e expandir nosso conhecimento do negócio.</p>
+<p>Mas como começar por esse caminho? Será que meus code-reviews serão bem aceitos?</p>
+<h2><a id="user-content-começando-os-code-reviews-exploratórios" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/20a793b375d5a45dc07ad5e0841068ce792cb23b/2018-05-piramide-code-reviews.md#come%C3%A7ando-os-code-reviews-explorat%C3%B3rios" aria-hidden="true"></a>Começando os code reviews exploratórios</h2>
+<p>Ao revisar uma parte do código ou do negócio que não estamos familizados é natural nos sentir desconfortáveis ou inseguros. Podemos nos sentir desestimulados a discutir, com medo de fazer perguntas &#8220;estúpidas&#8221; ou redundantes. E se não conhecermos muito bem os desenvolvedores envolvidos no PR isso fica ainda pior. Resumindo: saímos da nossa zona de conforto.</p>
+<p>Já apresentamos os benefícios dos code reviews exploratórios, porém como devemos proceder na hora de revisar código desconhecido, onde supostamente nossa efetividade vai ser menor? E como devemos reagir quando uma pessoa de fora revisa o código e começa a fazer perguntas ou questionamentos?</p>
+<p>Como o próprio nome já diz, estamos explorando uma parte desconhecida do projeto, por isso ter uma atitude curiosa é essencial. Fazer perguntas, dar dicas e sugestões e compartilhar experiências são ótimos pontos para se ter em mente nessas revisões. Ter bom senso também é importante aqui, pois não precisamos entender todo o contexto de negócio logo de cara na primeira revisão. Identificar o contexto mínimo que precisamos para fazer a revisão é vital para não onerarmos demais o nosso tempo nem o dos demais participantes.</p>
+<p>E quando recebermos esse tipo de revisão é importante ter uma atitude respeitosa e didática nos comentários. Perguntas devem ser respondidas sempre educadamente e com um nível suficiente de detalhes(o bom senso vale aqui também). Respostas atravessadas ou incompletas podem prejudicar as revisões e desestimular os revisores a continuarem com essa prática. Lembre-se: ninguém é dono do código, o código que você está fazendo agora será usado por outros desenvolvedores no futuro. E vice-versa. Um ambiente amigável durante as revisões vai tornar essa prática muito mais proveitosa para todas as partes envolvidas.</p>
+<p>E quais critérios devemos usar para escolher aonde vamos explorar? Bem, a decisão final fica por sua escolha. Mas se você souber de alguma parte do projeto que carece de revisões, pode ser uma boa idéia dar uma explorada por lá.</p>
+<p>Quanto tempo devo me dedicar aos code reviews exploratórios? Isso varia de cada contexto. Se você tem bastante tempo livre para explorar outras partes do código, faça isso! Já se você não tiver tanto tempo assim, tente dedicar pelo menos algumas horas por semana para explorar. Um bom começo seria fazer pelo menos uma revisão exploratória por semana.</p>
+<p>E você, como organiza seu tempo para revisar PRs? Você se sentiria confortável em adotar essa prática onde você trabalha? Deixe seu comentário logo abaixo.</p><p>The post <a href="/2018/07/como-evitar-silos-de-conhecimento-na-sua-codebase-e-levar-seus-code-reviews-para-o-proximo-nivel/">Como evitar silos de conhecimento na sua codebase e levar seus code reviews para o próximo nível</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

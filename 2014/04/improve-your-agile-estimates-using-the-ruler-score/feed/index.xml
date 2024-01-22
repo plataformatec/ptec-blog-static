@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Improve your agile estimates using the Ruler Score	</title>
+	<atom:link href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 14:26:15 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Caroline Mota		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1385</link>
+
+		<dc:creator><![CDATA[Caroline Mota]]></dc:creator>
+		<pubDate>Mon, 12 May 2014 21:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1385</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1384&quot;&gt;Ivan Santos&lt;/a&gt;.
+
+Nice! Thank you for sharing your experience with us! ;)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1384">Ivan Santos</a>.</p>
+<p>Nice! Thank you for sharing your experience with us! 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ivan Santos		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1384</link>
+
+		<dc:creator><![CDATA[Ivan Santos]]></dc:creator>
+		<pubDate>Mon, 12 May 2014 19:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1384</guid>
+
+					<description><![CDATA[Nice post! We used Ruler score with relationship to day. We usually set a velocity constraint for how many points we can burn in one day. We can calculate this based in how many people are working on the project using WIP (Work in progress) limits.]]></description>
+			<content:encoded><![CDATA[<p>Nice post! We used Ruler score with relationship to day. We usually set a velocity constraint for how many points we can burn in one day. We can calculate this based in how many people are working on the project using WIP (Work in progress) limits.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Caroline Mota		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1378</link>
+
+		<dc:creator><![CDATA[Caroline Mota]]></dc:creator>
+		<pubDate>Mon, 28 Apr 2014 14:59:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1378</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1376&quot;&gt;Peter Saddington&lt;/a&gt;.
+
+Nice tip! Thanks for sharing your experience with us.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1376">Peter Saddington</a>.</p>
+<p>Nice tip! Thanks for sharing your experience with us.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Caroline Mota		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1377</link>
+
+		<dc:creator><![CDATA[Caroline Mota]]></dc:creator>
+		<pubDate>Mon, 28 Apr 2014 14:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1377</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1375&quot;&gt;Rafael Barbolo&lt;/a&gt;.
+
+Rafael,
+Before joining Plataformatec I used ideal days instead of story points, but now I prefer to use story points because it considers three different aspects: complexity, effort and risks. In our experience, that approach has been more assertive in the predictability. However, we believe that the estimate technique used in a project should be the one that best suits to your scenario.
+
+Thanks for the words!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1375">Rafael Barbolo</a>.</p>
+<p>Rafael,<br />
+Before joining Plataformatec I used ideal days instead of story points, but now I prefer to use story points because it considers three different aspects: complexity, effort and risks. In our experience, that approach has been more assertive in the predictability. However, we believe that the estimate technique used in a project should be the one that best suits to your scenario.</p>
+<p>Thanks for the words!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Peter Saddington		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1376</link>
+
+		<dc:creator><![CDATA[Peter Saddington]]></dc:creator>
+		<pubDate>Sun, 27 Apr 2014 14:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1376</guid>
+
+					<description><![CDATA[Try this and change your numbers of complexity to 1,2,4,8,16 - It may not seem like a big deal... but in our experience the fibonacci can cause issues because the bottom set (1,2,3,5) are so close together. In terms of potential philosophical arguments... it helps to remove the proximity of the issue all together.]]></description>
+			<content:encoded><![CDATA[<p>Try this and change your numbers of complexity to 1,2,4,8,16 &#8211; It may not seem like a big deal&#8230; but in our experience the fibonacci can cause issues because the bottom set (1,2,3,5) are so close together. In terms of potential philosophical arguments&#8230; it helps to remove the proximity of the issue all together.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rafael Barbolo		</title>
+		<link>/2014/04/improve-your-agile-estimates-using-the-ruler-score/comment-page-1/#comment-1375</link>
+
+		<dc:creator><![CDATA[Rafael Barbolo]]></dc:creator>
+		<pubDate>Fri, 25 Apr 2014 23:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3919#comment-1375</guid>
+
+					<description><![CDATA[I liked the Ruler Score tool and liked the examples you added even more.
+
+I am not fond of estimating stories using &quot;points&quot;. Points are subjective and it&#039;s hard to translate them into effort, specially when you don&#039;t have much work history on the project. That&#039;s why I prefer using days rather than points. In this way, it&#039;s clearer how much should be achieved in sprints (from the first to the last sprint) and how long an activity should take to be done.
+
+Have you ever tried to use days instead of points? What do you think about that?]]></description>
+			<content:encoded><![CDATA[<p>I liked the Ruler Score tool and liked the examples you added even more.</p>
+<p>I am not fond of estimating stories using &#8220;points&#8221;. Points are subjective and it&#8217;s hard to translate them into effort, specially when you don&#8217;t have much work history on the project. That&#8217;s why I prefer using days rather than points. In this way, it&#8217;s clearer how much should be achieved in sprints (from the first to the last sprint) and how long an activity should take to be done.</p>
+<p>Have you ever tried to use days instead of points? What do you think about that?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>elixir brasil « Plataformatec Blog</title>
+	<atom:link href="/tag/elixir-brasil/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 09 Apr 2018 13:28:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Elixir, processos e esse tal de OTP</title>
+		<link>/2018/04/elixir-processos-e-esse-tal-de-otp/</link>
+					<comments>/2018/04/elixir-processos-e-esse-tal-de-otp/#comments</comments>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Fri, 06 Apr 2018 20:27:40 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir brasil]]></category>
+		<guid isPermaLink="false">/?p=7439</guid>
+
+					<description><![CDATA[<p>Uma das grandes características da linguagem Elixir é a maneira como ela lida com concorrência, como isso traz benefícios no dia-a-dia e como isso agrega valor ao software final. Quando vamos estudar sobre concorrência, uma das coisas que surgem durante esse aprendizado é uma tal sigla que escutamos muito, chamada OTP. OTP A sigla significa ... <a class="read-more-link" href="/2018/04/elixir-processos-e-esse-tal-de-otp/">»</a></p>
+<p>The post <a href="/2018/04/elixir-processos-e-esse-tal-de-otp/">Elixir, processos e esse tal de OTP</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Uma das grandes características da linguagem Elixir é a maneira como ela lida com concorrência, como isso traz benefícios no dia-a-dia e como isso agrega valor ao software final. </span></p>
+<p><span style="font-weight: 400;">Quando vamos estudar sobre concorrência, uma das coisas que surgem durante esse aprendizado é uma tal sigla que escutamos muito, chamada OTP.</span></p>
+<h3><b>OTP</b></h3>
+<p><span style="font-weight: 400;">A sigla significa </span><i><span style="font-weight: 400;">Open Telecom Platform</span></i><span style="font-weight: 400;">, mas ninguém a usa exclusivamente para telecom hoje em dia. No livro </span><i><span style="font-weight: 400;">Designing for Scalability with Erlang/OTP</span></i><span style="font-weight: 400;"> dos autores Francesco Cesarini e Steve Vinoski, eles definem OTP como três componentes principais que interagem entre si: o primeiro sendo o próprio Erlang, o segundo um </span><a href="http://erlang.org/doc/applications.html"><span style="font-weight: 400;">conjunto de bibliotecas</span></a><span style="font-weight: 400;"> disponíveis com a </span><i><span style="font-weight: 400;">virtual machine</span></i><span style="font-weight: 400;"> e o terceiro um conjunto de princípios de design do sistemas.</span></p>
+<p><span style="font-weight: 400;">Por isso talvez você já tenha ouvido falar no termo </span><i><span style="font-weight: 400;">OTP compliant</span></i><span style="font-weight: 400;">, que quer dizer que a aplicação segue os princípios de design de sistemas estabelecidos pelo Erlang/OTP.</span></p>
+<p><span style="font-weight: 400;">Um dos itens desse conjunto de princípios consiste na utilização de uma arquitetura de processos para resolver os problemas da sua aplicação.</span></p>
+<h3><b>Processos</b></h3>
+<p><span style="font-weight: 400;">Quando falamos de processo em Elixir, estamos nos referindo aos processos da máquina virtual do Erlang, e não aos processos do sistema operacional. Os processos da BEAM (máquina virtual do Erlang) são muito mais leves e baratos do que aqueles  do sistema operacional, e rodam em todos os </span><i><span style="font-weight: 400;">cores</span></i><span style="font-weight: 400;"> disponíveis na máquina por serem mais leves, em média 2k, portanto, podemos criar milhares deles em nossa aplicação.</span></p>
+<p><span style="font-weight: 400;">Eles são isolados uns dos outros e se comunicam através de mensagens, dessa maneira nos ajudam a dividir a carga de trabalho e a rodar coisas em paralelo.</span></p>
+<p><span style="font-weight: 400;">Por Elixir ser uma linguagem funcional, uma de suas características é a imutabilidade, o que nos ajuda a deixar o estado explícito. Dessa maneira, quando separamos nosso código em tarefas independentes que podem rodar concorrentemente, não precisamos nos preocupar em controlar seu estado utilizando mecanismos complexos para garantir isso, coisas como </span><a href="https://en.wikipedia.org/wiki/Mutual_exclusion"><span style="font-weight: 400;">mutex</span></a><span style="font-weight: 400;"> e a utilização de </span><a href="https://en.wikipedia.org/wiki/Thread_(computing)"><span style="font-weight: 400;">threads</span></a><span style="font-weight: 400;"> não são mais necessárias.</span></p>
+<h3><b>Como processos funcionam em Elixir?</b></h3>
+<p><span style="font-weight: 400;">É muito comum associarmos processos e a troca de mensagens existentes entre eles com o </span><a href="https://en.wikipedia.org/wiki/Actor_model"><span style="font-weight: 400;">modelo de atores para concorrência</span></a><span style="font-weight: 400;">. Isso acontece porque cada processo em Elixir é independente e totalmente isolado um do outro. Um processo pode guardar estado, mas isso não é compartilhado e a única maneira de compartilhar algo entre processos é através do envio de mensagens.</span></p>
+<p><span style="font-weight: 400;">Cada processo possui uma <code>mailbox</code> que, como o nome sugere, é responsável por receber mensagens de outros processos. Vale dizer também que quando enviamos uma mensagem, tudo acontece assincronamente, dessa maneira não  bloqueamos o processamento aguardando por uma resposta.</span></p>
+<p><span style="font-weight: 400;">Uma maneira de pensarmos nisso é imaginarmos processos como celulares que utilizam SMSs para troca de informações. Cada celular tem um local para armazenar essas mensagens até que elas sejam tratadas e isso acontece de maneira independente e isolada.</span></p>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-7443" src="/wp-content/uploads/2018/04/sending-receiveing-messages-1024x765.png" alt="" width="1024" height="765" srcset="/wp-content/uploads/2018/04/sending-receiveing-messages-1024x765.png 1024w, /wp-content/uploads/2018/04/sending-receiveing-messages-300x224.png 300w, /wp-content/uploads/2018/04/sending-receiveing-messages-768x574.png 768w, /wp-content/uploads/2018/04/sending-receiveing-messages.png 1419w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p><span style="font-weight: 400;">Vale mencionar também que podemos vincular um processo ao outro. Isso é importante  porque é com base nisso que podemos identificar falhas e tomar alguma ação para lidar com elas.</span></p>
+<p><span style="font-weight: 400;">Quando temos processos que monitoram outros processos, damos o nome de <em>Supervisor</em>. Podemos ter vários deles em nossa aplicação e quando temos mais de um <em>Supervisor</em> monitorando processos é o que chamamos de Árvore de Supervisão.<br />
+<img decoding="async" class="alignnone size-large wp-image-7444" src="/wp-content/uploads/2018/04/supervision-tree-1024x765.png" alt="" width="1024" height="765" srcset="/wp-content/uploads/2018/04/supervision-tree-1024x765.png 1024w, /wp-content/uploads/2018/04/supervision-tree-300x224.png 300w, /wp-content/uploads/2018/04/supervision-tree-768x574.png 768w, /wp-content/uploads/2018/04/supervision-tree.png 1415w" sizes="(max-width: 1024px) 100vw, 1024px" /></span></p>
+<p><span style="font-weight: 400;">Isso é muito importante porque é através disso que obtemos a tolerância a falhas. Quando temos um problema com o nosso código, o que não queremos é que isso afete o usuário final. Através do monitoramento de processos podemos identificar quando algo inesperado acontece e assim tomar uma ação sobre isso, finalizando o processo com problema e iniciando-o novamente.  Assim, o processo volta ao seu estado inicial nos dando tempo para agir e resolver o problema que causou o erro.</span></p>
+<h3><b>Como isso funciona para concorrência?</b></h3>
+<p><span style="font-weight: 400;">Quando a BEAM inicia, ela também inicia uma thread chamada </span><i><span style="font-weight: 400;">Scheduler</span></i><span style="font-weight: 400;"> que é responsável por rodar cada processo concorrentemente na CPU.</span></p>
+<p><span style="font-weight: 400;">Para poder obter toda vantagem do hardware, a BEAM inicia um <em>Scheduler</em> para cada core disponível, ou seja, um computador que possui quatro </span><i><span style="font-weight: 400;">cores</span></i><span style="font-weight: 400;">, vai ter quatro </span><i><span style="font-weight: 400;">schedulers</span></i><span style="font-weight: 400;">, cada um rodando vários processos concorrentemente.</span></p>
+<p><img decoding="async" class="aligncenter size-large wp-image-7446" src="/wp-content/uploads/2018/04/scheduler-1024x709.png" alt="" width="1024" height="709" srcset="/wp-content/uploads/2018/04/scheduler-1024x709.png 1024w, /wp-content/uploads/2018/04/scheduler-300x208.png 300w, /wp-content/uploads/2018/04/scheduler-768x532.png 768w, /wp-content/uploads/2018/04/scheduler.png 1432w" sizes="(max-width: 1024px) 100vw, 1024px" /></p>
+<p><span style="font-weight: 400;">Processos são a base para o modelo de concorrência que usamos em Elixir. Muitas das funcionalidades que precisamos ao utilizá-los possuem alguma abstração para nos ajudar, portanto, dessa maneira não precisamos nos preocupar com os detalhes de implementação de funções mais primitivas, como </span><em><span style="font-weight: 400;">spawn</span><span style="font-weight: 400;">, </span><span style="font-weight: 400;">send</span></em><span style="font-weight: 400;"> e </span><span style="font-weight: 400;">receive</span><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Quando utilizamos essas funções primitivas, precisamos nos preocupar com muito mais detalhes que são passíveis de erros para conseguirmos atingir nosso objetivo e deixar nosso código </span><i><span style="font-weight: 400;">OTP compliant</span></i><span style="font-weight: 400;">. Normalmente, os desenvolvedores(as) não usam essas funções, ao invés disso, usam abstrações como <em>Task, GenServer</em> e <em>Agent</em>. Mas isso já é assunto para outro post.</span></p>
+<p>&nbsp;</p><p>The post <a href="/2018/04/elixir-processos-e-esse-tal-de-otp/">Elixir, processos e esse tal de OTP</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/04/elixir-processos-e-esse-tal-de-otp/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Time da Plataformatec no Elixir Brasil 2018</title>
+		<link>/2018/01/time-da-plataformatec-no-elixir-brasil-2018/</link>
+		
+		<dc:creator><![CDATA[Guilherme Fernandez]]></dc:creator>
+		<pubDate>Mon, 29 Jan 2018 18:04:08 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir brasil]]></category>
+		<category><![CDATA[eventos]]></category>
+		<guid isPermaLink="false">/?p=7143</guid>
+
+					<description><![CDATA[<p>Como a empresa que criou o Elixir, naturalmente, a Plataformatec estará apoiando o evento Elixir Brasil, que vai acontecer em São Paulo, no dia 03 de fevereiro. Esse evento aborda duas trilhas principais de conteúdo: uma para quem já desenvolve em Elixir e outras linguagens de programação funcional, e a outra para quem está começando ... <a class="read-more-link" href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">»</a></p>
+<p>The post <a href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">Time da Plataformatec no Elixir Brasil 2018</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">Como a empresa que criou o Elixir, naturalmente, a Plataformatec estará apoiando o evento </span><a href="http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/"><span style="font-weight: 400;">Elixir Brasil</span></a><span style="font-weight: 400;">, que vai acontecer em São Paulo, no dia 03 de fevereiro. </span></p>
+<p><span style="font-weight: 400;">Esse evento aborda duas trilhas principais de conteúdo: uma para quem já desenvolve em Elixir e outras linguagens de programação funcional, e a outra para quem está começando a dar os primeiros passos nessa área.</span></p>
+<p><span style="font-weight: 400;">E é claro que o pessoal da Plataformatec estará por lá. Veja abaixo o que nosso time irá falar no evento, e o conteúdo que vão compartilhar: </span></p>
+<p><span style="font-weight: 400;"><strong>Amanda Sposito</strong>: <a href="http://eventos.locaweb.com.br/schedule/miguel/">Como concorrência funciona em Elixir?</a></span></p>
+<p><span style="font-weight: 400;"><strong>Ulisses Almeida</strong>: <a href="http://eventos.locaweb.com.br/schedule/ulisses-almeida-3/">O essencial da programação funcional em Elixir</a></span></p>
+<p><span style="font-weight: 400;"><strong>João Britto</strong>: <a href="http://eventos.locaweb.com.br/schedule/milhouse/">Evitando o Jenga Driven Development</a></span></p>
+<p><span style="font-weight: 400;"><strong>José Valim</strong>: <a href="http://eventos.locaweb.com.br/schedule/jose-valim-keynote/">Introducing HDD: Hughes Driven Development</a></span></p>
+<p><span style="font-weight: 400;">Veja aqui mais detalhes sobre o evento: <a href="http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/">http://eventos.locaweb.com.br/proximos-eventos/elixirbrasil/</a></span></p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.5em; line-height: 1.5em; margin-top: 0em !important;">Acompanhe nossa página de carreiras!</h3>
+<p style="margin-top: 0.5em !important;">Estamos sempre em busca de novas pessoas para trabalhar com Elixir, Ruby e Agile. Para isso temos nosso banco de talentos e vagas abertas, confira <a href="http://careers.plataformatec.com.br/">aqui</a>!</p>
+</div><p>The post <a href="/2018/01/time-da-plataformatec-no-elixir-brasil-2018/">Time da Plataformatec no Elixir Brasil 2018</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

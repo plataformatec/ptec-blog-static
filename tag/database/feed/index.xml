@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>database « Plataformatec Blog</title>
+	<atom:link href="/tag/database/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 12 Feb 2019 11:59:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Migrations in databases with large amount of data</title>
+		<link>/2019/02/migrations-in-databases-with-large-amount-of-data/</link>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Mon, 11 Feb 2019 12:58:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[database]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<guid isPermaLink="false">/?p=8581</guid>
+
+					<description><![CDATA[<p>There is a discussion that always comes up when dealing with database migrations. Should I use the migrations to also migrate data? I mean, I&#8217;ve already altered the structure so it would be easy to change the data by including an SQL as well, and this would guarantee that everything is working after the deploy. ... <a class="read-more-link" href="/2019/02/migrations-in-databases-with-large-amount-of-data/">»</a></p>
+<p>The post <a href="/2019/02/migrations-in-databases-with-large-amount-of-data/">Migrations in databases with large amount of data</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a discussion that always comes up when dealing with database migrations.</p>
+<p>Should I use the migrations to also migrate data? I mean, I&#8217;ve already altered the structure so it would be easy to change the data by including an SQL as well, and this would guarantee that everything is working after the deploy. Right?</p>
+<p>It could work, but in most cases, it could also cause a database lock and a major production problem.</p>
+<p>In general, the guidelines are to move the commands responsible to migrate the data to a separate task and then execute it after the migrations are up to date.</p>
+<p>In some cases, this could also take an eternity when you are dealing with a database with millions of records. Update statements are expensive to the database and sometimes it is preferable to create a new table with the right info and after everything is ok to rename after the right one. But sometimes we don&#8217;t want or we simply just can’t rename the table for N reasons.</p>
+<p>When you are dealing with millions of records and need to migrate data, one thing you can do is to create a SQL script responsible to migrate the data in batches. This is faster because you won’t create a single transaction in the database to migrate all records and will consume less memory.</p>
+<p>One thing to consider when using migration scripts is to disable all indexes in the table, indexes are meant to improve the read performance but can slow down the write action significantly. This happens because every time you write a new record in the table, the database will re-organize the data. Now imagine this in a scenario of millions of records, it could take way too much then it should.</p>
+<p>Every database has its own characteristics, but most of the things you can do in one, you can do in another, this is due to the SQL specification that every database implements. So when you are writing these scripts, it is important to always look at the documentation. I’ll be using PostgreSQL in this example, but the idea can be applied to most databases.</p>
+<h3>Let’s take a look into one example</h3>
+<p>Suppose we are dealing with e-commerce and we are noticing a slowness in the orders page, and by analyzing the query we notice an improvement can be done by denormalizing one of its tables. Let’s work with some data to show how this could be done.</p>
+<pre><code class="sql">CREATE TABLE "users" (
+id serial PRIMARY KEY,
+account_id int not NULL,
+name varchar(10)
+);
+
+CREATE TABLE orders (
+id SERIAL PRIMARY KEY,
+data text not NULL,
+user_id int not NULL
+);
+
+-- Generates 200_000_000 orders
+INSERT INTO "users" (account_id)
+SELECT generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 't-shirt' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'backpack' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'sunglass' AS data,
+       generate_series(1,50000000);
+
+INSERT INTO orders (data, user_id)
+SELECT 'sketchbook' AS data,
+       generate_series(1,50000000);
+
+CREATE index ON "users" ("account_id");
+CREATE index ON "orders" ("user_id");
+</code></pre>
+<pre><code class="sql">SELECT
+  "orders"."id",
+  "orders"."data"
+FROM "orders"
+INNER JOIN "users" ON ("orders"."user_id" = "users"."id")
+WHERE "users".account_id = 4500000;
+</code></pre>
+<p>The results from this query take about <strong>45s</strong> to return. If we run the explain analyze in this query, we will see that the <code>join</code> is taking too long, even though it is a simple query.</p>
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8594 size-full" src="/wp-content/uploads/2019/02/first_explain_analyze-2.png" alt="" width="2784" height="1778" srcset="/wp-content/uploads/2019/02/first_explain_analyze-2.png 2784w, /wp-content/uploads/2019/02/first_explain_analyze-2-300x192.png 300w, /wp-content/uploads/2019/02/first_explain_analyze-2-768x490.png 768w, /wp-content/uploads/2019/02/first_explain_analyze-2-1024x654.png 1024w" sizes="(max-width: 2784px) 100vw, 2784px" /></p>
+<p>One of the things we can do to improve this query is to denormalize the <code>orders</code> table and create another column <code>user_account_id</code> that will be a copy of the <code>account_id</code> column from the <code>users</code> table. This way we can remove the <code>join</code> and make it easier to read the info.</p>
+<pre><code class="sql">ALTER TABLE "orders" ADD COLUMN "user_account_id" integer;
+</code></pre>
+<p>If we weren’t dealing with such large data, the easiest way of doing it would be to write a simple <code>UPDATE FROM</code> and go on with life, but with this much of data it could take too long to finish.</p>
+<pre><code class="sql">UPDATE orders
+SET user_account_id = users.account_id
+FROM users
+WHERE orders.user_id = users.id;
+</code></pre>
+<h3>Updating records in batches</h3>
+<p>One way that we will explore in this blog post is to migrate this amount of data using a script that performs the update in batches.</p>
+<p>We will need to control the items to be updated, if your table has a sequential id column it will be easy, otherwise, you will need to find a way to iterate through the records. One way you can control this is through creating another <code>table</code> or <code>temp table</code>, to store the data that needs to be changed, you could use a <code>ROW_NUMBER</code> function to generate the sequential ID or just create a sequential column. The only limitation with <code>temp table</code> is the database hardware that needs to be able to handle this much of records in memory.</p>
+<p><a href="https://www.postgresql.org/docs/9.3/sql-createtable.html" target="_blank" rel="noopener">PostgreSQL: Documentation: 9.3: CREATE TABLE</a></p>
+<p>Lucky us, we have a sequential column in our table that we can use to control the items. To iterate through the records in PostgreSQL you can use some control structures such as <code>FOR</code> or <code>WHILE</code>.</p>
+<p><a href="https://www.postgresql.org/docs/9.2/plpgsql-control-structures.html" target="_blank" rel="noopener">PostgreSQL: Documentation: 9.2: Control Structures</a></p>
+<p>You can also print some messages during the process to provide some feedback while the queries are running, chances are that it may take a while to finish if you are dealing with a large dataset.</p>
+<p><a href="https://www.postgresql.org/docs/9.6/plpgsql-errors-and-messages.html" target="_blank" rel="noopener">https://www.postgresql.org/docs/9.6/plpgsql-errors-and-messages.html</a></p>
+<pre><code class="plsql">DO $
+DECLARE
+   row_count integer := 1;
+   batch_size  integer := 50000; -- HOW MANY ITEMS WILL BE UPDATED AT TIME
+   from_number integer := 0;
+   until_number integer := batch_size;
+   affected integer;
+BEGIN
+
+row_count := (SELECT count(*) FROM orders WHERE user_account_id IS NULL);
+
+RAISE NOTICE '% items to be updated', row_count;
+
+-- ITERATES THROUGH THE ITEMS UNTIL THERE IS NO MORE RECORDS TO BE UPDATED
+WHILE row_count &gt; 0 LOOP
+  UPDATE orders
+  SET user_account_id = users.account_id
+  FROM users
+  WHERE orders.user_id = users.id
+  AND orders.id BETWEEN from_number AND until_number;
+
+  -- OBTAINING THE RESULT STATUS
+  GET DIAGNOSTICS affected = ROW_COUNT;
+  RAISE NOTICE '-&gt; % records updated!', affected;
+
+  -- UPDATES THE COUNTER SO IT DOESN'T TURN INTO AN INFINITE LOOP
+  from_number := from_number + batch_size;
+  until_number := until_number + batch_size;
+  row_count := row_count - batch_size;
+
+  RAISE NOTICE '% items to be updated', row_count;
+END LOOP;
+
+END $;
+</code></pre>
+<p>Given us a message output will be like this until the script finishes:</p>
+<pre><code>NOTICE:  200000000 items to be updated
+CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+NOTICE:  -&gt; 50000 records updated!
+CONTEXT:  PL/pgSQL function inline_code_block line 23 at RAISE
+NOTICE:  199950000 items to be updated
+CONTEXT:  PL/pgSQL function inline_code_block line 30 at RAISE
+NOTICE:  -&gt; 50001 records updated!
+</code></pre>
+<p>After the script finishes, we can create an index in the new column since it will be used for reading purposes.</p>
+<p><code>CREATE index ON "orders" ("user_account_id");</code></p>
+<p>If we ran the <code>EXPLAIN ANALYZE</code> command again we can see the performance improvements.</p>
+<p><img decoding="async" class="aligncenter wp-image-8595 size-full" src="/wp-content/uploads/2019/02/final_explain_analyze.png" alt="" width="2784" height="1778" srcset="/wp-content/uploads/2019/02/final_explain_analyze.png 2784w, /wp-content/uploads/2019/02/final_explain_analyze-300x192.png 300w, /wp-content/uploads/2019/02/final_explain_analyze-768x490.png 768w, /wp-content/uploads/2019/02/final_explain_analyze-1024x654.png 1024w" sizes="(max-width: 2784px) 100vw, 2784px" /></p>
+<p>We can see that before, only the <code>join</code> was taking a little bit more than <code>7s</code> in the query, approximately 15% of the loading time. If we look closer, we can also notice that the next three lines were related to the <code>join</code>, and after we denormalized the table they were gone too.</p>
+<p>You can follow the <code>EXPLAIN ANALYZE</code> evolution <a href="https://explain.depesz.com/s/IwjF" target="_blank" rel="noopener">here</a></p>
+<p>Hope it helps!</p><p>The post <a href="/2019/02/migrations-in-databases-with-large-amount-of-data/">Migrations in databases with large amount of data</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

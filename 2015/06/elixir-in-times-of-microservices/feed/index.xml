@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Elixir in times of microservices	</title>
+	<atom:link href="/2015/06/elixir-in-times-of-microservices/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/06/elixir-in-times-of-microservices/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 09 Sep 2015 06:41:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1517</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 09 Sep 2015 06:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1517</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1516&quot;&gt;Zachary Moshansky&lt;/a&gt;.
+
+Just to clarify, although JS front-end and an Elixir node constitute a distributed system, that is not the type of distributed systems we are focusing here. We are focusing on the whole server system, where all nodes should communicate with each other without restrictions. You *definitely* don&#039;t want that for the client-side as it would allow the client to invoke any code in your remote node.
+
+
+Therefore, when talking about JS front-ends, it doesn&#039;t really matter which protocol you choose as it doesn&#039;t have to be the same you use internally, because the client node is not be part of the server system and because you also have protocol restrictions on the client.
+
+
+Phoenix does use JSON and websockets by default but you can replace it by your own serialization mechanism (like msgpack) or a custom transport/protocol if desired too.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1516">Zachary Moshansky</a>.</p>
+<p>Just to clarify, although JS front-end and an Elixir node constitute a distributed system, that is not the type of distributed systems we are focusing here. We are focusing on the whole server system, where all nodes should communicate with each other without restrictions. You *definitely* don&#8217;t want that for the client-side as it would allow the client to invoke any code in your remote node.</p>
+<p>Therefore, when talking about JS front-ends, it doesn&#8217;t really matter which protocol you choose as it doesn&#8217;t have to be the same you use internally, because the client node is not be part of the server system and because you also have protocol restrictions on the client.</p>
+<p>Phoenix does use JSON and websockets by default but you can replace it by your own serialization mechanism (like msgpack) or a custom transport/protocol if desired too.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Zachary Moshansky		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1516</link>
+
+		<dc:creator><![CDATA[Zachary Moshansky]]></dc:creator>
+		<pubDate>Wed, 09 Sep 2015 01:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1516</guid>
+
+					<description><![CDATA[Regarding this section: &quot;When building a distributed system, you need to choose a communication protocol and how the data will be serialized. Although there are many options out there, unfortunately a lot of developers choose HTTP and JSON, which is a very verbose and expensive combination for performing what ends up becoming RPC calls.&quot; 
+
+Is there a better alternative out there (library)? In particular, to communicate between a JS front-end and Elixir/Phoenix back end? I&#039;m imagining phoenix channels + BERT/BERT-RPC or something to that effect.]]></description>
+			<content:encoded><![CDATA[<p>Regarding this section: &#8220;When building a distributed system, you need to choose a communication protocol and how the data will be serialized. Although there are many options out there, unfortunately a lot of developers choose HTTP and JSON, which is a very verbose and expensive combination for performing what ends up becoming RPC calls.&#8221; </p>
+<p>Is there a better alternative out there (library)? In particular, to communicate between a JS front-end and Elixir/Phoenix back end? I&#8217;m imagining phoenix channels + BERT/BERT-RPC or something to that effect.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pierre-Alexandre Piarulli		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1515</link>
+
+		<dc:creator><![CDATA[Pierre-Alexandre Piarulli]]></dc:creator>
+		<pubDate>Sun, 30 Aug 2015 09:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1515</guid>
+
+					<description><![CDATA[Is isolating a part of a rails app and rewrite it as a phoenix microservice a good way to start learning phoenix ?]]></description>
+			<content:encoded><![CDATA[<p>Is isolating a part of a rails app and rewrite it as a phoenix microservice a good way to start learning phoenix ?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ishay Green		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1508</link>
+
+		<dc:creator><![CDATA[Ishay Green]]></dc:creator>
+		<pubDate>Tue, 04 Aug 2015 23:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1508</guid>
+
+					<description><![CDATA[Best article I read about Elixir. So far.]]></description>
+			<content:encoded><![CDATA[<p>Best article I read about Elixir. So far.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucca		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1505</link>
+
+		<dc:creator><![CDATA[Lucca]]></dc:creator>
+		<pubDate>Sun, 05 Jul 2015 12:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1505</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1504&quot;&gt;josevalim&lt;/a&gt;.
+
+Awesome! Thanks! We have implemented rjiindael256 in Go, and couldn&#039;t easily port it to Elixir, so using Distributed Erlang Protocol seems the perfect solution! Thanks again!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1504">josevalim</a>.</p>
+<p>Awesome! Thanks! We have implemented rjiindael256 in Go, and couldn&#8217;t easily port it to Elixir, so using Distributed Erlang Protocol seems the perfect solution! Thanks again!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1504</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sun, 05 Jul 2015 11:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4787#comment-1504</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1503&quot;&gt;Lucca&lt;/a&gt;.
+
+Erlang ships with implementation for both Java and C. More info here: http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html
+
+The &quot;Go, Erlang Go!&quot; project builds many bindings between Erlang and Go: https://github.com/goerlang. The &quot;node&quot; package is the one you are interested in.
+
+Erlport tackles both Ruby and Python: http://erlport.org]]>/</description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/06/elixir-in-times-of-microservices/comment-page-1/#comment-1503">Lucca</a>.</p>
+<p>Erlang ships with implementation for both Java and C. More info here: <a href="http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html" rel="nofollow ugc">http://www.erlang.org/doc/apps/jinterface/jinterface_users_guide.html</a></p>
+<p>The &#8220;Go, Erlang Go!&#8221; project builds many bindings between Erlang and Go: <a href="https://github.com/goerlang" rel="nofollow ugc">https://github.com/goerlang</a>. The &#8220;node&#8221; package is the one you are interested in.</p>
+<p>Erlport tackles both Ruby and Python: <a href="http://erlport.org/" rel="nofollow ugc">http://erlport.org/</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

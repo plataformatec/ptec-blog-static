@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Desenvolvendo melhoria contínua em seu processo ágil: Um Daily Meeting diferente	</title>
+	<atom:link href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 18 Apr 2017 22:50:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1730</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Tue, 18 Apr 2017 22:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1730</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1729&quot;&gt;Rodrigo Dlugokenski&lt;/a&gt;.
+
+Isso aí @rdlu:disqus ! : )
+O importante é que as cerimônias sejam eficientes e eficazes! E essa equação varia de time a time, como você mesmo disse... Continue o bom trabalho! = D]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1729">Rodrigo Dlugokenski</a>.</p>
+<p>Isso aí @rdlu:disqus ! : )<br />
+O importante é que as cerimônias sejam eficientes e eficazes! E essa equação varia de time a time, como você mesmo disse&#8230; Continue o bom trabalho! = D</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Dlugokenski		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1729</link>
+
+		<dc:creator><![CDATA[Rodrigo Dlugokenski]]></dc:creator>
+		<pubDate>Tue, 18 Apr 2017 11:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1729</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1722&quot;&gt;Lucas Colucci&lt;/a&gt;.
+
+Concordo com o Lucas, como exemplo estou numa empresa em que a comunicação era basicamente inexistente, e começar fazendo reuniões discretas é bem definidas é o melhor para o time se conhecer. Em um mês fazendo isso as coisas começaram a mudar, e nossas reuniões diárias duram 30 min de tanta carga e dúvida que se gerou ao longo dos anos. Estas aos poucos estão mudando e diminuindo em vários dias. Agora &#062; 30 min só no review semanal.
+
+Isso também serve para integrar mais rápido o pessoal mais recente, que ainda não está confiante quando e como pode interromper um colega de equipe para discutir as tarefas.
+
+Também existem pessoas, tipo eu, que prefiro deixar para determinados horários, que não interrompam aquele momento que estou muito focado.
+
+Cada equipe deve achar sua equação, e integrar os mais novos o quanto antes.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1722">Lucas Colucci</a>.</p>
+<p>Concordo com o Lucas, como exemplo estou numa empresa em que a comunicação era basicamente inexistente, e começar fazendo reuniões discretas é bem definidas é o melhor para o time se conhecer. Em um mês fazendo isso as coisas começaram a mudar, e nossas reuniões diárias duram 30 min de tanta carga e dúvida que se gerou ao longo dos anos. Estas aos poucos estão mudando e diminuindo em vários dias. Agora &gt; 30 min só no review semanal.</p>
+<p>Isso também serve para integrar mais rápido o pessoal mais recente, que ainda não está confiante quando e como pode interromper um colega de equipe para discutir as tarefas.</p>
+<p>Também existem pessoas, tipo eu, que prefiro deixar para determinados horários, que não interrompam aquele momento que estou muito focado.</p>
+<p>Cada equipe deve achar sua equação, e integrar os mais novos o quanto antes.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1722</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 03 Apr 2017 13:53:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1722</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1720&quot;&gt;Lauro Caetano&lt;/a&gt;.
+
+Olá Lauro!
+Acredito que cada time possui suas próprias características... Se um time está sempre conversando, todos os blocks são informados na hora, o board está sempre atualizado, todos ajudam a todos na passagem de uma história do começo ao fim do fluxo e ninguém pega histórias demais, acredito que seja possível não fazer o daily mesmo =D 
+
+Como sempre falamos, não é por que a metodologia existe que você deve usar, mas é preciso pensar bastante se tudo o que o daily te propõe já está sendo alcançado sem ele... Até porque, é a menor das cerimônias (geralmente não passa de 15 min né?) então não é tão custoso assim.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1720">Lauro Caetano</a>.</p>
+<p>Olá Lauro!<br />
+Acredito que cada time possui suas próprias características&#8230; Se um time está sempre conversando, todos os blocks são informados na hora, o board está sempre atualizado, todos ajudam a todos na passagem de uma história do começo ao fim do fluxo e ninguém pega histórias demais, acredito que seja possível não fazer o daily mesmo =D </p>
+<p>Como sempre falamos, não é por que a metodologia existe que você deve usar, mas é preciso pensar bastante se tudo o que o daily te propõe já está sendo alcançado sem ele&#8230; Até porque, é a menor das cerimônias (geralmente não passa de 15 min né?) então não é tão custoso assim.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lauro Caetano		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1720</link>
+
+		<dc:creator><![CDATA[Lauro Caetano]]></dc:creator>
+		<pubDate>Sun, 02 Apr 2017 09:19:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1720</guid>
+
+					<description><![CDATA[O time o qual trabalho também realiza os dailies desta forma, da direita para a esquerda e focando no que está em desenvolvimento.  Porém... Eu acredito no seguinte: Um ótimo time não precisa de daily meetings. Simples. Mas porque acredito nisso?
+
+O time não precisa esperar uma certa hora do dia para poder conversar, perguntar sobre impedimentos ou compartilhar conhecimento. Isso deve acontecer de forma natural e as pessoas ficarão ainda mais felizes por remover mais uma reunião do dia delas :P
+
+Então minha sugestão seria a seguinte: Experimente ficar algumas semanas sem daily meetings e observe o comportamento do time. E, caso alguém ainda insista em status-report do time, dê a sugestão para a pessoa olhar o status atual das coisas no board.]]></description>
+			<content:encoded><![CDATA[<p>O time o qual trabalho também realiza os dailies desta forma, da direita para a esquerda e focando no que está em desenvolvimento.  Porém&#8230; Eu acredito no seguinte: Um ótimo time não precisa de daily meetings. Simples. Mas porque acredito nisso?</p>
+<p>O time não precisa esperar uma certa hora do dia para poder conversar, perguntar sobre impedimentos ou compartilhar conhecimento. Isso deve acontecer de forma natural e as pessoas ficarão ainda mais felizes por remover mais uma reunião do dia delas 😛</p>
+<p>Então minha sugestão seria a seguinte: Experimente ficar algumas semanas sem daily meetings e observe o comportamento do time. E, caso alguém ainda insista em status-report do time, dê a sugestão para a pessoa olhar o status atual das coisas no board.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1717</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Mon, 27 Mar 2017 16:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1717</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1716&quot;&gt;rcillo&lt;/a&gt;.
+
+Opa @rcillo:disqus concordo plenamente! Não está no texto mas ainda temos responsáveis por cada tarefa/história. Mas não é por que uma pessoa tem o ownership da tarefa que outros não podem ajudar no que for preciso :) Por isso as perguntas mais abertas ao invés de direto à pessoa... faz sentido? :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1716">rcillo</a>.</p>
+<p>Opa @rcillo:disqus concordo plenamente! Não está no texto mas ainda temos responsáveis por cada tarefa/história. Mas não é por que uma pessoa tem o ownership da tarefa que outros não podem ajudar no que for preciso 🙂 Por isso as perguntas mais abertas ao invés de direto à pessoa&#8230; faz sentido? 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rcillo		</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/comment-page-1/#comment-1716</link>
+
+		<dc:creator><![CDATA[rcillo]]></dc:creator>
+		<pubDate>Mon, 27 Mar 2017 15:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6202#comment-1716</guid>
+
+					<description><![CDATA[Nós também adotamos esta técnica de revisar o quadro da direita para esquerda. Observamos que as tarefas ficaram menos tempo esperando por uma ação, agilisando a entrega. Mas ainda esperamos que uma tarefa tenha um responsável. Autonomia e trabalho em equipe se apresentam em uma infinitude de tons de cinza. Se seu time valoriza autonomia, buscar um senso compartilhado de responsabilidade sobre tarefas pode desmotivar invés de motivar.]]></description>
+			<content:encoded><![CDATA[<p>Nós também adotamos esta técnica de revisar o quadro da direita para esquerda. Observamos que as tarefas ficaram menos tempo esperando por uma ação, agilisando a entrega. Mas ainda esperamos que uma tarefa tenha um responsável. Autonomia e trabalho em equipe se apresentam em uma infinitude de tons de cinza. Se seu time valoriza autonomia, buscar um senso compartilhado de responsabilidade sobre tarefas pode desmotivar invés de motivar.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

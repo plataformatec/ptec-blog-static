@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Default views in Rails 3.0 with custom resolvers	</title>
+	<atom:link href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 04 Apr 2011 20:40:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/comment-page-1/#comment-1129</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 20:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1959#comment-1129</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/04/default-views-in-rails-3-0-with-custom-resolvers/comment-page-1/#comment-1127&quot;&gt;Bruno Michel&lt;/a&gt;.
+
+Glad that you liked and were already able to put it in practice! Typo was
+fixed!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/comment-page-1/#comment-1127">Bruno Michel</a>.</p>
+<p>Glad that you liked and were already able to put it in practice! Typo was<br />
+fixed!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/comment-page-1/#comment-1128</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 20:39:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1959#comment-1128</guid>
+
+					<description><![CDATA[Resolvers are a powerful abstraction that allows you to customize template
+lookup. This post is just one example of the several things you can do with
+resolvers. The book goes through another example and shows how you can
+create your own resolver that searches for templates in the database,
+instead of the filesystem. In other words, you should not ignore this post
+nor the book contents, because they explain and show you how resolvers work.
+You just won&#039;t need to create a resolver as above if you need template
+inheritance.]]></description>
+			<content:encoded><![CDATA[<p>Resolvers are a powerful abstraction that allows you to customize template<br />
+lookup. This post is just one example of the several things you can do with<br />
+resolvers. The book goes through another example and shows how you can<br />
+create your own resolver that searches for templates in the database,<br />
+instead of the filesystem. In other words, you should not ignore this post<br />
+nor the book contents, because they explain and show you how resolvers work.<br />
+You just won&#8217;t need to create a resolver as above if you need template<br />
+inheritance.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bruno Michel		</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/comment-page-1/#comment-1127</link>
+
+		<dc:creator><![CDATA[Bruno Michel]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 20:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1959#comment-1127</guid>
+
+					<description><![CDATA[Thanks for this article. I&#039;m applying this good stuff to one of my projects where I was using symlinks in app/views for that and it was a bit messy. There is a typo on append_view_path (no &#039;s&#039; at the end), but except that, it was very simple to take your code and adapt it :)]]></description>
+			<content:encoded><![CDATA[<p>Thanks for this article. I&#8217;m applying this good stuff to one of my projects where I was using symlinks in app/views for that and it was a bit messy. There is a typo on append_view_path (no &#8216;s&#8217; at the end), but except that, it was very simple to take your code and adapt it 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

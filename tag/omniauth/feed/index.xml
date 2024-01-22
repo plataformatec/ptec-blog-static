@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>omniauth « Plataformatec Blog</title>
+	<atom:link href="/tag/omniauth/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 28 Dec 2010 18:55:19 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Acceptance tests for OmniAuth</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/</link>
+					<comments>/2010/12/acceptance-tests-for-omniauth/#comments</comments>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Tue, 28 Dec 2010 18:55:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[omniauth]]></category>
+		<guid isPermaLink="false">/?p=1575</guid>
+
+					<description><![CDATA[<p>One of the great gems released in the past few months was OmniAuth. It is very easy to use, it works without tons of configurations (unless configuring XML files is your thing) and there are already plenty of resources about it on the internet. However, it is not easy to do acceptance tests with Omniauth ... <a class="read-more-link" href="/2010/12/acceptance-tests-for-omniauth/">»</a></p>
+<p>The post <a href="/2010/12/acceptance-tests-for-omniauth/">Acceptance tests for OmniAuth</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the great gems released in the past few months was <a href="https://github.com/intridea/omniauth">OmniAuth</a>. It is very easy to use, it works without tons of configurations (unless configuring XML files is your thing) and there are already <a href="http://railscasts.com/tags/25" target="_blank">plenty of resources</a> <a href="http://blog.railsrumble.com/blog/2010/10/08/intridea-omniauth" target="_blank">about it</a> on the internet.</p>
+<p>However, it is not easy to do acceptance tests with Omniauth as it depends on external services to work. So what should we do? When I face a scenario like this, I split the acceptance test in two parts: one before the external service and one after the external service response.</p>
+<p>Testing the first one is trivial: you only have to ensure there is an &lt;a&gt; tag with href equals to &#8220;/auth/facebook&#8221; (or &#8220;/auth/#{insert_your_provider_here}&#8221; if you use another one). We don&#8217;t test any of the redirects done by OmniAuth internals, because it is already tested in gem&#8217;s tests, so we go to the next step: testing the OmniAuth callback.</p>
+<p>Testing OmniAuth callbacks is in general cumbersome but for OAuth2 providers it is a bit easier as it uses <a href="https://github.com/technoweenie/faraday">Faraday</a> internally to connect to the provider. With Faraday, we can configure a test adapter and stub calls to return what we want.</p>
+<p>The OmniAuth strategy provides an entry point to the Faraday connection, but we don&#8217;t have an access to the strategy directly, so we need to store it globally. For a Facebook strategy, we can achieve it as below whenever configuring Omniauth middleware:</p>
+<pre lang="ruby">
+module OmniAuth
+  mattr_accessor :facebook_strategy
+end
+
+middleware.use OmniAuth::Strategies::Facebook, "APP_ID", "APP_SECRET" do |strategy|
+  OmniAuth.facebook_strategy = strategy
+end</pre>
+<p>Note you will need OmniAuth 0.2.0 (which currently is OmniAuth master) as previous versions don&#8217;t yield a block on initialization like above.</p>
+<p>With access to the strategy, we do the acceptance test. First, we define the hashes we will return on the <a href="https://github.com/technoweenie/faraday">Faraday</a> responses.</p>
+<pre lang="ruby">FACEBOOK_INFO = {
+  :id =>; '12345',
+  :link => 'http://facebook.com/plataformatec',
+  :email => 'myemail@example.com',
+  :first_name => 'Plataforma',
+  :last_name => 'Tecnologia',
+  :website => '/'
+}
+
+ACCESS_TOKEN = {
+  :access_token => "nevergonnagiveyouup"
+}</pre>
+<p>Now, we will define the stubs. OAuth2 strategies do two requests: one to retrieve the access token and another to retrieve the user information. In this example, let&#8217;s stub the Facebook requests and assign these stubs to a new connection.</p>
+<pre lang="ruby">stubs = Faraday::Adapter::Test::Stubs.new do |b|
+  b.post('/oauth/access_token') { [200, {}, ACCESS_TOKEN.to_json] }
+  b.get('/me?access_token=nevergonnagiveyouup') { [200, {}, FACEBOOK_INFO.to_json] }
+end
+
+OmniAuth.facebook_strategy.client.connection = Faraday::Connection.new do |builder|
+  builder.adapter :test, stubs
+end</pre>
+<p>For each provider the URLs may differ, so an idea is to do this on a TDD way (or you can browse through the OmniAuth source code and see the url that it requests):</p>
+<ol>
+<li> Assign the Faraday fake connection without stubs.</li>
+<li> Run your test</li>
+<li> See the test to raise an exception like &#8220;No stubbed request for DESIRED_URL&#8221;.</li>
+<li> Add the stubbed request with the response that you want.</li>
+<li> Repeat this process until the test pass</li>
+</ol>
+<p>This is what we do on acceptance tests with OmniAuth: testing before and after the access to the external services.</p>
+<p>Another approach is to do only one test by short-circuiting the provider authentication URLs. To do that on a Rails application, you can store the provider URL on a method like &#8220;OmniAuth.facebook_url&#8221; and stub the method to return the callback URL on your test. If you happen to be using <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, the upcoming 1.2 version does the short-circuiting automatically for you, as you can see in <a href="https://github.com/plataformatec/devise/blob/master/test/integration/omniauthable_test.rb">Devise integration tests</a>.</p>
+<p>What about you? How do you stub OmniAuth requests and responses on your applications?</p><p>The post <a href="/2010/12/acceptance-tests-for-omniauth/">Acceptance tests for OmniAuth</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/acceptance-tests-for-omniauth/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: The fallacies of web application performance	</title>
+	<atom:link href="/2017/07/the-fallacies-of-web-application-performance/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/07/the-fallacies-of-web-application-performance/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 06 Aug 2017 08:04:22 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jackal Cooper		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1750</link>
+
+		<dc:creator><![CDATA[Jackal Cooper]]></dc:creator>
+		<pubDate>Thu, 03 Aug 2017 10:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1750</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1745&quot;&gt;mmuskala&lt;/a&gt;.
+
+This is so true. I always take a TDD path when writing anything in Elixir, which is not the case in other languages. I love seeing my tests finished with the app. It makes test driven development way more practical and productive.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1745">mmuskala</a>.</p>
+<p>This is so true. I always take a TDD path when writing anything in Elixir, which is not the case in other languages. I love seeing my tests finished with the app. It makes test driven development way more practical and productive.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Patryk Nowak		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1749</link>
+
+		<dc:creator><![CDATA[Patryk Nowak]]></dc:creator>
+		<pubDate>Tue, 01 Aug 2017 12:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1749</guid>
+
+					<description><![CDATA[Great article, thanks! I do see in my company that the fourth point is something that divides people into two opposite sides - one that claims that everything that&#039;s FLOSS is awesome and we should apply it anywhere it&#039;s possible and another one that would like to implement everything on their own, because FLOSS generates a lot of new issues. The most important thing to is to have common sense and find something in between. Also about the first point - I know that in my company the biggest development branch (bunch of teams) have to run their unit tests in isolated docker image and it takes a lot of time. My tests take about 9 seconds :)]]></description>
+			<content:encoded><![CDATA[<p>Great article, thanks! I do see in my company that the fourth point is something that divides people into two opposite sides &#8211; one that claims that everything that&#8217;s FLOSS is awesome and we should apply it anywhere it&#8217;s possible and another one that would like to implement everything on their own, because FLOSS generates a lot of new issues. The most important thing to is to have common sense and find something in between. Also about the first point &#8211; I know that in my company the biggest development branch (bunch of teams) have to run their unit tests in isolated docker image and it takes a lot of time. My tests take about 9 seconds 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Lewis Cowles		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1748</link>
+
+		<dc:creator><![CDATA[Lewis Cowles]]></dc:creator>
+		<pubDate>Sat, 29 Jul 2017 11:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1748</guid>
+
+					<description><![CDATA[When testing in production, it&#039;s important to monitor more than just how long it takes your code to run. For example, many SaaS apps seem slow because users treat them like the garden shed (just throw it all in and expect results).]]></description>
+			<content:encoded><![CDATA[<p>When testing in production, it&#8217;s important to monitor more than just how long it takes your code to run. For example, many SaaS apps seem slow because users treat them like the garden shed (just throw it all in and expect results).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Peter		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1747</link>
+
+		<dc:creator><![CDATA[Peter]]></dc:creator>
+		<pubDate>Thu, 27 Jul 2017 13:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1747</guid>
+
+					<description><![CDATA[Fallacy #4 is a swift kick in the JVM&#039;s!
+(Large Ruby codebases: &quot;No comment&quot;)]]></description>
+			<content:encoded><![CDATA[<p>Fallacy #4 is a swift kick in the JVM&#8217;s!<br />
+(Large Ruby codebases: &#8220;No comment&#8221;)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Simon van Dyk		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1746</link>
+
+		<dc:creator><![CDATA[Simon van Dyk]]></dc:creator>
+		<pubDate>Thu, 27 Jul 2017 06:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1746</guid>
+
+					<description><![CDATA[This article is so well put - thanks!
+
+I was kindly reminded of Elixir&#039;s focus of developer productivity &#038; maintenance, I find it&#039;s so easy to have meaningless discussions around performance.]]></description>
+			<content:encoded><![CDATA[<p>This article is so well put &#8211; thanks!</p>
+<p>I was kindly reminded of Elixir&#8217;s focus of developer productivity &amp; maintenance, I find it&#8217;s so easy to have meaningless discussions around performance.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: mmuskala		</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/comment-page-1/#comment-1745</link>
+
+		<dc:creator><![CDATA[mmuskala]]></dc:creator>
+		<pubDate>Wed, 26 Jul 2017 19:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6554#comment-1745</guid>
+
+					<description><![CDATA[I think the first point is the most important. I can&#039;t stress enough how big of an impact an application that boots instantly and a test suite that runs fast have on development performance and developer quality of life. 
+
+I experienced this recently where I could directly compare generally similar Rails and Phoenix applications with a similar setup for testing - most of the tests were hitting the database and hitting it hard. The Phoenix application had about 1.5k tests that were running in about 30 *seconds*. The Rails app had about 1k tests running in a staggering 8 *minutes*. 
+
+Running a test suite on the Phoenix app is a complete no-brainer. You do it all the time. Running the test suite on the Rails app is a big event you do only once in a while. I love being able to depend more on the test suite - no matter if you write your tests first or not, it&#039;s extremely important that you can lean on the test whenever you wish without going for a walk or taking a shower while the test suite runs.]]></description>
+			<content:encoded><![CDATA[<p>I think the first point is the most important. I can&#8217;t stress enough how big of an impact an application that boots instantly and a test suite that runs fast have on development performance and developer quality of life. </p>
+<p>I experienced this recently where I could directly compare generally similar Rails and Phoenix applications with a similar setup for testing &#8211; most of the tests were hitting the database and hitting it hard. The Phoenix application had about 1.5k tests that were running in about 30 *seconds*. The Rails app had about 1k tests running in a staggering 8 *minutes*. </p>
+<p>Running a test suite on the Phoenix app is a complete no-brainer. You do it all the time. Running the test suite on the Rails app is a big event you do only once in a while. I love being able to depend more on the test suite &#8211; no matter if you write your tests first or not, it&#8217;s extremely important that you can lean on the test whenever you wish without going for a walk or taking a shower while the test suite runs.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>front-end « Plataformatec Blog</title>
+	<atom:link href="/tag/front-end/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 30 Sep 2014 14:14:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>The brand new Plataformatec blog</title>
+		<link>/2014/09/the-brand-new-plataformatec-blog/</link>
+					<comments>/2014/09/the-brand-new-plataformatec-blog/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 12:00:35 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[front-end]]></category>
+		<guid isPermaLink="false">/?p=4235</guid>
+
+					<description><![CDATA[<p>Today we are shipping a whole new design to improve your navigation and reading experience on our blog! Back in 2012 we rolled out our new visual identity and website, but we didn&#8217;t change our blog much at the time. So we decided that it was time to give some love to our blog and ... <a class="read-more-link" href="/2014/09/the-brand-new-plataformatec-blog/">»</a></p>
+<p>The post <a href="/2014/09/the-brand-new-plataformatec-blog/">The brand new Plataformatec blog</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we are shipping a whole new design to improve your navigation and reading experience on our blog!</p>
+<p><img decoding="async" src="/wp-content/uploads/2014/09/new-layout.png" alt="The brand new Plataformatec blog" class="plain-image" /></p>
+<p>Back in 2012 we rolled out <a href="/2012/03/our-new-visual-identity-and-website-d/">our new visual identity and website</a>, but we didn&#8217;t change our blog much at the time. So we decided that it was time to give some love to our blog and work on a full redesign over the last couple of months. We are really excited to release this work for everybody who reads our posts.</p>
+<p>Fonts are bigger, colors are brighter and everything looks much better on your smartphone than it used to. We focused on improving the reading experience and on a more up to date look for our blog.</p>
+<p>The whole development process was a great experience, from design to code, and I want to share some of the story of how we got there:</p>
+<h2>The (re)design process</h2>
+<p>At first we started sketching everything with HTML and CSS trying to put together our new look with some elements of our existing layout. As things started coming into shape, the next step was to put together a Jekyll website with all of our blog posts (thanks to <a href="https://github.com/jekyll/jekyll-import">jekyll-import</a>) so we could easily test the new design against our existing content, rather than against a bunch of &#8220;Lorem ipsum&#8221; posts. This was really useful when reviewing the code snippets in our posts and visualizing how we could improve the syntax highlight using something else than the previous WordPress plugin we were using.</p>
+<p>As we designed and prototyped each piece of our new layout, people outside the redesign project jumped in and participated through the Pull Requests that we used for building those blocks. A good part of our team was part of the whole process helping out with design/code/copy feedback.</p>
+<p><img decoding="async" src="/wp-content/uploads/2014/09/blog-pull-request.png" alt="One of the Pull Requests in our new theme" /></p>
+<h2>The Journey into WordPress</h2>
+<p>One of the first decisions was to keep using WordPress as our blog engine. Over the last years a lot of alternatives have surfaced (like <a href="https://ghost.org/">Ghost</a>), but WordPress still feels the most complete blogging solution for us, so we&#8217;re still using it for the time being.</p>
+<p>Given that, one of our challenges was to learn how to work with WordPress and convert our design (built on top of a Jekyll site) into a WordPress theme that we could install in our blog. This task ended up being much easier than expected.</p>
+<p>After finishing the first complete iteration of the layout, I spent a few days watching some of the WordPress courses on <a href="http://teamtreehouse.com/">Treehouse</a> to learn how to work with WordPress themes and the whole PHP API behind it. I&#8217;ve mixed together some Bash scripts, a proxy server built with rack-legacy and some Gulp tasks to automate a local WordPress environment and migrated our Jekyll templates into PHP ones and we were set!</p>
+<p>This might sound a bit too complicated, but the idea of starting with Jekyll to focus on the design process and quick iterations to later worry about the theme &#8220;infrastructure&#8221; was a well payed bet so I didn&#8217;t have to juggle both problems at the same time.</p>
+<h2>The best is yet to come</h2>
+<p>The idea is to not stop here. There are still a lot of improvements we want to do on our blog and all the tooling we have put together makes it easy to jump back and iterate over the design and the code.</p>
+<p>Let us know if you find anything broken around here and we will jump on it to fix it. We hope you enjoy this new look and feel while reading through our blog posts :heart:!</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/09/the-brand-new-plataformatec-blog/">The brand new Plataformatec blog</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/09/the-brand-new-plataformatec-blog/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Splitting long CSS files to overcome IE9 4095 rules limit</title>
+		<link>/2014/09/splitting-long-css-files-to-overcome-ie9-4095-rules-limit/</link>
+		
+		<dc:creator><![CDATA[Fabio Yamate]]></dc:creator>
+		<pubDate>Wed, 17 Sep 2014 12:00:37 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[front-end]]></category>
+		<guid isPermaLink="false">/?p=4197</guid>
+
+					<description><![CDATA[<p>CSS preprocessors like SASS and LESS improved the way we write CSS nowadays. It provides better ways to organize styles into files, that can represent a component or page, and then compile into a single file, following the idea of reducing HTTP requests. Also there are other features like variables, mixins and placeholders that help ... <a class="read-more-link" href="/2014/09/splitting-long-css-files-to-overcome-ie9-4095-rules-limit/">»</a></p>
+<p>The post <a href="/2014/09/splitting-long-css-files-to-overcome-ie9-4095-rules-limit/">Splitting long CSS files to overcome IE9 4095 rules limit</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>CSS preprocessors like SASS and LESS improved the way we write CSS nowadays. It provides better ways to organize styles into files, that can represent a component or page, and then compile into a single file, following the idea of reducing HTTP requests. Also there are other features like variables, mixins and placeholders that help with code reuse and maintenance.</p>
+<p>However, it is possible that with the growth of your application code base the number of CSS styles will surpass the limit rules supported by IE9 or above. The current limit is up to <a href="http://blogs.msdn.com/b/ieinternals/archive/2011/05/14/10164546.aspx">4095 rules per file</a>.</p>
+<p>But it is good to note that only the overflowed styles will be ignored. So, considering this detail, you might take some time to figure out that your layout is broken unless you are aware of this issue, since other browsers like Chrome, Safari and Firefox does not have such limit.</p>
+<p>The simplest way to fix that is to split your main stylesheet into multiple files. Using a pre-processor makes the job easy, just create another manifest and move some imports to the newest one and problem solved.</p>
+<p>Easy, huh? Well, if you have a well organized CSS the job might be straightforward, but if you don&#8217;t, you may struggle with some difficulties.</p>
+<p>Here are some experiences that we got when addressing this issue.</p>
+<h3>Prefer to use placeholders instead of classes</h3>
+<p>We had some CSS styles that used <code>@extend .some-class</code> and it caused some problems as the <code>.some-class</code> definition is written to the CSS file, even if it is never used. One options is to <a href="http://thesassway.com/intermediate/understanding-placeholder-selectors">convert classes into placeholders</a> so they can be reused without being generated.</p>
+<p>To make matters worse, <code>.some-class</code> was often defined in another file, which led to the file being imported, duplicating its rules over different files. This takes us to our next tip.</p>
+<h3>Organize variables and mixins into separated files</h3>
+<p>As your codebase grows, it is possible that variables, mixins or placeholders get spread in different files. So, if you have to split a CSS file, or even reorganize it, you will have to carefully ensure that all variables, mixins and placeholders are ported over. Keeping them in their proper files like <code>_variables.scss</code> and <code>_mixins.scss</code> cleans up the code and makes future refactoring much easier.</p>
+<h3>Use tools to break the compiled CSS file</h3>
+<p>There are <a href="https://github.com/zweilove/css_splitter">projects</a> that try to address the problem of long CSS files using a CSS parser to count the number of styles and generating multiple files when necessary. It is another solution to be aware of, but if you have a well organized CSS structure and guidelines to keep them clean, you can achieve the same result without adding another dependency or step in your asset pipeline.</p>
+<h3>Ways to detect the number of styles</h3>
+<p>From the command line</p>
+<pre lang="bash">
+$ curl --silent <url> | grep -o '{' | wc -l
+</pre>
+<p>or if dealing with a compressed asset</p>
+<pre lang="bash">
+$ curl --silent -H 'Accept-encoding: gzip' <url> | \
+> gunzip - | grep -o '{' | wc -l
+</pre>
+<p>For example:</p>
+<pre lang="bash">
+$ curl --silent http://plataformatec.com.br/stylesheets/all.css | \
+> grep -o '{' | wc -l
+339
+</pre>
+<p>Another easy way is just opening the CSS file in your browser and search for <code>{</code>.</p>
+<p>Note that if you want to check the resulting CSS file in development you need to enable assets concatenation. One options is to set <code>config.assets.debug</code> to false in your <code>development.rb</code> file.</p>
+<h3>Summary</h3>
+<p>Preprocessors help a lot but it also requires discipline like any other code that you write. If you need inspiration to organize your files, you can take a look on <a href="http://bourbon.io/">Bourbon</a> and even the well known <a href="https://github.com/twbs/bootstrap/tree/master/less">Bootstrap</a> project.</p>
+<p><em>Do you know any other cases where a well structured CSS saved you?</em></p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/09/splitting-long-css-files-to-overcome-ie9-4095-rules-limit/">Splitting long CSS files to overcome IE9 4095 rules limit</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>CSS at Plataformatec</title>
+		<link>/2014/08/css-at-plataformatec/</link>
+					<comments>/2014/08/css-at-plataformatec/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Wed, 13 Aug 2014 12:00:39 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[css]]></category>
+		<category><![CDATA[front-end]]></category>
+		<guid isPermaLink="false">/?p=4149</guid>
+
+					<description><![CDATA[<p>Last month some amazing developers gave a sneak peek on how they write CSS in their companies &#8211; Mark Otto has written about CSS at GitHub, followed by Ian Feather&#8217;s post about Lonely Planet&#8217;s CSS and Chris Coyier write up about CodePen&#8217;s code &#8211; so I thought about sharing a bit of how we have ... <a class="read-more-link" href="/2014/08/css-at-plataformatec/">»</a></p>
+<p>The post <a href="/2014/08/css-at-plataformatec/">CSS at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last month some amazing developers gave a sneak peek on how they write CSS in their companies &#8211; Mark Otto has written about <a href="http://markdotto.com/2014/07/23/githubs-css">CSS at GitHub</a>, followed by Ian Feather&#8217;s post about <a href="http://ianfeather.co.uk/css-at-lonely-planet/">Lonely Planet&#8217;s CSS</a> and Chris Coyier write up about <a href="http://codepen.io/chriscoyier/blog/codepens-css">CodePen&#8217;s code</a> &#8211; so I thought about sharing a bit of how we have been doing CSS in our projects here at Plataformatec over the last years.</p>
+<p>After working on different projects with different styles of CSS, we wrote some <a href="http://guidelines.plataformatec.com.br/css.html">Guidelines</a> of what kind of code we would like to work with. These guidelines and some other practices have proven to be successful so far, and I want to tell you a bit about how we are doing this here.</p>
+<h3>Quick Facts</h3>
+<ul>
+<li>We use SCSS.</li>
+<li>We usually just have <a href="https://github.com/necolas/normalize.css/">Normalize.css</a> (and sometimes <a href="http://getbootstrap.com/">Bootstrap</a>) as third party dependencies.</li>
+<li>Every developer in our team can jump through the codebase and work on our front end code.</li>
+</ul>
+<h3>Preprocessors and the Pipeline</h3>
+<p>We have always used Sass (with the SCSS syntax), using most of the Sass features wherever seemed fit and without making the code too complex to grasp so developers outside the project &#8211; or without a long experience with preprocessors &#8211; could get things done right after jumping in the code.</p>
+<p>We do our best to use the most of the <a href="http://guides.rubyonrails.org/asset_pipeline.html">Rails Asset Pipeline</a>. I know that it isn&#8217;t the most beloved Rails feature out there, but we are pretty happy with it. The Sprockets + Rails integration in Rails 4 is way better than it was before (you can read a bit about what was done on <a href="http://yetimedia.tumblr.com/post/33320732456/moving-forward-with-the-rails-asset-pipeline">this post</a>), thanks to the work of <a href="https://github.com/guilleiguaran">Guillermo</a>, <a href="https://github.com/rafaelfranca">Rafael</a> and <a href="https://github.com/schneems">Richard</a> (the Sprocket heroes) and everybody else who contributed to <a href="https://github.com/rails/sprockets-rails/graphs/contributors">sprockets-rails</a>, and things will only get better on future releases. If you had a hard time with a Rails 3 app, I recommend that you try it out the latest releases and see what have improved.</p>
+<h3>Architecture</h3>
+<p>We don&#8217;t have strict guidelines about how we should organize and architect our CSS code, but we have some general rules and conventions. We organize most of our code into isolated partial stylesheets under something like <code>modules</code> or <code>components</code>. And we also break functions, mixins and generic placeholders into specific files and <code>@import</code> everything on the application <code>application.css.scss</code> file.</p>
+<p>We do our best to keep our selectors small and using only classes, somewhat based on <a href="http://eng.wealthfront.com/2013/08/functional-css-fcss.html">Wealthfront post on Functional CSS</a> and OOCSS-ish. With this setup we can avoid complex nested blocks and keep things quite readable for everybody.</p>
+<h3>Linting</h3>
+<p>We don&#8217;t have a specific guideline on linting, but I have been experimenting with <a href="https://github.com/causes/scss-lint">SCSS Lint</a> on the project that I’m current working on, and I want to evolve this into a default configuration for future projects.</p>
+<h3>Frameworks</h3>
+<p>We have some different setup across our projects, but we usually just have <a href="https://github.com/necolas/normalize.css/">Normalize.css</a> as our &#8220;reset&#8221; stylesheet and everything else is custom made &#8211; buttons, grids, typography rules, etc. And of all the existing CSS frameworks out there, we had some encounters with <a href="http://getbootstrap.com/">Bootstrap</a> and <a href="http://foundation.zurb.com/">Foundation</a> once.</p>
+<h3>Documentation</h3>
+<p>We love documentation &#8211; not obvious code comments, but real documentation that makes easier to understand how to use a specific piece of code.</p>
+<p>We started writing docs for our CSS to make more sense out of a SCSS partial, so through a single file we can understand how the application can use those styles. We have adopted some loose form of the <a href="http://warpspire.com/kss/">KSS</a> syntax, because we currently don&#8217;t care about generating pretty styleguides with live examples of the styles in use. But the KSS format is human-readable enough and does the job of explaining the purpose of a set of classes to someone.</p>
+<h3>Sprites</h3>
+<p>Last year I created a gem called <a href="http://github.com/lucasmazza/spriteful">Spriteful</a> to help us manage the image sprites in some projects without having to bring <a href="http://compass-style.org/">Compass</a> and <a href="https://github.com/Compass/compass-rails">compass-rails</a> as dependencies to our pipeline. Spriteful has proven useful to me and my coworkers, and now we can generate sprites and SCSS partials out of icons and SVG images with just a single command.</p>
+<p>Some close friends from outside the company have used it on their projects and it&#8217;s awesome that someone else has found our little tool handy for this task.</p>
+<h3>Who&#8217;s in charge?</h3>
+<p>One important aspect of how we work is that every developer in the team is capable to work with the front end code of the application and build new things or fix existing bugs, not just turn some static markup into ERB blocks. This provides a higher sense of collective ownership of the code, instead of enlisting one or two programmers who are in charge of half of the application while everybody else works elsewhere without caring about that layer.</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/08/css-at-plataformatec/">CSS at Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/08/css-at-plataformatec/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Lançamos mais um livro! \o/ &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</title>
+		<link>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/</link>
+					<comments>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Tue, 31 Jul 2012 19:02:28 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[front-end]]></category>
+		<category><![CDATA[livro]]></category>
+		<category><![CDATA[qcon]]></category>
+		<guid isPermaLink="false">/?p=3013</guid>
+
+					<description><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares ... <a class="read-more-link" href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">»</a></p>
+<p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Aqui na Plataformatec eu trabalho lado-a-lado com desenvolvedores (back/front-end), designers e gerentes de projetos. Francamente, é difícil saber onde termina o trabalho de um e onde começa o trabalho do outro. Existe muita sobreposição de conhecimentos entre os membros das nossas equipes e isso é muito bom! Nós realmente acreditamos no poder das equipes multi-disciplinares e os nossos resultados nos convencem cada vez mais disso.</p>
+<div id="attachment_3022" style="width: 522px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3022" src="/wp-content/uploads/2012/07/htmlcss-capa.jpg" alt="A capa do livro &quot;HTML5 e CSS3: Domine a web do futuro&quot;" title="htmlcss-capa" width="512" class="size-full wp-image-3022" srcset="/wp-content/uploads/2012/07/htmlcss-capa.jpg 800w, /wp-content/uploads/2012/07/htmlcss-capa-300x204.jpg 300w" sizes="(max-width: 800px) 100vw, 800px" /><p id="caption-attachment-3022" class="wp-caption-text">A capa do livro &#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</p></div>
+<p>E a melhor evidência de que eu também acredito em multi-disciplinaridade é o meu recém lançado livro: <a href="http://casadocodigo.com.br/products/html5-e-css3-domine-a-web-do-futuro">&#8220;HTML5 e CSS3: Domine a web do futuro&#8221;</a> publicado pela <a href="http://casadocodigo.com.br/">Casa do Código</a>. Sou desenvolvedor há algum tempo e sempre me interessei por front-end. No começo eu tive dúvidas em qual assunto me aprofundar, mas entre escolher um caminho ou outro acabei optando em aprofundar em ambos. Confesso que eu não me arrependo em nada da minha escolha e estou muito contente em ter aprendido bastante ao longo do caminho e hoje eu poder compartilhar o que aprendi em HTML e CSS através deste livro.</p>
+<p>Escrevi este livro pensando em desenvolvedores web que desejam aprimorar os seus conhecimentos em front-end e profissionais que estejam dedicando exclusivamente a estes assuntos. Aprendi muitas coisas ao &#8216;fazer&#8217;, por isso eu tentei replicar este tipo de aprendizado no livro com vários tutoriais e lições sobre técnicas clássicas de CSS e HTML (utilizando float, pseudo elementos e outros) e combinações de CSS3 para componentes visuais.</p>
+<p>Para quem se interessar, o livro está a venda online na Casa do Código (versões impressa, .mobi, .epub e .pdf).</p>
+<h3>Plataformatec na QCon SP</h3>
+<p>Aproveito para fazer o convite para assitirem o meu lightning talk sobre <em>CSS3 Transitions</em> e a palestra do José Valim <a href="http://www.qconsp.com/palestra/jose-valim/uma-abordagem-moderna-para-programacao-na-erlang-vm-elixir">&#8220;Uma abordagem moderna para programação na Erlang VM: Elixir&#8221;</a> na <a href="http://www.qconsp.com/">QCon SP</a>, neste final de semana, no dia 04 de Agosto.</p>
+<p>Fora a minha palestra, eu estarei no stand da Casa do Código (lá na QCon). Passe por lá para bater um papo. Será um prazer! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/">Lançamos mais um livro! \o/ “HTML5 e CSS3: Domine a web do futuro”</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/lancamos-mais-um-livro-o-html5-e-css3-domine-a-web-do-futuro/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

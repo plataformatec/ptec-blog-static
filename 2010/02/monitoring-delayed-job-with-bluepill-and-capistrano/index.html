@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Monitoring Delayed Job with Bluepill and Capistrano « Plataformatec Blog</title>
+		<meta name="description" content="So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Monitoring Delayed Job with Bluepill and Capistrano « Plataformatec Blog">
+		<meta property="og:description" content="So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart">
+		<meta property="og:url" content="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/">
+		<meta property="article:published_time" content="2010-02-10T17:47:33+00:00">
+		<meta property="article:modified_time" content="2010-04-16T19:00:15+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Monitoring Delayed Job with Bluepill and Capistrano « Plataformatec Blog">
+		<meta name="twitter:description" content="So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#article","name":"Monitoring Delayed Job with Bluepill and Capistrano « Plataformatec Blog","headline":"Monitoring Delayed Job with Bluepill and Capistrano","author":{"@id":"\/author\/hugobarauna\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2010-02-10T15:47:33-02:00","dateModified":"2010-04-16T16:00:15-03:00","inLanguage":"en-US","commentCount":12,"mainEntityOfPage":{"@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#webpage"},"isPartOf":{"@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#webpage"},"articleSection":"English, bluepill, capistrano, delayed job, process monitoring"},{"@type":"BreadcrumbList","@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2010\/#listItem"},{"@type":"ListItem","@id":"\/2010\/#listItem","position":2,"name":"2010","item":"\/2010\/","nextItem":"\/2010\/02\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2010\/02\/#listItem","position":3,"name":"February","item":"\/2010\/02\/","nextItem":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#listItem","previousItem":"\/2010\/#listItem"},{"@type":"ListItem","@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#listItem","position":4,"name":"Monitoring Delayed Job with Bluepill and Capistrano","previousItem":"\/2010\/02\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/hugobarauna\/#author","url":"\/author\/hugobarauna\/","name":"Hugo Baraúna","image":{"@type":"ImageObject","@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/dcde2c5777be84f81545480b353f1a71?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Hugo Baraúna"}},{"@type":"WebPage","@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#webpage","url":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/","name":"Monitoring Delayed Job with Bluepill and Capistrano « Plataformatec Blog","description":"So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2010\/02\/monitoring-delayed-job-with-bluepill-and-capistrano\/#breadcrumblist"},"author":{"@id":"\/author\/hugobarauna\/#author"},"creator":{"@id":"\/author\/hugobarauna\/#author"},"datePublished":"2010-02-10T15:47:33-02:00","dateModified":"2010-04-16T16:00:15-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Monitoring Delayed Job with Bluepill and Capistrano Comments Feed" href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/714">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=714">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2010%2F02%2Fmonitoring-delayed-job-with-bluepill-and-capistrano%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2010%2F02%2Fmonitoring-delayed-job-with-bluepill-and-capistrano%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-714 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/" rel="bookmark">Monitoring Delayed Job with Bluepill and Capistrano</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2010-02-10T15:47:33-02:00">Feb 10, 2010</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/dcde2c5777be84f81545480b353f1a71?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/dcde2c5777be84f81545480b353f1a71?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=5" title="Posts by Hugo Baraúna">Hugo Baraúna</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>So, you already did the right choice of using Delayed Job for your background processing, great! But, how are you going to be certain that your background processing will still be happening while you are sleeping? And if your Delayed Job process goes down, are you going to wake up in the dawn e restart it manually? I wouldn&#8217;t do that, I really appreciate my sleep. So, what&#8217;s the solution?</p>
+<p>As rubyists and railers, we already know there are solutions, like <a href="http://god.rubyforge.org/" target="_blank">God</a>, that do this job for us. However, there are another solutions, like <a href="http://github.com/arya/bluepill/" target="_blank">Bluepill</a>. Bluepill is a process monitoring tool like God, but, unlike God, <a href="http://asemanfar.com/Why-We-Wrote-Bluepill" target="_blank">it doesn&#8217;t have memory leak</a>, according to its authors.</p>
+<p>Well, as I don&#8217;t want to wake up in the dawn to restart my Delayed Job process, and neither I want to restart my God process because of memory leaking, I decided to use Bluepill. But, how I use Bluepill to monitor my Delayed Job process?</p>
+<p>In order to configure Bluepill to monitor Delayed Job, and use Capistrano to automate some tasks, we have basically 4 steps:</p>
+<ol>
+<li>Install and configure Delayed Job</li>
+<li>Install and configure Bluepill</li>
+<li>Write a Capistrano Recipe for Bluepill</li>
+<li>Set some stuff in /etc/sudoers</li>
+</ol>
+<p>Let&#8217;s take a look at each step.</p>
+<h3>Installing and configuring Delayed Job</h3>
+<p>Installing and configuring Delayed Job is super simple, just read the project&#8217;s <a href="http://github.com/collectiveidea/delayed_job" target="_blank">README</a>, which is very clear. I also recommend watching the <a href="http://railscasts.com/episodes/171-delayed-job" target="_blank">RailsCast episode</a> about Delayed Job, there is some good information there, like using the Delayed Job CollectiveIdea&#8217;s fork, instead of the original repo&#8217;s version.</p>
+<h3>Installing and configuring Bluepill</h3>
+<p>There&#8217;s no secret in installing Bluepill too, you just need to read the project&#8217;s <a href="http://github.com/arya/bluepill/" target="_blank">README</a> and follow its steps.</p>
+<p>In the confiuration part, you can see all the options in the <a href="http://github.com/arya/bluepill/" target="_blank">README</a> too. In my case, the configuration file is at <code>RAILS_ROOT/config/production.pill</code>.</p>
+<pre lang="ruby">Bluepill.application("my_app") do |app|
+  app.process("delayed_job") do |process|
+    process.working_dir = "/home/deploy/my_app/current"
+
+    process.start_grace_time    = 10.seconds
+    process.stop_grace_time     = 10.seconds
+    process.restart_grace_time  = 10.seconds
+
+    process.start_command = "ruby script/delayed_job -e production start"
+    process.stop_command  = "ruby script/delayed_job -e production stop"
+
+    process.pid_file = "/home/deploy/my_app/shared/pids/delayed_job.pid"
+    process.uid = "deploy"
+    process.gid = "deploy"
+  end
+end
+</pre>
+<p>However, I had a little problem between the interaction of Bluepill and Delayed Job. Delayed Job is not interpreting very well the <code>-e production</code> flag. You can see more details about that in an <a href="http://github.com/collectiveidea/delayed_job/issues/#issue/38" target="_blank">issue</a> I opened.</p>
+<p>The first solution I thought was to use <code>RAILS_ENV=production ruby script/delayed_job start</code>, however, for some reason that I don&#8217;t know exactly, it didn&#8217;t work.</p>
+<p>So, the solution I came up with was to modify the file in <code>RAILS_ROOT/script/delayed_job</code> to the following one:</p>
+<pre lang="ruby" line="1">
+#!/usr/bin/env ruby
+
+# TODO improve the line of code below
+# The line below is just a hack while we wait the delayed job guys answer the following issue
+# http://github.com/collectiveidea/delayed_job/issues#issue/38
+ENV['RAILS_ENV'] ||= "production"
+require File.expand_path(File.join(File.dirname(__FILE__), '..', 'config', 'environment'))
+require 'delayed/command'
+Delayed::Command.new(ARGV).daemonize
+</pre>
+<p>As the <code>-e production</code> was not being interpreted properly by Delayed Job, I&#8217;m setting manually the <code>RAILS_ENV</code> to <code>production</code> (line 6), therefore I&#8217;m supposing  that you are using Bluepill to monitor processes that are in a production environment.</p>
+<h3>Capistrano recipe for Bluepill</h3>
+<p>In order to automate the start and stop Bluepill&#8217;s tasks, I wrote the following capistrano&#8217;s recipe:</p>
+<pre lang="ruby"># deploy credentials
+set :user, "deploy"
+set :deploy_to, "/home/deploy/#{application}"
+set :use_sudo, false
+set :rails_env, "production"
+
+# Bluepill related tasks
+after "deploy:update", "bluepill:quit", "bluepill:start"
+namespace :bluepill do
+  desc "Stop processes that bluepill is monitoring and quit bluepill"
+  task :quit, :roles => [:app] do
+    sudo "bluepill stop"
+    sudo "bluepill quit"
+  end
+
+  desc "Load bluepill configuration and start it"
+  task :start, :roles => [:app] do
+    sudo "bluepill load /home/deploy/my_app/current/config/production.pill"
+  end
+
+  desc "Prints bluepills monitored processes statuses"
+  task :status, :roles => [:app] do
+    sudo "bluepill status"
+  end
+end
+</pre>
+<p>Note that instead of using the <code>run</code> capistrano&#8217;s method, I&#8217;m using the <code>sudo</code> method. I&#8217;m doing this because the bluepill command must be run as root. And that, takes us to the next topic.</p>
+<h3>/etc/sudoers</h3>
+<p>Since I need to run the bluepill command as root, should I change from <code>set :user, "deploy"</code> to <code>set :user, "root"</code>? I think it&#8217;s not a good idea, we don&#8217;t like to give root access to anything, even to deployment. So, what should I do? It&#8217;s simple, you just need to edit your sudoers file.</p>
+<p>In order to do this, you need to use the <code>visudo</code> command to open and edit the <code>/etc/sudoers</code> file. Once with the file opened, just add the following line to the end of the file:</p>
+<p><code>deploy ALL=(ALL) NOPASSWD: /usr/local/bin/bluepill</code></p>
+<p>Now, you&#8217;re done, the deploy user already can do <code>sudo bluepill</code> without giving any password. Problem solved without opening security holes.</p>
+<p>After these 4 steps, you&#8217;re ready to sleep at night without worrying about your Delayed Job process. And, if you want to know the status of the monitored processes by Buepill, you just need to run the following capistrano task in your local machine:</p>
+<p><code>cap bluepill:status</code></p>
+<p>And you, what are your solutions to sleep in peace?</p>
+<p><strong>Update:</strong> if are having trouble with restarting Bluepill with Capistrano, take a look at <a href="http://groups.google.com/group/bluepill-rb/browse_thread/thread/53e15749ee0edd93?hl=en">this</a>.</p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/bluepill/" rel="tag">bluepill</a>, <a href="/tag/capistrano/" rel="tag">capistrano</a>, <a href="/tag/delayed-job/" rel="tag">delayed job</a>, <a href="/tag/process-monitoring/" rel="tag">process monitoring</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comments"><span class="dsq-postid" data-dsqidentifier="714 http://blog.plataformatec.com.br/?p=714">12 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		12 responses to &#8220;Monitoring Delayed Job with Bluepill and Capistrano&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-933">
+				<div id="div-comment-933" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Frederic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-933">February 11, 2010 at 11:07 am</a>		</div>
+
+		<p>&#8220;The first solution I thought was to use RAILS_ENV=production ruby script/delayed_job start, however, for some reason that I don’t know exactly, it didn’t work.&#8221;</p>
+<p>I&#8217;m pretty sure (my quick dig of bluepill/daemonize.rb/ruby source code show me so) that the string you give to the start_command/stop_command is ultimately ran using an sh command (on Unix &amp; alike, cmd on windows), however the construct &#8220;VAR=val command&#8221; is specific to the bash shell.</p>
+<p>My guess is that written &#8220;RAILS_ENV=production; ruby script/delayed_job start&#8221; (with the semicolon) your start_command would have worked (not sure for Windows, but who cares 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-480">
+				<div id="div-comment-480" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Frederic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-480">February 11, 2010 at 9:07 am</a>		</div>
+
+		<p>&#8220;The first solution I thought was to use RAILS_ENV=production ruby script/delayed_job start, however, for some reason that I don’t know exactly, it didn’t work.&#8221;</p>
+<p>I&#8217;m pretty sure (my quick dig of bluepill/daemonize.rb/ruby source code show me so) that the string you give to the start_command/stop_command is ultimately ran using an sh command (on Unix &amp; alike, cmd on windows), however the construct &#8220;VAR=val command&#8221; is specific to the bash shell.</p>
+<p>My guess is that written &#8220;RAILS_ENV=production; ruby script/delayed_job start&#8221; (with the semicolon) your start_command would have worked (not sure for Windows, but who cares 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-934">
+				<div id="div-comment-934" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/828dc634f7493008dbc96c437e54ea2f?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/828dc634f7493008dbc96c437e54ea2f?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://scharfie.com/" class="url" rel="ugc external nofollow">Chris Scharf</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-934">February 12, 2010 at 4:04 pm</a>		</div>
+
+		<p>Maybe this would work?</p>
+<p>/usr/bin/env RAILS_ENV=production ruby script/delayed_job start</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-483">
+				<div id="div-comment-483" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/828dc634f7493008dbc96c437e54ea2f?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/828dc634f7493008dbc96c437e54ea2f?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://scharfie.com/" class="url" rel="ugc external nofollow">Chris Scharf</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-483">February 12, 2010 at 2:04 pm</a>		</div>
+
+		<p>Maybe this would work?</p>
+<p>/usr/bin/env RAILS_ENV=production ruby script/delayed_job start</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-935">
+				<div id="div-comment-935" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/18deb990b168e39dd36674ced7d44250?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/18deb990b168e39dd36674ced7d44250?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Hugo Baraúna</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-935">February 12, 2010 at 4:15 pm</a>		</div>
+
+		<p>@frederic, @chris</p>
+<p>It seem that the solution to that problem is the one that Chris said. You can view more about that in this <a href="http://github.com/collectiveidea/delayed_job/issues/closed#issue/7/comment/74384" rel="nofollow">issue</a>.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-hugobarauna bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-484">
+				<div id="div-comment-484" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/dcde2c5777be84f81545480b353f1a71?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/dcde2c5777be84f81545480b353f1a71?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Hugo Baraúna</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-484">February 12, 2010 at 2:15 pm</a>		</div>
+
+		<p>@frederic, @chris</p>
+<p>It seem that the solution to that problem is the one that Chris said. You can view more about that in this <a href="http://github.com/collectiveidea/delayed_job/issues/closed#issue/7/comment/74384" target="_blank" rel="nofollow">issue</a>.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-936">
+				<div id="div-comment-936" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Frederic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-936">February 13, 2010 at 1:08 pm</a>		</div>
+
+		<p>My solution was missing an &#8220;export RAILS_ENV;&#8221; to work properly (but the rest of the comment is still correct: &#8220;sh -c&#8221; (hidden in a Kernel.exec(&#8220;cmd-string&#8221;) call) does not accept bash specific syntax.)</p>
+<p>Chris&#8217; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).</p>
+<p>Bash syntax &#8220;VAR=val cmd&#8221; is just a shortcut for &#8220;env VAR=val cmd&#8221; when you do not need to use the -i option of the env command to have it &#8220;to completly ignore the environment it inherits&#8221; &#8212; env(1).</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-490">
+				<div id="div-comment-490" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/7eb6b4fb82d0d3f646dcfbc0b0dc9570?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Frederic</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-490">February 13, 2010 at 11:08 am</a>		</div>
+
+		<p>My solution was missing an &#8220;export RAILS_ENV;&#8221; to work properly (but the rest of the comment is still correct: &#8220;sh -c&#8221; (hidden in a Kernel.exec(&#8220;cmd-string&#8221;) call) does not accept bash specific syntax.)</p>
+<p>Chris&#8217; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).</p>
+<p>Bash syntax &#8220;VAR=val cmd&#8221; is just a shortcut for &#8220;env VAR=val cmd&#8221; when you do not need to use the -i option of the env command to have it &#8220;to completly ignore the environment it inherits&#8221; &#8212; env(1).</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-491">
+				<div id="div-comment-491" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://caffeinedd.com/l33t-links/446-l33t-links-79" class="url" rel="ugc external nofollow">Caffeine Driven Development &raquo; Blog Archive &raquo; L33t Links #79</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-491">February 13, 2010 at 12:14 pm</a>		</div>
+
+		<p>[&#8230;] Monitoring Delayed Job with Bluepill and Capistrano [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-937">
+				<div id="div-comment-937" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/06535ead5d36ccd9f349818fe20e31be?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/06535ead5d36ccd9f349818fe20e31be?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://jonkinney.com/" class="url" rel="ugc external nofollow">Jon Kinney</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-937">February 17, 2010 at 1:11 am</a>		</div>
+
+		<p>Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-506">
+				<div id="div-comment-506" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/06535ead5d36ccd9f349818fe20e31be?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/06535ead5d36ccd9f349818fe20e31be?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://jonkinney.com/" class="url" rel="ugc external nofollow">Jon Kinney</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-506">February 16, 2010 at 11:11 pm</a>		</div>
+
+		<p>Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-510">
+				<div id="div-comment-510" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://jystewart.net/process/2010/02/weekend-links-4/" class="url" rel="ugc external nofollow">Weekend Links &laquo; a work on process</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/#comment-510">February 21, 2010 at 10:04 am</a>		</div>
+
+		<p>[&#8230;] been very helpful, but it sounds as if Bluepill might be worth a look as a possible alternative. Hugo Baraúna has written up a tutorial on monitoring delayed_job using it.   Tags: AJAX, flickr, html5, lessql, mobile world congress, [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2010/02/monitorando-o-delayed-job-com-bluepill-e-capistrano/" rel="prev">Monitorando o Delayed Job com Bluepill e Capistrano</a>          <a href="/2010/02/feliz-aniversario-devise/" rel="next">Feliz Aniversário Devise</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

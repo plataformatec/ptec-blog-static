@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Exporting data to CSV and Excel in your Rails apps	</title>
+	<atom:link href="/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 20 May 2010 22:08:39 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Koen Van der Auwera		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-283</link>
+
+		<dc:creator><![CDATA[Koen Van der Auwera]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2009 09:01:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-283</guid>
+
+					<description><![CDATA[Some time ago I created a Rails plugin to generate xls documents by using rxls templates. It&#039;s based on the Spreadsheet gem and works by adding just a simple template.
+
+http://github.com/10to1/spreadsheet_on_rails]]></description>
+			<content:encoded><![CDATA[<p>Some time ago I created a Rails plugin to generate xls documents by using rxls templates. It&#8217;s based on the Spreadsheet gem and works by adding just a simple template.</p>
+<p><a href="http://github.com/10to1/spreadsheet_on_rails" rel="nofollow ugc">http://github.com/10to1/spreadsheet_on_rails</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Koen Van der Auwera		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-831</link>
+
+		<dc:creator><![CDATA[Koen Van der Auwera]]></dc:creator>
+		<pubDate>Mon, 28 Sep 2009 09:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-831</guid>
+
+					<description><![CDATA[Some time ago I created a Rails plugin to generate xls documents by using rxls templates. It&#039;s based on the Spreadsheet gem and works by adding just a simple template.
+
+http://github.com/10to1/spreadsheet_on_rails]]></description>
+			<content:encoded><![CDATA[<p>Some time ago I created a Rails plugin to generate xls documents by using rxls templates. It&#8217;s based on the Spreadsheet gem and works by adding just a simple template.</p>
+<p><a href="http://github.com/10to1/spreadsheet_on_rails" rel="nofollow ugc">http://github.com/10to1/spreadsheet_on_rails</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: George Guimarães		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-279</link>
+
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:16:50 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-279</guid>
+
+					<description><![CDATA[Thanks @Kieran, yet another solution to export to Excel. But you must admit that @Niko and @Chris solution is the most attractive so far. :)
+
+Thanks for the excellent feedback guys, I will update the post!]]></description>
+			<content:encoded><![CDATA[<p>Thanks @Kieran, yet another solution to export to Excel. But you must admit that @Niko and @Chris solution is the most attractive so far. 🙂</p>
+<p>Thanks for the excellent feedback guys, I will update the post!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: George Guimarães		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-830</link>
+
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 14:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-830</guid>
+
+					<description><![CDATA[Thanks @Kieran, yet another solution to export to Excel. But you must admit that @Niko and @Chris solution is the most attractive so far. :)
+
+Thanks for the excellent feedback guys, I will update the post!]]></description>
+			<content:encoded><![CDATA[<p>Thanks @Kieran, yet another solution to export to Excel. But you must admit that @Niko and @Chris solution is the most attractive so far. 🙂</p>
+<p>Thanks for the excellent feedback guys, I will update the post!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-276</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 12:58:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-276</guid>
+
+					<description><![CDATA[Beware though if you have to support decimal numbers. Some languages use a comma as decimal seperator (like Dutch) and others a dot (English). Depending on which language you export your csv/xls and which language Excel you have installed, you might end up with &quot;7557&quot; instead of &quot;75.57&quot;.
+
+I heard, that the only way to get this right is to generate a real, binary, xls file, and not HTML-table or CSV.
+
+Yeah, that&#039;s really bad.]]></description>
+			<content:encoded><![CDATA[<p>Beware though if you have to support decimal numbers. Some languages use a comma as decimal seperator (like Dutch) and others a dot (English). Depending on which language you export your csv/xls and which language Excel you have installed, you might end up with &#8220;7557&#8221; instead of &#8220;75.57&#8221;.</p>
+<p>I heard, that the only way to get this right is to generate a real, binary, xls file, and not HTML-table or CSV.</p>
+<p>Yeah, that&#8217;s really bad.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/comment-page-1/#comment-829</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Fri, 25 Sep 2009 12:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=288#comment-829</guid>
+
+					<description><![CDATA[Beware though if you have to support decimal numbers. Some languages use a comma as decimal seperator (like Dutch) and others a dot (English). Depending on which language you export your csv/xls and which language Excel you have installed, you might end up with &quot;7557&quot; instead of &quot;75.57&quot;.
+
+I heard, that the only way to get this right is to generate a real, binary, xls file, and not HTML-table or CSV.
+
+Yeah, that&#039;s really bad.]]></description>
+			<content:encoded><![CDATA[<p>Beware though if you have to support decimal numbers. Some languages use a comma as decimal seperator (like Dutch) and others a dot (English). Depending on which language you export your csv/xls and which language Excel you have installed, you might end up with &#8220;7557&#8221; instead of &#8220;75.57&#8221;.</p>
+<p>I heard, that the only way to get this right is to generate a real, binary, xls file, and not HTML-table or CSV.</p>
+<p>Yeah, that&#8217;s really bad.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

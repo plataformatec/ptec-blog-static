@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>actionpack « Plataformatec Blog</title>
+	<atom:link href="/tag/actionpack/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 29 Jul 2012 02:23:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Flushing content blocks with Rails 4</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/</link>
+					<comments>/2012/07/flushing-content-blocks-with-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Fri, 27 Jul 2012 18:24:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[actionpack]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=2987</guid>
+
+					<description><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems ... <a class="read-more-link" href="/2012/07/flushing-content-blocks-with-rails-4/">»</a></p>
+<p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems that I&#8217;ve found recently is an improvement on the <code>content_for</code> helper to flush and replace previous chunks of HTML with new ones.</p>
+<h3>The <code>content_for</code> that we are used to</h3>
+<p>The <code>content_for</code> method is an old friend of every Rails developer, and it&#8217;s a pretty simple and flexible helper. You can store a chunk of HTML from a String or a block, and grab it somewhere else in your views or <code>yield</code> it directly into your templates. It&#8217;s a pretty handy trick to move data from your views into your layouts, like page titles, custom meta tags or specific <code>script</code> tags that your page needs to include.</p>
+<pre lang='rails'>
+# On your 'application.html.erb' layout, inside the '<head>' tag.
+<%= yield :metatags %>
+
+# Then, into a specific view
+<% content_for :metatags do %>
+  <meta property="og:image" content="http://example.com/image.jpg" />
+<% end %>
+</pre>
+<p>Multiple calls of the <code>content_for</code> helper using the same identifier will concatenate them and output them together when you read it back on your views, as:</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example do %>
+  <h1>This will be rendered too!</h1>
+<% end %>
+</pre>
+<p>On some scenarios this behavior might not be desired, and with Rails 4 you can flush out the stored pieces of an identifier and replace it instead of adding more content to it: using the <code>flush: true</code> option. The <a href="https://github.com/rails/rails/pull/4226">first implementation</a> used an extra <code>true</code> argument, but <a href="https://github.com/rails/rails/pull/7150">we changed</a> to use a Hash instead, so the <code>flush</code> key can express better the behavior we&#8217;re expecting.</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example, flush: true do %>
+  <h1>But this will override everything on the ':example' block.</h1>
+<% end %>
+</pre>
+<h3>The gallery situation</h3>
+<p>I&#8217;ve stumbled upon this on a recent project, where we had a somewhat classic scenario: a partial named <code>_gallery</code>, responsible for rendering the piece of HTML to display a gallery of images that also supplies a <code>content_for</code> block with a <code>script</code> tag to include the required libraries to put the gallery to work.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% content_for :scripts, javascript_include_tag('gallery') %>
+</pre>
+<p>It works like a charm. But with an updated requirement we had the case where multiple galleries could be present on the same page, rendering the <code>_gallery</code> partial several times. The required HTML would be present, but the <code>gallery.js</code> script would be included multiple times into the rendered page. Instead of working this out using instance variables to check that the partial was rendered at least once, we could let Rails do all the hard work for us, using the <code>flush</code> option when including the <code>gallery.js</code> script.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% # We can render this partial several times and this script will be included just once %>
+<% content_for :scripts, javascript_include_tag('gallery'), flush: true %>
+</pre>
+<h3>Back to the present: Rails 3.2</h3>
+<p>Well, while this seems to be a perfect solution to my problem, this feature isn&#8217;t available on Rails 3.2 or on the <code>3-2-stable</code> branch &#8211; it&#8217;s only available on the <code>master</code> branch that will be released with Rails 4. But, backporting this feature into a 3.x application is pretty simple, using a helper of your own.</p>
+<pre lang='ruby'>
+def single_content_for(name, content = nil, &block)
+  @view_flow.set(name, ActiveSupport::SafeBuffer.new)
+  content_for(name, content, &block)
+end
+</pre>
+<p>After some source diving into the ActionPack source code we&#8217;re done &#8211; it just needs to replace any present content with a brand new <code>SafeBuffer</code> instance before storing the piece of HTML.</p>
+<p>What do you think about this little addition to Rails 4? Can you think of a similar problem that could be solved with this instead of a custom hack?</p><p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/flushing-content-blocks-with-rails-4/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Beyond Functional Programming with Elixir and Erlang	</title>
+	<atom:link href="/2016/05/beyond-functional-programming-with-elixir-and-erlang/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 14 Dec 2018 17:06:20 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Santosh Kumar		</title>
+		<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1630</link>
+
+		<dc:creator><![CDATA[Santosh Kumar]]></dc:creator>
+		<pubDate>Mon, 30 May 2016 14:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5438#comment-1630</guid>
+
+					<description><![CDATA[Great Post. So true. Erlang/Elixir is not Functional for Functional&#039;s sake - it&#039;s Functional because that makes the most sense given the problem it&#039;s trying to solve.]]></description>
+			<content:encoded><![CDATA[<p>Great Post. So true. Erlang/Elixir is not Functional for Functional&#8217;s sake &#8211; it&#8217;s Functional because that makes the most sense given the problem it&#8217;s trying to solve.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rohan Daxini		</title>
+		<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1629</link>
+
+		<dc:creator><![CDATA[Rohan Daxini]]></dc:creator>
+		<pubDate>Sat, 28 May 2016 10:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5438#comment-1629</guid>
+
+					<description><![CDATA[Indeed interesting read and perspective about &quot;purpose vs. means&quot; to functional programming in the Erlang VM and thus Elixir. Thanks Jose :)]]></description>
+			<content:encoded><![CDATA[<p>Indeed interesting read and perspective about &#8220;purpose vs. means&#8221; to functional programming in the Erlang VM and thus Elixir. Thanks Jose 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tamori Hirofumi		</title>
+		<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1628</link>
+
+		<dc:creator><![CDATA[Tamori Hirofumi]]></dc:creator>
+		<pubDate>Fri, 27 May 2016 14:12:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5438#comment-1628</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1627&quot;&gt;Hugo Baraúna&lt;/a&gt;.
+
+OK, thank you!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1627">Hugo Baraúna</a>.</p>
+<p>OK, thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Hugo Baraúna		</title>
+		<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1627</link>
+
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Fri, 27 May 2016 13:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5438#comment-1627</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1626&quot;&gt;Tamori Hirofumi&lt;/a&gt;.
+
+Yes, you can translate this blog post to Japanese, no problem. :)
+
+We only ask you to link this URL as the original blog post.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1626">Tamori Hirofumi</a>.</p>
+<p>Yes, you can translate this blog post to Japanese, no problem. 🙂</p>
+<p>We only ask you to link this URL as the original blog post.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tamori Hirofumi		</title>
+		<link>/2016/05/beyond-functional-programming-with-elixir-and-erlang/comment-page-1/#comment-1626</link>
+
+		<dc:creator><![CDATA[Tamori Hirofumi]]></dc:creator>
+		<pubDate>Fri, 27 May 2016 02:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5438#comment-1626</guid>
+
+					<description><![CDATA[Very impressive. I agree there tend to be the paradoxical discussion in which people mistake the means for the purpose in functional programming. BTW, can I translate this blog into Japanese and reproduce it?]]></description>
+			<content:encoded><![CDATA[<p>Very impressive. I agree there tend to be the paradoxical discussion in which people mistake the means for the purpose in functional programming. BTW, can I translate this blog into Japanese and reproduce it?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

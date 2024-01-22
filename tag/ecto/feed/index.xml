@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>ecto « Plataformatec Blog</title>
+	<atom:link href="/tag/ecto/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 15 Jan 2019 17:41:55 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Building a new MySQL adapter for Ecto Part IV: Ecto Integration</title>
+		<link>/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Fri, 04 Jan 2019 13:46:17 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=8250</guid>
+
+					<description><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series: Part I: Hello World Part II: Encoding/Decoding Part III: DBConnection Integration Part IV: Ecto Integration (you&#8217;re here!) After DBConnection integration we have a driver that should be usable on its own. The next step is to integrate it with Ecto so that we can: ... <a class="read-more-link" href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/">»</a></p>
+<p>The post <a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/">Building a new MySQL adapter for Ecto Part IV: Ecto Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/" target="_blank" rel="noopener">Part I: Hello World</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/" target="_blank" rel="noopener">Part II: Encoding/Decoding</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" target="_blank" rel="noopener">Part III: DBConnection Integration</a></li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a> (you&#8217;re here!)</li>
+</ul>
+<p>After <a href="https://github.com/elixir-ecto/db_connection" target="_blank" rel="noopener">DBConnection</a> integration we have a driver that should be usable on its own. The next step is to integrate it with Ecto so that we can:</p>
+<ul>
+<li>leverage Ecto (doh!) meaning, among other things, using <a href="https://hexdocs.pm/ecto/Ecto.Changeset.html" target="_blank" rel="noopener">changesets</a> to cast and validate data before inserting it into the DB, composing <a href="https://hexdocs.pm/ecto/Ecto.Query.html" target="_blank" rel="noopener">queries</a> instead of concatenating SQL strings, defining <a href="https://hexdocs.pm/ecto/Ecto.Schema.html" target="_blank" rel="noopener">schemas</a> that map DB data into Elixir structs, being able to run Mix tasks like <a href="https://hexdocs.pm/ecto/Mix.Tasks.Ecto.Create.html" target="_blank" rel="noopener"><code>mix ecto.create</code></a> and <a href="https://hexdocs.pm/ecto_sql/Mix.Tasks.Ecto.Migrate.html" target="_blank" rel="noopener"><code>mix ecto.migrate</code></a>, and finally using <a href="https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.Sandbox.html" target="_blank" rel="noopener">Ecto SQL Sandbox</a> to manage clean slate between tests</li>
+<li>tap into greater Ecto ecosystem: integration with the Phoenix Web framework, various pagination libraries, custom types, admin builders etc</li>
+</ul>
+<h2>Ecto Adapter</h2>
+<p>If you ever worked with Ecto, you&#8217;ve seen code like:</p>
+<pre><code class="elixir">defmodule MyApp.Repo do
+  use Ecto.Repo,
+    adapter: Ecto.Adapters.MySQL,
+    otp_app: :my_app
+end
+</code></pre>
+<p>The <code>adapter</code> is a module that implements Ecto Adapter specifications:</p>
+<ul>
+<li><a href="https://hexdocs.pm/ecto/Ecto.Adapter.html" target="_blank" rel="noopener"><code>Ecto.Adapter</code></a> &#8211; minimal API required from adapters</li>
+<li><a href="https://hexdocs.pm/ecto/Ecto.Adapter.Queryable.html" target="_blank" rel="noopener"><code>Ecto.Adapter.Queryable</code></a> &#8211; plan, prepare, and execute queries leveraging query cache</li>
+<li><a href="https://hexdocs.pm/ecto/Ecto.Adapter.Schema.html" target="_blank" rel="noopener"><code>Ecto.Adapter.Schema</code></a> &#8211; insert, update, and delete structs as well as autogenerate IDs</li>
+<li><a href="https://hexdocs.pm/ecto/Ecto.Adapter.Storage.html" target="_blank" rel="noopener"><code>Ecto.Adapter.Storage</code></a> &#8211; storage API used by e.g. <code>mix ecto.create</code> and <code>mix ecto.drop</code></li>
+<li><a href="https://hexdocs.pm/ecto/Ecto.Adapter.Transaction.html" target="_blank" rel="noopener"><code>Ecto.Adapter.Transaction</code></a> &#8211; transactions API</li>
+</ul>
+<p>Adapters are required to implement at least <code>Ecto.Adapter</code> behaviour. The remaining behaviours are optional as some data stores don&#8217;t support transactions or creating/dropping the storage (e.g. some cloud services).</p>
+<p>There&#8217;s also a separate <a href="https://github.com/elixir-ecto/ecto_sql" target="_blank" rel="noopener">Ecto SQL</a> project which ships with its own set of adapter specifications on top of the ones from Ecto. Conveniently, it also includes a <a href="https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.html" target="_blank" rel="noopener"><code>Ecto.Adapters.SQL</code></a> module that we can <em>use</em>, which implements most of the callbacks and lets us worry mostly about generating appropriate SQL.</p>
+<h2>Ecto SQL Adapter</h2>
+<p>Let&#8217;s try using the <code>Ecto.Adapters.SQL</code> module:</p>
+<pre><code class="elixir">defmodule MyXQL.EctoAdapter do
+  use Ecto.Adapters.SQL,
+    driver: :myxql,
+    migration_lock: "FOR UPDATE"
+end
+</code></pre>
+<p>When we compile it, we&#8217;ll get a bunch of warnings as we haven&#8217;t implemented any of the callbacks yet.</p>
+<pre><code>warning: function supports_ddl_transaction?/0 required by behaviour Ecto.Adapter.Migration is not implemented (in module MyXQL.EctoAdapter)
+  lib/a.ex:1
+
+warning: function MyXQL.EctoAdapter.Connection.all/1 is undefined (module MyXQL.EctoAdapter.Connection is not available)
+  lib/a.ex:2
+
+warning: function MyXQL.EctoAdapter.Connection.delete/4 is undefined (module MyXQL.EctoAdapter.Connection is not available)
+  lib/a.ex:2
+
+(...)
+</code></pre>
+<p>Notably, we get a <code>module MyXQL.EctoAdapter.Connection is not available</code> warning. The SQL adapter specification requires us to implement a separate connection module (see <a href="https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.Connection.html" target="_blank" rel="noopener"><code>Ecto.Adapters.SQL.Connection</code></a> behaviour) which will leverage, you guessed it, DBConnection. Let&#8217;s try that now and implement a couple of callbacks:</p>
+<pre><code class="elixir">defmodule MyXQL.EctoAdapter.Connection do
+  @moduledoc false
+  @behaviour Ecto.Adapters.SQL.Connection
+
+  @impl true
+  def child_spec(opts) do
+    MyXQL.child_spec(opts)
+  end
+
+  @impl true
+  def prepare_execute(conn, name, sql, params, opts) do
+    MyXQL.prepare_execute(conn, name, sql, params, opts)
+  end
+end
+</code></pre>
+<p>Since we&#8217;ve leveraged DBConnection in the MyXQL driver, these functions are simply delegating to driver. Let&#8217;s implement something a little bit more interesting.</p>
+<p>Did you ever wonder how <a href="https://hexdocs.pm/ecto/Ecto.Changeset.html#unique_constraint/3" target="_blank" rel="noopener"><code>Ecto.Changeset.unique_constraint/3</code></a> is able to transform a SQL constraint violation failure into a changeset error? Turns out that <code>unique_constriant/3</code> keeps a mapping between unique key constraint name and fields these errors should be reported on. The code that makes it work is executed in the repo and the adapter when the structs are persisted. In particular, the adapter should implement the <a href="https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.Connection.html#c:to_constraints/1" target="_blank" rel="noopener"><code>Ecto.Adapters.SQL.Connection.to_constraints/1</code></a> callback. Let&#8217;s take a look:</p>
+<pre><code>iex&gt; b Ecto.Adapters.SQL.Connection.to_constraints
+@callback to_constraints(exception :: Exception.t()) :: Keyword.t()
+
+Receives the exception returned by c:query/4.
+
+The constraints are in the keyword list and must return the constraint type,
+like :unique, and the constraint name as a string, for example:
+
+    [unique: "posts_title_index"]
+
+Must return an empty list if the error does not come from any constraint.
+</code></pre>
+<p>Let&#8217;s see how the constraint violation error looks exactly:</p>
+<pre><code>$ mysql -u root myxql_test
+mysql&gt; CREATE TABLE uniques (x INTEGER UNIQUE);
+Query OK, 0 rows affected (0.17 sec)
+
+mysql&gt; INSERT INTO uniques VALUES (1);
+Query OK, 1 row affected (0.08 sec)
+
+mysql&gt; INSERT INTO uniques VALUES (1);
+ERROR 1062 (23000): Duplicate entry '1' for key 'x'
+</code></pre>
+<p>MySQL responds with error code <code>1062</code>. We can further look into the error by using <code>perror</code><br />
+command-line utility that ships with MySQL installation:</p>
+<pre><code>% perror 1062
+MySQL error code 1062 (ER_DUP_ENTRY): Duplicate entry '%-.192s' for key %d
+</code></pre>
+<p>Ok, let&#8217;s finally implement the callback:</p>
+<pre><code class="elixir">defmodule MyXQL.EctoAdapter.Connection do
+  # ...
+
+  @impl true
+  def to_constraints(%MyXQL.Error{mysql: %{code: 1062}, message: message}) do
+    case :binary.split(message, " for key ") do
+      [_, quoted] -&gt; [unique: strip_quotes(quoted)]
+      _ -&gt; []
+    end
+  end
+end
+</code></pre>
+<p>Let&#8217;s break this down. We expect that the driver raises an exception struct on constraint violation, we then match on the particular error code, extract the field name from the error message, and return that as keywords list.</p>
+<p>(To make this more understandable, in the <a href="https://github.com/elixir-ecto/myxql" target="_blank" rel="noopener">MyXQL</a> project we&#8217;ve added error code/name mapping so we pattern match like this instead: <code>mysql: %{code: :ER_DUP_ENTRY}</code>.)</p>
+<p>To get a feeling of what other subtle changes we may have between data stores, let&#8217;s implement one more callback, back in the <code>MyXQL.EctoAdapter</code> module.</p>
+<p>While MySQL has a <code>BOOLEAN</code> type, turns out it&#8217;s simply an alias to <code>TINYINT</code> and its possible values are <code>1</code> and <code>0</code>. These sort of discrepancies are handled by the <a href="https://hexdocs.pm/ecto/Ecto.Adapter.html#c:dumpers/2" target="_blank" rel="noopener"><code>dumpers/2</code></a> and <a href="https://hexdocs.pm/ecto/Ecto.Adapter.html#c:loaders/2" target="_blank" rel="noopener"><code>loaders/2</code></a> callbacks, let&#8217;s implement the latter:</p>
+<pre><code class="elixir">defmodule MyXQL.EctoAdapter do
+  # ...
+
+  @impl true
+  def loaders(:boolean, type), do: [&amp;bool_decode/1, type]
+  # ...
+  def loaders(_, type),        do: [type]
+
+  defp bool_decode(&lt;&lt;0&gt;&gt;), do: {:ok, false}
+  defp bool_decode(&lt;&lt;1&gt;&gt;), do: {:ok, true}
+  defp bool_decode(0), do: {:ok, false}
+  defp bool_decode(1), do: {:ok, true}
+  defp bool_decode(other), do: {:ok, other}
+end
+</code></pre>
+<h2>Integration Tests</h2>
+<p>As you can see there might be quite a bit of discrepancies between adapters and data stores. For this reason, besides providing adapter specifications, Ecto ships with integration tests that can be re-used by adapter libraries.</p>
+<p>Here&#8217;s a set of basic integration test cases and support files in Ecto, see: <a href="https://github.com/elixir-ecto/ecto/blob/v3.0.6/integration_test" target="_blank" rel="noopener"><code>./integration_test/</code></a> directory.</p>
+<p>And here&#8217;s an example how a separate package might leverage these. Turns out that <code>ecto_sql</code> uses <code>ecto</code> integration tests:</p>
+<pre><code class="elixir"># ecto_sql/integration_test/mysql/all_test.exs
+ecto = Mix.Project.deps_paths[:ecto]
+Code.require_file "#{ecto}/integration_test/cases/assoc.exs", __DIR__
+Code.require_file "#{ecto}/integration_test/cases/interval.exs", __DIR__
+# ...
+</code></pre>
+<p>and has <a href="https://github.com/elixir-ecto/ecto_sql/tree/v3.0.4/integration_test/sql" target="_blank" rel="noopener">a few of its own</a>.</p>
+<p>When implementing a 3rd-party SQL adapter for Ecto we already have a lot of integration tests to run against!</p>
+<h2>Conclusion</h2>
+<p>In this article we have briefly looked at integrating our driver with Ecto and Ecto SQL.</p>
+<p>Ecto helps with the integration by providing:</p>
+<ul>
+<li>adapter specifications</li>
+<li>a <code>Ecto.Adapters.SQL</code> module that we can <em>use</em> to build adapters for relational databases even faster</li>
+<li>integration tests</li>
+</ul>
+<p>We&#8217;re also concluding our adapter series. Some of the overarching themes were:</p>
+<ul>
+<li>separation of concerns: we&#8217;ve built our protocol packet encoding/decoding layer stateless and separate from a process model which in turn made DBConnection integration more straight-forward and resulting codebase easier to understand. Ecto also exhibits a separation of concerns: not only we have separate changeset, repo, adapter etc, within adapter we have different aspects of talking to data stores like storage, transactions, connection etc.</li>
+<li>behaviours, behaviours, behaviours! Not only behaviours provide a thought-through way of organizing the code as contracts, as long as we adhere to those contracts, features like e.g. DBConnection resilience and access to Ecto tooling and greater ecosystem becomes avaialble.</li>
+</ul>
+<p>As this article is being published, we&#8217;re getting closer to shipping MyXQL&#8217;s first release as well as making it the default MySQL adapter in upcoming Ecto v3.1. You can see the progress on <a href="https://github.com/elixir-ecto/ecto_sql/pull/66" target="_blank" rel="noopener">elixir-ecto/ecto_sql#66</a>.</p>
+<p>Happy coding!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription" target="_blank" rel="noopener"><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8124 size-full" src="/wp-content/uploads/2016/05/admin-ajax-1.png" alt="" width="1024" height="213" srcset="/wp-content/uploads/2016/05/admin-ajax-1.png 1024w, /wp-content/uploads/2016/05/admin-ajax-1-300x62.png 300w, /wp-content/uploads/2016/05/admin-ajax-1-768x160.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/">Building a new MySQL adapter for Ecto Part IV: Ecto Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Building a new MySQL adapter for Ecto, Part III: DBConnection Integration</title>
+		<link>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/</link>
+					<comments>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/#comments</comments>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Fri, 21 Dec 2018 16:36:56 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=8158</guid>
+
+					<description><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series: Part I: Hello World Part II: Encoding/Decoding Part III: DBConnection Integration (you&#8217;re here!) Part IV: Ecto Integration In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP. ... <a class="read-more-link" href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/">»</a></p>
+<p>The post <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/">Building a new MySQL adapter for Ecto, Part III: DBConnection Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/" target="_blank" rel="noopener">Part I: Hello World</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/" target="_blank" rel="noopener">Part II: Encoding/Decoding</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/">Part III: DBConnection Integration</a> (you&#8217;re here!)</li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a></li>
+</ul>
+<p>In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.</p>
+<p>To have a production-quality driver, however, there&#8217;s more work to do. Namely, we need to think about:</p>
+<ul>
+<li>maintaining a connection pool to talk to the DB efficiently from multiple processes</li>
+<li>not overloading the DB</li>
+<li>attempting to re-connect to the DB if connection is lost</li>
+<li>supporting common DB features like prepared statements, transactions, and streaming</li>
+</ul>
+<p>In short, we need: reliability, performance, and first-class support for common DB features. This is where <a href="https://github.com/elixir-ecto/db_connection" target="_blank" rel="noopener">DBConnection</a>&nbsp;comes in.</p>
+<h2>DBConnection</h2>
+<p>DBConnection is a behaviour module for implementing efficient database connection client processes, pools and transactions. It has been created by Elixir and Ecto Core Team member James Fish and has been introduced in Ecto v2.0.</p>
+<p>Per <a href="https://hexdocs.pm/db_connection/DBConnection.html" target="_blank" rel="noopener">DBConnection documentation</a>&nbsp;we can see how it addresses concerns mentioned above:</p>
+<blockquote><p>
+  DBConnection handles callbacks differently to most behaviours. Some callbacks will be called in the calling process, with the state copied to and from the calling process. This is useful when the data for a request is large and means that a calling process can interact with a socket directly.</p>
+<p>A side effect of this is that query handling can be written in a simple blocking fashion, while the connection process itself will remain responsive to OTP messages and can enqueue and cancel queued requests.</p>
+<p>If a request or series of requests takes too long to handle in the client process a timeout will trigger and the socket can be cleanly disconnected by the connection process.</p>
+<p>If a calling process waits too long to start its request it will timeout and its request will be cancelled. This prevents requests building up when the database cannot keep up.</p>
+<p>If no requests are received for a period of time the connection will trigger an idle timeout and the database can be pinged to keep the connection alive.</p>
+<p>Should the connection be lost, attempts will be made to reconnect with (configurable) exponential random backoff to reconnect. All state is lost when a connection disconnects but the process is reused.</p>
+<p>The <code>DBConnection.Query</code> protocol provide utility functions so that queries can be prepared or encoded and results decoding without blocking the connection or pool.</p></blockquote>
+<p>Let&#8217;s see how we can use it!</p>
+<h2>DBConnection Integration</h2>
+<p>We will first create a module responsible for implementing DBConnection callbacks:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  use DBConnection
+end
+</code></pre>
+<p>When we compile it, we&#8217;ll get a bunch of warnings about callbacks that we haven&#8217;t implemented yet.</p>
+<p>Let&#8217;s start with the <a href="https://hexdocs.pm/db_connection/DBConnection.html#c:connect/1" target="_blank" rel="noopener"><code>connect/1</code></a>&nbsp;callback and while at it, add some supporting code:</p>
+<pre><code class="elixir">defmodule MyXQL.Error do
+  defexception [:message]
+end
+
+defmodule MyXQL.Protocol do
+  @moduledoc false
+  use DBConnection
+  import MyXQL.Messages
+  defstruct [:sock]
+
+  @impl true
+  def connect(opts) do
+    hostname = Keyword.get(opts, :hostname, "localhost")
+    port = Keyword.get(opts, :port, 3306)
+    timeout = Keyword.get(opts, :timeout, 5000)
+    username = Keyword.get(opts, :username, System.get_env("USER")) || raise "username is missing"
+    sock_opts = [:binary, active: false]
+
+    case :gen_tcp.connect(String.to_charlist(hostname), port, sock_opts) do
+      {:ok, sock} -&gt;
+        handshake(username, timeout, %__MODULE__{sock: sock})
+
+      {:error, reason} -&gt;
+        {:error, %MyXQL.Error{message: "error when connecting: #{inspect(reason)}"}}
+
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when performing handshake: #{message}"}}
+    end
+  end
+
+  @impl true
+  def checkin(state) do
+    {:ok, state}
+  end
+
+  @impl true
+  def checkout(state) do
+    {:ok, state}
+  end
+
+  @impl true
+  def ping(state) do
+    {:ok, state}
+  end
+
+  defp handshake(username, timeout, state) do
+    with {:ok, data} &lt;- :gen_tcp.recv(state.sock, 0, timeout),
+         initial_handshake_packet() = decode_initial_handshake_packet(data),
+         data = encode_handshake_response_packet(username),
+         :ok &lt;- :gen_tcp.send(state.sock, data),
+         {:ok, data} &lt;- :gen_tcp.recv(state.sock, 0, timeout),
+         ok_packet() &lt;- decode_handshake_response_packet(data) do 
+      {:ok, sock}
+    end
+  end
+end
+
+defmodule MyXQL do
+  @moduledoc "..."
+
+  @doc "..."
+  def start_link(opts) do 
+    DBConnection.start_link(MyXQL.Protocol, opts)
+  end
+end
+</code></pre>
+<p>That&#8217;s a lot to unpack so let&#8217;s break this down:</p>
+<ul>
+<li>per documentation, <code>connect/1</code> must return <code>{:ok, state}</code> on success and <code>{:error, exception}</code> on failure. Our connection state for now will be just the socket. (In a complete driver we&#8217;d use the state to manage prepared transaction references, status of transaction etc.) On error, we return an exception.</li>
+<li>we extract configuration from keyword list <code>opts</code> and provide sane defaults * we try to connect to the TCP server and if successful, perform the handshake.</li>
+<li>as we&#8217;ve learned in part I, the handshake goes like this: after connecting to the socket, we receive the &#8220;Initial Handshake Packet&#8221;. Then, we send &#8220;Handshake Response&#8221; packet. At the end, we receive the response and decode the result which can be an &#8220;OK Pacet&#8221; or an &#8220;ERR Packet&#8221;. If we receive any socket errors, we ignore them for now. We&#8217;ll talk about handling them better later on.</li>
+<li>finally, we introduce a public <code>MyXQL.start_link/1</code> that is an entry point to the driver</li>
+<li>we also provide minimal implementations for <code>checkin/1</code>, <code>checkout/1</code> and <code>ping/1</code> callbacks</li>
+</ul>
+<p>It&#8217;s worth taking a step back at looking at our overall design:</p>
+<ul>
+<li><code>MyXQL</code> module exposes a small public API and calls into an internal module</li>
+<li><code>MyXQL.Protocol</code> implements <code>DBConnection</code> behaviour and is the place where all side-effects are being handled</li>
+<li><code>MyXQL.Messages</code> implements pure functions for encoding and decoding packets This separation is really important. By keeping protocol <em>data</em> separate from protocol <em>interactions</em> code we have a codebase that&#8217;s much easier to understand and maintain.</li>
+</ul>
+<h2>Prepared Statements</h2>
+<p>Let&#8217;s take a look at <code>handle_prepare/3</code> and <code>handle_execute/4</code> callbacks that are used to<br />
+handle prepared statements:</p>
+<pre><code>iex&gt; b DBConnection.handle_prepare
+@callback handle_prepare(query(), opts :: Keyword.t(), state :: any()) ::
+            {:ok, query(), new_state :: any()}
+            | {:error | :disconnect, Exception.t(), new_state :: any()}
+
+Prepare a query with the database. Return {:ok, query, state} where query is a
+query to pass to execute/4 or close/3, {:error, exception, state} to return an
+error and continue or {:disconnect, exception, state} to return an error and
+disconnect.
+
+This callback is intended for cases where the state of a connection is needed
+to prepare a query and/or the query can be saved in the database to call later.
+
+This callback is called in the client process.
+</code></pre>
+<pre><code>iex&gt; b DBConnection.handle_execute
+@callback handle_execute(query(), params(), opts :: Keyword.t(), state :: any()) ::
+            {:ok, query(), result(), new_state :: any()}
+            | {:error | :disconnect, Exception.t(), new_state :: any()}
+
+Execute a query prepared by c:handle_prepare/3. Return {:ok, query, result,
+state} to return altered query query and result result and continue, {:error,
+exception, state} to return an error and continue or {:disconnect, exception,
+state} to return an error and disconnect.
+
+This callback is called in the client process.
+</code></pre>
+<p>Notice the callbacks reference types like: <code>query()</code>, <code>result()</code> and <code>params()</code>.<br />
+Let&#8217;s take a look at them too:</p>
+<pre><code>iex&gt; t DBConnection.result
+@type result() :: any()
+
+iex&gt; t DBConnection.params
+@type params() :: any()
+
+iex&gt; t DBConnection.query
+@type query() :: DBConnection.Query.t()
+</code></pre>
+<p>As far as DBConnection is concerned, <code>result()</code> and <code>params()</code> can be any term (it&#8217;s up to us to define these) and the <code>query()</code> must implement the <a href="https://hexdocs.pm/db_connection/DBConnection.Query.html"><code>DBConnection.Query</code></a> protocol.</p>
+<p><code>DBConnection.Query</code> is used for preparing queries, encoding their params, and decoding their<br />
+results. Let&#8217;s define query and result structs as well as minimal protocol implementation.</p>
+<pre><code class="elixir">defmodule MyXQL.Result do
+  defstruct [:columns, :rows]
+end
+
+defmodule MyXQL.Query do
+  defstruct [:statement, :statement_id]
+
+  defimpl DBConnection.Query do
+    def parse(query, _opts), do: query
+
+    def describe(query, _opts), do: query
+
+    def encode(_query, params, _opts), do: params
+
+    def decode(_query, result, _opts), do: result
+  end
+end
+</code></pre>
+<p>Let&#8217;s define the first callback, <code>handle_prepare/3</code>:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  # ...
+
+  @impl true
+  def handle_prepare(%MyXQL.Query{statement: statement}, _opts, state) do
+    data = encode_com_stmt_prepare(query.statement)
+
+    with :ok &lt;- sock_send(data, state),
+         {:ok, data} &lt;- sock_recv(state),
+         com_stmt_prepare_ok(statement_id: statement_id) &lt;- decode_com_stmt_prepare_response(data) do
+      query = %{query | statement_id: statement_id}
+      {:ok, query, state}
+    else
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when preparing query: #{message}"}, state}
+
+      {:error, reason} -&gt;
+        {:disconnect, %MyXQL.Error{message: "error when preparing query: #{inspect(reason)}"}, state}
+    end
+  end
+
+  defp sock_send(data, state), do: :gen_tcp.recv(state.sock, data, :infinity)
+
+  defp sock_recv(state), do: :gen_tcp.recv(state.sock, :infinity)
+end
+</code></pre>
+<p>The callback receives <code>query</code>, <code>opts</code> (which we ignore), and <code>state</code>. We encode the query statement into <a href="https://dev.mysql.com/doc/internals/en/com-stmt-prepare.html"><code>COM_STMT_PREPARE</code></a> packet, send it, receive response, decode the <a href="https://dev.mysql.com/doc/internals/en/com-stmt-prepare-response.html"><code>COM_STMT_PREPARE Response</code></a>, and put the retrieved <code>statement_id</code> into our query struct.</p>
+<p>If we receive an <a href="https://dev.mysql.com/doc/internals/en/packet-ERR_Packet.html"><code>ERR Packet</code></a>, we put the error message into our <code>MyXQL.Error</code> exception and return that.</p>
+<p>The only places that we could get <code>{:error, reason}</code> tuple is we could get it from are the <code>gen_tcp.send,recv</code> calls &#8211; if we get an error there it means there might be something wrong with the socket. By returning <code>{:disconnect, _, _}</code>, DBConnection will take care of closing the socket and will attempt to re-connect with a new one.</p>
+<p>Note, we set <code>timeout</code> to <code>:infinity</code> on our send/recv calls. That&#8217;s because DBConnection is managing the process these calls will be executed in and it maintains it&#8217;s own timeouts. (And if we hit these timeouts, it cleans up the socket automatically.)</p>
+<p>Let&#8217;s now define the <code>handle_execute/4</code> callback:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  # ...
+
+  @impl true
+  def handle_execute(%{statement_id: statement_id} = query, params, _opts, state)
+      when is_integer(statement_id) do
+    data = encode_com_stmt_execute(statement_id, params)
+
+    with :ok &lt;- sock_send(state, data),
+         {:ok, data} &lt;- sock_recv(state),
+         resultset(columns: columns, rows: rows) = decode_com_stmt_execute_response() do
+      columns = Enum.map(columns, &amp;column_definition(&amp;1, :name))
+      result = %MyXQL.Result{columns: columns, rows: rows}
+      {:ok, query, result, state}
+    else
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when preparing query: #{message}"}, state}
+
+      {:error, reason} -&gt;
+        {:disconnect, %MyXQL.Error{message: "error when preparing query: #{inspect(reason)}"}, state}
+    end
+  end
+end
+
+defmodule MyXQL.Messages do
+  # ...
+
+  # https://dev.mysql.com/doc/internals/en/com-query-response.html#packet-ProtocolText::Resultset
+  defrecord :resultset, [:column_count, :columns, :row_count, :rows, :warning_count, :status_flags]
+
+  def decode_com_stmt_prepare_response(data) do
+    # ...
+    resultset(...)
+  end
+
+  # https://dev.mysql.com/doc/internals/en/com-query-response.html#packet-Protocol::ColumnDefinition41
+  defrecord :column_definition, [:name, :type]
+end
+</code></pre>
+<p>Let&#8217;s break this down.</p>
+<p><code>handle_execute/4</code> receives an already prepared query, <code>params</code> to encode, opts, and the state.</p>
+<p>Similarly to <code>handle_prepare/3</code>, we encode the <a href="https://dev.mysql.com/doc/internals/en/com-stmt-execute.html" target="_blank" rel="noopener"><code>COM_STMT_EXECUTE</code></a>&nbsp;packet, send it and receive a response, decode <a href="https://dev.mysql.com/doc/internals/en/com-stmt-execute-response.html" target="_blank" rel="noopener"><code>COM_STMT_EXECUTE Response</code></a>, into a <code>resultset</code> record, and finally build the result struct.</p>
+<p>Same as last time, if we get an <code>ERR Packet</code> we return an <code>{:error, _, _}</code> response; on socket problems, we simply disconnect and let DBConnection handle re-connecting at later time.</p>
+<p>We&#8217;ve mentioned that the <code>DBConnection.Query</code> protocol is used to prepare queries, and in fact we could perform encoding of params and decoding the result in implementation functions. We&#8217;ve left that part out for brevity.</p>
+<p>Finally, let&#8217;s add a public function that users of the driver will use:</p>
+<pre><code class="elixir">defmodule MyXQL do
+  # ...
+
+  def prepare_execute(conn, statement, params, opts) do
+    query = %MyXQL.Query{statement: statement}
+    DBConnection.prepare_execute(conn, query, params, opts)
+  end
+end
+</code></pre>
+<p>and see it all working.</p>
+<pre><code class="elixir">iex&gt; {:ok, pid} = MyXQL.start_link([])
+iex&gt; MyXQL.prepare_execute(pid, "SELECT ?", [42], [])
+{:ok, %MyXQL.Query{statement: "SELECT ? + ?", statement_id: 1},
+%MyXQL.Result{columns: ["? + ?"], rows: [[5]]}}
+</code></pre>
+<p>Arguments to <code>MyXQL.start_link</code> are passed down to<br />
+<a href="https://hexdocs.pm/db_connection/DBConnection.html#start_link/2" target="_blank" rel="noopener"><code>DBConnection.start_link/2</code></a>,<br />
+so starting a pool of 2 connections is as simple as:</p>
+<pre><code class="elixir">iex&gt; {:ok, pid} = MyXQL.start_link(pool_size: 2)
+</code></pre>
+<h2>Conclusion</h2>
+<p>In this article, we&#8217;ve seen a sneak peek of integration with the DBConnection library. It gave us<br />
+many benefits:</p>
+<ul>
+<li>a battle-tested connection pool without writing a single line of pooling code</li>
+<li>we can use blocking <code>:gen_tcp</code> functions without worrying about OTP messages and timeouts;<br />
+DBConnection will handle these</li>
+<li>automatic re-connection, backoff etc</li>
+<li>a way to structure our code</li>
+</ul>
+<p>With this, we&#8217;re almost done with our adapter series. In the final article we&#8217;ll use our driver as an Ecto adapter. Stay tuned!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription" target="_blank" rel="noopener"><img decoding="async" class="aligncenter wp-image-8124 size-full" src="/wp-content/uploads/2016/05/admin-ajax-1.png" alt="" width="1024" height="213" srcset="/wp-content/uploads/2016/05/admin-ajax-1.png 1024w, /wp-content/uploads/2016/05/admin-ajax-1-300x62.png 300w, /wp-content/uploads/2016/05/admin-ajax-1-768x160.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/">Building a new MySQL adapter for Ecto, Part III: DBConnection Integration</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding</title>
+		<link>/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Mon, 03 Dec 2018 16:07:11 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=8072</guid>
+
+					<description><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series: Part I: Hello World Part II: Encoding/Decoding (you&#8217;re here!) Part III: DBConnection Integration Part IV: Ecto Integration Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#8217;ll dive deeper into that topic, let&#8217;s get started! Basic ... <a class="read-more-link" href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">»</a></p>
+<p>The post <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/" target="_blank" rel="noopener">Part I: Hello World</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">Part II: Encoding/Decoding</a> (you&#8217;re here!)</li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" target="_blank" rel="noopener">Part III: DBConnection Integration</a></li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a></li>
+</ul>
+<p>Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#8217;ll dive deeper into that topic, let&#8217;s get started!</p>
+<h2>Basic Types</h2>
+<p>MySQL protocol has two &#8220;<a href="https://dev.mysql.com/doc/internals/en/basic-types.html" target="_blank" rel="noopener">Basic Data Types</a>&#8220;: integers and strings. Within integers we have fixed-length and length-encoded integers.<br />
+The simplest type is <code>int&lt;1&gt;</code> which is an integer stored in 1 byte.</p>
+<p>To recap, MySQL is using little endianess when encoding/decoding integers as binaries. Let&#8217;s define a function that takes an <code>int&lt;1&gt;</code> from the given binary and returns the rest of the binary:</p>
+<pre><code class="elixir">defmodule MyXQL.Types do
+  def take_int1(data) do
+    &lt;&lt;value::8-little-integer, rest::binary&gt;&gt; = data
+    {value, rest}
+  end
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_int1(&lt;&lt;1, 2, 3&gt;&gt;)
+{1, &lt;&lt;2, 3&gt;&gt;}
+</code></pre>
+<p>We can generalize this function to accept any fixed-length integer:</p>
+<pre><code class="elixir">def take_fixed_length_integer(data, size) do
+  &lt;&lt;value::little-integer-size(size)-unit(8), rest::binary&gt;&gt; = data
+  {value, rest}
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_fixed_length_integer(&lt;&lt;1, 2, 3&gt;&gt;, 2)
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>(See <a href="https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%3E/1" target="_blank" rel="noopener"><code>&lt;&lt;&gt;&gt;/1</code></a> for more information on bitstrings.)</p>
+<p>Decoding a <a href="https://dev.mysql.com/doc/internals/en/integer.html#length-encoded-integer" target="_blank" rel="noopener">length-encoded integer</a>&nbsp;is slightly more complicated.<br />
+Basically, if the first byte value is less than <code>251</code>, then it&#8217;s a 1-byte integer; if the first-byte is <code>0xFC</code>, then it&#8217;s a 2-byte integer and so on up to a 8-byte integer:</p>
+<pre><code class="elixir">def take_length_encoded_int1(&lt;&lt;int::8-little-integer, rest::binary&gt;&gt;) when int &lt; 251, do: {int, rest}
+
+def take_length_encoded_int2(&lt;&lt;0xFC, int::16-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+
+def take_length_encoded_int3(&lt;&lt;0xFD, int::24-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+
+def take_length_encoded_int8(&lt;&lt;0xFE, int::64-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_length_encoded_int1(&lt;&lt;1, 2, 3&gt;&gt;)
+{1, &lt;&lt;2, 3&gt;&gt;}
+
+iex&gt; MyXQL.Types.take_length_encoded_int2(&lt;&lt;0xFC, 1, 2, 3&gt;&gt;)
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>Can we generalize this function to a single binary pattern match, the same way we did with <code>take_fixed_length_integer/2</code>? Unfortunately we can&#8217;t. Our logic is essentially a <code>case</code> with 4 clauses and such cannot be used in pattern matches.<br />
+For this reason, the way we decode data is by reading some bytes, decoding them, and returning the rest of the binary.</p>
+<p>It&#8217;s a shame that MySQL doesn&#8217;t encode the <em>size</em> of the binary in the first byte because otherwise our decode function could be easily implemented in a single binary pattern match, e.g.:</p>
+<pre><code class="elixir">iex&gt; &lt;&lt;size::8, value::little-integer-size(size)-unit(8), rest::binary&gt;&gt; = &lt;&lt;2, 1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>In fact, it&#8217;s common for protocols to encode data as <a href="https://en.wikipedia.org/wiki/Type-length-value" target="_blank" rel="noopener">Type-Length-Value (TLV)</a>&nbsp;which as you can see above, it&#8217;s very easy to implement with Elixir.</p>
+<p>In any case, we can still leverage binary pattern matching in the function head. Here&#8217;s our final <code>take_length_encoded_integer/1</code> function:</p>
+<pre><code class="elixir">def take_length_encoded_integer(&lt;&lt;int::8, rest::binary&gt;&gt;) when int &lt; 251, do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFC, int::int(2), rest::binary&gt;&gt;), do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFD, int::int(3), rest::binary&gt;&gt;), do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFE, int::int(8), rest::binary&gt;&gt;), do: {int, rest}
+</code></pre>
+<p>There&#8217;s one last thing that we can do. Because <code>take_fixed_length_integer/2</code> is so simple and basically uses a single binary pattern match (in particular, it <em>does not</em> have a <code>case</code> statement), we can replace it with a macro instead. All we need to do is to emit <code>little-integer-size(size)-unit(8)</code> AST so that we can use it in a bitstring; that&#8217;s easy:</p>
+<pre><code class="elixir">defmacro int(size) do
+  quote do
+    little-integer-size(unquote(size))-unit(8)
+  end
+end
+</code></pre>
+<p>Because it&#8217;s a macro we need to <code>require</code> or <code>import</code> it to use it:</p>
+<pre><code class="elixir">iex&gt; import MyXQL.Types
+
+iex&gt; &lt;&lt;value::int(1), rest::binary&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{1, &lt;&lt;2, 3&gt;&gt;}
+
+iex&gt; &lt;&lt;value::int(2), rest::binary&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>A really nice thing about using a macro here is we get encoding for free:</p>
+<pre><code class="elixir">iex&gt; &lt;&lt;513::int(2)&gt;&gt;
+&lt;&lt;1, 2&gt;&gt;
+</code></pre>
+<p>We could write a macro for encoding length-encoded integers (we could even invoke it as <code>513::int(lenenc)</code> to mimic the spec, by adjusting <code>int/1</code> macro) but I decided against it as it won&#8217;t be usable in a binary pattern match.</p>
+<p>Encoding/decoding <a href="https://dev.mysql.com/doc/internals/en/describing-packets.html" target="_blank" rel="noopener">MySQL strings</a>&nbsp;is very similar so we will not be going over that and we&#8217;ll jump into the&nbsp;next section on bit flags. (Sure enough, working with strings would be easy, even in binary pattern matches, if not for an EOF-terminated <code>string&lt;eof&gt;</code> and <code>string&lt;lenenc&gt;</code> types.)</p>
+<h2>Bit Flags</h2>
+<p>MySQL provides <a href="https://dev.mysql.com/doc/internals/en/capability-flags.html#packet-Protocol::CapabilityFlags" target="_blank" rel="noopener">&#8220;Capability Flags&#8221;</a>&nbsp;like:</p>
+<pre><code class="elixir">CLIENT_PROTOCOL_41 0x00000200
+CLIENT_SECURE_CONNECTION 0x00008000
+CLIENT_PLUGIN_AUTH 0x00080000
+</code></pre>
+<p>The idea is we represent a set of capabilities as a single integer on which we can use <code>Bitwise</code> operations like: <code>0x00000200 ||| 0x00008000</code>, <code>flags &amp;&amp;&amp; 0x00080000</code> etc.</p>
+<p>We definitely don&#8217;t want to pass these &#8220;magic&#8221; bytes around so we should encapsulate them somehow.<br />
+We could store them as module attributes, e.g.: <code>@client_protocol_41 0x00000200</code>; if we mistype the name of the flag, we&#8217;ll get a helpful compiler warning. Using functions, however, gives us a bit more flexibility as we can generate great error messages as well as &#8220;hide&#8221; usage of bitwise operations underneath.<br />
+Let&#8217;s implement a function that checks whether given <code>flags</code> has a given capability:</p>
+<pre><code class="elixir">defmodule MyXQL.Messages do
+  use Bitwise
+
+  def has_capability_flag?(flags, :client_protocol_41), do: (flags &amp;&amp;&amp; 0x00000200) == 0x00000200
+  def has_capability_flag?(flags, :client_secure_connection), do: (flags &amp;&amp;&amp; 0x00008000) == 0x00008000
+  def has_capability_flag?(flags, :client_plugin_auth), do: (flags &amp;&amp;&amp; 0x00080000) == 0x00080000
+  # ...
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Messages.has_capability_flag?(0, :client_protocol_41)
+false
+iex&gt; MyXQL.Messages.has_capability_flag?(0x00000200, :client_protocol_41)
+true
+
+iex&gt; MyXQL.Messages.has_capability_flag?(0x00000200, :bad)
+** (FunctionClauseError) no function clause matching in MyXQL.Messages.has_capability_flag?/2
+
+    The following arguments were given to MyXQL.Messages.has_capability_flag?/2:
+
+        # 1
+        512
+
+        # 2
+        :bad
+
+    Attempted function clauses (showing 3 out of 3):
+
+        def has_capability_flag?(flags, :client_protocol_41)
+        def has_capability_flag?(flags, :client_secure_connection)
+        def has_capability_flag?(flags, :client_plugin_auth)
+</code></pre>
+<p>This is a very useful error message, we can see what are all available capabilities. If we want something more customized, all we need to do is define an additional catch-all clause at the end:</p>
+<pre><code class="elixir">def has_capability_flag?(flags, other) do
+  raise ...
+end
+</code></pre>
+<p>and raise an error there. That way we could, for example, implement a &#8220;Did you mean?&#8221; hint.</p>
+<p>Last but not least, instead of manually defining each function head by hand, we can use Elixir meta-programming capabilities to define them at compile time:</p>
+<pre><code class="elixir">capability_flags = [
+  client_protocol_41: 0x00000200,
+  client_secure_connection: 0x00008000,
+  client_plugin_auth: 0x00080000,
+]
+
+for {name, value} &lt;- capability_flags do
+  def has_capability_flag?(flags, unquote(name)), do: (flags &amp;&amp;&amp; unquote(value)) == unquote(value)
+end
+</code></pre>
+<h2>Packets</h2>
+<p>Finally, let&#8217;s bring this all together to handle packets. We need a data structure that&#8217;s going to store packet fields and we basically have two options: <a href="https://hexdocs.pm/elixir/Kernel.html#defstruct/1">structs</a> and <a href="https://hexdocs.pm/elixir/Record.html">records</a>. Structs are great when data has to be sent between modules, especially because they are polymorphic. However, when the data belongs to a single module, or separate modules that are considered private API, using records may make more sense as they are more space efficient. Let&#8217;s verify that using <code>:erts_debug</code> module and instead of comparing structs and records let&#8217;s just compare their internal representations: maps and tuples, respectively:</p>
+<pre><code class="elixir">iex&gt; :erts_debug.size(%{x: 1})
+6
+iex&gt; :erts_debug.size(%{x: 1, y: 2})
+8
+iex&gt; :erts_debug.size(%{x: 1, y: 2, z: 3})
+10
+</code></pre>
+<pre><code class="elixir">iex&gt; :erts_debug.size({:Point, 1})
+3
+iex&gt; :erts_debug.size({:Point, 1, 2})
+4
+iex&gt; :erts_debug.size({:Point, 1, 2, 3})
+5
+</code></pre>
+<p>As you can see, as we add more keys to the map our data structure grows twice as fast and the reason is we store both keys and values whereas tuple stores the size of the tuple once and then just values.<br />
+Since we may be processing thousands of packets per second, this difference may add up, so we&#8217;re going to use records here.</p>
+<p>The final packet we discussed in the last article was the <code>OK Packet</code>. Let&#8217;s now write a function to decode it (it&#8217;s not fully following the spec for brevity):</p>
+<pre><code class="elixir"># https://dev.mysql.com/doc/internals/en/packet-OK_Packet.html
+defrecord :ok_packet, [:affected_rows, :last_insert_id, :status_flags, :warning_count]
+
+def decode_ok_packet(data, capability_flags) do
+  &lt;&lt;0x00, rest::binary&gt;&gt; = data
+
+  {affected_rows, rest} = take_length_encoded_integer(rest)
+  {last_insert_id, rest} = take_length_encoded_integer(rest)
+
+  packet = ok_packet(
+    affected_rows: affected_rows,
+    last_insert_id: last_insert_id
+  )
+
+  if has_capability_flag?(capability_flags, :client_protocol_41) do
+    &lt;&lt;
+      status_flags::int(2),
+      warning_count::int(2)
+    &gt;&gt; = rest
+
+    ok_packet(packet,
+      status_flags: status_flags,
+      warning_count: warning_count
+    )
+  else
+    packet
+  end
+end
+</code></pre>
+<p>And let&#8217;s test this with the OK packet we got at the end of the last article (<code>00 00 00 02 00 00 00</code>):</p>
+<pre><code class="elixir">iex&gt; ok_packet(affected_rows: affected_rows) = decode_ok_packet(&lt;&lt;0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00&gt;&gt;, 0x00000200)
+iex&gt; affected_rows
+0
+</code></pre>
+<p>It works!</p>
+<h2>Conclusion</h2>
+<p>In this article, we discussed encoding and decoding basic data types, handling bit flags, and finally using both of these ideas to decode packets. Using these tools we should be able to fully implement MySQL protocol specification and with examples of <a href="http://erlang.org/doc/man/gen_tcp.html#send-2" target="_blank" rel="noopener"><code>:gen_tcp.send/2</code></a> and <a href="http://erlang.org/doc/man/gen_tcp.html#recv-2" target="_blank" rel="noopener"><code>:gen_tcp.recv/2</code></a> calls from Part I, we could interact with the server. However, that&#8217;s not enough to build a resilient and production-quality driver. For that, we&#8217;ll look into <a href="https://hex.pm/packages/db_connection" target="_blank" rel="noopener"><code>DBConnection</code></a>&nbsp;integration in Part III. Stay tuned!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription" target="_blank" rel="noopener"><img decoding="async" class="size-large wp-image-7816 alignnone" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Building a new MySQL adapter for Ecto, Part I: Hello World</title>
+		<link>/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Wed, 14 Nov 2018 13:16:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=7933</guid>
+
+					<description><![CDATA[<p>As you may have seen in the announcement, Plataformatec is working on a new MySQL driver called MyXQL. Writing a complete driver involves quite a bit of work. To name just a few things, we need to support: all protocol messages and data types, authentication schemes, connection options (TCP/SSL/UNIX domain socket), transactions and more. Rather ... <a class="read-more-link" href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/">»</a></p>
+<p>The post <a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/">Building a new MySQL adapter for Ecto, Part I: Hello World</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As you may have seen in the <a href="https://elixirforum.com/t/announcing-a-new-mysql-driver-myxql/17124" target="_blank" rel="noopener">announcement</a>, Plataformatec is working on a new MySQL driver called MyXQL.</p>
+<p>Writing a complete driver involves quite a bit of work. To name just a few things, we need to support: all protocol messages and data types, authentication schemes, connection options (TCP/SSL/UNIX domain socket), transactions and more. Rather than going through all of these in detail, I plan to distill this knowledge into 4 parts, each with a quick overview of a given area:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/">Part I: Hello World</a> (you&#8217;re here!)</li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/" target="_blank" rel="noopener">Part II: Encoding/Decoding</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" target="_blank" rel="noopener">Part III: DBConnection Integration</a></li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a></li>
+</ul>
+<p>This also mimics how I approached the development of the library, my end goal was to integrate with Ecto and I wanted to be integrating end-to-end as soon and as often as possible. Rather than implementing each part fully, I implemented just enough to move forward knowing I can later go back and fill in remaining details. Without further ado, let&#8217;s get started!</p>
+<h3>Hello World</h3>
+<p>Our &#8220;Hello World&#8221; will involve performing a &#8220;handshake&#8221;: connecting to a running MySQL server and authenticating a user. To avoid getting bogged down in authentication details, the simplest possible thing to do is to log in as user without password. Let&#8217;s create one:</p>
+<pre><code>$ mysql --user=root -e "CREATE USER myxql_test"
+</code></pre>
+<p>We can check if everything went well by trying to log in as that user:</p>
+<pre><code>$ mysql --user=myxql_test -e "SELECT NOW()"
++---------------------+
+| NOW()               |
++---------------------+
+| 2018-10-04 18:35:11 |
++---------------------+
+</code></pre>
+<p>If you don&#8217;t have MySQL installed, I recommend setting it up via Homebrew, if you&#8217;re on macOS, or Docker. I ended up using Docker because I knew I needed to test on multiple server versions. Here&#8217;s how I set it up:</p>
+<pre><code>$ docker run --publish=3306:3306 --name myxql_test -e MYSQL_ROOT_PASSWORD=secret -d mysql:8.0.12
+# note we connect via TCP, instead of the default UNIX domain socket:
+$ mysql --protocol=tcp --user=root --password=secret -e "CREATE USER myxql_test;"
+
+$ mysql --protocol=tcp --user=myxql_test -e "SELECT NOW()"
++---------------------+
+| NOW()               |
++---------------------+
+| 2018-10-04 18:40:04 |
++---------------------+
+</code></pre>
+<p>We can now connect to the server from IEx session:</p>
+<pre><code>iex&gt; {:ok, sock} = :gen_tcp.connect('127.0.0.1', 3306, [:binary, active: false], 5000)
+{:ok, #Port&lt;0.6&gt;}
+</code></pre>
+<p>Let&#8217;s break this down. <a href="http://erlang.org/doc/man/gen_tcp.html#connect-4" target="_blank" rel="noopener"><code>:gen_tcp.connect/4</code></a> accepts:</p>
+<ol>
+<li>Hostname (as charlist)</li>
+<li>Port</li>
+<li>Options (as proplist); by default, data from the socket is returned as iolist, however for us binary will be more convenient to work with, so we pass <code>:binary</code> option.<br />
+<code>active: false</code> means we&#8217;ll work with the socket in &#8220;passive mode&#8221;, meaning we&#8217;ll read data using blocking <a href="http://erlang.org/doc/man/gen_tcp.html#recv-3" target="_blank" rel="noopener"><code>:gen_tcp.recv/3</code></a> call.</li>
+<li>Timeout (in milliseconds)</li>
+</ol>
+<p>Let&#8217;s now read data from the socket: (<code>0</code> means we read all available bytes, <code>5000</code> is the timeout in milliseconds)</p>
+<pre><code>iex&gt; {:ok, data} = :gen_tcp.recv(sock, 0, 5000)
+iex&gt; data
+&lt;&lt;74, 0, 0, 0, 10, 56, 46, 48, 46, 49, 50, 0, 12, 0, 0, 0, 11, 9, 19, 27, 96, 108, 77, 116, 0, 255, 255, 255, 2, 0, 255, 195, 21, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 37, 62, 29, 59, 1, ...&gt;&gt;
+</code></pre>
+<p>To make sense of this, we&#8217;re gonna need to look into MySQL manual.<br />
+Each <a href="https://dev.mysql.com/doc/internals/en/mysql-packet.html" target="_blank" rel="noopener">MySQL packet</a> has 3 elements: length of the payload (3-byte integer), sequence id (1-byte integer), and payload.<br />
+In this case, the actual payload is the <a href="https://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::Handshake">&#8220;Initial Handshake Packet&#8221;</a>. Let&#8217;s extract the payload part using binary matching (see <a href="https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%3E/1">&lt;&lt;&gt;&gt;/1</a> for more information on binary matching):</p>
+<pre><code>iex&gt; &lt;&lt;payload_length::24, sequence_id::8, payload::binary&gt;&gt; = data
+iex&gt; payload_length
+4849664
+iex&gt; byte_size(payload)
+74
+</code></pre>
+<p>Wait, the size of the payload is <code>74</code> so why <code>payload_length</code> is <code>4849664</code>?! Numerical values when stored in a binary have <a href="https://en.wikipedia.org/wiki/Endianness" target="_blank" rel="noopener">&#8220;endianness&#8221;</a> which basically means whether we should read bits/bytes from &#8220;little-end&#8221; (least significant bit) or &#8220;big-end&#8221; (most significant bit).<br />
+Thus, a 3-byte integer <code>&lt;&lt;74, 0, 0&gt;&gt;</code> in &#8220;big-endian&#8221; is indeed <code>4849664</code> but in &#8220;little-endian&#8221; it&#8217;s <code>74</code>. Fortunately, bitstring syntax has great support for endianess and it&#8217;s as easy as adding <code>little</code> modifier (&#8220;big-endian&#8221; is the default):</p>
+<pre><code>iex&gt; &lt;&lt;payload_length::24-little, sequence_id::8, payload::binary&gt;&gt; = data
+iex&gt; payload_length
+74
+</code></pre>
+<p>To make sense of the remaining payload we&#8217;re gonna use the <a href="https://hex.pm/packages/binpp" target="_blank" rel="noopener"><code>binpp</code></a> package:</p>
+<pre><code>iex&gt; :binpp.pprint(payload)
+0000 0A 38 2E 30 2E 31 32 00 0F 00 00 00 27 73 79 59  .8.0.12.....'syY
+0001 7A 34 26 3B 00 FF FF FF 02 00 FF C3 15 00 00 00  z4&amp;;.ÿÿÿ..ÿÃ....
+0002 00 00 00 00 00 00 00 43 55 6B 60 74 5A 71 08 75  .......CUk`tZq.u
+0003 6F 08 2F 00 63 61 63 68 69 6E 67 5F 73 68 61 32  o./.caching_sha2
+0004 5F 70 61 73 73 77 6F 72 64 00                    _password.
+</code></pre>
+<p>We can see up to 16 bytes in each row and at the far right we have ASCII interpretation of each byte. Per <a href="https://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::Handshake">&#8220;Initial Handshake Packet&#8221;</a> the first byte is the protocol version, always <code>10</code> (<code>0x0A</code>), and what follows is a null-terminated server version string. Let&#8217;s extract that:</p>
+<pre><code>iex&gt; &lt;&lt;10, rest::binary&gt;&gt; = payload
+iex&gt; [server_version, rest] = :binary.split(rest, &lt;&lt;0x00&gt;&gt;)
+iex&gt; server_version
+"8.0.12"
+</code></pre>
+<p>We can parse the server version, that&#8217;s a good start! There are other fields in this packet that in a complete adapter we&#8217;d have to handle, but for now we&#8217;ll simply ignore them. We&#8217;ll just take a note of the authentication method at the end to the packet, a null-terminated string <code>"caching_sha2_password"</code>.</p>
+<p>After receiving &#8220;Initial Handshake Packet&#8221; the client is supposed to send <a href="https://dev.mysql.com/doc/internals/en/connection-phase-packets.html#packet-Protocol::HandshakeResponse" target="_blank" rel="noopener">&#8220;Handshake Response&#8221;</a>. We&#8217;ll again just gloss over the details:</p>
+<pre><code>iex&gt; use Bitwise
+iex&gt; capability_flags = 0x00000200 ||| 0x00008000 ||| 0x00080000
+iex&gt; max_packet_size = 65535
+iex&gt; charset = 0x21
+iex&gt; username = "myxql_test"
+iex&gt; auth_response = &lt;&lt;0x00&gt;&gt;
+iex&gt; client_auth_plugin = "caching_sha2_password"
+iex&gt; payload = &lt;&lt;
+       capability_flags::32-little,
+       max_packet_size::32-little,
+       charset, 0::8*23,
+       username::binary, 0x00,
+       auth_response::binary,
+       client_auth_plugin::binary, 0x00
+>&gt;
+iex&gt; sequence_id = 1
+iex&gt; data = &lt;&lt;byte_size(payload)::24-little, sequence_id, payload::binary&gt;&gt;
+</code></pre>
+<p>Let&#8217;s break this down:</p>
+<p>First, we use <code>CLIENT_PROTOCOL_41</code>,<code>CLIENT_SECURE_CONNECTION</code>, and <code>CLIENT_PLUGIN_AUTH</code> <a href="https://dev.mysql.com/doc/internals/en/capability-flags.html#packet-Protocol::CapabilityFlags" target="_blank" rel="noopener">capability flags</a> using &#8220;bitwise OR&#8221;. Secondly, we set the max packet size, charset (<code>0x21</code> is <code>utf8_general_ci</code>), filler (<code>0</code>s repeated 23 times), username, auth response (empty password is a null byte), and auth plugin name. Note, we encode <code>username</code> and <code>client_auth_plugin</code> as null-terminated strings. Finally, we generate <code>payload</code> and encode it in a packet with payload length and sequence id (it&#8217;s 2nd packet so sequence id is <code>1</code>). Let&#8217;s now send this and receive response from the server:</p>
+<pre><code>iex&gt; :ok = :gen_tcp.send(sock, data)
+iex&gt; {:ok, data} = :gen_tcp.recv(sock, 0)
+iex&gt; &lt;&lt;payload_length::24-little, sequence_id::8, payload::binary&gt;&gt; = data
+iex&gt; :binpp.pprint(payload)
+0000 00 00 00 02 00 00 00
+</code></pre>
+<p>The first byte of the response is <code>0x00</code> which corresponds to the <a href="https://dev.mysql.com/doc/internals/en/packet-OK_Packet.html" target="_blank" rel="noopener"><code>OK_Packet</code></a>, authentication succedded! Even though we&#8217;ve glossed over many details, we&#8217;ve shown that we can integrate with the server end-to-end and that&#8217;s going to be a foundation we&#8217;ll built upon. There are many more packets that we&#8217;ll need to encode or decode and we&#8217;re gonna need a more structured approach which we will discuss in part II.</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription"><img loading="lazy" decoding="async" class="aligncenter size-large wp-image-7816" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/">Building a new MySQL adapter for Ecto, Part I: Hello World</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Updating Hex.pm to Ecto 3.0</title>
+		<link>/2018/10/updating-hex-pm-to-ecto-3-0/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2018 18:50:01 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[hex]]></category>
+		<guid isPermaLink="false">/?p=7883</guid>
+
+					<description><![CDATA[<p>Ecto 3.0 is just around the corner and as you may already know it reached stable API. To make sure everything works properly I thought I&#8217;ll try updating one of the first projects that ever used Ecto: Hex.pm. The whole upgrade was done in a single pull request, which we will break down below. First, ... <a class="read-more-link" href="/2018/10/updating-hex-pm-to-ecto-3-0/">»</a></p>
+<p>The post <a href="/2018/10/updating-hex-pm-to-ecto-3-0/">Updating Hex.pm to Ecto 3.0</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Ecto 3.0 is just around the corner and as you may already know <a href="https://elixirforum.com/t/ecto-3-0-rc-is-out-and-stable-api/17306">it reached stable API</a>. To make sure everything works properly I thought I&#8217;ll try updating one of the first projects that ever used Ecto: <a href="https://github.com/hexpm/hexpm">Hex.pm</a>.</p>
+<p>The whole upgrade was done in a <a href="https://github.com/hexpm/hexpm/pull/728">single pull request</a>, which we will break down below.</p>
+<p>First, the required steps:</p>
+<ol>
+<li>Update mix.exs to depend on <code>ecto_sql</code> and bump the postgrex dependency. Note: SQL handling have been extracted out into a separate <a href="https://github.com/elixir-ecto/ecto_sql"><code>ecto_sql</code></a> project, so we need to add that new dependency. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/6b3b78cf48f9ba082752765f7c0ac20a8982d992"><code>6b3b78cf</code></a>)</li>
+<li>DBConnection 2.0 no longer ships with Sojourn and Poolboy pools, so we can remove the <code>pool</code> configuration and use the default pool implementation. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/760026f30ce4ffc46acdc01b166eb0d358d6115e"><code>760026f3</code></a>)</li>
+<li>Speaking of pools, we need to make sure <code>pool_size</code> is at least <code>2</code> when running migrations.</li>
+<li>JSON library is now set on the adapter and not on Ecto (<a href="https://github.com/hexpm/hexpm/pull/728/commits/e16ebd8fefe26364ab078969ef671762e92a0e45"><code>e16ebd8f</code></a>) and because we were already using the recommended package, <a href="https://github.com/michalmuskala/jason">Jason</a>, we don&#8217;t need that configuration anymore. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/66f9cbdfbbf43bf1c9299c42e764a97996f7ce4a"><code>66f9cbdf</code></a>)</li>
+<li>Ecto 3.0 makes date/time handling stricter with regards to precision. So we need to either update the types of our schema fields or make sure we truncate date/time values. For example, when we define a field as <code>time</code> we can&#8217;t put value with microsecond precision and similarly we can&#8217;t put into a <code>time_usec</code> field a value without microsecond precision. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/2e34b833d8d903220f7f6828f971f9ca1f33f923"><code>2e34b833</code></a>)</li>
+<li>Constraint handling functions like <a href="https://hexdocs.pm/ecto/3.0.0-rc.1/Ecto.Changeset.html#unique_constraint/3"><code>Ecto.Changeset.unique_constraint/3</code></a> are now including in the error metadata the type and the name of the constraint, which broke our test that was overly specific. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/3d19f90398374f43f40d9137b8441c88f90e0b59"><code>3d19f903</code></a>)</li>
+</ol>
+<p>Secondly, we got a couple deprecation warnings so here are the fixes:</p>
+<ol>
+<li>Adapter is now set when defining Repo module and not in the configuration. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/d3911953c98fa22e4258838c4f61bf13fe61ee4a"><code>d3911953</code></a>)</li>
+<li><a href="https://hexdocs.pm/ecto/3.0.0-rc.1/Ecto.Multi.html#run/3"><code>Ecto.Multi.run/3</code></a> now accepts a 2-arity function (first argument is now the Repo) instead of a 1-arity one before. (<a href="https://github.com/hexpm/hexpm/pull/728/commits/95d11cc26d4996b69c51bb536bd3ec23ee7fbe67"><code>95d11cc2</code></a>)</li>
+</ol>
+<p>Finally, there were a few minor glitches (or redundancies!) specific to Hex.pm: <a href="https://github.com/hexpm/hexpm/pull/728/commits/c41689778182d53d06884468467030ba2069187d"><code>c4168977</code></a>, <a href="https://github.com/hexpm/hexpm/pull/728/commits/21eb0bf8a0c40ae1ccfd5cd2c79eba7d9359fabe"><code>21eb0bf8</code></a>, and <a href="https://github.com/hexpm/hexpm/pull/728/commits/0929cd9e09f5511652db4c90a3ba451a752a1428"><code>0929cd9e</code></a>.</p>
+<p>Overall the update process was pretty straightforward. There were a few minor bugs along the way which were promptly fixed upstream. Having <a href="https://github.com/hexpm/hexpm/pull/265">previously updated Hex.pm to Ecto 2.0</a>, which took a few months (we started it early on, which made it a fast moving target back then), I can really appreciate the level of maturity that Ecto achieved and how easy it was to update this time around. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Update: Add note about <code>pool_size</code> when running migrations.</p>
+<p><em>We are glad to be an active part of the process by contributing to the ecosystem and helping companies adopt Elixir at different stages of their adoption cycle. We would love to work with you too!</em></p>
+<p><em>Do you think that your company could benefit from our expertise and assistance? Just click the button below.</em></p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription"><img loading="lazy" decoding="async" class="aligncenter size-large wp-image-7816" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/10/updating-hex-pm-to-ecto-3-0/">Updating Hex.pm to Ecto 3.0</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A sneak peek at Ecto 3.0: performance, migrations and more</title>
+		<link>/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 22 Oct 2018 17:41:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[ecto]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=7870</guid>
+
+					<description><![CDATA[<p>Welcome to the &#8220;A sneak peek at Ecto 3.0&#8221; series: Breaking changes Query improvements part 1 Query improvements part 2 Performance, migrations and more (you are here!) We are back for one last round! This time we are going to cover improvements on three main areas: performance, upserts and migrations. If you would like to ... <a class="read-more-link" href="/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/">»</a></p>
+<p>The post <a href="/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/">A sneak peek at Ecto 3.0: performance, migrations and more</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Welcome to the &#8220;A sneak peek at Ecto 3.0&#8221; series:</p>
+<ol>
+<li><a href="/2018/10/a-sneak-peek-at-ecto-3-0-breaking-changes/">Breaking changes</a></li>
+<li><a href="/2018/10/a-sneak-peek-at-ecto-3-0-query-improvements-part-1/">Query improvements part 1</a></li>
+<li><a href="/2018/10/a-sneak-peek-at-ecto-3-0-query-improvements-part-2/">Query improvements part 2</a></li>
+<li><a href="/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/">Performance, migrations and more</a> (you are here!)</li>
+</ol>
+<p>We are back for one last round! This time we are going to cover improvements on three main areas: performance, upserts and migrations. If you would like to give Ecto a try right now, note <a href="https://elixirforum.com/t/ecto-3-0-rc-is-out-and-stable-api/17306">Ecto v3.0.0-rc.0 has been released</a> and we are looking forward to your feedback.</p>
+<h2>Better memory usage</h2>
+<p>One of the most notable performance improvements in Ecto 3.0 is that schemas loaded from an Ecto repository now uses less memory.</p>
+<p>A big part of the memory improvements seen in Ecto 3.0 comes from better management of schema metadata. Every instance you have of an <code>Ecto.Schema</code>, such as a <code>%User{}</code>, has a metadata field with life-cycle information about that entry, such as the database prefix or its state (was it just built or was it loaded from the database?). This metadata field takes exactly 16 words:</p>
+<pre><code>iex&gt; :erts_debug.size %Ecto.Schema.Metadata{}
+16
+</code></pre>
+<p>16 words for a 64-bits machine is equivalent to 128 bytes. This means that, if you were using Ecto 2.0 and you loaded 1000 entries, 128 kbytes of memory would be used only for storing this metadata. The good news is that all of those 1000 entries could use the exact same metadata! <a href="https://github.com/elixir-ecto/ecto/commit/c34046be0317903785d5f7f3ece35ac6e0f64008">That&#8217;s what we did in this commit</a>. This means that, if you load 1000 or 1000000 entries, the cost is always the same, only 128 bytes!</p>
+<p>After we announced Ecto 3.0-rc, we started to hear some teams already upgraded to Ecto 3.0-rc. Some of those repos are quite big and it took them less than a day to upgrade, which is exactly how upgrading to major software versions should be.</p>
+<p>Ben Wilson, Principal Engineer at CargoSense, upgraded one of their apps to Ecto 3.0-rc and pushed it to production. Here is the result:</p>
+<p><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-7872" src="/wp-content/uploads/2018/10/memory.png" alt="" width="1226" height="412" srcset="/wp-content/uploads/2018/10/memory.png 1226w, /wp-content/uploads/2018/10/memory-300x101.png 300w, /wp-content/uploads/2018/10/memory-768x258.png 768w, /wp-content/uploads/2018/10/memory-1024x344.png 1024w" sizes="(max-width: 1226px) 100vw, 1226px" /></p>
+<p>You can see the drop in memory usage from Ecto 2 to Ecto 3 at the moment of the deployment. This particular app loads a bunch of data during boot and we can clearly see the impact those improvements have in the memory usage. Once the system stabilized, the average memory use is 15% less altogether.</p>
+<p>But that&#8217;s not all!</p>
+<p>We also changed Ecto 3.0 to make use of the Erlang VM literal pool, which allows us to share the metadata across queries. For example, if you have two queries, each returning 1000 posts, all 2000 posts will point to the same metadata. These improvements alongside <a href="https://github.com/elixir-ecto/ecto/commit/415ba3df0b3810e5b3393d32a208745e28bd5c20">other changes to reduce struct allocation</a> should reduce Ecto&#8217;s memory usage as a whole.</p>
+<h2>Statement cache for INSERT/UPDATE/DELETE</h2>
+<p>Another notable performance improvement in Ecto 3.0 comes from the fact Ecto now automatically caches statements emitted by <code>Ecto.Repo.insert/update/delete</code>.</p>
+<p>Consider this code:</p>
+<pre><code>for i &lt;- 1..1000 do
+  Repo.insert!(%Post{visits: i})
+end
+</code></pre>
+<p>where Post is a schema with 13 fields. When running this code on my machine against a Postgres database with a pool of 10 connections, it takes 900ms to insert all 1000 posts. While Ecto has always cached select queries, once we also added the statement cache to <code>Ecto.Repo.insert/update/delete</code>, the total operation time is reduced 610ms!</p>
+<p>But that&#8217;s not all!</p>
+<p>Part of the issue here is that every time we call <code>Repo.insert!</code>, Ecto needs to get a new connection out of the connection pool, perform the insert, and give the connection back. For a pool with 10 connections, there is a chance the next connection we pick up is not &#8220;warm&#8221; and we may not hit the statement cache. While it is important to not hold connections for long, so we can best utilize the database resources, in this scenario we know we will perform many operations in a row.</p>
+<p>For this reason, Ecto 3.0 includes a <code>Repo.checkout</code> operation, which allows you to tell the Ecto repository you want to use the same connection, skipping the connection pool and always using a &#8220;warm&#8221; connection:</p>
+<pre><code>Repo.checkout(fn -&gt;
+  for i &lt;- 1..1000 do
+    Repo.insert!(%Post{visits: i})
+  end
+end)
+</code></pre>
+<p>With the change above, all of the inserts take 420ms on average.</p>
+<p>There is one final trick we could use. Since we are performing multiple inserts, we could simply replace <code>Repo.checkout</code> by <code>Repo.transaction</code>. The transaction also checks out a single connection but it also allows the database itself to be more efficient. With this final change, the total time falls down to 320ms. And if you really need to go faster, you can always use <code>Ecto.Repo.insert_all</code>. Hooray!</p>
+<h2>More options around upserts</h2>
+<p>Ecto 2 added <a href="/2016/12/many-to-many-and-upserts/">support for upserts</a>. Ecto 3 brings many improvements to the upsert API, such as the ability to tell Ecto to <code>:replace_all_except_primary_key</code> in case of conflicts or to replace only certain fields by passing <code>on_conflict: {:replace, [:foo, :bar, baz]}</code>. This new version of Ecto also allow custom expressions to be given as <code>:conflict_target</code> by passing <code>{:unsafe_fragment, "be careful with what goes here"}</code> as a value.</p>
+<p>There are many other improvements to the <code>Ecto.Repo</code> API, such as <code>Ecto.Repo.checkout</code>, introduced in the previous section, and the new <code>Ecto.Repo.exists?</code>.</p>
+<h2>Migrations</h2>
+<p>Another area in Ecto (or to be more precise, Ecto.SQL) that saw major improvements is migrations.</p>
+<p>The most important change was a contribution by Allen Madsen that locks the migration table, allowing multiple machines to run migrations at the same time. In previous Ecto versions, if you had multiple machines attempting to run migrations, they could race each other, leading to failures, but now it is guaranteed such can&#8217;t happen. The type of lock can be configured via the <code>:migration_lock</code> repository configuration and defaults to &#8220;FOR UPDATE&#8221; or disabled if set to <code>nil</code>.</p>
+<p>Another improvement is that Ecto is now capable of logging notices/alerts/warnings emitted by the database when running migrations. In previous Ecto versions, if you had a long index name, the database would truncate and emit an alert through the TCP connection, but this alert was never extracted and printed in the terminal. This is no longer the case in Ecto 3.0.</p>
+<p>Similarly, Ecto will now warn if you attempt to run a migration and there is a higher version number already migrated in the database. Imagine you have been working on a feature for a long period of time and you were finally able to merge it to master. Since you started working on this feature, other features and migrations were already shipped to production. This may create an issue on deployment: in case something goes wrong when deploying this new feature and you have to rollback the database, the latest migrations by timestamp does not match the migrations that have just been executed.</p>
+<p>By emitting warnings, we help developers and production teams alike to be aware of such pitfalls.</p>
+<h2>Summing up</h2>
+<p>We are very excited with the many improvements in Ecto 3.0. This short series of articles shares the most notable changes but there is much more. But perhaps the most important feature is that we have announced <a href="https://elixirforum.com/t/ecto-3-0-rc-is-out-and-stable-api/17306">Ecto to be stable API</a> and this is only possible due to the work that Plataformatec and the community has put into Ecto throughout the years. Enjoy!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription"><img loading="lazy" decoding="async" class="aligncenter size-large wp-image-7816" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></p><p>The post <a href="/2018/10/a-sneak-peek-at-ecto-3-0-performance-migrations-and-more/">A sneak peek at Ecto 3.0: performance, migrations and more</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

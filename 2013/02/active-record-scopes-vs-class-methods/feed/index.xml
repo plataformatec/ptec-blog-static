@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Active Record scopes vs class methods	</title>
+	<atom:link href="/2013/02/active-record-scopes-vs-class-methods/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/02/active-record-scopes-vs-class-methods/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 25 Feb 2013 23:45:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1334</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Mon, 25 Feb 2013 23:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1334</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1328&quot;&gt;Paweł Gościcki&lt;/a&gt;.
+
+Yup, I agree that we should make scopes work the same as chaining Arel methods, being combined in the same field instead of overriding the condition. And the same should happen for default_scope, it should combine using scopes or where methods, so that to override any condition you should be very specific about it.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1328">Paweł Gościcki</a>.</p>
+<p>Yup, I agree that we should make scopes work the same as chaining Arel methods, being combined in the same field instead of overriding the condition. And the same should happen for default_scope, it should combine using scopes or where methods, so that to override any condition you should be very specific about it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1333</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Mon, 25 Feb 2013 23:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1333</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1329&quot;&gt;Oleg Keene&lt;/a&gt;.
+
+Oleg, I&#039;ve never seem this before, but if you think it&#039;s a Rails issue I&#039;d ask you to open an issue giving as much information as possible, with more code examples showing your issue there. Thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1329">Oleg Keene</a>.</p>
+<p>Oleg, I&#8217;ve never seem this before, but if you think it&#8217;s a Rails issue I&#8217;d ask you to open an issue giving as much information as possible, with more code examples showing your issue there. Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Paweł Gościcki		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1332</link>
+
+		<dc:creator><![CDATA[Paweł Gościcki]]></dc:creator>
+		<pubDate>Tue, 19 Feb 2013 14:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1332</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1330&quot;&gt;Giovanni Messina&lt;/a&gt;.
+
+Yeah, my example wasn&#039;t too good. But the issue is still there, just it manifests itself a little bit differently. Here are the details: https://github.com/rails/rails/issues/8511]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1330">Giovanni Messina</a>.</p>
+<p>Yeah, my example wasn&#8217;t too good. But the issue is still there, just it manifests itself a little bit differently. Here are the details: https://github.com/rails/rails/issues/8511</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Amir		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1331</link>
+
+		<dc:creator><![CDATA[Amir]]></dc:creator>
+		<pubDate>Mon, 18 Feb 2013 09:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1331</guid>
+
+					<description><![CDATA[Good post, thanks :)]]></description>
+			<content:encoded><![CDATA[<p>Good post, thanks 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Giovanni Messina		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1330</link>
+
+		<dc:creator><![CDATA[Giovanni Messina]]></dc:creator>
+		<pubDate>Sun, 17 Feb 2013 20:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1330</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1319&quot;&gt;Paweł Gościcki&lt;/a&gt;.
+
+maybe I do not understand the point, when I write two scopes of type
+  scope :created_after, -&#062; date { where(&quot;created_at &#062; ? &quot;, date )}
+  scope :created_before, -&#062; data { where(&quot;created_at  &#039;2013-01-17&#039; ) AND (created_at &#060; &#039;2013-02-03&#039; )
+
+Gio]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1319">Paweł Gościcki</a>.</p>
+<p>maybe I do not understand the point, when I write two scopes of type<br />
+  scope :created_after, -&gt; date { where(&#8220;created_at &gt; ? &#8220;, date )}<br />
+  scope :created_before, -&gt; data { where(&#8220;created_at  &#8216;2013-01-17&#8217; ) AND (created_at &lt; &#039;2013-02-03&#039; )</p>
+<p>Gio</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Oleg Keene		</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/comment-page-1/#comment-1329</link>
+
+		<dc:creator><![CDATA[Oleg Keene]]></dc:creator>
+		<pubDate>Sun, 17 Feb 2013 15:38:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3354#comment-1329</guid>
+
+					<description><![CDATA[Can someone explain why scopes are working weird when you inherit from STI class with scopes.
+
+For ex:
+
+class User
+  scope :active, where(...)
+class Admin &#060; User
+
+Admin.active.to_sql will have extra condition of type:
+select * from users where type in (&#039;Admin&#039;, &#039;User&#039;)..]]></description>
+			<content:encoded><![CDATA[<p>Can someone explain why scopes are working weird when you inherit from STI class with scopes.</p>
+<p>For ex:</p>
+<p>class User<br />
+  scope :active, where(&#8230;)<br />
+class Admin &lt; User</p>
+<p>Admin.active.to_sql will have extra condition of type:<br />
+select * from users where type in (&#039;Admin&#039;, &#039;User&#039;)..</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

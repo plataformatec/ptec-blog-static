@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Understanding Devise roles	</title>
+	<atom:link href="/2009/11/understanding-devise-roles/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/11/understanding-devise-roles/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:57:19 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Michael van Rooijen		</title>
+		<link>/2009/11/understanding-devise-roles/comment-page-1/#comment-381</link>
+
+		<dc:creator><![CDATA[Michael van Rooijen]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2009 00:38:29 +0000</pubDate>
+		<guid isPermaLink="false">/?p=426#comment-381</guid>
+
+					<description><![CDATA[Hi! Very nice update! I was actually one of those people that asked if there was a possibility for using another attribute (other than the email attribute) to do authentication with. For my next project (which I&#039;ll be starting on soon) I was still undecided whether to go with Authlogic or Devise. Not because I&#039;d rather use a &quot;username&quot; over &quot;email&quot;, because the next project will probably use the email attribute to authenticate, but because I don&#039;t want to continuously change authentication gems because depending on whether I need another attribute or not. But this update made me decide to go with Devise with new introduction of the scoped authentication feature. Next to just being able to say: &quot;Use the Username Attribute&quot;, that you can say: &quot;Use the Username Attribute that belongs to &#039;this&#039; subdomain/account/website&quot; or whatever. This is actually the perfect solution for one of my current projects, so you at the same time inspired me with this blog post!
+
+Thanks a lot!]]></description>
+			<content:encoded><![CDATA[<p>Hi! Very nice update! I was actually one of those people that asked if there was a possibility for using another attribute (other than the email attribute) to do authentication with. For my next project (which I&#8217;ll be starting on soon) I was still undecided whether to go with Authlogic or Devise. Not because I&#8217;d rather use a &#8220;username&#8221; over &#8220;email&#8221;, because the next project will probably use the email attribute to authenticate, but because I don&#8217;t want to continuously change authentication gems because depending on whether I need another attribute or not. But this update made me decide to go with Devise with new introduction of the scoped authentication feature. Next to just being able to say: &#8220;Use the Username Attribute&#8221;, that you can say: &#8220;Use the Username Attribute that belongs to &#8216;this&#8217; subdomain/account/website&#8221; or whatever. This is actually the perfect solution for one of my current projects, so you at the same time inspired me with this blog post!</p>
+<p>Thanks a lot!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael van Rooijen		</title>
+		<link>/2009/11/understanding-devise-roles/comment-page-1/#comment-888</link>
+
+		<dc:creator><![CDATA[Michael van Rooijen]]></dc:creator>
+		<pubDate>Sun, 22 Nov 2009 00:38:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=426#comment-888</guid>
+
+					<description><![CDATA[Hi! Very nice update! I was actually one of those people that asked if there was a possibility for using another attribute (other than the email attribute) to do authentication with. For my next project (which I&#039;ll be starting on soon) I was still undecided whether to go with Authlogic or Devise. Not because I&#039;d rather use a &quot;username&quot; over &quot;email&quot;, because the next project will probably use the email attribute to authenticate, but because I don&#039;t want to continuously change authentication gems because depending on whether I need another attribute or not. But this update made me decide to go with Devise with new introduction of the scoped authentication feature. Next to just being able to say: &quot;Use the Username Attribute&quot;, that you can say: &quot;Use the Username Attribute that belongs to &#039;this&#039; subdomain/account/website&quot; or whatever. This is actually the perfect solution for one of my current projects, so you at the same time inspired me with this blog post!
+
+Thanks a lot!]]></description>
+			<content:encoded><![CDATA[<p>Hi! Very nice update! I was actually one of those people that asked if there was a possibility for using another attribute (other than the email attribute) to do authentication with. For my next project (which I&#8217;ll be starting on soon) I was still undecided whether to go with Authlogic or Devise. Not because I&#8217;d rather use a &#8220;username&#8221; over &#8220;email&#8221;, because the next project will probably use the email attribute to authenticate, but because I don&#8217;t want to continuously change authentication gems because depending on whether I need another attribute or not. But this update made me decide to go with Devise with new introduction of the scoped authentication feature. Next to just being able to say: &#8220;Use the Username Attribute&#8221;, that you can say: &#8220;Use the Username Attribute that belongs to &#8216;this&#8217; subdomain/account/website&#8221; or whatever. This is actually the perfect solution for one of my current projects, so you at the same time inspired me with this blog post!</p>
+<p>Thanks a lot!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

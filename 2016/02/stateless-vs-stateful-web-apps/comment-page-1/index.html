@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Stateless vs stateful web apps « Plataformatec Blog</title>
+		<meta name="description" content="This blog post talks about the technical requirements and implications of running stateful web apps, and how Phoenix can you with it.">
+		<meta name="robots" content="noindex, nofollow, max-image-preview:large">
+		<link rel="canonical" href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comments">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Stateless vs stateful web apps « Plataformatec Blog">
+		<meta property="og:description" content="This blog post talks about the technical requirements and implications of running stateful web apps, and how Phoenix can you with it.">
+		<meta property="og:url" content="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comments">
+		<meta property="article:published_time" content="2016-02-04T14:00:23+00:00">
+		<meta property="article:modified_time" content="2019-03-03T20:52:00+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Stateless vs stateful web apps « Plataformatec Blog">
+		<meta name="twitter:description" content="This blog post talks about the technical requirements and implications of running stateful web apps, and how Phoenix can you with it.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#article","name":"Stateless vs stateful web apps « Plataformatec Blog","headline":"Stateless vs stateful web apps","author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/georgeguimaraes\/#author"},"publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"},"image":{"@type":"ImageObject","url":"http:\/\/blog.plataformatec.com.br\/wp-content\/uploads\/2015\/05\/elixir-radar-subscribe.png","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#articleImage","width":831,"height":207,"caption":"Subscribe to Elixir Radar"},"datePublished":"2016-02-04T12:00:23-02:00","dateModified":"2019-03-03T17:52:00-03:00","inLanguage":"en-US","commentCount":4,"mainEntityOfPage":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#webpage"},"isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#webpage"},"articleSection":"English, elixir, phoenix"},{"@type":"BreadcrumbList","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/#listItem","position":1,"name":"Home","item":"http:\/\/blog.plataformatec.com.br\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem","position":2,"name":"2016","item":"http:\/\/blog.plataformatec.com.br\/2016\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/02\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/#listItem","position":3,"name":"February","item":"http:\/\/blog.plataformatec.com.br\/2016\/02\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#listItem","position":4,"name":"Stateless vs stateful web apps","previousItem":"http:\/\/blog.plataformatec.com.br\/2016\/02\/#listItem"}]},{"@type":"Organization","@id":"http:\/\/blog.plataformatec.com.br\/#organization","name":"Plataformatec Blog","url":"http:\/\/blog.plataformatec.com.br\/"},{"@type":"Person","@id":"http:\/\/blog.plataformatec.com.br\/author\/georgeguimaraes\/#author","url":"http:\/\/blog.plataformatec.com.br\/author\/georgeguimaraes\/","name":"George Guimarães","image":{"@type":"ImageObject","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#authorImage","url":"http:\/\/2.gravatar.com\/avatar\/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=96&d=mm&r=pg","width":96,"height":96,"caption":"George Guimarães"}},{"@type":"WebPage","@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#webpage","url":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/","name":"Stateless vs stateful web apps « Plataformatec Blog","description":"This blog post talks about the technical requirements and implications of running stateful web apps, and how Phoenix can you with it.","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/#website"},"breadcrumb":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/02\/stateless-vs-stateful-web-apps\/#breadcrumblist"},"author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/georgeguimaraes\/#author"},"creator":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/georgeguimaraes\/#author"},"datePublished":"2016-02-04T12:00:23-02:00","dateModified":"2019-03-03T17:52:00-03:00"},{"@type":"WebSite","@id":"http:\/\/blog.plataformatec.com.br\/#website","url":"http:\/\/blog.plataformatec.com.br\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Stateless vs stateful web apps Comments Feed" href="/2016/02/stateless-vs-stateful-web-apps/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.plataformatec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/5052">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=5052">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2016%2F02%2Fstateless-vs-stateful-web-apps%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2016%2F02%2Fstateless-vs-stateful-web-apps%2F#038;format=xml">
+      </head>
+  <body class="post-template-default single single-post postid-5052 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2016/02/stateless-vs-stateful-web-apps/" rel="bookmark">Stateless vs stateful web apps</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2016-02-04T12:00:23-02:00">Feb 4, 2016</time>
+      <p class="post-author">
+        <img alt="" src="http://2.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=2" title="Posts by George Guimarães">George Guimarães</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>With Rails 5 soon to be released, many developers are planning to further explore Action Cable and add stateful features to their web applications via WebSockets. In this article we will highlight some points worth discussing when deploying such features.</p>
+<p>When we use HTTP, scaling horizontally and vertically is cheaper and easier as the server is stateless. Every request contains all the information for it to be fulfilled, like the current user id stored in a cookie, which is then fetched and processed. From this perspective, once you access a given page, it doesn&#8217;t matter much which server or operating system process is going to fulfill it.</p>
+<p>With WebSockets, instead of isolated requests, you have a long-running conversation. In this setup, clients connect to a single machine and they will stay exchanging messages with that particular machine as long as they are online.</p>
+<h2>Deployment considerations</h2>
+<p>Before moving forward, let&#8217;s try to put some numbers on how your application is affected once you go stateful.</p>
+<p>Imagine you run a newspaper application and you render 100 articles per second. Assuming a uniform load, your infrastructure needs only to handle 100 connections per second. Now imagine you want to use WebSockets so readers can know right away if there is a new comment to the article they are reading. If the average read time per article is of 1 minute, your server now needs to effectively handle 6000 open connections per second (100 articles/s * 60s/article). As a rough estimate, you can expect the number of open connections to be multiplied by the time users spend on the application.</p>
+<p>The first requirement of stateful applications is to handle long-running connections. Your infrastructure must also be able to do so concurrently. From the proxy to webservers, you must be able to hold multiple long-running connections at the same time. Not only that, you want a single webserver to serve as many connections as possible, in the cheapest way as possible (since every single connection costs memory).</p>
+<p>Let&#8217;s continue studying the scenario above. Imagine a new article is published and is receiving 100 requests per second. The article also takes 1 minute to read on average (same numbers as above for simplicity). When someone publishes a new comment, we now need to broadcast this information to all 6000 clients.</p>
+<p>In order to quantify this, let&#8217;s imagine the worst case scenario which you would never want to run in production: where you have a single operating process per WebSocket connection. Once a new comment is published, it would have to be broadcast 6000 times, one for each process, which will then push this information to the client.</p>
+<p>However, if you can hold 6000 connections on a single machine, in the same OS process, the data will be broadcast only once. In other words, you want a single machine to hold as many connections as possible, reducing the latency across your events. The end result will be an increased user experience and reduced infrastructure cost.</p>
+<p>To hold as many connections as possible, your runtime must use your machine resources, like IO and CPU, as efficiently as possible. While the huge majority of languages provide threads, which won&#8217;t block on IO and will provide CPU-based concurrency, not all of them can leverage multi-core efficiently.</p>
+<h2>Blocking considerations</h2>
+<p>One of the concerns when writing stateful apps is how your web server will behave when multiple clients are connected. Because multiple clients may be sending or receiving events at the same time, your runtime needs to be efficient when multiplexing those connections. If your runtime cannot effectively handle incoming CPU activity, different actions can block the connection (or your channels) causing latency to increase considerably, really fast.</p>
+<p>To see how this can impact your clients, imagine you have 1000 channel events from multiple clients to handle, each taking on average 10ms due to CPU. By the time you need to process the 1000th event, that client has already waited 10 seconds (1000 * 10ms). Those problems are much easier to solve in a stateless world because we can easily load balance and send requests to other machines. With WebSockets, the machine you are connected to will be the one doing the work.</p>
+<p>It is extremely important to clarify that almost everything you do in your programming language uses the CPU: calling a method, rendering a template, parsing some data. Because the main Ruby implementation has a Global Virtual Machine Lock, there is a good amount of actions that will block you from executing more than one action at once even when multiple cores are present.</p>
+<p>To work around this limitation in Rails, you typically queue a job that would perform the rendering and publishing of events in the background. Then Rails implements a worker that is started by the job queue and broadcasts the event. This workflow adds a whole amount of indirection which should not really be needed. You need to be careful so workers that are CPU intensive are not running on the same process as your channels as they would be competing for CPU.</p>
+<p>Today we live in a multi-core world. We need to rely on languages that can multiplex both CPU and IO events across multiple cores without locking. And common platforms like Node.js/EventMachine/Twisted are not a solution to this problem exactly because they only cover the IO side, which is not an issue in the majority of threaded languages (including Ruby), while still forcing you to write code in a convoluted callback style way.</p>
+<h2>Comparing infrastructure in Rails and Phoenix</h2>
+<p>To exemplify how proper concurrency support leads to simpler solutions, let&#8217;s compare examples of workflows between channels in Rails and Phoenix and how it affects our infrastructure.</p>
+<p>In Rails we typically move the CPU-intensive tasks to job queues. Therefore the flow for receiving an event from a client and broadcasting it to everyone can be done as follows:</p>
+<ul>
+<li>The client pushes an event to the channel</li>
+<li>The channel puts a job into a job queue</li>
+<li>The job library will instantiate a worker</li>
+<li>The worker transmits the event to the pubsub adapter (Redis or PostgreSQL)</li>
+<li>The pubsub system pushes the broadcast to the server</li>
+<li>The server pushes the broadcast to all clients</li>
+</ul>
+<p>On the other hand, let&#8217;s see how that would work in <a href="http://www.phoenixframework.org/">Phoenix</a>. Phoenix runs on the Erlang VM which provides multi-core and distributed support out of the box. Receiving an event from a client and broadcasting it to everyone in Phoenix works as follows:</p>
+<ul>
+<li>The client pushes an event to the channel</li>
+<li>The channel transmits the event to the pubsub adapter</li>
+<li>The pubsub adapter pushes the broadcast to all clients</li>
+</ul>
+<p>Phoenix does not impose a job queue because Phoenix channels run on the Erlang VM which can leverage all of your machine cores efficiently. If you have 2 or 40 cores, the machine will multiplex CPU-heavy requests, workers and channels across all cores.</p>
+<p>Furthermore, Phoenix does not require external PubSub adapters. For a broadcast that was started on the current machine, the data is broadcast to all connected clients directly, without round-trips to Redis. When deploying to multiple machines, Phoenix runs on distributed mode and automatically broadcasts to other nodes without relying on Redis or Postgres. You get a distributed multi-server abstraction that looks like a single channel.</p>
+<h2>Summing up</h2>
+<p>When running stateful applications, leveraging multi-core concurrency is preferred as it leads to simpler applications and better user experience due to reduced latency.</p>
+<p>When such is not available, developers may need to work around such limitations. This applies to any platform without a proper concurrency model. For example, when using <a href="http://socket.io/">Socket.IO for Node.js</a>, you need to avoid long computations from blocking Node.js&#8217; event loop. When running on cluster mode (for multi-core usage) or in multiple nodes, broadcasts must first be sent to Redis.</p>
+<p>On the other hand, Phoenix channels use all cores, which means developers no longer need to worry about low level details when writing channel code. Phoenix channels are as joyful and productive as any other part of the Phoenix web stack. Phoenix is able to <a href="http://www.phoenixframework.org/blog/the-road-to-2-million-websocket-connections">support 2 million connections on a single node</a> or run in distributed mode without Redis or any other adapter, giving engineers the option of scaling horizontally or vertically (or both).</p>
+<p>The fact Phoenix PubSub does not require external tools paired with the Erlang VM fantastic support for concurrency is what allowed <a href="https://twitter.com/chris_mccord/status/659431759675826176">Phoenix to broadcast a wikipedia article to 2 million clients in about 5 seconds</a>. Of course many developers won&#8217;t push the framework to such limits. Rather they are the guarantee you won&#8217;t have to sacrifice your productivity and code maintainability. You get beautiful code and great user experience without compromises.</p>
+<p>These are some of the many reasons why we are excited about Phoenix. It brings back the simplicity and joy in writing modern web applications by mixing tried and true technologies with a fresh breeze of functional ideas.</p>
+<p><a href="http://www.phoenixframework.org/">You should definitely give it a try</a>!</p>
+<h2>Errata</h2>
+<p>We have removed some inaccuracies in the blog post. We would like to highlight them below.</p>
+<p>In its initial version, we said: &#8220;Currently in Rails, it is advised to deploy at least on two machines, one for stateless and another for stateful clients, and to avoid any blocking action in channels&#8221;. This is no longer true in Rails master, you can deploy on the same machine as long as you use a proper web server (like Puma &#8211; the new default &#8211; or Thin). There is no need to split stateful and stateless load apart.</p>
+<p>We originally wrote: &#8220;It is extremely important to clarify that almost everything you do in your Ruby code uses the CPU&#8221;. That&#8217;s of course true for all programming languages and we didn&#8217;t want to imply it was Ruby specific. We have amended the blog post to avoid any confusion.</p>
+<p>We also mentioned &#8220;The most problematic aspect of Action Cable is that we should not perform any action (IO or CPU) in the channel because it would block the channel.&#8221; Action Cable doesn&#8217;t block on IO. It does not block on CPU per-se, but the Global Virtual Machine Lock will.</p>
+<p>We want to thank Rafael França for helping us with these errata.</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br>
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar"><br>
+</a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/elixir/" rel="tag">elixir</a>, <a href="/tag/phoenix/" rel="tag">phoenix</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2016/02/stateless-vs-stateful-web-apps/#comments"><span class="dsq-postid" data-dsqidentifier="5052 http://blog.plataformatec.com.br/?p=5052">4 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		4 responses to &#8220;Stateless vs stateful web apps&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1558">
+				<div id="div-comment-1558" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://1.gravatar.com/avatar/4569aec00cb223b3fbf484f9e7ba1256?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/4569aec00cb223b3fbf484f9e7ba1256?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Renan Ranelli</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1558">February 4, 2016 at 4:20 pm</a>		</div>
+
+		<p>&#8220;Deployment teams need to manage extra tooling, both in terms of storage, web servers and monitoring.&#8221;</p>
+<p>Its very nice to see such warning. Software engineers often ignore the costs of handling such complex cases in production.</p>
+<p>In non-software engineering, if you wan&#8217;t some piece of equipment to be reliable you really strive to minimize the number of components. Fire safety equipment is a great example of such cases.</p>
+<p>Also, the preempted nature of the Erlang renders the whole &#8220;avoid to block the channel&#8221; problem inexistent. A process will never hang the whole VM even if it takes 5 minutes to complete its task.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1560">
+				<div id="div-comment-1560" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/61ffa5795ca77b7be369ddd38f094ade?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/61ffa5795ca77b7be369ddd38f094ade?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Andrew MacKenzie</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1560">February 10, 2016 at 5:25 am</a>		</div>
+
+		<p>When describing the workflows, please note that &#8220;broadcast&#8221; != &#8220;transmit&#8221;. The only message that is truly &#8220;broadcast&#8221; is the one from the pubsub system out to all clients. </p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1561">
+				<div id="div-comment-1561" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://2.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="/" class="url" rel="ugc">josevalim</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1561">February 10, 2016 at 6:55 am</a>		</div>
+
+		<p>Perfect. I will amend that section, thank you!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1562">
+				<div id="div-comment-1562" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/61ffa5795ca77b7be369ddd38f094ade?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/61ffa5795ca77b7be369ddd38f094ade?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Andrew MacKenzie</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2016/02/stateless-vs-stateful-web-apps/comment-page-1/#comment-1562">February 10, 2016 at 7:37 am</a>		</div>
+
+		<p>np, the semantics are maybe more noticeable to me because I recently worked in the pay tv space where the distinctions between broadcast, multicast and unicast/stream were quite important 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/" rel="prev">Power of the metrics: Don&#8217;t use average to forecast deadlines</a>          <a href="/2016/02/why-we-love-metrics-learning-with-lead-time/" rel="next">Why we love metrics? Learning with Lead time</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+          <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Why your web framework should not adopt Rack API	</title>
+	<atom:link href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 21 Jun 2012 20:27:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Avdi Grimm		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1248</link>
+
+		<dc:creator><![CDATA[Avdi Grimm]]></dc:creator>
+		<pubDate>Thu, 21 Jun 2012 20:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1248</guid>
+
+					<description><![CDATA[&#062; In general, we would like to have a response objects that provides several life-cycle hooks
+
+
+
+
+
+
+I seem to recall saying the same thing to Aaron at some conference a year or so ago. Rack is a great simplifying abstraction, but there&#039;s a limit to what you can do with just one event hook (&quot;on_request&quot;, effectively).]]></description>
+			<content:encoded><![CDATA[<p>&gt; In general, we would like to have a response objects that provides several life-cycle hooks</p>
+<p>I seem to recall saying the same thing to Aaron at some conference a year or so ago. Rack is a great simplifying abstraction, but there&#8217;s a limit to what you can do with just one event hook (&#8220;on_request&#8221;, effectively).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pavel Forkert		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1247</link>
+
+		<dc:creator><![CDATA[Pavel Forkert]]></dc:creator>
+		<pubDate>Mon, 18 Jun 2012 11:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1247</guid>
+
+					<description><![CDATA[ Yeah, I saw your gist earlier. It would be cool, if rack will evolve in it&#039;s API, but providing compatibility layer for &quot;non-streaming&quot; apps (in rails&#039; terms).]]></description>
+			<content:encoded><![CDATA[<p> Yeah, I saw your gist earlier. It would be cool, if rack will evolve in it&#8217;s API, but providing compatibility layer for &#8220;non-streaming&#8221; apps (in rails&#8217; terms).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1246</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sat, 16 Jun 2012 17:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1246</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1245&quot;&gt;Richard Bucker&lt;/a&gt;.
+
+Richard, thanks for the comment. Can you please be a bit more specific?
+
+&#062; I think this is an oversimplification of the solution for which there is no problem.
+
+What is an oversimplication? Which solution (the middleware example given or a Rack API alternative)?
+
+&#062; There are a number of use-cases for which streaming is not the answer.
+
+Agreed. I didn&#039;t say at any moment that streaming is the solution to all problems. In fact, streaming html responses leads to a number of complications, as linked in the post above.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1245">Richard Bucker</a>.</p>
+<p>Richard, thanks for the comment. Can you please be a bit more specific?</p>
+<p>&gt; I think this is an oversimplification of the solution for which there is no problem.</p>
+<p>What is an oversimplication? Which solution (the middleware example given or a Rack API alternative)?</p>
+<p>&gt; There are a number of use-cases for which streaming is not the answer.</p>
+<p>Agreed. I didn&#8217;t say at any moment that streaming is the solution to all problems. In fact, streaming html responses leads to a number of complications, as linked in the post above.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Richard Bucker		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1245</link>
+
+		<dc:creator><![CDATA[Richard Bucker]]></dc:creator>
+		<pubDate>Sat, 16 Jun 2012 16:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1245</guid>
+
+					<description><![CDATA[I think this is an oversimplification of the solution for which there is no problem. There are a number of use-cases for which streaming is not the answer. I can probably come up with more antipatterns than patterns.]]></description>
+			<content:encoded><![CDATA[<p>I think this is an oversimplification of the solution for which there is no problem. There are a number of use-cases for which streaming is not the answer. I can probably come up with more antipatterns than patterns.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1243</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Fri, 15 Jun 2012 18:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1243</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1242&quot;&gt;Maurício Linhares&lt;/a&gt;.
+
+I think we are agreeing then. This is very platform specific so when running on Node.js or Erlang (or thin in Ruby) the backend is inherently async so the cost you mention is quite low (which was what I was arguing). But you are totally correct that depending on your platform, the cost may not be worth it and grab a different stack.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1242">Maurício Linhares</a>.</p>
+<p>I think we are agreeing then. This is very platform specific so when running on Node.js or Erlang (or thin in Ruby) the backend is inherently async so the cost you mention is quite low (which was what I was arguing). But you are totally correct that depending on your platform, the cost may not be worth it and grab a different stack.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Maurício Linhares		</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1242</link>
+
+		<dc:creator><![CDATA[Maurício Linhares]]></dc:creator>
+		<pubDate>Fri, 15 Jun 2012 18:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2820#comment-1242</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1238&quot;&gt;josevalim&lt;/a&gt;.
+
+Very simple example, stream a large (more than 100mb file), you can&#039;t possibly do this in an action based framework without magic (like x-seendfile) simple because you would never want to hang up a thread doing expensive IO operations both on your disk and network, you would select an efficient async implementation that would only write to the socket if there is a buffer available for it.
+
+Another example, reverse proxy, you just can&#039;t write an efficient reverse proxy implementation using the usual request-response cycle inside of a thread, again due to the IO constraints.
+
+So, while it&#039;s perfectly possible to build an async backend and make it look synchronous for clients, it&#039;s a serious waste of resources and could lead to subtle, hard-to-pinpoint bugs.
+
+That&#039;s why I really don&#039;t believe having a single point of entry for both solutions would work, the abstractions would easily leak to the top level layers (the app layer) and people would be struggling to understand what&#039;s going wrong. The Java servlet model is possibly the best, if you want to go request-response directly, just stay where you are, if you want do to streaming or async solutions, pick the new async API and enjoy it.
+
+If there is code that can be shared between both implementations, awesome, share it, but don&#039;t force a single model on top of two very different solutions to the problem.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/comment-page-1/#comment-1238">josevalim</a>.</p>
+<p>Very simple example, stream a large (more than 100mb file), you can&#8217;t possibly do this in an action based framework without magic (like x-seendfile) simple because you would never want to hang up a thread doing expensive IO operations both on your disk and network, you would select an efficient async implementation that would only write to the socket if there is a buffer available for it.</p>
+<p>Another example, reverse proxy, you just can&#8217;t write an efficient reverse proxy implementation using the usual request-response cycle inside of a thread, again due to the IO constraints.</p>
+<p>So, while it&#8217;s perfectly possible to build an async backend and make it look synchronous for clients, it&#8217;s a serious waste of resources and could lead to subtle, hard-to-pinpoint bugs.</p>
+<p>That&#8217;s why I really don&#8217;t believe having a single point of entry for both solutions would work, the abstractions would easily leak to the top level layers (the app layer) and people would be struggling to understand what&#8217;s going wrong. The Java servlet model is possibly the best, if you want to go request-response directly, just stay where you are, if you want do to streaming or async solutions, pick the new async API and enjoy it.</p>
+<p>If there is code that can be shared between both implementations, awesome, share it, but don&#8217;t force a single model on top of two very different solutions to the problem.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

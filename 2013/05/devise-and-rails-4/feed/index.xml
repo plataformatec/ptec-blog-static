@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Devise and Rails 4	</title>
+	<atom:link href="/2013/05/devise-and-rails-4/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/05/devise-and-rails-4/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 11 May 2013 22:37:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Michael Mitchell		</title>
+		<link>/2013/05/devise-and-rails-4/comment-page-1/#comment-1336</link>
+
+		<dc:creator><![CDATA[Michael Mitchell]]></dc:creator>
+		<pubDate>Sat, 11 May 2013 22:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3440#comment-1336</guid>
+
+					<description><![CDATA[Thanks a lot for having Devise ready. Looking forward to trying it with my new Rails 4 project.]]></description>
+			<content:encoded><![CDATA[<p>Thanks a lot for having Devise ready. Looking forward to trying it with my new Rails 4 project.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

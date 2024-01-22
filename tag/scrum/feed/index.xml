@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>scrum « Plataformatec Blog</title>
+	<atom:link href="/tag/scrum/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 May 2014 13:53:04 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How to deal with user stories that are not finished in one sprint</title>
+		<link>/2014/06/how-to-deal-with-user-stories-that-are-not-finished-in-one-sprint/</link>
+		
+		<dc:creator><![CDATA[Caroline Mota]]></dc:creator>
+		<pubDate>Tue, 03 Jun 2014 12:00:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[scrum]]></category>
+		<guid isPermaLink="false">/?p=4026</guid>
+
+					<description><![CDATA[<p>One of the most common questions discussed among the Agile Community is what should be done when a team doesn&#8217;t finish a user story (US) in a sprint? How can people track the progress made on an incomplete user story? In this blog post, I&#8217;ll share our approach to this question. According to the community, ... <a class="read-more-link" href="/2014/06/how-to-deal-with-user-stories-that-are-not-finished-in-one-sprint/">»</a></p>
+<p>The post <a href="/2014/06/how-to-deal-with-user-stories-that-are-not-finished-in-one-sprint/">How to deal with user stories that are not finished in one sprint</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>One of the most common questions discussed among the Agile Community is what should be done when a team doesn&#8217;t finish a user story (US) in a sprint? How can people track the progress made on an incomplete user story? In this blog post, I&#8217;ll share our approach to this question.</p>
+<p>According to the community, when a developer finishes their work in the last few hours of an iteration, they must try to help their teammates finish their work. Otherwise, it&#8217;s recommended they help prepare the next cycle of work, analyzing the next user stories, refactoring a piece of code that could be better implemented, or writing tests. It is not advisable for a developer to get a new user story started if they won&#8217;t be able to finish this in the same cycle. However, this first approach is not always possible because user stories can be underestimated or something can happen that would delay the delivery of the user story.</p>
+<p>A second alternative is to split the user story into two smaller ones and develop the one that can be finished on time. The first user story&#8217;s points are credited in the current cycle, the second one&#8217;s are credited in the next cycle. This approach improves the visibility of what was done in the current cycle. However, it hurts the agile philosophy, in some way it would be a delivery without business value for the customer.</p>
+<p>The third way is for the unfinished user story to go to the next cycle with the original estimate. When it gets completed, the user story&#8217;s full effort estimate gets credited to the velocity of the new iteration. This could skew the average velocity metric, so be careful, because this is important to the Product Owner (PO) for forecasting and planning. Also beware to not have a bunch of backlog items almost done: one user story delivered has more value than a lot of user stories 90% complete.</p>
+<h3>How do we do it?</h3>
+<p>Usually, we use the first and third approaches in the following way:</p>
+<ul>
+<li>We try to concentrate efforts on work that is closest to delivery. As soon as a developer finishes the first US, they will verify if someone needs help with finishing a task or if some user story in the current cycle has defects that need to be fixed. Keeping the work-in-progress as low as possible helps to focus on what matters most. This process is repeated until the end.</li>
+<li>If this list is empty and the cycle is almost over, the developer looks for the smallest or most valuable user story (depending of project&#8217;s context) to be done.</li>
+<li>If the user story has not been finished by the end of the cycle, this US shifts to the next cycle with the original estimate. However, when we plan the next cycle, we&#8217;ll consider just the missing points to finish the US.</li>
+<li>When this US gets finished, we credit the whole user story&#8217;s estimate in our velocity.</li>
+<li>If the developer after resuming the work on the US in the next iteration realizes that the user story was overestimated or underestimated, usually, we don&#8217;t change the estimate on the story itself, but we update our <a href="/2014/04/improve-your-agile-estimates-using-the-ruler-score/">ruler score</a> with the real estimate, as lesson learned.</li>
+</ul>
+<p>Note that we do not use these exact steps every single time, everything depends and adapts according to the context of the project or the moment. The most important thing is you prioritizing to deliver maximum business value to the customer.</p>
+<p>And you? What do you do when you have an unfinished user story in your cycle? Share with us yours experiences!</p><p>The post <a href="/2014/06/how-to-deal-with-user-stories-that-are-not-finished-in-one-sprint/">How to deal with user stories that are not finished in one sprint</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PlataformaTec no Agile Tour 2011</title>
+		<link>/2011/11/plataformatec-no-agile-tour-2011/</link>
+		
+		<dc:creator><![CDATA[Eliel Junior]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2011 13:30:12 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project]]></category>
+		<category><![CDATA[scrum]]></category>
+		<guid isPermaLink="false">/?p=2339</guid>
+
+					<description><![CDATA[<p>Nesse Sábado (19/11), a PlataformaTec estará presente na etapa São Paulo do Agile Tour 2011. O Agile Tour, considerado o maior evento sobre agilidade do mundo, tem como objetivo disseminar a visão, a cultura e as práticas adotadas pela comunidade ágil no desenvolvimento de software através da troca de experiências entre os participante. É uma ... <a class="read-more-link" href="/2011/11/plataformatec-no-agile-tour-2011/">»</a></p>
+<p>The post <a href="/2011/11/plataformatec-no-agile-tour-2011/">PlataformaTec no Agile Tour 2011</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="/wp-content/uploads/2011/11/at2011.jpeg"><img decoding="async" src="/wp-content/uploads/2011/11/at2011.jpeg" alt="Agile Tour 2011" title="Agile Tour 2011" width="255" height="103" class="size-full wp-image-2340" /></a></p>
+<p>Nesse Sábado (19/11), a <a href="http://twitter.com/plataformatec" title="PlataformaTec's twitter">PlataformaTec</a> estará presente na etapa São Paulo do <a href="http://at2011.agiletour.org/en/at2011_saopaulo.html" title="Agile Tour 2011 - São Paulo">Agile Tour 2011</a>.</p>
+<p>O Agile Tour, considerado o maior evento sobre agilidade do mundo, tem como objetivo disseminar a visão, a cultura e as práticas adotadas pela comunidade ágil no desenvolvimento de software através da troca de experiências entre os participante. É uma excelente oportunidade de aprender mais sobre as nuanças do ágil no dia-a-dia dos profissionais.</p>
+<p>Ano passado, em sua terceira edição, o Agile Tour reuniu cerca de 7.500 participantes em 44 cidades espalhadas por 15 países. No Brasil, o evento foi organizado em 5 cidades e atraiu mais de 600 pessoas no total. Esse ano, só no Brasil serão 12 cidades participantes e, com certeza, teremos um recorde no número de inscritos.</p>
+<p>Ao longo do dia teremos nove palestras sobre diferentes temas &#8211; dentre os quais: <strong><em>&#8220;PO, tão simples como dizem?&#8221;</em></strong>, onde estarei representando a PlataformaTec em um bate-papo com o público sobre os skills do <em>Product Owner</em> que nem sempre estão presentes nos projetos ágeis.</p>
+<p>Caso você se interesse pelo assunto, não perca o Agile Tour 2011. Além de ser uma maneira diferente de se aprender mais sobre ágil, é um ótimo canal para conhecer pessoas e ampliar sua rede de contatos.</p>
+<p>Ah, <strong>o evento é gratuito!</strong> Por isso, não perca tempo e se <a href="http://at2011.agiletour.org/en/node/1334" title="Inscrição Agile Tour 2011 - São Paulo">inscreva já</a>!!</p><p>The post <a href="/2011/11/plataformatec-no-agile-tour-2011/">PlataformaTec no Agile Tour 2011</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

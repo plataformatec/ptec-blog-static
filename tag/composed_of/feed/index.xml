@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>composed_of « Plataformatec Blog</title>
+	<atom:link href="/tag/composed_of/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 13 Aug 2012 20:16:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>About the composed_of removal</title>
+		<link>/2012/06/about-the-composed_of-removal/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 20 Jun 2012 14:53:56 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[composed_of]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=2841</guid>
+
+					<description><![CDATA[<p>In this post we talk about the motivation of the composed_of removal in the Rails 4.0 and the possible replacements</p>
+<p>The post <a href="/2012/06/about-the-composed_of-removal/">About the composed_of removal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h3>Update 08/13/2012</h3>
+<p>Since the new <a href="https://twitter.com/rails/status/230724881900261378">deprecation policy</a> the <code>composed_of</code> removal was reverted. We are still discussing the future of this feature.</p>
+<h3>The reason</h3>
+<p>A few days ago we started a discussion about the <a href="https://github.com/rails/rails/pull/6743">removal of the <code>composed_of</code></a> method from Active Record. I started this discussion because when I was tagging every Rails issue according to its framework, I found <a href="https://github.com/rails/rails/issues/1513">some</a> of <a href="https://github.com/rails/rails/pull/3807">them</a> <a href="https://github.com/rails/rails/pull/1436">related</a> to <a href="https://github.com/rails/rails/issues/2084"><code>composed_of</code></a>, that are not only hard to fix but would add more complexity for a feature that, in my opinion, is not adding any visible value to the framework.</p>
+<p><a href="http://confreaks.com/videos/880-railsconf2012-keynote-i-ve-made-a-huge-mistake">In this presentation</a>, <a href="https://twitter.com/tenderlove">Aaron Patterson</a> talks about three types of features: Cosmetic, Refactoring, and Course Correction. Aaron defines cosmetic features as a feature that adds dubious value and unknown debt (I highly recommend that you watch the whole presentation to see more about these types of features). This is exactly what I think about <code>composed_of</code>. At this time this feature is adding more debt than value to the Rails code base and applications, so the Rails team have decided to remove this method.</p>
+<h3>The plan</h3>
+<p>The removal plan is simple, deprecate in 3.2 and remove in 4.0. This means that you need to stop using this feature and implement it in another way.</p>
+<p>The Rails team have chosen this path because this feature can be implemented using plain ruby methods for getters and setters. You will see how in the next section.</p>
+<h3>Implementation</h3>
+<p>In the simplest case, when you have only one attribute and needs to instantiate an object with the value of this attribute, you can use the <code>serialize</code> feature with a custom serializer:</p>
+<pre lang="ruby">
+class MoneySerializer
+  def dump(money)
+    money.value
+  end
+
+  def load(value)
+    Money.new(value)
+  end
+end
+
+class Account < ActiveRecord::Base
+  serialize :balance, MoneySerializer.new
+end
+</pre>
+<p>To use it with multiple attributes you can do the following:</p>
+<pre lang="ruby">
+class Person < ActiveRecord::Base
+  def address
+    @address ||= Address.new(address_street, address_city)
+  end
+
+  def address=(address)
+    self[:address_street] = address.street
+    self[:address_city]   = address.city
+    
+    @address = address
+  end
+end
+</pre>
+<h3>Benefits for Rails developers</h3>
+<p>I already talked about what this removal can provide to Rails maintainers, but what benefits does it bring to Rails developers?</p>
+<p>I think that the best advantages are:</p>
+<ul>
+<li>It is easier to test the composite objects;</li>
+<li>It is easier to understand the lazy methods;</li>
+<li>It is easier to customize it without resorting to options like <code>:converter</code>, <code>:constructor</code> and <code>:allow_nil</code>.</li>
+</ul>
+<h3>Wrapping up</h3>
+<p>I strongly recommend that you read the whole discussion in the <a href="https://github.com/rails/rails/pull/6743">pull request</a>. You will find more examples and additional information there.</p>
+<p>Also, I want to thank <a href="https://twitter.com/steveklabnik">@steveklabnik</a> for working on this feature and the awesome work that he has been doing on the Rails Issues Team.</p>
+<p>Finally, I want to invite you to help the Rails team to fix, test, and track issues. About half of the issues are related to the Active Record framework and we need to work on them. As a regular Rails contributor and Rails developer, I think there is still a lot we can do to improve the Rails code base, so join us.</p><p>The post <a href="/2012/06/about-the-composed_of-removal/">About the composed_of removal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

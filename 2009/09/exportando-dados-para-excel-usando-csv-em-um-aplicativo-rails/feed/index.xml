@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Exportando dados para Excel usando CSV em um aplicativo Rails	</title>
+	<atom:link href="/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 27 Sep 2009 16:30:09 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: George Guimarães		</title>
+		<link>/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/comment-page-1/#comment-282</link>
+
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Sun, 27 Sep 2009 16:30:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=308#comment-282</guid>
+
+					<description><![CDATA[Valeu Túlio,
+
+Já está corrigido. =)]]></description>
+			<content:encoded><![CDATA[<p>Valeu Túlio,</p>
+<p>Já está corrigido. =)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: George Guimarães		</title>
+		<link>/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/comment-page-1/#comment-833</link>
+
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Sun, 27 Sep 2009 16:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=308#comment-833</guid>
+
+					<description><![CDATA[Valeu Túlio,
+
+Já está corrigido. =)]]></description>
+			<content:encoded><![CDATA[<p>Valeu Túlio,</p>
+<p>Já está corrigido. =)</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Túlio		</title>
+		<link>/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/comment-page-1/#comment-281</link>
+
+		<dc:creator><![CDATA[Túlio]]></dc:creator>
+		<pubDate>Sun, 27 Sep 2009 14:51:49 +0000</pubDate>
+		<guid isPermaLink="false">/?p=308#comment-281</guid>
+
+					<description><![CDATA[Parabéns pelo blog, o excel realmente é um pé no saco...
+Só uma correção, você colocou stylesheet ao invés de spreadsheet no final, na dica do @jncoward.
+o/]]></description>
+			<content:encoded><![CDATA[<p>Parabéns pelo blog, o excel realmente é um pé no saco&#8230;<br />
+Só uma correção, você colocou stylesheet ao invés de spreadsheet no final, na dica do @jncoward.<br />
+o/</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Túlio		</title>
+		<link>/2009/09/exportando-dados-para-excel-usando-csv-em-um-aplicativo-rails/comment-page-1/#comment-832</link>
+
+		<dc:creator><![CDATA[Túlio]]></dc:creator>
+		<pubDate>Sun, 27 Sep 2009 14:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=308#comment-832</guid>
+
+					<description><![CDATA[Parabéns pelo blog, o excel realmente é um pé no saco...
+Só uma correção, você colocou stylesheet ao invés de spreadsheet no final, na dica do @jncoward.
+o/]]></description>
+			<content:encoded><![CDATA[<p>Parabéns pelo blog, o excel realmente é um pé no saco&#8230;<br />
+Só uma correção, você colocou stylesheet ao invés de spreadsheet no final, na dica do @jncoward.<br />
+o/</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

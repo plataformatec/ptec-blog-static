@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>simple_form « Plataformatec Blog</title>
+	<atom:link href="/tag/simple_form/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 27 Sep 2019 20:07:36 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Incorrect Access Control in Simple Form (CVE-2019-16676)</title>
+		<link>/2019/09/incorrect-access-control-in-simple-form-cve-2019-16676/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Fri, 27 Sep 2019 17:19:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=9352</guid>
+
+					<description><![CDATA[<p>Simple Form version 5.0 was released today with a fix for a security issue that could allow an attacker to execute methods on form objects. The issue is explained in details below.</p>
+<p>The post <a href="/2019/09/incorrect-access-control-in-simple-form-cve-2019-16676/">Incorrect Access Control in Simple Form (CVE-2019-16676)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Simple Form version&nbsp;<code>5.0</code>&nbsp;was released today with a fix for a security issue that could allow an attacker to execute methods on form objects. The issue is explained in details below.</p>
+
+
+
+<h2 class="wp-block-heading" id="description">Description</h2>
+
+
+
+<p>The issue applies only to forms that are built using user-supplied input. For example, the following form that builds a label based on user input:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">simple_form_for</span> @<span class="hljs-attr">user</span> <span class="hljs-attr">do</span> |<span class="hljs-attr">form</span>| %&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">form.label</span> @<span class="hljs-attr">user_supplied_string</span> %&gt;</span>
+  ...
+<span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">end</span> %&gt;</span>
+</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In this case, the&nbsp;<code>@user_supplied_string</code>&nbsp;would be invoked as a method call in the&nbsp;<code>@user</code>&nbsp;object (unless the string contains any of the following:&nbsp;<code>password</code>,&nbsp;<code>time_zone</code>,&nbsp;<code>country</code>,&nbsp;<code>email</code>,&nbsp;<code>phone</code>&nbsp;or&nbsp;<code>url</code>).</p>
+
+
+
+<p>If you build your forms with backend-provided information only, your application is not affected by this issue.</p>
+
+
+
+<h2 class="wp-block-heading" id="possible-implications">Possible implications</h2>
+
+
+
+<p>By knowing that this breach exists, an attacker could invoke any method on the form object. This means that they could do any of the following:</p>
+
+
+
+<ul><li>Code execution (call unintended actions like&nbsp;<code>#destroy</code>)</li><li>Denial of Service (by executing computation-intensive actions)</li><li>Information Disclosure (check the presence of methods, leak user information)</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="cause">Cause</h2>
+
+
+
+<p>The issue is caused by Simple Form’s automatically discover of input types feature. When a form input is provided without the&nbsp;<code>as</code>&nbsp;option, the library tries to discover which type that input is. This is done with a regular expression for the most common types. Something like this:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript"><span class="hljs-keyword">case</span> attribute_name.to_s
+when /(?:\b|\W|_)password(?:\b|\W|_)/  then :password
+when /(?:\b|\W|_)time_zone(?:\b|\W|_)/ then :time_zone
+when /(?:\b|\W|_)country(?:\b|\W|_)/   then :country
+when /(?:\b|\W|_)email(?:\b|\W|_)/     then :email
+when /(?:\b|\W|_)phone(?:\b|\W|_)/     then :tel
+when /(?:\b|\W|_)url(?:\b|\W|_)/       then :url
+</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>This works for a bunch of input types but it doesn’t for file inputs. In the case of file inputs, they can have a lot of different names &#8211;&nbsp;<code>avatar</code>,&nbsp;<code>attachment</code>,&nbsp;<code>profile_image</code>&nbsp;and so on.</p>
+
+
+
+<p>In order to discover file inputs, Simple Form was calling&nbsp;<code>#send</code>&nbsp;on the object passing&nbsp;<code>attribute_name</code>&nbsp;as the parameter. That would result in an object, which would then later be checked against a list of file methods, to decide whether that attribute should be a file input or not:</p>
+
+
+<pre class="wp-block-code"><div><code class="hljs">def file_method?(attribute_name)
+  file = @object.send(attribute_name) if @object.respond_to?(attribute_name)
+  file &amp;&amp; SimpleForm.file_methods.any? { |m| file.respond_to?(m) }
+end
+</code></div></pre>
+
+
+<p>The default value of the&nbsp;<code>SimpleForm.file_methods</code>&nbsp;config was:&nbsp;<code>[:mounted_as, :file?, :public_filename, :attached?]</code>&nbsp;which are basically methods present in some popular file upload Gems.</p>
+
+
+
+<h2 class="wp-block-heading" id="solution">Solution</h2>
+
+
+
+<p>Simple Form was changed to check in a different way whether some attribute might be suitable for a file input. It now checks for the presence of methods directly, without calling&nbsp;<code>#send</code>. For example, the check for ActiveStorage looks like this:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-keyword">@object</span>.respond_to?("#{<span class="hljs-selector-tag">attribute_name</span>}_<span class="hljs-selector-tag">attachment</span>")
+</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The officially supported Gems are:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/rails/rails/tree/6-0-stable/activestorage" target="_blank">ActiveStorage</a>&nbsp;&gt;= 5.2</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/carrierwaveuploader/carrierwave" target="_blank">Carrierwave</a>&nbsp;&gt;= 0.2.1</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/refile/refile" target="_blank">Refile</a>&nbsp;&gt;= 0.2.0</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/shrinerb/shrine" target="_blank">Shrine</a>&nbsp;&gt;= 0.9.0</li><li><a href="https://github.com/thoughtbot/paperclip" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Paperclip</a>&nbsp;&gt;= 2.0 (for backwards compatibility)</li></ul>
+
+
+
+<p>Although this new code is harder to maintain, we think it’s worth the tradeoff with more security. See the <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/plataformatec/simple_form/commit/8c91bd76a5052ddf3e3ab9fd8333f9aa7b2e2dd6" target="_blank">commit</a> with the solution for more information.</p>
+
+
+
+<p><strong>Note:</strong>&nbsp;This solution does not support multiple file upload inputs, as this is very application-specific. To render file input for multiple file upload, use the&nbsp;<code>as</code>&nbsp;option.</p>
+
+
+
+<h2 class="wp-block-heading" id="how-to-upgrade">How to upgrade</h2>
+
+
+
+<p>You might have noticed that we released this fix in a major version (<code>5.0</code>). This was done because to fix the issue, we had to fully deprecate the&nbsp;<code>SimpleForm.file_methods</code>&nbsp;configuration. There are no other breaking changes in this release, so it should be easy to upgrade.</p>
+
+
+
+<p>If you had changed the&nbsp;<code>SimpleForm.file_methods</code>&nbsp;configuration to include other methods, please check whether they are from one of the supported Gems. If they are, you should be fine without them. If they are from another upload library, please&nbsp;<a href="https://github.com/plataformatec/simple_form/issues/new" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">open an issue</a>&nbsp;asking for support and we’ll take a look into it.</p>
+
+
+
+<p>In the meantime, you can explicitly say which type the input is:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="HTML, XML" data-shcb-language-slug="xml"><div><code class="hljs language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">form.input</span> <span class="hljs-attr">:avatar</span>, <span class="hljs-attr">as:</span> <span class="hljs-attr">:file</span> %&gt;</span>
+</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">HTML, XML</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">xml</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading" id="cant-upgrade">Can’t upgrade?</h3>
+
+
+
+<p>If you can’t upgrade for any reason but want to be protected from the security breach, you can also explicitly pass the input type &#8211; using&nbsp;<code>as</code>&nbsp;&#8211; to your user-based forms. That would make Simple Form return early and not execute the user input on the object.</p>
+
+
+
+<h2 class="wp-block-heading" id="acknowledgments">Acknowledgments</h2>
+
+
+
+<p>We want to thank&nbsp;<a href="https://github.com/tessi/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Philipp Tessenow</a>, who reported the issue with all the necessary details and was helpful throughout the steps of the fix until the release. Thanks!</p><p>The post <a href="/2019/09/incorrect-access-control-in-simple-form-cve-2019-16676/">Incorrect Access Control in Simple Form (CVE-2019-16676)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Bootstrap 3 support for Simple Form</title>
+		<link>/2014/04/bootstrap-3-support-for-simple-form/</link>
+					<comments>/2014/04/bootstrap-3-support-for-simple-form/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Mon, 14 Apr 2014 16:22:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[bootstrap]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3855</guid>
+
+					<description><![CDATA[<p>We just released Simple Form 3.1.0.rc1 with support to Bootstrap 3. To make it possible, we leveled up the Wrapper API to make it more extensible and to allow developers to directly configure it instead of relying on global state. After such improvements, it was very easy to change the Simple Form configuration to work ... <a class="read-more-link" href="/2014/04/bootstrap-3-support-for-simple-form/">»</a></p>
+<p>The post <a href="/2014/04/bootstrap-3-support-for-simple-form/">Bootstrap 3 support for Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We just released Simple Form 3.1.0.rc1 with support to <a href="http://getbootstrap.com/">Bootstrap 3</a>.</p>
+<p>To make it possible, we leveled up the Wrapper API to make it more extensible and to allow developers to directly configure it instead of relying on global state. After such improvements, it was very easy to change the Simple Form configuration to work with Bootstrap 3. I&#8217;ll talk more about this in a future post.</p>
+<p>Integrating Bootstrap with Simple Form should be as easy as it was before. We are working on the documentation before the final release but you can find examples about how to integrate Simple Form with Bootstrap in our <a href="http://simple-form-bootstrap.plataformatec.com.br/">sample application</a>. The <a href="https://github.com/rafaelfranca/simple_form-bootstrap">app source code is available too</a>.</p>
+<p>Besides this main feature, Simple Form&#8217;s new 3.1.0 comes with a lot of enhancements. You can find the whole list of changes in the <a href="https://github.com/plataformatec/simple_form/blob/v3.1.0.rc1/CHANGELOG.md">CHANGELOG file</a>.</p>
+<p>I hope you are excited about this release as much as we are. Please try out the release candidate and if you find an issue, report at the <a href="https://github.com/plataformatec/simple_form/issues">Simple Form issues tracker</a>.</p>
+<p>We plan to release the final version in a month or so, and we&#8217;ll write a new blog post with more details about Simple Form 3.1.</p>
+<h3>Acknowledgments</h3>
+<p>We, at Plataformatec, have worked hard to get this release out, with <a href="https://github.com/laurocaetano">Lauro Caetano</a> and <a href="https://github.com/rafaelfranca">Rafael França</a> (it&#8217;s me!) working together on this final sprint. Also kudos to <a href="https://github.com/Nerian">Gonzalo Rodríguez-Baltanás Díaz</a> and the whole community for helping us to improve the sample application.</p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/04/bootstrap-3-support-for-simple-form/">Bootstrap 3 support for Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/04/bootstrap-3-support-for-simple-form/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XSS vulnerability on Simple Form</title>
+		<link>/2013/11/xss-vulnerability-on-simple-form/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Fri, 29 Nov 2013 15:55:41 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[security fix]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3658</guid>
+
+					<description><![CDATA[<p>There is a XSS vulnerability on Simple Form's label, hint and error options. Fixed versions: 3.0.1, 2.1.1</p>
+<p>The post <a href="/2013/11/xss-vulnerability-on-simple-form/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s label, hint and error options.</p>
+<p>Versions affected: >= 1.1.1<br />
+Not affected: &lt; 1.1.1<br />
+Fixed versions: 3.0.1, 2.1.1</p>
+<h3>Impact</h3>
+<p>When Simple Form creates a label, hint or error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the text of these helpers can be provided by the users, malicious values can be provided and Simple Form will mark it as safe.</p>
+<h3>Releases</h3>
+<p>The 3.0.1 and 2.1.1 releases are available at the normal locations.</p>
+<h3>Workarounds</h3>
+<p>If you are unable to upgrade, you can change your code to escape the input before sending to Simple Form</p>
+<pre lang="ruby">
+f.input :name, label: html_escape(params[:label])
+</pre>
+<h3>Patches</h3>
+<p>To aid users who aren&#8217;t able to upgrade immediately we have provided patches. They are in git-am format and consist of a single changeset.</p>
+<ul>
+<li><a href="https://gist.github.com/rafaelfranca/ff2c89e7ca9da63aaf34/raw/e7ba922991b99c64e052304879109e20cd8b64e2/3-0-xss-fix.patch">3-0-xss-fix.patch</a> &#8211; Patch for 3.0 series </li>
+<li><a href="https://gist.github.com/rafaelfranca/a5d4a703a09e1f37c7dd/raw/1f48c75090b5d4e84ddea2fc8688fdfffb815a4f/2-1-xss-fix.patch">2-1-xss-fix.patch</a> &#8211; Patch for 2.1 series</li>
+</ul>
+<h3>Credits</h3>
+<p>Thank you to Paul McMahon from Doorkeeper for reporting the issue and working with us in a fix.</p><p>The post <a href="/2013/11/xss-vulnerability-on-simple-form/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Devise and Rails 4</title>
+		<link>/2013/05/devise-and-rails-4/</link>
+					<comments>/2013/05/devise-and-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 10 May 2013 20:36:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[mail_form]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3440</guid>
+
+					<description><![CDATA[<p>Devise 3.0 rc version with Rails 4 compatibility and new 2.2.4 stable version. Simple Form, Responders, Show For and Mail Form versions with Rails 4 compatibility.</p>
+<p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This week we released the first release candidate version of Devise that is fully compatible with Rails 4, and we&#8217;re bumping its version to 3.0. This version completely drops support for Rails 3.1 and Ruby 1.8.7, only keeping compatibility with both Rails 3.2 and Rails 4, running with Ruby 1.9.3 and 2.0.</p>
+<p>This rc version took some time to get ready, we&#8217;ve been running a <em>rails4</em> branch for some time already and one of the reasons was because of the changes required to <a href="https://github.com/plataformatec/devise/commit/c63483ae2409ba44889756796930f5d45630d7b3">make it compatible with the new <strong>strong parameters</strong> API from Rails 4</a>. We are aware that some people have been using this branch since Rails 4.0 beta1 with success, and we&#8217;re now inviting you to try 3.0 rc with the <a href="http://weblog.rubyonrails.org/2013/5/1/Rails-4-0-release-candidate-1/">recent release of Rails 4.0 rc1</a>.</p>
+<h3>Devise stable</h3>
+<p>Together with the 3.0 beta version, we&#8217;ve released Devise 2.2.4 with a few enhancements and bug fixes, make sure to <a href="https://github.com/plataformatec/devise/blob/v2.2.4/CHANGELOG.rdoc">check the changelog</a> to see the new goodies. All changes are also included in the rc version.</p>
+<h3>Simple Form</h3>
+<p>Simple Form has been running a 3.0 rc version for a couple months already, fully compatible with Rails 4 as well, and today we are releasing its release candidate version. In Simple Form master we just dropped support to the 3.x Rails series, focusing our work on Rails 4 compatibility from now on, due to a series of improvements in Rails 4 regarding form helpers &#8211; but don&#8217;t worry, we will be keeping a v2.1 branch with Rails 3.2 compatibility for a while.</p>
+<p>We have some cool plans to improve the wrappers API even further, but that&#8217;s subject for another blog post :).</p>
+<h3>Responders</h3>
+<p>Responders has been around for quite some time already and we use it in most of our projects, so today we&#8217;re celebrating its 1.0 release candidate version, specially to support Rails 4.</p>
+<h3>Show For</h3>
+<p>Show For just got a new stable release, v0.2.6, with all the enhancements and bug fixes that were in master, plus a v0.3.0 rc version that adds Rails 4 support.</p>
+<h3>Mail Form</h3>
+<p>Mail Form also got a new 1.5 rc release with Rails 4.0 compatibility. Nothing else has changed from the current 1.4 version.</p>
+<h3>Has Scope</h3>
+<p>Has Scope is getting a new 0.6 rc version with Rails 4.0 compatibility, including a couple of fixes that were already present in master.</p>
+<h2>Compatibility</h2>
+<p>All these new releases are officially dropping support to Rails 3.0 and 3.1, and Ruby 1.8.7. We&#8217;ll keep compatibility with Rails 3.2 and 4.0 from now on, all of them on the same branches except for Simple Form which has different branches for each Rails version.</p>
+<h2>Wrapping up</h2>
+<p>We&#8217;ve got new hot releases for you to try out with Rails 4, please give them a try and let us know if you find any issue or have any feedback.</p>
+<p>We&#8217;d also like to specially thank everyone involved in helping us getting these projects up and running in Rails 4, without you folks that&#8217;d have never been possible.</p>
+<p>Enjoy &lt;3</p><p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/devise-and-rails-4/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm 2.0 + Bootstrap: for you with love</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/</link>
+					<comments>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Thu, 23 Feb 2012 16:54:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<category><![CDATA[twitter bootstrap]]></category>
+		<guid isPermaLink="false">/?p=2469</guid>
+
+					<description><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you, not a small bump, but a shiny new version: Simple Form 2.0. Simple Form 2.0 features a new wrapper API which makes it very flexible and easy to integrate with CSS frameworks like Twitter Bootstrap.</p>
+<p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The Carnival is over in Brazil but we are still partying at Plataformatec by bringing you a complete new release of SimpleForm. This time is not a small bump though, it&#8217;s a shiny new version: <a href="https://github.com/plataformatec/simple_form" title="SimpleForm">SimpleForm 2.0</a>, that comes with a bunch of new features and customizations, a new wrapper API to create custom input stacks and a great integration with <a href="http://twitter.github.com/bootstrap" title="Twitter Bootstrap">Twitter Bootstrap</a>.</p>
+<h3>Wrappers API</h3>
+<p>The new wrappers API is here in place of the old <code>components</code> option (besides some other *_tag and *_class configs), to add more flexibility to the way you build SimpleForm inputs. Here is an example of the default wrapper config that ships with SimpleForm when you run its install generator:</p>
+<pre lang="ruby">
+config.wrappers :default, :class => :input,
+  :hint_class => :field_with_hint, :error_class => :field_with_errors do |b|
+  ## Extensions enabled by default
+  # Any of these extensions can be disabled for a
+  # given input by passing: `f.input EXTENSION_NAME => false`.
+  # You can make any of these extensions optional by
+  # renaming `b.use` to `b.optional`.
+
+  # Determines whether to use HTML5 (:email, :url, ...)
+  # and required attributes
+  b.use :html5
+
+  # Calculates placeholders automatically from I18n
+  # You can also pass a string as f.input :placeholder => "Placeholder"
+  b.use :placeholder
+
+  ## Optional extensions
+  # They are disabled unless you pass `f.input EXTENSION_NAME => :lookup`
+  # to the input. If so, they will retrieve the values from the model
+  # if any exists. If you want to enable the lookup for any of those
+  # extensions by default, you can change `b.optional` to `b.use`.
+
+  # Calculates maxlength from length validations for string inputs
+  b.optional :maxlength
+
+  # Calculates pattern from format validations for string inputs
+  b.optional :pattern
+
+  # Calculates min and max from length validations for numeric inputs
+  b.optional :min_max
+
+  # Calculates readonly automatically from readonly attributes
+  b.optional :readonly
+
+  ## Inputs
+  b.use :label_input
+  b.use :hint,  :wrap_with => { :tag => :span, :class => :hint }
+  b.use :error, :wrap_with => { :tag => :span, :class => :error }
+end
+</pre>
+<p>Wrappers are used by the form builder to generate a complete input. You can remove any component from the wrapper, change the order or even add your own to the stack.</p>
+<p>The <code>:default</code> wrapper is going to be used in all forms by default. You can also select which wrapper to use per form, by naming them:</p>
+<pre lang="ruby">
+# Given you added this wrapper in your SimpleForm initializer:
+config.wrappers :small do |b|
+  b.use :placeholder
+  b.use :label_input
+end
+
+# Uses the :small wrapper for all inputs in this form.
+simple_form_for @user, :wrapper => :small do |f|
+  f.input :name
+end
+</pre>
+<p>Or you can just pick a different wrapper in a specific input if you want:</p>
+<pre lang="ruby">
+# Uses the default wrapper for other inputs, and :small for :name.
+simple_form_for @user do |f|
+  f.input :name, :wrapper => :small
+end
+</pre>
+<p>You can see a more detailed description of the new <a href="http://simple-form.plataformatec.com.br/#configuration/the-wrappers-api" title="SimpleForm 2.0 wrappers API docs">wrappers API in the documentation</a>.</p>
+<h3>Twitter Bootstrap</h3>
+<p>The second big change in SimpleForm 2.0 is out of the box Bootstrap integration. SimpleForm now ships with a generator option to initialize your application with a set of specific wrappers customized for Bootstrap. To get them, just run in your terminal, inside a Rails application (with SimpleForm already installed):</p>
+<pre>
+rails generate simple_form:install --bootstrap
+</pre>
+<p>This gives you the default SimpleForm initializer in <code>config/initializers/simple_form.rb</code> with some extra integration code added for Bootstrap. For example, here is the default wrapper:</p>
+<pre lang="ruby">
+config.wrappers :bootstrap, :tag => 'div', :class => 'control-group', 
+  :error_class => 'error' do |b|
+  b.use :placeholder
+  b.use :label
+  b.wrapper :tag => 'div', :class => 'controls' do |ba|
+    ba.use :input
+    ba.use :error, :wrap_with => { :tag => 'span', :class => 'help-inline' }
+    ba.use :hint,  :wrap_with => { :tag => 'p', :class => 'help-block' }
+  end
+end
+</pre>
+<p>This wrapper is setup with the same structure that Bootstrap expects and is set to be the default wrapper in your application. This is <strong>the killer feature in SimpleForm 2.0</strong>: the Bootstrap integration is not inside SimpleForm but all in your application. This means that, if you want to move away or customize Bootstrap in the future, you don&#8217;t need to monkey patch SimpleForm, everything is in your app!</p>
+<p>We&#8217;ve set up a <a href="http://simple-form-bootstrap.plataformatec.com.br/articles/new" title="SimpleForm Bootstrap example application">live example application showing most of the SimpleForm inputs integrated with Twitter Bootstrap</a>, make sure you check it out! The <a href="https://github.com/rafaelfranca/simple_form-bootstrap" title="SimpleForm Bootstrap example application code">application code is on github</a>.</p>
+<p>Keep reading this blog post to find out the other changes and deprecations that gave SimpleForm all this extra flexibility, allowing it to be easily integrated with Twitter Bootstrap 2.0. </p>
+<h3>New configs</h3>
+<p>SimpleForm 2.0 comes with some new configs to ease its integration with Bootstrap and to make your daily work even more flexible:</p>
+<ul>
+<li><code>default_wrapper</code>: defines the default wrapper to be used when no one is given.</li>
+<li><code>button_class</code>: defines a class to add for all buttons.</li>
+<li><code>boolean_style</code>: change the way booleans (mainly check boxes and radio buttons) are shown: <code>:inline</code> (the default) uses the same structure as before, checkbox + label; <code>:nested</code> (generated for new apps) puts the checkbox inside the label, as label > checkbox.</li>
+<li><code>collection_wrapper_class</code>: class to add in all collections (check boxes / radio buttons), given <code>collection_wrapper_tag</code> is set.</li>
+<li><code>item_wrapper_class</code>: class to add to all items in a collection.</li>
+<li><code>generate_additional_classes_for</code>: allows you to specify whether to generate the extra css classes for inputs, labels and wrappers. By default SimpleForm always generate all classes, such as input type and required info, to all of them. You can be more selective and tell SimpleForm to just add such classes to the input or wrapper, by changing this config.</li>
+</ul>
+<h3>Deprecations</h3>
+<p>In order to create the new wrappers API, we had to deprecate some configs and change some helpers, so here is a basic summary of what is being deprecated:</p>
+<h4>Configs</h4>
+<ul>
+<li><code>translate</code>: By making <code>placeholder</code> and <code>hint</code> <code>optional</code> options in the wrappers API, you can already disable the automatic translation attempt that happens for these components. <code>labels</code>, on the other hand, are always used in forms, so we added a special config for them: <code>translate_labels</code>.</li>
+<li><code>html5</code>: this config is now part of the wrappers API, with <code>b.use :html5</code>, so the config option has been deprecated.</li>
+<li><code>error_notification_id</code>: in favor of using <code>error_notification_class</code> only.</li>
+<li><code>wrapper_tag=, wrapper_class=, wrapper_error_class=, error_tag=, error_class=, hint_tag=, hint_class=, components=</code>: all these were moved to the wrappers API structure, and are not required anymore.</li>
+</ul>
+<h4>Helpers</h4>
+<ul>
+<li><code>:radio</code> input type: In order to integrate with Bootstrap, we had to get rid of the <code>:as => :radio</code> and use <code>:as => :radio_buttons</code> instead. The former still works, but will give you a bunch of deprecation warnings. CSS class names changed accordingly as well</li>
+<li><code>collection_radio</code>: has changed to <code>collection_radio_buttons</code> to follow the <code>:as => :radio_buttons</code> change. Its label class has changed as well based on the helper name.</li>
+</ul>
+<h3>Wrapping up</h3>
+<p>SimpleForm 2.0 comes with a lot of new features, in special the new wrappers API, to make it flexible enough to allow you to customize inputs as much as possible in an easier way, and to bring you the integrated Bootstrap structure.</p>
+<p>Make sure you check out the new <a href="http://simple-form.plataformatec.com.br/" title="SimpleForm README">SimpleForm README</a> and also the <a href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.md" title="SimpleForm CHANGELOG">CHANGELOG</a> for a full list of changes. We&#8217;ve also created an special wiki page to help you <a href="https://github.com/plataformatec/simple_form/wiki/Upgrading-to-Simple-Form-2.0" title="Upgrading to SimpleForm 2.0">Upgrading to SimpleForm 2.0</a>. </p>
+<p>If you find any trouble while migrating to 2.0, or any issue with Bootstrap integration, or any other issue, please let us know in the <a href="https://github.com/plataformatec/simple_form/issues" title="SimpleForm issues tracker">issues tracker</a>. And if you have any questions, make sure to send them to the <a href="http://groups.google.com/group/plataformatec-simpleform" title="SimpleForm mailing list">mailing list</a>, there are a lot of people there to help you.</p>
+<p>All our development team and an <a href="https://github.com/plataformatec/simple_form/contributors" title="SimpleForm contributors">amazing number of contributors</a> put a lot of effort into this new release and we hope you will enjoy it. SimpleForm 2.0 + Bootstrap: from us, for you, with love.</p>
+<p>Thoughts about SimpleForm 2.0? Please let us know in the comments.</p><p>The post <a href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/">SimpleForm 2.0 + Bootstrap: for you with love</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>SimpleForm 1.4 is out</title>
+		<link>/2011/05/simpleform-1-4-is-out/</link>
+					<comments>/2011/05/simpleform-1-4-is-out/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 18 May 2011 17:10:22 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[gems]]></category>
+		<category><![CDATA[html 5]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=2051</guid>
+
+					<description><![CDATA[<p>I&#8217;m pleased to say that we released SimpleForm 1.4. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features: Custom Form Builders Now you can set a custom form builder that inherits from SimpleForm::FormBuilder: ... <a class="read-more-link" href="/2011/05/simpleform-1-4-is-out/">»</a></p>
+<p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;m pleased to say that we released <a href="https://github.com/plataformatec/simple_form">SimpleForm 1.4</a>. Like the last version, this release had a lot of contributions from the community, closing bugs and adding some nice features. Here is a brief introduction to some of the new features:</p>
+<h3>Custom Form Builders</h3>
+<p>Now you can set a custom form builder that inherits from <code>SimpleForm::FormBuilder</code>:</p>
+<pre lang="ruby">class CustomBuilder < SimpleForm::FormBuilder
+  def input(attribute_name, options={}, &#038;block)
+    options[:input_html].merge! :class => 'custom'
+    super
+  end
+end</pre>
+<p>And use it straight in the <code>simple_form_for</code> helper, like the example below:</p>
+<pre lang="ruby"><%= simple_form_for(@user, :builder => CustomBuilder) do |f| %>
+  <%= f.input :name %>
+<% end %></pre>
+<h3>Custom Inputs</h3>
+<p>SimpleForm has many different inputs available in its source code. But, sometimes, depending on the business logic the application requires, we need to add new inputs to make our work easier. Before this version, you had to explicitly define your new input inside SimpleForm namespace for it to work. Furthermore, customizing existing SimpleForm inputs could only be achieved through monkey patching.</p>
+<p>Inspired by a similar feature in the <a href="https://github.com/justinfrench/formtastic">Formtastic</a> gem, from now on you will be able to create new input types inside <code>app/inputs</code> folder in your application. The only restriction to create such inputs is that the class name must end with <code>Input</code>. See some examples:</p>
+<pre lang="ruby"># app/inputs/currency_input.rb
+class CurrencyInput < SimpleForm::Inputs::StringInput
+  def input
+    "$ #{super}".html_safe
+  end
+end</pre>
+<p>And the usage:</p>
+<pre lang="ruby">f.input :money, :as => :currency</pre>
+<p>You can also redefine existing SimpleForm inputs by creating a new class with the same name. For instance, if you want to wrap date/time/datetime inputs in a div, you can do:</p>
+<pre lang="ruby"># app/inputs/date_time_input.rb
+class DateTimeInput < SimpleForm::Inputs::DateTimeInput
+  def input
+    "<div>#{super}</div>".html_safe
+  end
+end</pre>
+<h3>HTML 5</h3>
+<p>SimpleForm allows you to add many HTML 5 features to your applications, like placeholders, inline browser validations and more. The problem is: most browsers are still experimenting some HTML 5 features, and people started having lots of troubles with the automatic browser validation.</p>
+<p>For this reason, SimpleForm now has an option to easily disable such form validations. You have to add this line to your SimpleForm initializer:</p>
+<pre lang="ruby">config.browser_validations = false</pre>
+<p>But, if HTML 5 is still not for you, you can disable all the HTML 5 stuff, by adding the configuration below to your initializer:</p>
+<pre lang="ruby">config.html5 = false</pre>
+<p>Notice that this option does not disable the `placeholder` component, because we believe this option is very well supported currently in mostly browsers. If you don't want to use it as well, just remove it from the `components` option in your initializer.</p>
+<h3>More Helpers</h3>
+<p>In this version we also add two new form helpers to SimpleForm: <code>input_field</code> and <code>full_error</code>.</p>
+<p>The <code>full_error</code> helper shows errors in an attribute prepending its human name. This can be used when you want to show errors on hidden fields, for instance. You can see how it works in this example:</p>
+<pre lang="ruby">f.full_error :token #=> <span class="error">Token is invalid</span></pre>
+<p>The <code>input_field</code> helper renders only the input tag with all the facilities of SimpleForm's input helper. It means no wrapper, error or hint will be rendered. A good example of using this helper is inside an input block:</p>
+<pre lang="ruby"><%= f.input :max_time, :as => :integer do %>
+  <%= f.input_field :max_time, :as => :integer, :type => :range %>
+  <%= content_tag :span, '1', :id => 'max_time_value' %>
+<% end %></pre>
+<p>It will render:</p>
+<pre lang="html">
+<div class="input integer required">
+  <label class="integer required for="model_max_time">Max time <abbr title="required">*</abbr></label>
+  <input class="numeric integer required" id="model_max_time" name="model[max_time]" required="required" size="50" type="range" />
+  <span id="max_time_value">1</span>
+</div>
+</pre>
+<h3>Wrapping up</h3>
+<p>This version allows you to do more customizations in SimpleForm based on your applications needs. We encourage you to take a look at the <a title="SimpleForm Changelog" href="https://github.com/plataformatec/simple_form/blob/master/CHANGELOG.rdoc">CHANGELOG</a> and also review the <a title="SimpleForm Readme" href="https://github.com/plataformatec/simple_form/blob/master/README.rdoc">README</a> to see what else is available and some more examples.</p>
+<p>And please, check out <a title="SimpleForm contributors" href="https://github.com/plataformatec/simple_form/contributors">SimpleForm contributors</a>, we want to thank everyone who is helping us to improve SimpleForm.</p>
+<p>Right now, we are working on Rails 3.1 compatibility for the next version. If you feel like helping us or just want to see a new feature, feel free to send us a pull request. And last, but not least, we look forward to know how SimpleForm is changing your life. Is it being helpful? How does it improve your applications? Don't be shy, comments are welcome.</p><p>The post <a href="/2011/05/simpleform-1-4-is-out/">SimpleForm 1.4 is out</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/simpleform-1-4-is-out/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

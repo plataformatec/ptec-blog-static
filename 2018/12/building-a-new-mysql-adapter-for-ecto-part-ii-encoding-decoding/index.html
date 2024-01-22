@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding « Plataformatec Blog</title>
+		<meta name="description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding (you&#039;re here!) Part III: DBConnection Integration Part IV: Ecto Integration Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#039;ll dive deeper into that topic, let&#039;s get started! Basic">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding « Plataformatec Blog">
+		<meta property="og:description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding (you&#039;re here!) Part III: DBConnection Integration Part IV: Ecto Integration Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#039;ll dive deeper into that topic, let&#039;s get started! Basic">
+		<meta property="og:url" content="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">
+		<meta property="article:published_time" content="2018-12-03T16:07:11+00:00">
+		<meta property="article:modified_time" content="2019-01-15T17:41:55+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding « Plataformatec Blog">
+		<meta name="twitter:description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding (you&#039;re here!) Part III: DBConnection Integration Part IV: Ecto Integration Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#039;ll dive deeper into that topic, let&#039;s get started! Basic">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#article","name":"Building a new MySQL adapter for Ecto, Part II: Encoding\/Decoding « Plataformatec Blog","headline":"Building a new MySQL adapter for Ecto, Part II: Encoding\/Decoding","author":{"@id":"\/author\/wojtek-mach\/#author"},"publisher":{"@id":"\/#organization"},"image":{"@type":"ImageObject","url":"\/wp-content\/uploads\/2018\/10\/Elixir_2-1.png","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#articleImage","width":1200,"height":250,"caption":"banner-elixir development subscription"},"datePublished":"2018-12-03T14:07:11-02:00","dateModified":"2019-01-15T15:41:55-02:00","inLanguage":"en-US","mainEntityOfPage":{"@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#webpage"},"isPartOf":{"@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#webpage"},"articleSection":"English, ecto, elixir"},{"@type":"BreadcrumbList","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2018\/#listItem"},{"@type":"ListItem","@id":"\/2018\/#listItem","position":2,"name":"2018","item":"\/2018\/","nextItem":"\/2018\/12\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2018\/12\/#listItem","position":3,"name":"December","item":"\/2018\/12\/","nextItem":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#listItem","previousItem":"\/2018\/#listItem"},{"@type":"ListItem","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#listItem","position":4,"name":"Building a new MySQL adapter for Ecto, Part II: Encoding\/Decoding","previousItem":"\/2018\/12\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/wojtek-mach\/#author","url":"\/author\/wojtek-mach\/","name":"Wojtek Mach","image":{"@type":"ImageObject","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/84ef665236afa8310820dd00f1d710f8?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Wojtek Mach"}},{"@type":"WebPage","@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#webpage","url":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/","name":"Building a new MySQL adapter for Ecto, Part II: Encoding\/Decoding « Plataformatec Blog","description":"Welcome to the \"Building a new MySQL adapter for Ecto\" series: Part I: Hello World Part II: Encoding\/Decoding (you're here!) Part III: DBConnection Integration Part IV: Ecto Integration Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we'll dive deeper into that topic, let's get started! Basic","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding\/#breadcrumblist"},"author":{"@id":"\/author\/wojtek-mach\/#author"},"creator":{"@id":"\/author\/wojtek-mach\/#author"},"datePublished":"2018-12-03T14:07:11-02:00","dateModified":"2019-01-15T15:41:55-02:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/8072">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=8072">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2018%2F12%2Fbuilding-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2018%2F12%2Fbuilding-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding%2F#038;format=xml">
+                                                                                                                        </head>
+  <body class="post-template-default single single-post postid-8072 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/" rel="bookmark">Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2018-12-03T14:07:11-02:00">Dec 3, 2018</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/84ef665236afa8310820dd00f1d710f8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/84ef665236afa8310820dd00f1d710f8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=70" title="Posts by Wojtek Mach">Wojtek Mach</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/" target="_blank" rel="noopener">Part I: Hello World</a></li>
+<li>
+<a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/">Part II: Encoding/Decoding</a> (you&#8217;re here!)</li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" target="_blank" rel="noopener">Part III: DBConnection Integration</a></li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a></li>
+</ul>
+<p>Last time we briefly looked at encoding and decoding data over MySQL wire protocol. In this article we&#8217;ll dive deeper into that topic, let&#8217;s get started!</p>
+<h2>Basic Types</h2>
+<p>MySQL protocol has two &#8220;<a href="https://dev.mysql.com/doc/internals/en/basic-types.html" target="_blank" rel="noopener">Basic Data Types</a>&#8220;: integers and strings. Within integers we have fixed-length and length-encoded integers.<br>
+The simplest type is <code>int&lt;1&gt;</code> which is an integer stored in 1 byte.</p>
+<p>To recap, MySQL is using little endianess when encoding/decoding integers as binaries. Let&#8217;s define a function that takes an <code>int&lt;1&gt;</code> from the given binary and returns the rest of the binary:</p>
+<pre><code class="elixir">defmodule MyXQL.Types do
+  def take_int1(data) do
+    &lt;&lt;value::8-little-integer, rest::binary&gt;&gt; = data
+    {value, rest}
+  end
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_int1(&lt;&lt;1, 2, 3&gt;&gt;)
+{1, &lt;&lt;2, 3&gt;&gt;}
+</code></pre>
+<p>We can generalize this function to accept any fixed-length integer:</p>
+<pre><code class="elixir">def take_fixed_length_integer(data, size) do
+  &lt;&lt;value::little-integer-size(size)-unit(8), rest::binary&gt;&gt; = data
+  {value, rest}
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_fixed_length_integer(&lt;&lt;1, 2, 3&gt;&gt;, 2)
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>(See <a href="https://hexdocs.pm/elixir/Kernel.SpecialForms.html#%3C%3C%3E%3E/1" target="_blank" rel="noopener"><code>&lt;&lt;&gt;&gt;/1</code></a> for more information on bitstrings.)</p>
+<p>Decoding a <a href="https://dev.mysql.com/doc/internals/en/integer.html#length-encoded-integer" target="_blank" rel="noopener">length-encoded integer</a>&nbsp;is slightly more complicated.<br>
+Basically, if the first byte value is less than <code>251</code>, then it&#8217;s a 1-byte integer; if the first-byte is <code>0xFC</code>, then it&#8217;s a 2-byte integer and so on up to a 8-byte integer:</p>
+<pre><code class="elixir">def take_length_encoded_int1(&lt;&lt;int::8-little-integer, rest::binary&gt;&gt;) when int &lt; 251, do: {int, rest}
+
+def take_length_encoded_int2(&lt;&lt;0xFC, int::16-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+
+def take_length_encoded_int3(&lt;&lt;0xFD, int::24-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+
+def take_length_encoded_int8(&lt;&lt;0xFE, int::64-little-integer, rest::binary&gt;&gt;), do: {int, rest}
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Types.take_length_encoded_int1(&lt;&lt;1, 2, 3&gt;&gt;)
+{1, &lt;&lt;2, 3&gt;&gt;}
+
+iex&gt; MyXQL.Types.take_length_encoded_int2(&lt;&lt;0xFC, 1, 2, 3&gt;&gt;)
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>Can we generalize this function to a single binary pattern match, the same way we did with <code>take_fixed_length_integer/2</code>? Unfortunately we can&#8217;t. Our logic is essentially a <code>case</code> with 4 clauses and such cannot be used in pattern matches.<br>
+For this reason, the way we decode data is by reading some bytes, decoding them, and returning the rest of the binary.</p>
+<p>It&#8217;s a shame that MySQL doesn&#8217;t encode the <em>size</em> of the binary in the first byte because otherwise our decode function could be easily implemented in a single binary pattern match, e.g.:</p>
+<pre><code class="elixir">iex&gt; &lt;&lt;size::8, value::little-integer-size(size)-unit(8), rest::binary&gt;&gt; = &lt;&lt;2, 1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>In fact, it&#8217;s common for protocols to encode data as <a href="https://en.wikipedia.org/wiki/Type-length-value" target="_blank" rel="noopener">Type-Length-Value (TLV)</a>&nbsp;which as you can see above, it&#8217;s very easy to implement with Elixir.</p>
+<p>In any case, we can still leverage binary pattern matching in the function head. Here&#8217;s our final <code>take_length_encoded_integer/1</code> function:</p>
+<pre><code class="elixir">def take_length_encoded_integer(&lt;&lt;int::8, rest::binary&gt;&gt;) when int &lt; 251, do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFC, int::int(2), rest::binary&gt;&gt;), do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFD, int::int(3), rest::binary&gt;&gt;), do: {int, rest}
+def take_length_encoded_integer(&lt;&lt;0xFE, int::int(8), rest::binary&gt;&gt;), do: {int, rest}
+</code></pre>
+<p>There&#8217;s one last thing that we can do. Because <code>take_fixed_length_integer/2</code> is so simple and basically uses a single binary pattern match (in particular, it <em>does not</em> have a <code>case</code> statement), we can replace it with a macro instead. All we need to do is to emit <code>little-integer-size(size)-unit(8)</code> AST so that we can use it in a bitstring; that&#8217;s easy:</p>
+<pre><code class="elixir">defmacro int(size) do
+  quote do
+    little-integer-size(unquote(size))-unit(8)
+  end
+end
+</code></pre>
+<p>Because it&#8217;s a macro we need to <code>require</code> or <code>import</code> it to use it:</p>
+<pre><code class="elixir">iex&gt; import MyXQL.Types
+
+iex&gt; &lt;&lt;value::int(1), rest::binary&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{1, &lt;&lt;2, 3&gt;&gt;}
+
+iex&gt; &lt;&lt;value::int(2), rest::binary&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
+iex&gt; {value, rest}
+{513, &lt;&lt;3&gt;&gt;}
+</code></pre>
+<p>A really nice thing about using a macro here is we get encoding for free:</p>
+<pre><code class="elixir">iex&gt; &lt;&lt;513::int(2)&gt;&gt;
+&lt;&lt;1, 2&gt;&gt;
+</code></pre>
+<p>We could write a macro for encoding length-encoded integers (we could even invoke it as <code>513::int(lenenc)</code> to mimic the spec, by adjusting <code>int/1</code> macro) but I decided against it as it won&#8217;t be usable in a binary pattern match.</p>
+<p>Encoding/decoding <a href="https://dev.mysql.com/doc/internals/en/describing-packets.html" target="_blank" rel="noopener">MySQL strings</a>&nbsp;is very similar so we will not be going over that and we&#8217;ll jump into the&nbsp;next section on bit flags. (Sure enough, working with strings would be easy, even in binary pattern matches, if not for an EOF-terminated <code>string&lt;eof&gt;</code> and <code>string&lt;lenenc&gt;</code> types.)</p>
+<h2>Bit Flags</h2>
+<p>MySQL provides <a href="https://dev.mysql.com/doc/internals/en/capability-flags.html#packet-Protocol::CapabilityFlags" target="_blank" rel="noopener">&#8220;Capability Flags&#8221;</a>&nbsp;like:</p>
+<pre><code class="elixir">CLIENT_PROTOCOL_41 0x00000200
+CLIENT_SECURE_CONNECTION 0x00008000
+CLIENT_PLUGIN_AUTH 0x00080000
+</code></pre>
+<p>The idea is we represent a set of capabilities as a single integer on which we can use <code>Bitwise</code> operations like: <code>0x00000200 ||| 0x00008000</code>, <code>flags &amp;&amp;&amp; 0x00080000</code> etc.</p>
+<p>We definitely don&#8217;t want to pass these &#8220;magic&#8221; bytes around so we should encapsulate them somehow.<br>
+We could store them as module attributes, e.g.: <code>@client_protocol_41 0x00000200</code>; if we mistype the name of the flag, we&#8217;ll get a helpful compiler warning. Using functions, however, gives us a bit more flexibility as we can generate great error messages as well as &#8220;hide&#8221; usage of bitwise operations underneath.<br>
+Let&#8217;s implement a function that checks whether given <code>flags</code> has a given capability:</p>
+<pre><code class="elixir">defmodule MyXQL.Messages do
+  use Bitwise
+
+  def has_capability_flag?(flags, :client_protocol_41), do: (flags &amp;&amp;&amp; 0x00000200) == 0x00000200
+  def has_capability_flag?(flags, :client_secure_connection), do: (flags &amp;&amp;&amp; 0x00008000) == 0x00008000
+  def has_capability_flag?(flags, :client_plugin_auth), do: (flags &amp;&amp;&amp; 0x00080000) == 0x00080000
+  # ...
+end
+</code></pre>
+<pre><code class="elixir">iex&gt; MyXQL.Messages.has_capability_flag?(0, :client_protocol_41)
+false
+iex&gt; MyXQL.Messages.has_capability_flag?(0x00000200, :client_protocol_41)
+true
+
+iex&gt; MyXQL.Messages.has_capability_flag?(0x00000200, :bad)
+** (FunctionClauseError) no function clause matching in MyXQL.Messages.has_capability_flag?/2
+
+    The following arguments were given to MyXQL.Messages.has_capability_flag?/2:
+
+        # 1
+        512
+
+        # 2
+        :bad
+
+    Attempted function clauses (showing 3 out of 3):
+
+        def has_capability_flag?(flags, :client_protocol_41)
+        def has_capability_flag?(flags, :client_secure_connection)
+        def has_capability_flag?(flags, :client_plugin_auth)
+</code></pre>
+<p>This is a very useful error message, we can see what are all available capabilities. If we want something more customized, all we need to do is define an additional catch-all clause at the end:</p>
+<pre><code class="elixir">def has_capability_flag?(flags, other) do
+  raise ...
+end
+</code></pre>
+<p>and raise an error there. That way we could, for example, implement a &#8220;Did you mean?&#8221; hint.</p>
+<p>Last but not least, instead of manually defining each function head by hand, we can use Elixir meta-programming capabilities to define them at compile time:</p>
+<pre><code class="elixir">capability_flags = [
+  client_protocol_41: 0x00000200,
+  client_secure_connection: 0x00008000,
+  client_plugin_auth: 0x00080000,
+]
+
+for {name, value} &lt;- capability_flags do
+  def has_capability_flag?(flags, unquote(name)), do: (flags &amp;&amp;&amp; unquote(value)) == unquote(value)
+end
+</code></pre>
+<h2>Packets</h2>
+<p>Finally, let&#8217;s bring this all together to handle packets. We need a data structure that&#8217;s going to store packet fields and we basically have two options: <a href="https://hexdocs.pm/elixir/Kernel.html#defstruct/1">structs</a> and <a href="https://hexdocs.pm/elixir/Record.html">records</a>. Structs are great when data has to be sent between modules, especially because they are polymorphic. However, when the data belongs to a single module, or separate modules that are considered private API, using records may make more sense as they are more space efficient. Let&#8217;s verify that using <code>:erts_debug</code> module and instead of comparing structs and records let&#8217;s just compare their internal representations: maps and tuples, respectively:</p>
+<pre><code class="elixir">iex&gt; :erts_debug.size(%{x: 1})
+6
+iex&gt; :erts_debug.size(%{x: 1, y: 2})
+8
+iex&gt; :erts_debug.size(%{x: 1, y: 2, z: 3})
+10
+</code></pre>
+<pre><code class="elixir">iex&gt; :erts_debug.size({:Point, 1})
+3
+iex&gt; :erts_debug.size({:Point, 1, 2})
+4
+iex&gt; :erts_debug.size({:Point, 1, 2, 3})
+5
+</code></pre>
+<p>As you can see, as we add more keys to the map our data structure grows twice as fast and the reason is we store both keys and values whereas tuple stores the size of the tuple once and then just values.<br>
+Since we may be processing thousands of packets per second, this difference may add up, so we&#8217;re going to use records here.</p>
+<p>The final packet we discussed in the last article was the <code>OK Packet</code>. Let&#8217;s now write a function to decode it (it&#8217;s not fully following the spec for brevity):</p>
+<pre><code class="elixir"># https://dev.mysql.com/doc/internals/en/packet-OK_Packet.html
+defrecord :ok_packet, [:affected_rows, :last_insert_id, :status_flags, :warning_count]
+
+def decode_ok_packet(data, capability_flags) do
+  &lt;&lt;0x00, rest::binary&gt;&gt; = data
+
+  {affected_rows, rest} = take_length_encoded_integer(rest)
+  {last_insert_id, rest} = take_length_encoded_integer(rest)
+
+  packet = ok_packet(
+    affected_rows: affected_rows,
+    last_insert_id: last_insert_id
+  )
+
+  if has_capability_flag?(capability_flags, :client_protocol_41) do
+    &lt;&lt;
+      status_flags::int(2),
+      warning_count::int(2)
+    &gt;&gt; = rest
+
+    ok_packet(packet,
+      status_flags: status_flags,
+      warning_count: warning_count
+    )
+  else
+    packet
+  end
+end
+</code></pre>
+<p>And let&#8217;s test this with the OK packet we got at the end of the last article (<code>00 00 00 02 00 00 00</code>):</p>
+<pre><code class="elixir">iex&gt; ok_packet(affected_rows: affected_rows) = decode_ok_packet(&lt;&lt;0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00&gt;&gt;, 0x00000200)
+iex&gt; affected_rows
+0
+</code></pre>
+<p>It works!</p>
+<h2>Conclusion</h2>
+<p>In this article, we discussed encoding and decoding basic data types, handling bit flags, and finally using both of these ideas to decode packets. Using these tools we should be able to fully implement MySQL protocol specification and with examples of <a href="http://erlang.org/doc/man/gen_tcp.html#send-2" target="_blank" rel="noopener"><code>:gen_tcp.send/2</code></a> and <a href="http://erlang.org/doc/man/gen_tcp.html#recv-2" target="_blank" rel="noopener"><code>:gen_tcp.recv/2</code></a> calls from Part I, we could interact with the server. However, that&#8217;s not enough to build a resilient and production-quality driver. For that, we&#8217;ll look into <a href="https://hex.pm/packages/db_connection" target="_blank" rel="noopener"><code>DBConnection</code></a>&nbsp;integration in Part III. Stay tuned!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription" target="_blank" rel="noopener"><img fetchpriority="high" decoding="async" class="size-large wp-image-7816 alignnone" src="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png" alt="banner-elixir development subscription" width="1024" height="213" srcset="/wp-content/uploads/2018/10/Elixir_2-1-1024x213.png 1024w, /wp-content/uploads/2018/10/Elixir_2-1-300x63.png 300w, /wp-content/uploads/2018/10/Elixir_2-1-768x160.png 768w, /wp-content/uploads/2018/10/Elixir_2-1.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px"></a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/ecto/" rel="tag">ecto</a>, <a href="/tag/elixir/" rel="tag">elixir</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <span>Comments Off<span class="screen-reader-text"> on Building a new MySQL adapter for Ecto, Part II: Encoding/Decoding</span></span>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2018/11/quando-dividir-o-squad/" rel="prev">Quando dividir o Squad?</a>          <a href="/2018/12/plataformatec-and-elixir-2018-in-review/" rel="next">Plataformatec and Elixir: 2018 in review</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+                                                                                                                            <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

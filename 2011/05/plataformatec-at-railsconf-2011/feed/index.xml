@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: PlataformaTec at RailsConf 2011!	</title>
+	<atom:link href="/2011/05/plataformatec-at-railsconf-2011/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/05/plataformatec-at-railsconf-2011/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 28 Dec 2018 19:48:05 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Sebastian Georgi		</title>
+		<link>/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1147</link>
+
+		<dc:creator><![CDATA[Sebastian Georgi]]></dc:creator>
+		<pubDate>Fri, 03 Jun 2011 12:59:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2111#comment-1147</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1146&quot;&gt;josevalim&lt;/a&gt;.
+
+Thanks man! :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1146">josevalim</a>.</p>
+<p>Thanks man! 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1146</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 01 Jun 2011 17:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2111#comment-1146</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1145&quot;&gt;Christoph Olszowka&lt;/a&gt;.
+
+Indeed, updated with the proper credentials! :D]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1145">Christoph Olszowka</a>.</p>
+<p>Indeed, updated with the proper credentials! 😀</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Christoph Olszowka		</title>
+		<link>/2011/05/plataformatec-at-railsconf-2011/comment-page-1/#comment-1145</link>
+
+		<dc:creator><![CDATA[Christoph Olszowka]]></dc:creator>
+		<pubDate>Wed, 01 Jun 2011 16:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2111#comment-1145</guid>
+
+					<description><![CDATA[Photo by the way courtesy of @j3z_hh:twitter ;)]]></description>
+			<content:encoded><![CDATA[<p>Photo by the way courtesy of @j3z_hh:twitter 😉</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

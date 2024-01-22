@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Understanding the latest Rails benchmarks	</title>
+	<atom:link href="/2011/02/understanding-the-latest-rails-benchmarks/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/02/understanding-the-latest-rails-benchmarks/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 23 Feb 2011 22:36:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1103</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Wed, 23 Feb 2011 22:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1103</guid>
+
+					<description><![CDATA[I&#039;ve been waiting for a response like this after I&#039;d seen the two articles mentioned at the start.
+
+One of the things that&#039;s really annoying about everybody and their dog blogging the shit out of the Internet is that most people only ever scratch the surface. Why bother with properly researching the cause of an issue or questioning one&#039;s metrics when we can just run ruby-prof, let it generate a graph and say &quot;Look, that chart clearly shows that something is wrong&quot;? Then again, I guess it&#039;s an instant gratification thing: You get a thrill about discovering that something&#039;s wrong and nobody else seems to have found out about it yet so you have to tell the world.
+
+Hell, I&#039;m getting angry. :-) What I really wanted to say: Thanks for clarifying! :D]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;ve been waiting for a response like this after I&#8217;d seen the two articles mentioned at the start.</p>
+<p>One of the things that&#8217;s really annoying about everybody and their dog blogging the shit out of the Internet is that most people only ever scratch the surface. Why bother with properly researching the cause of an issue or questioning one&#8217;s metrics when we can just run ruby-prof, let it generate a graph and say &#8220;Look, that chart clearly shows that something is wrong&#8221;? Then again, I guess it&#8217;s an instant gratification thing: You get a thrill about discovering that something&#8217;s wrong and nobody else seems to have found out about it yet so you have to tell the world.</p>
+<p>Hell, I&#8217;m getting angry. 🙂 What I really wanted to say: Thanks for clarifying! 😀</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nikolaos		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1102</link>
+
+		<dc:creator><![CDATA[Nikolaos]]></dc:creator>
+		<pubDate>Mon, 21 Feb 2011 20:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1102</guid>
+
+					<description><![CDATA[&#062; This took 55 seconds on my machine using REE which is quite close to the value that he showed on his benchmark.
+
+Something like this should never take 55 seconds on a modern machine for any sane combination of interpreter and algorithm. Something is very wrong here...]]></description>
+			<content:encoded><![CDATA[<p>&gt; This took 55 seconds on my machine using REE which is quite close to the value that he showed on his benchmark.</p>
+<p>Something like this should never take 55 seconds on a modern machine for any sane combination of interpreter and algorithm. Something is very wrong here&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1101</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 21 Feb 2011 17:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1101</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1100&quot;&gt;Neeraj Singh&lt;/a&gt;.
+
+Yes, although the gains should not be significant unless you are removing a
+lot of routes.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1100">Neeraj Singh</a>.</p>
+<p>Yes, although the gains should not be significant unless you are removing a<br />
+lot of routes.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Neeraj Singh		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1100</link>
+
+		<dc:creator><![CDATA[Neeraj Singh]]></dc:creator>
+		<pubDate>Mon, 21 Feb 2011 17:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1100</guid>
+
+					<description><![CDATA[Great post.
+
+One question. Say I am using only index method of my resource &quot;users&quot;. So in the routes I will have :only =&#062; [:index].  I believe this will reduce the amount of memory rails consumes. 
+
+Now based on your blog would it be accurate to say this will reduce the boot time since regex
+do not need to be generated for other 6 verbs.]]></description>
+			<content:encoded><![CDATA[<p>Great post.</p>
+<p>One question. Say I am using only index method of my resource &#8220;users&#8221;. So in the routes I will have :only =&gt; [:index].  I believe this will reduce the amount of memory rails consumes. </p>
+<p>Now based on your blog would it be accurate to say this will reduce the boot time since regex<br />
+do not need to be generated for other 6 verbs.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1099</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 21 Feb 2011 16:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1099</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1097&quot;&gt;Roger Leite&lt;/a&gt;.
+
+I have used ruby-prof on 1.8.7 and 1.9.2. You can easily profile a request by creating a middleware that executes ruby-prof during @app.call(env) and prints out the result.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1097">Roger Leite</a>.</p>
+<p>I have used ruby-prof on 1.8.7 and 1.9.2. You can easily profile a request by creating a middleware that executes ruby-prof during @app.call(env) and prints out the result.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1098</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 21 Feb 2011 16:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1868#comment-1098</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1097&quot;&gt;Roger Leite&lt;/a&gt;.
+
+I have used ruby-prof on 1.8.7 and 1.9.2. You can easily profile a request
+by creating a middleware that executes ruby-prof during @app.call() and
+prints out the result.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/02/understanding-the-latest-rails-benchmarks/comment-page-1/#comment-1097">Roger Leite</a>.</p>
+<p>I have used ruby-prof on 1.8.7 and 1.9.2. You can easily profile a request<br />
+by creating a middleware that executes ruby-prof during @app.call() and<br />
+prints out the result.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

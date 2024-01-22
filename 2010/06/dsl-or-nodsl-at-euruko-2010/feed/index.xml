@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: DSL or NoDSL at Euruko 2010	</title>
+	<atom:link href="/2010/06/dsl-or-nodsl-at-euruko-2010/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/06/dsl-or-nodsl-at-euruko-2010/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 18 Jun 2010 22:36:13 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2010/06/dsl-or-nodsl-at-euruko-2010/comment-page-1/#comment-629</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Fri, 18 Jun 2010 22:36:13 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1165#comment-629</guid>
+
+					<description><![CDATA[Awesome talk - thank you! I&#039;ll have to check out Inherited Resources. I was always too afraid of magic and over-the-top DSLs to try restful controller helper libraries :)]]></description>
+			<content:encoded><![CDATA[<p>Awesome talk &#8211; thank you! I&#8217;ll have to check out Inherited Resources. I was always too afraid of magic and over-the-top DSLs to try restful controller helper libraries 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trevor Turk		</title>
+		<link>/2010/06/dsl-or-nodsl-at-euruko-2010/comment-page-1/#comment-1028</link>
+
+		<dc:creator><![CDATA[Trevor Turk]]></dc:creator>
+		<pubDate>Fri, 18 Jun 2010 22:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1165#comment-1028</guid>
+
+					<description><![CDATA[Awesome talk - thank you! I&#039;ll have to check out Inherited Resources. I was always too afraid of magic and over-the-top DSLs to try restful controller helper libraries :)]]></description>
+			<content:encoded><![CDATA[<p>Awesome talk &#8211; thank you! I&#8217;ll have to check out Inherited Resources. I was always too afraid of magic and over-the-top DSLs to try restful controller helper libraries 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

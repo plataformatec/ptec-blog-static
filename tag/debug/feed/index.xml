@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>debug « Plataformatec Blog</title>
+	<atom:link href="/tag/debug/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 31 Oct 2016 18:57:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Tracing and observing your remote node</title>
+		<link>/2016/05/tracing-and-observing-your-remote-node/</link>
+					<comments>/2016/05/tracing-and-observing-your-remote-node/#comments</comments>
+		
+		<dc:creator><![CDATA[Erich Kist]]></dc:creator>
+		<pubDate>Tue, 10 May 2016 22:41:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5387</guid>
+
+					<description><![CDATA[<p>Today we will continue exploring techniques for debugging and tracing Elixir code that are so important for running and understanding production systems. In the past, we have discussed: how to debug your application how to trace systems with Erlyberly how to use the observer to introspect applications. The examples above always connected to systems running ... <a class="read-more-link" href="/2016/05/tracing-and-observing-your-remote-node/">»</a></p>
+<p>The post <a href="/2016/05/tracing-and-observing-your-remote-node/">Tracing and observing your remote node</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we will continue exploring techniques for debugging and tracing Elixir code that are so important for running and understanding production systems.</p>
+<p>In the past, we have discussed:</p>
+<ol>
+<li><a href="/2016/04/debugging-techniques-in-elixir-lang/">how to debug your application</a></li>
+<li><a href="/2016/04/how-to-trace-elixir-nodes-with-erlyberly/">how to trace systems with Erlyberly</a></li>
+<li><a href="/2015/06/elixir-in-times-of-microservices/">how to use the observer to introspect applications</a>.</li>
+</ol>
+<p>The examples above always connected to systems running locally. Given Elixir&#8217;s and the Erlang VM focus on distributed systems, you may have wondered: can we use the VM capabilities to trace and observe remote nodes?</p>
+<p>Certainly!</p>
+<p>Your application runs as part of the Erlang Runtime System, which is often called a node, as it may connect to other machines. Before we establish such connections, let&#8217;s get to know some concepts and then configure our applications.</p>
+<h2>EPMD</h2>
+<p><strong>Erlang Port Mapper Daemon</strong>, EPMD, acts as a name server on all hosts involved in distributed Erlang communications. When an Erlang node starts, the node has a name and it obtains an address from the host OS kernel. The default port the daemon runs on is 4369 but you can change it with the <a href="http://erlang.org/doc/man/epmd.html#environment_variables"><code>ERL_EPMD_PORT</code> environment variable </a>.</p>
+<p>You can run <code>epmd -names</code> to check the port and the nodes connected:</p>
+<pre><code class="elixir">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 43316
+</code></pre>
+<h2>SSH Port Forwarding</h2>
+<p>Depending on your firewall configuration, the port 4369 from EPMD is blocked by default. We will use port forwarding to redirect our local EPMD port to the remote EPMD with <code>ssh</code>: <code>ssh user@myapp.com -L4369:localhost:4369</code>.</p>
+<p>Therefore, when we start a node locally, it will attempt to register itself to the EPMD running on port 4369, which is effectively forwarded to the remote EPMD. Once our local node registers itself to the remote EPMD, it will be able to find all remote nodes running on the remote EPMD.</p>
+<h2>Configuring the Phoenix application</h2>
+<p>Imagine we want to trace or observe a Phoenix project. In our case, our project was released using <a href="https://github.com/bitwalker/exrm">exrm</a> and our release path in production has a directory called <code>running-config</code>. In this directory we can find the files <code>sys.config</code> and <code>vm.args</code>.</p>
+<p>The file <code>vm.args</code> is responsible for configuring our application when it starts. Let&#8217;s change it as follows:</p>
+<pre><code class="elixir">## Name of the node
+-name myapp@127.0.0.1
+-kernel inet_dist_listen_min 9001 inet_dist_listen_max 9001
+
+## Cookie for distributed erlang (you want a really long cookie)
+-setcookie my_cookie
+</code></pre>
+<p>We added a name to your application, set a port range where remote nodes may connect to and chose a cookie secret. If your server was already running, you will need to restart it after changing <code>vm.args</code>.</p>
+<p>After restarting our application, we should see it registered in the remote EPMD:</p>
+<pre><code class="bash">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 9001
+</code></pre>
+<h2>Tracing application</h2>
+<p>After our application is started, we need to change our <code>ssh</code> command to forward to EPMD and our application ports: <code>ssh user@myapp.com -L4369:localhost:4369 -L9001:localhost:9001</code>.</p>
+<p>Now let&#8217;s start the tracing tool locally with the proper cookie options. The tracing tool will register itself to the remote EPMD, via port forwarding, and find our remote application. Once the Erlyberly is started, you should see the following in the remote EPMD:</p>
+<pre><code class="bash">user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name myapp at port 9001
+name erlyberly-1460466831146 at port 54420
+</code></pre>
+<h2>Observing application</h2>
+<p>We can also observe a remote system using ssh port forwarding. One option is to establish a remote shell, as explained in the <a href="http://elixir-lang.org/docs/stable/iex/IEx.html">IEx documentation</a>:</p>
+<pre><code class="elixir">$ iex --name mylocalmachine@127.0.0.1 --cookie my_cookie --remsh myapp@127.0.0.1
+</code></pre>
+<p>Now you are connected directly to a remote node and you can introspect it as well as start tools like Observer.</p>
+<p>Alternatively, you can start a new local shell with the same cookie as the remote node:</p>
+<pre><code class="elixir">$ iex --name mylocalmachine@127.0.0.1 --cookie my_cookie
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(mylocalmachine@127.0.0.1)1&gt; :observer.start()
+:ok
+</code></pre>
+<p>The local shell should be registered in the remote EPMD alongside the remote system:</p>
+<pre><code>user@localhost:~$ epmd -names
+epmd: up and running on port 4369 with data:
+name mylocalmachine at port 50055
+name myapp at port 9001
+</code></pre>
+<p>With Observer open, we can now change the inspected node using the menu &#8216;Nodes > Connect node&#8217;. In the prompt we can fill in the node name. In our example the node is <code>myapp@127.0.0.1</code>.</p>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2016/05/observer.png" alt="Observer" width="1200" height="974" class="aligncenter size-full wp-image-5392" srcset="/wp-content/uploads/2016/05/observer.png 1200w, /wp-content/uploads/2016/05/observer-300x244.png 300w, /wp-content/uploads/2016/05/observer-768x623.png 768w, /wp-content/uploads/2016/05/observer-1024x831.png 1024w" sizes="(max-width: 1200px) 100vw, 1200px" /></p>
+<h3>Troubleshooting</h3>
+<p>You may receive an error similar to the one below when you try to connect through Observer:</p>
+<pre><code class="elixir">16:38:44.278 [error] [node: :"mylocalmachine@127.0.0.1", call: {:observer_backend, :sys_info, []}, reason: {:badrpc, {:EXIT, {:undef, [{:observer_backend, :sys_info, [], []}, {:rpc, :"-handle_call_call/6-fun-0-", 5, [file: 'rpc.erl', line: 206]}]}}}]
+</code></pre>
+<p>This occurs because the <code>:observer_backend</code> is disabled. You can enable it by adding the <code>:runtime_tools</code> to your application <code>mix.exs</code> file. You can get more details in the <a href="http://erlang.org/doc/man/runtime_tools_app.html">Runtime tools documentation</a>.</p>
+<p>Do you use other techniques to connect to remote nodes? Share your tips with a comment below.</p>
+<hr style="margin-top:30px" />
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-ecto-2-0&#038;utm_content=cta-blog-post-bottom" target="_blank"><br />
+<img decoding="async" src="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png" alt="What&#039;s new in Ecto 2.0 -- Reserve your copy" width="831" height="147" class="aligncenter size-full wp-image-5371" srcset="/wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0.png 831w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-300x53.png 300w, /wp-content/uploads/2016/05/CTA-blog-ebook-ecto-2-0-768x136.png 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2016/05/tracing-and-observing-your-remote-node/">Tracing and observing your remote node</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/05/tracing-and-observing-your-remote-node/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Debugging techniques in Elixir</title>
+		<link>/2016/04/debugging-techniques-in-elixir-lang/</link>
+					<comments>/2016/04/debugging-techniques-in-elixir-lang/#comments</comments>
+		
+		<dc:creator><![CDATA[Erich Kist]]></dc:creator>
+		<pubDate>Thu, 07 Apr 2016 17:33:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=5280</guid>
+
+					<description><![CDATA[<p>It&#8217;s common that our first experience with debugging in a new language is by printing values to the terminal. Elixir isn&#8217;t different: we can use IO.puts/2 and IO.inspect/2. However, Elixir also provides other approaches to debugging. In this blog post, we&#8217;ll show you other 2 options: IEx.pry/0 and :debugger. IEx.pry The name &#8220;pry&#8221; is an ... <a class="read-more-link" href="/2016/04/debugging-techniques-in-elixir-lang/">»</a></p>
+<p>The post <a href="/2016/04/debugging-techniques-in-elixir-lang/">Debugging techniques in Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It&#8217;s common that our first experience with debugging in a new language is by printing values to the terminal. Elixir isn&#8217;t different: we can use <code>IO.puts/2</code> and <code>IO.inspect/2</code>. However, Elixir also provides other approaches to debugging.</p>
+<p>In this blog post, we&#8217;ll show you other 2 options: <code>IEx.pry/0</code> and <code>:debugger</code>.</p>
+<h2>IEx.pry</h2>
+<p>The name &#8220;pry&#8221; is an old friend in the Ruby ecosystem but it has a different behavior in Elixir. Let&#8217;s create a new project with <code>mix</code> to try it out:</p>
+<pre><code class="shell">$ mix new example
+$ cd example
+</code></pre>
+<p>Now let&#8217;s write some sample code in <code>lib/example.ex</code>:</p>
+<pre><code class="elixir">require IEx;
+
+defmodule Example do
+  def double_sum(x, y) do
+    IEx.pry
+    hard_work(x, y)
+  end
+
+  defp hard_work(x, y) do
+    2 * (x + y)
+  end
+end
+</code></pre>
+<p>Now start a new IEx session and invoke our new function:</p>
+<pre><code class="iex">$ iex -S mix
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; Example.double_sum(1, 2)
+</code></pre>
+<p><code>IEx.pry/0</code> is built on top of IEx. Although it isn&#8217;t a traditional debugger since you can&#8217;t step, add breakpoints and so forth, it&#8217;s a good tool for non-production debugging. It runs in the caller process, blocking the caller and allowing us to access its binding (variables), verify its lexical information and access the process information. You can finish your &#8220;pry&#8221; session by calling <code>respawn</code>, which starts a new IEx shell.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/04/iex-pry-elixir.gif" alt="Starting a new IEx session" width="930" height="506" class="aligncenter size-full wp-image-5285" /></p>
+<p>You can find more information at <a href="http://elixir-lang.org/docs/stable/iex/IEx.html#pry/1">IEx.pry doc</a>.</p>
+<h2>Debugger</h2>
+<p>If you need a breakpoint feature, we can use the <code>:debugger</code> module that ships with Erlang. Let&#8217;s make a change in our example to be more didactic:</p>
+<pre><code class="elixir">defmodule Example do
+  def double_sum(x, y) do
+    hard_work(x, y)
+  end
+
+  defp hard_work(x, y) do
+    x = 2 * x
+    y = 2 * y
+
+    x + y
+  end
+end
+</code></pre>
+<p>Now we can start our debugger:</p>
+<pre><code class="iex">$ iex -S mix
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+Compiled lib/example.ex
+Interactive Elixir (1.2.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; :debugger.start()
+{:ok, #PID&lt;0.87.0&gt;}
+iex(2)&gt; :int.ni(Example)
+{:module, Example}
+iex(3)&gt; :int.break(Example, 3)
+:ok
+iex(4)&gt; Example.double_sum(1,2)
+</code></pre>
+<p>When you started the debugger, a Graphical User Interface must have opened in your machine. We called <code>:int.ni(Example)</code> to prepare our module for debugging and then added a breakpoint to line 3 with <code>:int.break(Example, 3)</code>. After we call our function, we can see our process with break status in the debugger:</p>
+<p><img loading="lazy" decoding="async" src="/wp-content/uploads/2016/04/debugger-elixir.gif" alt="Process with break status in the de" width="990" height="752" class="aligncenter size-full wp-image-5286" /></p>
+<p>The process is blocked as in <code>IEx.pry/0</code>. We can add a new breakpoint in the monitor window, inspect the code, see the variables and navigate it in steps.</p>
+<p>Debugger has more options and command instructions that you can use. Take a look at <a href="http://erlang.org/doc/apps/debugger/debugger_chapter.html">Debbuger doc</a> for more information.</p>
+<h3>Troubleshooting</h3>
+<p>You may have some problems when executing <code>:int.ni(Example)</code> in the example above:</p>
+<pre><code class="elixir">iex(2)&gt; :int.ni(Example)
+** Invalid beam file or no abstract code: 'Elixir.Example'
+</code></pre>
+<p>Before the upcoming Erlang 19 version, the debugger did not have the <a href="https://github.com/erlang/otp/pull/977">heuristic that traverses the module source attribute</a> applied. If you are not on the latest Erlang version, you can update the debugger manually with the following steps:</p>
+<ol>
+<li>Download the file <code>int.erl</code> from the PR.</li>
+<li>Compile it with <code>erlc -o . int.erl</code>.</li>
+<li>Overwrite <code>lib/debugger/ebin/int.beam</code> in your Erlang installation with the new compiled file.</li>
+</ol>
+<p>In the next post, we will see a tracing technique that doesn&#8217;t block the caller process.</p>
+<p>What about you? What are the tools that you are using to debug your Elixir applications?</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" /><br />
+</a></p><p>The post <a href="/2016/04/debugging-techniques-in-elixir-lang/">Debugging techniques in Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/04/debugging-techniques-in-elixir-lang/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Inspecting, changing and debugging Elixir project dependencies</title>
+		<link>/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/</link>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 31 Mar 2016 14:20:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[dependency]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5261</guid>
+
+					<description><![CDATA[<p>You have probably heard that Elixir is very explicit and I’d say the same! One of the things I really like in Elixir projects is that its dependencies are all explicitly included in the deps/ directory. Every time we’re curious about how a dependency works, we can just look at deps/lib-name. After working on a ... <a class="read-more-link" href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">»</a></p>
+<p>The post <a href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">Inspecting, changing and debugging Elixir project dependencies</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You have probably heard that Elixir is very explicit and I’d say the same!</p>
+<p>One of the things I really like in Elixir projects is that its dependencies are all explicitly included in the <code>deps/</code> directory. Every time we’re curious about how a dependency works, we can just look at <code>deps/lib-name</code>.</p>
+<p>After working on a project for a while, I’ve noticed a strange behavior in one of our dependencies. I&#8217;ve opened the <code>deps/lib-name</code> directory in my editor, inserted a couple <code>IO.inspect</code> calls, and recompiled my dependencies with:</p>
+<pre><code>mix deps.compile
+</code></pre>
+<p>That seems logical, doesn’t it? For my surprise, I didn’t get the expected behavior. The reason is straight-forward. Elixir projects (and its dependencies) are by default compiled for <code>dev</code>, <code>test</code> and <code>prod</code> environments. These compiled files are located in <code>_build/</code>, in a directory that holds the environment name (<code>_build/dev/</code>, <code>_build/test/</code> and <code>_build/prod/</code>). Accessing the applied changes in the source code depends on which environment we’re running it.</p>
+<p>The kind of task we execute is deterministic. Running a test will make our <code>_build/test/</code> compiled files to be used, just like <code>iex -S mix</code> would use <code>build/dev/</code> files and so on.</p>
+<p>What I did before would work if I tried to call the function I was inspecting through <code>iex -S mix</code>. That’s only because Elixir’s default environment is <code>dev</code>. In order to make those changes to be visible in my tests, I’d have to:</p>
+<pre><code>MIX_ENV=test mix deps.compile
+</code></pre>
+<p>There’s a simple test we can run to understand this better:</p>
+<ol>
+<li>Create a simple Elixir project with <code>mix new project</code></li>
+<li>Run <code>iex -S mix</code></li>
+<li>Take a look at the <code>_build</code> directory and notice that we now have a <code>_build/dev</code> directory with that project&#8217;s compiled file</li>
+<li>Run <code>mix test</code> and notice that we now have a <code>_build/test</code></li>
+</ol>
+<h2>Using <code>:path</code> option</h2>
+<p>Instead of running <code>mix deps.compile</code> for every change, there is a more convenient alternative.</p>
+<p>When we declare our dependencies in the <code>mix.exs</code> file we need to give it the library name and its version. We can also give it some extra options, among them there is a specific option that will help us when debugging dependencies: <code>path</code>.</p>
+<pre><code class="elixir">  defp deps do
+    [{:plug, path: "deps/plug"},
+     ...]
+  end
+</code></pre>
+<p>When we set <code>:path</code>, our dependency will be automatically recompiled by our project, as mentioned in <a href="http://elixir-lang.org/docs/stable/mix/Mix.Tasks.Deps.html">Mix.Tasks.Deps docs</a> (we can also access it through <code>mix help deps</code>).</p>
+<blockquote><p>
+  <strong><em>Path and in umbrella dependencies are automatically recompiled by the parent project whenever they change.</em></strong>
+</p></blockquote>
+<p>This way, every time I make a change and run a Mix task like <code>mix test</code> or <code>iex -S mix</code>, the dependency will be recompiled without having to run the compile task over and over again. With the <code>path</code> option we can also omit the version because it&#8217;ll be retrieved from the project being addressed.</p>
+<p>An important consideration here is that we can inform any path in this option, it doesn’t need to be a source code in the <code>deps/</code> directory. It could, for example, point to a checkout of a dependency in our machine. This is an excellent option when we’re working on an open source project. We can test the changes we intend to submit (or to find an issue) inside a real project more easily.</p>
+<h2>A dependency of other dependencies</h2>
+<p>We know that Phoenix Framework uses <code>Plug</code> for managing its requests but it’s not listed in our project dependencies. That’s because <a href="https://github.com/phoenixframework/phoenix/blob/v1.1/mix.exs#L42">Plug is a Phoenix dependency</a>.</p>
+<p>In order to inspect <code>Plug</code> we’d have to include it on our <code>deps</code> function and use the <code>override: true</code> option. Otherwise Mix will warn us that there is a dependency conflict.</p>
+<pre><code class="elixir">  defp deps do
+    [{:phoenix, "~&gt; 1.1.4"},
+     {:postgrex, "&gt;= 0.0.0"},
+     {:phoenix_ecto, "~&gt; 2.0"},
+     {:phoenix_html, "~&gt; 2.4"},
+     {:phoenix_live_reload, "~&gt; 1.0", only: :dev},
+     {:cowboy, "~&gt; 1.0"},
+     {:plug, path: "deps/plug", override: true}]
+  end
+</code></pre>
+<h2>Conclusion</h2>
+<p>I believe that Elixir has already proven that explicitness is a great asset. Keeping project&#8217;s dependencies in <code>deps/</code> has already proved useful when searching for code and documentation.</p>
+<p>In case you find a bug in any of your dependencies, we strongly recommend that you submit a pull request back to its repository. You’ll help other developers that are going through the same issue and you&#8217;ll he the community growth.</p>
+<p>What about you? Are there any tips you’d like to share for debugging Elixir dependencies?</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" /><br />
+</a></p><p>The post <a href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">Inspecting, changing and debugging Elixir project dependencies</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

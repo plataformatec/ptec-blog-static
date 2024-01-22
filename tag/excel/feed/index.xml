@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>excel « Plataformatec Blog</title>
+	<atom:link href="/tag/excel/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 20 May 2010 22:08:39 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Exporting data to CSV and Excel in your Rails apps</title>
+		<link>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/</link>
+					<comments>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/#comments</comments>
+		
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Thu, 24 Sep 2009 19:43:49 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[csv]]></category>
+		<category><![CDATA[excel]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[unicode]]></category>
+		<category><![CDATA[utf]]></category>
+		<guid isPermaLink="false">/?p=288</guid>
+
+					<description><![CDATA[<p>Sometimes users want to slice and dice data as they wish. In such scenarios, it&#8217;s usual to export the data in a tabular format so your users can use any spreadsheet editor and do whatever they want. Usually, we do that using CSV, right? OpenOffice and other editors can open CSV files flawlessly. Just double-click ... <a class="read-more-link" href="/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/">»</a></p>
+<p>The post <a href="/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/">Exporting data to CSV and Excel in your Rails apps</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sometimes users want to slice and dice data as they wish. In such scenarios, it&#8217;s usual to export the data in a tabular format so your users can use any spreadsheet editor and do whatever they want.</p>
+<p>Usually, we do that using CSV, right? OpenOffice and other editors can open CSV files flawlessly. Just double-click an CSV file and voilà.</p>
+<p>However, Excel has some gotchas. If you double-click a CSV file, Excel will open your data with everything in just one column. Of course you can go to Tools > Import, browse to the file, set up comma as separator and then after some clicks you get your data as you wish. This is not user-friendly at all and this is not something we want to explain to our clients. Our clients must be able to simply double-click the my_data.csv file and see the data well structured.</p>
+<p>So, here&#8217;s what we do at <a href="http://plataformatec.com.br/">Plataforma</a> to deal with Excel formats.</p>
+<h3>It&#8217;s TSV, not CSV, dude!</h3>
+<p>First of all, Excel expects your data with tabulations as fields separator. So, what you need is actually a TSV (tab-separated values).</p>
+<p>If you are using <a href="http://fastercsv.rubyforge.org/">FasterCSV</a>, you just need to do:</p>
+<pre lang="rails">
+tsv_str = FasterCSV.generate(:col_sep => "\t") do |tsv|
+  tsv << headers
+  # append your beautiful data here
+end
+</pre>
+<p>Keep this in mind. Excel demands tabulations, not commas! But there are worse things to come...</p>
+<h3>No newline in fields</h3>
+<p>Excel doesnt' like when you put "\n" inside fields. Although fields are separated by tabulations, it appears Excel can't cope with extra newlines.</p>
+<p>So, if you have some text fields in your model, beware that it may contain newlines and you need to strip those before exporting your data to Excel.</p>
+<h3>Forget about UTF-8. Use UTF-16!</h3>
+<p>One of the most hidden specifications of Excel is that it expects our TSV files to be encoded using UTF-16 Little Endian. Did you know that? Well, we didn't!</p>
+<p>Some sources even say that this is the only Unicode format supported in Excel. </p>
+<p>What's the difference between <a href="http://en.wikipedia.org/wiki/Utf-8">UTF-8</a> and <a href="http://en.wikipedia.org/wiki/UTF-16/UCS-2">UTF-16</a>? UTF-8 is a variable byte encoding in which characters may use up to 4 bytes, however for western languages it usually uses one or two bytes. UTF-16 characters always uses at least 2 bytes (remember that characters and bytes are two different things in Unicode "slang"). Generally speaking, UTF-16 takes more space in the filesystem (most of the time).</p>
+<p>There's also the Little Endian part. UTF-16 always uses a pair of bytes to represent a character, however we need to know what's the correct order of those bytes. We won't get into details here, but the order is indicated by <a href="http://en.wikipedia.org/wiki/Byte-order_mark">Byte-order Mark (BOM)</a>. In practice, the BOM in UTF-16 will add two bytes in the beginning of a file (you can see that in a hexeditor). </p>
+<p>One way to convert your TSV string (generated by FasterCSV) is with Iconv, a tool written for the GNU C Library. Luckly, Iconv is well wrapped in pure Ruby joy. It's inside Ruby's standard library and you just need to require it.</p>
+<p>However, if you convert an string to UTF-16 Little Endian, Iconv will NOT put the BOM in the beginning. This is compatible with the <a href="http://unicode.org/faq/utf_bom.html#bom10">Unicode FAQ</a>. But since Excel is way out of the standards, you must manually insert the BOM.</p>
+<p>You can use Iconv just before sending the file to the user in your controller. It will look like this:</p>
+<pre lang="rails" line="1">
+require 'iconv'
+
+class ProjectsController < ActionController::Base
+  BOM = "\377\376" #Byte Order Mark
+
+  def index
+    @projects = Project.all
+    respond_to do |format|
+      format.html
+      format.csv { export_csv(@projects) }
+    end
+  end
+
+protected
+
+  def export_csv(projects)
+    filename = I18n.l(Time.now, :format => :short) + "- Projects.csv"
+    content = Project.to_csv(projects)
+    content = BOM + Iconv.conv("utf-16le", "utf-8", content)
+    send_data content, :filename => filename
+  end
+end
+</pre>
+<p>You can see that we are still using CSV as an extension to the file. This is because TSV files are not usually associated with Excel. This excerpt uses a timestamp as the filename, which is generally a good practice.</p>
+<h3>Wrapping up</h3>
+<p>So, these are the three rules for dealing with Excel-friendly-CSV:</p>
+<ol>
+<li>Use tabulations, not commas.</li>
+<li>Fields must NOT contain newlines.</li>
+<li>Use UTF-16 Little Endian to send the file to the user. And include a Little Endian BOM manually.</li>
+</ol>
+<p>Keep this in mind and you'll never have to explain to your clients how to open the data export in Excel.</p>
+<p>There is one last issue: OpenOffice will NOT open files in the Excel "specification" easily. Google Analytics solves this by showing two links to the user: "Export to CSV" and "Export to Excel". The first is a regular CSV file and the second is the specially crafted Excel-friendly TSV file.</p>
+<p>And blame Microsoft for this odd behaviour.</p>
+<p><strong>UPDATE:</strong> <a href="http://twitter.com/danielvlopes">@danielvlopes</a> pointed us an already existing solution which encapsulates the process described in this post, called <a href="http://github.com/econsultancy/csv_builder">csv_builder</a>. You just need to set the @output_encoding to use the "utf-16" (beware of the BOM).</p>
+<p><a href="http://twitter.com/jncoward">@jncoward</a> also provided a link to the <a href="http://spreadsheet.rubyforge.org/">spreadsheet</a> gem, which handles directly Excel formats. TSV is a much simpler and faster format, but the spreadsheet gem might be useful to you in more complex cases.</p>
+<p>Finally, Kieran pointed in the comments that we can have XML spreadsheets, while Niko and Chris told us that we can you can also work with HTML tables in Excel, which is simple as well and even allows formatting.</p><p>The post <a href="/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/">Exporting data to CSV and Excel in your Rails apps</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/09/exporting-data-to-csv-and-excel-in-your-rails-app/feed/</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

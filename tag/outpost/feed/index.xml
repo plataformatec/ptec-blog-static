@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>outpost « Plataformatec Blog</title>
+	<atom:link href="/tag/outpost/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 02 Feb 2011 18:59:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Outpost v0.1.0 is released!</title>
+		<link>/2011/02/outpost-v0-1-0-is-released/</link>
+					<comments>/2011/02/outpost-v0-1-0-is-released/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Wed, 02 Feb 2011 18:41:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devops]]></category>
+		<category><![CDATA[monitoring tools]]></category>
+		<category><![CDATA[outpost]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=1731</guid>
+
+					<description><![CDATA[<p>Outpost is me, scratching my own itch. For a while now, freelancing or working for others, I work with pretty much all the stack in web development: from front-end development with HTML and CSS up to the system administration. And sometimes, I screw up. Sometimes, stuff go wrong. Maybe that Sphinx isn&#8217;t getting indexed or ... <a class="read-more-link" href="/2011/02/outpost-v0-1-0-is-released/">»</a></p>
+<p>The post <a href="/2011/02/outpost-v0-1-0-is-released/">Outpost v0.1.0 is released!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Outpost is me, scratching my own itch. For a while now, freelancing or working<br />
+for others, I work with pretty much all the stack in web development: from front-end<br />
+development with HTML and CSS up to the system administration.</p>
+<p>And sometimes, I screw up. Sometimes, stuff go wrong. Maybe that Sphinx<br />
+isn&#8217;t getting indexed or even running after an unsuccessful deploy. Maybe that<br />
+background job isn&#8217;t being run, and I forget to verify it.</p>
+<p>I know there are excellent tools that already solve this problem. But I wanted an<br />
+easy way I would be able to code my own monitoring rules, using one of the<br />
+languages I like the most. And also, the fantastic Aaron Patterson (or<br />
+tenderlove), one of the most prominent faces of the Ruby community once told in<br />
+a Q&amp;A at <a href="http://university.rubymendicant.com/">RMU</a>: it should be fun!</p>
+<p>And thus the Outpost idea was born. Outpost is a framework so I can easily<br />
+implement Ruby code that query the current state of any service I want. I can<br />
+also write code that can go into the database and do a SELECT on a table (a<br />
+jobs table, for example) to check if everything&#8217;s fine.</p>
+<h3>What is Outpost?</h3>
+<p>Outpost is basically a DSL where you can describe rules to monitor your<br />
+service, application, server, whatever. Below is a very simple example:</p>
+<pre lang="ruby">require 'outpost'
+require 'outpost/scouts'
+
+class MyWebPageOutpost < Outpost::DSL
+  using Outpost::Scouts::Http => "web page" do
+    options :host => 'localhost', :port => 3000
+    report :up, :response_code => 200
+    report :down, :response_body => {:match => /Ops/}
+  end
+end</pre>
+<p>In this example, we are monitoring (using what I&#8217;ve called &#8216;Scouts&#8217;) HTTP<br />
+communication to <code>localhost:3000</code>. It will report that the system is<br />
+up if the response code is 200 (HTTP OK) and report that it is down if the<br />
+response body contains the word &#8220;Ops&#8221;, by matching a Regular Expression to it.</p>
+<p>There is still a lot of work to be done, but I feel it is ready for a very first<br />
+release. There are only two Scouts today: HTTP and Ping, but it&#8217;s so<br />
+easy to write new ones that I will be releasing a few more in the next<br />
+days.</p>
+<p>Also, there are only three expectation matchers: response time, response body<br />
+and response code. I believe they are able to cover most of the cases, but it is also<br />
+very easy to write new expectations.</p>
+<p>Below is another example of an Outpost, based on the integration tests:</p>
+<pre lang="ruby">require 'outpost'
+require 'outpost/scouts'
+
+class ExamplePingAndHttp < Outpost::DSL
+ using Outpost::Scouts::Http => 'master http server' do
+   options :host => 'localhost', :port => 9595, :path => '/'
+   report :up, :response_body => {:match => /Up/}
+ end
+
+ using Outpost::Scouts::Ping => 'load balancer' do
+   options :host => 'localhost'
+   report :up, :response_time => {:less_than => 500}
+ end
+end</pre>
+<p>For more details, please check the <a rel="nofollow" href="http://www.github.com/vinibaggio/outpost">project&#8217;s README, on GitHub</a>.</p>
+<h3>The future</h3>
+<p>My plans for Outpost are: SSH support, so you can connect to servers that do<br />
+not expose their services to the outer world, a very simple web dashboard to show<br />
+the results, better error reporting (for now you can only know which Scout<br />
+failed, but not why), a script that automatically generates Outposts for Rails<br />
+apps, and the list goes on!</p>
+<p>Crazy idea: wouldn&#8217;t it be nice to have a script that reads Outposts and<br />
+tells if a machine is ready to be in production? TDD for machines? Woot!</p>
+<h3>Thanks</h3>
+<p>This project was my personal project for RMU (Ruby Mendicant University) and<br />
+so I would like to thank all the people involved for the amazing experience and<br />
+reviews on the project. Also thanks to my friends for listening me nagging<br />
+about this project for a while. Finally, thanks to Tomás D&#8217;Stefano, who<br />
+did some work on my previous attempt to write Outpost, your work won&#8217;t be<br />
+thrown away.</p>
+<h3>Closing</h3>
+<p>Please share your thoughts about this project. I would love to know your opinion!</p><p>The post <a href="/2011/02/outpost-v0-1-0-is-released/">Outpost v0.1.0 is released!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/02/outpost-v0-1-0-is-released/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Rails 3 with RVM FTW!	</title>
+	<atom:link href="/2010/04/rails-3-with-rvm-ftw/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/04/rails-3-with-rvm-ftw/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 05 May 2010 11:24:52 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Andrew Brown		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-594</link>
+
+		<dc:creator><![CDATA[Andrew Brown]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 11:24:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-594</guid>
+
+					<description><![CDATA[I&#039;m really enjoying RVM, how we lived without it before. I have no idea.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m really enjoying RVM, how we lived without it before. I have no idea.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Brown		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-1005</link>
+
+		<dc:creator><![CDATA[Andrew Brown]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 11:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-1005</guid>
+
+					<description><![CDATA[I&#039;m really enjoying RVM, how we lived without it before. I have no idea.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m really enjoying RVM, how we lived without it before. I have no idea.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Arno.Nyhm		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-588</link>
+
+		<dc:creator><![CDATA[Arno.Nyhm]]></dc:creator>
+		<pubDate>Sat, 01 May 2010 21:34:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-588</guid>
+
+					<description><![CDATA[i did not tested it but this command look it is for copying gemsets:
+
+http://rvm.beginrescueend.com/gemsets/copying/]]></description>
+			<content:encoded><![CDATA[<p>i did not tested it but this command look it is for copying gemsets:</p>
+<p><a href="http://rvm.beginrescueend.com/gemsets/copying/" rel="nofollow ugc">http://rvm.beginrescueend.com/gemsets/copying/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Arno.Nyhm		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-1004</link>
+
+		<dc:creator><![CDATA[Arno.Nyhm]]></dc:creator>
+		<pubDate>Sat, 01 May 2010 21:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-1004</guid>
+
+					<description><![CDATA[i did not tested it but this command look it is for copying gemsets:
+
+http://rvm.beginrescueend.com/gemsets/copying/]]></description>
+			<content:encoded><![CDATA[<p>i did not tested it but this command look it is for copying gemsets:</p>
+<p><a href="http://rvm.beginrescueend.com/gemsets/copying/" rel="nofollow ugc">http://rvm.beginrescueend.com/gemsets/copying/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcin Kulik		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-585</link>
+
+		<dc:creator><![CDATA[Marcin Kulik]]></dc:creator>
+		<pubDate>Fri, 30 Apr 2010 09:04:30 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-585</guid>
+
+					<description><![CDATA[@Jose,
+
+I&#039;ve just created two fresh apps, one on sqlite, second on mysql. I&#039;ve generated scaffold, migrated and run webrick. Then I&#039;ve been adding, editing, removing posts and everything was working fine.
+Check out this gist for steps I&#039;ve taken: http://gist.github.com/384972
+
+I&#039;m using ArchLinux (32-bit) and rvm.]]></description>
+			<content:encoded><![CDATA[<p>@Jose,</p>
+<p>I&#8217;ve just created two fresh apps, one on sqlite, second on mysql. I&#8217;ve generated scaffold, migrated and run webrick. Then I&#8217;ve been adding, editing, removing posts and everything was working fine.<br />
+Check out this gist for steps I&#8217;ve taken: <a href="http://gist.github.com/384972" rel="nofollow ugc">http://gist.github.com/384972</a></p>
+<p>I&#8217;m using ArchLinux (32-bit) and rvm.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcin Kulik		</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/comment-page-1/#comment-1003</link>
+
+		<dc:creator><![CDATA[Marcin Kulik]]></dc:creator>
+		<pubDate>Fri, 30 Apr 2010 09:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=915#comment-1003</guid>
+
+					<description><![CDATA[@Jose,
+
+I&#039;ve just created two fresh apps, one on sqlite, second on mysql. I&#039;ve generated scaffold, migrated and run webrick. Then I&#039;ve been adding, editing, removing posts and everything was working fine.
+Check out this gist for steps I&#039;ve taken: http://gist.github.com/384972
+
+I&#039;m using ArchLinux (32-bit) and rvm.]]></description>
+			<content:encoded><![CDATA[<p>@Jose,</p>
+<p>I&#8217;ve just created two fresh apps, one on sqlite, second on mysql. I&#8217;ve generated scaffold, migrated and run webrick. Then I&#8217;ve been adding, editing, removing posts and everything was working fine.<br />
+Check out this gist for steps I&#8217;ve taken: <a href="http://gist.github.com/384972" rel="nofollow ugc">http://gist.github.com/384972</a></p>
+<p>I&#8217;m using ArchLinux (32-bit) and rvm.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

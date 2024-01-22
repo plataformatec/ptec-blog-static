@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Embracing REST with mind, body and soul « Plataformatec Blog</title>
+		<meta name="description" content="UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we&#039;ve added map.resources to our">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2009/08/embracing-rest-with-mind-body-and-soul/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Embracing REST with mind, body and soul « Plataformatec Blog">
+		<meta property="og:description" content="UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we&#039;ve added map.resources to our">
+		<meta property="og:url" content="/2009/08/embracing-rest-with-mind-body-and-soul/">
+		<meta property="article:published_time" content="2009-08-07T18:35:20+00:00">
+		<meta property="article:modified_time" content="2014-03-24T21:46:46+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Embracing REST with mind, body and soul « Plataformatec Blog">
+		<meta name="twitter:description" content="UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we&#039;ve added map.resources to our">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#article","name":"Embracing REST with mind, body and soul « Plataformatec Blog","headline":"Embracing REST with mind, body and soul","author":{"@id":"\/author\/josevalim\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2009-08-07T15:35:20-03:00","dateModified":"2014-03-24T18:46:46-03:00","inLanguage":"en-US","commentCount":34,"mainEntityOfPage":{"@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#webpage"},"isPartOf":{"@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#webpage"},"articleSection":"English, http, rails, respond_with, responders, REST"},{"@type":"BreadcrumbList","@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/#listItem","position":2,"name":"2009","item":"\/2009\/","nextItem":"\/2009\/08\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2009\/08\/#listItem","position":3,"name":"August","item":"\/2009\/08\/","nextItem":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#listItem","previousItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#listItem","position":4,"name":"Embracing REST with mind, body and soul","previousItem":"\/2009\/08\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/josevalim\/#author","url":"\/author\/josevalim\/","name":"José Valim","image":{"@type":"ImageObject","@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/e837f6b7fd146ab16ed3d663476c063e?s=96&d=mm&r=pg","width":96,"height":96,"caption":"José Valim"}},{"@type":"WebPage","@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#webpage","url":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/","name":"Embracing REST with mind, body and soul « Plataformatec Blog","description":"UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we've added map.resources to our","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2009\/08\/embracing-rest-with-mind-body-and-soul\/#breadcrumblist"},"author":{"@id":"\/author\/josevalim\/#author"},"creator":{"@id":"\/author\/josevalim\/#author"},"datePublished":"2009-08-07T15:35:20-03:00","dateModified":"2014-03-24T18:46:46-03:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Embracing REST with mind, body and soul Comments Feed" href="/2009/08/embracing-rest-with-mind-body-and-soul/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/49">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=49">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F08%2Fembracing-rest-with-mind-body-and-soul%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F08%2Fembracing-rest-with-mind-body-and-soul%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-49 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2009/08/embracing-rest-with-mind-body-and-soul/" rel="bookmark">Embracing REST with mind, body and soul</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2009-08-07T15:35:20-03:00">Aug 7, 2009</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=4" title="Posts by José Valim">José Valim</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p><strong>UPDATE:</strong> ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes.</p>
+<p>About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about <a href="http://weblog.rubyonrails.org/2007/1/19/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations" target="_blank">RESTful admiration and HTTP Lovefest</a>. Since then we&#8217;ve added <em>map.resources</em> to our routes, started to use different formats in <em>respond_to</em> and really learned how to love all HTTP verbs.</p>
+<p>Your application entry point (the router) has become completely RESTful, but it still haven&#8217;t reached ActionPack core. Today we are bringing the missing ingredient: make your controllers more resource aware.</p>
+<h3>The first step: respond_with(@resource)</h3>
+<p>About one week ago <a href="http://github.com/rails/rails/commit/09de34ca56598ae5d0302a14715b2a11b6cc9845" target="_blank">the first step was given</a>. We brought Merb&#8217;s provide/display into Rails, <a href="http://loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3" target="_blank">just as DHH proposed</a>: you can define supported formats at the class level and tell in the instance the resource to be represented by those formats. Let&#8217;s see some code:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+  end</pre>
+<p>It works like this: when a request comes, for example with format xml, it will first search for a template at users/index.xml. If the template is not available, it tries to render the resource given (in this case, @users) by calling :to_xml on it. Before Rails 3.0, the equivalent to the index action above would be:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+  end</pre>
+<p>The gain with respond_with introduction is more obvious if you compare index, new and show actions:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+
+    def new
+      @user = User.new
+      respond_with(@user)
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_with(@user)
+    end
+  end</pre>
+<p>With older version:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+
+    def new
+      @user = User.new
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+  end</pre>
+<p>However, even if respond_with is full featured (Ryan Daigle has done <a href="http://ryandaigle.com/articles/2009/8/6/what-s-new-in-edge-rails-cleaner-restful-controllers-w-respond_with/" target="_blank">an excellent job covering all respond_with features</a>), it started to show some flaws on create, update and destroy actions. A default create action could be written with respond_with as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    if @user.save
+      flash[:notice] = "User was created successfully."
+      respond_with(@user, :status =&gt; :created, :location =&gt; @user) do |format|
+        format.html { redirect_to @user }
+      end
+    else
+      respond_with(@user.errors, :status =&gt; :unprocessable_entity) do |format|
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>You can notice that:</p>
+<ol>
+<li>You have to call respond_with twice;</li>
+<li>On the first respond_with, you have to give the location twice. One as a hash and other as parameter to redirect_to;</li>
+<li>And by giving a block to respond_with, you focus more on the exception than on the default behavior.</li>
+</ol>
+<p>Suddenly we realized that respond_with is useful just for GET requests. There was no HTTP Lovefest, it was more like HTTP monotheism.</p>
+<h3>2. Second step: Love all</h3>
+<p>At this point, we started to ask ourselves: why can&#8217;t respond_with include HTTP verb semantics? Isn&#8217;t that what RESTful is all about?</p>
+<p>After <a href="http://github.com/rails/rails/commit/5b7e81efec649b424037c68a93bddad1bc4e0c23" target="_blank">this commit</a>, we brought all HTTP verbs to respond_with, but only for resourceful formats like xml and json (ie. formats that don&#8217;t need to render a template). Then our create action with POST request could be rewritten as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    respond_with(@user) do |format|
+      if @user.save
+        flash[:notice] = "User was created successfully."
+        format.html { redirect_to @user }
+      else
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>Internally, when a xml request happened, respond_with would check the current request method (in this case, POST) and whether the resource has errors or not. Depending on these values, it will render the resource or the resource errors, setting accordingly the status and location headers. Now we just have to worry with non-RESTful requests, like html, mobile and iphone&#8230; (which we call navigational formats).</p>
+<p>Personally, I was quite happy with the results at this iteration, since it solves two of the three problems exposed previously. However, Jeremy Kemper and Yehuda Katz wanted more. And they were right, yeah!</p>
+<h3>3. Third step: Responder</h3>
+<p>In step 2, we were able to abstract POST, PUT and DELETE requests for formats like xml and json, but we still would have to repeat html behavior through all controllers, even if almost all of them behave similarly.</p>
+<p>So what we want is a simple way to tell the controller <strong>how to render our resources depending on the format AND HTTP verb</strong>. <a href="http://github.com/rails/rails/commit/aed135d3e261cbee153a35fcfbeb47e2e02b12e4" target="_blank">In this commit</a>, we&#8217;ve added <strong>ActionController::Responder</strong>.</p>
+<p>By default, ActionController::Responder holds all formats behavior in a method called to_format. It&#8217;s similar to this:</p>
+<pre lang="ruby">  def to_format
+    return render unless resource.respond_to?(:"to_#{format}")
+
+    if get?
+      render format =&gt; resource
+    elsif has_errors?
+      render format =&gt; resource.errors, :status =&gt; :unprocessable_entity
+    elsif post?
+      render format =&gt; resource, :status =&gt; :created, :location =&gt; resource
+    else
+      head :ok
+    end
+  end</pre>
+<p>As you can see, it renders the resource based on the HTTP verb and whether it has errors or not. If some format, like :html, does not fall into the to_format behavior, we just need to define a to_html in ActionController::Responder, which by default is:</p>
+<pre lang="ruby">  def to_html
+    if get?
+      render
+    elsif has_errors?
+      render :action =&gt; (post? ? :new : :edit)
+    else
+      redirect_to resource
+    end
+  end</pre>
+<p>As result, you have your resources representation encapsulated in one place. Your controller code just have to send the resource using <strong>respond_with(@resource)</strong> and respond_with will call <strong>ActionController::Responder</strong> which will know what to do. Our create action (POST request) can then be written as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user)
+  end</pre>
+<p>If you need to change the redirect URL, you can overwrite just the html behavior:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user) do |format|
+      format.html { redirect_to user_confirmation_url }
+    end
+  end</pre>
+<p>On the other hand, if you want to change the redirect url and the Location header for XML and JSON, you can simply give :location as option:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user, :location =&gt; user_confirmation_url)
+  end</pre>
+<p>The best of all is that the responder implementation is quite simple and straight-forward, but still powerful. We haven&#8217;t enforced any restriction in the API. Anything that responds to :call can be a responder, so you can create your custom classes or even give procs, fibers and so on.</p>
+<p>Embrace REST in your design and enjoy a consistent behavior through all your controllers. Spread the word!</p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/http/" rel="tag">http</a>, <a href="/tag/rails/" rel="tag">rails</a>, <a href="/tag/respond_with/" rel="tag">respond_with</a>, <a href="/tag/responders/" rel="tag">responders</a>, <a href="/tag/rest/" rel="tag">REST</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comments"><span class="dsq-postid" data-dsqidentifier="49 http://blog.plataformatec.com.br/?p=49">34 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		34 responses to &#8220;Embracing REST with mind, body and soul&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-775">
+				<div id="div-comment-775" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://www.yehudakatz.com/" class="url" rel="ugc external nofollow">Yehuda Katz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-775">August 7, 2009 at 6:52 pm</a>		</div>
+
+		<p>This is looking really great José. There are still a few changes we (you?) will get in over the next few days:</p>
+<p>* Using the Renderer for default render.<br>
+* Being able to override the renderer used declaratively at the class level (renderer MySpecialRenderer)<br>
+* Inferring the instance variable names to make respond_with the default if performed? is false</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-8">
+				<div id="div-comment-8" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://www.yehudakatz.com/" class="url" rel="ugc external nofollow">Yehuda Katz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-8">August 7, 2009 at 3:52 pm</a>		</div>
+
+		<p>This is looking really great José. There are still a few changes we (you?) will get in over the next few days:</p>
+<p>* Using the Renderer for default render.<br>
+* Being able to override the renderer used declaratively at the class level (renderer MySpecialRenderer)<br>
+* Inferring the instance variable names to make respond_with the default if performed? is false</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-776">
+				<div id="div-comment-776" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/041cb1b0b9b169cd6de759c56132cc81?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/041cb1b0b9b169cd6de759c56132cc81?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://faithfulgeek.org/" class="url" rel="ugc external nofollow">Joe Fiorini</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-776">August 7, 2009 at 8:03 pm</a>		</div>
+
+		<p>This looks great. Makes the representational part of REST much easier. Might even give resource controller a run for its money! My only question is the title of your article being &#8220;Embracing REST with mind, body, and soul&#8221;, where&#8217;s the &#8220;State Transfer&#8221; part of REST? In REST as it was originally defined, there should be no need to give out URIs; they should be part of the resource state, therefore allowing one to seamlessly transfer between one resource&#8217;s state and another. I haven&#8217;t heard much about doing this in Rails, but I&#8217;d be interested to see how it could be embedded into the framework. That would make Rails truly innovative.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-10">
+				<div id="div-comment-10" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/041cb1b0b9b169cd6de759c56132cc81?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/041cb1b0b9b169cd6de759c56132cc81?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://faithfulgeek.org/" class="url" rel="ugc external nofollow">Joe Fiorini</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-10">August 7, 2009 at 5:03 pm</a>		</div>
+
+		<p>This looks great. Makes the representational part of REST much easier. Might even give resource controller a run for its money! My only question is the title of your article being &#8220;Embracing REST with mind, body, and soul&#8221;, where&#8217;s the &#8220;State Transfer&#8221; part of REST? In REST as it was originally defined, there should be no need to give out URIs; they should be part of the resource state, therefore allowing one to seamlessly transfer between one resource&#8217;s state and another. I haven&#8217;t heard much about doing this in Rails, but I&#8217;d be interested to see how it could be embedded into the framework. That would make Rails truly innovative.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-777">
+				<div id="div-comment-777" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-777">August 7, 2009 at 8:23 pm</a>		</div>
+
+		<p>Joe, good point.</p>
+<p>Do you think that State Transfer is the mind, body or soul of REST? 🙂<br>
+Can you call me on irc (#thor, #rails-contrib or #remarkable), so we can discuss it further?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-11">
+				<div id="div-comment-11" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-11">August 7, 2009 at 5:23 pm</a>		</div>
+
+		<p>Joe, good point.</p>
+<p>Do you think that State Transfer is the mind, body or soul of REST? 🙂<br>
+Can you call me on irc (#thor, #rails-contrib or #remarkable), so we can discuss it further?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-778">
+				<div id="div-comment-778" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/be2ea3416aaf1e1e4c62f3c9a8d7b3b6?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/be2ea3416aaf1e1e4c62f3c9a8d7b3b6?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://slightlycoded.com/" class="url" rel="ugc external nofollow">taelor</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-778">August 7, 2009 at 9:36 pm</a>		</div>
+
+		<p>great post on a preview of whats to come! looks really clean with Renderer now.</p>
+<p>Question, where will this code sit in the directory structure if we want to define our own?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-12">
+				<div id="div-comment-12" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/be2ea3416aaf1e1e4c62f3c9a8d7b3b6?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/be2ea3416aaf1e1e4c62f3c9a8d7b3b6?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://slightlycoded.com/" class="url" rel="ugc external nofollow">taelor</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-12">August 7, 2009 at 6:36 pm</a>		</div>
+
+		<p>great post on a preview of whats to come! looks really clean with Renderer now.</p>
+<p>Question, where will this code sit in the directory structure if we want to define our own?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-779">
+				<div id="div-comment-779" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-779">August 7, 2009 at 10:48 pm</a>		</div>
+
+		<p>Taelor, good question.</p>
+<p>Not yet, there are quite some enhancements we want to do, but it&#8217;s better to wait for some feedback before working on new features.</p>
+<p>The best way you can help is trying out Rails 3.0 and tell us how it works for you. I&#8217;m usually available on irc, so we can always discuss about it.</p>
+<p>Regards!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-13">
+				<div id="div-comment-13" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-13">August 7, 2009 at 7:48 pm</a>		</div>
+
+		<p>Taelor, good question.</p>
+<p>Not yet, there are quite some enhancements we want to do, but it&#8217;s better to wait for some feedback before working on new features.</p>
+<p>The best way you can help is trying out Rails 3.0 and tell us how it works for you. I&#8217;m usually available on irc, so we can always discuss about it.</p>
+<p>Regards!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-780">
+				<div id="div-comment-780" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/34f26dde337f0a0d2d380e11117e82f6?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/34f26dde337f0a0d2d380e11117e82f6?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://vishnugopal.com/" class="url" rel="ugc external nofollow">Vishnu Gopal</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-780">August 7, 2009 at 11:16 pm</a>		</div>
+
+		<p>Forgive me, but isn&#8217;t this a lot of magic? How do you explain this all to new users? More and more I&#8217;m preferring an approach like Sinatra—back to simple, humble (understandable) roots.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-14">
+				<div id="div-comment-14" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/34f26dde337f0a0d2d380e11117e82f6?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/34f26dde337f0a0d2d380e11117e82f6?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://vishnugopal.com/" class="url" rel="ugc external nofollow">Vishnu Gopal</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-14">August 7, 2009 at 8:16 pm</a>		</div>
+
+		<p>Forgive me, but isn&#8217;t this a lot of magic? How do you explain this all to new users? More and more I&#8217;m preferring an approach like Sinatra—back to simple, humble (understandable) roots.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-15">
+				<div id="div-comment-15" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/44261b1dd4d1f942a43d19c45e3a22e4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/44261b1dd4d1f942a43d19c45e3a22e4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Adam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-15">August 8, 2009 at 12:30 am</a>		</div>
+
+		<p>José, </p>
+<p>Joe makes an important point.</p>
+<p>Right now, you have to infer the URLs of representations which is explicitly forbidden (see <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven" rel="nofollow ugc">http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven</a>)<br>
+From the above referenced article:</p>
+<p>&#8220;A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types that are appropriate for the intended audience (i.e., expected to be understood by any client that might use the API). From that point on, all application state transitions must be driven by client selection of server-provided choices that are present in the received representations or implied by the user’s manipulation of those representations. The transitions may be determined (or limited by) the client’s knowledge of media types and resource communication mechanisms, both of which may be improved on-the-fly (e.g., code-on-demand). [Failure here implies that out-of-band information is driving interaction instead of hypertext.]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-781">
+				<div id="div-comment-781" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/44261b1dd4d1f942a43d19c45e3a22e4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/44261b1dd4d1f942a43d19c45e3a22e4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Adam</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-781">August 8, 2009 at 3:30 am</a>		</div>
+
+		<p>José, </p>
+<p>Joe makes an important point.</p>
+<p>Right now, you have to infer the URLs of representations which is explicitly forbidden (see <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven" rel="nofollow ugc">http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven</a>)<br>
+From the above referenced article:</p>
+<p>&#8220;A REST API should be entered with no prior knowledge beyond the initial URI (bookmark) and set of standardized media types that are appropriate for the intended audience (i.e., expected to be understood by any client that might use the API). From that point on, all application state transitions must be driven by client selection of server-provided choices that are present in the received representations or implied by the user’s manipulation of those representations. The transitions may be determined (or limited by) the client’s knowledge of media types and resource communication mechanisms, both of which may be improved on-the-fly (e.g., code-on-demand). [Failure here implies that out-of-band information is driving interaction instead of hypertext.]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-782">
+				<div id="div-comment-782" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/2f46d76f0e5db4dc318b03be07ebaac4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/2f46d76f0e5db4dc318b03be07ebaac4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://tomafro.net/" class="url" rel="ugc external nofollow">Tom Ward</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-782">August 8, 2009 at 6:25 am</a>		</div>
+
+		<p>I thought the respond_with work was good, but together with all these changes REST support is getting better.  The proliferation of restful plugins are now slowly becoming less and less useful.  Great work.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-16">
+				<div id="div-comment-16" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/2f46d76f0e5db4dc318b03be07ebaac4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/2f46d76f0e5db4dc318b03be07ebaac4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://tomafro.net/" class="url" rel="ugc external nofollow">Tom Ward</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-16">August 8, 2009 at 3:25 am</a>		</div>
+
+		<p>I thought the respond_with work was good, but together with all these changes REST support is getting better.  The proliferation of restful plugins are now slowly becoming less and less useful.  Great work.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-783">
+				<div id="div-comment-783" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-783">August 8, 2009 at 7:54 am</a>		</div>
+
+		<p>@Vishnu I have to disagree at this point that this is a lot of magic. Yes, there are a lot of things happening, but the code is quite <b>straight-forward</b>. respond_with just invokes the ActionController::Renderer class which is less than 100LOC.</p>
+<p>Try to consider a huge application, where all those controllers have this common code for scaffold actions (index, show, create, update&#8230;). If you want to start using http cache, you have to do that at only one place. This is about treating your resources equally and bring consistency to your controllers.</p>
+<p>Besides Rails 3.0 is also bringing to the table modularity. If you want, you can get a Rails AbstractController and implement a SinatraComapatibility layer on top of it. You don&#8217;t need to use any of the additional stuff.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-17">
+				<div id="div-comment-17" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-17">August 8, 2009 at 4:54 am</a>		</div>
+
+		<p>@Vishnu I have to disagree at this point that this is a lot of magic. Yes, there are a lot of things happening, but the code is quite <b>straight-forward</b>. respond_with just invokes the ActionController::Renderer class which is less than 100LOC.</p>
+<p>Try to consider a huge application, where all those controllers have this common code for scaffold actions (index, show, create, update&#8230;). If you want to start using http cache, you have to do that at only one place. This is about treating your resources equally and bring consistency to your controllers.</p>
+<p>Besides Rails 3.0 is also bringing to the table modularity. If you want, you can get a Rails AbstractController and implement a SinatraComapatibility layer on top of it. You don&#8217;t need to use any of the additional stuff.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-784">
+				<div id="div-comment-784" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-784">August 8, 2009 at 7:58 am</a>		</div>
+
+		<p>Adam and Joe,</p>
+<p>I was able to discuss that with some Rails Core guys and there are definitely some interest in adding this to Rails. I was also able to find a couple plugins in Github that does something similar. It definitely would close the deal.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-18">
+				<div id="div-comment-18" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-18">August 8, 2009 at 4:58 am</a>		</div>
+
+		<p>Adam and Joe,</p>
+<p>I was able to discuss that with some Rails Core guys and there are definitely some interest in adding this to Rails. I was also able to find a couple plugins in Github that does something similar. It definitely would close the deal.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-785">
+				<div id="div-comment-785" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.yehudakatz.com/" class="url" rel="ugc external nofollow">Yehuda Katz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-785">August 8, 2009 at 6:14 pm</a>		</div>
+
+		<p>@vishnu &#8220;Forgive me, but isn’t this a lot of magic? How do you explain this all to new users? More and more I’m preferring an approach like Sinatra—back to simple, humble (understandable) roots&#8221;</p>
+<p>For simple apps, you should use a simple approach. Rails still supports the simple approach (even without respond_to). You could even do self.response_body = &#8220;Whatever&#8221;. However, in more complex apps, modeling REST behavior, especially when it&#8217;s almost always identical, can get very difficult.</p>
+<p>This provides us with a way to wrap up a default set of REST behavior, and more importantly, allow you to define the semantics of your objects if you don&#8217;t want to follow our conventions. For most users, respond_with will have the pleasant effect of reducing code in their controllers (in non-confusing ways for the simple cases). Users with more complex apps will appreciate not having to stuff all logic in a single object, and the ability to easily define presentation logic that depends on a specific resource + the current request.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-20">
+				<div id="div-comment-20" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/428167a3ec72235ba971162924492609?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.yehudakatz.com/" class="url" rel="ugc external nofollow">Yehuda Katz</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-20">August 8, 2009 at 3:14 pm</a>		</div>
+
+		<p>@vishnu &#8220;Forgive me, but isn’t this a lot of magic? How do you explain this all to new users? More and more I’m preferring an approach like Sinatra—back to simple, humble (understandable) roots&#8221;</p>
+<p>For simple apps, you should use a simple approach. Rails still supports the simple approach (even without respond_to). You could even do self.response_body = &#8220;Whatever&#8221;. However, in more complex apps, modeling REST behavior, especially when it&#8217;s almost always identical, can get very difficult.</p>
+<p>This provides us with a way to wrap up a default set of REST behavior, and more importantly, allow you to define the semantics of your objects if you don&#8217;t want to follow our conventions. For most users, respond_with will have the pleasant effect of reducing code in their controllers (in non-confusing ways for the simple cases). Users with more complex apps will appreciate not having to stuff all logic in a single object, and the ability to easily define presentation logic that depends on a specific resource + the current request.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-26">
+				<div id="div-comment-26" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://afreshcup.com/2009/08/10/double-shot-514/" class="url" rel="ugc external nofollow">Double Shot #514 &laquo; A Fresh Cup</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-26">August 10, 2009 at 8:04 am</a>		</div>
+
+		<p>[&#8230;] Embracing REST with mind, body and soul &#8211; Jose Valim writes about some of the changes coming in Rails 3. [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-786">
+				<div id="div-comment-786" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ff8cc764b86f8b9c6a87764f45cb96c8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ff8cc764b86f8b9c6a87764f45cb96c8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://imaginateaqui.net/" class="url" rel="ugc external nofollow">Gaizka</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-786">August 10, 2009 at 11:34 am</a>		</div>
+
+		<p>Great post!</p>
+<p>I have a question about your last example, when you want to overwrite the JSON format behaviour.</p>
+<p>I think that in your code, a new User *is* begin created (even if using JSON), but at the end you respond with &#8220;You cannot create an user through JSON API&#8221;.</p>
+<p>How could you rewrite that example wihout looking too clumsy?</p>
+<p>Thanks!!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-27">
+				<div id="div-comment-27" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ff8cc764b86f8b9c6a87764f45cb96c8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ff8cc764b86f8b9c6a87764f45cb96c8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://imaginateaqui.net/" class="url" rel="ugc external nofollow">Gaizka</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-27">August 10, 2009 at 8:34 am</a>		</div>
+
+		<p>Great post!</p>
+<p>I have a question about your last example, when you want to overwrite the JSON format behaviour.</p>
+<p>I think that in your code, a new User *is* begin created (even if using JSON), but at the end you respond with &#8220;You cannot create an user through JSON API&#8221;.</p>
+<p>How could you rewrite that example wihout looking too clumsy?</p>
+<p>Thanks!!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-787">
+				<div id="div-comment-787" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-787">August 10, 2009 at 11:40 am</a>		</div>
+
+		<p>Gaizka, good point. Already fixed! Thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim bypostauthor even thread-even depth-1" id="comment-28">
+				<div id="div-comment-28" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-28">August 10, 2009 at 8:40 am</a>		</div>
+
+		<p>Gaizka, good point. Already fixed! Thanks!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-788">
+				<div id="div-comment-788" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ae07c45e77d76eaded4143b4fdaaab73?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ae07c45e77d76eaded4143b4fdaaab73?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jesse Rankin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-788">August 11, 2009 at 3:52 pm</a>		</div>
+
+		<p>+1 for adding the state transfer functionality.  That is something that has always bugged me about rails&#8217; rest implementation.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-30">
+				<div id="div-comment-30" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ae07c45e77d76eaded4143b4fdaaab73?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ae07c45e77d76eaded4143b4fdaaab73?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Jesse Rankin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-30">August 11, 2009 at 12:52 pm</a>		</div>
+
+		<p>+1 for adding the state transfer functionality.  That is something that has always bugged me about rails&#8217; rest implementation.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-33">
+				<div id="div-comment-33" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://neilmiddleton.com/2009/08/12/links-for-2009-08-12/" class="url" rel="ugc external nofollow">links for 2009-08-12 | :neil_middleton</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-33">August 12, 2009 at 12:09 pm</a>		</div>
+
+		<p>[&#8230;] Embracing REST with mind, body and soul &#8230;and more on Rails 3 [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-75">
+				<div id="div-comment-75" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://next.pixeldepo.com/2009/08/23/links-for-2009-08-23/" class="url" rel="ugc external nofollow">links for 2009-08-23 | NeXt</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-75">August 23, 2009 at 11:36 am</a>		</div>
+
+		<p>[&#8230;] Embracing REST with mind, body and soul | Plataforma Blog (tags: rails ruby rest restful programming) [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-95">
+				<div id="div-comment-95" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="/2009/08/inherited-resources-is-scopes-and-responder-fluent/" class="url" rel="ugc">Inherited Resources is scopes and responder fluent | Plataforma Blog</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-95">August 28, 2009 at 11:09 am</a>		</div>
+
+		<p>[&#8230;] Embracing REST with mind, body and soul  [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback even thread-even depth-1" id="comment-210">
+				<div id="div-comment-210" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="http://www.rubyinside.com.br/jose-valim-entrevista-screencast-e-tutorial-2083" class="url" rel="ugc external nofollow">José Valim - Entrevista, screencast e tutorial</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-210">September 9, 2009 at 3:16 pm</a>		</div>
+
+		<p>[&#8230;] minha primeira feature após os geradores de código foi o ActionController::Responder e atualmente estou trabalhando na otimização de callbacks e observers do ActiveRecord (assim como [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-419">
+				<div id="div-comment-419" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/" class="url" rel="ugc">One in Three: Inherited Resources, Has Scope and Responders | Plataforma Tecnologia Blog</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/08/embracing-rest-with-mind-body-and-soul/#comment-419">December 23, 2009 at 11:06 am</a>		</div>
+
+		<p>[&#8230;] Resources. This initial implementation provided a nice test suite and several use cases for a improved Rails&#8217; implementation, based in Responders, which encapsulates all the behavior in one class, and can be added, modified [&#8230;]</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2009/07/creating-your-own-generators-with-thor/" rel="prev">Creating your own generators with Thor</a>          <a href="/2009/08/nao-sobrecarregue-seus-usuarios-com-validacoes/" rel="next">Não sobrecarregue seus usuários com validações</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

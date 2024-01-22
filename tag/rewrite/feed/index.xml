@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rewrite « Plataformatec Blog</title>
+	<atom:link href="/tag/rewrite/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 17:47:58 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>8 pontos-chave para reescrever um software</title>
+		<link>/2017/07/8-pontos-chaves-para-reescrever-um-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Sat, 29 Jul 2017 00:34:15 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[reescrita de código]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6576</guid>
+
+					<description><![CDATA[<p>O terceiro post da série Baixa Qualidade Interna de Software. Assim como uma refatoração grande, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software. 1. As duas plataformas existirão juntas por um determinado período ou ... <a class="read-more-link" href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">»</a></p>
+<p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">O terceiro post da série Baixa Qualidade Interna de Software.</em></p>
+<p>Assim como uma <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">refatoração grande</a>, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software.</p>
+<h2>1. As duas plataformas existirão juntas por um determinado período ou não?</h2>
+<p>Você planeja manter a versão de legado e a nova versão em produção? Caso positivo, por quanto tempo? Você deve evitar manter duas versões em produção por muito tempo devido aos custos operacionais e de oportunidade.</p>
+<h2>2. Quem trabalhará na reescrita do código e quem trabalhará na versão do legado?</h2>
+<p>Geralmente, os desenvolvedores preferem trabalhar em projetos <em>greenfield</em>. Você deve considerar isto ao planejar quem trabalhará na versão do legado e quem trabalhará na nova.</p>
+<h2>3. É inviável reescrever todas as funcionalidades ao mesmo tempo</h2>
+<p>Mapear cada funcionalidade entre a versão do legado e a nova é inviável. Dito isto, que funcionalidades devem ser as primeiras a serem reescritas?</p>
+<p>Leve em consideração como os clientes atuais serão afetados por um produto com menos funcionalidades.</p>
+<h2>4. Reescrever o software diminuirá ou interromperá o lançamento de novas funcionalidades na versão do legado</h2>
+<p>É provável que você não lance novos recursos na versão legada durante o processo de reescrita do código. Assim como os usuários finais, os clientes internos (comercial, produtos, financeiro) não terão novas funcionalidades. Seus clientes internos e outras partes interessadas vão pressioná-lo para entregar novas funcionalidades.</p>
+<p>Certifique-se que a comunicação antes e durante o processo de reescrita do software seja clara e que cada stakeholder esteja alinhado com as metas.</p>
+<h2>5. O processo deve ser secreto ou público?</h2>
+<p>Imagine que você é um cliente potencial de um produto de software. Você planeja comprá-lo, mas descobriu que uma versão completamente nova será lançada em três meses. Você compraria a versão do legado ou esperaria por três meses? Multiplique isso por dezenas ou centenas de potenciais compradores. O fornecedor pode perder muito dinheiro.</p>
+<p>Por isso, se você é o fornecedor, deve pensar cuidadosamente sobre como e quando divulgar o lançamento da nova versão.</p>
+<h2>6. Migração de dados</h2>
+<p>O processo de reescrever um software não envolve apenas o desenvolvimento de funcionalidades. Você também precisa planejar a migração de dados. As pessoas costumam subestimar a complexidade e o esforço necessários para migrar dados da versão do legado para a nova versão. Essa atividade não deve ser apenas mais uma tarefa em seu quadro, chamado &#8220;migração de dados&#8221;. É muito maior que isso.</p>
+<p>Por exemplo, imagine que você precisa migrar as contas de seus usuários. Se a sua versão de legado é gerenciada por um terceiro, é provável que você não tenha acesso às senhas criptografadas dos usuários, portanto, não será possível migrá-las. Você terá de solicitar a cada usuário para redefinir a senha na nova versão. Isso também faz parte do processo de migração de dados.</p>
+<h2>7. Prepare-se para uma possível redução nas taxas de conversão</h2>
+<p>Você lançará uma nova versão com menos recursos. Quem garante que as taxas de conversão permanecerão as mesmas? As taxas de conversão são essenciais em algumas indústrias, como no e-commerce.</p>
+<p>Preferencialmente, você deve manter o suporte à versão legada e à nova por um tempo para que, no caso de redução drástica nas taxas de conversão, você tenha um plano de backup.</p>
+<h2>8. Planeje treinamento para os usuários internos</h2>
+<p>Este é outro ponto negligenciado. O plano de reescrever o software precisa ter uma fase de treinamento de usuários internos antes de disponibilizar seu novo produto em produção. Não subestime a importância deste item. Pode demorar algum tempo, pois seus usuários internos darão feedback sobre pontos que talvez precisem ser alterados.</p>
+<p>Usuários internos podem ser encontrados em várias áreas, como help desk e vendas.</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li><a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a></li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li>8 pontos-chaves para reescrever um software <spam style="background-color:#23ceff;color:#fff;padding:3px 5px 3px;border-radius:3px; text-transform:uppercase;font-size:10px;font-family:sans-serif;font-weight:bold;">você está lendo</spam></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Sintomas da Baixa Qualidade Interna de Software</title>
+		<link>/2017/05/sintomas-da-baixa-qualidade-interna-de-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 31 May 2017 18:20:52 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refatoração de código]]></category>
+		<category><![CDATA[refatoração de software]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6400</guid>
+
+					<description><![CDATA[<p>Primeiro post da série Baixa Qualidade Interna de Software Não só bens físicos se deterioram, isso também ocorre com software. Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens ... <a class="read-more-link" href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">»</a></p>
+<p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">Primeiro post da série Baixa Qualidade Interna de Software</em></p>
+<h2>Não só bens físicos se deterioram, isso também ocorre com software.</h2>
+<p>Todos sabem que bens físicos se deterioram. As pessoas aceitam este fato e sempre lidaram com isso. O que as pessoas não aceitam tão facilmente é que software &#8220;se deteriora&#8221; também. Ao contrário dos bens físicos, isso não acontece devido a algum fenômeno físico ou químico. Essa deterioração ocorre geralmente devido a mudanças de negócios ou de profissionais. Vou dar um exemplo.</p>
+<p>Imagine que você é o líder de uma equipe de produto ou tecnologia em uma startup; você é o CTO. Você já lançou a primeira versão do seu produto e foi um sucesso. Seu modelo de negócio foi validado e agora você está em fase de crescimento. Isso é fantástico! Mas tem seus custos, além de novos desafios.</p>
+<p>A primeira versão do seu produto está funcionando, mas a base de código não está como você precisa a partir de agora. Talvez sua equipe não seja tão veloz quanto antes. Sua equipe reclama continuamente da qualidade do código. O CEO e o diretor de produto querem novas features e suas estimativas atuais não atenderão às necessidades do negócio.</p>
+<p>Não raro, baixa qualidade da base de código está entre as principais origens de todos problemas. Talvez você precise refatorar (refactor) ou reescrever (rewrite) o software.</p>
+<h2>Quando a base de código não está em boas condições, todos podem ficar frustrados.</h2>
+<p>Sua equipe inteira, incluindo os desenvolvedores, se sentirão frustrados porque gostariam de liberar features com maior velocidade, porém a qualidade do código e a arquitetura atual não ajudam.</p>
+<p>Os departamentos de TI, produto e software sofrem por não atenderem às expectativas das outras áreas.</p>
+<p>O cliente também sofre devido aos bugs frequentes, o tempo gasto para que sejam corrigidos, além da demora para lançar novas features.</p>
+<p>Você conseguiu entender.</p>
+<h2>Identifique os sintomas</h2>
+<p>É papel do líder (por exemplo, o CTO) identificar quando é necessário refatorar ou reescrever o software. Para isso, ele(a) pode fazer uma análise em busca de alguns sintomas, como os listados abaixo:</p>
+<ul>
+<li style="font-weight: 400;"><b>Tudo é difícil: </b>Quase todas features novas ou correções de bugs que sua equipe precisa fazer são difíceis. Nem sempre foi assim. Você se lembra dos bons tempos em que sua equipe era rápida e a execução era perfeita.</li>
+<li style="font-weight: 400;"><b>Velocidade lenta: </b>a velocidade de sua equipe diminuiu ou está diminuindo. Quando vocês desenvolveram a primeira versão do produto, era rápido desenvolver uma nova feature. Sua equipe conseguia desenvolver um monte delas a cada iteração. Agora é diferente.</li>
+<li style="font-weight: 400;"><b>Suíte de testes lenta: </b>Sua suíte de testes apresenta tempo de execução 10x, 20x, 30x maior que antes.</li>
+<li style="font-weight: 400;"><b>Bugs que não desaparecem: </b>Sua equipe corrige um bug e em algumas semanas ele reaparece. É comum sua equipe corrigir bugs em testes de regressão.</li>
+<li style="font-weight: 400;"><b>Sua equipe está desmotivada: </b>Sua equipe reclama continuamente que trabalhar no projeto já não é tão produtivo como era no antes. Uma pessoa não consegue construir uma feature sozinha; há muitas partes em movimento.</li>
+<li style="font-weight: 400;"><b>Conhecimento isolado: </b>Existem algumas partes do software que apenas um desenvolvedor conhece bem o suficiente para mantê-las. O resto da equipe tem dificuldades em trabalhar com esse código específico.</li>
+<li style="font-weight: 400;"><b>O período de adaptação de um novo desenvolvedor é muito longo: </b>Quando novos desenvolvedores se juntam à equipe, demora demais para que eles se tornem totalmente produtivos.</li>
+</ul>
+<p>A razão pela qual você está em uma dessas situações provavelmente não é técnica. Talvez você precisasse entregar muitas features muito rápido, enquanto ainda estava desenvolvendo a primeira versão de seu produto. Talvez sua equipe não tinha maturidade e experiência que possuem agora. Analisar a causa raiz também é importante, mas você precisa fazer mais. Você precisa resolver o seu problema.</p>
+<p>Se você está enfrentando os sintomas acima, <strong>provavelmente você tem problema de baixa qualidade interna de software</strong>. Reconhecer os sintomas já é um grande passo. O próximo passo é pensar em soluções. Algumas soluções que você pode considerar incluem o processo de refatorar ou reescrever o software.</p>
+<h2>Refatorar ou reescrever?</h2>
+<p>Não existe um guia definitivo que aponte quando você deve refatorar ou reescrever o software, pois depende muito do seu contexto. Dito isto, existem algumas regras básicas que você deve considerar ao avaliar qual a melhor solução para sua situação:</p>
+<h3>Quando reescrever</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa está desatualizada e não possui mais manutenção;</li>
+<li style="font-weight: 400;">Se seu software é muito lento e mudar a arquitetura não é suficiente ou viável;</li>
+<li style="font-weight: 400;">Se a disponibilidade de desenvolvedores de software que conhecem a tecnologia que você usa é baixa e está diminuindo;</li>
+<li style="font-weight: 400;">Se existem novas tecnologias que oferecem vantagem significativa em relação a que você utiliza.</li>
+</ul>
+<h3>Quando refatorar</h3>
+<ul>
+<li style="font-weight: 400;">Se a tecnologia que você usa ainda possui manutenção e é relevante;</li>
+<li style="font-weight: 400;">Se é viável melhorar seu aplicativo gradualmente;</li>
+<li style="font-weight: 400;">Se o problema que você está resolvendo é apenas técnico, e não de negócio.</li>
+</ul>
+<p>Não é fácil decidir qual opção escolher. Ao optar por uma delas, você enfrentará um monte de novas preocupações. Fique atento, em nossos próximos posts vamos discutir o que levar em consideração antes de optar por refatoração ou reescrita do software.</p>
+<p>Agora eu gostaria de saber sobre suas experiências. Você já esteve nessa situação? Como você identificou que o problema era baixa qualidade interna de software? Compartilhe sua história conosco!</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li>Sintomas da Baixa Qualidade Interna de Software você está lendo</li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li><a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chaves para reescrever um software</a></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Key points to consider when doing a software rewrite</title>
+		<link>/2016/07/key-points-to-consider-when-doing-a-software-rewrite/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 27 Jul 2016 20:20:40 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=5532</guid>
+
+					<description><![CDATA[<p>The third post of Low Internal Software Quality series. As well as a big software refactor, a rewrite is not a simple thing either. After many years, we have gotten experience enough to point what you had better consider when planning and executing a rewrite process. Will the two platforms live together for some time ... <a class="read-more-link" href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">»</a></p>
+<p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="text-align: center; font-size: .8em; color: #999; font-style: italic; margin-top: 15px;">The third post of Low Internal Software Quality series.</div>
+<p>As well as a <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">big software refactor</a>, a rewrite is not a simple thing either. After many years, we have gotten experience enough to point what you had better consider when planning and executing a rewrite process.</p>
+<h3>Will the two platforms live together for some time or not?</h3>
+<p>Are you planning to maintain the legacy and the new version in production? If so, for how long? You should avoid maintaining two versions in production for too long because of opportunity and operating costs.</p>
+<h3>Who will work on the rewrite and who will work on the legacy version?</h3>
+<p>Developers usually prefer to work on green field projects. You should take that into account when planning who will maintain the legacy version and who will work on the new one.</p>
+<h3>It&#8217;s not viable to rewrite every single feature at once</h3>
+<p>It&#8217;s not viable to have a 1 to 1 feature mapping between the legacy version and the new one. That said, what features should you start rewriting?</p>
+<p>Take into account how current clients will be impacted by a product with fewer features.</p>
+<h3>A rewrite will slow down or stop the launch of new features in the legacy version</h3>
+<p>Chances are you won&#8217;t launch new features for the legacy version during the rewrite process. Not only will end-users not get new features, but neither will internal clients (commercial and product departments). Your internal clients and stakeholders will pressure you to deliver new features.</p>
+<p>Make sure that the communication before and during the rewrite is clear, and that every stakeholder is aligned with the end goals.</p>
+<h3>Keep it secret or public?</h3>
+<p>Imagine you are a potential customer of a software product. You&#8217;re planning to buy it, but you just found out that a completely new version will be launched in three months. Would you buy the legacy version or wait for three months? Multiply that by dozens or hundreds of potential buyers. The provider could lose a lot of money.</p>
+<p>That&#8217;s why if you&#8217;re the provider, you should think carefully about how and when you&#8217;re going to publicize the launch of a brand new version.</p>
+<h3>Data migration</h3>
+<p>A rewrite process is not just shipping features. You also need to plan the data migration. People usually underestimate the complexity and effort needed to migrate data from the legacy version to the new version. That activity should not be just one task on your board called &#8220;data migration.&#8221;</p>
+<p>For example, imagine that you need to migrate your users&#8217; accounts. If your legacy version is managed by a third-party, chances are you won&#8217;t have access to the users&#8217; encrypted passwords, so you won&#8217;t be able to migrate them. You&#8217;ll have to ask every single user to reset their passwords in the new version. That&#8217;s part of the data migration process, too.</p>
+<h3>Prepare for a possible decrease in conversion rates</h3>
+<p>You&#8217;ll launch a new version with fewer features. Who guarantees that the conversion rates will stay the same? Conversion rates are vital in some domains, like in e-commerce.</p>
+<p>Ideally, you should be able to keep both the legacy and the new version running for a while so that you have a backup plan in case there&#8217;s a huge decrease in conversion rates.</p>
+<h3>Plan time to train internal users</h3>
+<p>This is another overlooked subject. The rewrite plan needs to have a phase of internal user training before taking your new product to production. Don&#8217;t underestimate that, either. It can take a long time since your internal users will give you feedback about stuff that might need to be changed.</p>
+<p>Internal users can be found in a variety of areas, such as help desk and inside sales.</p>
+<p><em>What about you? Do you have any more tips on what to worry about when doing a rewrite? Share with us!</em></p>
+<div style="padding: 0 15px 15px; border: dotted 1px #ccc; font-size: .8em; background-color: #f5f5f5;">
+<h4 style="text-align: center; margin-bottom: 2px; color: #666;">Posts of the Low Internal Software Quality series</h4>
+<ol>
+<li><a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a></li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a></li>
+<li>Key points to consider when doing a software rewrite</li>
+</ol>
+</div>
+<hr />
+<div style="margin: 30px auto;"></div><p>The post <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>The Symptoms of Low Internal Software Quality</title>
+		<link>/2014/06/the-symptoms-of-low-internal-software-quality/</link>
+					<comments>/2014/06/the-symptoms-of-low-internal-software-quality/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2014 12:00:14 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[refactoring]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[software]]></category>
+		<guid isPermaLink="false">/?p=3934</guid>
+
+					<description><![CDATA[<p>The first post of Low Internal Software Quality series. Not only physical matter deteriorates, software does too It&#8217;s known that physical matter deteriorates. People accept that and have always dealt with it. What people don&#8217;t accept so easily is that software &#8220;deteriorates&#8221; too. Unlike physical matter, it doesn&#8217;t happen due to some physical or chemical ... <a class="read-more-link" href="/2014/06/the-symptoms-of-low-internal-software-quality/">»</a></p>
+<p>The post <a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="text-align:center;font-size:.8em;color:#999;font-style:italic;margin-top:15px;">
+The first post of Low Internal Software Quality series.
+</div>
+<h3>Not only physical matter deteriorates, software does too</h3>
+<p>It&#8217;s known that physical matter deteriorates. People accept that and have always dealt with it. What people don&#8217;t accept so easily is that software &#8220;deteriorates&#8221; too. Unlike physical matter, it doesn&#8217;t happen due to some physical or chemical phenomenon. It usually happens because of some business change or people change. Let me give you an example.</p>
+<p>Imagine you&#8217;re leading the tech or product team of a startup; you&#8217;re the CTO. You already launched your product&#8217;s first version, and it was a success. Your business model was validated, and now you&#8217;re in a growth stage. That&#8217;s awesome! But it has its costs, and it brings a new set of challenges.</p>
+<p>The first version of your product is working, but the codebase is not in the shape you&#8217;ll need from now on. Maybe your team&#8217;s velocity is not as good as it used be. Your team keeps complaining about the code quality. The CEO and the product director want new features, and your current projections will not meet the business needs.</p>
+<p>It&#8217;s not uncommon that one of the main sources of all these problems is the poor quality of your product&#8217;s codebase. You may need a <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">refactoring</a> <sup id="fnref-refactor"><a href="#fn-refactor" rel="footnote">1</a></sup> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>.</p>
+<h3>When the codebase is not in good shape, everyone can get frustrated</h3>
+<p>If the internal quality of your product is not good, everyone becomes frustrated.</p>
+<p>Your whole team, including developers, will get frustrated because they would like to ship features faster, but the current code quality and architecture are not helping.</p>
+<p>The IT, product, and software departments suffer because they&#8217;re not able to meet the expectations of the other departments.</p>
+<p>The customer also suffers because of frequent bugs, how long it takes for them to be resolved, and how long it takes new features to be launched.</p>
+<p>You get the picture.</p>
+<h3>Identifying the symptoms</h3>
+<p>It&#8217;s the leader&#8217;s job (let&#8217;s say the CTO) to identify when a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a> is needed. In order to do that, he or she can look around for some symptoms, like the ones below:</p>
+<ul>
+<li><strong>Everything is hard:</strong> Almost every feature or bug fix your team needs to do is hard. It was not always like that. You remember the good old days when your team was fast and everything ran smoothly.</li>
+<li><strong>Slow velocity:</strong> Your team&#8217;s velocity decreased or is decreasing. When you were building the first version of your product, it was fast to develop a new feature, and your team used to build lots of them every iteration. Now it&#8217;s different.</li>
+<li><strong>Slow test suite:</strong> Your test suite takes 10x, 20x, 30x more time to run than before.</li>
+<li><strong>Bugs that don&#8217;t go away:</strong> Your team fixes a bug, then in a week or so it appears again. Every now and then your team is fixing a regression bug.</li>
+<li><strong>Your team is demotivated:</strong> Your team keeps complaining that working in the project is not as productive as it was in the past. A single person can&#8217;t build one feature alone; there are too many moving parts.</li>
+<li><strong>Knowledge silos:</strong> There are some parts of the software that only a single developer knows well enough to maintain. It&#8217;s difficult for the rest of the team to work with that specific code.</li>
+<li><strong>New developer ramp-up time is taking too long:</strong> When new developers join the team, it takes too much time for them to be fully productive.</li>
+</ul>
+<p>The reason you got into one of these situations is probably not a technical one. Maybe you needed to deliver too much, too fast while you were building the first version of your product. Maybe your team didn&#8217;t have the maturity and experience in the past they have now. Analyzing the root cause is important too, but you need to do something else. You need to solve your problem.</p>
+<p>If you&#8217;re experiencing the symptoms above, <strong>you probably have a low internal software quality problem</strong>. Recognizing the symptoms is already a big step. The next step is to think of solutions. Some solutions you may take include <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">refactoring</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a> process.</p>
+<h3>Refactor or rewrite?</h3>
+<p>There&#8217;s no definitive guide about when you should do a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">big refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>, because it depends on a lot on your context. That said, there are some rules of thumb that you should consider when evaluating which solution to go with:</p>
+<p><strong>When to rewrite</strong></p>
+<ul>
+<li>The technology you use is outdated, and it&#8217;s not maintained anymore.</li>
+<li>Your software is really slow, and changing the architecture is not enough or is not viable.</li>
+<li>The supply of software developers that know the technology you use is low and decreasing.</li>
+<li>There are new technologies that offer a significant advantage compared to what you&#8217;re using.</li>
+</ul>
+<p><strong>When to refactor</strong></p>
+<ul>
+<li>The technology you use is still maintained and relevant.</li>
+<li>It&#8217;s viable to improve your application in an incremental fashion.</li>
+<li>The problem you&#8217;re solving is just technical and not a business one.</li>
+</ul>
+<p>Choosing one of these options is not an easy decision, and once you go with one of them, there will be an entire new set of concerns you&#8217;ll encounter. Stay tuned, in our next blog posts we&#8217;ll talk about what to consider when doing a <a href="/2016/07/the-key-points-to-consider-when-doing-a-big-refactor/">big refactor</a> or a <a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">rewrite</a>.</p>
+<p>Now I would like to know about your experiences. Have you ever been in a similar situation? How did you identify that your problem was low internal software quality? Please share with us!</p>
+<div style="padding: 0 15px 15px;border:dotted 1px #ccc;font-size:.8em;background-color:#f5f5f5;">
+<h4 style="text-align:center;margin-bottom:2px;color:#666">Posts of the Low Internal Software Quality series</h4>
+<ol>
+<li>The Symptoms of Low Internal Software Quality</li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/">Key points to consider when doing a big software refactoring</a></li>
+<li><a href="/2016/07/key-points-to-consider-when-doing-a-software-rewrite/">Key points to consider when doing a software rewrite</a></li>
+</ol>
+</div>
+<div class="footnotes">
+<hr>
+<ol>
+<li id="fn-refactor">
+      <em>I prefer the term &#8220;code refurbishment,&#8221; but people aren’t generally used to it. So I’m using &#8220;refactoring&#8221; in this blog post for the sake of clarity.&nbsp;<a href="#fnref-refactor" rev="footnote"><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/21a9.png" alt="↩" class="wp-smiley" style="height: 1em; max-height: 1em;" /></a></em>
+    </li>
+</ol>
+</div>
+<hr><p>The post <a href="/2014/06/the-symptoms-of-low-internal-software-quality/">The Symptoms of Low Internal Software Quality</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/06/the-symptoms-of-low-internal-software-quality/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

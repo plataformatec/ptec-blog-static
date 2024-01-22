@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>OKR « Plataformatec Blog</title>
+	<atom:link href="/tag/okr/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 18 Dec 2019 17:43:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</title>
+		<link>/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 18 Dec 2019 16:46:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[OKR]]></category>
+		<guid isPermaLink="false">/?p=9570</guid>
+
+					<description><![CDATA[<p>Depois do sucesso do livro&#160;Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs&#160;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados. Assim como qualquer modelo,&#160;framework&#160;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato ... <a class="read-more-link" href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">»</a></p>
+<p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Depois do sucesso do livro&nbsp;<a href="https://www.amazon.com/Measure-What-Matters-Google-Foundation/dp/0525536221">Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs</a>&nbsp;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados.</p>
+
+
+
+<p>Assim como qualquer modelo,&nbsp;<em>framework</em>&nbsp;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato resolverá os problemas organizacionais simplesmente por estar sendo aplicado. A partir das minhas andanças como consultor, me deparei com diversas situações onde as pessoas disseram que tentaram aplicar os OKRs e não obtiveram sucesso.</p>
+
+
+
+<p>No texto a seguir, compartilharei um compilado de aprendizados e dicas para quem já lida com o&nbsp;<em>framework</em>&nbsp;ou para quem está considerando levá-lo para o seu dia a dia.</p>
+
+
+
+<p></p>
+
+
+
+<h2 class="wp-block-heading">1) Qual a relação entre OKR e pensamento estratégico?</h2>
+
+
+
+<p>Um grande desafio nas organizações diz respeito a como decompor sua estratégia. Tudo começa com a construção de um pensamento estratégico que, em linhas gerais, passa por três grandes etapas: (1) coleta de informações; (2) formulação de ideias; (3) planejamento das ações (essas diretrizes e mais dicas podem ser vistas em&nbsp;<a href="https://www.amazon.com/Strategic-Thinking-Step-step-Leadership-ebook/dp/B00AXDJJ38">Strategic Thinking: A Step-by-step Approach to Strategy and Leadership</a>).</p>
+
+
+
+<p>É fundamental que a organização entenda o que está mudando no mercado em que ela atua, como a concorrência tem se posicionado diante de tais mudanças e como a organização está operando hoje.</p>
+
+
+
+<p>Passada a etapa de entendimento do contexto, o próximo passo de um pensamento estratégico é o levantamento de desejos, hipóteses e necessidades. É importante que a organização crie uma visão futura inspiradora e que garanta a sustentabilidade do negócio diante dos desafios que ela enfrentará.</p>
+
+
+
+<p>O último passo é o planejamento daquilo que será feito. A organização precisa compreender quais são as opções de ações e, com muita clareza, deverá escolher o que será feito e o que não será. Neste momento, é essencial que haja uma clareza do que é prioridade dentro de uma perspectiva de curto, médio e longo prazo. Costumo dizer que prioridade é uma palavra que não deveria ser colocada no plural porque quando tudo é prioridade, nada é prioridade.<br></p>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="652" height="444" src="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png" alt="" class="wp-image-9566" srcset="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png 652w, /wp-content/uploads/2019/12/imagem_pensamento_estrategico-300x204.png 300w" sizes="(max-width: 652px) 100vw, 652px" /></figure>
+
+
+
+<p><strong>Pois bem, então o que OKR tem a ver com o pensamento estratégico exposto acima?</strong><br></p>
+
+
+
+<p>Quando falamos que o OKR é a composição do que desejo alcançar (objetivo) e como vou medir o progresso (conjunto de resultados-chave), precisamos partir de uma referência, que no caso do pensamento estratégico se dá através da coleta de informações. Se eu não conheço meu contexto atual, como eu posso definir onde eu quero chegar?</p>
+
+
+
+<p>Além do mais, uma visão clara é necessária para orientar o processo de criação dos OKRs. Quando a organização não consegue estabelecer seu norte, qualquer caminho (ou no caso OKR) servirá. O problema dessa condição é que ela gera desperdício de dinheiro, esforço e energia.</p>
+
+
+
+<p>Por fim, os OKRs nos forçam a fazer escolhas quando precisamos pensar no que será o foco de um trimestre, por exemplo. Ao definir poucos objetivos, estamos garantindo que a organização estará voltada naquilo que é o mais importante para o horizonte de tempo determinado.</p>
+
+
+
+<p><strong>Portanto, lembre-se:</strong>&nbsp;sem estratégia, não faz sentido a aplicação de OKR.</p>
+
+
+
+<h2 class="wp-block-heading">2) Quais problemas você pode resolver com OKRs?</h2>
+
+
+
+<p>Se você deseja comunicar a estratégia da organização, melhorar a transparência, trazer senso de propósito para as equipes e conectar o trabalho das pessoas com os resultados do negócio, OKR pode ser uma boa forma de você chegar lá.</p>
+
+
+
+<p><strong>2.1 &#8211; Comunicação da estratégia</strong></p>
+
+
+
+<p>A partir do momento em que a organização tem a sua estratégia estabelecida, os OKRs que serão desenhados pelas equipes deverão se comunicar com a mesma. Em outras palavras, caso existam OKRs que não estão conectados com as diretrizes estratégicas do negócio, eles deveriam ser descartados.</p>
+
+
+
+<p><strong>2.2 Transparência</strong></p>
+
+
+
+<p>Ao acompanhar semanalmente o progresso dos resultados-chave, validar e comunicar mensalmente os resultados dos OKRs e refinar trimestralmente os avanços em um momento de inspeção e adaptação, a organização reduzirá uma natural assimetria de informação que existe nas hierarquias e nos silos departamentais. Ficou na dúvida de como aumentar a transparência? Siga o fluxo abaixo.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-1 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img decoding="async" width="960" height="720" src="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" alt="" data-id="9568" data-full-url="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" data-link="/imagem_fluxo_cadencia_okr/" class="wp-image-9568" srcset="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png 960w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-300x225.png 300w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-768x576.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></figure></li></ul></figure>
+
+
+
+<p>Ao atingirmos as cadências mencionadas na imagem acima, aumentamos a visibilidade do que está acontecendo no negócio e deixamos os problemas palpáveis para serem tratados.</p>
+
+
+
+<p><strong>2.3 Conexão do trabalho com os resultados</strong></p>
+
+
+
+<p>Ao atrelar as iniciativas (ex: projetos, evoluções de um produto) com os resultados do negócio, trazemos um senso de propósito que pode motivar e engajar as pessoas no trabalho que está sendo feito.</p>
+
+
+
+<p>Como exercício, tenho proposto uma amarração onde toda iniciativa trabalhada por uma equipe (ex: projeto, história de usuário etc.) deve ter um objetivo e uma clareza do impacto no negócio, além da sua descrição e critério de término.</p>
+
+
+
+<p>O exemplo abaixo é uma situação de uma equipe que, a priori, tinha recebido a “demanda” de contratar uma solução de força de vendas. Ao conectar tal demanda com o objetivo do negócio e com os resultados-chave, a equipe conseguiu ter maior entendimento da importância do trabalho que seria feito.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-2 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img decoding="async" width="774" height="474" src="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" alt="" data-id="9569" data-full-url="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" data-link="/imagem_exemplo_aplicacao_okr_iniciativa/" class="wp-image-9569" srcset="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png 774w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-300x184.png 300w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-768x470.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></figure></li></ul></figure>
+
+
+
+<p>Ao unir a entrega com o resultado, você garantirá a necessidade das pessoas olharem os números e os dados da organização. Além disso, você evitará que a equipe invista tempo e esforço para atender uma demanda que não gera impacto nos objetivos do negócio. E em último caso, mas nem por isso menos importante, você forçará a equipe se questionar o porquê de estarem fazendo algo que não impacta diretamente nos objetivos do negócio.</p>
+
+
+
+<h2 class="wp-block-heading">3) Qual a importância das métricas na definição dos OKRs?</h2>
+
+
+
+<p>Indicadores de negócio são as melhores medidas para avaliar o progresso em direção aos objetivos. Se você está em busca de sair de um modelo onde há uma cobrança por entregas (<em>output</em>) e deseja ser cobrado por resultado (<em>outcome</em>), defina resultados-chave (<em>key results</em>) que se acoplem com os&nbsp;<a href="https://www.klipfolio.com/resources/articles/what-is-a-key-performance-indicator">indicadores de performance (KPI)</a>&nbsp;da organização.</p>
+
+
+
+<p>Lembrando que a sigla OKR é composta de duas partes (objetivos e resultados-chave), um KPI que precisa ser melhorado será um excelente ponto de partida para criar um OKR e se tornará um resultado-chave para um objetivo.</p>
+
+
+
+<p><strong>Lembre-se:</strong>&nbsp;OKR e KPI funcionarão perfeitamente juntos dado que os KPIs ajudam a monitorar o desempenho e a identificar problemas e áreas de melhoria no modo atual de operar da organização. Já os OKRs, contribuem na resolução de problemas, na melhoria de processos e no impulsionamento de inovações.</p>
+
+
+
+<p>Para exemplificar, gostaria de compartilhar um caso real de uma organização que tinha como objetivo “Expandir os talentos da área de produto” e possuía como indicadores de performance o tempo médio de contratação, o número de vagas ocupadas e a pesquisa de satisfação. Depois de uma sessão de definição, saímos com o seguinte OKR:</p>
+
+
+
+<p><strong>Objetivo:</strong>&nbsp;Expandir os talentos da área de produto.</p>
+
+
+
+<p><strong>Resultados-chave:</strong></p>
+
+
+
+<ul><li>Contratar 4 novas pessoas de desenvolvimento para aumentar a senioridade da equipe.</li><li>Aumentar o resultado da pesquisa de satisfação de 75% (resultado no último trimestre) para 85%.</li><li>Reduzir o tempo médio de contratação de 45 dias para 30 dias.</li></ul>
+
+
+
+<h2 class="wp-block-heading">4) Dicas práticas</h2>
+
+
+
+<p>Antes de finalizar o texto gostaria, de compartilhar 6 dicas práticas para você revisar sua estratégia de adoção de OKR:</p>
+
+
+
+<ol><li><strong>Tenha o apoio executivo:</strong>&nbsp;OKR, assim como qualquer outra mudança organizacional precisa do suporte executivo para acontecer. Acreditar que apenas movimentos locais (debaixo para cima) farão com que a transformação aconteça é começar o jogo perdendo. Portanto, é fundamental que os OKRs da empresa se desdobrem para os times.</li><li><strong>Não defina muitos objetivos:</strong>&nbsp;independente do contexto (empresa, equipe, tribo etc.), tenha de 2 até 3 objetivos para garantir que as pessoas estejam focadas naquilo que importa durante o trimestre.</li><li><strong>Tenha resultados-chave mensuráveis:</strong>&nbsp;se você não consegue medir, você não saberá se está alcançado o seu objetivo. Não criei resultados-chave para métricas que não existem. Se você quer ter bons OKRs, coloque um esforço para ter as métricas disponíveis.</li><li><strong>Não tenha mais do que 3 resultados-chave por objetivo:</strong>&nbsp;se é muito difícil de medir um objetivo talvez ela possa ser repensando, reescrito ou reestruturado.</li><li><strong>Deixe os resultados visíveis para todas as pessoas da organização:</strong>&nbsp;visibilidade é alma para um melhor alinhamento e para que os problemas que surgirem de fato sejam resolvidos.</li><li><strong>Evite resultados-chave orientados por tarefas (ex: entrega de projetos):</strong>&nbsp;foque em resultados orientados ao negócio porque isso ajudará a organização a traduzir os benefícios de uma nova abordagem de trabalho e suportará a ideia de equipes multidisciplinares.</li></ol>
+
+
+
+<h2 class="wp-block-heading">Conclusão<br><a href="https://github.com/plataformatec/blog-posts/blob/master/2019-12-OKR-licoes-aprendidas.md#conclus%C3%A3o"></a></h2>
+
+
+
+<p>OKR é uma ótima forma de pensar de forma estratégica e fazer com que as pessoas colaborem na execução daquilo que a organização busca conquistar. O&nbsp;<em>framework</em>&nbsp;em si é bem simples, porém sua adoção, nem tanto.</p>
+
+
+
+<p>Pensando em sistematizar a mensagem deste <em>post</em>, resolvi criar um Canvas que te ajudará no momento de desenvolver os OKRs na sua organização.</p>
+
+
+
+<p>Basta seguir os passos sinalizados pelas setas e responder às perguntas necessárias em cada um dos quadrantes. Comece pela estratégia, defina os objetivos, crie os resultados-chave, priorize as iniciativas e defina as áreas que precisarão colaborar com aquele OKR. Cada linha do quadro representará um OKR.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="662" height="422" src="/wp-content/uploads/2019/12/imagem_okr_canvas.png" alt="" class="wp-image-9567" srcset="/wp-content/uploads/2019/12/imagem_okr_canvas.png 662w, /wp-content/uploads/2019/12/imagem_okr_canvas-300x191.png 300w" sizes="(max-width: 662px) 100vw, 662px" /></figure>
+
+
+
+<p>E você, quais têm sido os desafios e os principais aprendizados com OKRs? O que achou do OKR Canvas?</p>
+
+
+
+<p>Compartilhe comigo sua opinião nos comentários abaixo!</p>
+
+
+
+<p>Referências:</p>
+
+
+
+<ul><li><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Como definir OKRs em equipes ágeis?</a></li><li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li><li><a href="https://felipecastro.com/en/blog/">Blog do Felipe Castro</a></li></ul><p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

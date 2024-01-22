@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Understanding deps and applications in your Mixfile « Plataformatec Blog</title>
+		<meta name="description" content="How to manage and initialize Elixir-Phoenix applications dependencies and third-party libraries with Mix.">
+		<meta name="robots" content="max-image-preview:large">
+		<meta name="keywords" content="elixir,phoenix,mixfile">
+		<link rel="canonical" href="/2016/07/understanding-deps-and-applications-in-your-mixfile/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Understanding deps and applications in your Mixfile « Plataformatec Blog">
+		<meta property="og:description" content="How to manage and initialize Elixir-Phoenix applications dependencies and third-party libraries with Mix.">
+		<meta property="og:url" content="/2016/07/understanding-deps-and-applications-in-your-mixfile/">
+		<meta property="article:published_time" content="2016-07-06T20:02:33+00:00">
+		<meta property="article:modified_time" content="2017-01-31T10:22:31+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Understanding deps and applications in your Mixfile « Plataformatec Blog">
+		<meta name="twitter:description" content="How to manage and initialize Elixir-Phoenix applications dependencies and third-party libraries with Mix.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#article","name":"Understanding deps and applications in your Mixfile « Plataformatec Blog","headline":"Understanding deps and applications in your Mixfile","author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/joao-britto\/#author"},"publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"},"image":{"@type":"ImageObject","url":"http:\/\/blog.plataformatec.com.br\/wp-content\/uploads\/2016\/12\/CTA-blog-ebook-ecto-2-0.jpg","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#articleImage","width":831,"height":147,"caption":"What's new in Ecto 2.0 -- Download your copy"},"datePublished":"2016-07-06T17:02:33-03:00","dateModified":"2017-01-31T08:22:31-02:00","inLanguage":"en-US","mainEntityOfPage":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#webpage"},"isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#webpage"},"articleSection":"English, elixir, phoenix"},{"@type":"BreadcrumbList","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/#listItem","position":1,"name":"Home","item":"http:\/\/blog.plataformatec.com.br\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem","position":2,"name":"2016","item":"http:\/\/blog.plataformatec.com.br\/2016\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/07\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/#listItem","position":3,"name":"July","item":"http:\/\/blog.plataformatec.com.br\/2016\/07\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/2016\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#listItem","position":4,"name":"Understanding deps and applications in your Mixfile","previousItem":"http:\/\/blog.plataformatec.com.br\/2016\/07\/#listItem"}]},{"@type":"Organization","@id":"http:\/\/blog.plataformatec.com.br\/#organization","name":"Plataformatec Blog","url":"http:\/\/blog.plataformatec.com.br\/"},{"@type":"Person","@id":"http:\/\/blog.plataformatec.com.br\/author\/joao-britto\/#author","url":"http:\/\/blog.plataformatec.com.br\/author\/joao-britto\/","name":"João Britto","image":{"@type":"ImageObject","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#authorImage","url":"http:\/\/0.gravatar.com\/avatar\/0785ff8c9c6837623528be093c5243a2?s=96&d=mm&r=pg","width":96,"height":96,"caption":"João Britto"}},{"@type":"WebPage","@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#webpage","url":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/","name":"Understanding deps and applications in your Mixfile « Plataformatec Blog","description":"How to manage and initialize Elixir-Phoenix applications dependencies and third-party libraries with Mix.","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/#website"},"breadcrumb":{"@id":"http:\/\/blog.plataformatec.com.br\/2016\/07\/understanding-deps-and-applications-in-your-mixfile\/#breadcrumblist"},"author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/joao-britto\/#author"},"creator":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/joao-britto\/#author"},"datePublished":"2016-07-06T17:02:33-03:00","dateModified":"2017-01-31T08:22:31-02:00"},{"@type":"WebSite","@id":"http:\/\/blog.plataformatec.com.br\/#website","url":"http:\/\/blog.plataformatec.com.br\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.plataformatec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/5493">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=5493">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2016%2F07%2Funderstanding-deps-and-applications-in-your-mixfile%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2016%2F07%2Funderstanding-deps-and-applications-in-your-mixfile%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-5493 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2016/07/understanding-deps-and-applications-in-your-mixfile/" rel="bookmark">Understanding deps and applications in your Mixfile</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2016-07-06T17:02:33-03:00">Jul 6, 2016</time>
+      <p class="post-author">
+        <img alt="" src="http://0.gravatar.com/avatar/0785ff8c9c6837623528be093c5243a2?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/0785ff8c9c6837623528be093c5243a2?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=14" title="Posts by João Britto">João Britto</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p><strong>Note</strong>: Elixir v1.4 has been released and improves on many points touched by this article. From v1.4, Elixir will automatically infer the list of applications based on your dependencies. For more information, <a href="http://elixir-lang.org/blog/2017/01/05/elixir-v1-4-0-released/">read the official announcement</a>.</p>
+<p>In my journey as a curious Elixir developer, I&#8217;ve come across this seemingly simple question a few times: which <code>applications</code> from third-party libraries do I need to declare in my <code>mix.exs</code> file?</p>
+<p>Before we get down to the nitty-gritty of application dependencies, let&#8217;s first recap some basics of the initialization process in Elixir OTP applications.</p>
+<p>In its essence, an OTP application is a reusable software component, consisting of multiple modules of its own and it can also depend on third-party code. These dependencies can be either <em>library applications</em> — a collection of standalone modules and functions, with no processes involved — or <em>active applications</em>, with their own life cycles and supervision trees. This distinction is quite subtle, it took me a while to fully grasp its implications.</p>
+<p>Applications are defined with an <em>application resource file</em>, like <code>my_app.app</code>, which is a metadata file comprised of a single Erlang term. It includes all the information needed to start our application and is managed by Mix. If you want to dig deeper into that topic you can take a look at its <a href="http://erlang.org/doc/design_principles/applications.html" target="_blank">documentation</a>. Once we create a new application with <code>mix new my_app</code> a brand new <code>mix.exs</code> file is generated. This is the file that customizes how <code>my_app.app</code> will be assembled by Mix and it is the file we&#8217;ll be dealing with in the Elixir world. Here is what it looks like:</p>
+<pre><code class="elixir">defmodule MyApp.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :my_app,
+     version: "0.1.0",
+     elixir: "~&gt; 1.3",
+     build_embedded: Mix.env == :prod,
+     start_permanent: Mix.env == :prod,
+     deps: deps()]
+  end
+
+  # Configuration for the OTP application
+  #
+  # Type "mix help compile.app" for more information
+  def application do
+    [applications: [:logger]]
+  end
+
+  # Dependencies can be Hex packages:
+  #
+  #   {:mydep, "~&gt; 0.3.0"}
+  #
+  # Or git/path repositories:
+  #
+  #   {:mydep, git: "https://github.com/elixir-lang/mydep.git", tag: "0.1.0"}
+  #
+  # Type "mix help deps" for more examples and options
+  defp deps do
+    []
+  end
+end
+</code></pre>
+<p>As we can see, there are some important pieces of information in it, such as the app name, version, Elixir version requirements and so on. In addition, the <code>application</code> function lets us explain what is required to boot our application: which other applications need to be started before ours, locally registered processes, which module represents the starting point of our application and also some default values for the application environment. By running <code>mix help compile.app</code> we can get more information about that function. The <a href="http://elixir-lang.org/docs/stable/elixir/Application.html" target="_blank">docs</a>  available for the <code>Application</code> behavior — which abstracts the initialization process <em>per se</em> — are pretty extensive and helpful as well.</p>
+<p>So far, so good. Now things start to get interesting. Let&#8217;s take a look at the <code>mix.exs</code> file of a new Phoenix project. First we generate an application skeleton with <code>mix phoenix.new hello</code>, then we add <code>{:exrm, "~&gt; 1.0"}</code> to our <code>deps</code>, including the <a href="https://github.com/bitwalker/exrm" target="_blank">Exrm</a> tool for generating our releases.</p>
+<pre><code class="elixir">defmodule Hello.Mixfile do
+  use Mix.Project
+
+  def project do
+    [app: :hello,
+     version: "0.0.1",
+     elixir: "~&gt; 1.3",
+     # ...
+     deps: deps()]
+  end
+
+  # Configuration for the OTP application.
+  #
+  # Type `mix help compile.app` for more information.
+  def application do
+    [mod: {Hello, []},
+     applications: [:phoenix, :phoenix_pubsub, :phoenix_html, :cowboy, :logger, :gettext,
+                    :phoenix_ecto, :postgrex]]
+  end
+
+  # ...
+
+  defp deps do
+    [{:phoenix, "~&gt; 1.2.0"},
+     {:phoenix_pubsub, "~&gt; 1.0"},
+     {:phoenix_ecto, "~&gt; 3.0"},
+     {:postgrex, "&gt;= 0.0.0"},
+     {:phoenix_html, "~&gt; 2.6"},
+     {:phoenix_live_reload, "~&gt; 1.0", only: :dev},
+     {:gettext, "~&gt; 0.11"},
+     {:cowboy, "~&gt; 1.0"},
+     {:exrm, "~&gt; 1.0"}]
+  end
+
+  # ...
+end
+</code></pre>
+<p>Along with the <code>:logger</code> application we&#8217;ve seen before in our vanilla Elixir app, now we have a few other applications we depend upon: some from Phoenix itself, an HTTP server, some <em>i18n</em> utilities and a database driver too. If we pay close attention to the <code>deps</code> and the <code>applications</code> lists, we can see it is almost a 1 to 1 ratio. Every <code>application</code> relates to its <code>dep</code> counterpart, like <code>cowboy</code>, <code>phoenix_pubsub</code>, <code>postgrex</code> and others. The exceptions are <code>:logger</code>, which is <a href="http://elixir-lang.org/docs/stable/logger/Logger.html" target="_blank">pre-built as part of Elixir</a>, <code>exrm</code> and <code>phoenix_live_reload</code>.</p>
+<p>That mismatch confused me. I wondered if I wasn&#8217;t mixing them up (pun intended).</p>
+<h3>Library applications must be included too</h3>
+<p>Why should library-only applications like <code>phoenix_html</code> and <code>gettext</code> be included in my <code>application</code> function then? It&#8217;s not that they need to be booted up and start spawning processes or something. It turns out that our <code>application</code> function has more to do with <em>Releases</em> and runtime than with supervision trees. Yes, listing <em>active applications</em> ensures they are started before our application, but including <em>library applications</em> will also <strong>make sure they will be included</strong> in our installable release packages.</p>
+<p>To support that claim, we can see that even <code>exrm</code> warns us when we forget to do so. Let&#8217;s try removing <code>phoenix_html</code> and <code>cowboy</code> from our <code>applications</code>:</p>
+<pre><code class="elixir">defmodule Hello.Mixfile do
+  # ...
+  def application do
+    [mod: {Hello, []},
+     applications: [:phoenix, :phoenix_pubsub, :logger, :gettext, :phoenix_ecto, :postgrex]]
+  end
+end
+</code></pre>
+<p>Then make a new release:</p>
+<pre><code>mix deps.get
+Running dependency resolution
+* Getting phoenix (Hex package)
+  Checking package (https://repo.hex.pm/tarballs/phoenix-1.2.0.tar)
+  Using locally cached package
+...
+
+MIX_ENV=prod mix release
+Building release with MIX_ENV=prod.
+
+You have dependencies (direct/transitive) which are not in :applications!
+The following apps should be added to :applications in mix.exs:
+
+        phoenix_html =&gt; phoenix_html is missing from hello
+        cowboy       =&gt; cowboy is missing from hello
+
+Continue anyway? Your release may not work as expected if these dependencies are required! [Yn]:
+</code></pre>
+<p>Both dependencies would be missing from the final package :bomb:. We certainly don&#8217;t want that.</p>
+<h3>Development, test, docs and optional dependencies stay out</h3>
+<p>You might still ask, shouldn&#8217;t <code>cowboy</code> and <code>phoenix_html</code> be out of my control and get required automatically by <code>phoenix</code>? That way I&#8217;d just need to worry about <code>phoenix</code> as a single, rich dependency.</p>
+<p>Actually, no. From the Phoenix framework standpoint, none of these applications are actually required. Cowboy isn&#8217;t a strict runtime dependency; we can freely run our Phoenix app on another compatible web server of our choice. As for Phoenix HTML and even Gettext, they are not strictly required either. We can totally build our Phoenix app without any HTML output or localization at all, consider an API-only app for example. It&#8217;s all up to us.</p>
+<p>As we can see in <a href="https://github.com/phoenixframework/phoenix/blob/v1.2.0/mix.exs#L41-L55" target="_blank">Phoenix&#8217;s own <code>mix.exs</code> file</a>, <code>cowboy</code> is declared as <code>optional: true</code> and <code>phoenix_html</code> as <code>only: :test</code>, <code>gettext</code> likewise is <code>only: :test</code>. The reason these dependencies are declared is that if we eventually need them in <strong>our</strong> app, they must be at least compatible with the Phoenix version currently in use.</p>
+<p>That also explains why <code>exrm</code> and <code>phoenix_live_reload</code> can be kept out of the applications list. We don&#8217;t want <code>phoenix_live_reload</code> running in production, since there will be no live code reloading. As for <code>exrm</code>, it is a tool used exclusively to package our application, our business code has no need to know anything about it.</p>
+<p>Cool. How come <code>phoenix_live_reload</code> works in development though? Well, when we start our application — with <code>mix phoenix.start</code>, for example — the code is available in the load path, but the <code>phoenix_live_reload</code> application is not started yet; it only starts when <a href="https://github.com/phoenixframework/phoenix_live_reload/blob/v1.0.5/lib/phoenix_live_reload/channel.ex#L10" target="_blank">we connect to its channel</a>. We can try it out by starting up our little Phoenix app and checking which applications get loaded.</p>
+<pre><code>iex -S mix phoenix.start
+Erlang/OTP 18 [erts-7.3] [source] [64-bit] [smp:4:4] [async-threads:10] [hipe] [kernel-poll:false] [dtrace]
+
+[info] Running Hello.Endpoint with Cowboy using http://localhost:4000
+Interactive Elixir (1.3.0) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)&gt; Application.loaded_applications
+[
+  {:plug, 'A specification and conveniences for composable modules between web applications', '1.1.6'},
+  {:hex, 'hex', '0.12.1'},
+  ...
+]
+</code></pre>
+<p>A list of all the applications currently loaded is returned when we call <code>Application.loaded_applications</code>. Now, after we make our first request by opening <code>http://localhost:4000</code> then calling <code>Application.loaded_applications</code> once again, we can see two new applications on that list: <code>fs</code> and <code>phoenix_live_reload</code>.</p>
+<pre><code>iex(2)&gt; Application.loaded_applications
+[
+  {:plug, 'A specification and conveniences for composable modules between web applications', '1.1.6'},
+  {:hex, 'hex', '0.12.1'},
+  ...
+  {:fs, 'VXZ FS Listener', '0.9.1'},
+  ...
+  {:phoenix_live_reload, 'Provides live-reload functionality for Phoenix',  '1.0.5'}
+  ...
+]
+</code></pre>
+<h3>Declare your applications, even when you&#8217;re not using releases</h3>
+<p>I am deploying to Heroku and my application requires no release packaging whatsoever, should I still worry about my list of applications? Yes, definitely. Suppose we need to upgrade some dependencies, one of them used to be just a <em>library application</em> but now has become an <em>active application</em>, e.g. a cache library which now has to keep a reaper process to clean up stale data. Once we upgrade the <code>dep</code> for that undeclared <code>application</code>, a runtime bug is potentially introduced, given we have no guarantee our new dependencies&#8217; applications will get started properly.</p>
+<h3>As a library author, you should take extra care</h3>
+<p>The same goes for libraries, regardless of open sourcing them or not. Remember that runtime application dependencies are transitive. Let&#8217;s say an application <code>A</code> depends on <code>B</code>, which in turn depends on <code>C</code>, the application responsible for ensuring <code>C</code> is started is <code>B</code>, unless <code>C</code> is an optional dependency. In that case, the author of <code>B</code> should document the pluggable nature of that optional dependency appropriately, or even provide code generators if applicable — as Phoenix does with <code>cowboy</code>.</p>
+<h3>Elixir tooling is our friend</h3>
+<p>One of the most noticeable benefits of Elixir is all the tools-support built around it. Not only in runtime, <a href="http://erlang.org/doc/man/runtime_tools_app.html" target="_blank">standing</a> on the <a href="http://erlang.org/doc/man/Observer_app.html" target="_blank">shoulders</a> of Erlang, but primarily in development and build time. In case you overlooked the <a href="http://elixir-lang.org/blog/2016/06/21/elixir-v1-3-0-released/#mix-apptree-and-depstree" target="_blank">announcement of Elixir v1.3</a> recently released, you should definitely check it out. Among the improvements in dependency tracking are two new built-in mix tasks: <code>app.tree</code> and <code>deps.tree</code>. They are priceless timesavers in this routine task of keeping up with our dependencies.</p>
+<h3>Summing up</h3>
+<p>So, when we are evaluating these dependency issues individually, it all boils down to a few simple criteria.</p>
+<p>For the <code>deps</code> function in our Mixfile:</p>
+<ul>
+<li>Always add it to <code>deps</code> if it is a <strong>direct</strong> dependency.</li>
+<li>Don&#8217;t forget the <code>only: [...]</code> option if not every environment needs it.</li>
+<li>Optional dependencies must be set as <code>optional: true</code>. It is always good to document and explain how they are supposed to be included.</li>
+</ul>
+<p>For the <code>applications</code> key in our <code>application</code> function:</p>
+<ul>
+<li>Add it to <code>applications</code> if it is required at <strong>runtime</strong> in <strong>production</strong>.</li>
+</ul>
+<p>All said and done, where can we go from here? Well, I&#8217;d say start at home, <strong>review your <code>mix.exs</code></strong>. Is there anything important missing? Any unused dependency? Then you can start taking a closer look at your external dependencies&#8217; Mixfiles. Are all runtime dependencies properly required? What about their environments? Once you&#8217;re there, take your time to contribute, give back. These tiny bits might seem worthless at first, but rest assured, as some clever man used to say, “success is in the details”.</p>
+<div style="height:30px;"></div>
+<hr>
+<div style="margin:20px 0 60px;">
+<p style="text-align:center; margin-bottom:0; padding-bottom:0; font-weight:bold; font-size:1em; color:#444;">If you are into Elixir-Phoenix, you may also like&#8230;</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-0&amp;utm_content=cta-blog-post-bottom-with-title" target="_blank"><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0.jpg" alt="What&#039;s new in Ecto 2.0 -- Download your copy" width="831" height="147" class="aligncenter size-full wp-image-5997" srcset="/wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0.jpg 831w, /wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0-300x53.jpg 300w, /wp-content/uploads/2016/12/CTA-blog-ebook-ecto-2-0-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px">
+</a></p>
+</div>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/elixir/" rel="tag">elixir</a>, <a href="/tag/phoenix/" rel="tag">phoenix</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <span>Comments Off<span class="screen-reader-text"> on Understanding deps and applications in your Mixfile</span></span>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+
+			<!-- If comments are closed. -->
+		<p class="nocomments">Comments are closed.</p>
+
+	
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2016/06/deploying-elixir-applications-with-edeliver/" rel="prev">Deploying Elixir applications with Edeliver</a>          <a href="/2016/07/key-points-to-consider-when-doing-a-big-software-refactoring/" rel="next">Key points to consider when doing a big software refactoring</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

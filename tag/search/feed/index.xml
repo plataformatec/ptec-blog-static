@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>search « Plataformatec Blog</title>
+	<atom:link href="/tag/search/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 01 Apr 2010 19:43:21 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Quick tip: search forms</title>
+		<link>/2010/04/quick-tip-search-forms/</link>
+					<comments>/2010/04/quick-tip-search-forms/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 01 Apr 2010 16:47:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[filters]]></category>
+		<category><![CDATA[form]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[search]]></category>
+		<guid isPermaLink="false">/?p=845</guid>
+
+					<description><![CDATA[<p>Rails is very friendly whenever you need to create forms to input data to your web app&#8217;s database. Things get a little different when you must have forms and you don&#8217;t want to save anything in the database. For that, you have to resort to other ways, maybe creating tableless models. However, there are some ... <a class="read-more-link" href="/2010/04/quick-tip-search-forms/">»</a></p>
+<p>The post <a href="/2010/04/quick-tip-search-forms/">Quick tip: search forms</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails is very friendly whenever you need to create forms to input data to your web app&#8217;s database. Things get a little different when you must have forms and you don&#8217;t want to save anything in the database. For that, you have to resort to other ways, maybe creating <a href="http://railscasts.com/episodes/193-tableless-model">tableless models</a>. </p>
+<p>However, there are some simple cases that even creating a new class seems an overkill, such as forms for searching or filtering data in your app. In these cases, you just want a form that user can pick options and hit a button to see the results. When returning to the user, it is expected to have that form filled with the options the user had chosen before, but there is no simple, clean way to do that with plain old &#8220;form_tag&#8221;. Here is where our little tip comes in.</p>
+<p>OpenStruct is a cool lib that comes with the Ruby Standard Library. &#8220;It is like a hash with a different way to access the data&#8221; says the documentation:</p>
+<pre lang="ruby">
+>> user = OpenStruct.new({:name => 'John', :last_name => 'Doe'})
+=> #<OpenStruct name="John", last_name="Doe">
+>> user.name
+=> "John"
+>> user.last_name
+=> "Doe"
+>> user.bla
+=> nil
+</pre>
+<p>We can use it to fool our old friend &#8220;form_for&#8221; helper to think we&#8217;re dealing with normal AR objects, so we can create a method that wraps &#8220;form_for&#8221;, simple as this:</p>
+<pre lang="ruby">
+require 'ostruct'
+module SearchFormHelper
+  def search_form_for(object_name, options={}, &block)
+    options[:html] = {:method => :get}.update(options[:html] || {})
+    object = OpenStruct.new(params[object_name])
+    form_for(object_name, object, options, &block)
+  end
+end
+</pre>
+<p>Inside the view, you will do the same way you do with AR models:</p>
+<pre lang="ruby">
+<% search_form_for :search do |f| %>
+  <p>
+    <%= f.label :start_at %>
+    <%= f.date_select :start_at %>
+  </p>
+  <p>
+    <%= f.label :end_at %>
+    <%= f.date_select :end_at %>
+  </p>
+  <p>
+    <%= f.submit 'Search' %>
+  </p>
+<% end %>
+</pre>
+<p>That&#8217;s pretty much it! If you&#8217;re filtering data, by a category for example, try checking the <a href="http://github.com/plataformatec/has_scope">has_scope plugin</a>, works like a charm in combination with this tip, but it is a matter for other post.</p>
+<p>And you, reader, do you have any little tricks like this? If you don&#8217;t mind, share with us!</p><p>The post <a href="/2010/04/quick-tip-search-forms/">Quick tip: search forms</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/quick-tip-search-forms/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>source code « Plataformatec Blog</title>
+	<atom:link href="/tag/source-code/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 12 Jan 2010 18:21:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>How everyone is inserting technical debt in their applications</title>
+		<link>/2010/01/how-everyone-is-inserting-technical-debt-in-app/</link>
+					<comments>/2010/01/how-everyone-is-inserting-technical-debt-in-app/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2010 17:41:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[source code]]></category>
+		<guid isPermaLink="false">/?p=566</guid>
+
+					<description><![CDATA[<p>A couple days ago DHH twitted that they were getting Basecamp running on Ruby on Rails 3.0. This means Basecamp migrated from the first Rails release up to the edge one. So how come people say so frequently how hard is to update their applications from Rails 2.1 to Rails 2.2? And the answer is ... <a class="read-more-link" href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">»</a></p>
+<p>The post <a href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">How everyone is inserting technical debt in their applications</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A couple days ago <a href="http://twitter.com/dhh/status/7390494826" target="_blank">DHH twitted</a> that they were getting <a href="http://www.basecamphq.com/" target="_blank">Basecamp</a> running on <a href="http://github.com/rails/rails">Ruby on Rails 3.0</a>.</p>
+<p>This means <a href="http://www.basecamphq.com/" target="_blank">Basecamp</a> migrated from the first Rails release up to the edge one. So how come people say so frequently how hard is to update their applications from Rails 2.1 to Rails 2.2? And the answer is simple: <strong>plugins</strong>.</p>
+<p>Every time you are adding a plugin to your application, you are inserting some hundreds or even thousands of lines of code in your application, without knowing what it does exactly. And sometimes this becomes technical debt, mostly noticeable when you have to update to a new Rails version. And why is that? Because a lot of plugins are monkey patching Rails, so whenever Rails changes its internal API between releases, the plugin breaks.</p>
+<p>However, they are two simple actions you could do to improve your application maintainability, your ruby fu and also give a little back to the community.</p>
+<p>The first one is easy: <strong>check the source code of the plugin you are installing</strong>. Does it needs to monkey patch Rails code? Or even worse, Ruby classes? If so, how much? If too much, turn it down. Search for simpler solutions or even start one from scratch with just what you need, it will take more time, but you will learn a lot through the process.</p>
+<p>Another very compelling reason is that <strong>reading other people&#8217;s code is one of the best ways to learn</strong>. You will learn new things and probably see a few things which could be done better. And when it happens, write a patch!</p>
+<p>Besides, whenever something is going wrong in your application, you will know better where to start searching and you will eventually help plugins authors to track bugs down. And, in the worst scenario, if you have to update the plugin after a Rails release on your own because the plugin creator is no longer interested, you will be more capable to do so.</p>
+<p>Some people often choose plugin A because of features X, Y and Z. But whenever they have to add feature W, they are stuck, because the plugin code is a complete spaghetti. And all this time, they could have chosen plugin B, which just has feature X, but adding Y, Z and W would be quite easy. Reading the plugin&#8217;s source code is one way to ensure <strong>you are prioritizing code quality instead of features count</strong>.</p>
+<p>And the second step, guess what, is easy too: <strong>run the plugin test suite</strong>. Really, it will take just a couple minutes. You definitely don&#8217;t want to use a plugin where the test suite fails (or which does not have a test suite at all). Imagine that for some reason you need to add features to a plugin, how you will ensure you did not break other thing while doing so? Or even worse, imagine you have to update the plugin for a new Rails release. How can you ensure the plugin works on 3.0 if you cannot even ensure it works on 2.3?!</p>
+<p>Some already noted that I have patches applied in different plugins around GitHub. And this is the very reason: I check their code, send simple suggestions whenever it&#8217;s possible and most important of all, I choose well which plugins to use. So whenever I need to write a new feature because the application I&#8217;m working on needs it, I know it will be easy, since the plugin code is quite well written and test suite is green.</p>
+<p>It&#8217;s really two small efforts, which gives everyone, including you, a lot back.</p><p>The post <a href="/2010/01/how-everyone-is-inserting-technical-debt-in-app/">How everyone is inserting technical debt in their applications</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/01/how-everyone-is-inserting-technical-debt-in-app/feed/</wfw:commentRss>
+			<slash:comments>2</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

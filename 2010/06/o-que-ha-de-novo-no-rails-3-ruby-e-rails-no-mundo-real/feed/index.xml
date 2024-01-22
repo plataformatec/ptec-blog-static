@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: O que há de novo no Rails 3 &#8211; Ruby e Rails no Mundo Real	</title>
+	<atom:link href="/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 26 Aug 2010 12:27:59 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Ruby + Rails no Mundo Real 2010		</title>
+		<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/comment-page-1/#comment-626</link>
+
+		<dc:creator><![CDATA[Ruby + Rails no Mundo Real 2010]]></dc:creator>
+		<pubDate>Fri, 04 Jun 2010 06:02:50 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1123#comment-626</guid>
+
+					<description><![CDATA[[...] Por: Hugo Baraúna (@hugobarauna) Slides e Vídeo [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Por: Hugo Baraúna (@hugobarauna) Slides e Vídeo [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Daniel Docki		</title>
+		<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/comment-page-1/#comment-625</link>
+
+		<dc:creator><![CDATA[Daniel Docki]]></dc:creator>
+		<pubDate>Fri, 04 Jun 2010 01:25:05 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1123#comment-625</guid>
+
+					<description><![CDATA[Muito boa a palestra!]]></description>
+			<content:encoded><![CDATA[<p>Muito boa a palestra!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Daniel Docki		</title>
+		<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/comment-page-1/#comment-1008</link>
+
+		<dc:creator><![CDATA[Daniel Docki]]></dc:creator>
+		<pubDate>Fri, 04 Jun 2010 01:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1123#comment-1008</guid>
+
+					<description><![CDATA[Muito boa a palestra!]]></description>
+			<content:encoded><![CDATA[<p>Muito boa a palestra!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Paulo Silveira		</title>
+		<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/comment-page-1/#comment-624</link>
+
+		<dc:creator><![CDATA[Paulo Silveira]]></dc:creator>
+		<pubDate>Thu, 03 Jun 2010 17:31:22 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1123#comment-624</guid>
+
+					<description><![CDATA[Excelente palestra e slides, parabens.]]></description>
+			<content:encoded><![CDATA[<p>Excelente palestra e slides, parabens.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Paulo Silveira		</title>
+		<link>/2010/06/o-que-ha-de-novo-no-rails-3-ruby-e-rails-no-mundo-real/comment-page-1/#comment-1007</link>
+
+		<dc:creator><![CDATA[Paulo Silveira]]></dc:creator>
+		<pubDate>Thu, 03 Jun 2010 17:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1123#comment-1007</guid>
+
+					<description><![CDATA[Excelente palestra e slides, parabens.]]></description>
+			<content:encoded><![CDATA[<p>Excelente palestra e slides, parabens.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

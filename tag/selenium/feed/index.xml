@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>selenium « Plataformatec Blog</title>
+	<atom:link href="/tag/selenium/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 04 Apr 2014 21:19:38 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Configuring User Agents with Capybara + Selenium Webdriver</title>
+		<link>/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 01 Mar 2011 14:44:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[acceptance tests]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[selenium]]></category>
+		<category><![CDATA[tests]]></category>
+		<category><![CDATA[user agent]]></category>
+		<guid isPermaLink="false">/?p=1572</guid>
+
+					<description><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee ... <a class="read-more-link" href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">»</a></p>
+<p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A while ago we were working on an application that had an entire version specially created for mobiles, such as the iPhone. This specific application was entirely tested with Capybara, Steak and Selenium Webdriver. Although the test suite wasn&#8217;t the fastest one in the world, the web application was very well tested, and to guarantee that we would also be testing the mobile version, we would have to simulate an iPhone user agent accessing the application.</p>
+<p>But wait, you might be thinking that we are not able to change browser headers while dealing with Selenium. Capybara has a nice API to define new drivers and Selenium allows us to define different profiles with custom configurations for each driver. Lets see how we can put all this together to handle that:</p>
+<pre lang="ruby">Capybara.register_driver :iphone do |app|
+  require 'selenium/webdriver'
+  profile = Selenium::WebDriver::Firefox::Profile.new
+  profile['general.useragent.override'] = "iPhone"
+
+  Capybara::Driver::Selenium.new(app, :profile => profile)
+end</pre>
+<p>Yup, it&#8217;s that simple =). We are creating a new driver for Capybara called <code>:iphone</code>, that will use Selenium with Firefox, but with a different profile, overriding the user agent string. This way you can pretend to your application that you are accessing through a &#8220;real&#8221; iPhone, by giving the &#8220;iPhone&#8221; string as user agent. You could also configure an <code>:android</code> driver, for instance, by simply changing the user agent string.</p>
+<p>So now, how do we make use of that new driver in our specs? Here comes a simple example:</p>
+<pre lang="ruby">scenario 'access phone information using a modal box', :driver => :iphone do
+  visit root_path
+
+  page.should have_no_css "#fancybox-wrap"
+  page.should have_no_content "0800 123456"
+
+  within("header") { click_link "Telefones úteis" }
+
+  within("#fancybox-wrap") do
+    page.should have_content "0800 123456"
+  end
+end</pre>
+<p>We are just passing the <code>:driver =&gt; :iphone</code> option to our scenario. Remember that the latest Capybara versions use RSpec metadata options and will apply the <code>:driver</code> option automatically, changing the current driver to our registered <code>:iphone</code> in this case. For more info please refer to <a title="Capybara's README" href="https://github.com/jnicklas/capybara">Capybara&#8217;s README</a>.</p>
+<p>You are now able to configure different user agents based on your application requirements, and test it in a full stack way. How about you, do you have any quick hint on how to test different user agents using another driver? Let us know in the comments <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h3>Updates (04/04/2014)</h3>
+<p>We were told that if you&#8217;re using Selenium Webdriver version 2.41.0, the code above will raise an exception. In order to fix that problem, you just need to replace <code>Capybara::Driver::Selenium.new</code> by <code>Capybara::Selenium::Driver.new</code>. Thanks <a href="https://twitter.com/ohayitsmj">Michael Joseph</a> for suggesting that update.</p><p>The post <a href="/2011/03/configuring-user-agents-with-capybara-selenium-webdriver/">Configuring User Agents with Capybara + Selenium Webdriver</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

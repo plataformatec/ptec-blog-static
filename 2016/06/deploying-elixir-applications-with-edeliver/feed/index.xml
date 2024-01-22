@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Deploying Elixir applications with Edeliver	</title>
+	<atom:link href="/2016/06/deploying-elixir-applications-with-edeliver/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/06/deploying-elixir-applications-with-edeliver/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 29 Aug 2016 08:43:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: marclinsangan		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1645</link>
+
+		<dc:creator><![CDATA[marclinsangan]]></dc:creator>
+		<pubDate>Mon, 29 Aug 2016 08:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1645</guid>
+
+					<description><![CDATA[Any thoughts on Distillery? Why didn&#039;t you use it instead of Edeliver? Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Any thoughts on Distillery? Why didn&#8217;t you use it instead of Edeliver? Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ron Arts		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1644</link>
+
+		<dc:creator><![CDATA[Ron Arts]]></dc:creator>
+		<pubDate>Fri, 26 Aug 2016 16:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1644</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1643&quot;&gt;Igor Florian&lt;/a&gt;.
+
+Indeed I just bumped last week into the problem of working on OSX, and ending up with needing a development container to create the linux version. I&#039;m going to try adding a production container.  Thanks!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1643">Igor Florian</a>.</p>
+<p>Indeed I just bumped last week into the problem of working on OSX, and ending up with needing a development container to create the linux version. I&#8217;m going to try adding a production container.  Thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Igor Florian		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1643</link>
+
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Fri, 26 Aug 2016 14:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1643</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1642&quot;&gt;Ron Arts&lt;/a&gt;.
+
+Hey Ron, 
+
+Indeed this blogpost won&#039;t work for containers, we&#039;ll consider writing about it in the future. Thanks for the suggestion and feedback! Meanwhile this blogpost below can help you in your journey with containers and elixir releases:
+
+https://medium.com/@rubas/deploy-your-elixir-app-with-a-minimal-docker-container-using-alpine-linux-and-exrm-b4e166f1802#.amjevpjg2]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1642">Ron Arts</a>.</p>
+<p>Hey Ron, </p>
+<p>Indeed this blogpost won&#8217;t work for containers, we&#8217;ll consider writing about it in the future. Thanks for the suggestion and feedback! Meanwhile this blogpost below can help you in your journey with containers and elixir releases:</p>
+<p><a href="https://medium.com/@rubas/deploy-your-elixir-app-with-a-minimal-docker-container-using-alpine-linux-and-exrm-b4e166f1802#.amjevpjg2" rel="nofollow ugc">https://medium.com/@rubas/deploy-your-elixir-app-with-a-minimal-docker-container-using-alpine-linux-and-exrm-b4e166f1802#.amjevpjg2</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ron Arts		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1642</link>
+
+		<dc:creator><![CDATA[Ron Arts]]></dc:creator>
+		<pubDate>Tue, 23 Aug 2016 11:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1642</guid>
+
+					<description><![CDATA[This process does not work when using containers. something to revisit in a new post?]]></description>
+			<content:encoded><![CDATA[<p>This process does not work when using containers. something to revisit in a new post?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: nathtorezani		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1636</link>
+
+		<dc:creator><![CDATA[nathtorezani]]></dc:creator>
+		<pubDate>Fri, 01 Jul 2016 20:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1636</guid>
+
+					<description><![CDATA[Hi!
+
+My name is Nathália Torezani and I´m a journalist at portal iMasters, which is one of the greatest portals facing
+developers in Brazil. My editor, Alex Lattaro, read this article and became very interested in the content. 
+
+Hence, we would like to republish your articles in our portal with all rights directed to you. Would you be interested in a partnership? 
+
+Please, contact us at nathalia.torezani@imasters.com.br or alex.lattaro@imasters.com.br.
+ 
+Hope to hear from you soon!]]></description>
+			<content:encoded><![CDATA[<p>Hi!</p>
+<p>My name is Nathália Torezani and I´m a journalist at portal iMasters, which is one of the greatest portals facing<br />
+developers in Brazil. My editor, Alex Lattaro, read this article and became very interested in the content. </p>
+<p>Hence, we would like to republish your articles in our portal with all rights directed to you. Would you be interested in a partnership? </p>
+<p>Please, contact us at <a href="mailto:nathalia.torezani@imasters.com.br">nathalia.torezani@imasters.com.br</a> or <a href="mailto:alex.lattaro@imasters.com.br">alex.lattaro@imasters.com.br</a>.</p>
+<p>Hope to hear from you soon!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Igor Florian		</title>
+		<link>/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1634</link>
+
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 09 Jun 2016 01:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5457#comment-1634</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1633&quot;&gt;imranismail&lt;/a&gt;.
+
+Thats exactly what Edeliver does. o 
+
+You could use one of your production servers both for building your release and serve as host for you app, for example. It would be much different from the instructions in this blogpost. 
+
+Let me know if this was helpful or not.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/06/deploying-elixir-applications-with-edeliver/comment-page-1/#comment-1633">imranismail</a>.</p>
+<p>Thats exactly what Edeliver does. o </p>
+<p>You could use one of your production servers both for building your release and serve as host for you app, for example. It would be much different from the instructions in this blogpost. </p>
+<p>Let me know if this was helpful or not.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

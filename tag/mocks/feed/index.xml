@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>mocks « Plataformatec Blog</title>
+	<atom:link href="/tag/mocks/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 21 Nov 2019 19:44:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Mocks and explicit contracts</title>
+		<link>/2015/10/mocks-and-explicit-contracts/</link>
+					<comments>/2015/10/mocks-and-explicit-contracts/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 14 Oct 2015 15:44:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[contracts]]></category>
+		<category><![CDATA[mocks]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=4914</guid>
+
+					<description><![CDATA[<p>Our test tools often make it very easy to abuse mocks. This post provides some guidelines on using them properly by relying on explicit contracts.</p>
+<p>The post <a href="/2015/10/mocks-and-explicit-contracts/">Mocks and explicit contracts</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>UPDATE: Almost 2 years later we have released <a href="https://github.com/plataformatec/mox">a tiny library called Mox</a> for Elixir that follows the guidelines written in this article.</p>
+<p>A couple days ago I expressed my thoughts regarding mocks on Twitter:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en">Mocks/stubs do not remove the need to define an explicit interface between your components (modules, classes, whatever). [1/4]</p>
+<p>— José Valim (@josevalim) <a href="https://twitter.com/josevalim/status/641615663061159936">September 9, 2015</a></p></blockquote>
+<p><script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>The blame is not on mocks though, they are actually a useful technique for testing. However our test tools often makes it very easy to abuse mocks and the goal of this post is to provide better guidelines on using them.</p>
+<h2>What are mocks?</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Mock_object">wikipedia definition</a> is excellent: mocks are simulated entities that mimic the behavior of real entities in controlled ways. I will emphasize this later on but I always consider &#8220;mock&#8221; to be a noun, never a verb.</p>
+<h2>Case study: external APIs</h2>
+<p>Let&#8217;s see a common practical example: external APIs.</p>
+<p>Imagine you want to consume the Twitter API in your web application and you are using something like Phoenix or Rails. At some point, a web request will come-in, which will be dispatched to a controller which will invoke the external API. Let&#8217;s imagining this is happening directly from the controller:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    MyApp.TwitterClient.get_username(username)
+    # ...
+  end
+end
+</code></pre>
+<p>The code may work as expected but, when it comes to make the tests pass, a common practice is to just go ahead and <em>mock</em> (warning! mock as a verb!) the underlying <code>HTTPClient</code> used by <code>MyApp.TwitterClient</code>:</p>
+<pre><code class="elixir">mock(HTTPClient, :get, to_return: %{..., "username" =&gt; "josevalim", ...})
+</code></pre>
+<p>You proceed to use the same technique in a couple other places and your unit and integration test suites pass. Time to move on?</p>
+<p>Not so fast. The whole problem with mocking the <code>HTTPClient</code> is that you just coupled your application to that particular <code>HTTPClient</code>. For example, if you decide to use a new and faster HTTP client, a good part of your integration test suite will now fail because it all depends on mocking <code>HTTPClient</code> itself, <em>even when the application behaviour is the same</em>. In other words, the mechanics changed, the behaviour is the same, but your tests fail anyway. That&#8217;s a bad sign.</p>
+<p>Furthermore, because mocks like the one above change modules <em>globally</em>, they are particularly aggravating in Elixir as changing global values means you can no longer run that part of your test suite concurrently.</p>
+<h3>The solution</h3>
+<p>Instead of mocking the whole <code>HTTPClient</code>, we could replace the Twitter client (<code>MyApp.TwitterClient</code>) with something else during tests. Let&#8217;s explore how the solution would look like in Elixir.</p>
+<p>In Elixir, all applications ship with configuration files and a mechanism to read them. Let&#8217;s use this mechanism to be able to configure the Twitter client for different environments. The controller code should now look like this:</p>
+<pre><code class="elixir">defmodule MyApp.MyController do
+  def show(conn, %{"username" =&gt; username}) do
+    # ...
+    twitter_api().get_username(username)
+    # ...
+  end
+
+  defp twitter_api do
+    Application.get_env(:my_app, :twitter_api)
+  end
+end
+</code></pre>
+<p>And now we can configure it per environment as:</p>
+<pre><code class="elixir"># In config/dev.exs
+config :my_app, :twitter_api, MyApp.Twitter.Sandbox
+
+# In config/test.exs
+config :my_app, :twitter_api, MyApp.Twitter.InMemory
+
+# In config/prod.exs
+config :my_app, :twitter_api, MyApp.Twitter.HTTPClient
+</code></pre>
+<p>This way we can choose the best strategy to retrieve data from Twitter per environment. The sandbox one is useful if Twitter provides some sort of sandbox for development. The <code>HTTPClient</code> is our previous implementation while the in memory avoids HTTP requests altogether, by simply loading and keeping data in memory. Its implementation could be defined in your test files and even look like:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.InMemory do
+  def get_username("josevalim") do
+    %MyApp.Twitter.User{
+      username: "josevalim"
+    }
+  end
+end
+</code></pre>
+<p>which is as clean and simple as you can get. At the end of the day, <strong><code>MyApp.Twitter.InMemory</code> is a mock</strong> (mock as a noun, yay!), except you didn&#8217;t need any fancy library to define one! The dependency on <code>HTTPClient</code> is gone as well.</p>
+<h3>The need for explicit contracts</h3>
+<p>Because a mock is meant to replace a real entity, such replacement can only be effective if we explicitly define how the real entity should behave. Failing this, you will find yourself in the situation where the mock entity grows more and more complex with time, increasing the coupling between the components being tested, but you likely won&#8217;t ever notice it because the contract was never explicit.</p>
+<p>Furthermore, we have already defined three implementations of the Twitter API, so we better make it all explicit. In Elixir we do so by defining a behaviour with callback functions:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter do
+  @doc "..."
+  @callback get_username(username :: String.t) :: %MyApp.Twitter.User{}
+  @doc "..."
+  @callback followers_for(username :: String.t) :: [%MyApp.Twitter.User{}]
+end
+</code></pre>
+<p>Now add <code>@behaviour MyApp.Twitter</code> on top of every module that implements the behaviour and Elixir will help you provide the expected API.</p>
+<p>It is interesting to note we rely on such behaviours <em>all the time</em> in Elixir: when you are using Plug, when talking to a repository in Ecto, when testing Phoenix channels, etc.</p>
+<h3>Testing the boundaries</h3>
+<p>Previously, because we didn&#8217;t have a explicit contract, our application boundaries looked like this:</p>
+<pre><code>[MyApp] -&gt; [HTTP Client] -&gt; [Twitter API]
+</code></pre>
+<p>That&#8217;s why changing the <code>HTTPClient</code> could break your integration tests. Now our app depends on a contract and only one implementation of such contract rely on HTTP:</p>
+<pre><code>[MyApp] -&gt; [MyApp.Twitter (contract)]
+[MyApp.Twitter.HTTP (contract impl)] -&gt; [HTTPClient] -&gt; [Twitter API]
+</code></pre>
+<p>Our application tests are now isolated from both the <code>HTTPClient</code> and the Twitter API. However, how can we make sure the system actually works as expected?</p>
+<p>Of the challenges in testing large systems is exactly in finding the proper boundaries. Define too many boundaries and you have too many moving parts. Furthermore, <strong>by writing tests that rely exclusively on mocks, your tests become less reliable</strong>.</p>
+<p>My general guideline is: for each test using a mock, you must have an integration test covering the usage of that mock. Without the integration test, there is no guarantee the system actually works when all pieces are put together. For example, some projects would use mocks to avoid interacting with the database during tests but in doing so, they would make their suites more fragile. These is one of the scenarios where a project could have 100% test coverage but still reveal obvious failures when put in production.</p>
+<p>By requiring the presence of integration tests, you can guarantee the different components work as expected when put together. Besides, the requirement of writing an integration test in itself is enough to make some teams evaluate if they should be using a mock in the first place, which is always a good question to ask ourselves!</p>
+<p>Therefore, in order to fully test our Twitter usage, we need at least two types of tests. Unit tests for <code>MyApp.Twitter.HTTP</code> and an integration test where <code>MyApp.Twitter.HTTP</code>&nbsp; is used as an adapter.</p>
+<p>Since depending on external APIs can be unreliably, we need to run those tests only when needed in development and configure them as necessary in our build system. The <code>@tag</code> system in ExUnit, Elixir&#8217;s test library, provides conveniences to help us with that. For the unit tests, one could do:</p>
+<pre><code class="elixir">defmodule MyApp.Twitter.HTTPTest do
+  use ExUnit.Case, async: true
+
+  # All tests will ping the twitter API
+  @moduletag :twitter_api
+
+  # Write your tests here
+end
+</code></pre>
+<p>In your test helper, you want to exclude the Twitter API test by default:</p>
+<pre><code class="elixir">ExUnit.configure exclude: [:twitter_api]
+</code></pre>
+<p>But you can still run the whole suite with the tests tagged <code>:twitter_api</code> if desired:</p>
+<pre><code class="bash">mix test --include twitter_api
+</code></pre>
+<p>Or run only the tagged tests:</p>
+<pre><code class="bash">mix test --only twitter_api
+</code></pre>
+<p>Although I prefer this approach, external conditions like rate limiting may make such solution impractical. In such cases, we may actually need a fake HTTPClient. This is fine as long as we follow the guidelines below:</p>
+<ol>
+<li>If you change your HTTP client, your application suite won&#8217;t break but only the tests for <code>MyApp.Twitter.HTTP</code></li>
+<li>You won&#8217;t mock (warning! mock as a verb) your HTTP client. Instead, you will pass it as a dependency via configuration, similar to how we did for the Twitter API</li>
+</ol>
+<p>Alternatively, you may avoid mocking the HTTP client by running a dummy webserver that emulates the Twitter API. <a href="https://github.com/pspdfkit-labs/bypass">bypass</a> is one of many projects that can help with that. Those are all options you should discuss with your team.</p>
+<h2>Other notes</h2>
+<p>I would like to finish this article by bringing up some common concerns and comments whenever the mock discussion comes up.</p>
+<h3>Making the code &#8220;testable&#8221;</h3>
+<p>Quoting from <a href="https://groups.google.com/d/msg/elixir-lang-talk/oYXyvEUi64Y/_sNnsoirCQAJ">elixir-talk mailing list</a>:</p>
+<blockquote><p>So the proposed solution is to change production code to be &#8220;testable&#8221; and making production code to call Application configuration for every function call? This doesn&#8217;t seem like a good option as it&#8217;s including a unnecessary overhead to make something &#8220;testable&#8221;.</p></blockquote>
+<p>I&#8217;d argue it is not about making the code &#8220;testable&#8221;, it is about improving the design of your code.</p>
+<p>A test is a consumer of your API like any other code you write. One of the ideas behind TDD is that tests are code and no different from code. If you are saying &#8220;I don&#8217;t want to make my code testable&#8221;, you are saying &#8220;I don&#8217;t want to decouple some modules&#8221; or &#8220;I don&#8217;t want to think about the contract behind these components&#8221;.</p>
+<p>Just to clarify, there is nothing wrong with &#8220;not wanting to decouple some modules&#8221;. For example, we invoke modules such as <code>URI</code> and <code>Enum</code> from Elixir&#8217;s standard library all the time and we don&#8217;t want to hide those behind contracts. But if we are talking about something as complex as an external API, defining an explicit contract and making the contract implementation configurable is going to do your code wonders and make it easier to manage its complexity.</p>
+<p>Finally, the overhead is also minimum. Application configuration in Elixir is stored in ETS tables which means they are directly read from memory.</p>
+<h3>Mocks as locals</h3>
+<p>Although we have used the application configuration for solving the external API issue, sometimes it is easier to just pass the dependency as argument. Imagine this example in Elixir where some function may perform heavy work which you want to isolate in tests:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function do
+    # ...
+    SomeDependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>You could remove the dependency by passing it as an argument, which can be done in multiple ways. If your dependency surface is tiny, an anonymous function will suffice:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(heavy_work \\ &amp;SomeDependency.heavy_work/2) do
+    # ...
+    heavy_work.(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>And in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  heavy_work = fn _, _ -&gt;
+    # Simulate heavy work by sending self() a message
+    send self(), :heavy_work
+  end
+
+  MyModule.my_function(heavy_work)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Or define the contract, as explained in the previous section of this post, and pass a module in:</p>
+<pre><code class="elixir">defmodule MyModule do
+  def my_function(dependency \\ SomeDependency) do
+    # ...
+    dependency.heavy_work(arg1, arg2)
+    # ...
+  end
+end
+</code></pre>
+<p>Now in your test:</p>
+<pre><code class="elixir">test "my function performs heavy work" do
+  # Simulate heavy work by sending self() a message
+  defmodule TestDependency do
+    def heavy_work(_arg1, _arg2) do
+      send self(), :heavy_work
+    end
+  end
+
+  MyModule.my_function(TestDependency)
+
+  assert_received :heavy_work
+end
+</code></pre>
+<p>Finally, you could also make the dependency a data structure and define the contract with <a href="http://elixir-lang.org/getting-started/protocols.html">a protocol</a>.</p>
+<p>In fact, passing the dependency as argument is much simpler and should be preferred over relying on configuration files and <code>Application.get_env/3</code>. When not possible, the configuration system is a good fallback.</p>
+<h3>Mocks as nouns</h3>
+<p>Another way to think about mocks is to treat them as nouns. You shouldn&#8217;t mock an API (verb), instead you create a mock (noun) that implements a given API.</p>
+<p>Most of the bad uses of mocks come when they are used as verbs. That&#8217;s because, when you use mock as a verb, you are changing something that already exists, and often those changes are global. For example, when we say we will mock the <code>SomeDependency</code> module:</p>
+<pre><code class="elixir">mock(SomeDependency, :heavy_work, to_return: true)
+</code></pre>
+<p>When you use mock as a noun, you need to create something new, and by definition it cannot be the <code>SomeDependency</code> module because it already exists. So &#8220;mock&#8221; is not an action (verb), it is something you pass around (noun). I&#8217;ve found the noun-verb guideline to be very helpful when spotting bad use of mocks. Your mileage may vary.</p>
+<h3>Mock libraries</h3>
+<p>With all that said, should you discard your mock library?</p>
+<p>It depends. If your mock library uses mocks to replace global entities, to change static methods in OO or to replace modules in functional languages, you should definitely consider how the library is being used in your codebase and potentially discard it.</p>
+<p>However there are mock libraries that does not promote any of the &#8220;anti-patterns&#8221; above and are mostly conveniences to define &#8220;mock objects&#8221; or &#8220;mock modules&#8221; that you would pass to the system under the test. Those libraries adhere to our &#8220;mocks as nouns&#8221; rule and can provide handy features to developers.</p>
+<h2>Summing up</h2>
+<p>Part of testing your system is to find the proper contracts and boundaries between components. If you follow closely a guideline that mocks will be used only if you define a explicit contract, it will:</p>
+<ol>
+<li>protect you from overmocking as it will push you to define contracts for the parts of your system that matters&nbsp;</li>
+<li>help you manage the complexity between different components. Every time you need a new function from your dependency, you are required to add it to the contract (a new <code>@callback</code> in our Elixir code). If the list of <code>@callback</code>s are getting bigger and bigger, it will be noticeable as the knowledge is in one place and you will be able to act on it</li>
+<li>make it easier to test your system because it will push you to isolate the interaction between complex components</li>
+</ol>
+<p>Defining contracts allows us to see the complexity in our dependencies. Your application will always have complexity, so always make it as explicit as you can.</p>
+<div style="padding: 40px 0 20px;"><a href="/subscribe/"><img decoding="async" style="border: none;" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog"></a></div><p>The post <a href="/2015/10/mocks-and-explicit-contracts/">Mocks and explicit contracts</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2015/10/mocks-and-explicit-contracts/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Kanban: caring about the whole development process	</title>
+	<atom:link href="/2016/04/kanban-caring-about-the-whole-development-process/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/04/kanban-caring-about-the-whole-development-process/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 04 May 2016 10:25:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Barbara Helmek-Smith		</title>
+		<link>/2016/04/kanban-caring-about-the-whole-development-process/comment-page-1/#comment-1605</link>
+
+		<dc:creator><![CDATA[Barbara Helmek-Smith]]></dc:creator>
+		<pubDate>Wed, 04 May 2016 10:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5331#comment-1605</guid>
+
+					<description><![CDATA[Well said. I believe that one of the biggest advantages of Kanban is that it allows each member of a team to be involved (in one way or another) in every step of development process. In my office everyone benefits from Kanban (we use http://kanbantool.com,/ which is an online Kanban board). Managers divide workload and assign tasks via Kanban boards, senior manager oversees the whole process and adapt next assignments to team&#039;s abilities by looking at progress chart and remote employees are able to participate in brainstorming and ideas exchange without traveling. It really makes our work easier!]]></description>
+			<content:encoded><![CDATA[<p>Well said. I believe that one of the biggest advantages of Kanban is that it allows each member of a team to be involved (in one way or another) in every step of development process. In my office everyone benefits from Kanban (we use <a href="http://kanbantool.com/" rel="nofollow ugc">http://kanbantool.com/</a>, which is an online Kanban board). Managers divide workload and assign tasks via Kanban boards, senior manager oversees the whole process and adapt next assignments to team&#8217;s abilities by looking at progress chart and remote employees are able to participate in brainstorming and ideas exchange without traveling. It really makes our work easier!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tiago Almeida		</title>
+		<link>/2016/04/kanban-caring-about-the-whole-development-process/comment-page-1/#comment-1598</link>
+
+		<dc:creator><![CDATA[Tiago Almeida]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2016 17:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5331#comment-1598</guid>
+
+					<description><![CDATA[I agree. The whole team has to be responsible for the process. of course it&#039;s always good to have a more focused person in it. the best gain kanban against the scrum for me was the delivery more consistent and higher quality. In my opinion kanban it&#039;s good to see the stories status and with that in mind, everyone can help to delivery.]]></description>
+			<content:encoded><![CDATA[<p>I agree. The whole team has to be responsible for the process. of course it&#8217;s always good to have a more focused person in it. the best gain kanban against the scrum for me was the delivery more consistent and higher quality. In my opinion kanban it&#8217;s good to see the stories status and with that in mind, everyone can help to delivery.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

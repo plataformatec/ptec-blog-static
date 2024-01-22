@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>engine « Plataformatec Blog</title>
+	<atom:link href="/tag/engine/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 19 Apr 2010 11:41:30 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Authentication is with Devise!</title>
+		<link>/2010/04/authentication-is-with-devise/</link>
+					<comments>/2010/04/authentication-is-with-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Mon, 12 Apr 2010 19:43:29 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[engine]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railscasts]]></category>
+		<guid isPermaLink="false">/?p=862</guid>
+
+					<description><![CDATA[<p>Two months ago we were celebrating Devise&#8217;s birthday. We were not talking about its age, Devise had just 4 months of life, but we were happy to reach the 1.0 release. Today we are celebrating again! We are very proud and glad to have Devise in its first Railscast! Ryan Bates has done a great ... <a class="read-more-link" href="/2010/04/authentication-is-with-devise/">»</a></p>
+<p>The post <a href="/2010/04/authentication-is-with-devise/">Authentication is with Devise!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Two months ago we were celebrating <a href="/2010/02/happy-birthday-devise/">Devise&#8217;s birthday</a>. We were not talking about its age, Devise had just 4 months of life, but we were happy to reach the 1.0 release.</p>
+<p>Today we are celebrating again! We are very proud and glad to have <a href="http://github.com/plataformatec/devise">Devise</a> in its first <a href="http://railscasts.com/episodes/209-introducing-devise">Railscast</a>! <a href="http://github.com/ryanb">Ryan Bates</a> has done a great job explaining how to get <a href="http://github.com/plataformatec/devise">Devise</a> up and running in a Rails 3 application, showing how to install <a href="http://github.com/plataformatec/devise">Devise</a> and choose the basic modules you want to use in your application.</p>
+<p>We also made a promise to you: get <a href="http://github.com/plataformatec/devise">Devise</a> up and running for Rails 3. We keep walking this road, each Rails beta version released we are releasing a new compatible Devise version. For the time being, we have Devise 1.1.rc0, a release candidate version, compatible with Rails 3 beta 2.</p>
+<p>We are looking forward to see the second part of <a href="http://railscasts.com/episodes/209-introducing-devise">Devise&#8217;s Railscast</a>, about how to configure <a href="http://github.com/plataformatec/devise">Devise</a> to fit the needs of your application.</p>
+<p>Give <a href="http://github.com/plataformatec/devise">Devise</a> a try. You can post your questions to the <a href="http://groups.google.com/group/plataformatec-devise">mailing list</a> and, if you find any issue, please use the <a href="http://github.com/plataformatec/devise/issues">Github Issue Tracker</a>. Don’t forget to post information about your environment (like Devise, Warden and Rails versions) including the stack trace if you are facing an error, to help us help you =). Enjoy!</p>
+<p><strong>Update:</strong> <a href="http://railscasts.com/">Railscasts</a> just released the second part of Devise screencast, Customizing Devise, going through Devise configuration options. <a href="http://railscasts.com/episodes/210-customizing-devise">Check it out</a>!</p><p>The post <a href="/2010/04/authentication-is-with-devise/">Authentication is with Devise!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/authentication-is-with-devise/feed/</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Happy Birthday Devise</title>
+		<link>/2010/02/happy-birthday-devise/</link>
+					<comments>/2010/02/happy-birthday-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 12 Feb 2010 19:05:24 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[engine]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=746</guid>
+
+					<description><![CDATA[<p>Today we are celebrating Devise&#8216;s birthday. But wait, if you have started watching Devise since the beginning you may be asking: has Devise already completed one year of life? Nope. Today we are completing exactly 4 months since Devise was released at Rails Summit Latin America 2009. And we are very proud and glad to ... <a class="read-more-link" href="/2010/02/happy-birthday-devise/">»</a></p>
+<p>The post <a href="/2010/02/happy-birthday-devise/">Happy Birthday Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we are celebrating <a href="http://github.com/plataformatec/devise">Devise</a>&#8216;s birthday. But wait, if you have started watching <a href="http://github.com/plataformatec/devise">Devise</a> since the beginning you may be asking: has <a href="http://github.com/plataformatec/devise">Devise</a> already completed one year of life? Nope. Today we are completing exactly 4 months since <a href="http://github.com/plataformatec/devise">Devise</a> was <a href="/2009/10/thor-e-devise-no-rails-summit-latin-america-2009/">released at Rails Summit Latin America 2009</a>. And we are very proud and glad to say that we have just reached <a href="http://github.com/plataformatec/devise/commit/4bfbeea7e6e6f78503abf5b59571a316a7a72158">version 1.0</a>! Yeah! Let&#8217;s celebrate and talk a bit about history.</p>
+<h3>The beginning</h3>
+<p>We decided to build <a href="http://github.com/plataformatec/devise">Devise</a> based on some requirements we had in a project last year. The majority of our projects usually require an admin interface to configure the application with some CRUD information. And in this specific project, we were needing two different roles in the same application, the admin itself with all its powers to manage the application, and the end users that should be signed in to do some stuff inside the application. Usually only one model would be required in this situation, with some &#8220;type&#8221; column or flag to determine if the user is an admin or not, right? Okay, but we didn&#8217;t like this approach that much. So we started looking at some of the possibilities:</p>
+<ul>
+<li><strong><a href="http://github.com/binarylogic/authlogic">Authlogic</a></strong>: a really great piece of code and functionality, but a bit messy by handling the session in a model. It also only handles the model part.</li>
+<li><strong><a href="http://github.com/thoughtbot/clearance">Clearance</a></strong>: full stack, Rails Engine, extra modules, everything we needed. However, packaged with a User model and without the ability to customize it.</li>
+</ul>
+<p>Okay, we could pick one of these and with a bit of extra work we would achieve our requirements. But would we need to do it every time this situation happens? We said no. It&#8217;s not DRY enough. And we like DRY. So <a href="http://github.com/plataformatec/devise">Devise</a> was born.</p>
+<p>The main objective of the first <a href="http://github.com/plataformatec/devise">Devise</a> version was to get up and running the entire sign in process, including password recovery and confirmation stuff. And everything should work with different roles, which mean you could easily plug and play an Admin, User, Account, or whichever role you needed, in your application, without much effort. And we had a deadline: <a href="http://www.railssummit.com.br/">Rails Summit</a>. It took almost 1 month of work before <a href="http://www.railssummit.com.br/">Rails Summit</a>. I still remember the days before the event, we putting a lot of effort to have <a href="http://github.com/plataformatec/devise">Devise</a> up and running, and the <a href="http://github.com/plataformatec/devise/blob/master/README.rdoc">README</a> being written during the event. So, we were ready there and presenting <a href="http://github.com/plataformatec/devise">Devise</a> to the world.</p>
+<h3>How it works</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> was born with the intuit of handling different roles without effort, automatically, and it is achieved with Rails Engines. In addition, <a href="http://github.com/plataformatec/devise">Devise</a> is build in top of <a href="http://github.com/hassox/warden">Warden</a>, a great rack authentication framework. It allowed us to be flexible enough and add different strategies, hooks, and modules easily. In short, <a href="http://github.com/plataformatec/devise">Devise</a>:</p>
+<ul>
+<li>Is Rack based;</li>
+<li>Is a complete MVC solution based on Rails Engines;</li>
+<li>Allows you to have multiple roles (or models/scopes) signed in at the same time;</li>
+<li>Is based on a modularity concept: use just what you really need.</li>
+</ul>
+<h3>The road so far</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> has started with the basic modules needed for that specific application: </p>
+<ul>
+<li><strong>Authenticatable</strong>: responsible for signing users in through a basic login form, handling password validation and authentication.</li>
+<li><strong>Confirmable</strong>: manages confirming users account.</li>
+<li><strong>Recoverable</strong>: handles password recovery.</li>
+<li><strong>Validatable</strong>: basic email and password validation.</li>
+</ul>
+<p>Okay, everything we needed were there. Everything else was in a wish list, nicely called TODO. And we decided from the beginning to not add features to <a href="http://github.com/plataformatec/devise">Devise</a> until us or somebody else really needed them. But people asked, people needed new features. And they were always there to help, to fork and fix a bug, to comment. We started soon to add new features, the first was:</p>
+<ul>
+<li><strong>Rememberable</strong>: handles signing users in automatically from cookies.</li>
+</ul>
+<p>After people were asking for easier ways to create their migrations, so we introduced a new module with <a href="http://github.com/plataformatec/devise">Devise</a> 0.2:</p>
+<ul>
+<li><strong>Migratable</strong>: hooks into <a href="http://ar.rubyonrails.org/">ActiveRecord</a> <a href="http://ar.rubyonrails.org/classes/ActiveRecord/Migration.html">migrations</a> to add helper methods for creating <a href="http://github.com/plataformatec/devise">Devise</a> colums. So you can do stuff like <code>t.authenticatable</code>, <code>t.confirmable</code> and so on.</li>
+</ul>
+<p>To help people getting up and running faster, we created some generators. Now they are:</p>
+<ul>
+<li><code>script/generate <strong>devise_install</code></strong>: create devise initializer file to enable some configs and copy default locale file.</li>
+<li><code>script/generate <strong>devise</strong> MyModel</code>: create a model with setup for <a href="http://github.com/plataformatec/devise">Devise</a>, routes and migration.</li>
+<li><code>script/generate <strong>devise_views</strong></code>: copy all <a href="http://github.com/plataformatec/devise">Devise</a> views to your app/views folder, so you can change it as needed.</li>
+</ul>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> 0.3 and 0.4 came soon after, with a lot of bug fixes in generators, I18n, initialization, some deprecations and a bunch of code refactored.</p>
+<p>Contributions from community were coming more and more. The first big contribution came with the addition of encryptors. Nowadays <a href="http://github.com/plataformatec/devise">Devise</a> supports encrypting passwords with SHA1, SHA512, and BCrypt. It has also support for using the same encryptors as <a href="http://github.com/binarylogic/authlogic">Authlogic</a>, <a href="http://github.com/thoughtbot/clearance">Clearance</a> and <a href="http://github.com/technoweenie/restful-authentication">Restful Authentication</a>, to help you migrating from these solutions.</p>
+<p>At this point we thought: okay, that should be enough. It wasn&#8217;t. People needed different ORMs, other than <a href="http://ar.rubyonrails.org/">ActiveRecord</a>. So we introduced support to <a href="http://mongomapper.com/">MongoMapper</a> and then we were reaching <a href="http://github.com/plataformatec/devise">Devise</a> 0.5.</p>
+<p>We were receiving a lot of issues with functional tests, so we introduced some test helpers to help people with the sign in/out process in this kind of tests called Devise::TestHelper.</p>
+<p>As applications grow, more roles may be needed. So we created the possibility to scope your views for each role/scope in your application. This way your user can have a different sign in view than the admin, for example. Reaching <a href="http://github.com/plataformatec/devise">Devise</a> 0.6, a lot of improvements on routes and <a href="http://datamapper.org/">DataMapper</a> support were added.</p>
+<p>We were full of nice ideas to add new features, and our TODO was bigger than we like. So we came up with:</p>
+<ul>
+<li><strong>Timeoutable</strong>: verify each request to timeout the user session after a certain period of inactivity, asking for credentials again.</li>
+<li><strong>Trackable</strong>: records how many times each user has signed in, last timestamps and ips.</li>
+</ul>
+<p>Also the loading process and ORM support received a lot of work before launching <a href="http://github.com/plataformatec/devise">Devise</a> 0.7.</p>
+<p>For <a href="http://github.com/plataformatec/devise">Devise</a> 0.8 we looked at tests for <a href="http://mongomapper.com/">MongoMapper</a> and the code got a great review. Also some work was done to get <a href="http://github.com/plataformatec/devise">Devise</a> up and running with latest version of <a href="http://github.com/hassox/warden">Warden</a> and its new features, such as serializers. We also extracted a new base module from Confirmable:</p>
+<ul>
+<li><strong>Activatable</strong>: allow setting up extra activation methods for your models.</li>
+</ul>
+<p>We were receiving a lot of feedback from the community, and then we merged a cool new feature:</p>
+<ul>
+<li><strong>Lockable</strong>: lock accounts based on a number of invalid sign in attempts.</li>
+</ul>
+<p>Following the same pattern from Rails in <a href="http://github.com/rails/rails/commit/fa575973">this commit</a> we moved flash messages to <code>:notice</code> and <code>:alert</code>, and released <a href="http://github.com/plataformatec/devise">Devise</a> 0.9. Step by step the 1.0 version was coming.</p>
+<h3>What is new</h3>
+<p><a href="http://github.com/plataformatec/devise">Devise</a> 1.0 introduces a lot of cool features. The community seems to be really appreciating <a href="http://github.com/plataformatec/devise">Devise</a>, and we&#8217;ve received another great contribution:</p>
+<ul>
+<li><strong>Token Authenticatable</strong>: validates authenticity of a user while signing in using an authentication token (also known as &#8220;single access token&#8221;).</li>
+</ul>
+<p>In addition, we created the two most requested features for <a href="http://github.com/plataformatec/devise">Devise</a>:</p>
+<ul>
+<li><strong>Registerable</strong>: handles sign up users through a registration process, and also editing/updating user info and deleting user account.</li>
+<li><strong>HTTP Authenticatable</strong>: http basic authentication.</li>
+</ul>
+<p>We also added the possibility to use Migratable while editing a table using <code>change_table</code>, among other fixes.</p>
+<h3>What comes next</h3>
+<p>We are preparing a new release of <a href="http://github.com/plataformatec/devise">Devise</a> fully compatible with Rails 3. It means <a href="http://github.com/plataformatec/devise">Devise</a> has now closed its development for new features in Rails 2.x. We are still going to maintain a 1.0 branch in github for bug fixes to keep everything up and running.</p>
+<h3>In the end</h3>
+<p>We would like to say thank you to everyone who has helped us achieve 1.0 version and who is using <a href="http://github.com/plataformatec/devise">Devise</a>, testing, creating issues, and giving all this feedback.</p>
+<p>Also, for those who were at <a href="http://www.railssummit.com.br/">Rails Summit</a> last year, we proposed something: get the biggest number of watchers on github as fast as possible! When we presented <a href="http://github.com/plataformatec/devise">Devise</a>, there were 7 watchers, and if I am right we were 4 of them. At the time of this writing we have 762 watchers. Yeah! I think I can take the risk and say we accomplished it. Thanks!</p>
+<p>Let&#8217;s celebrate <a href="http://github.com/plataformatec/devise">Devise</a> 1.0, and look forward to see <a href="http://github.com/plataformatec/devise">Devise</a> and Rails 3. Enjoy!</p>
+<p>Happy birthday <a href="http://github.com/plataformatec/devise">Devise</a>! </p><p>The post <a href="/2010/02/happy-birthday-devise/">Happy Birthday Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/02/happy-birthday-devise/feed/</wfw:commentRss>
+			<slash:comments>36</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Devise: flexible authentication solution for Rails</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/</link>
+					<comments>/2009/10/devise-flexible-authentication-solution-for-rails/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 21 Oct 2009 02:46:58 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[authentication]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[engine]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=365</guid>
+
+					<description><![CDATA[<p>UPDATE: This post was an introduction to Devise and a couple of things changed since then. There is a more recent post which describes the same steps as below using generators and, for a more complete and always updated explanation, please check the README. In Rails Summit Latin America 2009, we showed Devise in a ... <a class="read-more-link" href="/2009/10/devise-flexible-authentication-solution-for-rails/">»</a></p>
+<p>The post <a href="/2009/10/devise-flexible-authentication-solution-for-rails/">Devise: flexible authentication solution for Rails</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong>UPDATE:</strong> This post was an introduction to Devise and a couple of things changed since then. There is a <a href="/2009/11/devise-authentication-for-lazy-programmers/">more recent post which describes the same steps as below using generators</a> and, for a more complete and always updated explanation, please check the <a href="http://github.com/plataformatec/devise">README</a>.</p>
+<p>In <a href="http://railssummit.locaweb.com.br/en/pages/home" target="_blank">Rails Summit Latin America 2009</a>, we showed <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a> in a lightning talk and today we are officially releasing it! Before we show you some code, we are going to explain what we want to achieve with <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, starting with the most used authentication solution nowadays: <a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> and <a href="http://github.com/binarylogic/authlogic" target="_blank">Authlogic</a>.</p>
+<h3>Clearance</h3>
+<p><a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> is a full stack authentication solution, implementing all Model, View and Controller layers using Rails Engines. It deals with account confirmation and password recovery. You just need to plug and play! However, you are required to use the model User and it does not allow you have add and/or customize different roles.</p>
+<h3>Authlogic</h3>
+<p>When comes to the Model, <a href="http://github.com/binarylogic/authlogic" target="_blank">Authlogic</a> is definitely the most complete solution out there. It handles several cryptography providers and many other goodies which are completely configurable. However, it&#8217;s not a full stack solution (it does not say how users should confirm their account or recover their password) and it has a little bit of controversy since it handles the session in a model. So here is the question, where the session could be handled then?</p>
+<h3>Here comes Warden!</h3>
+<p><a href="http://github.com/hassox/warden" target="_blank">Warden</a> is a general rack authentication framework, developed by <a href="http://github.com/hassox" target="_blank">Daniel Neighman</a>, which handles the session in a rack middleware. The main benefit from it is that you can share your authentication strategies with several apps, so if you are using Sinatra, Rails and some others middlewares at the same time, they all rely on the same rules!</p>
+<h3>Devise: strategies for authentication</h3>
+<p>After we fell in love with <a href="http://github.com/hassox/warden" target="_blank">Warden</a> and used it in some projects, we decided to create a full stack solution as Clearance, but flexible as Authlogic, on top of <a href="http://github.com/hassox/warden" target="_blank">Warden</a>. The solution is <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>, a Rails Engine which handles multiple roles, each one of them with different strategies. Devise currently comes with 5 strategies:</p>
+<ul>
+<li><b>Authenticatable</b>: responsible for encrypting password and validating authenticity of a user while signing in;</li>
+<li><b>Confirmable</b>: responsible for verifying whether an account is already confirmed to sign in, and to send emails with confirmation instructions;</li>
+<li><b>Recoverable</b>: takes care of reseting the user password and send reset instructions;</li>
+<li><b>Rememberable</b>: generates and clears a token to remember the user from a saved cookie;
+<li><b>Validatable</b>: creates all needed validations for email and password. It’s totally optional, so you’re able to to customize validations by yourself.</li>
+</ul>
+<p>The nice thing is: imagine that you are building an app which needs to handle invitations. You just need to create a Invitable strategy on Devise and never implement it again!</p>
+<h3>Show me the code!</h3>
+<p>In the <a href="http://github.com/plataformatec/devise" target="_blank">README</a>, you will find all the information you need to start using Devise in your projects, so here we are going to cover the main aspects of it. Let&#8217;s suppose you are creating an user model, which needs to be authenticated and recover his password. The first step is to create the columns using Devise migration helpers:</p>
+<pre lang="ruby">
+create_table :users do |t|
+  # creates email, encrypted_password and password_salt
+  t.authenticatable
+
+  # creates reset_password_token
+  t.recoverable
+end
+</pre>
+<p>Then you need to declare inside your model which strategies you want to use:</p>
+<pre lang="ruby">
+class User < ActiveRecord::User
+  # Authenticatable is always included
+  devise :recoverable, :validatable
+end
+</pre>
+<p>And create the routes:</p>
+<pre lang="ruby">
+ActionController::Routing::Routes.draw do |map|
+  # Check for configuration params on README
+  map.devise_for :users
+end
+</pre>
+<p>The route will access your model and create only the routes for the strategies declared. That ensures that your user won't access the confirmations controller inside Devise. Devise also adds a couple of helpers and filters to be used inside your controllers:</p>
+<pre lang="ruby">
+  # Inside your protected controller
+  before_filter :authenticate_user!
+
+  # Inside your controllers and views
+  user_signed_in?
+  current_user
+  user_session
+</pre>
+<p><strong>user_session</strong> is a hash scoped only to the user. So if you have two roles, they will have different session hashes and their data won't conflict! This awesome feature come straights from Warden!</p>
+<p>Devise also has I18n support and since it's an engine, you can customize your views just by placing a copy of it in your application. <a href="http://github.com/plataformatec/devise_example" target="_blank">A small application build as example is also available on Github</a>!</p>
+<h3>What's more to come?</h3>
+<p>We are planning to add several other strategies to Devise, including brute force protection, session timeouts and also other features, as generators. You can spy our <a href="http://github.com/plataformatec/devise/blob/master/TODO" target="_blank">TODO list</a> whenever you want.</p>
+<h3>Our many thanks to</h3>
+<p><a href="http://carlosantoniodasilva.wordpress.com/" target="_blank">Carlos Antônio</a> which worked on Devise and made it ready for prime time! <a href="http://twitter.com/jncoward" target="_blank">Jonas Nicklas</a>, which introduced us to <a href="http://github.com/hassox/warden" target="_blank">Warden</a> and <a href="http://twitter.com/hassox" target="_blank">Daniel Neighman</a> for building and maintaining it! </p>
+<p>We also want to thank <a href="http://robots.thoughtbot.com/" target="_blank">Thoughtbot</a> guys, which wrote several <a href="http://robots.thoughtbot.com/post/159805420/sign-up-sign-in-sign-out" target="_blank" >decisions</a> and <a href="http://robots.thoughtbot.com/post/159805560/tips-for-writing-your-own-rails-engine" target="_blank">tips</a> they took while developing <a href="http://github.com/thoughtbot/clearance" target="_blank">Clearance</a> which helped us while building <a href="http://github.com/plataformatec/devise" target="_blank">Devise</a>.</p>
+<p>Finally, thanks to <a href="http://www.akitaonrails.com/" target="_blank" >Fábio Akita</a> for giving us the chance to release it at Rails Summit and Gregg Pollack for releasing <a href="http://ruby5.envylabs.com/episodes/21" target="_blank">Devise on Ruby 5</a>!</p><p>The post <a href="/2009/10/devise-flexible-authentication-solution-for-rails/">Devise: flexible authentication solution for Rails</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/10/devise-flexible-authentication-solution-for-rails/feed/</wfw:commentRss>
+			<slash:comments>69</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rvm « Plataformatec Blog</title>
+	<atom:link href="/tag/rvm/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 05 May 2010 17:14:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Accented chars in IRB with RVM and ruby 1.8.7</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/</link>
+					<comments>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/#comments</comments>
+		
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 17:14:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[irb]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[rvm]]></category>
+		<category><![CDATA[unicode]]></category>
+		<guid isPermaLink="false">/?p=990</guid>
+
+					<description><![CDATA[<p>Since moving to Mac, I always find it surprising that the default Mac OS X Ruby and IRB doesn&#8217;t allow inputs with accented characters. So, you cannot do name = "George Guimarães" This is annoying for brazilians and anyone who uses non-ASCII characters. The problem is that the default Ruby in Mac OS X isn&#8217;t ... <a class="read-more-link" href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">»</a></p>
+<p>The post <a href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">Accented chars in IRB with RVM and ruby 1.8.7</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Since moving to Mac, I always find it surprising that the default Mac OS X Ruby and IRB doesn&#8217;t allow inputs with accented characters. So, you cannot do</p>
+<pre lang="ruby">
+name = "George Guimarães"
+</pre>
+<p>This is annoying for brazilians and anyone who uses non-ASCII characters. The problem is that the default Ruby in Mac OS X isn&#8217;t linked against readline. A simple solution is to compile readline on your system, and then compile your own ruby binaries. A better one is to use tools that automate this process. </p>
+<p><a href="http://www.codeography.com/2010/03/29/fix-snow-leopard-ruby-with-homebrew-readline.html">This post by Christopher Sexton</a> uses homebrew to compile readline-0.6 but compiles ruby by hand. Since <a href="/2010/04/rails-3-with-rvm-ftw">we love RVM</a>, we&#8217;ll use it too.</p>
+<p>If you use <a href="http://github.com/mxcl/homebrew">Homebrew</a> (and you *should*), just do</p>
+<pre lang="bash">
+brew install readline
+brew link readline
+</pre>
+<p><strong>Beware</strong>: linking readline into your system may break other tools that depends on readline source to compile. It was harmless on my system.</p>
+<p>Ok, so now we want to build a new ruby and irb binaries. I wanted to use ruby 1.8.7-p248, so:</p>
+<pre lang="bash">
+rvm install 1.8.7-p248 -C --enable-shared,--with-readline-dir=/usr/local
+</pre>
+<p>This tells the configure script to enable shared library linking (it is the default), and to search for readline in <code>/usr/local</code> (homebrew has just linked readline there). You may have to use <code>--force</code> if you already have this ruby version compiled. Newer versions of RVM do not need <code>--force</code>.</p>
+<p>Now you can use accented and unicode characters on keyboard input in IRB using ruby 1.8.7.</p>
+<p>And you? Do you have any tricks with IRB that you may want to share? Do you use <a href="http://github.com/blackwinter/wirble">Wirble</a>, <a href="http://github.com/gilesbowkett/utility-belt">Utility Belt</a> or others?</p><p>The post <a href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">Accented chars in IRB with RVM and ruby 1.8.7</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rails 3 with RVM FTW!</title>
+		<link>/2010/04/rails-3-with-rvm-ftw/</link>
+					<comments>/2010/04/rails-3-with-rvm-ftw/#comments</comments>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Mon, 26 Apr 2010 20:32:31 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rvm]]></category>
+		<guid isPermaLink="false">/?p=915</guid>
+
+					<description><![CDATA[<p>I&#8217;ve been playing a lot with Rails 3 lately, it&#8217;s completely awesome! However, we don&#8217;t have any Rails 3 app in production at the moment, all projects that Plataforma has been doing for its clients so far are using Rails 2.3.5. Since I was already having fun with Rails 3, I thought I should also ... <a class="read-more-link" href="/2010/04/rails-3-with-rvm-ftw/">»</a></p>
+<p>The post <a href="/2010/04/rails-3-with-rvm-ftw/">Rails 3 with RVM FTW!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;ve been playing a lot with Rails 3 lately, it&#8217;s completely awesome! However, we don&#8217;t have any Rails 3 app in production at the moment, all projects that Plataforma has been doing for its clients so far are using Rails 2.3.5. Since I was already having fun with Rails 3, I thought I should also give ruby 1.9 a try. Ok, so how could I have Rails 2.3.5, Rails 3, ruby 1.8.7 and ruby 1.9 in my machine without going crazy? The answer is <a href="http://rvm.beginrescueend.com/">RVM (Ruby Version Manager)</a>!</p>
+<p>RVM is an awesome tool that gives you the power to have as many rubies in your machine as you want, and the best of all, all versions are isolated, no conflicts at all. In order to install it, follow the <a href="http://rvm.beginrescueend.com/rvm/install/">instructions</a> inside RVM&#8217;s site. After that, I installed ruby 1.9.1 through RVM with <code>rvm install 1.9</code>, installed all the gems necesssary to play with Rails 3 (<code>gem install rails --pre</code>) and then, I could start to play.</p>
+<p>I was playing with that configuration successfully until the moment I got a segmentation fault error. Other people got the same <a href="https://rails.lighthouseapp.com/projects/8994-ruby-on-rails/tickets/4455-segmentation-fault-at-httplocalhost3000railsinfoproperties-on-new-application">error</a> too. Thankfully the problem didn&#8217;t last too long, this was one of these moments which I was very happy for having a <a href="http://rubyonrails.org/core">Rails Core member</a> in my team (<a href="http://twitter.com/josevalim">@josevalim</a>). He told me that Rails 3 doesn&#8217;t support ruby 1.9.1, actually, it&#8217;s supporting ruby 1.9.2! So, I needed to install a new ruby version, and install all Rails 3 gems again, damn it! But, I was fortunate enough for being using RVM.</p>
+<p>In order to install Ruby 1.9.2-head and Rails 3 gems, all I needed to do was:</p>
+<ol>
+<li>Update my RVM: <code>rvm update --head</code></li>
+<li>Install ruby 1.9.2 head: <code>rvm install 1.9.2-head</code> </li>
+<li>Create a Rails 3 RVM gemset: <code>rvm --create use 1.9.2-head@rails3</code></li>
+<li>Copy my already installed Rails 3 gems to my new RVM gemset within my ruby 1.9.2: <code>rvm gemset copy 1.9.1 1.9.2-head@rails3</code>
+</ol>
+<p>That&#8217;s all! After that, I was back to the game! Man, RVM is awesome!!!</p>
+<p>Be sure to have a look at a Wayne&#8217;s <a href="http://gist.github.com/296055">gist</a> about how to install Rails 3 with RVM, and, check out RVM&#8217;s <a href="http://rvm.beginrescueend.com/gemsets/basics/">Gemsets</a> feature, it&#8217;s very useful.</p>
+<p>And you, do you have any tips about dealing with many versions of ruby and/or Rails, or about RVM?</p><p>The post <a href="/2010/04/rails-3-with-rvm-ftw/">Rails 3 with RVM FTW!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/04/rails-3-with-rvm-ftw/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

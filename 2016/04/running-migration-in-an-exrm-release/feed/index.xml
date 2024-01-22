@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Running migration in an Exrm release	</title>
+	<atom:link href="/2016/04/running-migration-in-an-exrm-release/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/04/running-migration-in-an-exrm-release/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 31 Oct 2016 18:56:56 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Dimon		</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1614</link>
+
+		<dc:creator><![CDATA[Dimon]]></dc:creator>
+		<pubDate>Sun, 15 May 2016 06:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5349#comment-1614</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1604&quot;&gt;Martin Schurig&lt;/a&gt;.
+
+Where?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1604">Martin Schurig</a>.</p>
+<p>Where?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Martin Schurig		</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1604</link>
+
+		<dc:creator><![CDATA[Martin Schurig]]></dc:creator>
+		<pubDate>Tue, 03 May 2016 12:03:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5349#comment-1604</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1603&quot;&gt;josevalim&lt;/a&gt;.
+
+Oh, I found the reason
+
+I replaced all &quot;Application&quot; parts with my application name. But the only thing to replace was the &quot;my_app&quot; and &quot;MyApp&quot; part]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1603">josevalim</a>.</p>
+<p>Oh, I found the reason</p>
+<p>I replaced all &#8220;Application&#8221; parts with my application name. But the only thing to replace was the &#8220;my_app&#8221; and &#8220;MyApp&#8221; part</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1603</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 03 May 2016 11:54:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5349#comment-1603</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1602&quot;&gt;Martin Schurig&lt;/a&gt;.
+
+Can you post the full error? There is not much we can do with only the information you posted. :)
+
+--
+
+
+*José Valimwww.plataformatec.com.br Founder and Director of R&#038;D*]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1602">Martin Schurig</a>.</p>
+<p>Can you post the full error? There is not much we can do with only the information you posted. 🙂</p>
+<p>&#8212;</p>
+<p>*José Valimwww.plataformatec.com.br Founder and Director of R&amp;D*</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Martin Schurig		</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1602</link>
+
+		<dc:creator><![CDATA[Martin Schurig]]></dc:creator>
+		<pubDate>Tue, 03 May 2016 11:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5349#comment-1602</guid>
+
+					<description><![CDATA[It throws the following error for me
+
+{&quot;init terminating in do_boot&quot;,{undef...]]></description>
+			<content:encoded><![CDATA[<p>It throws the following error for me</p>
+<p>{&#8220;init terminating in do_boot&#8221;,{undef&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trung Pham		</title>
+		<link>/2016/04/running-migration-in-an-exrm-release/comment-page-1/#comment-1600</link>
+
+		<dc:creator><![CDATA[Trung Pham]]></dc:creator>
+		<pubDate>Fri, 29 Apr 2016 20:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5349#comment-1600</guid>
+
+					<description><![CDATA[This is great. No longer need a Docker container. :)]]></description>
+			<content:encoded><![CDATA[<p>This is great. No longer need a Docker container. 🙂</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

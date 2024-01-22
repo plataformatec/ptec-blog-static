@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>learning theories « Plataformatec Blog</title>
+	<atom:link href="/tag/learning-theories/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 16 Jul 2019 16:42:11 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Uma discussão sobre aprendizado em equipes</title>
+		<link>/2018/07/uma-discussao-sobre-aprendizado-em-equipes/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 23 Jul 2018 19:02:29 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[learning theories]]></category>
+		<guid isPermaLink="false">/?p=7707</guid>
+
+					<description><![CDATA[<p>Caso você tenha assistido alguma palestra sobre ágil na sua vida ou tenha participado de algum treinamento sobre o assunto, é bem provável que você tenha interagido com o conceito de Shu Ha Ri. Para quem não conhece, o nome tem origem no Aikido e foi introduzido no ambiente de desenvolvimento de software por Alistair ... <a class="read-more-link" href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">»</a></p>
+<p>The post <a href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">Uma discussão sobre aprendizado em equipes</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Caso você tenha assistido alguma palestra sobre ágil na sua vida ou tenha participado de algum treinamento sobre o assunto, é bem provável que você tenha interagido com o conceito de Shu Ha Ri. Para quem não conhece, o nome tem origem no Aikido e foi introduzido no ambiente de desenvolvimento de software por Alistair Cockburn como uma forma de explicitar o grau de domínio em determinada técnica ou método. Assim como o aprendizado da arte marcial, Cockburn propõe que uma pessoa passará por 3 estágios até tornar-se proficiente. As etapas são:</p>
+<ul>
+<li><strong>Shu:</strong> No estágio inicial, a pessoa estudante segue os ensinamentos de um tema de forma precisa. A pessoa concentra-se em como fazer a tarefa, sem se preocupar em compreender a teoria por trás. Se existirem múltiplas variações de como fazer a tarefa, a pessoa se atém a realizá-la da forma como o(a) mestre ensinou.</li>
+<li><strong>Ha:</strong> Neste ponto, a pessoa estudante começa a se desgarrar do(a) mestre. A partir do momento em que as práticas do tema estão em funcionamento, a pessoa começa a aprender os princípios e teorias por trás da técnica. Além disso, a pessoa aprende com outros mestres (referências) e integra o aprendizado à sua prática.</li>
+<li><strong>Ri:</strong> No estágio final, a pessoa estudante não aprende com outras pessoas, mas através da sua própria prática. Ele cria a sua forma de conduzir e adaptar o que aprendeu a partir do seu ponto de vista.</li>
+</ul>
+<p>A partir de uma interpretação livre do que o autor propõe, é como se disséssemos que as organizações estariam aptas a fazer adaptações em técnicas ou metodologias a partir do momento em que elas transcendessem os três estágios. Tal abordagem não difere do que foi proposto pelo psicólogo Benjamin Bloom em 1958. Segundo o <a href="https://pt.wikipedia.org/wiki/Taxonomia_dos_objetivos_educacionais" rel="nofollow">domínio cognitivo descrito na teoria</a>, a pessoa estudante só consegue adquirir uma nova competência se ele tiver dominado e adquirido a competência do nível anterior. Nomeada pelo psicólogo como Taxonomia dos Objetivos Educacionais, os níveis de habilidade elencados são:</p>
+<ul>
+<li><strong>Conhecimento:</strong> recordar, definir, reconhecer ou identificar uma informação específica a partir de situações de aprendizagem anteriores;</li>
+<li><strong>Compreensão:</strong> demonstrar compreensão pela informação, sendo capaz de reproduzi-la por ideias e palavras próprias;</li>
+<li><strong>Aplicação:</strong> recolher e aplicar a informação em situações ou problemas concretos;</li>
+<li><strong>Análise:</strong> subdividir a informação em partes menores com a finalidade de entender a estrutura final;</li>
+<li><strong>Síntese:</strong> recolher e relacionar informações de várias fontes, formando um produto novo;</li>
+<li><strong>Avaliação:</strong> fazer julgamentos sobre o valor de algo (produtos, ideias, etc.) tendo em consideração critérios conhecidos.</li>
+</ul>
+<p>Ao categorizar os indivíduos e organizações em níveis dependentes dos anteriores, desenvolvemos um pensamento linear para um cenário que evolui em um formato geralmente desestruturado e que carrega um passivo de conhecimento antecedente. A partir de tal afirmação, te convido a responder: será que faz sentido uma organização utilizar tudo o que é descrito no <a href="https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf" rel="nofollow">Scrum Guide</a>? Será que ao seguir o checklist do <a href="https://www.scaledagileframework.com/what-is-safe/" rel="nofollow">SAFe</a> o ágil será escalado no seu negócio? Será que faz sentido utilizar uma abordagem evolucionária como o <a href="https://www.youtube.com/watch?v=cTdJgdQmlr4" rel="nofollow">modelo de maturidade do Kanban</a> para avaliar o quão ágil meu negócio está se tornando?</p>
+<p>Ao estudar sobre teorias de aprendizagem e atuar em empresas &#8220;ágeis&#8221; (sugiro a leitura do artigo sobre como analisar a <a href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/" rel="nofollow">maturidade da agilidade no negócio</a>) ou em &#8220;processo de transformação&#8221; (tem um texto bacana sobre dicas para encarar <a href="/2018/05/dicas-para-enfrentar-os-desafios-de-uma-transformacao-agil/" rel="nofollow">os desafios de uma transformação ágil</a>), percebi que rótulos (categorias ou níveis) não respondem como as organizações e as pessoas aprendem a serem ágeis.</p>
+<h2><a id="user-content-teorias-de-aprendizagem" class="anchor" href="https://github.com/plataformatec/blog-posts/blob/a3b43e001257fd5774d3285d06b24c2ab5611bac/2018-06-learning-theories-shu-ha-ri.md#teorias-de-aprendizagem" aria-hidden="true"></a>Teorias de aprendizagem</h2>
+<p>A pedagogia apresenta três possíveis formas dos indivíduos aprenderem. A seguir, descreverei um paralelo de tais teorias com o que tenho observado em ambientes que buscam desenvolver a capacidade de ser ágil.</p>
+<p><strong>O que é o Behavorismo?</strong></p>
+<p>O behaviorismo (ou comportamentalismo) é uma visão de mundo que opera sobre um princípio de estímulo e resposta. Todo comportamento é causado por estímulos externos e pode ser explicado sem a necessidade de considerar estados mentais internos ou a consciência.</p>
+<p>A pessoa estudante começa como uma caixa vazia e o comportamento é moldado através do reforço positivo ou negativo. Tanto o reforço positivo quanto o reforço negativo aumentam a probabilidade de que o comportamento antecedente aconteça novamente. Em contraste, a punição (tanto positiva quanto negativa) diminui a probabilidade de que o comportamento antecedente aconteça novamente. A aprendizagem é, portanto, definida como uma mudança de comportamento no aprendiz (deixo aqui um <a href="https://www.youtube.com/watch?v=_8zA18LkPR4" rel="nofollow">vídeo</a> para ilustrar a explicação).</p>
+<p>Minha crítica para esta corrente teórica se dá na premissa de ignorar o passado cognitivo das pessoas. Em minha opinião, a pessoa aprende a partir do momento em que ela critica aquilo que ela já sabe a fim de gerar novas conexões.</p>
+<p>Fazendo um paralelo com disseminar uma cultura ágil, tal abordagem é utilizada quando desejamos que as pessoas mantenham o que está ocorrendo bem e mudem de comportamento ao interagirem com resultados que não são tão interessantes (ciclos de feedback observados em retrospectivas, revisões de OKRs, operations review do Kanban etc.).</p>
+<p>O lado negativo deste paradigma se dá quando há o reforço de comportamentos pouco efetivos para o negócio pelo simples fato de estarem atrelados a punições ou metas. Alguns exemplos seriam:</p>
+<ul>
+<li>Para mantermos um patamar de velocidade na entrega, devemos reduzir o tempo de análise de código, refinamento, planejamento e testes.</li>
+<li>Para continuarmos com 100% dos itens de um Sprint concluídos, não demonstraremos todo o funcionamento em uma reunião de revisão para não corrermos o risco de termos uma funcionalidade reprovada.</li>
+<li>Para continuarmos com o lead time com baixa variabilidade, vamos retirar os casos extremos do relatório apresentado aos stakeholders, assim eles verão o quão estável nossa equipe é.</li>
+</ul>
+<p><strong>O que é o Cognitivismo?</strong></p>
+<p>O paradigma cognitivista argumenta que a &#8220;caixa preta&#8221; da mente deve ser aberta e compreendida. A mente do aprendiz é como um computador: a informação entra, é processada e gera certos resultados.</p>
+<p>O aprendizado é definido como uma mudança nos esquemas mentais de um aprendiz. Diferentemente do behavorismo, as pessoas não são programadas como animais que respondem ao estímulo externo. As pessoas são seres racionais que já possuem um saber e precisam de uma participação ativa para aprender. Neste sentido, um bom feedback é fundamental para guiar e dar orientação para que ocorram as conexões mentais (<a href="https://www.slideshare.net/MarianaGraf/trabalhando-a-cultura-do-feedback-por-onde-comear-64485895" rel="nofollow">deixo como dica uma palestra maravilhosa da Mari Graf sobre feedback</a>).</p>
+<p>Esse tipo de forma de aprendizado leva em consideração que não há <em>bala de prata</em> ao ensinar alguém. A mensagem que fica por trás deste estilo é: para aprender é importante desenvolver um pensamento crítico.</p>
+<p>Conectando tal teoria com o universo ágil, chegamos à conclusão que você ou sua organização não serão ágeis por aplicarem ou repetirem o que está descrito em treinamentos ou manuais Kanban, Scrum, SAFe ou de qualquer outro método.</p>
+<p>O negócio só entregará mais valor, de forma incremental, centrada no usuário e com feedbacks mais rápidos a partir do momento que as pessoas:</p>
+<ul>
+<li>Racionalizarem o que há por trás dos métodos;</li>
+<li>Avaliarem seus pontos positivos e imperfeições;</li>
+<li>Analisarem um conjunto de opções por meio das conexões geradas com o aprendizado presente e com as experiências passadas;</li>
+<li>Tomarem decisões que considerem o contexto do negócio e resolverem problemas reais.</li>
+</ul>
+<p>Por fim, essa abordagem nos faz gerar questionamentos como:</p>
+<ul>
+<li>Por que preciso escalar o ágil em um contexto de poucas equipes?</li>
+<li>Qual é o custo de coordenação de uma reunião que ocupa metade da empresa para gerar alinhamento?</li>
+<li>Será que todas as decisões precisam ser tomadas em um formato de gestão compartilhada?</li>
+<li>Como estimular a colaboração de forma saudável?</li>
+<li>Por que a equipe deve realizar reuniões de planejamento, reuniões diárias, retrospectivas etc.?</li>
+<li>Como o limite do trabalho em progresso pode ajudar na produtividade da equipe?</li>
+</ul>
+<p><strong>O que é o Construtivismo?</strong></p>
+<p>O paradigma construtivista define que o conhecimento é produzido com base em experiências pessoais e hipóteses do ambiente. Cada pessoa tem uma interpretação e construção diferente do processo do conhecimento. A pessoa estudante não é uma caixa vazia, mas traz experiências passadas e fatores culturais para uma situação.</p>
+<p>Esta linha pedagógica entende que o aprendizado se dá a partir de uma pesssoa mediadora e o detentor de um conhecimento prévio (a pessoa estudante). Assim, o mediador deve criar condições para que o detentor do saber vivencie situações e atividades interativas, nas quais ele próprio construa novas competências.</p>
+<p>Conectado com tal definição, o livro <a href="https://www.amazon.com/How-Creative-Workers-Learn-creativity-ebook/dp/B013K8K1CU" rel="nofollow">How Creative Workers Learn: Improving creativity and learning in order to build successful careers during the XXI century</a> de Alexandre Magno nos faz refletir sobre a responsabilidade do indivíduo no aprender. Sabendo que somos seres em busca de conhecimento, a obra apresenta três modelos de aprendizado onde somos receptores de conteúdo (1.0) ou esperamos respostas de um especialista a partir de nossas dúvidas (2.0) ou quando somos protagonistas do aprendizado (3.0). Sobre o modelo 3.0, a obra traz que o fluxo de aprendizado passa pelas etapas de problematização, pesquisa, conexão, prática e compartilhamento.</p>
+<p>Interligando tal conceito com agilidade nas organizações, defendemos que para se aprender, é necessário fazer. Nesta lógica, a filosofia de construir, medir e aprender permitirá que os ambientes criem robustez para lidar com as adversidades e a competição inerente ao mercado. Tal paradigma me faz refletir sobre alguns questionamentos:</p>
+<ul>
+<li>Do que vale conteúdo (leia-se certificações) sem prática?</li>
+<li>O que são hipóteses para melhorar o negócio sem a construção de um produto? Desilusão das lideranças e clientes?</li>
+<li>Pensando em transformações, por que o estado atual nunca é bom e só o que o que proponho serve? No meu ponto de vista, este tem sido um dos principais motivos das organizações desperdiçarem dinheiro com &#8220;adoções de ágil&#8221; que geram cada vez menos resultados.</li>
+</ul>
+<p><strong>Conclusão</strong></p>
+<p>Este texto foi um convite para refletirmos que existem diferentes formas de aprendermos e não será uma sequência lógica que nos transformará em uma pessoa mestre do saber. E você, como sua organização tem aprendido a desenvolver agilidade no negócio?</p>
+<p><strong>Deixo aqui algumas dicas aos interessados em se aprofundar mais nos temas abordados neste blog post:</strong></p>
+<ul>
+<li><a href="https://martinfowler.com/bliki/ShuHaRi.html" rel="nofollow">ShuHaRi</a></li>
+<li><a href="https://www.learning-theories.com/" rel="nofollow">Learning theories</a></li>
+<li><a href="https://teacherofsci.com/learning-theories-in-education/">15 Learning Theories in Education (A Complete Summary)</a></li>
+</ul><p>The post <a href="/2018/07/uma-discussao-sobre-aprendizado-em-equipes/">Uma discussão sobre aprendizado em equipes</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

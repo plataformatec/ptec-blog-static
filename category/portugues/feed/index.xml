@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Português « Plataformatec Blog</title>
+	<atom:link href="/category/portugues/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 19 Dec 2019 19:25:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Dívida técnica: Por que fazer, quando fazer e como priorizar</title>
+		<link>/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/</link>
+		
+		<dc:creator><![CDATA[Bruno Zanutto]]></dc:creator>
+		<pubDate>Wed, 27 Nov 2019 16:35:20 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9558</guid>
+
+					<description><![CDATA[<p>O primeiro passo é admitir: existe dívida técnica no seu sistema. Seja por decisões estratégicas para acelerar um lançamento e ganhar mercado, seja por mudanças tecnológicas ou novas práticas que pedem que código antigo seja revisitado.</p>
+<p>The post <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>O primeiro passo é admitir: existe dívida técnica no seu sistema. Seja por decisões estratégicas para acelerar um lançamento e ganhar mercado, seja por mudanças tecnológicas ou novas práticas que pedem que código antigo seja revisitado.</p>
+
+
+
+<p>Em praticamente todas as empresas que já trabalhei, existia (e imagino que ainda exista) algum tipo de dívida técnica. Em algumas, para não falar todas, presenciei o cabo-de-guerra entre a equipe técnica, desejando tratar esses itens e defendendo o porque são importantes, e os responsáveis pelo produto, promovendo a criação de novas features.</p>
+
+
+
+<p>Neste post eu vou te dar pelo menos um bom motivo para pagar dívidas técnicas, deixar uma dica de quando fazê-las e uma sugestão de como priorizá-las.</p>
+
+
+
+<h2 class="wp-block-heading" id="porque-fazer">Porque fazer</h2>
+
+
+
+<p>Facilidade de manutenção, ganho de performance, compatibilidade com novas tecnologias, diminuir o tempo que o time gasta lidando com os sintomas dessa dívida técnica (e claro, o tempo que seu time passa lidando com esses sintomas, ele está perdendo de fazer novas features, que melhorariam seu time-to-market)… Existem vários ótimos motivos pra investir esforço e resolver a causa raíz, mas eu vou falar só de um.</p>
+
+
+
+<p>Quando todos argumentos se esgotarem e ainda assim ficar a impressão de que “isso é capricho de desenvolvedor”, ainda vale a pena. Por quê? Pela satisfação dos seus funcionários.</p>
+
+
+
+<p>Qualquer empregador vai falar que achar mão de obra especializada é difícil. Será que não vale incluir um item no seu backlog pra manter um bom empregado?<br>Você ralou para achar um especialista, e agora que o encontrou, negligenciar a opinião dele pode gerar insatisfação.</p>
+
+
+
+<p>Recentemente conversei com um gerente de produto de uma startup, e ele disse que uma das perguntas da entrevista que passou era: “se um desenvolvedor ameaçar sair caso um item X não seja desenvolvido, o que você faz?”<br>Segundo ele, várias respostas estariam certas na linha de entender esse item X, mas existe uma resposta errada:&nbsp;<strong>“é só um desenvolvedor, eu deixo sair”</strong>.</p>
+
+
+
+<p>Talvez você não seja surpreendido com um funcionário falando isso explicitamente, mas ligue seu radar se a equipe reclamar muito de dívida técnica. Às vezes isso já é um indicativo da infelicidade desses profissionais e currículos podem já estar sendo disparados para outras empresas.</p>
+
+
+
+<h2 class="wp-block-heading" id="quando-fazer">Quando fazer</h2>
+
+
+
+<p>Se você leu a seção acima e ficou convencido, ou já começou o texto com a intenção de lidar com dívida técnica, a partir daqui eu posso te ajudar.</p>
+
+
+
+<p>Aceitar que vamos trabalhar com dívida técnica não significa que vamos parar tudo e ficar semanas focados nesses itens.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Importante: estou considerando aqui que os “juros” dessa dívida técnica estejam sob controle. Se não estamos fazendo nada da dívida e seria apenas uma melhoria para o processo, essa sugestão se aplica. Agora, se você tem um incêndio, talvez você precise de um plano de ação mais agressivo, incluindo talvez parar e trabalhar apenas na dívida técnica.</p></blockquote>
+
+
+
+<p>No universo do Scrum, o termo “hardening sprint” é usado para designar uma sprint inteira dedicada a consertar bugs e resolver dívidas técnicas. Deixo claro que por mais que o termo seja usado, o Scrum desaconselha totalmente essa prática, sugerindo por exemplo, considerar uma parte do esforço da sprint para tratar esses itens.</p>
+
+
+
+<p>Recentemente estive com um time que tinha uma quantidade considerável de dívida técnica e, por alguns meses, até se dedicaram a trabalhar apenas nelas. Foi um período de insatisfação tanto das pessoas desenvolvedoras, quanto das pessoas de produto. Com o tempo, eles voltaram ao desenvolvimento de features, e o backlog de dívida técnica ficou parado, onerando capacity do time com pequenas demandas originadas das mesmas. Eles não trabalhavam com Scrum, nem nenhuma outra metodologia/framework. Existia, porém, um quadro&nbsp;<strong>tipo</strong>&nbsp;kanban (k minúsculo aqui).</p>
+
+
+
+<p>A solução então para garantir que dívida técnica seria endereçada sem paralisar totalmente a entrega de features foi usar limites de WIP (Work in Progress).</p>
+
+
+
+<p>O time não utilizava Kanban, nem limites de WIP (e nem era algo para se implantar no momento), mas chegamos num combinado:<br>Em qualquer dado momento, existirá um item de dívida técnica no quadro do time, sendo trabalhado.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/HHM1Imd.png" alt=""/></figure>
+
+
+
+<p>Essa estrutura garantiu que existia um espaço para trabalhar em resolver dívida técnica, e tranquilizou stakeholders no sentido de mostrar que não iríamos “parar tudo” para trabalhar nesses itens.</p>
+
+
+
+<p>Dependendo do tamanho do seu time e da sua necessidade, esse limite de WIP pode ser diferente de 1.</p>
+
+
+
+<p>Essa ideia pode ser adaptada para um time com Kanban propriamente dito, com a criação de uma raia dedicada e limite de WIP considerando o&nbsp;<a href="/2019/01/tipos-de-demanda-e-classes-de-servico-afinal-e-tudo-a-mesma-coisa/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">tipo de demanda</a>&nbsp;da “dívida técnica”.</p>
+
+
+
+<h2 class="wp-block-heading" id="como-priorizar">Como priorizar</h2>
+
+
+
+<p>Não é só porque garantimos um espaço pra resolver itens de dívida técnica que não precisamos priorizá-las.</p>
+
+
+
+<p>Se foi trazida a necessidade de fazer, é porque vamos ganhar alguma coisa, e se estamos falando de&nbsp;<strong>valor</strong>, podemos priorizar de alguma forma.</p>
+
+
+
+<p>Dívida técnica, por natureza, não é algo que vai gerar valor para seu cliente ou usuário, pelo menos não diretamente &#8211; se gera valor, deveria estar com o resto do backlog para priorização. Como priorizar, então?</p>
+
+
+
+<p>Dado esse dilema, achei na literatura referências à matriz GUT. Em resumo, avalia-se o backlog em Gravidade, Urgência e Tendência. Cada item recebe uma nota nessas três categorias, e o problema com somatória mais alta seria o mais prioritário. Porém isso não me atendia.</p>
+
+
+
+<p>A maioria dos problemas não tinham gravidade mensuráveis, e urgência era só quando a bomba estourava. A tendência era uma incógnita.</p>
+
+
+
+<p>Usei então a estrutura de BVP: <em>Business Value Points</em>. Seria a definição de critérios que faziam sentido para o time, com pesos ponderados.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/0aseY9m.png" alt=""/></figure>
+
+
+
+<p>Note que esses critérios só fazem sentido para a equipe que estava trabalhando comigo. Você pode usá-los como referência, mas pergunte-se se refletem totalmente a necessidade do seu time.</p>
+
+
+
+<p>Existe um critério nessa lista ligado à valor monetário, mas seu peso é o menor, dado que os itens aqui não tem a natureza de impactar financeiramente a empresa, mas ainda assim pode ser relevante (até como desempate).</p>
+
+
+
+<p>Daí, foi só jogar os itens e ver o resultado dado a média, considerando os pesos (dados fictícios):</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/YhE46Kf.png" alt=""/></figure>
+
+
+
+<p>O time então pegou o primeiro item da lista e começou a desenvolvê-lo.<br>Durante as cerimônias de planejamento, a matriz é revista e atualizada, para que assim que o item em WIP for finalizado, puxarmos o próximo.</p>
+
+
+
+<p>Achou que este artigo te ajudou? Tem problemas com dívida técnica e não cobrimos aqui? Deixe nos comentários!</p><p>The post <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>O Papel do Líder de Produto</title>
+		<link>/2019/10/o-papel-do-lider-de-produto/</link>
+		
+		<dc:creator><![CDATA[Marta Teixeira]]></dc:creator>
+		<pubDate>Wed, 30 Oct 2019 18:50:30 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[liderança]]></category>
+		<guid isPermaLink="false">/?p=9487</guid>
+
+					<description><![CDATA[<p>Qual a sua teoria favorita sobre o papel de um líder? Para mim um resumo perfeito é esta fala do Jack Welch em&#160;What is the role of a leader. Em resumo, sem a pretensão de captar a emoção de ouvi-lo: Ser o “Chief Meaning Officer”! Deixar claro para todas as pessoas à sua volta: para ... <a class="read-more-link" href="/2019/10/o-papel-do-lider-de-produto/">»</a></p>
+<p>The post <a href="/2019/10/o-papel-do-lider-de-produto/">O Papel do Líder de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p></p>
+
+
+
+<p>Qual a sua teoria favorita sobre o papel de um líder? Para mim um resumo perfeito é esta fala do Jack Welch em&nbsp;<a href="https://www.youtube.com/watch?v=ojkOs8Gatsg" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">What is the role of a leader</a>. Em resumo, sem a pretensão de captar a emoção de ouvi-lo:</p>
+
+
+
+<ol><li>Ser o “Chief Meaning Officer”! Deixar claro para todas as pessoas à sua volta: para onde você está indo, por que você está indo e, mais importante, o que haverá para elas quando elas chegarem lá com você.</li><li>Remover os impedimentos do caminho para que as pessoas possam agir e fazer as coisas acontecerem. Quebre os silos, se livre das burocracias.</li><li>Ser generoso. Vibrar com o sucesso das pessoas.</li><li>Ser o “Chief Fun Officer”. Dê seus pulos para tornar o trabalho divertido!</li></ol>
+
+
+
+<p>E qual o papel de um líder em uma empresa de produtos digitais? Não deve ser nada diferente disso, certo? Mas afinal, como traduzir estes conceitos para a realidade de uma empresa de produtos?</p>
+
+
+
+<p>Trazendo para este contexto, quem melhor traduz o papel de um líder é o Marty Cagan em&nbsp;<a href="https://svpg.com/empowered-product-teams/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Empowered Product Teams</a>. Na minha opinião, este conteúdo é o mais relevante que ele publicou direcionado para líderes que estão à frente de empresas de produtos digitais. E por que é tão relevante? Porque coloca de uma forma mais tangível estratégia e cultura, temas muito falados mas pouco colocados em prática.</p>
+
+
+
+<h3 class="wp-block-heading">Motivos de resistência da liderança</h3>
+
+
+
+<p>Um tópico bem interessante deste artigo é a explicação do por que líderes resistem tanto para empoderar seus times e continuam mantendo o estilo comando-controle.</p>
+
+
+
+<p>Segundo ele, existem duas formas de gerenciar uma empresa de produto:</p>
+
+
+
+<ul><li>O jeito errado: “Na maioria das empresas, os times de tecnologia existem para atender o negócio”. De alguma forma, líderes de outras áreas de negócios (vendas, marketing, CEO) acabam direcionando o produto, que é apenas construído pelo time de tecnologia.</li><li>O jeito certo: “Em empresa com forte cultura de produto, times de produto existem para um propósito muito diferente. Eles existem para atender os clientes, de formas que também atendam às necessidades do negócio”. Ou seja, o foco é o cliente e não <em>stakeholders</em> internos. Mas obviamente o produto também tem que ser sustentável para o negócio.&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://medium.com/@gibsonbiddle/intro-to-product-strategy-60bdf72b17e3" target="_blank">Gibson Biddle</a>&nbsp;diz algo semelhante de uma forma mais poética “encantar clientes, de maneiras que sejam lucrativas e difíceis de copiar”.</li></ul>
+
+
+
+<p>Marty Cagan conta que conversou com CEOs de várias empresas para entender porque eles continuam trabalhando do jeito errado com desenvolvimento de produtos, mesmo conhecendo o jeito certo. A resposta foi “falta de confiança” no time. A crença é que este modelo de trabalho (o jeito certo) só funciona em empresas que podem contratar profissionais extraordinários, como os do Google, Netflix, etc.</p>
+
+
+
+<p>O curioso é que já existem muitos estudos que comprovam que times de alto desempenho não são formados por estrelas, mas sim por pessoas comuns. Aliás, estrelas muitas vezes atrapalham!</p>
+
+
+
+<p>“They would be surprised at how ordinary the vast majority of the members of these company’s product teams actually are, and that maybe the important difference lies elsewhere.”</p>
+
+
+
+<p>Outra justificativa comum para não empoderar os times é “pessoas de tecnologia não entendem de negócios”! Quem de tecnologia já não precisou respirar bem fundo quando ouviu esta frase? Times de produto precisam do contexto de negócio, para que possam descobrir a melhor forma de resolver problemas dos clientes.</p>
+
+
+
+<p>A falta de confiança certamente não é um problema fácil de resolver, já que em muitas situações os times são de fato muito inexperientes. Mas é importante caminhar nesta direção, desenvolvendo as pessoas para que elas possam atuar do jeito certo. Definitivamente, entrar em um ciclo vicioso de falta de estratégia, time inexperiente e comando-controle, não é um bom caminho!</p>
+
+
+
+<h3 class="wp-block-heading">Papel do líder no “jeito certo” de trabalhar</h3>
+
+
+
+<p>Trazendo para o contexto de empresas de produto, como ser o “Chief Meaning Officer”? Ou seja, como deixar claro para as pessoas para onde você está indo e por que. A Visão e Estratégia de produto são essenciais para trazer este significado e dar um direcionamento ao time, para ele possa trabalhar de forma autônoma.</p>
+
+
+
+<h4 class="wp-block-heading">Visão de Produto</h4>
+
+
+
+<p>A visão de produto descreve o futuro que queremos criar, em 2 a 5 anos. A importância desta visão é setar um norte inspirador e delimitar um contexto de atuação. Em <em>startups</em>, é muito comum o foco do produto principal ir se perdendo ou o escopo de atuação ficar muito amplo. Isto acontece principalmente quando empresas recebem investimentos e começam a diversificar o portfólio. Sem uma visão para guiar e delimitar as fronteiras, os times de produto podem ficar sem foco, não atingirem resultados e a liderança voltar a assumir o estilo comando-controle.</p>
+
+
+
+<h4 class="wp-block-heading">Estratégia de Produto</h4>
+
+
+
+<p>A estratégia define qual caminho precisa ser seguido para se alcançar a visão. Um erro comum na definição da estratégia é não fazer uma reflexão do momento atual e traçar uma estratégia pouco realista. Em&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.youtube.com/watch?v=DmJXpI7OJuY" target="_blank">Escaping the Building Trap</a>, Melissa Peri apresenta um <em>framework</em> bem interessante para definição de estratégia.</p>
+
+
+
+<p>Outro artefato, o&nbsp;<a href="https://svpg.com/the-product-manifesto/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Product Principles</a>, também ajuda a delimitar o contexto e facilita decisões em priorização. Os princípios descrevem a natureza dos produtos que pretendemos desenvolver e reflexões sobre nossas crenças sobre o que é importante.</p>
+
+
+
+<p>Exemplo de coisas que podem ser interessantes explicitar no <em>Product Principles</em>:</p>
+
+
+
+<ul><li>Vamos aceitar desenvolver customizações (features específicas para alguns clientes)?</li><li>Se o produto tem mais de um cliente (vendedores e compradores, por ex), quem vamos priorizar?</li><li>O que é mais importante, velocidade ou qualidade?</li><li>Queremos desenvolver tudo sozinhos ou vamos fazer parcerias?</li></ul>
+
+
+
+<p>Uma vez que a Visão e Estratégia estejam definidas, como garantir que elas sejam seguidas? Em empresas com muitos times, como desdobrar a estratégia para os diversos times e manter o alinhamento? No artigo&nbsp;<a href="https://medium.com/@gibsonbiddle/how-to-run-a-quarterly-product-strategy-meeting-a-board-meeting-for-product-3a14c4d53d1b" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">How to Run a Quarterly Product Strategy Meeting</a>, Gibson Biddle, apresenta um processo bem interessante para definição de estratégia de times e também um passo a passo de como estruturar uma reunião de “review” de produto.</p>
+
+
+
+<h3 class="wp-block-heading">Mais sobre o jeito certo de trabalhar</h3>
+
+
+
+<p>Outras fontes interessantes para entender este jeito certo de trabalhar:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.youtube.com/watch?v=DmJXpI7OJuY" target="_blank">Escaping the Building Trap</a>, Melissa Perri. Apresenta uma boa explicação da relação entre Customer, Business e o papel do Product Manager em Product-led e Sales-led organizations. As dicas para desenhar estratégia também são valiosas.</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/product-vs-feature-teams/" target="_blank">Product team vs Feature Team</a>, Marty Cagan. Reforça de forma bem didática e enfática os conceitos já apresentados em&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/empowered-product-teams/" target="_blank">Empowered Product Teams</a>. Feature team é o jeito errado de se trabalhar, no qual os times de produto existem somente para entregar features já priorizadas em um roadmap.</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/coaching-customer-centricity/" target="_blank">Coach &#8211; Customer Centricity</a>, Marty Cagan. Explica quem são os verdadeiros clientes de um Product Manager: as pessoas que usam o produto! Stakeholders internos (vendas, CEO, etc) não podem ser considerados clientes. Afinal, o time de produto não existe para servir ao negócio!</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.linkedin.com/pulse/digital-traditional-joaquim-torres-joca-/" target="_blank">Digital or Traditional</a>, Joca Torres. Reflete sobre a diferença do escopo de atuação do Product Manager em empresas Digitais (que tem como core do negócio um software), empresas Tradicionais (que tem como core outros tipos de produto) e empresas que não vendem software, mas tem o software como parte vital do negócio, denominadas <em>born-digital traditional company</em>.</li></ul>
+
+
+
+<h3 class="wp-block-heading">Resumindo</h3>
+
+
+
+<p>Uma das responsabilidade principais de um líder de produto é definir um norte para o produto e garantir que toda empresa esteja alinhada à ele. Para isso:</p>
+
+
+
+<ul><li>Defina a visão e estratégia de produtos.</li><li>Divulgue para toda a empresa, não apenas para os times de Produto e Engenharia.</li><li>Desdobre a estratégia para todos times.</li><li>Crie cerimônias para garantir o alinhamento entre todos os times.</li></ul>
+
+
+
+<p>Caso isso já esteja sendo feito, mas mesmo assim os times não estejam trabalhando com autonomia e alcançando resultados, vale refletir:</p>
+
+
+
+<ul><li>Existe resistência da liderança para empoderar os times?</li><li>Existe um entendimento sobre o papel de um time de produto?</li><li>Se não existe confiança no time, qual é o plano para desenvolver e empoderar este time?</li></ul>
+
+
+
+<p>Como tem sido a liderança de produto na sua empresa? Deixe sua impressão nos comentários abaixo.</p>
+
+
+
+ [<a href="/2019/10/o-papel-do-lider-de-produto/">See image gallery at blog.plataformatec.com.br</a>]<p>The post <a href="/2019/10/o-papel-do-lider-de-produto/">O Papel do Líder de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Extraindo previsibilidade à partir do Story Mapping</title>
+		<link>/2019/10/extraindo-previsibilidade-a-partir-do-story-mapping/</link>
+		
+		<dc:creator><![CDATA[Bruno Watanabe]]></dc:creator>
+		<pubDate>Wed, 30 Oct 2019 15:21:48 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9476</guid>
+
+					<description><![CDATA[<p>Anteriormente, vimos neste&#160;blogpost do Felipe Gimenes, o passo a passo de como criar um Story Mapping desde o levantamento ou criação do seu fluxo de valor até o fatiamento dos itens de trabalho identificados em entregas objetivas, as chamadas Releases. Parece que o trabalho acabou não é? Será mesmo? E se ainda assim te perguntassem: ... <a class="read-more-link" href="/2019/10/extraindo-previsibilidade-a-partir-do-story-mapping/">»</a></p>
+<p>The post <a href="/2019/10/extraindo-previsibilidade-a-partir-do-story-mapping/">Extraindo previsibilidade à partir do Story Mapping</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Anteriormente, vimos neste&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2018/08/vamos-falar-sobre-story-mapping/" target="_blank">blogpost do Felipe Gimenes</a>, o passo a passo de como criar um <em>Story Mapping</em> desde o levantamento ou criação do seu fluxo de valor até o fatiamento dos itens de trabalho identificados em entregas objetivas, as chamadas Releases. Parece que o trabalho acabou não é? Será mesmo? E se ainda assim te perguntassem: “Bonito, mas afinal, quando vocês entregam?”</p>
+
+
+
+<p>Neste blogpost vou mostrar a vocês como gerar previsibilidade para o <em>Story Mapping</em> a partir das métricas. Bora lá?</p>
+
+
+
+<h2 class="wp-block-heading" id="recapitulando-o-burnup">Recapitulando o Burnup</h2>
+
+
+
+<p>Primeiro, vamos falar brevemente sobre o gráfico de <em>Burnup</em>, a métrica que iremos utilizar como ferramenta.<br>O <em>Burnup</em> permite acompanhar o progresso e o montante de trabalho concluído versus o tamanho total de um escopo de trabalho, fazendo uma projeção linear baseada no histórico de produtividade do time. Através dele, podemos ter uma noção do quão próximo ou distante estamos de atingir um objetivo, ou seja, o popular “quanto falta para terminar o projeto”.</p>
+
+
+
+<p>A leitura deste gráfico é feita da seguinte forma:</p>
+
+
+
+<ul><li>No eixo vertical temos duas representações gráficas, sendo a primeira a quantidade de novos itens inseridos no <em>backlog</em> do projeto/produto, representado pela área colorida (neste caso, em amarelo), e a segunda a quantidade de itens deste <em>backlog</em> que foram finalizadas pelo time, representado pelas barras verticais sequenciais;</li><li>E no eixo horizontal temos uma escala de tempo para visualizar o crescimento dos valores descritos no eixo vertical (neste caso medido em semanas).</li></ul>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/dRTxVxP.png" alt="Burnup-plataformatec"/></figure>
+
+
+
+<p>Ou seja, conseguimos aqui acompanhar tanto o crescimento do <em>backlog</em> semana a semana quanto o valor de&nbsp;<em>throughputs</em>&nbsp;acumulados que o time vem entregando.</p>
+
+
+
+<p>Dados estes valores, podemos projetar três diferentes cenários:</p>
+
+
+
+<ul><li><strong>O Pessimista</strong>: projetar a performance futura da equipe com base no menor <em>Throughput</em> histórico;</li><li><strong>O Mais provável</strong>: considerar que a equipe terá no futuro um comportamento semelhante ao <em>Throughput</em> “médio” performado;</li><li><strong>O Otimista</strong>: considerar que a equipe performará nas próximas semanas igual ao valor de maior <em>Throughput</em> histórico ja registrado pelo time.</li></ul>
+
+
+
+<p>Caso queira se aprofundar um pouco mais sobre Throughput e Burnup, recomendo a leitura&nbsp;<a href="/2017/08/metricas-ageis-throughput-e-graficos-burnup/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">deste blogpost do Raphael Albino</a>. Agora vamos unir os assuntos!</p>
+
+
+
+<h2 class="wp-block-heading" id="e-o-que-o-story-mapping-tem-a-ver-com-isso">E o que o story mapping tem a ver com isso?</h2>
+
+
+
+<p>Uma das etapas finais do <em>story mapping</em>, é fatiar o <em>backlog</em> levantado em objetivos menores e que em um curto prazo já podem entregar valor ao usuário final ou persona cujo problema estamos tentando resolver. Segue um exemplo onde foram definidos os três primeiros objetivos e abaixo o <em>backlog</em> não priorizado (imagem desfocada para preservar a confidencialidade dos dados).</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/l1AzuaG.jpg" alt=""/></figure>
+
+
+
+<p>Dado que nós já temos as fatias de entregas mapeadas, e se ao invés de incluirmos o <em>backlog</em> levantado como uma única <em>stack</em> dentro do nosso <em>Burnup</em>, utilizarmos do mesmo artifício de fatiamento e criarmos as visões de entrega de cada release?<br>Basicamente nós temos a seguinte visão:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/MwctlVF.png" alt=""/></figure>
+
+
+
+<p>Cada fatia entra individualmente como uma porção de <em>backlog</em> isolada. Como a leitura deste gráfico é feita de baixo para cima, logo, a primeira fatia do <em>Story Mapping</em> (a que está no topo e representa o primeiro objetivo de entrega), virá acima do objetivo atual do time (representado pela porção azul do <em>Burnup</em>), e assim sucessivamente, conforme a indicação das setas.<br>Podemos observar que é possível obter hipóteses de data de entrega, pessimista, provável e otimista, para cada uma das fatias do nosso <em>Burnup</em>, esteja o time já trabalhando nelas ou não. Com isso, torna-se possível setar ou controlar expectativas com pessoas que têm interesse no projeto ou em uma entrega, tanto de forma interna (para o próprio time) como externa (ex: Um patrocinador do projeto).</p>
+
+
+
+<p>Munindo o time com estas informações, a equipe será capaz de assumir estratégias melhor direcionadas de acordo com a necessidade. Ex: Negociar escopo caso seja necessário cumprir uma data de entrega específica ou alinhar estratégias de lançamento de um produto dadas as perspectivas de finalização do trabalho que está em vista.<br>Porém, existem alguns pontos que devemos ter atenção quando utilizamos o <em>burnup</em> como ferramenta de previsibilidade, vamos ver a seguir.</p>
+
+
+
+<h2 class="wp-block-heading" id="premissas-que-impactam-diretamente-as-estimativasprevisibilidade">Premissas que impactam diretamente as estimativas/previsibilidade</h2>
+
+
+
+<ul><li>As datas de projeção consideram o tamanho atual do <em>backlog</em> e a vazão do time dentro de uma linearidade. À medida que estes valores avançam, estas datas também sofrerão alteração (Ex: um crescimento no <em>backlog</em> ou uma mudança drástica no padrão de entregas do time);</li><li>Mantenha os valores de <em>throughput</em> utilizados para a projeção sempre atualizados. É sempre importante considerar a realidade do time em relação à cadência de entregas para se ter previsibilidade. Afinal, não faz muito sentido eu projetar estimativas de entrega considerando um padrão de comportamento que não condiz mais com a realidade do time, certo?</li><li>Se o time ainda não possuir um histórico de <em>throughput</em> relacionado ao projeto, o ideal seria coletar esta métrica durante algumas semanas para utilizar estes dados como insumo antes de criar-se a expectativa com datas e prazos. Caso seja de fato necessário ter esta ideia de prazo para pelo menos se ter uma perspectiva do quando a entrega seria feita, pode-se utilizar do histórico de outros projetos que o time ja trabalhou. Porém, é preciso levar em consideração diversas variáveis que impactam diretamente na assertividade em utilizar estes valores passados (tais como tamanho da equipe, se a composição do time é a mesma, tecnologias utilizadas, experiências que o time tem neste tipo de projeto, etc.</li><li>Sinalize corretamente a qual releases cada tarefa pertence. É muito importante que cada uma das tarefas do <em>backlog</em> esteja enquadrada dentro do objetivo ao qual ela pertence, não só para as tarefas que foram originadas no <em>story mapping</em> mas também para todas as demais que podem surgir ao longo do caminho devido a processos como o <em>Refining</em> ou <em>task splitting</em>;</li></ul>
+
+
+
+<p>Como as datas de projeção/previsibilidade de entrega são extremamente sensíveis, conforme vimos nas premissas acima, minha dica final é&nbsp;<strong>fuja de utilizar estas datas como prazos determinantes</strong>&nbsp;e utilize como probabilidades de cenários (Ex: Se tudo der certo e nada diferente do habitual acontecer, temos boas chances de entregar por volta do dia DD/MM, mas é esperado que seja perto de DD/MM (de acordo com as linhas de projeção).<br>Desta forma, caso algo inesperado ou emergencial aconteça, o time consegue responder de forma adequada sem comprometer fortemente as expectativas geradas sobre as entregas.</p>
+
+
+
+<h2 class="wp-block-heading" id="resumindo">Resumindo</h2>
+
+
+
+<p>Utilizando estas duas ferramentas em conjunto, conseguimos ter de forma mais concreta um cenário de previsibilidade que pode ajudar o time a setar expectativas com quaisquer <em>stakeholders</em> que estejam dependentes destas entregas ou possuem algum tipo de interesse sobre elas. Além disso, as próprias pessoas do time terão uma maior sensação de progresso em relação aos objetivos que elas mesmas mapearam e isso os ajudará a tomar melhores decisões ao longo do tempo.<br>Esta é apenas uma das formas de obtermos melhor previsibilidade das entregas do time. Existem diversas outras ferramentas que podem ajudar também, como o&nbsp;<em><a href="/2019/09/how-to-manage-deadlines-in-agile-environments-get-to-know-the-reality-check-tool/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Reality Check</a></em>&nbsp;<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<p>O que achou desta abordagem? Deixe aqui seu comentário sobre como você trata previsibilidade de entregas dentro do seu time ou nos escreva enviando para&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="mailto:contagil@plataformatec.com.br" target="_blank">contagil@plataformatec.com.br</a>. Caso queira começar a utilizar o <em>Burnup</em>, nós disponibilizamos uma versão gratuitamente através da&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="http://pages.plataformatec.com.br/planilha-metricas-com-treinamento" target="_blank">Planilha de métricas da Plataformatec.</a>&nbsp;<img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+
+
+<p>Abraços e até a próxima!</p><p>The post <a href="/2019/10/extraindo-previsibilidade-a-partir-do-story-mapping/">Extraindo previsibilidade à partir do Story Mapping</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Relação de Story Points com o Tempo de Desenvolvimento (Lead Time)</title>
+		<link>/2019/09/relacao-de-story-points-com-o-tempo-de-desenvolvimento-lead-time/</link>
+		
+		<dc:creator><![CDATA[Otávio Silvério]]></dc:creator>
+		<pubDate>Mon, 30 Sep 2019 19:28:43 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9371</guid>
+
+					<description><![CDATA[<p>Com uma certa frequência eu venho escutando especulações sobre story points e sua relação com o tempo de desenvolvimento. Perguntas como: “Por que um card de 3 pontos levou tanto tempo para ser desenvolvido?”</p>
+<p>The post <a href="/2019/09/relacao-de-story-points-com-o-tempo-de-desenvolvimento-lead-time/">Relação de Story Points com o Tempo de Desenvolvimento (Lead Time)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Com uma certa frequência eu venho escutando especulações sobre <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.mountaingoatsoftware.com/blog/what-are-story-points" target="_blank">story points</a> e sua relação com o tempo de desenvolvimento. Perguntas como: “Por que um card de 3 pontos levou tanto tempo para ser desenvolvido?”, “Quanto tempo um card de 8 pontos leva para ser entregue?”, “Por que o time levou tanto tempo para entregar somente esta quantidade de pontos?” e outras são frequentes. Contudo, quando se pesquisa sobre <em>story points</em> e tempo de desenvolvimento, há uma série de comentários sobre essa relação onde: alguns dizem que <em>story points</em> medem apenas esforço para implementar um <em>card</em>, outros consideram uma relação entre dias (ou até mesmo horas) e os pontos, outros apenas comparam tamanhos entre os cards e por aí vai.</p>
+
+
+
+<p>Tentando me embasar melhor neste assunto para conversar com clientes e <em>stakeholders</em> em geral, decidi coletar dados de um projeto real e realizar uma análise sobre a relação da pontuação destes cards e o tempo que os mesmos demoram para serem desenvolvidos, contando desde o momento que eles começam na etapa de desenvolvimento até o momento em que são entregues em produção, o famoso&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/" target="_blank"><em>lead time</em></a>.</p>
+
+
+
+<h2 class="wp-block-heading" id="disclaimers">Disclaimers</h2>
+
+
+
+<p>Antes de começar, alguns disclaimers sobre o contexto do projeto:</p>
+
+
+
+<ul><li>Logo nas primeiras semanas do projeto já tivemos o primeiro grande problema com<em> story points</em>: subjetividade na pontuação. Por que este card é 3? Como eu sei se este card é duas vezes maior ou três vezes maior do que o card X? O que eu considero nesta pontuação?<ul><li>Desta forma, foi sugerido ao time que utilizasse alguns critérios para estimar com o intuito de diminuir essa subjetividade.</li><li>Meu amigo e colega de trabalho&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.linkedin.com/in/henriqueadeoliveira/" target="_blank">Henrique Oliveira</a>&nbsp;sugeriu uma matriz Fibonacci-like, com base nas estimativas <em>T-Shirt Size</em>, para pontuar os <em>cards</em> que auxiliou bem ao time. Confira abaixo:</li></ul></li></ul>
+
+
+
+<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="738" height="622" src="/wp-content/uploads/2019/09/matriz-complexidade-incerteza.png" alt="" class="wp-image-9380" srcset="/wp-content/uploads/2019/09/matriz-complexidade-incerteza.png 738w, /wp-content/uploads/2019/09/matriz-complexidade-incerteza-300x253.png 300w" sizes="(max-width: 738px) 100vw, 738px" /></figure>
+
+
+
+<ul><li><em>Cards</em> com 13 ou mais pontos eram quebrados em cards menores, pois a única vez que tentamos trabalhar com um card do tamanho 13, ele estorou o <em>timebox</em> da <em>sprint</em>, que era de 10 dias úteis.</li><li>Os <em>cards</em> eram quebrados de uma forma que entregassem algo funcional em produção, de forma que <em>backend</em> e <em>frontend</em> ficassem juntos em uma mesma história.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="vamos-aos-dados">Vamos aos dados</h2>
+
+
+
+<p>Primeiramente, coletei os dados do projeto como um todo e analisei o gráfico de<em> lead time</em> com todos os <em>cards</em> que já foram finalizados ou que estavam em desenvolvimento.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="1024" height="446" src="/wp-content/uploads/2019/09/grafico-lt-all-1024x446.png" alt="" class="wp-image-9381" srcset="/wp-content/uploads/2019/09/grafico-lt-all-1024x446.png 1024w, /wp-content/uploads/2019/09/grafico-lt-all-300x131.png 300w, /wp-content/uploads/2019/09/grafico-lt-all-768x335.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Após capturar estes dados, eu separei os cards por pontuação e os analisei separadamente, tendo os seguintes gráficos:</p>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-1-story-point">Cards com 1 story point</h4>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-1-sp-1024x405.png" alt="" class="wp-image-9382" srcset="/wp-content/uploads/2019/09/grafico-lt-1-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-1-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-1-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-1-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-2-story-points">Cards com 2 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-2-sp-1024x405.png" alt="" class="wp-image-9383" srcset="/wp-content/uploads/2019/09/grafico-lt-2-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-2-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-2-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-2-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-3-story-points">Cards com 3 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-3-sp-1024x405.png" alt="" class="wp-image-9384" srcset="/wp-content/uploads/2019/09/grafico-lt-3-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-3-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-3-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-3-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-5-story-points">Cards com 5 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-5-sp-1024x405.png" alt="" class="wp-image-9385" srcset="/wp-content/uploads/2019/09/grafico-lt-5-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-5-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-5-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-5-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-8-story-points">Cards com 8 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-8-sp-1024x405.png" alt="" class="wp-image-9386" srcset="/wp-content/uploads/2019/09/grafico-lt-8-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-8-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-8-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-8-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-com-13-story-points">Cards com 13 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-13-sp-1024x405.png" alt="" class="wp-image-9387" srcset="/wp-content/uploads/2019/09/grafico-lt-13-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-13-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-13-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-13-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading" id="análise-dos-dados">Análise dos dados</h2>
+
+
+
+<p>Após analisar este dados, consegui obter algumas conclusões:</p>
+
+
+
+<ul><li>É possível verificar que <em>cards</em> com 3, 5 e 8 pontos têm um tempo de desenvolvimento (<em>lead time</em>) parecido, não sendo possível estabelecer relação entre tempo e quantidade de <em>story points.</em></li><li>Se pegarmos uma categoria com bastante amostras, como os <em>cards </em>com 5 <em>story point</em>s, é possível perceber que os mesmos variam bastante, não podendo estabelecer afirmações como “um card de 5 pontos leva entre X e Y dias para ser desenvolvido”, sendo X e Y um intervalo pequeno de dias (entre 1 e 3 dias). O mesmo acontece com os <em>cards</em> de 3 e 8 pontos.</li></ul>
+
+
+
+<p><strong>Observação:</strong>&nbsp;Os dados referentes aos cards de 1, 2 e 13 <em>story points</em> foram retirados da análise individual, pois haviam poucos dados para serem analizados separadamente.</p>
+
+
+
+<h2 class="wp-block-heading" id="outras-análises-além-dos-story-points-x-lead-time">Outras análises além dos story points x lead time</h2>
+
+
+
+<p>Houve outras conclusões sobre a utilização dos story points que eu gostaria de compartilhar com vocês:</p>
+
+
+
+<ul><li>No começo do projeto, quando começamos a utilizar os <em>story points</em>, a subjetividade era muito alta. Estabelecendo alguns critérios para a pontuação, foi possível estabilizá-la, fazendo com que o tempo de desenvolvimento das histórias variasse menos e, com isso, aumentando a previsibilidade. Se você gostaria de desenvolver isso dentro do seu time, considere a leitura&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.mountaingoatsoftware.com/blog/what-are-story-points" target="_blank">deste artigo do Mike Cohn</a>.<br></li><li>Com a adição de mais critérios à pontuação, como complexidade nos testes, dependência de outras pessoas fora do time (internas ou externas a empresa), risco relacionado a história e outros, diminuímos a variabilidade do <em>lead time</em> e aumentou a previsibilidade de entrega dos <em>cards</em>.</li><li>Muitas vezes <em>story points</em> são relacionados diretamente ao esforço de desenvolvimento, o que faz com que o time foque somente no esforço e no tempo para&nbsp;<strong>a execução</strong>&nbsp;de uma tarefa. Outro ponto é que os <em>testers/QAs e UXs/designers</em>, geralmente, se envolvem pouco ou nada nas estimativas. Fazer o time pensar não só no desenvolvimento, mas também na duração do processo como um todo (considerando etapas de <em>code review, testes, deploy</em>, etc) e envolver outras pessoas na participação das estimativas para exporem suas preocupações e comentários sobre a demanda, ajuda a melhorar previsibilidade do seu time.</li><li>O auxílio de métricas para melhoria de processos, como&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" target="_blank">lead time breakdown e CFD</a>, ajudaram muito neste processo de estabilização da pontuação, fazendo o time pensar mais no processo como um todo e mostrando em que etapa do processo eles estavam gastando mais tempo.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="conclusões">Conclusões</h2>
+
+
+
+<p>As principais conclusões que eu tive foram:</p>
+
+
+
+<ul><li>Não foi possível relacionar tempo de desenvolvimento (lead time) com <em>story points</em> diretamente, conforme o propósito do estudo.<ul><li>Vale um adendo aqui que <em>Story Points</em> devem ser utilizados dentro do nível de time. Se quer saber mais sobre este assunto, recomendo a leitura&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://observablehq.com/@troymagennis/story-point-velocity-or-throughput-forecasting-does-it-mat" target="_blank">deste texto do Troy Magennis</a></li></ul></li><li>Foi possível melhorar a previsibilidade da entrega do time e atingir uma estabilização do processo de desenvolvimento utilizando <em>story points</em> junto com outras ferramentas.</li><li>Existem indícios que, quando se adiciona mais critérios à pontuação, quanto menor a pontuação de um item, menor será seu risco/esforço/complexidade e, consequentemente, maior será sua previsibilidade.</li><li>Um grande ponto aqui é que os <em>Story Points</em> consideram em suas estimativas somente os momentos em que uma demanda estará sendo trabalhada e não considera/não consegue prever o tempo que uma demanda vai ficar em estado de espera. Basicamente, o time considera ao estimar quanto tempo uma demanda pode levar para ser desenvolvida e testada, mas não considera nesta estimativa (por não poder prever alguns pontos no meio do desenvolvimento) quanto tempo uma demanda vai ficar aguardando para ser testada, para realizar o <em>deploy</em> ou para a resolução de um impedimento. Em outras palavras, a&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://observablehq.com/@troymagennis/how-does-utilization-impact-lead-time-of-work?collection=@troymagennis/agile-software-development" target="_blank">eficiência do seu fluxo</a>&nbsp;vai impactar no seu <em>lead time</em> e, consequentemente, na relação dos <em>story points</em> com o tempo de desenvolvimento. Desta forma, é possível que uma <em>user story</em> de 1 ponto leve a mesma quantidade de dias para ser finalizada do que uma <em>user story</em> de 13, devido a sua eficiência de fluxo. Se quiser saber mais,&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://observablehq.com/@troymagennis/story-point-velocity-or-throughput-forecasting-does-it-mat" target="_blank">consulte este texto aqui</a>.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="e-se-te-perguntassem-se-você-utilizaria-story-points-para-estimar-um-prazo-para-a-entrega-de-um-projeto-ou-card-o-que-você-responderia">E se te perguntassem se você utilizaria story points para estimar um prazo para a entrega de um projeto ou card, o que você responderia?</h2>
+
+
+
+<p>Eu diria que <em>story points</em>, assim como a&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2017/01/requisitos-em-equipes-ageis-falando-sobre-complexidade-e-incerteza/" target="_blank">matriz de complexidade por incerteza (T-shirt Size)</a>, são excelentes ferramentas para instigar o seu time a quebrar melhor as histórias de usuário e ajudar a fazer melhorias de processos, porém, para dar uma estimativa de prazos, eu preferiria utilizar métricas e outras ferramentas, como&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/" target="_blank">simulações de Monte Carlo</a>&nbsp;para prever quando um conjunto de <em>cards</em> vai ser entregue.</p>
+
+
+
+<p>E você? Já teve alguma experiência com <em>Story Points</em> e estimativas de tempo? Já sofreu com algum cenário parecido? Qual a sua opinião sobre o que compartilhei neste texto? Compartilhe com a gente comentando aqui embaixo ou pelo e-mail <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="contagil@plataformatec.com.br" target="_blank">contagil@plataformatec.com.br</a></p><p>The post <a href="/2019/09/relacao-de-story-points-com-o-tempo-de-desenvolvimento-lead-time/">Relação de Story Points com o Tempo de Desenvolvimento (Lead Time)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Entendendo a motivação do seu time</title>
+		<link>/2019/09/entendendo-a-motivacao-do-seu-time/</link>
+		
+		<dc:creator><![CDATA[Lucas Marchi]]></dc:creator>
+		<pubDate>Tue, 24 Sep 2019 18:32:08 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9328</guid>
+
+					<description><![CDATA[<p>Como líderes podem motivar suas equipes a utilizarem plenamente suas habilidades e atingirem todo o seu potencial ?</p>
+<p>The post <a href="/2019/09/entendendo-a-motivacao-do-seu-time/">Entendendo a motivação do seu time</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Como líderes podem motivar suas equipes a utilizarem plenamente suas habilidades e atingirem todo o seu potencial ?</p>
+
+
+
+<p>Primeiro é importante fazer um adendo: nosso papel como profissionais (e principalmente o nosso como consultores na Plataformatec) é encarar a situação das equipes como elas realmente são, não como gostaríamos que fossem. As ideias desse texto se aplicam melhor em times em formação. Se você já trabalha com uma equipe auto-organizada e motivada com suas atividades, o melhor uso desse conteúdo pode ser no nível organizacional.</p>
+
+
+
+<p>Existem várias teorias que falam sobre a motivação no ramo da psicologia. Se você gosta do assunto provavelmente já ouviu falar da pirâmide de&nbsp;<a rel="noreferrer noopener" aria-label="Maslow (opens in a new tab)" href="https://endeavor.org.br/pessoas/piramide-de-maslow/" target="_blank">Maslow</a>&nbsp;ou fatores higiênicos de&nbsp;<a href="https://medium.com/@felquis/teoria-dos-dois-fatores-ou-teoria-da-motiva%C3%A7%C3%A3o-higiene-de-frederick-herzberg-329da768e014" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Herzberg</a>. Hoje eu vou falar sobre a fórmula de Vroom e a teoria de necessidades adquiridas. Vamos partir do pressuposto que todos os fatores básicos para Maslow e higiênicos de Herzberg (remuneração, segurança, condições de trabalho, etc) estão sendo atendidos.</p>
+
+
+
+<p>Inicialmente vamos ver quais os fatores se relacionam com a motivação. Abaixo está uma adaptação da fórmula de Vroom que os ilustram e adiciona o fator tempo ao conceito original.<br></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/yBYmXy0.png" alt=""/></figure>
+
+
+
+<h4 class="wp-block-heading" id="valor">Valor</h4>
+
+
+
+<p>Valor nos diz sobre a percepção de importância que as pessoas dão para algo. Isso é individual para cada membro da equipe, alguns valorizam apenas retorno financeiro, outros preferem folgas ou serem direcionados para atividades que lhes tragam mais satisfação. Para saber o que de fato uma pessoa valoriza precisamos entender seus valores, preocupações e objetivos.</p>
+
+
+
+<h4 class="wp-block-heading" id="capacidade">Capacidade</h4>
+
+
+
+<p>Capacidade é a crença que a pessoa consegue fazer o que é necessário para ganhar uma recompensa. Se um membro da equipe (ou a equipe toda) não acredita que consegue fazer algo, dificilmente vai se comprometer verdadeiramente com o seu objetivo. Quando dou aula, gosto de exemplificar para os meus alunos com a seguinte proposta: “Passo com nota 10 na matéria quem conseguir ir ao departamento do outro lado do campus e voltar com essa folha assinada em 5 minutos”. Até hoje nenhum aluno se levantou da cadeira para tentar. Para aumentar a sensação de capacidade garanta treinamento e ferramentas adequadas para os trabalhos da equipe.</p>
+
+
+
+<h4 class="wp-block-heading" id="esforço">Esforço</h4>
+
+
+
+<p>Esforço é literalmente o quanto de energia uma pessoa precisa investir para receber uma recompensa. A relação é direta ao valor percebido: quanto mais difícil for fazer algo maior precisa ser a recompensa. É o conceito básico de retorno sobre investimento na esfera individual.</p>
+
+
+
+<h4 class="wp-block-heading" id="tempo">Tempo</h4>
+
+
+
+<p>O tempo para receber a recompensa é um fator interessante. Tendemos a preferir o hoje ao invés do amanhã. Quanto mais tardia for a recompensa, menos motivados vamos estar. Isso se reflete na prática em ciclos de recompensa e <em>feedback</em> mais curtos. Por isso algumas empresas gostam de fazer <em>OKRs</em> trimestrais e ciclos de avaliações de performance curtos.</p>
+
+
+
+<p>Essa fórmula pode ajudar a guiar estratégias de motivação. É importante notar que se valor e capacidade forem muito baixos ou o esforço e tempo forem muito altos, a motivação tende a ser baixa.</p>
+
+
+
+<h2 class="wp-block-heading" id="o-que-tem-valor-para-os-membros-da-nossa-equipe">O que tem valor para os membros da nossa equipe?</h2>
+
+
+
+<p>Agora que entendemos os fatores que influenciam a motivação, vamos falar um pouco sobre a variável&nbsp;<strong>Valor</strong>: como entender o que os membros da nossa equipe valorizam?</p>
+
+
+
+<p>Uma das teorias existentes é a das&nbsp;<strong>necessidades adquiridas</strong>, ela diz que buscamos 3 coisas: poder (ou controle), resultados e afiliação. Como citado no início, esse é apenas um entre vários modelos para entender valoração.</p>
+
+
+
+<p><strong>Necessidade de Poder</strong>&nbsp;(ou controle) é a busca por influência. Pessoas com necessidade de poder gostam de controlar as situações, são ambiciosos e autoconfiantes. Para motivar pessoas assim, lhes dê autonomia sobre seu trabalho, envolva-as na gestão estratégica e na tomada de decisão. Pessoas desse grupo que apresentam traços de empatia e que conseguem dividir o poder de escolha com seus pares podem ser futuros líderes.</p>
+
+
+
+<p><strong>A necessidade de Realização</strong>&nbsp;é a preocupação por excelência e conquistas através do esforço individual. São pessoas enérgicas, determinadas, que trabalham duro, apreciam <em>feedback</em> realista e procuram maneiras para realizar um bom trabalho. Podemos manter essas pessoas motivadas com objetivos&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.mindtools.com/pages/article/newHTE_90.htm" target="_blank">SMART</a>, tarefas bem definidas e um ciclo rápido de <em>feedback</em>.</p>
+
+
+
+<p><strong>Necessidade de Afiliação</strong>&nbsp;é o desejo de socializar e ser aceito pelos pares. Essas pessoas gostam de desenvolver, manter e restaurar relações pessoais próximas. São sociais, com inteligência emocional e empatia. Esses membros da sua equipe vão se sentir motivados naturalmente se puderem ajudar a desenvolver pessoas, participar de <em>onboarding</em> e treinamento de novos membros da equipe.</p>
+
+
+
+<h1 class="wp-block-heading" id="colocando-na-prática">Colocando na prática</h1>
+
+
+
+<p>Agora que você entende melhor alguns fatores de motivação, converse com as pessoas da sua equipe e descubra o que eles buscam. Ajude-os a organizar as atividades para que cada pessoa tenha responsabilidades condizentes com a seu perfil.</p>
+
+
+
+<p>Também pode ser necessário ajudar a sua organização como um todo a definir políticas e recompensas que as pessoas valorizam. Isso vai ajudar não apenas a motivação, mas também e engajamento e retenção dos talentos dos times.</p>
+
+
+
+<p>Quer conversar mais sobre liderança servidora e <em>soft-skills</em>? Está com um problema no seu time que gostaria de ver abordado? Deixe seu comentário e sugestões sobre quais tópicos gostaria de ver nos comentários ou pelo email&nbsp;<a href="mailto:contagil@plataformatec.com.br" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">contagil@plataformatec.com.br</a></p><p>The post <a href="/2019/09/entendendo-a-motivacao-do-seu-time/">Entendendo a motivação do seu time</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Desenvolvendo um olhar de produto na organização</title>
+		<link>/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Mon, 09 Sep 2019 18:57:01 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9301</guid>
+
+					<description><![CDATA[<p>É possível observar um interesse das empresas em migrar seu modelo de gestão para uma perspectiva de entrega de produto ou serviço digital. Inspiradas por estruturas orgânicas e multidisciplinares que vão contra as práticas que padronizam e especializam o trabalho, as empresas estão em busca de entregar novas formas de proposta de valor aos clientes, ... <a class="read-more-link" href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">»</a></p>
+<p>The post <a href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">Desenvolvendo um olhar de produto na organização</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>É possível observar um interesse das empresas em migrar seu modelo de gestão para uma perspectiva de entrega de produto ou serviço digital.</p>
+
+
+
+<p>Inspiradas por estruturas orgânicas e multidisciplinares que vão contra as práticas que padronizam e especializam o trabalho, as empresas estão em busca de entregar novas formas de proposta de valor aos clientes, utilizando de maneira efetiva os meios digitais e mantendo sua vantagem competitiva em um mercado que exige uma reconfiguração constante das suas práticas, dos seus processos, dos recursos tecnológicos, dos papéis e das suas equipes.</p>
+
+
+
+<p>Se você atua em uma empresa que já nasceu digital, é provável que alguns conceitos modernos já façam parte da sua rotina, tais como jornada de usuário, desenvolvimento de soluções centradas nas pessoas clientes, ciclos constantes de feedback, colaboração entre as diferentes especialidades do negócio para melhorar os resultados da empresa, modelos de bonificação que privilegiem o todo e entregas contínuas de software.</p>
+
+
+
+<p>Contudo, existem empresas que estão inseridas em um cenário onde o sucesso é medido por projetos entregues dentro do prazo, custo e escopo. Além disso, os ciclos de entrega de software acabam sendo anuais, tamanha a complexidade na arquitetura tecnológica. Já o modelo de bonificação fica limitado aos silos criados pelos diferentes departamentos, o que pode produzir resultados locais positivos, porém, com perdas quando há uma consolidação da visão global. Por fim, a opinião das pessoas clientes torna-se algo distante do cotidiano de quem está na operação do negócio.</p>
+
+
+
+<p>A seguir, gostaria de compartilhar 5 dicas de como você pode promover uma gestão por produtos digitais na sua empresa.</p>
+
+
+
+<h2 class="wp-block-heading" id="entenda-a-estrutura-de-governança-da-empresa">1) Entenda a estrutura de governança da empresa</h2>
+
+
+
+<p>Antes de pensar em começar um processo de transformação, tenha em mente qual é o estilo de governança que prevalece no seu ambiente. Para isso, sugiro a leitura do trabalho publicado por Grandori e Furnari (artigo original disponível&nbsp;<a href="http://openaccess.city.ac.uk/id/eprint/3064/1/Grandori&amp;Furnari%202008%20OST%20-%20A%20Chemistry%20of%20Organization.pdf" target="_blank" rel="noreferrer noopener" aria-label="aqui (opens in a new tab)">aqui</a>).</p>
+
+
+
+<p>Em linhas gerais, o artigo apresenta que os negócios inovadores combinam diferentes tipos de estruturas de governança interna caracterizadas por:</p>
+
+
+
+<ul><li><strong>Mercado (incentivos monetários):</strong>&nbsp;pagamento por desempenho (individual ou coletivo);</li><li><strong>Burocrático (autoridade):</strong>&nbsp;ambientes que cultivam processos bem definidos, o uso de boas práticas, estruturas delimitadas e políticas explícitas;</li><li><strong>Comunitário (divisão de conhecimento, valores e cultura):</strong>&nbsp;espaço que valoriza o compartilhamento de informações, o trabalho em equipe e a participação das pessoas no processo de decisão/escolhas;</li><li><strong>Democrático (responsabilidade, decisão e direitos representados):</strong>&nbsp;distribuição das responsabilidades, enriquecimento das atividades das pessoas colaboradoras e empoderamento das pessoas.</li></ul>
+
+
+
+<p>Se as práticas da sua organização têm como foco o resultado (mercado), provavelmente você terá dificuldades em desenvolver uma base de colaboração.</p>
+
+
+
+<p>Se há um excesso de burocracia, a eficiência das ações será prejudicada e a agilidade necessária ficará limitada.</p>
+
+
+
+<p>Se não existe uma cultura de trabalho em equipe e distribuição das responsabilidades, os silos e as camadas hierárquicas serão fatores limitantes para a inovação e a construção de uma visão sistêmica da cadeia de valor.</p>
+
+
+
+<p>Nem todas as organizações terão um estilo de governança propício para combinar inovação, cooperação e geração de resultado.</p>
+
+
+
+<p>Agora que você conhece os diferentes estilos de governança, algumas reflexões podem ser interessantes como:</p>
+
+
+
+<ol><li>Como os estilos presentes na empresa que estou podem ser potencializados de forma positiva para que a mudança aconteça?</li><li>Dado o estilo de governança existente, faz sentido forçar a mudança?</li></ol>
+
+
+
+<h2 class="wp-block-heading" id="utilize-a-camada-média-como-uma-promotora-da-mudança">2) Utilize a camada média como uma promotora da mudança</h2>
+
+
+
+<p>Provavelmente ao fazer qualquer tipo de mudança você se deparará com alguma resistência de pessoas que estão nas camadas intermediárias da organização (gestão, coordenação e afins).</p>
+
+
+
+<p>Em grande parte dos casos, a diretoria e a equipe operacional estarão compradas de que mudar a mentalidade para trabalhar de forma mais digital é necessária a fim de garantir a sustentabilidade da empresa. No entanto, pessoas que se encontram no meio da cadeia hierárquica se sentirão ameaçadas e poderão não apoiar a transformação.</p>
+
+
+
+<p>Ao invés de julgar e ignorar essas pessoas, identifique as que estão interessadas em favorecer a mudança, utilize os canais gerenciados por elas para promover um senso de urgência e utilize o capital social delas para reforçar as motivações da transição que acontecerá.</p>
+
+
+
+<p>Há situações em que a resistência é tão grande que a pessoa realmente não consegue dar uma oportunidade à mudança e infelizmente ela pode passar a não fazer mais parte da empresa, por não conseguir se adaptar ao momento atual. Isso faz parte do processo. Mas em linhas gerais, procure embarcar a camada média no propósito da mudança e utilize-a como promotora da transformação.</p>
+
+
+
+<h2 class="wp-block-heading" id="gerencie-os-domínios-de-uma-cultura-de-produto-digital">3) Gerencie os domínios de uma cultura de produto digital</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" decoding="async" width="365" height="473" src="/wp-content/uploads/2019/09/dominios_transformacao_digital.png" alt="" class="wp-image-9306" srcset="/wp-content/uploads/2019/09/dominios_transformacao_digital.png 365w, /wp-content/uploads/2019/09/dominios_transformacao_digital-232x300.png 232w" sizes="(max-width: 365px) 100vw, 365px" /></figure></div>
+
+
+
+<p>Tenho observado nas empresas que uma mudança para a mentalidade de produto digital depende da combinação do alinhamento e da direção construídas com a robustez da estrutura organizacional.</p>
+
+
+
+<p>Para garantir o alinhamento e a construção de objetivos consistentes é importante que exista uma clareza no modelo de negócio da empresa, sua estratégia esteja clara e que haja visibilidade dos indicadores de performance utilizados para guiar a saúde do negócio. Sem um norte que combine estes elementos, a visão da empresa ficará perdida.</p>
+
+
+
+<p><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/" target="_blank" rel="noreferrer noopener" aria-label="As pessoas e as equipes precisam entender que o trabalho delas está conectado diretamente com a sustentabilidade do negócio (opens in a new tab)">As pessoas e as equipes precisam entender que o trabalho delas está conectado diretamente com a sustentabilidade do negócio</a>. Além do mais, a alta gestão precisa trazer foco e um senso de priorização para as iniciativas que são demandadas.</p>
+
+
+
+<p>Sem alinhamento e direcionamento, as pessoas ficarão presas ao modelo de reconhecimento pela entrega ao invés de focar no resultado que está sendo gerado para o todo.</p>
+
+
+
+<p>Para que os objetivos sejam entregues em um universo digital em constante mudança, a empresa precisa desenvolver uma capacidade de execução que é sustentada por pessoas habilitadas, processos enxutos e uma arquitetura de software flexível.</p>
+
+
+
+<p>Se a empresa não cria mecanismos para formar as pessoas, não simplifica os processos de desenvolvimento de software e não enxerga a tecnologia como um ativo estratégico que precisa ser constantemente evoluído, ela dificilmente criará resultados de negócio de forma assertiva através do meio digital.</p>
+
+
+
+<p>Costumo dizer que não existe entrega de produto no contexto digital sem práticas de engenharia de software e sem processos que privilegiam uma cultura de aprendizagem e resolução de problemas.</p>
+
+
+
+<h2 class="wp-block-heading" id="construa-uma-visão-sistêmica-e-promova-equipes-multidisciplinares">4) Construa uma visão sistêmica e promova equipes multidisciplinares</h2>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter"><img loading="lazy" decoding="async" width="613" height="473" src="/wp-content/uploads/2019/09/visao_sistemica_jornada.png" alt="" class="wp-image-9307" srcset="/wp-content/uploads/2019/09/visao_sistemica_jornada.png 613w, /wp-content/uploads/2019/09/visao_sistemica_jornada-300x231.png 300w" sizes="(max-width: 613px) 100vw, 613px" /></figure></div>
+
+
+
+<p>Conhecer a jornada com que as pessoas clientes interagem com os produtos e serviços da organização é a base para a construção de soluções digitais que possibilitem melhores experiências.</p>
+
+
+
+<p>Captar o que é sucesso para as pessoas consumidoras e traduzir tais critérios em produtos digitais incríveis é um dos grandes desafios de um processo de mudança.</p>
+
+
+
+<p>Algumas técnicas que tenho recomendado para as pessoas aplicarem quando desejam construir uma visão orientada ao resultado são:</p>
+
+
+
+<ul><li>Construção de uma jornada de usuário para a compreensão das dores e as insatisfações ao longo do uso do produto oferecido pela empresa.</li><li>Mapeamento de processos para a identificação de gargalos e pontos de melhoria.</li><li>Entrevistas com as pessoas que utilizam o produto da empresa para coletar&nbsp;<em>insights</em>&nbsp;de aperfeiçoamentos da solução e para saber se elas valorizam critérios como tempo, qualidade dos atributos do produto ou conformidade dos requisitos.</li></ul>
+
+
+
+<p>Sem uma visão sistêmica (<strong>modo de irônia ativado</strong>) não há raio&nbsp;<em>squaditizador</em>&nbsp;que crie produtos que serão úteis para as pessoas.</p>
+
+
+
+<p>Se você é um departamento de Tecnologia da Informação e não tem autonomia para influenciar o fluxo de aquisição do serviço que a sua empresa oferece, você não deveria ser chamado de&nbsp;<em>squad</em>. O mesmo se aplica se você é uma área de canais digitais que planeja o projeto perfeito de desenvolvimento de um aplicativo móvel, espera 12 meses para receber a solução que alguém fez e depois não tem ideia de como evoluir o artefato entregue.</p>
+
+
+
+<p>Nos casos citados acima, a departamentalização gera barreiras para a criação de uma visão sistêmica e inibe a colaboração necessária para o desenvolvimento de produtos.</p>
+
+
+
+<p>Desenvolver e preservar equipes que combinem todas as disciplinas necessárias para solucionar os problemas das pessoas que são clientes garantirá produtos em constante conexão com as necessidades do negócio (ex: novas receitas, aumento na satisfação das pessoas clientes, redução dos custos etc.) e com o propósito de melhorar a experiência de quem usa.</p>
+
+
+
+<h2 class="wp-block-heading" id="as-três-disciplinas-necessárias-para-uma-boa-gestão-de-produto">5) As três disciplinas necessárias para uma boa gestão de produto</h2>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="578" height="389" src="/wp-content/uploads/2019/09/product_management_product_marketing_product_development.png" alt="" class="wp-image-9308" srcset="/wp-content/uploads/2019/09/product_management_product_marketing_product_development.png 578w, /wp-content/uploads/2019/09/product_management_product_marketing_product_development-300x202.png 300w" sizes="(max-width: 578px) 100vw, 578px" /></figure>
+
+
+
+<p>Seguindo a sugestão do método de gestão Kanban que diz para começarmos com o que fazemos hoje e respeitarmos os papéis existentes, deixo como última dica a busca pela aplicação das três disciplinas que estão por trás da construção de produtos digitais ao invés de uma abordagem revolucionária de mudança organizacional.</p>
+
+
+
+<p>A primeira disciplina é o&nbsp;<strong>marketing de produto</strong>&nbsp;que tem como foco desenvolver processos para promover e vender produtos para as pessoas clientes. Além disso, é uma função intermediária entre a criação de produtos e o aumento do reconhecimento da marca.</p>
+
+
+
+<p>Pensando no movimento de criação de produtos digitais, ter um bom marketing de produto ajudará na aquisição e retenção de clientes, bem como na promoção da empresa como marca provedora de soluções.</p>
+
+
+
+<p>A segunda disciplina é a&nbsp;<strong>gestão de produto</strong>&nbsp;que pode ser resumida como o processo que se concentra em criar ou promover produtos/serviços.</p>
+
+
+
+<p>Conforme definido pelo&nbsp;<a href="http://www.guiadastartup.com.br/o-que-e-gestao-de-produtos/" target="_blank" rel="noreferrer noopener" aria-label="Joaquim Torres - Joca (opens in a new tab)">Joaquim Torres &#8211; Joca</a>, a gestão de produto é uma função que cuida da conexão entre os objetivos estratégicos e a experiência das pessoas clientes, além de relacionar as ações do produto com uma visão global da empresa.</p>
+
+
+
+<p>Uma boa gestão de produtos ajudará a empresa na construção de um portfólio saudável de soluções (<a href="/2018/01/avaliando-os-estagios-do-portfolio-de-produtos-em-uma-empresa-digital/" target="_blank" rel="noreferrer noopener" aria-label="deixo aqui a referência de um texto que escrevi sobre como avaliar os estágios de um portfólio de produtos (opens in a new tab)">deixo aqui a referência de um texto que escrevi sobre como avaliar os estágios de um portfólio de produtos</a>).</p>
+
+
+
+<p>A última, mas nem por isso menos importante disciplina é a de&nbsp;<strong>desenvolvimento de produto</strong>, que representa a forma como construímos as soluções. Práticas ágeis de gestão de projetos são excelentes aliadas na busca de promovermos ambientes colaborativos, com alta visibilidade e com entregas que permitam feedbacks constantes.</p>
+
+
+
+<p>Dado que estamos tratando de produtos digitais, não devemos ignorar práticas de engenharia de software como integração contínua, entregas automatizadas e uma base de código bem gerida. Tais mecanismos permitirão uma otimização no fluxo de entrega e garantirão um resultado final de qualidade.</p>
+
+
+
+<p>Ao dominar Marketing, gestão e desenvolvimento de produto, sua empresa conceberá soluções digitais eficazes nas resoluções dos problemas, conectadas com as necessidades de quem usa e de forma eficiente.</p>
+
+
+
+<h2 class="wp-block-heading" id="conclusão">Conclusão</h2>
+
+
+
+<p>Segundo uma matéria recente da&nbsp;<a href="https://www.gartner.com/smarterwithgartner/fuel-digital-business-with-product-management/" target="_blank" rel="noreferrer noopener" aria-label="Gartner (opens in a new tab)">Gartner</a>, até 2020, as organizações que adotarem um modelo de gerenciamento de produtos superarão as que não o fizerem.</p>
+
+
+
+<p>A transformação digital tem exigido que as empresas saibam incorporar novas tecnologias na oferta de seus produtos/serviços, mudem a forma como criam valor para os clientes através de canais digitais, revejam constantemente seu modelo de negócios para usufruírem dos artefatos digitais e repensem suas estruturas para reduzir os custos de coordenação. Diante deste cenário, uma das formas de sobreviver passa por enxergar sua empresa com a lente de produtos digitais.</p>
+
+
+
+<p>Qual a sua opinião sobre o que compartilhei neste texto? Quais estão sendo os desafios neste processo de mudança para produtos no seu ambiente? Não deixe de comentar abaixo ou enviar um e-mail para&nbsp;<a href="https://stackedit.io/contagil@plataformatec.com.br" target="_blank" rel="noreferrer noopener" aria-label="contagil@plataformatec.com.br (opens in a new tab)">contagil@plataformatec.com.br</a>!</p><p>The post <a href="/2019/09/desenvolvendo-um-olhar-de-produto-na-organizacao/">Desenvolvendo um olhar de produto na organização</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

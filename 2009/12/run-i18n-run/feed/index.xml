@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Run, I18n, run!	</title>
+	<atom:link href="/2009/12/run-i18n-run/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/12/run-i18n-run/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 25 Apr 2010 12:48:45 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Bruno Grasselli		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-446</link>
+
+		<dc:creator><![CDATA[Bruno Grasselli]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 12:34:13 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-446</guid>
+
+					<description><![CDATA[@josevalim Ok, thanks!]]></description>
+			<content:encoded><![CDATA[<p>@josevalim Ok, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bruno Grasselli		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-918</link>
+
+		<dc:creator><![CDATA[Bruno Grasselli]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 12:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-918</guid>
+
+					<description><![CDATA[@josevalim Ok, thanks!]]></description>
+			<content:encoded><![CDATA[<p>@josevalim Ok, thanks!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-445</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 12:32:03 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-445</guid>
+
+					<description><![CDATA[@bruno, I used Open Office for Mac.]]></description>
+			<content:encoded><![CDATA[<p>@bruno, I used Open Office for Mac.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-917</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 12:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-917</guid>
+
+					<description><![CDATA[@bruno, I used Open Office for Mac.]]></description>
+			<content:encoded><![CDATA[<p>@bruno, I used Open Office for Mac.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bruno Grasselli		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-444</link>
+
+		<dc:creator><![CDATA[Bruno Grasselli]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 11:36:07 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-444</guid>
+
+					<description><![CDATA[Thanks for the post José.
+
+Sorry by change the subject, but, which chart tool did you use to generate those charts?
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the post José.</p>
+<p>Sorry by change the subject, but, which chart tool did you use to generate those charts?</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Bruno Grasselli		</title>
+		<link>/2009/12/run-i18n-run/comment-page-1/#comment-916</link>
+
+		<dc:creator><![CDATA[Bruno Grasselli]]></dc:creator>
+		<pubDate>Mon, 04 Jan 2010 11:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=538#comment-916</guid>
+
+					<description><![CDATA[Thanks for the post José.
+
+Sorry by change the subject, but, which chart tool did you use to generate those charts?
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the post José.</p>
+<p>Sorry by change the subject, but, which chart tool did you use to generate those charts?</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

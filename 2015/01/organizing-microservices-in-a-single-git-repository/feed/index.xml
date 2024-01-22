@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Organizing microservices in a single git repository	</title>
+	<atom:link href="/2015/01/organizing-microservices-in-a-single-git-repository/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/01/organizing-microservices-in-a-single-git-repository/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:23:20 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Gustavo Dutra		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1468</link>
+
+		<dc:creator><![CDATA[Gustavo Dutra]]></dc:creator>
+		<pubDate>Tue, 10 Feb 2015 20:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1468</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1458&quot;&gt;Richard Santos&lt;/a&gt;.
+
+I&#039;d say it depends. You can deploy normally and make only the relevant services/microservices run on a given machine. Or, maybe, it can be part of the process to remove not used code from the deployed machine. It may differ from deploy tool to deploy tool, maybe I can help you better by asking if you have any specific deploy question.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1458">Richard Santos</a>.</p>
+<p>I&#8217;d say it depends. You can deploy normally and make only the relevant services/microservices run on a given machine. Or, maybe, it can be part of the process to remove not used code from the deployed machine. It may differ from deploy tool to deploy tool, maybe I can help you better by asking if you have any specific deploy question.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: MatthewWAdams		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1460</link>
+
+		<dc:creator><![CDATA[MatthewWAdams]]></dc:creator>
+		<pubDate>Tue, 27 Jan 2015 16:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1460</guid>
+
+					<description><![CDATA[While I don&#039;t disagree with any individual thing you&#039;ve said here, the cumulative effect is that you 
+
+1) version all your microservices together
+
+2) upgrade common dependencies together
+
+3) tightly couple microservices in subsystems
+
+4) commonly change several coupled microservices to implement a feature
+
+That doesn&#039;t sound to me like you are talking about microservices at all. What I think you are describing is a standard component-based application architecture.
+
+Microservices add additional design constraints: e.g. small surface-area (single function) services which tend to be built once, well tested at the public API (integration) level, which is strongly defined and long outlasts any particular implementation. Updates fix bugs rather than add features; additional features necessarily imply a new microservice.
+
+Within that context, a feature-based development focus is certainly a good approach, and is not incompatible with the rapid creation of new microservices. These can be developed in the parent repo until the feature is ready (while their APIs are being discovered and iterated), and migrated into their own repositories once they have stabilized at the end of the particular feature delivery sprint.]]></description>
+			<content:encoded><![CDATA[<p>While I don&#8217;t disagree with any individual thing you&#8217;ve said here, the cumulative effect is that you </p>
+<p>1) version all your microservices together</p>
+<p>2) upgrade common dependencies together</p>
+<p>3) tightly couple microservices in subsystems</p>
+<p>4) commonly change several coupled microservices to implement a feature</p>
+<p>That doesn&#8217;t sound to me like you are talking about microservices at all. What I think you are describing is a standard component-based application architecture.</p>
+<p>Microservices add additional design constraints: e.g. small surface-area (single function) services which tend to be built once, well tested at the public API (integration) level, which is strongly defined and long outlasts any particular implementation. Updates fix bugs rather than add features; additional features necessarily imply a new microservice.</p>
+<p>Within that context, a feature-based development focus is certainly a good approach, and is not incompatible with the rapid creation of new microservices. These can be developed in the parent repo until the feature is ready (while their APIs are being discovered and iterated), and migrated into their own repositories once they have stabilized at the end of the particular feature delivery sprint.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Richard Santos		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1458</link>
+
+		<dc:creator><![CDATA[Richard Santos]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 19:54:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1458</guid>
+
+					<description><![CDATA[How about your deployment process?]]></description>
+			<content:encoded><![CDATA[<p>How about your deployment process?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1457</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 17:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1457</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1454&quot;&gt;milgner&lt;/a&gt;.
+
+That&#039;s what we use too to handle our custom gems required by the project, but we don&#039;t often need to work on them. Maybe if those gems were constantly changing to adapt the main project changes we&#039;d have to re-evaluate it and see if getting rid of the submodules could lead to a better experience. Anyway, I don&#039;t feel any pain in working with submodules as I&#039;m pretty used to them for years, so maybe this might be a matter of personal preferences on how to manage the small pieces... I&#039;d probably be fine with either submodules or using the same repository...]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1454">milgner</a>.</p>
+<p>That&#8217;s what we use too to handle our custom gems required by the project, but we don&#8217;t often need to work on them. Maybe if those gems were constantly changing to adapt the main project changes we&#8217;d have to re-evaluate it and see if getting rid of the submodules could lead to a better experience. Anyway, I don&#8217;t feel any pain in working with submodules as I&#8217;m pretty used to them for years, so maybe this might be a matter of personal preferences on how to manage the small pieces&#8230; I&#8217;d probably be fine with either submodules or using the same repository&#8230;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Ribeiro		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1456</link>
+
+		<dc:creator><![CDATA[Carlos Ribeiro]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 13:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1456</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1454&quot;&gt;milgner&lt;/a&gt;.
+
+Here we use this solution too. Works fine for us.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1454">milgner</a>.</p>
+<p>Here we use this solution too. Works fine for us.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: iain		</title>
+		<link>/2015/01/organizing-microservices-in-a-single-git-repository/comment-page-1/#comment-1455</link>
+
+		<dc:creator><![CDATA[iain]]></dc:creator>
+		<pubDate>Thu, 22 Jan 2015 13:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4397#comment-1455</guid>
+
+					<description><![CDATA[We have multiple repositories, and we use a bunch of bash scripts to manage that. My feeling is that most features that we develop have one service that is most involved, and that is where we open the pull request. If that&#039;s not the case, then maybe the new feature is too big.]]></description>
+			<content:encoded><![CDATA[<p>We have multiple repositories, and we use a bunch of bash scripts to manage that. My feeling is that most features that we develop have one service that is most involved, and that is where we open the pull request. If that&#8217;s not the case, then maybe the new feature is too big.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

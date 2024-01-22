@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>great work « Plataformatec Blog</title>
+	<atom:link href="/tag/great-work/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 03 Jan 2013 09:02:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Carlos Antonio da Silva joins the Rails Core team \o/</title>
+		<link>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/</link>
+					<comments>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 03 Jan 2013 09:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails core]]></category>
+		<guid isPermaLink="false">/?p=3250</guid>
+
+					<description><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael's achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we'd only dream of, but in 2012 it became reality. I must say that it didn't happen by chance, not at all.</p>
+<p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We cannot express how excited we are with such great news. In our last blog post we were celebrating Rafael&#8217;s achievement and just a few months later we are celebrating again. Years ago, having three Plataformatec teammates as Rails Core members would be something we&#8217;d only dream of, but in 2012 it became reality. I must say that it didn&#8217;t happen by chance, not at all.</p>
+<div id="attachment_3251" style="width: 160px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-3251" class="size-full wp-image-3251" alt="Carlos Antonio da Silva Rails Core team member" src="/wp-content/uploads/2013/01/carlos-antonio.jpeg" width="150" height="175" /><p id="caption-attachment-3251" class="wp-caption-text">@cantoniodasilva</p></div>
+<p>Carlos has always been an outstanding software developer and a great teammate. He is someone we all deeply trust to solve hard problems and deliver mission critical projects. We&#8217;ve always watched Carlos working really hard and we must say that he deserved every bit of such achievement. You can check out his contributions into many other open source projects at <a href="http://github.com/carlosantoniodasilva">http://github.com/carlosantoniodasilva</a></p>
+<p>Kudos to our friend @cantoniodasilva!!! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>&nbsp;</p><p>The post <a href="/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/">Carlos Antonio da Silva joins the Rails Core team \o/</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/01/carlos-antonio-da-silva-has-joined-the-rails-core-team/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rafael França joins the Rails Core Team</title>
+		<link>/2012/10/rafael-franca-joins-the-rails-core-team/</link>
+					<comments>/2012/10/rafael-franca-joins-the-rails-core-team/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 30 Oct 2012 12:27:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=3165</guid>
+
+					<description><![CDATA[<p>Last May we happily announced that Rafael França and Carlos Antonio earned commit access to the Ruby on Rails repository &#8211; it was a great accomplishment that deserved its own blog post. Today, we have some great news and we want to share with our readers. Just a few days ago, our team mate Rafael ... <a class="read-more-link" href="/2012/10/rafael-franca-joins-the-rails-core-team/">»</a></p>
+<p>The post <a href="/2012/10/rafael-franca-joins-the-rails-core-team/">Rafael França joins the Rails Core Team</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last May we happily announced that Rafael França and Carlos Antonio earned commit access to the Ruby on Rails repository &#8211; it was a great accomplishment that deserved its own blog post. Today, we have some great news and we want to share with our readers. Just a few days ago, our team mate Rafael França (<a href="http://twitter.com/rafaelfranca">@rafaelfranca</a>) received an invitation to join the Rails Core Team. And, of course, he accepted!</p>
+<p>Rafael contributed to different features coming up in the next Rails 4 release and worked extensively with other Rails contributors to smash bugs and provide many improvements to the framework. I am personally happy to have a friend joining me in the <a href="http://rubyonrails.org/core">Rails Core Team</a>.</p>
+<p>Furthermore, Rafael França&#8217;s contributions go beyond Rails. Lately he has also contributed to many other open source projects, like <a href="http://mongoid.org/">Mongoid</a>, <a href="https://github.com/github/janky">Janky</a> and <a href="https://github.com/mperham/dalli">Dalli</a> besides Plataformatec&#8217;s own projects like <a href="https://github.com/plataformatec/devise">Devise</a>, <a href="https://github.com/plataformatec/simple_form">Simple Form</a> and <a href="https://elixir-lang.org/">Elixir</a>.</p>
+<p><img decoding="async" src="/wp-content/uploads/2012/10/rafaelfranca.jpeg" alt="" title="Rafael França" width="150" height="175" class="aligncenter size-full wp-image-3169" /></p>
+<p>Rafael, congratulations! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f600.png" alt="😀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>From all your friends at Plataformatec.</p><p>The post <a href="/2012/10/rafael-franca-joins-the-rails-core-team/">Rafael França joins the Rails Core Team</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/10/rafael-franca-joins-the-rails-core-team/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>A praise for a hard, sweaty and great work done</title>
+		<link>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/</link>
+					<comments>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Thu, 17 May 2012 21:38:06 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[great work]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<category><![CDATA[team]]></category>
+		<guid isPermaLink="false">/?p=2728</guid>
+
+					<description><![CDATA[<p>Congratulations to our fellow Carlos Antonio (@cantoniodasilva) and Rafael França (@rafaelfranca) for honorably earning the commit access to the Ruby on Rails repository!</p>
+<p>The post <a href="/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/">A praise for a hard, sweaty and great work done</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is no secret that our team has a great passion for contributing to the open source community and once in a while we receive compliments &#8211; it is great to have our work recognized; thank you all for always being supportive. =D</p>
+<p>We&#8217;d proudly like to announce that, due to their contributions, two specific members of our team were recently awarded by the Ruby on Rails community (by the Rails Core Team, to be more precise).</p>
+<p>Without further ado we&#8217;d like to congratulate our fellow Carlos Antonio (<a href="http://twitter.com/cantoniodasilva">@cantoniodasilva</a>) and Rafael França (<a href="http://twitter.com/rafaelfranca">@rafaelfranca</a>) for honorably earning the commit access to the Ruby on Rails repository!</p>
+<div id="attachment_2740" style="width: 522px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-2740" class=" wp-image-2740 " title="@cantoniodasilva and @rafaelfranca" src="/wp-content/uploads/2012/05/Screen-shot-2012-05-018.jpg" alt="" width="512" height="257" srcset="/wp-content/uploads/2012/05/Screen-shot-2012-05-018.jpg 640w, /wp-content/uploads/2012/05/Screen-shot-2012-05-018-300x150.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /><p id="caption-attachment-2740" class="wp-caption-text">@cantoniodasilva and @rafaelfranca</p></div>
+<p>Guys, congratulations! \o/</p>
+<p>We are all very happy for this great achievement. Great work!<br />
+From your friends at Plataformatec.</p><p>The post <a href="/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/">A praise for a hard, sweaty and great work done</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/05/a-praise-for-a-hard-sweaty-and-great-work-done/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

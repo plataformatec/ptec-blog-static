@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Resultado do sorteio Ruby + Rails no Mundo Real	</title>
+	<atom:link href="/2010/05/resultado-do-sorteio-ruby-rails-no-mundo-real-2010/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/05/resultado-do-sorteio-ruby-rails-no-mundo-real-2010/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 23 May 2010 17:42:43 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jonas Alves		</title>
+		<link>/2010/05/resultado-do-sorteio-ruby-rails-no-mundo-real-2010/comment-page-1/#comment-620</link>
+
+		<dc:creator><![CDATA[Jonas Alves]]></dc:creator>
+		<pubDate>Sun, 23 May 2010 17:42:43 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1080#comment-620</guid>
+
+					<description><![CDATA[Valeu, Plataforma!
+:D]]></description>
+			<content:encoded><![CDATA[<p>Valeu, Plataforma!<br />
+😀</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jonas Alves		</title>
+		<link>/2010/05/resultado-do-sorteio-ruby-rails-no-mundo-real-2010/comment-page-1/#comment-1006</link>
+
+		<dc:creator><![CDATA[Jonas Alves]]></dc:creator>
+		<pubDate>Sun, 23 May 2010 17:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1080#comment-1006</guid>
+
+					<description><![CDATA[Valeu, Plataforma!
+:D]]></description>
+			<content:encoded><![CDATA[<p>Valeu, Plataforma!<br />
+😀</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

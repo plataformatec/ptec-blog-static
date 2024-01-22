@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Barebone models to use with ActionPack in Rails 4.0	</title>
+	<atom:link href="/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 12 Mar 2012 18:40:17 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1207</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2012 18:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1207</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1206&quot;&gt;Chris Griego&lt;/a&gt;.
+
+Hello Chris :)
+
+Yeah, I do know ActiveAttr - it&#039;s a great gem btw, congrats - and that it&#039;s created to be modular. That&#039;s ActiveModel&#039;s goal as well, to provide pieces that you can use to build up your classes/models. I just think that ActiveModel gives you the API to be flexible enough to create the functionality you need, and usually not some functionality out of the box. ActiveAttr takes it a step further and implement its modules on top of ActiveModel, giving you a final implementation for common cases, which is great =). 
+Thanks for your feedback.
+
+--
+At.
+Carlos Antonio]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1206">Chris Griego</a>.</p>
+<p>Hello Chris 🙂</p>
+<p>Yeah, I do know ActiveAttr &#8211; it&#8217;s a great gem btw, congrats &#8211; and that it&#8217;s created to be modular. That&#8217;s ActiveModel&#8217;s goal as well, to provide pieces that you can use to build up your classes/models. I just think that ActiveModel gives you the API to be flexible enough to create the functionality you need, and usually not some functionality out of the box. ActiveAttr takes it a step further and implement its modules on top of ActiveModel, giving you a final implementation for common cases, which is great =).<br />
+Thanks for your feedback.</p>
+<p>&#8212;<br />
+At.<br />
+Carlos Antonio</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris Griego		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1206</link>
+
+		<dc:creator><![CDATA[Chris Griego]]></dc:creator>
+		<pubDate>Thu, 08 Mar 2012 17:46:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1206</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1203&quot;&gt;Carlos Antonio&lt;/a&gt;.
+
+ Carlos, you may want to take a closer look at ActiveAttr. While it does offer the all-in-one Model module, it&#039;s made up of slices of functionality that I think captures the spirit of the ActiveModel library.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1203">Carlos Antonio</a>.</p>
+<p> Carlos, you may want to take a closer look at ActiveAttr. While it does offer the all-in-one Model module, it&#8217;s made up of slices of functionality that I think captures the spirit of the ActiveModel library.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1205</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Wed, 07 Mar 2012 13:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1205</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1204&quot;&gt;Joris Verschoor&lt;/a&gt;.
+
+Hey Joris, sorry but what do you mean about &quot;defining a form&quot;? Would you mind trying to exemplify your idea? 
+
+The change we are showing in this post helps you create a model with some plug and play functionality, the api you need to use with Rails helpers - ie form_for and url helpers.. but that doesn&#039;t mean it&#039;s only tied to a form.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1204">Joris Verschoor</a>.</p>
+<p>Hey Joris, sorry but what do you mean about &#8220;defining a form&#8221;? Would you mind trying to exemplify your idea? </p>
+<p>The change we are showing in this post helps you create a model with some plug and play functionality, the api you need to use with Rails helpers &#8211; ie form_for and url helpers.. but that doesn&#8217;t mean it&#8217;s only tied to a form.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Joris Verschoor		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1204</link>
+
+		<dc:creator><![CDATA[Joris Verschoor]]></dc:creator>
+		<pubDate>Wed, 07 Mar 2012 13:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1204</guid>
+
+					<description><![CDATA[Can you use this inline? i.e.: use this to define a &quot;Form&quot;, instead of a model?
+
+imo rails confuses &quot;Form&quot; with &quot;Model&quot;...  Ofcourse it should be easy to create a form from a model, but this is where the annoyance started]]></description>
+			<content:encoded><![CDATA[<p>Can you use this inline? i.e.: use this to define a &#8220;Form&#8221;, instead of a model?</p>
+<p>imo rails confuses &#8220;Form&#8221; with &#8220;Model&#8221;&#8230;  Ofcourse it should be easy to create a form from a model, but this is where the annoyance started</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1203</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Wed, 07 Mar 2012 03:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1203</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1202&quot;&gt;Dmytrii Nagirniak&lt;/a&gt;.
+
+I believe ActiveModel::Model is a great start, it makes it a lot easier to get a barebone model with the most common required interface up and running quickly. Other than that, Rails already provides everything else required to create AR-like classes, you just need to cherry-pick what you need, when you need. ActiveAttr is great in the sense of collecting all available modules in ActiveModel as a convenience, but I&#039;m not sure it&#039;d be a great fit for Rails to have an all-in-one module like it.
+
+Thanks for your feedback.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1202">Dmytrii Nagirniak</a>.</p>
+<p>I believe ActiveModel::Model is a great start, it makes it a lot easier to get a barebone model with the most common required interface up and running quickly. Other than that, Rails already provides everything else required to create AR-like classes, you just need to cherry-pick what you need, when you need. ActiveAttr is great in the sense of collecting all available modules in ActiveModel as a convenience, but I&#8217;m not sure it&#8217;d be a great fit for Rails to have an all-in-one module like it.</p>
+<p>Thanks for your feedback.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Dmytrii Nagirniak		</title>
+		<link>/2012/03/barebone-models-to-use-with-actionpack-in-rails-4-0/comment-page-1/#comment-1202</link>
+
+		<dc:creator><![CDATA[Dmytrii Nagirniak]]></dc:creator>
+		<pubDate>Tue, 06 Mar 2012 23:48:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2543#comment-1202</guid>
+
+					<description><![CDATA[I think it would be much better if Rails 4 effort for models and ActiveAttr would be joined.]]></description>
+			<content:encoded><![CDATA[<p>I think it would be much better if Rails 4 effort for models and ActiveAttr would be joined.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>startup « Plataformatec Blog</title>
+	<atom:link href="/tag/startup/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 28 Jan 2011 16:48:52 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>[full-version] Six good practices that have improved our team productivity – The Plataforma Tec Way</title>
+		<link>/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/</link>
+					<comments>/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/#comments</comments>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Wed, 26 Jan 2011 19:24:10 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[culture]]></category>
+		<category><![CDATA[leadership]]></category>
+		<category><![CDATA[startup]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=1708</guid>
+
+					<description><![CDATA[<p>[as some of you might have noticed, I accidentally clicked on &#8220;Publish&#8221; on my draft version, here is the full version of the post. Sorry about that] *Though this blog post was written for any audience, there is a chance that you&#8217;ll be more interested if  you are a startuper or running a knowledge workers based company. A year ago ... <a class="read-more-link" href="/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/">»</a></p>
+<p>The post <a href="/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/">[full-version] Six good practices that have improved our team productivity – The Plataforma Tec Way</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>[as some of you might have noticed, I accidentally clicked on &#8220;Publish&#8221; on my draft version, here is the full version of the post. Sorry about that]</p>
+<p><em>*Though this blog post was written for any audience, there is a chance that you&#8217;ll be more interested if  you are a <a title="define:startuper at Google.com" href="http://www.google.com/search?hl=en&amp;q=define:startuper&amp;btnG=Search" target="_blank">startuper</a> or running a <a title="Wikipedia definition of Knowledge Worker" href="http://en.wikipedia.org/wiki/Knowledge_worker" target="_blank">knowledge workers</a> based company.</em></p>
+<p>A year ago I was writing about a few <a title="Plataforma Tec's review of 2009" href="/2010/01/o-que-aprendemos-em-2009-the-plataforma-way/">uncertainties that we faced while starting up Plataforma Tec</a> and how we dealt with them. We know that we still have a lot to learn, but now that another 12 months have passed by we are feeling much more solid and confident about what we&#8217;re building.</p>
+<p>As last year&#8217;s post, this will also be about sharing our thoughts and a few practices that have been helping us a lot in creating a company culture and leveraging our team into its best. I hope you enjoy and find them useful!</p>
+<div style="width: 522px" class="wp-caption aligncenter"><a href="/wp-content/uploads/2011/01/valim_float.png"><img fetchpriority="high" decoding="async" title="what a team! =D" src="/wp-content/uploads/2011/01/valim_float.png" alt="what a team! =D" width="512" height="384" /></a><p class="wp-caption-text">what a team! =D</p></div>
+<p><strong>We believe that (&#8230;)</strong></p>
+<p><strong>1)&#8230; mastering our work IS our work</strong></p>
+<p><strong> </strong></p>
+<div id="attachment_1647" style="width: 290px" class="wp-caption aligncenter"><strong><a href="/wp-content/uploads/2011/01/steve-jobs-2008-keynote.jpg"><img decoding="async" aria-describedby="caption-attachment-1647" class="size-full wp-image-1647" title="&quot;better and better and better&quot;" src="/wp-content/uploads/2011/01/steve-jobs-2008-keynote.jpg" alt="better and better and better - steve jobs keynote" width="280" height="280" /></a></strong><p id="caption-attachment-1647" class="wp-caption-text">&quot;better and better and better&quot;</p></div>
+<p>We constantly tell people and customers &#8220;hire us only if you need a well developed application&#8221; (for example: a web application that will provide a revenue stream or will constantly have new features). This is one of our main assets and our main differentiation in this price competitive industry. Frankly, this strategy has been working fine for us but in order to keep it running this way, we are constantly looking for mastering our work all the time. Otherwise, if we don&#8217;t, there will be a great chance of losing our competitive edge.</p>
+<p><strong>2)&#8230; responsibility comes along with autonomy</strong></p>
+<div>
+<dl id="attachment_1648">
+<dt>
+<div id="attachment_1648" style="width: 368px" class="wp-caption aligncenter"><img decoding="async" aria-describedby="caption-attachment-1648" class="size-full wp-image-1648   " title="with great power, comes great responsability" src="/wp-content/uploads/2011/01/peter.parker.uncle_.ben_.jpg" alt="&quot;with great power, comes great responsability&quot; - uncle ben" width="358" height="265" /><p id="caption-attachment-1648" class="wp-caption-text">&quot;with great power, comes great responsibility&quot;</p></div>
+</dt>
+</dl>
+</div>
+<p>In last year&#8217;s post we mentioned that we only hire professionals that we feel comfortable giving autonomy, but it&#8217;s important to remember that it must be used very carefully. So, although autonomy makes a great pair with the constant search for mastery, don&#8217;t forget to be very cautious when dealing with decisions that might have a great impact in your company. We usually handle this kind of situation with two simple practices:</p>
+<ul>
+<li>we show our team, in a very explicitly way, the goals and guidelines that should de followed;</li>
+<li>and we constantly gather the team to discuss important issues (see the item below).</li>
+</ul>
+<p><strong>3)&#8230; gathering  the team to discuss problems is a great way to find solutions</strong></p>
+<div id="attachment_1652" style="width: 430px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-1652" class="size-full wp-image-1652 " title="gather your team and discuss problems and solutions" src="/wp-content/uploads/2011/01/listenup.jpg" alt="gather your team and discuss problems and solutions" width="420" height="231" /><p id="caption-attachment-1652" class="wp-caption-text">gather your team and discuss problems and solutions</p></div>
+<p>Once in a while we face situations that are a bit more risky or complicated to be solved by our selves alone. They can be technical or design problems, a project management issue or even a simple warm-up for a business meeting. For all this we usually gather two or three team mates to ask for their opinion and discuss about the options that we might have.</p>
+<p><strong>4)&#8230; projects managers shouldn&#8217;t delegate work or establish random deadlines. They should serve and protect the team from undesired noise.</strong></p>
+<div>
+<dl id="attachment_1661">
+<dt>
+<div id="attachment_1661" style="width: 250px" class="wp-caption aligncenter"><a href="/wp-content/uploads/2011/01/5736923.jpg"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-1661" class="size-full wp-image-1661 " title="to protect and serve" src="/wp-content/uploads/2011/01/5736923.jpg" alt="to protect and serve" width="240" height="240" /></a><p id="caption-attachment-1661" class="wp-caption-text">&quot;to protect and serve&quot;</p></div>
+</dt>
+</dl>
+</div>
+<p>In our company, projects managers, salesmen and organization leaders work together with developers and designers. We see it as a system that must work synchronized. Also, the actions of planning, estimating and taking decisions in a project  should be made by the whole team (and not only by the manager). We found out that serious problems might arise when this system is desynchronized or made only by one person.</p>
+<p>In our opinion, the manager role is to assure that developers and designers have the proper atmosphere to do their best. And by &#8216;proper atmosphere&#8217; we mean that they have to provide the right tools (hw and sw), proper workplace, avoid useless interruptions and support the team when they get stuck with something.</p>
+<p><strong>5)&#8230; establishing roles is good and we avoid hierarchy levels</strong></p>
+<div>
+<dl id="attachment_1690">
+<dt>
+</dt>
+</dl>
+</div>
+<div id="attachment_1729" style="width: 269px" class="wp-caption aligncenter"><a href="/wp-content/uploads/2011/01/carell_boss.jpg"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-1729" class="size-full wp-image-1729" title="do not create communications layers between team and managers and leaders" src="/wp-content/uploads/2011/01/carell_boss.jpg" alt="" width="259" height="306" /></a><p id="caption-attachment-1729" class="wp-caption-text">do not create communications layers between team and managers and leaders</p></div>
+<p>Some managers try to list and predict 100% of the problems that might happen in a project. Here at Plataforma Tec, we assume that it&#8217;s impossible to do so. Therefore the big deal is NOT about trying to predict and avoid 100% of the problems. The deal is to BE PREPARED TO REACT when a problem happens and trying to avoid the most obvious problems that could happen.</p>
+<p>Ok, but what does it all have to do with <strong>Roles vs. Hierarchy</strong>?<br />
+Check this: if we are prepared to react to a problem, first we must DETECT the problem. Right?</p>
+<p>So, that&#8217;s where hierarchy kicks in&#8230; there is a great chance that creating <a title="A Scary Old Study of Airplane Cockpit Dynamics: The Dangers of Fearing Authority" href="http://bobsutton.typepad.com/my_weblog/2009/02/a-scary-old-study-of-airplane-cockpit-dynamics-the-dangers-of-fearing-authority.html" target="_blank">hierarchy levels will degrade the communication quality</a> in you company. This is one of the reasons we avoid creating different levels here at Plataforma Tec. Instead, we prefer defining roles. Developers should develop, Managers should support, Salesmen should sell (but synced with the whole &#8220;system&#8221; mentioned in item &#8220;4&#8221;).</p>
+<p>If you&#8217;re having trouble understanding the difference between Roles and Hierarchy, take a look at Scrum&#8217;s roles (as an example of definition of roles).</p>
+<p><strong>6)&#8230; business leaders must create the right policies to enable all the items above</strong></p>
+<div>
+<dl id="attachment_1665">
+<dt>
+<div id="attachment_1665" style="width: 410px" class="wp-caption aligncenter"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-1665" class="size-full wp-image-1665" title="new policy" src="/wp-content/uploads/2011/01/new-policy-fail1.jpg" alt="new policy" width="400" height="300" /><p id="caption-attachment-1665" class="wp-caption-text">policies should be discussed, not imposed</p></div>
+</dt>
+</dl>
+</div>
+<p>All these practices won&#8217;t be effective if the organizational leaders don&#8217;t believe and provide the right policies to really enable them. Important notice: be careful not to confuse policies from impositions.</p>
+<p>Well, this is a list of a few things that we&#8217;ve been doing and they have worked fine for us. Also, these six practices will work a lot better if implemented together, since they leverage each other.</p>
+<p>I guess that&#8217;s it and I hope they&#8217;ll be useful or inspiring to others. Also, don&#8217;t forget to comment what you think about this small list of practices&#8230; Do you think they&#8217;ll work in your company?</p><p>The post <a href="/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/">[full-version] Six good practices that have improved our team productivity – The Plataforma Tec Way</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/01/six-good-practices-that-have-improved-our-team-productivity-plataforma-tec-full-version/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

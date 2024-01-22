@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Improving the integration between Capybara and RSpec	</title>
+	<atom:link href="/2012/06/improving-the-integration-between-capybara-and-rspec/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/06/improving-the-integration-between-capybara-and-rspec/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 23 Jun 2012 09:04:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1252</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sat, 23 Jun 2012 09:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1252</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1251&quot;&gt;revans&lt;/a&gt;.
+
+Controller tests make less sense in Rails 3 stack. For example, you cannot assert the proper HTTP headers in some cases because they are being set in a middleware, not in the controller. So while you can assert **some** of the behavior in the controller, I personally prefer it to go through my middleware stack. I reserve the (few) controller tests for fail fast tests, often using stubs to isolate the controller. In my talk to Chelimsky, we both noted this is a common subject of confusion to newcomers, but that&#039;s another discussion.
+
+--]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1251">revans</a>.</p>
+<p>Controller tests make less sense in Rails 3 stack. For example, you cannot assert the proper HTTP headers in some cases because they are being set in a middleware, not in the controller. So while you can assert **some** of the behavior in the controller, I personally prefer it to go through my middleware stack. I reserve the (few) controller tests for fail fast tests, often using stubs to isolate the controller. In my talk to Chelimsky, we both noted this is a common subject of confusion to newcomers, but that&#8217;s another discussion.</p>
+<p>&#8212;</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: revans		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1251</link>
+
+		<dc:creator><![CDATA[revans]]></dc:creator>
+		<pubDate>Fri, 22 Jun 2012 19:56:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1251</guid>
+
+					<description><![CDATA[+1]]></description>
+			<content:encoded><![CDATA[<p>+1</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Avdi Grimm		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1250</link>
+
+		<dc:creator><![CDATA[Avdi Grimm]]></dc:creator>
+		<pubDate>Fri, 22 Jun 2012 19:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1250</guid>
+
+					<description><![CDATA[+1]]></description>
+			<content:encoded><![CDATA[<p>+1</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Elliot Winkler		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1249</link>
+
+		<dc:creator><![CDATA[Elliot Winkler]]></dc:creator>
+		<pubDate>Fri, 22 Jun 2012 01:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1249</guid>
+
+					<description><![CDATA[&#062; Everything under spec/requests applies to the inner working of your application. Is it returning the proper http headers? Is this route streaming the correct JSON response? 
+
+I don&#039;t get this. Isn&#039;t this what controller tests are for?]]></description>
+			<content:encoded><![CDATA[<p>&gt; Everything under spec/requests applies to the inner working of your application. Is it returning the proper http headers? Is this route streaming the correct JSON response? </p>
+<p>I don&#8217;t get this. Isn&#8217;t this what controller tests are for?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ingemar		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1244</link>
+
+		<dc:creator><![CDATA[Ingemar]]></dc:creator>
+		<pubDate>Fri, 15 Jun 2012 19:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1244</guid>
+
+					<description><![CDATA[+1 for spec/features]]></description>
+			<content:encoded><![CDATA[<p>+1 for spec/features</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1233</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 14 Jun 2012 12:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2804#comment-1233</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1232&quot;&gt;David Chelimsky&lt;/a&gt;.
+
+&#062; Are you thinking there&#039;s nothing else we need from Rails for a Capy-specific type of group?
+
+Exactly. I cannot think of anything Rails would need to do. In my opinion, all we need from RSpec Rails is to generate a spec/features directory on install and document its purpose. Capybara would then register the appropriate hooks, as it does for spec/acceptance.
+
+I agree this is a blurry area, that&#039;s why we just need to talk about each gem responsibility, because today&#039;s issue comes exactly from Capybara and RSpec giving different roles to the same example group (i.e. spec/requests).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/06/improving-the-integration-between-capybara-and-rspec/comment-page-1/#comment-1232">David Chelimsky</a>.</p>
+<p>&gt; Are you thinking there&#8217;s nothing else we need from Rails for a Capy-specific type of group?</p>
+<p>Exactly. I cannot think of anything Rails would need to do. In my opinion, all we need from RSpec Rails is to generate a spec/features directory on install and document its purpose. Capybara would then register the appropriate hooks, as it does for spec/acceptance.</p>
+<p>I agree this is a blurry area, that&#8217;s why we just need to talk about each gem responsibility, because today&#8217;s issue comes exactly from Capybara and RSpec giving different roles to the same example group (i.e. spec/requests).</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

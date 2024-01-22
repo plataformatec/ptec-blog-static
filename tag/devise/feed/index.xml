@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>devise « Plataformatec Blog</title>
+	<atom:link href="/tag/devise/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 09 Sep 2019 13:09:08 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Improve confirmation token validation in Devise (CVE-2019-16109)</title>
+		<link>/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Fri, 06 Sep 2019 18:08:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=9287</guid>
+
+					<description><![CDATA[<p>Devise version 4.7.1 was released with a fix for an edge case that could confirm accounts by mistake. We&#8217;ll explain now in details what is the issue, how it was fixed and which actions you might want to take in your applications. Description We received a security report saying that it was possible to confirm ... <a class="read-more-link" href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">»</a></p>
+<p>The post <a href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">Improve confirmation token validation in Devise (CVE-2019-16109)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Devise version <code>4.7.1</code> was released with a fix for an edge case that could confirm accounts by mistake. We&#8217;ll explain now in details what is the issue, how it was fixed and which actions you might want to take in your applications.</p>
+
+
+
+<h2 class="wp-block-heading">Description</h2>
+
+
+
+<p>We received a security report saying that it was possible to confirm records with a blank <code>confirmation_token</code> parameter. In order words, hitting the following URL <code>/users/confirmation?confirmation_token=</code> would successfully confirm a user instead of showing a validation error &#8211; e.g. <code>Confirmation token can't be blank</code>.</p>
+
+
+
+<p>This only happens if there are <strong>records with a blank confirmation token in the database</strong>. This is because of the way the method <code><a href="https://github.com/plataformatec/devise/blob/0ea4bd70b2ca852d3314f53b62ffd9c7583c4f0d/lib/devise/models/authenticatable.rb#L274" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">find_first_by_auth_conditions</a></code> works (which is similar to ActiveRecord&#8217;s <code>#find_by</code>). It is important to mention that we haven&#8217;t found a case where Devise sets <code>confirmation_token</code> to an empty string.</p>
+
+
+
+<p>In summary, before version <code>4.7.1</code>, this is what would happen after hitting the confirmation endpoint with a blank <code>confirmation_token</code>:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">Started GET <span class="hljs-string">"/users/confirmation?confirmation_token="</span> <span class="hljs-keyword">for</span> ::<span class="hljs-number">1</span> at <span class="hljs-number">2019</span><span class="hljs-number">-09</span><span class="hljs-number">-05</span> <span class="hljs-number">10</span>:<span class="hljs-number">24</span>:<span class="hljs-number">29</span> <span class="hljs-number">-0300</span>
+Processing by Devise::ConfirmationsController<span class="hljs-comment">#show as HTML</span>
+  Parameters: {<span class="hljs-string">"confirmation_token"</span>=&gt;<span class="hljs-string">""</span>}
+  User Load (<span class="hljs-number">1.0</span>ms)  SELECT  <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span> ORDER BY <span class="hljs-string">"users"</span>.<span class="hljs-string">"id"</span> ASC LIMIT $<span class="hljs-number">2</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>], [<span class="hljs-string">"LIMIT"</span>, <span class="hljs-number">1</span>]]</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Notice that the SQL query is trying to find users with <code>confirmation_token = ""</code>.</p>
+
+
+
+<p>It&#8217;s also worth mentioning that <strong>only unconfirmed records</strong> &#8211; i.e. with <code>confirmed_at: nil</code> in the database &#8211; would be confirmed in this case. For already confirmed users, a validation error (<code>Email was already confirmed, please try signing in</code>) would be displayed.</p>
+
+
+
+<h2 class="wp-block-heading">Possible implications</h2>
+
+
+
+<p>Considering that there are records with an empty <code>confirmation_token</code> in the database, a request sending a blank parameter would confirm the first record found in the database. This means that someone&#8217;s account would be confirmed by mistake.</p>
+
+
+
+<p>A more sensible scenario is for applications that automatically sign in accounts after confirmation. That would not only confirm someone&#8217;s account but also give an attacker access to it. Although this feature is not included in Devise, we know that some applications might have it.</p>
+
+
+
+<p>For already confirmed records &#8211; i.e. with a <code>confirmed_at</code> date in the database &#8211; the validation error would be displayed, but their email would be leaked to the end user inside the form&#8217;s input.</p>
+
+
+
+<h2 class="wp-block-heading">Solution</h2>
+
+
+
+<p>The solution was to validate whether the <code>confirmation_token</code> is empty before doing any query in the database. So now, when the same endpoint is hit, nothing happens:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">Processing by Devise::ConfirmationsController<span class="hljs-comment">#show as HTML</span>
+  Parameters: {<span class="hljs-string">"confirmation_token"</span>=&gt;<span class="hljs-string">""</span>}
+Completed <span class="hljs-number">200</span> OK in <span class="hljs-number">371</span>ms (Views: <span class="hljs-number">339.0</span>ms | ActiveRecord: <span class="hljs-number">5.9</span>ms)</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And the end-user will see the validation error on the screen.</p>
+
+
+
+<p>See the <a href="https://github.com/plataformatec/devise/pull/5132" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">pull request</a> with the solution for more information.</p>
+
+
+
+<h2 class="wp-block-heading">Actions you might want to take</h2>
+
+
+
+<p>Aside from updating Devise, you might also want to check whether you have records in that state in your application. You can do that with a query like this one:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">irb(main):<span class="hljs-number">001</span>:<span class="hljs-number">0</span>&gt; User.where(confirmation_token: <span class="hljs-string">""</span>)
+  User Load (<span class="hljs-number">0.6</span>ms)  SELECT  <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span> LIMIT $<span class="hljs-number">2</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>], [<span class="hljs-string">"LIMIT"</span>, <span class="hljs-number">11</span>]]
+=&gt; <span class="hljs-comment">#&lt;ActiveRecord::Relation []&gt;</span></code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>If you get results out of this query, you might want to nullify them to avoid the confirmation by mistake:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">irb(main):<span class="hljs-number">002</span>:<span class="hljs-number">0</span>&gt; User.where(confirmation_token: <span class="hljs-string">""</span>).update(confirmation_token: nil)
+  User Load (<span class="hljs-number">0.4</span>ms)  SELECT <span class="hljs-string">"users"</span>.* FROM <span class="hljs-string">"users"</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span>  [[<span class="hljs-string">"confirmation_token"</span>, <span class="hljs-string">""</span>]]
+   (<span class="hljs-number">0.2</span>ms)  BEGIN
+  User Update (<span class="hljs-number">0.7</span>ms)  UPDATE <span class="hljs-string">"users"</span> SET <span class="hljs-string">"confirmation_token"</span> = $<span class="hljs-number">1</span>, <span class="hljs-string">"updated_at"</span> = $<span class="hljs-number">2</span> WHERE <span class="hljs-string">"users"</span>.<span class="hljs-string">"id"</span> = $<span class="hljs-number">3</span>  [[<span class="hljs-string">"confirmation_token"</span>, nil], [<span class="hljs-string">"updated_at"</span>, <span class="hljs-string">"2019-09-05 14:03:20.857488"</span>], [<span class="hljs-string">"id"</span>, <span class="hljs-number">1</span>]]
+   (<span class="hljs-number">1.2</span>ms)  COMMIT</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h2 class="wp-block-heading">Causes</h2>
+
+
+
+<p>Although we received a report where someone worked in an application that had records with a blank confirmation token in the database, no code or use case was found inside Devise that would make records end up in that state.</p>
+
+
+
+<p>If you find a case where this happens, please contact us at <a href="mailto:opensource@plataformatec.com.br">opensource@plataformatec.com.br</a> and we&#8217;ll look at it.</p>
+
+
+
+<p>Finally, we want to thank <a href="https://github.com/amangano-privy" target="_blank" rel="noreferrer noopener" aria-label="Anthony Mangano (opens in a new tab)">Anthony Mangano</a> for reporting this issue and helping with the solution.</p><p>The post <a href="/2019/09/improve-confirmation-token-validation-in-devise-cve-2019-xxxx/">Improve confirmation token validation in Devise (CVE-2019-16109)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Custom authentication methods with Devise</title>
+		<link>/2019/01/custom-authentication-methods-with-devise/</link>
+		
+		<dc:creator><![CDATA[Leonardo Tegon]]></dc:creator>
+		<pubDate>Mon, 28 Jan 2019 17:00:34 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=8512</guid>
+
+					<description><![CDATA[<p>In the past, we have been asked to include other authentication methods in Devise (e.g. token-based and magic email links). Although it might make sense to include those for some applications, there is no plan to support them in Devise. But don&#8217;t be upset, it turns out you might not need to override Devise&#8217;s SessionsController ... <a class="read-more-link" href="/2019/01/custom-authentication-methods-with-devise/">»</a></p>
+<p>The post <a href="/2019/01/custom-authentication-methods-with-devise/">Custom authentication methods with Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>In the past, we have been asked to include other authentication methods in Devise (e.g. token-based and <a href="https://github.com/plataformatec/devise/issues/4724" target="_blank" rel="noopener noreferrer">magic email links</a>). Although it might make sense to include those for some applications, there is no plan to support them in Devise.</p>
+<p>But don&#8217;t be upset, it turns out you might not need to override Devise&#8217;s <code>SessionsController</code> or monkey patch some of its internals. In this article, you&#8217;ll learn how to create a token-based authentication for a JSON API by relying on <a href="https://github.com/wardencommunity/warden/wiki/Strategies" target="_blank" rel="noopener noreferrer">Warden&#8217;s features</a>.</p>
+<h2>Disclaimers</h2>
+<h3>Warden? Huh?</h3>
+<p>This article will focus on how to include custom Warden strategies in a Rails application that uses Devise. If you want to know more about Warden strategies, I gave <a href="https://www.youtube.com/watch?v=QBJ3G40fxHg" target="_blank" rel="noopener noreferrer">a talk</a> last year at RailsConf that explains them in more details.</p>
+<h3>Show me the code!</h3>
+<p>The first part of this article will show how to set up a Rails application using Devise. If you want to skip to the token authentication part, click <a href="#the-api-token-strategy">here</a>.</p>
+<h2>Setup</h2>
+<p>Create a new Rails application (this example uses Postgres as the database to take advantage of <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier" target="_blank" rel="noopener noreferrer">UUID</a>s to generate the access tokens):</p>
+<pre><code class="bash">rails new devise-token-based-auth --database=postgresql
+</code></pre>
+<p>Add the <code>devise</code> gem to your Gemfile:</p>
+<pre><code class="ruby">gem 'devise'
+</code></pre>
+<p>Now run the Devise generators:</p>
+<pre><code class="bash">rails generate devise:install
+rails generate devise User
+</code></pre>
+<p>We are going to need a column to store the <code>api_token</code>. For this, we&#8217;ll use the <a href="https://www.postgresql.org/docs/10/pgcrypto.html" target="_blank" rel="noopener noreferrer">pgcrypto</a> extension&#8217;s <code>gen_random_uuid()</code> function.</p>
+<p>First, create a migration to enable the <code>pgcrypto</code> extension:</p>
+<pre><code class="bash">rails generate migration enable_pgcrypto_extension
+</code></pre>
+<p>Now edit the migration to call the <code>#enable_extension</code> method:</p>
+<pre><code class="ruby">class EnablePgcryptoExtension &lt; ActiveRecord::Migration[5.2]
+  def change
+    enable_extension 'pgcrypto'
+  end
+end
+</code></pre>
+<p>The database is now able to use <code>pgcrypto</code>&#8216;s functions. Now we can create a migration to add the <code>api_token</code> column:</p>
+<pre><code class="bash">rails generate migration add_api_token_to_users
+</code></pre>
+<p>Now edit the migration like the one below. Notice the default is set to <code>gen_random_uuid()</code>:</p>
+<pre><code class="ruby">class AddApiTokenToUsers &lt; ActiveRecord::Migration[5.2]
+  def change
+    add_column :users, :api_token, :string, default: -&gt; { 'gen_random_uuid()' }
+    add_index :users, :api_token, unique: true
+  end
+end
+</code></pre>
+<p>Don&#8217;t forget to create the database and run the migrations:</p>
+<pre>rails db:create db:migrate</pre>
+<p>The next step is to create a user using <code>rails console</code> and grab its <code>api_token</code>:</p>
+<pre><code class="bash">rails console
+Running via Spring preloader in process 60784
+Loading development environment (Rails 5.2.2)
+irb(main):001:0&gt; user = User.create!(email: 'bruce@wayne.com', password: '123123')
+=&gt; #
+irb(main):002:0&gt; user.reload.api_token
+=&gt; "a4839b85-4c96-4f22-96f1-c2568e5d6a7f"
+</code></pre>
+<p>It&#8217;s time to create the Warden strategy now!</p>
+<h2 id="the-api-token-strategy">The Api Token Strategy</h2>
+<p>Create a file <code>app/strategies/api_token_strategy.rb</code> with the following content:</p>
+<pre><code class="ruby">class ApiTokenStrategy &lt; Warden::Strategies::Base
+  def valid?
+    api_token.present?
+  end
+
+  def authenticate!
+    user = User.find_by(api_token: api_token)
+
+    if user
+      success!(user)
+    else
+      fail!('Invalid email or password')
+    end
+  end
+
+  private
+
+  def api_token
+    env['HTTP_AUTHORIZATION'].to_s.remove('Bearer ')
+  end
+end
+</code></pre>
+<p>In short, the strategy tries to find a user for the token sent in the <code>Authorization</code> header. If it does, it signs the user in. Otherwise, it returns an error. If you are not familiar with the <code>success!</code> and <code>fail!</code> methods, watch the talk on the start of the blog post to get a sense on how Warden works.</p>
+<p>Warden needs to know about this strategy. Create a file <code>config/initializers/warden.rb</code> with the following code:</p>
+<pre><code class="ruby">Warden::Strategies.add(:api_token, ApiTokenStrategy)
+</code></pre>
+<p>This allows Warden to recognise that it should call the <code>ApiTokenStrategy</code> when it receives the <code>:api_token</code> symbol.</p>
+<h2>Authenticating a user</h2>
+<p>Now it&#8217;s time to use the strategy. Create an <code>UsersController</code> that renders the <code>current_user</code> in JSON:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  def show
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<p>Don&#8217;t forget to add a route for this controller action. Open <code>config/routes.rb</code> in your editor and include the following:</p>
+<pre><code class="ruby">Rails.application.routes.draw do
+  devise_for :users
+  resource :user, only: :show
+end
+</code></pre>
+<p>To require authentication in the controller, the method <code>#authenticate!</code> should be called passing the desired strategy as a parameter:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  def show
+    warden.authenticate!(:api_token)
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<p>You can see that this works using a simple <code>curl</code> request:</p>
+<pre><code class="bash">curl http://localhost:3000/user -H 'Authorization: Bearer a4839b85-4c96-4f22-96f1-c2568e5d6a7f'
+
+{"id":3,"email":"bruce@wayne.com","created_at":"2018-12-26T13:45:37.473Z","updated_at":"2018-12-26T13:45:37.473Z","api_token":"a4839b85-4c96-4f22-96f1-c2568e5d6a7f"}
+</code></pre>
+<p>It is also possible to define <code>:api_token</code> as a default strategy so that it&#8217;s called when no strategy is passed as a parameter. Add the following code in the <code>config/initializers/devise.rb</code> file:</p>
+<pre><code class="ruby">Devise.setup do |config|
+   # The secret key used by Devise. Devise uses this key to generate...
+   config.warden do |manager|
+     manager.default_strategies(scope: :user).unshift :api_token
+   end
+
+# ==&gt; Mountable engine configurations...
+end
+</code></pre>
+<p>This will add the&nbsp;<code>:api_token</code> strategy in the first position, followed by Devise&#8217;s default strategies (<code>:rememberable</code> and <code>:database_authenticatable</code>).</p>
+<p>Now it&#8217;s possible to use Devise&#8217;s <code>#authenticate_user!</code> helper, and the <code>:api_token</code> will still be used:</p>
+<pre><code class="ruby">class UsersController &lt; ApplicationController
+  before_action :authenticate_user!
+
+  def show
+    render json: current_user.to_json
+  end
+end
+</code></pre>
+<h2>Summary</h2>
+<p>And&#8230; we&#8217;re done! The focus here was to show how to include custom Warden strategies in a Rails application. The example was straightforward but you can follow this structure to create custom authentication logic to suit your application&#8217;s needs.</p>
+<p>The entire application used in this article can be found in <a href="https://github.com/tegon/devise-token-based-auth" target="_blank" rel="noopener noreferrer">GitHub</a>.</p>
+
+
+<p></p><p>The post <a href="/2019/01/custom-authentication-methods-with-devise/">Custom authentication methods with Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Improve remember me cookie expiration in Devise (CVE-2015-8314)</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/</link>
+					<comments>/2016/01/improve-remember-me-cookie-expiration-in-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2016 17:10:38 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=4996</guid>
+
+					<description><![CDATA[<p>A security bug (CVE-2015-8314) has been reported in Devise&#8217;s remember me system. Devise implements the &#8220;Remember me&#8221; functionality by using cookies. While this functionality works across multiple devices, Devise ended-up generating the same cookie for all devices. Consequently, if a malicious user was able to steal a remember me cookie, the cookie could be used ... <a class="read-more-link" href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">»</a></p>
+<p>The post <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">Improve remember me cookie expiration in Devise (CVE-2015-8314)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A security bug (CVE-2015-8314) has been reported in Devise&#8217;s remember me system.</p>
+<p>Devise implements the &#8220;Remember me&#8221; functionality by using cookies. While this functionality works across multiple devices, Devise ended-up generating the same cookie for all devices. Consequently, if a malicious user was able to steal a remember me cookie, the cookie could be used to gain access to the application indefinitely unless the user changed his password (which may not be a frequent event).</p>
+<p>Although all Devise versions are vulnerable to this bug, the bug can only be exploited if the attacker can steal cookies in the first place. Regardless, we recommend all users to upgrade to the latest Devise version.</p>
+<h2>Releases</h2>
+<p>Devise 3.5.4 has been released with a fix. This release adds a timestamp to the cookie, guaranteeing cookies can be expired on a case-by-case basis instead of an all or nothing approach.</p>
+<p>We also have made <a href="https://gist.github.com/josevalim/924ce7cc4c0e5039fd79">a patch available for those running on older versions</a>.</p>
+<h2>Acknowledgements</h2>
+<p>We want to thank Alfredo Ramirez (bonds0097@gmail.com) from VSR for reporting the issue and working with us on a fix.</p><p>The post <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">Improve remember me cookie expiration in Devise (CVE-2015-8314)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/01/improve-remember-me-cookie-expiration-in-devise/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tips for keeping your Open Source Software issues tracker tidy</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/</link>
+					<comments>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 13:10:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[burnout]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[open source]]></category>
+		<guid isPermaLink="false">/?p=4004</guid>
+
+					<description><![CDATA[<p>Charlie Somerville recently tweeted he wished there was a good guide about maintaining open source software: I wish there was a good guide on maintaining OSS projects. I&#39;m a maintainer of a reasonably popular project and I have NFI what I&#39;m doing. &#8212; Charlie Somerville (@charliesome) April 26, 2014 In between consultancy jobs and building ... <a class="read-more-link" href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">»</a></p>
+<p>The post <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">Tips for keeping your Open Source Software issues tracker tidy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Charlie Somerville recently tweeted he wished there was a good guide about maintaining open source software:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p>I wish there was a good guide on maintaining OSS projects. I&#39;m a maintainer of a reasonably popular project and I have NFI what I&#39;m doing.</p>
+<p>&mdash; Charlie Somerville (@charliesome) <a href="https://twitter.com/charliesome/statuses/459937161593098241">April 26, 2014</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>In between consultancy jobs and building projects for our clients, our team is directly involved in many Open Source Projects. So after exchanging some messages, I realized it would be useful to document some of the common practices we do at Plataformatec for maintaining Open Source Software.</p>
+<p>Although this post is not a complete guide, it does share our experience of maintaining and working on the issues tracker of many projects like Rails, Simple Form, Devise, and lately Elixir.</p>
+<h2>Avoid burnout</h2>
+<p>One of the most important things when it comes to OSS is to avoid burnout. This is extremely important for small projects, which mostly depend on one or two contributors. If someone burns out in large projects, there is always someone else to take on the issues tracker and maintenance work until you gather your energy back.</p>
+<p>For small projects though, if you need to step away, it likely means the project will go unmaintained for a while, which will just make the situation worse as issues will continue to arrive.</p>
+<p>So a lot of what we will discuss here is meant to avoid burnout. Here are two examples:</p>
+<ol>
+<li>
+<p>Avoid issues from piling on &#8211; it is likely that, if the issues tracker has 30 open issues, you will feel less and less compelled to work on them;</p>
+</li>
+<li>
+<p>Learn how to say &#8220;no&#8221; &#8211; merging code or features you are not a 100% comfortable with may makes thing worse. Every time there is a bug on that particular feature, you may feel less compelled to work on it or even not be willing to improve/refactor the code in the future, etc;</p>
+</li>
+</ol>
+<p>Of course different developers have different reasons to burnout, so whenever you find yourself lacking the energy to work on a project, try to understand why the energy isn&#8217;t there and find ways to avoid the problem from repeating in the future.</p>
+<h2>Contributing.md file</h2>
+<p>If you are hosting your project on GitHub, GitHub allows you to place a <code>Contributing.md</code> file with instructions on how to contribute to the project. For example, here are the files for <a href="https://github.com/plataformatec/devise/blob/master/CONTRIBUTING.md">Devise</a> and <a href="https://github.com/elixir-lang/elixir/blob/master/CONTRIBUTING.md">Elixir</a> projects.</p>
+<p>Remember the community wants the same as you: the best for your Open Source project. So having detailed instructions on how to collaborate and contribute to the project helps both you and the community. You will have more detailed bug reports, better patches/pull requests, and other developers will find it easier to give back.</p>
+<p>However keep in mind that there will still be incomplete or wrong reports from developers that didn&#8217;t read the <code>Contributing.md</code> file. That leads us to the next tip.</p>
+<h2>ABC (Always Be Closing)</h2>
+<p>If you have ever been to a sales workshop or read about how to improve your sales skills, it is very likely you have seen Alec Baldwin&#8217;s speech from Glengarry Glen Ross:</p>
+<p><iframe width="500" height="375" src="http://www.youtube.com/embed/wVQPY4LlbJ4?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>Although we are not doing any sales here, I strongly apply the concept of &#8220;Always Be Closing&#8221; to the issues tracker. I am always, actively, closing issues. Here are the main reasons I close open issues:</p>
+<ul>
+<li>
+<p>The user has not read the <code>Contributing.md</code> and have posted a bug report without the relevant information like OS, software versions, stacktraces, etc;</p>
+</li>
+<li>
+<p>Users are asking questions on the issues tracker when a project has a specific channel for those, like a mailing list or a tag on Stack Overflow;</p>
+</li>
+<li>
+<p>The proposed feature is too complex to not be worth the time that it requires to be implemented. Or you don&#8217;t see the possibility for the feature to be implemented in a medium-term plan;</p>
+</li>
+</ul>
+<p>Usually the first thing I do in the morning is to give a quick pass at my inbox looking specifically at open issues. Issues that are invalid or that cannot be acted on are closed with the proper message. In case the user provides the missing information after a bad bug report is closed, the issue will be reopened in the next morning. This activity only takes a couple minutes of your morning, which you can do while you sip your hot coffee. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Soon after I adopted this workflow, Vasiliy Ermolovich noticed most of the time I was closing issues with similar reasons, and he has created the extremely useful <a href="https://github.com/nashby/jose-vs-oss">José vs OSS</a> project which integrates with Firefox and Chrome to help me close issues more quickly. This project has probably saved me days of work!</p>
+<h2>Ask for contributions</h2>
+<p>The community is there to help you! There are many ways you can reduce your workload by interacting with the community:</p>
+<ul>
+<li>
+<p>Depending on the project, asking a sample application to reproduce the issue is extremely helpful. A lot of bug reports are closed after the reporter tries to reproduce the issue and, in the process, they find out the bug was caused by something specific to their application. It saves you precious hours from trying to reproduce a bug that you would never find!</p>
+</li>
+<li>
+<p>If a user reports a bug, ask the user if he/she feels comfortable to send a pull request with a fix. If you have an idea of where the bug is, send the user links to the relevant part of code, and make it clear you are available in case there are any questions;</p>
+</li>
+<li>
+<p>For Elixir, we are experimenting with <a href="https://github.com/elixir-lang/elixir/issues?state=open">tagging issues with their &#8220;perceived difficulty&#8221;</a>, so users who want to contribute to the language can help you solve existing issues. I often list small/medium features we plan to tackle in there and often they are implemented by the community and sent as pull requests;</p>
+</li>
+</ul>
+<h2>Find out what works for you and the community</h2>
+<p>The important thing is to find out what works for you, the other maintainers and the community. For example, while working on Elixir, I was used to close features requests that I could see that would not be part of the language in the next 6 months, even though they were features I liked too! This eventually led to some questions from the community about the approach taken in our issues tracker.</p>
+<p>The truth is: if the feature is really useful, you will hear about it many more times! I explained the approach to the community and showed how not having such entries in the issues tracker helps us keep focus on actual bug reports and actionable tasks. Which led everyone to agree with this direction.</p>
+<p>Try things and listen to the feedback and hopefully you will find a workflow that works nicely for everyone involved!</p>
+<h2>Be nice!</h2>
+<p>Finally, be nice and be polite! Let your contributors know that you appreciate their work as much as they appreciate yours!</p>
+<p>What about you? Do you have any tips to share regarding OSS projects maintenance?</p><p>The post <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">Tips for keeping your Open Source Software issues tracker tidy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>E-mail enumeration in Devise in paranoid mode</title>
+		<link>/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 13 Nov 2013 13:26:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=3639</guid>
+
+					<description><![CDATA[<p>It has been reported that malicious users can do e-mail enumeration on sign in via timing attacks despite paranoid mode being enabled. Whenever you try to reset your password or confirm your account, Devise gives you precise information on how to proceed, if the e-mail given is valid, if the token has not expired and ... <a class="read-more-link" href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">»</a></p>
+<p>The post <a href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">E-mail enumeration in Devise in paranoid mode</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It has been reported that malicious users can do e-mail enumeration on sign in via timing attacks despite paranoid mode being enabled.</p>
+<p>Whenever you try to reset your password or confirm your account, Devise gives you precise information on how to proceed, if the e-mail given is valid, if the token has not expired and so on. This means that, by trying any given e-mail, a third-party person can know if a particular e-mail is registered in that website or not.</p>
+<p>While this is not a problem for many applications, some applications would like to keep their user information completely private, even if it means loss of usability on features like account confirmation. For such use cases, Devise supports something called paranoid mode, which has been reported to still be vulnerable to enumeration on sign in.</p>
+<h3>Releases</h3>
+<p>Only applications using Devise paranoid mode need to update. New releases have been made for Devise branches 3.2 (3.2.1), 3.1 (3.1.2), 3.0 (3.0.4) and 2.2 (2.2.8).</p>
+<p>Users running on those branches and cannot upgrade immediately can fix this issue <a href="https://gist.github.com/josevalim/1c3fb13862ae17a45acb" target="_blank">by applying this patch</a>. Users running on older versions are recommended to upgrade to a supported branch immediately.</p>
+<h3>Acknowledgements</h3>
+<p>We want to thank <a href="http://www.youdo.co.nz/" target="_blank">Tim Goddard, from YouDo Ltd</a> for reporting the issue and working with us on a fix.</p><p>The post <a href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">E-mail enumeration in Devise in paranoid mode</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Devise 3.1: Now with more secure defaults</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/</link>
+					<comments>/2013/08/devise-3-1-now-with-more-secure-defaults/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 Aug 2013 17:40:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=3598</guid>
+
+					<description><![CDATA[<p>We are glad to announce that Devise 3.1.0.rc is out. On this version, we have focused on some security enhancements regarding our defaults and the deprecation of TokenAuthenticatable. This blog post explains the rationale behind those changes and how to upgrade. Devise 3.1.0.rc runs on both Rails 3.2 and Rails 4.0. There is a TL;DR ... <a class="read-more-link" href="/2013/08/devise-3-1-now-with-more-secure-defaults/">»</a></p>
+<p>The post <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/">Devise 3.1: Now with more secure defaults</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We are glad to announce that Devise 3.1.0.rc is out. On this version, we have focused on some security enhancements regarding our defaults and the deprecation of <code>TokenAuthenticatable</code>. This blog post explains the rationale behind those changes and how to upgrade.</p>
+<p>Devise 3.1.0.rc runs on both Rails 3.2 and Rails 4.0. There is a TL;DR for upgrading at the end of this post.</p>
+<p><strong>Note:</strong> We have yanked 3.1.0.rc and released to 3.1.0.rc2 which fixes some regressions. Thanks everyone for trying out the release candidates!</p>
+<h3>Do not sign the user in after confirmation</h3>
+<p>In previous Devise versions, the user was automatically signed in after confirmation. This meant that anyone that could access the confirmation e-mail could sign into someone&#8217;s account by simply clicking the link.</p>
+<p>Automatically signing the user in could also be harmful in the e-mail reconfirmation workflow. Imagine that a user decides to change his e-mail address and, while doing so, he makes a typo on the new e-mail address. An e-mail will be sent to another address which, with the token in hands, would be able to sign in into that account.</p>
+<p>If the user corrects the e-mail straight away, no harm will be done. But if not, someone else could sign into that account and the user would not know that it happened.</p>
+<p>For this reason, <strong>Devise 3.1 no longer signs the user automatically in after confirmation</strong>. You can temporarily bring the old behavior back after upgrading by setting the following in your <code>config/initializers/devise.rb</code>:</p>
+<pre lang="ruby">
+config.allow_insecure_sign_in_after_confirmation = true
+</pre>
+<p>This option will be available only temporarily to aid migration.</p>
+<p>Thanks to <a href="http://themoll.com/">Andri Möll</a> for reporting this issue.</p>
+<h3>Do not confirm account after password reset</h3>
+<p>In previous Devise versions, resetting the password automatically confirmed user accounts. This worked fine in previous Devise versions which confirmed the e-mail just on sign up, so the e-mail both confirmation and password reset tokens would be sent to were guaranteed to be the same. With the addition of reconfirmable, this setup change and Devise will no longer confirm the account after password reset.</p>
+<p>Thanks to <a href="http://themoll.com/">Andri Möll</a> for reporting this issue and working with us on a fix.</p>
+<h3>CSRF on sign in</h3>
+<p>Devise&#8217;s sign in page was vulnerable to CSRF attacks when used with the rememberable feature. Note that the CSRF vulnerability is restricted only to the sign in page, allowing an attacker to sign the user in an account controlled by the attacker. This vulnerability does not allow the attacker to access or change a user account in any way.</p>
+<p>This issue is fixed on Devise 3.1.0 as well as 3.0.2 and 2.2.6. Users on previous Devise versions can patch their application by simply defining the following in their <code>ApplicationController</code>:</p>
+<pre lang="ruby">
+def handle_unverified_request
+  super
+  Devise.mappings.each_key do |key|
+    cookies.delete "remember_#{key}_token"
+  end
+end
+</pre>
+<p>Thanks to Kevin Dew for reporting this issue and working with us on a fix.</p>
+<h3>Store digested tokens in the database</h3>
+<p>In previous versions, Devise stored the tokens for confirmation, reset password and unlock directly in the database. This meant that somebody with read access to the database could use such tokens to sign in as someone else by, for example, resetting their password.</p>
+<p>In Devise 3.1, we store an encrypted token in the database and the actual token is sent only via e-mail to the user. This means that:</p>
+<ul>
+<li>Devise now requires a <code>config.secret_key</code> configuration. As soon as you boot your application under Devise 3.1, you will get an error with information about how to proceed;</li>
+<li>Every time the user asks a token to be resent, a new token will be generated;</li>
+<li>The Devise mailer now receives one extra token argument on each method. If you have customized the Devise mailer, you will have to update it. All mailers views also need to be updated to use <code>@token</code>, <a href="https://github.com/plataformatec/devise/blob/2a8d0f9beeb31cd2287094c5dcf843d0bd069eb8/app/views/devise/mailer/reset_password_instructions.html.erb#L5">as shown here</a>, instead of getting the token directly from the resource;</li>
+<li>Any previously stored token in the database will no longer work unless you set <code>config.allow_insecure_token_lookup = true</code> in your Devise initializer. We recomend users upgrading to set this option on production only for a couple days, allowing users that just requested a token to get their job done.</li>
+</ul>
+<p>Thanks to Stephen Touset for reporting this issue and working with us on a solution.</p>
+<h3>Token Authenticatable</h3>
+<p>Jay Feldblum also wrote to us to let us know that our tokens lookup are also vulnerable to timing attacks. Although we haven&#8217;t heard of any exploit via timing attacks on database tokens, there is a lot of research happening in this area and some attacks have been successful over the local network. For this reason, we have decided to protect applications using Devise from now on.</p>
+<p>By digesting the confirmation, reset password and unlock tokens, as described in the previous section, we automatically protected those tokens from timing attacks.</p>
+<p>However, we cannot digest the authentication token provided by <code>TokenAuthenticatable</code>, as they are often part of APIs where the token is used many times. Since the usage of the authenticatable token can vary considerably in between applications, each requiring different safety guarantees, we have decided to remove <code>TokenAuthenticatable</code> from Devise, allowing users to pick the best option. <a href="https://gist.github.com/josevalim/fb706b1e933ef01e4fb6">This gist describes two of the available solutions</a>.</p>
+<p>Thanks to Jay Feldblum for reporting this issue and working with us on a solution.</p>
+<h3>TL;DR for upgrading</h3>
+<p>As soon as you update Devise, you will get a warning asking you to set your <code>config.secret_key</code>. By upgrading Devise, your previous confirmation, reset and unlock tokens in the database will no longer work unless you set the following option to true in your Devise initializer:</p>
+<pre lang="ruby">
+config.allow_insecure_token_lookup = true
+</pre>
+<p>It is recommended to leave this option on just for a couple days, just to allow recently generated tokens by your application to be consumed by users. <code>TokenAuthenticable</code> has not been affected by those changes, however it has been deprecated and you will have to move to your <a href="https://gist.github.com/josevalim/fb706b1e933ef01e4fb6">own token authentication mechanisms</a>.</p>
+<p>Furthermore, the Devise mailer now receives an extra token argument on each method. If you have customized the Devise mailer, you will have to update it. All mailers views also need to be updated to use <code>@token</code>, <a href="https://github.com/plataformatec/devise/blob/2a8d0f9beeb31cd2287094c5dcf843d0bd069eb8/app/views/devise/mailer/reset_password_instructions.html.erb#L5">as shown here</a>, instead of getting the token directly from the resource.</p>
+<p>With those changes, we hope to provide an even more secure authentication solution for Rails developers, while maintaining the flexibility expected from Devise.</p><p>The post <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/">Devise 3.1: Now with more secure defaults</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/08/devise-3-1-now-with-more-secure-defaults/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

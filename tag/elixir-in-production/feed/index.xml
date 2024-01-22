@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>elixir in production « Plataformatec Blog</title>
+	<atom:link href="/tag/elixir-in-production/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 20 Feb 2018 17:57:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Three Adoption Stories &#8211; Adopting Elixir Free Chapter</title>
+		<link>/2018/02/three-adoption-stories-adopting-elixir-free-chapter/</link>
+		
+		<dc:creator><![CDATA[Guilherme Fernandez]]></dc:creator>
+		<pubDate>Tue, 20 Feb 2018 17:57:16 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir for beginners]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=7200</guid>
+
+					<description><![CDATA[<p>Adopting Elixir is a new book by Ben Marx, José Valim and Bruce Tate, published by The Pragmatic Programmers. PragProg has kindly agreed on giving away the first chapter for free, thus collaborating to spread knowledge about the Elixir language. Elixir is an exciting new language, but to successfully get your application from start to ... <a class="read-more-link" href="/2018/02/three-adoption-stories-adopting-elixir-free-chapter/">»</a></p>
+<p>The post <a href="/2018/02/three-adoption-stories-adopting-elixir-free-chapter/">Three Adoption Stories – Adopting Elixir Free Chapter</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong><a href="https://pragprog.com/book/tvmelixir/adopting-elixir">Adopting Elixir</a></strong><span style="font-weight: 400;"> is a new book by Ben Marx, José Valim and Bruce Tate, published by The Pragmatic Programmers. PragProg has kindly agreed on giving away the first chapter for free, thus collaborating to spread knowledge about the Elixir language. </span></p>
+<p><span style="font-weight: 400;">Elixir is an exciting new language, but to successfully get your application from start to finish, you’re going to need to know more than just the language. You need the case studies and strategies in this book. Learn the best practices for the whole life of your application, from design and team-building to managing stakeholders, to deployment and monitoring.</span></p>
+<p><span style="font-weight: 400;">What you can expect from the first chapter:</span></p>
+<p><span style="font-weight: 400;">The authors shared their adoption stories and what questions and challenges these experiences prompted.  </span></p>
+<p><span style="font-weight: 400;">The free chapter, Three Adoption Stories, covers:</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">An acquisition story &#8211; icanmakeitbetter</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Bleacher Report Improves Performance and Reliability </span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Plataformatec Supports Early Adopters</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Embracing End-To-End Adoption</span></li>
+</ul>
+<p><span style="font-weight: 400;">The book Adopting Elixir has been written for those who are adopting this new language or those who are planning to adopt it in the near future. It’s a functional, concurrent, distributed language. You will see through the chapters the whole adoption lifecycle, from concept to development and into production.</span></p>
+<p><span style="font-weight: 400;">Click the button below to get the first chapter of the book Adopting Elixir.</span></p>
+<p><a style="background-color: #67af5b; border-radius: 3px; font-family: sans-serif; display: inline-block; padding: 5px 20px; margin-bottom: 50px; text-align: center; text-decoration: none; width: auto; color: #fff;" href="http://pages.plataformatec.com.br/chapter-three-adoption-stories" target="_blank" rel="noopener noreferrer">Download <strong>Adopting Elixir&#8217;s</strong> free chapter</a> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2018/02/three-adoption-stories-adopting-elixir-free-chapter/">Three Adoption Stories – Adopting Elixir Free Chapter</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir in production interview: Adam Kittelson</title>
+		<link>/2015/08/elixir-in-production-interview-adam-kittelson/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Thu, 06 Aug 2015 20:06:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=4848</guid>
+
+					<description><![CDATA[<p>A few months ago we had the opportunity to interview Adam Kittelson about his experience using Elixir in production. Adam is a senior software engineer at Brightcove. Brightcove is a global provider of cloud solutions for delivering and monetizing video across connected devices. They&#8217;re using Elixir and Phoenix to process event streams. Watch the video ... <a class="read-more-link" href="/2015/08/elixir-in-production-interview-adam-kittelson/">»</a></p>
+<p>The post <a href="/2015/08/elixir-in-production-interview-adam-kittelson/">Elixir in production interview: Adam Kittelson</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months ago we had the opportunity to interview Adam Kittelson about his experience using Elixir in production.</p>
+<p><a href="https://twitter.com/adamkittelson">Adam</a> is a senior software engineer at Brightcove. <a href="https://www.brightcove.com/">Brightcove</a> is a global provider of cloud solutions for delivering and monetizing video across connected devices. They&#8217;re using Elixir and Phoenix to process event streams.</p>
+<p>Watch the video below or read the interview to get to know his experiences with Elixir.</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EqMJbb1oZWA?list=PLA9E5Lsig6GTR9pweHlj-S0SEtH-2ghHw" frameborder="0" allowfullscreen></iframe>
+</div>
+<p><strong>José Valim</strong>: Hi, I’m here with Adam Kittelson and we are at Erlang Factory. Adam, where do you work?</p>
+<p><strong>Adam Kittelson</strong>: I work at Brightcove, we do a lot of things with online video. I got started there by way of an acquisition. We were from a company called Zencoder, which they purchased three years ago, and we do online video transcoding as a cloud service.</p>
+<p><strong>José Valim</strong>: Cool, and I’ve heard that you are already using Elixir in production there. Can you tell us a little bit more about that?</p>
+<p><strong>Adam Kittelson</strong>: Yeah, a couple months ago &#8211; maybe four, five months ago &#8211; we started working on an application that allows our customers to subscribe to events. So, someone logs into our website and wants to make a change to some metadata on one of their videos, that generates a video change event which is already used by various services within the organisation, but we wanted to add the capability for the customer to receive a callback at an API endpoint that they control. So, we set up a Phoenix app that essentially attaches to the firehose of that entire event stream and just looks to see if the customer has a subscription to that event, and if they do, then we can send a message to their endpoint.</p>
+<p><strong>José Valim</strong>: That’s a very good use case for Elixir because sometimes you need to send tons of notification at the same time. So, if you need, you just open a bunch of connections to different clients and that would be completely ok, it’s going to definitely handle that load.</p>
+<p><strong>Adam Kittelson</strong>: Yeah, it’s no problem because subscriptions change very rarely we’re able to use ETS to cache those. We actually have a small cluster that is load balanced across but we use Phoenix PubSub to be able to communicate when to add things to the cache or to bust the cache. So we only have one cache miss per account essentially.</p>
+<p><strong>José Valim</strong>: Cool. That’s really really cool. Do you have anything to say about running Elixir in production, what was the main trigger to use Elixir?</p>
+<p><strong>Adam Kittelson</strong>: The main trigger to use Elixir was kind of unrelated to work. I saw it on Hacker News a year ago, in December, and I had been working on a Mud as a Rails app using websockets. It turns out websockets in Rails isn&#8217;t super awesome. And I started switching that over to Elixir and it has been working really really well.</p>
+<p><strong>José Valim</strong>: Awesome! Thanks a lot.</p>
+<p><a href="/subscribe/"><br />
+  <img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="margin-top:-55px;margin-bottom:15px;"/><br />
+</a></p><p>The post <a href="/2015/08/elixir-in-production-interview-adam-kittelson/">Elixir in production interview: Adam Kittelson</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir in production interview: Mickaël Rémond</title>
+		<link>/2015/08/elixir-in-production-interview-mickael-remond/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2015 21:30:29 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=4830</guid>
+
+					<description><![CDATA[<p>A few months ago we had the opportunity to interview Mickaël Rémond about his experience using Elixir in production. Mickaël is the CEO of ProcessOne. ProcessOne is the company behind ejabberd, the famous XMPP server. They&#8217;re specialized in high-performance instant messaging solutions and they integrated Elixir into ejabberd to make ejabberd development available to a ... <a class="read-more-link" href="/2015/08/elixir-in-production-interview-mickael-remond/">»</a></p>
+<p>The post <a href="/2015/08/elixir-in-production-interview-mickael-remond/">Elixir in production interview: Mickaël Rémond</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months ago we had the opportunity to interview Mickaël Rémond about his experience using Elixir in production.</p>
+<p><a href="https://twitter.com/mickael">Mickaël</a> is the CEO of ProcessOne. <a href="https://www.process-one.net/">ProcessOne</a> is the company behind <a href="https://www.ejabberd.im/">ejabberd</a>, the famous XMPP server. They&#8217;re specialized in high-performance instant messaging solutions and they integrated Elixir into ejabberd to make ejabberd development available to a larger crowd.</p>
+<p>Watch the video below or read the interview to get to know his experiences with Elixir.</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CuU7ubrLXAs?list=PLA9E5Lsig6GTR9pweHlj-S0SEtH-2ghHw" frameborder="0" allowfullscreen></iframe>
+</div>
+<p><strong>José Valim</strong>: Hi everyone, I’m here with Mickaël, one of the creators of Ejabberd. Just a couple weeks ago they announced the beginning of the integration with Elixir. Mickaël, can you tell us a bit more about what is Ejabberd and why are you excited about Elixir?</p>
+<p><strong>Mickaël Rémond</strong>: Ejabberd is a large scale messaging platform. You can build a lot of different types of system with it. You can build chat systems, game platforms, machine to machine internet of things kind of platforms. When I dug deeper into Elixir I found a great opportunity to make it a language to power Ejabberd and to make it possible to write custom systems for all these kinds of applications.</p>
+<p><strong>Mickaël Rémond</strong>: Now that Elixir is integrated into Ejabberd, it’s very easy to write a plugin where you can extend its behaviour. For example, for the internet of things it is going to be a critical step for the platform, in my opinion.</p>
+<p><strong>José Valim</strong>: Great! So, you’re bringing Elixir&#8217;s productivity and expressivity with all the power and features you have in Ejabberd, and making that available to developers.</p>
+<p><strong>Mickaël Rémond</strong>: Yeah, exactly. It was a bit difficult to develop for Ejabberd and we’re making Ejabberd development available to a larger crowd. Our goal is to make Ejabberd a platform and build an ecosystem around real time messaging in general.</p>
+<p><strong>José Valim</strong>: Awesome! Thank you very much.</p>
+<p><strong>Mickaël Rémond</strong>: Thank you.</p>
+<p><a href="/subscribe/"><br />
+  <img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="margin-top:-55px;margin-bottom:15px;"/><br />
+</a></p><p>The post <a href="/2015/08/elixir-in-production-interview-mickael-remond/">Elixir in production interview: Mickaël Rémond</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir in production interview: Jamie Winsor</title>
+		<link>/2015/08/elixir-in-production-interview-jamie-winsor/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2015 21:26:21 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=4812</guid>
+
+					<description><![CDATA[<p>A few months ago we had the opportunity to interview Jamie Winsor about his experience using Elixir in production. Jamie is a software engineer at Undead Labs. Undead Labs is game development studio, which was founded in 2009 by Jeff Strain, a former Blizzard employee and one of the co-founders of ArenaNet. They&#8217;re using Elixir ... <a class="read-more-link" href="/2015/08/elixir-in-production-interview-jamie-winsor/">»</a></p>
+<p>The post <a href="/2015/08/elixir-in-production-interview-jamie-winsor/">Elixir in production interview: Jamie Winsor</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months ago we had the opportunity to interview Jamie Winsor about his experience using Elixir in production.</p>
+<p>Jamie is a software engineer at Undead Labs. Undead Labs is game development studio, which was founded in 2009 by Jeff Strain, a former Blizzard employee and one of the co-founders of ArenaNet. They&#8217;re using Elixir to power their distributed online game platform.</p>
+<p>Watch the video below or read the interview to get to know his experiences with Elixir.</p>
+<div style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2x0Qt1pWmJM?list=PLA9E5Lsig6GTR9pweHlj-S0SEtH-2ghHw" frameborder="0" allowfullscreen></iframe>
+</div>
+<p><strong>José Valim</strong>: Hi everyone, I’m here at Erlang Factory with Jamie Winsor. Can you tell us a little bit about where do you work, what do you do?</p>
+<p><strong>Jamie Winsor</strong>: I work at Undead Labs, we work on online gaming experiences. The current game we&#8217;re working on is Moonrise, it&#8217;s currently available in closed beta on PC, Mac, iOS and Android. We are creating online gaming experiences from what originally were single player games. The previous game was State of Decay on Xbox Live arcade.</p>
+<p>My job specifically is building platform services. An online game is typically three parts. There is a game client, game server and platform. Platform is game agnostic and highly available and it’s hugely distributed. You can have any number of players connected and any number of games connected to exactly the same platform, at the same time. If you played a Blizzard game there is Battle.net, if you used League of Legends there is pvp.net. At Undead Labs we created our own platform and it’s all built on Elixir.</p>
+<p><strong>José Valim</strong>: Oh, awesome! So, you already have Elixir in production?</p>
+<p><strong>Jamie Winsor</strong>: Oh yeah, absolutely.</p>
+<p><strong>José Valim</strong>: Cool. And I think it’s a quite a while that you are running it?</p>
+<p><strong>Jamie Winsor</strong>: Yeah! So, we started using Elixir in development since v0.9.0, maybe in August 2013. We were early adopters of Ecto as well. We adopted that really early on. It&#8217;s been great to see the community and the software grow up with our platform and it seems like it was at the right time too.</p>
+<p><strong>Jamie Winsor</strong>: With Elixir, we have this language that is really approachable, that is built on top the Erlang VM and it’s also extremely extensible. It has a package manager and great tooling. And specifically why I’m excited about this is that I tried to bring Erlang to my last number of companies and it was really hard to gain adoption and get people excited about it. At Undead, we now have eight engineers that work with Elixir. It was much easier to advocate. They are from the C and  C++ background, never have done that functional programming, never had done even similar syntax like Ruby or Python. And they use this language (Elixir) and they’re really productive, they understood the process model.</p>
+<p><strong>Jamie Winsor</strong>: With Elixir you have the tooling, the syntax is actually very approachable and very familiar, the documentation is absolutely amazing and the community is super helpful.</p>
+<p><strong>José Valim</strong>: Thanks a lot.</p>
+<p><a href="/subscribe/"><br />
+  <img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="margin-top:-55px;margin-bottom:15px;"/><br />
+</a></p><p>The post <a href="/2015/08/elixir-in-production-interview-jamie-winsor/">Elixir in production interview: Jamie Winsor</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir in production interview: Bruce Tate</title>
+		<link>/2015/08/elixir-in-production-interview-bruce-tate/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 05 Aug 2015 21:24:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=4823</guid>
+
+					<description><![CDATA[<p>A few months ago we had the opportunity to interview Bruce Tate about his experience using Elixir in production. Bruce Tate is the CTO of icanmakeitbetter. icanmakeitbetter is a market research company. They&#8217;re using Elixir to power their chat service. Watch the video below or read the interview to get to know his experiences with ... <a class="read-more-link" href="/2015/08/elixir-in-production-interview-bruce-tate/">»</a></p>
+<p>The post <a href="/2015/08/elixir-in-production-interview-bruce-tate/">Elixir in production interview: Bruce Tate</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A few months ago we had the opportunity to interview Bruce Tate about his experience using Elixir in production.</p>
+<p><a href="https://twitter.com/redrapids">Bruce Tate</a> is the CTO of icanmakeitbetter. <a href="http://icanmakeitbetter.com/">icanmakeitbetter</a> is a market research company. They&#8217;re using Elixir to power their chat service.</p>
+<p>Watch the video below or read the interview to get to know his experiences with Elixir.</p>
+<div style="text-align:center">
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/CuVf33q_6UU?list=PLA9E5Lsig6GTR9pweHlj-S0SEtH-2ghHw" frameborder="0" allowfullscreen></iframe>
+</div>
+<p><strong>José Valim</strong>: Hi everyone, I’m here with Bruce Tate at Erlang Factory. Bruce, tell us a little bit more about your work, what do you do.</p>
+<p><strong>Bruce Tate</strong>: I’m Bruce Tate and I work at a market research firm called icanmakeitbetter. We do surveys, journals, and a new service called Chat, to help people learn more about their businesses.</p>
+<p><strong>José Valim</strong>: Awesome. I’ve heard you get to run Elixir in production.</p>
+<p><strong>Bruce Tate</strong>: We’re very excited to finally be running Elixir in production. We started working with our chat service in the Ruby language, but then we thought that we can’t be as efficient or as reliable as we needed to be with the new set of customers that we were bringing on. Elixir is going to give us the ability to do that.</p>
+<p><strong>José Valim</strong>: What makes you most excited about Elixir?</p>
+<p><strong>Bruce Tate</strong>: The scale that we can hit is absolutely fantastic, but to get to that scale we don’t have to compromise on the programmer productivity. We’re very small shop and we really need to be able to grow quickly and respond quickly to our customers.</p>
+<p><strong>José Valim</strong>: Thank you a lot. I hope you&#8217;re going to have tons of fun and scalability with Elixir.</p>
+<p><strong>Bruce Tate</strong>: Absolutely.</p>
+<p><a href="/subscribe/"><br />
+  <img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="margin-top:-55px;margin-bottom:15px;"/><br />
+</a></p><p>The post <a href="/2015/08/elixir-in-production-interview-bruce-tate/">Elixir in production interview: Bruce Tate</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir in production interview: Garth Hitchens</title>
+		<link>/2015/06/elixir-in-production-interview-garth-hitches/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Wed, 03 Jun 2015 14:04:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir in production]]></category>
+		<guid isPermaLink="false">/?p=4550</guid>
+
+					<description><![CDATA[<p>Elixir running in an embedded device A few weeks ago we had the opportunity to interview Garth Hitchens about his experience with shipping Elixir software. Garth manages a development team at Rose Point Navigation Systems. They’re using Elixir to develop embedded software for navigation devices for marine markets. Watch the video below or read the ... <a class="read-more-link" href="/2015/06/elixir-in-production-interview-garth-hitches/">»</a></p>
+<p>The post <a href="/2015/06/elixir-in-production-interview-garth-hitches/">Elixir in production interview: Garth Hitchens</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div class="wp-caption aligncenter">
+<img decoding="async" src="/wp-content/uploads/2015/05/elixir-embedded-device.jpg" alt="Elixir running in an embedded device"></p>
+<p class="wp-caption-text">Elixir running in an embedded device</p>
+</div>
+<p>A few weeks ago we had the opportunity to interview Garth Hitchens about his experience with shipping Elixir software.</p>
+<p>Garth manages a development team at <a href="http://rosepointnav.com/">Rose Point Navigation Systems</a>. They’re using Elixir to develop embedded software for navigation devices for marine markets.</p>
+<p>Watch the video below or read the interview to get to know his experiences with Elixir.</p>
+<div style="text-align:center">
+<iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/-qg-CbD667g?list=PLA9E5Lsig6GTR9pweHlj-S0SEtH-2ghHw" frameborder="0" allowfullscreen></iframe>
+</div>
+<p><strong>José Valim</strong>: I’m here with Garth at Erlang Factory. Garth, can you tell us a little bit about what do you do?</p>
+<p><strong>Garth Hitchens</strong>: I manage a development team at a company called Rose Point Navigation Systems and we build navigation systems for both recreational and commercial marine markets, and we are also building embedded devices. We’ve been using Elixir for our embedded device’s projects and absolutely loving it.</p>
+<p><strong>José Valim</strong>: Oh, great! So, are you already shipping Elixir software?</p>
+<p><strong>Garth Hitchens</strong>: We are shipping devices that actually run Elixir code. I have one of them here. This is an interface device that basically converts ethernet to other protocols that are common on boats (…). This runs Elixir, it boots in a few seconds and we’ve been absolutely in love with the platform, it’s been great for us.</p>
+<p><strong>José Valim</strong>: Awesome! It’s very exciting to see Elixir in there and the Erlang virtual machine and everything else, that’s really cool! And, what is the thing that you are most excited about Elixir?</p>
+<p><strong>Garth Hitchens</strong>: I think the language is particularly elegant, I get to give you credit there. I came to Elixir from a long history of programming languages including C, C++, Ruby, Python, Lisp, so I love the work macros and homoiconicity that you have done. And I like the way that it gives me powerful abstractions to rapidly develop things. Plus, the Erlang VM has been rock solid. We’re using Frank Hunleth’s <a href="http://nerves-project.org/">Nerves package</a> to embed Erlang and Elixir on these products and it works really well, and I highly recommend to anybody.</p>
+<p><strong>José Valim</strong>: Awesome. Yeah, I was just at <a href="https://www.youtube.com/watch?v=tCg1LakJF3g&amp;list=PLA9E5Lsig6GTBPb2BRf_2ONIcnRTU5Iy0&amp;index=6">Frank’s talk</a>, it was an exciting talk. And I’m planning to get some SumoBots and start to play with them.</p>
+<p><strong>Garth Hitchens</strong>: Yeah! It’s good stuff.</p>
+<p><a href="/subscribe/">Subscriber to our blog</a> to receive the next “Elixir in production” interviews.</p>
+<p><a href="http://plataformatec.com.br/elixir-radar"><br />
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br />
+</a></p><p>The post <a href="/2015/06/elixir-in-production-interview-garth-hitches/">Elixir in production interview: Garth Hitchens</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

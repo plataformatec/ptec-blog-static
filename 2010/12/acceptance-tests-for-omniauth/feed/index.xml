@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Acceptance tests for OmniAuth	</title>
+	<atom:link href="/2010/12/acceptance-tests-for-omniauth/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/12/acceptance-tests-for-omniauth/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 04 Jan 2011 07:42:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1075</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 04 Jan 2011 07:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1575#comment-1075</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1074&quot;&gt;Samson Ootoowak&lt;/a&gt;.
+
+You can check the Wiki pages for more information: https://github.com/plataformatec/devise/wiki/_pages (search for the Omniauth in it). If you still have questions, please try out Devise mailing list.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1074">Samson Ootoowak</a>.</p>
+<p>You can check the Wiki pages for more information: <a href="https://github.com/plataformatec/devise/wiki/_pages" rel="nofollow ugc">https://github.com/plataformatec/devise/wiki/_pages</a> (search for the Omniauth in it). If you still have questions, please try out Devise mailing list.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Samson Ootoowak		</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1074</link>
+
+		<dc:creator><![CDATA[Samson Ootoowak]]></dc:creator>
+		<pubDate>Tue, 04 Jan 2011 03:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1575#comment-1074</guid>
+
+					<description><![CDATA[I am using Devise 1.2.rc and Omniauth 0.2.0.beta1. I am also using Rspec-rails 2.4.1, Capybara 0.4.0 and Steak 1.0.1.
+
+Now that I got all that out of the way :) I was wondering if you had any insight on how one would leverage the short-circuit Devise provides for a Steak acceptance test.]]></description>
+			<content:encoded><![CDATA[<p>I am using Devise 1.2.rc and Omniauth 0.2.0.beta1. I am also using Rspec-rails 2.4.1, Capybara 0.4.0 and Steak 1.0.1.</p>
+<p>Now that I got all that out of the way 🙂 I was wondering if you had any insight on how one would leverage the short-circuit Devise provides for a Steak acceptance test.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Flores		</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1071</link>
+
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 11:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1575#comment-1071</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1070&quot;&gt;Myron Marston&lt;/a&gt;.
+
+Looks like a great gem! I will test it :-).]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1070">Myron Marston</a>.</p>
+<p>Looks like a great gem! I will test it :-).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Myron Marston		</title>
+		<link>/2010/12/acceptance-tests-for-omniauth/comment-page-1/#comment-1070</link>
+
+		<dc:creator><![CDATA[Myron Marston]]></dc:creator>
+		<pubDate>Tue, 28 Dec 2010 21:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1575#comment-1070</guid>
+
+					<description><![CDATA[You may also want to checkout the Faraday middleware built in to VCR.  It&#039;s an alternative to the built-in test adapter.  On the first test run, it&#039;ll record the request and response, and then automatically use that to stub the responses for future test runs.
+
+https://github.com/myronmarston/vcr
+http://relishapp.com/myronmarston/vcr/v/1-4-0/dir/middleware/faraday-middleware]]></description>
+			<content:encoded><![CDATA[<p>You may also want to checkout the Faraday middleware built in to VCR.  It&#8217;s an alternative to the built-in test adapter.  On the first test run, it&#8217;ll record the request and response, and then automatically use that to stub the responses for future test runs.</p>
+<p><a href="https://github.com/myronmarston/vcr" rel="nofollow ugc">https://github.com/myronmarston/vcr</a><br />
+<a href="http://relishapp.com/myronmarston/vcr/v/1-4-0/dir/middleware/faraday-middleware" rel="nofollow ugc">http://relishapp.com/myronmarston/vcr/v/1-4-0/dir/middleware/faraday-middleware</a></p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

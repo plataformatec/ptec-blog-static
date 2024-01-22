@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>equipe « Plataformatec Blog</title>
+	<atom:link href="/tag/equipe/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 02 Feb 2017 18:05:57 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>A síndrome do herói e como lidar com ela</title>
+		<link>/2017/02/a-sindrome-do-heroi-e-como-lidar-com-ela/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 02 Feb 2017 18:06:29 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[equipe]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<guid isPermaLink="false">/?p=6062</guid>
+
+					<description><![CDATA[<p>Em 2010, Alex Payne escreveu um post sobre a síndrome do herói para seu blog. No entanto, mesmo algumas pessoas já estando cientes de que esse problema existe, nós ainda vemos muitos heróis em projetos, e eles acabam afetando o processo de desenvolvimento. Portanto, decidimos falar um pouco mais sobre tal problema para tentar convencê-lo ... <a class="read-more-link" href="/2017/02/a-sindrome-do-heroi-e-como-lidar-com-ela/">»</a></p>
+<p>The post <a href="/2017/02/a-sindrome-do-heroi-e-como-lidar-com-ela/">A síndrome do herói e como lidar com ela</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Em 2010, Alex Payne escreveu <a href="https://al3x.net/2010/01/09/dont-be-a-hero.html">um post sobre a síndrome do herói</a> para seu blog. No entanto, mesmo algumas pessoas já estando cientes de que esse problema existe, nós ainda vemos muitos heróis em projetos, e eles acabam afetando o processo de desenvolvimento. Portanto, decidimos falar um pouco mais sobre tal problema para tentar convencê-lo de que ser um herói não é saudável para você, e nem para o seu trabalho.</p>
+<h2>Definição</h2>
+<p>Vamos começar com a definição de herói. Fazendo uma tradução livre do conteúdo do blog do Payne, temos que:</p>
+<blockquote style="border-left: solid 4px #bbb; padding-left: 15px; color: #888;"><p>
+    <cite style="font-size:1.3em;">O herói é uma pessoa que é capaz de varar noites, trabalhar de fim de semana e fazer plantões enquanto ninguém mais se prontifica.</cite>
+</p>
+</blockquote>
+<p>Então, qual o problema com heróis? Nós dividimos o problema em duas partes: saúde física e saúde do trabalho.</p>
+<h2>Saúde Física</h2>
+<p>Bom, nós não somos médicos, mas nos parece que já há informação suficiente por aí sobre os males que trabalhar em excesso pode trazer ao seu corpo.</p>
+<p>O problema de saúde, nesse caso, é relacionado às ações que o herói toma para alcançar seus objetivos: geralmente ele(a) dorme pouco e trabalha muito. Existe uma <strong>tonelada</strong> de informações na internet e até mesmo no meio acadêmico que mostram o que o vício no trabalho e a privação do sono causam ao nosso corpo. Para listar algumas dessas fontes, aqui vai uma pequena lista (em inglês):</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Effects_of_sleep_deprivation_on_cognitive_performance">Effects of sleep deprivation on cognitive performance</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1046/j.1365-2869.2000.00225.x/full">Neural basis of alertness and cognitive performance impairments during sleepiness. Effects of 24h of sleep deprivation on waking human regional brain activity</a></li>
+<li><a href="http://onlinelibrary.wiley.com/doi/10.1111/j.1365-2869.1995.tb00220.x/abstract">An overview of sleepiness and accidents</a></li>
+<li><a href="http://www.huffingtonpost.com/2014/11/07/workaholic-bad_n_6093658.html">Why Being A Workaholic Is Awful For You and Everyone Around You</a></li>
+</ul>
+<p>Além desses, o herói pode ainda sofrer por não praticar atividades físicas regulares e por não se alimentar adequadamente.</p>
+<p>E se você está pensando &#8220;Ah, mas eu bebo café&#8230; logo consigo lidar com muitos desses problemas&#8221;, aqui vai um material extra sobre os males do excesso de café no nosso organismo:</p>
+<ul>
+<li><a href="http://www.sciencedirect.com/science/article/pii/S0025619613005788">Association of Coffee Consumption With All-Cause and Cardiovascular Disease Mortality</a></li>
+<li><a href="https://www.researchgate.net/profile/Jana_Sawynok/publication/47644325_Caffeine_and_pain/links/00b49534bd0f8c8d27000000.pdf">Caffeine and pain</a></li>
+</ul>
+<h2>Saúde do trabalho</h2>
+<p>Então você faz parte da corrente <a href="https://en.wikipedia.org/wiki/YOLO_(aphorism)">YOLO</a> e não liga para sua saúde física com tanto que valha a pena. Bom, acontece que você não está apenas afetando seu corpo, mas também afetando o projeto/produto/trabalho no qual age como herói.</p>
+<p>Primeiramente, <strong>heróis não são necessários se o planejamento do projeto é feito corretamente</strong>. O que quero dizer é que ninguém planeja no ínicio do projeto que um programador trabalhará 12 horas por dia, sem descanso. Então, o que acontece é que a projeção do esforço e do tempo necessários para realizar o projeto não foi bem calculada. Nós possuímos alguns blog posts falando sobre nossas métricas e como prever o fim de um projeto:</p>
+<ul>
+<li><a href="/2016/03/why-we-love-metrics-cumulative-flow-diagrams/">Why we love metrics? Cumulative flow diagrams</a></li>
+<li><a href="/2016/02/why-we-love-metrics-throughput-and-burnup-charts/">Why we love metrics? Throughput and Burnup charts</a></li>
+<li><a href="/2016/02/why-we-love-metrics-learning-with-lead-time/">Why we love metrics? Learning with Lead time</a></li>
+<li><a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a></li>
+<li><a href="/2016/01/power-of-the-metrics-dont-use-average-to-forecast-deadlines/">Power of the metrics: Don&#8217;t use average to forecast deadlines</a></li>
+<li><a href="/2016/03/looking-at-lead-time-in-a-different-way/">Looking at lead time in a different way</a></li>
+</ul>
+<p>Além disso, quando um time contém um herói, os outros membros da equipe podem seguir dois comportamentos distintos:</p>
+<ul>
+<li>Eles podem achar que o herói vai fazer todo o trabalho árduo e, portanto, eles podem parar de se engajar tanto quanto antes e apenas realizar as tarefas mais simples.</li>
+<li>Eles podem começar a trabalhar como heróis para tentar se igualar ao primeiro, para que suas imagens não sejam ofuscadas pelo brilho do herói.</li>
+</ul>
+<p>De qualquer maneira, seu time será afetado de uma maneira negativa. Pode ser que, de início, tudo dê certo e que o time entregue tudo mais rápido. No entanto, após um tempo, a produtividade e/ou qualidade da entrega será afetada e seu time estará pior do que antes pois estará exausto.</p>
+<p>Mais ainda, existem outras consequências não comportamentais que podem afetar o seu time:</p>
+<ul>
+<li>Um herói dentro do time gerará mais trabalho para seus colegas. Existirá mais código para ser revisado, mais tarefas para testar e assim por diante. Para resumir: mais WIP (Work In Progress).
+<ul>
+<li>Pode chegar a um estado insustentável, no qual o sistema esteja sobrecarregado;</li>
+<li>Os não-heróis podem ser considerados preguiçosos ou não comprometidos, devido às comparações com o herói;</li>
+</ul>
+</li>
+<li>Dependendo da arquitetura do sistema, o código extra pode impactar o código já existente, ou pull requests ativos.
+<ul>
+<li>Pode demandar mais trabalho para resolver conflitos;</li>
+</ul>
+</li>
+</ul>
+<p>Além disso, um estudo da London School of Economics juntamente com Harvard, &#8220;<a href="http://rstb.royalsocietypublishing.org/content/371/1690/20150192">Innovation in the collective brain</a>&#8220;, fala sobre a importância do trabalho coletivo nas grandes ideias inovadoras. Nem pessoas mundialmente reconhecidas como heróis, como Einstein, Steve Jobs e Darwin, trabalharam sozinhas. Um resumo do estudo pode ser encontrado nesse post da Inc: <a href="http://www.inc.com/jessica-stillman/social-beats-smart-when-it-comes-to-creativity-new-study-says.html">The Heroic Inventor Is a Myth: Great Ideas Are Group Efforts</a>.</p>
+<h2>Lidando com heróis</h2>
+<p>Primeiramente, vamos dizer que você já notou que uma pessoa em seu time age como um herói. O que fazer sobre isso? Bom, a primeira coisa a fazer é conversar com seu gestor, ou a pessoa que reconhece os esforços do time, e mostrar a ele(a) o problema. Explicar como isso afeta seu time e tentar encorajá-lo a parar de recompensar tais atos heróicos, e até mesmo proibir horas extras desnecessárias.</p>
+<p>Se você não trabalhar com um herói ainda, faça o melhor possível para evitar o surgimento de um e planeje muito bem seu projeto. Faça projeções conscientes, com prazos factíveis. Baseie sua projeção não somente em estimativas cegas, mas em números, simulações e histórico. Se você observar, durante o projeto, que cometeu um erro na sua previsão, pare e adapte seu trabalho ou seu prazo. Nem todos os prazos são imutáveis, e nem todas as demandas são sempre necessárias. Então trabalhe arduamente para garantir que seu time está confortável com o tempo que tem.</p>
+<p>O que achou do texto? Você já viu ou foi um herói em um time? Deixe seu comentário abaixo!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2017/02/a-sindrome-do-heroi-e-como-lidar-com-ela/">A síndrome do herói e como lidar com ela</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>6 dicas para mandar bem no código do processo seletivo da Plataformatec</title>
+		<link>/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2016 16:17:33 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[equipe]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=5228</guid>
+
+					<description><![CDATA[<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com vagas abertas na Plataformatec! Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia. Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto ... <a class="read-more-link" href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">»</a></p>
+<p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><img decoding="async" style="border: 0; max-width:100% !important;" src="/wp-content/uploads/2016/03/show-me-the-code-plataformatec.png" alt="Etapa: Show me the code" /></p>
+<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com <strong><a href="https://goo.gl/xvFz6i" target="_blank">vagas abertas na Plataformatec</a></strong>!</p>
+<p>Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia.</p>
+<p>Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto por 5 etapas:</p>
+<li>Bate papo inicial</li>
+<li>Entrevista técnica</li>
+<li>Show me the code</li>
+<li>Pair Programming</li>
+<li>Proposta Financeira</li>
+<p>No <strong>Bate papo inicial</strong>, o objetivo é conhecermos melhor os candidatos e apresentarmos quem nós somos; a <strong>Entrevista técnica</strong> tem por meta avaliar o conhecimento sobre desenvolvimento web (em especial, utilizando Ruby e Rails);  já na etapa de <strong>Show me the code</strong> queremos ver seu código; no <strong>Pair programming</strong> avaliamos como os candidatos pensam e se portam ao escreverem seu código. E finalmente, com todas essas informações em mãos, conseguimos fazer a <strong>Proposta financeira</strong>.</p>
+<p>O objetivo desse post é dar dicas sobre como ir bem na terceira etapa. Como já mencionado, a etapa <strong>Show me the code</strong> é o momento que as candidatas ou os candidatos têm para demonstrarem na prática o conhecimento avaliado durante a <strong>Entrevista técnica</strong>. A pessoa precisará desenvolver um aplicativo web de escopo reduzido que deve ser feito no prazo de uma semana.</p>
+<p>Depois de entregue, o aplicativo será revisado por nosso time que buscará as boas práticas de desenvolvimento.</p>
+<p>Vou citar algumas dicas que podem te ajudar a escrever um código com mais confiança e atingir um bom resultado:</p>
+<ul>
+<li>Familiarize-se com a ferramenta</li>
+<li>Comunique-se</li>
+<li>Reflita sobre a segurança</li>
+<li>Busque a simplicidade</li>
+<li>Valorize seu frontend</li>
+<li>Dê atenção a usabilidade</li>
+</ul>
+<h2>Familiarize-se com a ferramenta</h2>
+<p>Somos uma consultoria de Ruby e Ruby On Rails e esperamos que o candidato tenha familiaridade com a tecnologia. Mesmo que você venha de outra linguagem, esperamos que você saiba desenvolver usando as funcionalidades mais comuns do framework. Recomendo ler <a href="http://guides.rubyonrails.org/" target="_blank">Ruby On Rails Guides</a> e fazer o tutorial do livro online <a href="https://www.railstutorial.org/book" target="_blank">Ruby On Rails Tutorial</a>.</p>
+<h2>Comunique-se</h2>
+<p>Comunicação é muito importante para o nosso time. Durante o desenvolvimento, pense nas pessoas que vão revisar seu aplicativo e testá-lo. Pense nelas como se elas estivessem trabalhando junto com você. Valorize suas mensagens de <em>commit</em>, diga o quê e o porquê das mudanças. Uma boa ferramenta de consulta é o <strong>GitHub</strong>, inspire-se em projetos open source que você gosta.</p>
+<h2>Reflita sobre a segurança</h2>
+<p>Um app seguro é essencial para os usuários e conta como pontos positivos. Dê uma lida no <a href="http://guides.rubyonrails.org/security.html" target="_blank">guide sobre segurança do Ruby on Rails</a> e certifique-se se as actions do seu controller estão com as permissões corretas.</p>
+<h2>Busque a simplicidade</h2>
+<p>Sabemos que o tempo para produzir o código para nossa revisão é curto, mas o escopo também não é grande. Portanto, tente não se complicar adicionando muita complexidade. Não deixe de mostrar seus pontos fortes, porém o faça de maneira simples. Por exemplo, se você não domina muito Javascript, não precisa fazer uma single page app, com um framework grande de frontend, integrado com backend Rails conectado em diversos microserviços. Faça o simples que vai dar tudo certo.</p>
+<h2>Valorize seu frontend</h2>
+<p>Nosso foco é desenvolvimento web, portanto conhecimento de HTML, CSS e Javascript são muito importantes. Esperamos que o mesmo carinho que você tem no seu código Ruby tenha também no seu código de frontend.</p>
+<p>Se você manja de HTML e CSS, aproveite essa chance. Como muitas pessoas acabam escolhendo utilizar Bootstrap, essa é a oportunidade de mostrar seu diferencial.</p>
+<h2>Dê atenção a Usabilidade</h2>
+<p>Pense nos usuários que vão usar o aplicativo que você fez. Como a pessoa irá navegar e fazer as tarefas? Está intuitivo? É bom repassar os fluxos da aplicação manualmente para ter certeza de que as pessoas que usarem o aplicativo não irão encontrar erros ou ficarão perdidas.</p>
+<p>Vale lembrar ainda que, pelo sim ou pelo não, sempre te daremos um feedback. Se por algum motivo você não for aprovada(o), te enviaremos uma lista com os pontos onde você poderia ter ido melhor e as respectivas recomendações de estudo. Trabalhe esses pontos e, quando julgar que conseguiu evoluir, se <a href="https://goo.gl/xvFz6i" target="_blank">candidate novamente no nosso processo seletivo</a>. Por curiosidade, algumas pessoas do nosso time participaram do processo seletivo mais de uma vez. Se você for aprovada(o), prometemos muitos desafios e aprendizado.</p>
+<p>Para saber mais como serão seus primeiros meses de trabalho, indico dois posts para você: <em><a href="/2014/05/1-year-working-at-plataformatec/">One year working at plataformatec</a></em> (escrito também por <a href="https://twitter.com/ulissesalmeida" target="_blank">mim</a>) e <em><a href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">What I have learned in my first three months at plataformatec</a></em> (escrito por <a href="https://twitter.com/igorflorianfs" target="_blank">Igor Florian</a>).</p>
+<p>Espero que tenha gostado dessas dicas. Se você gostou e acha que elas se relacionam com a maneira que você gosta de trabalhar, inscreva-se no nosso <a href="https://goo.gl/xvFz6i" target="_blank">processo seletivo</a>.</p>
+<p>Para outras dicas de como mandar bem no desenvolvimento de software, recomendo também dar uma olhada nas palestras <a href="https://speakerdeck.com/flaviafortes/learn-from-my-mistakes" target="_blank">Learn From My Mistakes</a> da <a href="https://twitter.com/FlaFortes" target="_blank">Flavia Fortes</a> e <a href="https://speakerdeck.com/lucas/10-coisas-que-eu-gostaria-de-ter-aprendido-mais-cedo" target="_blank">10 Coisas Que Eu Gostaria de Ter aprendido Mais Cedo</a> do <a href="https://twitter.com/lucasmazza" target="_blank">Lucas Mazza</a>.</p>
+<p>Espero ver seu código em breve <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p style="margin-bottom:5px; margin-top:50px;"><a style="cursor: pointer;" href="https://goo.gl/xvFz6i" target="_blank"><img decoding="async" style="border: 0;" src="/wp-content/uploads/2016/03/estamos-contratando-developers-plataformatec.png" alt="Participar do processo seletivo" target="_blank" /></a></p>
+<div style="text-align:center; margin-bottom:60px;font:13px arial, sans-serif; color:#999;">Quer receber mais informações sobre nossas vagas, <a href="http://eepurl.com/bS0BJr" style="color:#999; text-decoration:underline;" target="_blank">inscreva-se em nossa mailing list</a>.</div><p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

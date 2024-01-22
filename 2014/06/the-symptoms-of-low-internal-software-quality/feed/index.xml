@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: The Symptoms of Low Internal Software Quality	</title>
+	<atom:link href="/2014/06/the-symptoms-of-low-internal-software-quality/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/06/the-symptoms-of-low-internal-software-quality/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 17:47:25 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: hugobarauna		</title>
+		<link>/2014/06/the-symptoms-of-low-internal-software-quality/comment-page-1/#comment-1410</link>
+
+		<dc:creator><![CDATA[hugobarauna]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 19:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3934#comment-1410</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/06/the-symptoms-of-low-internal-software-quality/comment-page-1/#comment-1409&quot;&gt;Luiz Rocha&lt;/a&gt;.
+
+Never thought in this way, &quot;refactor&quot; as a &quot;limited-scope rewrite&quot;. Interesting point of view.
+
+
+Anything that could help people going ahead and improving their software quality is valuable.
+
+
+Thanks for sharing.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/06/the-symptoms-of-low-internal-software-quality/comment-page-1/#comment-1409">Luiz Rocha</a>.</p>
+<p>Never thought in this way, &#8220;refactor&#8221; as a &#8220;limited-scope rewrite&#8221;. Interesting point of view.</p>
+<p>Anything that could help people going ahead and improving their software quality is valuable.</p>
+<p>Thanks for sharing.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Luiz Rocha		</title>
+		<link>/2014/06/the-symptoms-of-low-internal-software-quality/comment-page-1/#comment-1409</link>
+
+		<dc:creator><![CDATA[Luiz Rocha]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 18:33:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3934#comment-1409</guid>
+
+					<description><![CDATA[Not a long ago, I stopped thinking about &quot;refactoring&quot; as a thing in itself and more of a limited-scope rewrites. In the end, is all about rewriting a piece of code, varying only how big/large the scope of this change is.
+
+
+And the reason for this is to stop having to make a &quot;choice&quot; between refactor or rewrite. Code will need to be modified to best suit the business and the development model, period. Mentally, it allowed me to focus only on the scope and not in the terminology.]]></description>
+			<content:encoded><![CDATA[<p>Not a long ago, I stopped thinking about &#8220;refactoring&#8221; as a thing in itself and more of a limited-scope rewrites. In the end, is all about rewriting a piece of code, varying only how big/large the scope of this change is.</p>
+<p>And the reason for this is to stop having to make a &#8220;choice&#8221; between refactor or rewrite. Code will need to be modified to best suit the business and the development model, period. Mentally, it allowed me to focus only on the scope and not in the terminology.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: rlmflores		</title>
+		<link>/2014/06/the-symptoms-of-low-internal-software-quality/comment-page-1/#comment-1400</link>
+
+		<dc:creator><![CDATA[rlmflores]]></dc:creator>
+		<pubDate>Tue, 24 Jun 2014 19:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3934#comment-1400</guid>
+
+					<description><![CDATA[Nice blog post Huguito!
+
+Normally, I like to use think about the parts of code mentioned on &quot;knowledge silos&quot; as snakepits: that part of your code where members on your team are afraid to even touch ot. If you have any of them on your code, and it is at least fairly important, consider giving it some attention.
+
+Also, I would add another symptom for a &quot;sick software&quot; : when it is really hard to write a test for a class (and doing so requires a lot of setup). 
+
+Last, I would add that rewriting a software is a very radical decision, and if your codebase doesn&#039;t have a nice test coverage (or documentation), you&#039;ll for sure forget to treat some cases (not to mention that would cost a lot of time, money and effort to do so). If it is possible, I would try to rewrite some parts and toggling them on whenever they&#039;re ready (even on a different application).]]></description>
+			<content:encoded><![CDATA[<p>Nice blog post Huguito!</p>
+<p>Normally, I like to use think about the parts of code mentioned on &#8220;knowledge silos&#8221; as snakepits: that part of your code where members on your team are afraid to even touch ot. If you have any of them on your code, and it is at least fairly important, consider giving it some attention.</p>
+<p>Also, I would add another symptom for a &#8220;sick software&#8221; : when it is really hard to write a test for a class (and doing so requires a lot of setup). </p>
+<p>Last, I would add that rewriting a software is a very radical decision, and if your codebase doesn&#8217;t have a nice test coverage (or documentation), you&#8217;ll for sure forget to treat some cases (not to mention that would cost a lot of time, money and effort to do so). If it is possible, I would try to rewrite some parts and toggling them on whenever they&#8217;re ready (even on a different application).</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

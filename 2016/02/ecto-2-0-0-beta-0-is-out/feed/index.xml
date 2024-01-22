@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ecto 2.0.0-beta.0 is out!	</title>
+	<atom:link href="/2016/02/ecto-2-0-0-beta-0-is-out/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/02/ecto-2-0-0-beta-0-is-out/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 02 Apr 2016 19:50:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lin He		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1587</link>
+
+		<dc:creator><![CDATA[Lin He]]></dc:creator>
+		<pubDate>Sat, 02 Apr 2016 19:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1587</guid>
+
+					<description><![CDATA[Thanks for the hard work! Love Ecto.Multi :)]]></description>
+			<content:encoded><![CDATA[<p>Thanks for the hard work! Love Ecto.Multi 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vignesh Rajagopalan		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1577</link>
+
+		<dc:creator><![CDATA[Vignesh Rajagopalan]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 07:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1577</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1576&quot;&gt;josevalim&lt;/a&gt;.
+
+Figured that out. Thanks.
+
+So basically, It used to be 
+
+setup tags do
+  ...
+end
+
+Now since there&#039;s no need to check on tags, it&#039;s just
+
+setup do
+  :ok = Ecto.Adapters.SQL.Sandbox.checkout(Demo.Repo)
+end
+
+Just wanted to leave it here]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1576">josevalim</a>.</p>
+<p>Figured that out. Thanks.</p>
+<p>So basically, It used to be </p>
+<p>setup tags do<br />
+  &#8230;<br />
+end</p>
+<p>Now since there&#8217;s no need to check on tags, it&#8217;s just</p>
+<p>setup do<br />
+  :ok = Ecto.Adapters.SQL.Sandbox.checkout(Demo.Repo)<br />
+end</p>
+<p>Just wanted to leave it here</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1575</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 07:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1575</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1570&quot;&gt;Vanceone&lt;/a&gt;.
+
+Yes, it has been merged already.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1570">Vanceone</a>.</p>
+<p>Yes, it has been merged already.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1576</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 07:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1576</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1574&quot;&gt;Vignesh Rajagopalan&lt;/a&gt;.
+
+No, you need to call &quot;:ok = Ecto.Adapters.SQL.Sandbox.checkout(Demo.Repo)&quot; as shown above in every setup.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1574">Vignesh Rajagopalan</a>.</p>
+<p>No, you need to call &#8220;:ok = Ecto.Adapters.SQL.Sandbox.checkout(Demo.Repo)&#8221; as shown above in every setup.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vignesh Rajagopalan		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1574</link>
+
+		<dc:creator><![CDATA[Vignesh Rajagopalan]]></dc:creator>
+		<pubDate>Mon, 29 Feb 2016 03:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1574</guid>
+
+					<description><![CDATA[Does this mean, the setup block in the *_case.ex files is no more necessary?
+
+because the block in on the variable tags which is unused essentially.]]></description>
+			<content:encoded><![CDATA[<p>Does this mean, the setup block in the *_case.ex files is no more necessary?</p>
+<p>because the block in on the variable tags which is unused essentially.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jamilabreu		</title>
+		<link>/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1572</link>
+
+		<dc:creator><![CDATA[jamilabreu]]></dc:creator>
+		<pubDate>Sat, 20 Feb 2016 02:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5123#comment-1572</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1571&quot;&gt;jamilabreu&lt;/a&gt;.
+
+Heads up, also need to add:
+
+{:ecto, github: &quot;elixir-lang/ecto&quot;, override: true}
+
+to mix.exs. Otherwise throws:
+
+** (UndefinedFunctionError) undefined function XXXX.Repo.__adapter__/0
+
+on create.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/02/ecto-2-0-0-beta-0-is-out/comment-page-1/#comment-1571">jamilabreu</a>.</p>
+<p>Heads up, also need to add:</p>
+<p>{:ecto, github: &#8220;elixir-lang/ecto&#8221;, override: true}</p>
+<p>to mix.exs. Otherwise throws:</p>
+<p>** (UndefinedFunctionError) undefined function XXXX.Repo.__adapter__/0</p>
+<p>on create.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

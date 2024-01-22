@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>blocks « Plataformatec Blog</title>
+	<atom:link href="/tag/blocks/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 01 Jul 2014 14:31:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Ruby blocks precedence</title>
+		<link>/2014/07/ruby-blocks-precedence/</link>
+					<comments>/2014/07/ruby-blocks-precedence/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 01 Jul 2014 12:00:24 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[blocks]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=4102</guid>
+
+					<description><![CDATA[<p>When we start programming with Ruby, one of the first niceties we learn about are the Ruby blocks. In the beginning it&#8217;s easy to get tricked by the two existing forms of blocks and when to use each: %w(a b c).each { &#124;char&#124; puts char } %w(a b c).each do &#124;char&#124; puts char end The ... <a class="read-more-link" href="/2014/07/ruby-blocks-precedence/">»</a></p>
+<p>The post <a href="/2014/07/ruby-blocks-precedence/">Ruby blocks precedence</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When we start programming with Ruby, one of the first niceties we learn about are the Ruby blocks. In the beginning it&#8217;s easy to get tricked by the two existing forms of blocks and when to use each:</p>
+<pre lang="ruby">
+%w(a b c).each { |char| puts char }
+%w(a b c).each do |char| puts char end
+</pre>
+<p>The Ruby Community has sort of created a &#8220;guideline&#8221; for when to use one versus another: for short or inline blocks, use curly brackets <code>{..}</code>, for longer or multiline blocks, use the <code>do..end</code> format. But did you know there is actually a slight difference between them? So sit tight, we&#8217;ll cover it now.</p>
+<h2>Operators Precedence</h2>
+<p>Languages contain operators, and these operators must obey a precedence rule so that the interpreter knows the order of execution, which means one operator will be executed first if it has higher precedence than others in a piece of code. Consider the following example:</p>
+<pre lang="ruby">
+a || b && c
+</pre>
+<p>What operation gets executed first, <code>a || b</code>, or <code>b &amp;&amp; c</code>? This is where operator precedence takes action. In this case, the code is the same as this:</p>
+<pre lang="ruby">
+a || (b && c)
+</pre>
+<p>Which means <code>&amp;&amp;</code> has higher precedence than <code>||</code> in Ruby. However, if you want the condition <code>a || b</code> to be evaluated first, you can enforce it with the use of <code>()</code>:</p>
+<pre lang="ruby">
+(a || b) && c
+</pre>
+<p>This way you are explicitly telling the interpreter that the condition inside the <code>()</code> should be executed first.</p>
+<h2>What about blocks?</h2>
+<p>It turns out blocks have precedence too! Lets see an example that mimics the Rails router with the <a href="http://api.rubyonrails.org/classes/ActionDispatch/Routing/Redirection.html#method-i-redirect"><code>redirect</code></a> method:</p>
+<pre lang="ruby">
+def get(path, options = {}, &block)
+  puts "get received block? #{block_given?}"
+end
+
+def redirect(&block)
+  puts "redirect received block? #{block_given?}"
+end
+
+puts '=> brackets { }'
+get 'eggs', to: redirect { 'eggs and bacon' }
+
+puts
+
+puts '=> do..end'
+get 'eggs', to: redirect do 'eggs and bacon' end
+</pre>
+<p>This example shows a rather common code in Rails apps: a <code>get</code> route that redirects to some other route in the app (some arguments from the real <code>redirect</code> block were omitted for clarity). And all these methods do is outputting whether they received a block or not.</p>
+<p>At a glance these two calls to <code>get + redirect</code> could be considered exact the same, however they behave differently because of the blocks precedence. Can you guess what&#8217;s the output? Take a look:</p>
+<pre lang="bash">
+=> brackets {..}
+redirect received block? true
+get received block? false
+
+=> do..end
+redirect received block? false
+get received block? true
+</pre>
+<p>The curly brackets have higher precedence than the <code>do..end</code>, which means the block with <code>{..}</code> will attach to the inner method, in this example <code>redirect</code>, whereas the <code>do..end</code> will attach to the outer method, <code>get</code>.</p>
+<h2>Wrapping up</h2>
+<p>This blog post originated from a <a href="https://github.com/rails/rails/issues/8160">real Rails issue</a>, where you can read a little bit more about the subject and see that even Rails got it wrong in its documentation (which is now fixed). The precedence is a subtle but important difference between <code>{..}</code> and <code>do..end</code> blocks, so be careful not to be caught off guard by it.</p>
+<p><em>Do you know any other interesting fact about Ruby blocks that people may not be aware of? Or maybe you learned something tricky about Ruby recently? Please share it on the comments section, we would love to hear.</em></p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span><br />
+<!-- end HubSpot Call-to-Action Code --></p><p>The post <a href="/2014/07/ruby-blocks-precedence/">Ruby blocks precedence</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/07/ruby-blocks-precedence/feed/</wfw:commentRss>
+			<slash:comments>11</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Active Record loves blocks</title>
+		<link>/2012/07/active-record-loves-blocks/</link>
+					<comments>/2012/07/active-record-loves-blocks/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 18 Jul 2012 19:46:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[blocks]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=2949</guid>
+
+					<description><![CDATA[<p>When creating an Active Record object, either by using `new` or `create`/`create!`, or even through a `belongs_to` or `has_many` association, you can give a block straight to the method call instead of relying on `tap`. It is possible to avoid doing manual work, sometimes simple stuff such as using `tap` with methods like these, or sometimes more complicated things, by getting to know what a framework like Rails can give us for free.</p>
+<p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;d like to start with a question: Have you ever seen code like this?</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+end
+
+User.new.tap do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>I have. But what few developers know is that many methods in Active Record already accept a block, so you don't need to invoke <code>tap</code> in the first place. And that's all because Active Record loves blocks! Let's go through some examples.</p>
+<h3>Using blocks with Active Record</h3>
+<p>When creating an Active Record object, either by using <code>new</code> or <code>create</code>/<code>create!</code>, you can give a block straight to the method call instead of relying on <code>tap</code>:</p>
+<pre lang="ruby">
+User.new do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+
+User.create do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>And you can mix and match with hash initialization:</p>
+<pre lang="ruby">
+User.new(name: "John Doe") do |user|
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>All these methods, when receiving a block, <a href="https://github.com/rails/rails/blob/v3.2.6/activerecord/lib/active_record/base.rb#L500"><code>yield</code> the current object to the block</a> so that you can do whatever you want with it. It's basically the same effect as using <code>tap</code>. And it all happens after the attributes hash have been assigned and other internal Active Record code has been run during the object initialization, except by the <code>after_initialize</code> callbacks.</p>
+<p>That's neat. That means we can stop using <code>tap</code> in a few places now. But wait, there's more.</p>
+<h3>Active Record associations also love blocks</h3>
+<p>We talked about using blocks when building an Active Record object using <code>new</code> or <code>create</code>, but associations like <code>belongs_to</code> or <code>has_many</code> also work with that, when calling <code>build</code> or <code>create</code> on them:</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+  has_many :posts
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
+end
+
+# has_many
+user = User.first
+user.posts.build do |post|
+  post.title = "Active Record <3 Blocks"
+  post.body  = "I can give tap a break! <3 <3 <3"
+end
+
+# belongs_to
+post = Post.first
+post.build_user do |user|
+  user.name     = "John Doe <3 blocks"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>That's even better. That means we can stop using <code>tap</code> in a few more places.</p>
+<h3>Wrapping up: Active Record &lt;3 blocks</h3>
+<p>It is possible to avoid extra work, sometimes simple stuff such as using <code>tap</code> with methods like <code>new</code> and <code>create</code>, other times more complicated ones, by getting to know what the framework can give us for free.</p>
+<p>There are other places inside Active Record that accept blocks, for instance <code> first_or_initialize</code> and friends will execute the given block when the record is not found, to initialize the new one.</p>
+<p>In short, next time you need a block when creating records using Active Record, take a minute to see if you can avoid using <code>tap</code> by using an already existing feature. Remember: Active Record &lt;3 blocks. And don't do that with blocks only, the main idea here is that you can learn more about the framework, and let it do more work for you.</p>
+<p>How about you, do you have any small trick in Ruby or Rails that makes your work easier? Take a minute to share it with others in the comments. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/active-record-loves-blocks/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

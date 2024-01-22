@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: The new HTML sanitizer in Rails 4.2	</title>
+	<atom:link href="/2014/07/the-new-html-sanitizer-in-rails-4-2/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 20 Aug 2014 15:20:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Yorick		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1435</link>
+
+		<dc:creator><![CDATA[Yorick]]></dc:creator>
+		<pubDate>Wed, 20 Aug 2014 15:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1435</guid>
+
+					<description><![CDATA[Is this meant to be working in rails 4.2? I tried calling sanitize but i think it still calls the old deprecated sanitizer. If you look here (https://github.com/rails/rails-html-sanitizer/blob/master/lib/rails-html-sanitizer.rb#L33) it tries to override sanitizer_vendor but this method lives in the ClassMethods module so it has no effect.]]></description>
+			<content:encoded><![CDATA[<p>Is this meant to be working in rails 4.2? I tried calling sanitize but i think it still calls the old deprecated sanitizer. If you look here (<a href="https://github.com/rails/rails-html-sanitizer/blob/master/lib/rails-html-sanitizer.rb#L33" rel="nofollow ugc">https://github.com/rails/rails-html-sanitizer/blob/master/lib/rails-html-sanitizer.rb#L33</a>) it tries to override sanitizer_vendor but this method lives in the ClassMethods module so it has no effect.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rafael Mendonça França		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1434</link>
+
+		<dc:creator><![CDATA[Rafael Mendonça França]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 23:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1434</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1433&quot;&gt;Mark Nadig&lt;/a&gt;.
+
+This seems a cool project. Maybe we will have an adapter for it on Rails later.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1433">Mark Nadig</a>.</p>
+<p>This seems a cool project. Maybe we will have an adapter for it on Rails later.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mark Nadig		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1433</link>
+
+		<dc:creator><![CDATA[Mark Nadig]]></dc:creator>
+		<pubDate>Mon, 18 Aug 2014 23:40:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1433</guid>
+
+					<description><![CDATA[Just saw this today, https://github.com/rgrove/sanitize/blob/master/COMPARISON.md any thoughts?]]></description>
+			<content:encoded><![CDATA[<p>Just saw this today, <a href="https://github.com/rgrove/sanitize/blob/master/COMPARISON.md" rel="nofollow ugc">https://github.com/rgrove/sanitize/blob/master/COMPARISON.md</a> any thoughts?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rafael Mendonça França		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1429</link>
+
+		<dc:creator><![CDATA[Rafael Mendonça França]]></dc:creator>
+		<pubDate>Wed, 30 Jul 2014 16:31:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1429</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1428&quot;&gt;Isaac Andrade&lt;/a&gt;.
+
+It should be. The Public API is the same and the result in most case are also the same.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1428">Isaac Andrade</a>.</p>
+<p>It should be. The Public API is the same and the result in most case are also the same.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Isaac Andrade		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1428</link>
+
+		<dc:creator><![CDATA[Isaac Andrade]]></dc:creator>
+		<pubDate>Wed, 30 Jul 2014 15:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1428</guid>
+
+					<description><![CDATA[Is the change compatible with Rails 4.1?]]></description>
+			<content:encoded><![CDATA[<p>Is the change compatible with Rails 4.1?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rafael Mendonça França		</title>
+		<link>/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1426</link>
+
+		<dc:creator><![CDATA[Rafael Mendonça França]]></dc:creator>
+		<pubDate>Mon, 28 Jul 2014 14:51:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4134#comment-1426</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1425&quot;&gt;Micah Geisel&lt;/a&gt;.
+
+We do avoid adding native dependencies on the Rails framework but for his case we chose to use they because Nokogiri bundle the dependencies inside the gem and it also already has binary distributions to JRuby and Windows platforms.
+
+
+The easy to start / development workflow should not change.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/comment-page-1/#comment-1425">Micah Geisel</a>.</p>
+<p>We do avoid adding native dependencies on the Rails framework but for his case we chose to use they because Nokogiri bundle the dependencies inside the gem and it also already has binary distributions to JRuby and Windows platforms.</p>
+<p>The easy to start / development workflow should not change.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

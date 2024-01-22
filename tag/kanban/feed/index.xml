@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>kanban « Plataformatec Blog</title>
+	<atom:link href="/tag/kanban/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 13 Oct 2017 16:13:56 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Estamos patrocinando o Lean Kanban Brazil 2017</title>
+		<link>/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/</link>
+		
+		<dc:creator><![CDATA[Sheila Chang]]></dc:creator>
+		<pubDate>Fri, 13 Oct 2017 16:13:18 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[gestão]]></category>
+		<category><![CDATA[kanban]]></category>
+		<guid isPermaLink="false">/?p=6774</guid>
+
+					<description><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência aqui no blog e no conteúdo dos nossos materiais. Tudo grátis! 😉 Nossa contribuição se expandiu. Palestras e workshops em eventos agile ... <a class="read-more-link" href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">»</a></p>
+<p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A Plataformatec nasceu ágil e, ao longo de 9 anos, experimentamos diferentes metodologias, adaptamos, aprimoramos, mixamos. Todo esse conhecimento não poderia ficar somente dentro da empresa. É nossa cultura compartilhar. Então, deixamos público nossa experiência <a href="/tag/agile/">aqui no blog</a> e no conteúdo dos <a href="/materiais-de-metodologias-ageis/">nossos materiais</a>. Tudo grátis! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Nossa contribuição se expandiu. Palestras e workshops em eventos agile tornaram-se parte das atividades do nosso time, e para firmar nosso compromisso com a comunidade ágil, estamos patrocinando o <a href="http://leankanban.com.br/">Lean Kanban Brazil 2017</a>. \o/</p>
+<p><img decoding="async" class="alignleft size-full wp-image-6778" src="/wp-content/uploads/2017/10/logo-lean-kanban-brazil.png" alt="Lean Kanban Brazil" width="250" height="77" /></p>
+<h2>Lean Kanban Conferences</h2>
+<p>A <em><a href="http://leankanban.com/events/">Lean Kanban Conferences Internacional</a></em> apoia conferências em diversos países, e Brasil está na lista. Com temas relacionados a <strong>gestão</strong>, a <a href="http://leankanban.com.br/programa/">programação da segunda edição brasileira</a> está dividida em três.</p>
+<h3>1. Webinars</h3>
+<p>Democrático e inclusivo, a organização preocupou-se em eliminar a restrição geográfica. Quem não pode participar do evento em São Paulo, tem opção de webinars pré-conferência.</p>
+<p><img decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/breno-campos.png" alt="Breno Campos" width="110" height="110" /> No dia <strong>17/10</strong>, nosso carismático <em>agile consultant</em>, <strong>Breno Campos</strong> falará sobre priorização de backlog e desenvolvimento de produtos/plataformas digitais no webinar <em><strong>Cost of Delay &#8211; Você perde por esperar</strong></em>. Ele vai mostrar que atrasos de projetos significam perda de grana $$$. Você levará um choque de realidade. o.O</p>
+<h3 style="clear: both;">2. Workshops</h3>
+<p>6 workshops focados em gestão, com duração de 4 horas, ocuparão salas no Espaço Franklin Covey (<a href="https://goo.gl/maps/oC6M4wLgwgs">mapa</a>).</p>
+<p><img decoding="async" style="display: inline !important; float: right; margin: 0 12px 0 5px !important;" src="/wp-content/uploads/2017/01/raphael-albino.png" alt="Raphael Albino" width="110" height="110" />Claro que o <strong>Raphael Albino</strong> &#8212; professor, mestre, doutorando, <a href="/2017/06/estamos-lancando-mais-um-livro-metricas-ageis-do-nosso-consultor-raphael-albino/">autor de livro</a> e nosso <em>agile consultant</em> &#8212; estará lá no dia <strong>27/10</strong> promovendo o workshop <em><strong>Vamos falar sobre Métricas de Processo?</strong></em> Você não terá moleza. Vai por a mão na massa, praticar de verdade! Se conhecimento é poder, você será poderoso(a) depois dessa aula. :bulb:</p>
+<h3 style="clear: both;">3. Palestras</h3>
+<p>Estão dividas em 2 tracks, marcadas para o dia <strong>28/10</strong>, no Grand Mercure Ibirapuera (<a href="https://goo.gl/maps/RqGJaxax8Ls">mapa</a>). Você terá oportunidade para networking nos coffee-breaks e almoço.</p>
+<p>Pensa que acabou? Tem mais!</p>
+<h2>Nosso estande</h2>
+<p>Vamos compartilhar mais conhecimento nas <strong><em>Coaching Sessions</em></strong> que teremos no nosso estande.</p>
+<p>Sério! Será imperdível! Sabe por quê? Porque não são <em>coaching sessions</em> sobre o que queremos ensinar. Abordaremos O QUE VOCÊ QUER APRENDER!</p>
+<p>Para isso, você precisa nos ajudar a te ajudar <small>(Tropa de Elite, caveiraaa!)</small>. Como? Basta responder <a href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=link">neste formulário</a> o tema do seu interesse.</p>
+<p>Você quer o &#8220;faz-me rir&#8221; <small>(faca na caveira)</small>? Que tal 20% de desconto na compra da entrada?</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; font: bold 12px arial; line-height: 1.8; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase;" href="http://pages.plataformatec.com.br/lean-kanban-2017-com-20-de-desconto?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=lkbr-2017-desconto&amp;utm_content=button" target="_blank" rel="noopener">Clique aqui e responda o que você quer ver nas Coaching Sessions</a></p>
+<div style="height: 60px;"></div><p>The post <a href="/2017/10/estamos-patrocinando-o-lean-kanban-brazil-2017/">Estamos patrocinando o Lean Kanban Brazil 2017</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Lead Time Experiment: Calculating Lead Time of the whole process</title>
+		<link>/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 06 Oct 2016 14:09:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[kanban]]></category>
+		<guid isPermaLink="false">/?p=5743</guid>
+
+					<description><![CDATA[<p>As you might have noticed, we have been testing new methodologies on our projects in order to improve them and be more agile. We started using Monte Carlo Simulation (Forecasting software project’s completion date through Monte Carlo Simulation), limiting the WIP of our process (Case Study of a WIP Limit Implementation: Why, When and How ... <a class="read-more-link" href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">»</a></p>
+<p>The post <a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">Lead Time Experiment: Calculating Lead Time of the whole process</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>As you might have noticed, we have been testing new methodologies on our projects in order to improve them and be more agile. We started using Monte Carlo Simulation (<a href="/2016/08/forecasting-software-projects-completion-date-through-monte-carlo-simulation/">Forecasting software project’s completion date through Monte Carlo Simulation</a>), limiting the WIP of our process (<a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a>) and now we would like to open a discussion on lead time boundaries &#8211; in which step of our process to start and end lead time (LT) measurement.</p>
+<p>We, at Plataformatec, used to measure LT by calculating the time that a story would take to move from a &#8220;Developing&#8221; column until the end, usually the &#8220;Done&#8221; column, which means that the story is in production. However, a past project made us question that definition.</p>
+<p>We had a project in which the bottleneck of the process was <em>before</em> the developing process: the UX designing phase. We couldn&#8217;t see it in numbers, because it was not being measured. The only way it was possible to spot it was based on the team&#8217;s feelings. After the successful end of the project, we had an internal retrospective ceremony in which we&#8217;ve stated that if we had concrete information on the UX phase, we would be able to act on it earlier.</p>
+<p>One of the alternatives that we found, would be to measure the LT of the whole process, from &#8220;Input&#8221; to &#8220;Done&#8221;. And that is what we did in our latest project, the new <a href="plataformatec.com.br/elixir-radar">Elixir Radar</a> channel project, and we would like to share our insights on it.</p>
+<h2>The Experiment</h2>
+<p>The project had the following Kanban board at the beginning:</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/10/kanban1.png" alt="Initial Kanban Board" /></p>
+<p>We defined our LT as the time a story would take to go from &#8220;Refining&#8221; until &#8220;Done&#8221;. We chose &#8220;Refining&#8221; instead of &#8220;Input&#8221; because at that moment, we would only start working on a story from &#8220;Refining&#8221; on.</p>
+<p>However, we saw that we still could not answer a question: <em>&#8220;What are the next X stories that you want to be done in Y weeks?&#8221;</em>. To do that we would need to limit the WIP of the &#8220;Input&#8221; column and start measuring the LT starting at that same column. So, as we explained in our wip-limit blog post, we limited the &#8220;Input&#8221; WIP, we cut off the &#8220;Refining&#8221; column, since a card would stay on it only for a few minutes (in our team a refining meeting had a very low cost to be done), and we started calculating the LT from &#8220;Input&#8221;.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/10/kanban2.png" alt="Kanaban Board with Wip Limit" /></p>
+<h2>Results</h2>
+<p>One of the results that we got from those changes was the fact that now we could inform the client (or the Product Owner) how much time it would take us to deliver something that he asked for. We believe that information is what really matters to him/her. Measuring from &#8220;Developing&#8221; to &#8220;Done&#8221; would not satisfy the P.O.&#8217;s question, because a lot of work is done before a feature is ready for development.</p>
+<p>This little change in the measuring process also gave us extra information on the Lead Time Breakdown chart. As we could now see the amount of time spent in early stages of the process, we could also limit the WIP in columns like &#8220;Ready to UX&#8221; and &#8220;Ready to Dev&#8221;, which has lessened the time spent on those columns and reduced the total LT.</p>
+<p><img decoding="async" src="/wp-content/uploads/2016/10/LeadTimeBreakdown1.png" alt="Lead Time Breakdown" /></p>
+<p>This extra information also helps the communication with high-level stakeholders that want to know where the time is being spent in your project.</p>
+<p>We also noticed that extending the LT to all the parts of the process reinforced the image that everyone is working <strong>together</strong> on the project. That made the PO and UX designer of the project get much closer to the rest of the team.</p>
+<p>On the other hand, it is important to say that measuring earlier stages of the process may scare the team at first, because the LT values will grow. The industry is used to have the feeling of productivity related to developing, testing and deploying cycle.</p>
+<p>Therefore, we think that instead of making a complete transition from a developing-to-end LT to a whole-process LT, one should actually maintain both metrics at the same time. With both, you can still control your development team improvements (with all the historical data that you already have) and start monitoring the rest of the process.</p>
+<p>We also had an insight that it may also make sense to calculate the LT of sub processes that make up a work system. For example, one could possibly calculate an UX LT by measuring the amount of time that a story spends to go through all stages related to UX. But that&#8217;s a subject for another blog post&#8230;</p>
+<p>What about you? How do you measure lead time? Did you like our approach? Tell us what you think in the comments below.</p>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=monte-carlo-spreadsheet&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"/></a>
+</div><p>The post <a href="/2016/10/lead-time-experiment-calculating-lead-time-of-the-whole-process/">Lead Time Experiment: Calculating Lead Time of the whole process</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to quit the Elixir shell (IEx)?	</title>
+	<atom:link href="/2016/03/how-to-quit-the-elixir-shell-iex/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/03/how-to-quit-the-elixir-shell-iex/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 18 Mar 2016 22:35:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Andre Uratsuka Manoel		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1586</link>
+
+		<dc:creator><![CDATA[Andre Uratsuka Manoel]]></dc:creator>
+		<pubDate>Fri, 18 Mar 2016 22:35:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1586</guid>
+
+					<description><![CDATA[I&#039;m sure it works to get you out of iex. Ctrl- is usually mapped to the KILL signal, so it may not only end the session, but also generate a core dump.]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m sure it works to get you out of iex. Ctrl- is usually mapped to the KILL signal, so it may not only end the session, but also generate a core dump.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Onorio Catenacci		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1585</link>
+
+		<dc:creator><![CDATA[Onorio Catenacci]]></dc:creator>
+		<pubDate>Fri, 18 Mar 2016 17:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1585</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1580&quot;&gt;VinceP&lt;/a&gt;.
+
+I use iex in a regular command window all the time.  In fact I find werl a bit clumsy.  Different strokes, I guess.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1580">VinceP</a>.</p>
+<p>I use iex in a regular command window all the time.  In fact I find werl a bit clumsy.  Different strokes, I guess.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1582</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Fri, 04 Mar 2016 10:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1582</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1581&quot;&gt;billstclair&lt;/a&gt;.
+
+You can use `System.halt` which uses Elixir&#039;s module. The trouble with such command though is that it will shut down the node you are currently connected to on remote cases instead of just exiting the shell.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1581">billstclair</a>.</p>
+<p>You can use `System.halt` which uses Elixir&#8217;s module. The trouble with such command though is that it will shut down the node you are currently connected to on remote cases instead of just exiting the shell.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: billstclair		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1581</link>
+
+		<dc:creator><![CDATA[billstclair]]></dc:creator>
+		<pubDate>Fri, 04 Mar 2016 03:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1581</guid>
+
+					<description><![CDATA[:erlang.halt]]></description>
+			<content:encoded><![CDATA[<p>:erlang.halt</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: VinceP		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1580</link>
+
+		<dc:creator><![CDATA[VinceP]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2016 22:34:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1580</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1579&quot;&gt;Roberto Nogueira&lt;/a&gt;.
+
+For Windows use iex --werl as then you get working tab completion and some other features in a full Erlang window.  To quit that use Control + G then &#039;q&#039;uit.  I would say don&#039;t bother using iex in a normal command window as it&#039;s too frustrating to be useful.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1579">Roberto Nogueira</a>.</p>
+<p>For Windows use iex &#8211;werl as then you get working tab completion and some other features in a full Erlang window.  To quit that use Control + G then &#8216;q&#8217;uit.  I would say don&#8217;t bother using iex in a normal command window as it&#8217;s too frustrating to be useful.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Roberto Nogueira		</title>
+		<link>/2016/03/how-to-quit-the-elixir-shell-iex/comment-page-1/#comment-1579</link>
+
+		<dc:creator><![CDATA[Roberto Nogueira]]></dc:creator>
+		<pubDate>Thu, 03 Mar 2016 20:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5144#comment-1579</guid>
+
+					<description><![CDATA[In Windows (Cygwin) this is not working.]]></description>
+			<content:encoded><![CDATA[<p>In Windows (Cygwin) this is not working.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

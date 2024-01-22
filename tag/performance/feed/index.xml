@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>performance « Plataformatec Blog</title>
+	<atom:link href="/tag/performance/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 06 Aug 2017 08:04:22 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>The fallacies of web application performance</title>
+		<link>/2017/07/the-fallacies-of-web-application-performance/</link>
+					<comments>/2017/07/the-fallacies-of-web-application-performance/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 26 Jul 2017 19:00:03 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[performance]]></category>
+		<guid isPermaLink="false">/?p=6554</guid>
+
+					<description><![CDATA[<p>Web application performance has always been a hot topic, especially in regards to the role frameworks play in it. It is common to run into fallacies when those discussions arise and the goal of this article is to highlight some of those. While I am obviously biased towards Elixir and the role it plays in ... <a class="read-more-link" href="/2017/07/the-fallacies-of-web-application-performance/">»</a></p>
+<p>The post <a href="/2017/07/the-fallacies-of-web-application-performance/">The fallacies of web application performance</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Web application performance has always been a hot topic, especially in regards to the role frameworks play in it. It is common to run into fallacies when those discussions arise and the goal of this article is to highlight some of those.</p>
+<p>While I am obviously biased towards Elixir and the role it plays in the performance of web applications, I will do my best to explore fallacies that overplay and underplay the role of performance in web applications. I will also focus exclusively on the server-side of things (which, in many cases, is a fallacy in itself).</p>
+<h2>Fallacy 1: Performance is only a production concern</h2>
+<p>In my opinion, the most worrisome aspect of performance discussions is that they tend to focus exclusively on production numbers. However, performance drastically affects development and can have a large impact on developers. The most obvious examples I give in my presentations are compilation times and/or application boot times: an application that takes 2 seconds to boot compared to one that takes 10 seconds has very different effects on the developer experience.</p>
+<p>Even response times have direct impact on developers. Imagine web application A takes 10ms on average per request. Web application B takes 50ms. If you have 100 tests that exercise your application, which is not a large number by any measure, the test suite in one application will take 1s, the other will take 5s. Add more tests and you can easily see how this difference grows. A slow feedback cycle during development hurts your team&#8217;s productivity and affects their morale. With Elixir and Phoenix, it is common to get sub-millisecond response times and the benefits are noticeable.</p>
+<p>When discussing performance, it is also worth talking about concurrency. Everything you do in your computer should be using all cores. Booting your application, compiling code, fetching dependencies, running tests, etc. Even <a href="https://www.apple.com/lae/apple-watch-series-2/">your wrist watch has 2 cores</a>. Concurrency is no longer the special case.</p>
+<p>However, you don&#8217;t even need multiple cores to start reaping the benefits of concurrency. Imagine that in the test suite above, 30% of the test time is spent on the database. <strong>While one test is waiting on the database, another test should be running</strong>. There is no reason to block your test suite while a single test waits on the database and this change in itself already improves build times.</p>
+<p>If multiple cores are available, you should demand even more gains in terms of performance throughout your development and test experiences. The Elixir compiler and built-in tools will use multiple cores whenever possible. The next time a library, tool or framework is taking too long to do something, ask how many cores it is using and what you can do about it.</p>
+<h2>Fallacy 2: Threads are enough for multi-core concurrency</h2>
+<p>Once we start to venture into concurrency, a common fallacy is that &#8220;if a programming language has threads, it will be equally good at concurrency as any other language&#8221;. To understand why this is not true, let&#8217;s look at <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law">Amdahl&#8217;s law</a>.</p>
+<p>To quote Wikipedia, Amdahl&#8217;s law is a formula which gives the theoretical speedup in latency of the execution of a task at fixed workload that can be expected of a system whose resources are improved:</p>
+<div id="attachment_6556" style="width: 650px" class="wp-caption aligncenter"><img fetchpriority="high" decoding="async" aria-describedby="caption-attachment-6556" src="/wp-content/uploads/2017/07/AmdahlsLaw.svg_.png" alt="" width="640" height="500" class="size-full wp-image-6556" srcset="/wp-content/uploads/2017/07/AmdahlsLaw.svg_.png 640w, /wp-content/uploads/2017/07/AmdahlsLaw.svg_-300x234.png 300w" sizes="(max-width: 640px) 100vw, 640px" /><p id="caption-attachment-6556" class="wp-caption-text">Amdahl&#8217;s law applied to number of processors. <a href="https://en.wikipedia.org/wiki/Amdahl%27s_law#/media/File:AmdahlsLaw.svg">From Wikipedia, CC BY-SA 3.0.</a></p></div>
+<p>The graph above shows that the speedup of a program is limited by its serial part. If only 50% of the software is parallelizable, the theoretical maximum speedup is 2 times, regardless of how many cores you have in your system.</p>
+<p>If 50% of your software is parallelizable, going from 4 to 8 cores gives you only a 11% speed up. If 75% of the software is parallelizable, going from 4 to 8 cores gives you a 27% increase.</p>
+<p>In other words, threads are not enough for most web application developers if they still have to explicitly reach out for them. Instead we need abstractions that are used as building blocks. We need good programming models, efficient data structures, and tools. If only a limited part of the software is parallelizable, you will be quickly constrained by Amdahl&#8217;s law. Threads are necessary but not sufficient. Writing maintainable and effective concurrent software takes much more.</p>
+<h2>Fallacy 3: Conclusions drawn from average response times</h2>
+<p>Another common fallacy in such discussions is when conclusions are drawn based on average data: &#8220;Company X handles Y req/second with an average of Zms, therefore you should be fine&#8221;.</p>
+<p>Here is why conclusions on this data is not enough. First of all, <a href="http://latencytipoftheday.blogspot.com/2014/06/latencytipoftheday-most-page-loads.html">most page loads will experience the 99% server response</a> (also see <a href="http://bravenewgeek.com/everything-you-know-about-latency-is-wrong/">Everything you know about latency is wrong</a> for more discussion). Whenever you measure averages, also measure the 90%, 95% and 99% percentiles.</p>
+<p>Furthermore, in our experience, clients rarely have performance issues during average load, but rather when there are spikes in traffic. It is easy to plan for your average load. The challenge is in measuring how your system behaves when there is a surge in access. When discussing and comparing response times, also ask for the high percentiles, delays and error rates in case of overloads.</p>
+<p>Finally, the server response time as a metric is inherently limited. For instance, a fast server means nothing if the client-side is a mess and takes seconds to load. Instead of measuring a single request, consider also measuring how the user interacts with the website within certain goals. Let&#8217;s see an example.</p>
+<p>Imagine that your application requires the user to confirm their account in order to access part of its functionality (or all of it). Now, preparing for a spike in traffic, you cached your home page as well as your sign-up form. Requests start to pour in and you can see your website is responding fairly well, with low averages and even low 95% percentiles. You consider it a success.</p>
+<p>The next day, you are measuring how users interacted with your application and you could notice a unusually high bounce rate when the servers were on high load. Further analysis reveal that, even though the response times were excellent, the messaging system was clogged and instead of waiting 30 seconds to receive a message with instructions to confirm their account, users had to wait 10 minutes. It is safe to say many of those users left and never came back.</p>
+<p>Response times are not enough. For queues/jobs, you want to at least measure arrival rates, departure rates and sojourn time. For this particular sign-up feature, you should measure the user engagement: from signing up, to scheduling the message, to delivering the message and the final user interaction with it.</p>
+<h2>Fallacy 4: Cost-free solutions</h2>
+<p>This is probably the most common fallacy of all.</p>
+<p>If you complain a certain library or framework takes a long time to boot, someone may quickly point out that there is a tool that solves the booting problem by having a runtime always running on the background.</p>
+<p>If your web application takes long to render certain views, you will be told to cache it.</p>
+<p>The trouble is that those solutions are not cost-free and their cost are often left unsaid. When the tool that runs your application in the background fails, your developers will be the ones debugging it. Between having a solution that addresses a certain problem and not having the problem at all, I prefer the second.</p>
+<p>Sometimes the lack of performance or proper tools will affect how your team designs and implements a feature. Time spent on caching and cache expiration is time that could be spent developing features. It is often joked that &#8220;cache invalidation and naming things are the two hard things in computer science&#8221;. We have <a href="/2016/02/stateless-vs-stateful-web-apps/">discussed similar trade-offs in a previous article about stateful and stateless applications</a> &#8211; where a performant solution leads to benefits from development to deployment.</p>
+<p>This fallacy also happens when arguing in favor of technologies that are seen as performance centric. For example, if you want to use Elixir or Go, you will have to learn the underlying abstractions for concurrency, namely processes and goroutines, which is a time investment. If you want your tests to run concurrently when talking to the database in your Phoenix applications, you need to learn the pros, cons and pitfalls of doing so, a topic we covered in depth in the <a href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-ecto-2-1&amp;utm_content=link">&#8220;What&#8217;s new in Ecto 2.0&#8221; free ebook</a>.</p>
+<p>It is important to make those costs explicit and part of the discussions.</p>
+<h2>Fallacy 5: Performance is all that matters</h2>
+<p>For the majority of companies and teams, that&#8217;s simply not the case. Therefore, if you are planning to move to another technology exclusively because of performance, you should have numbers that back up your decision.</p>
+<p>Similarly, we often see new languages being dismissed exclusively as &#8220;performance fallbacks&#8221;, while in many of those languages performance is typically a side-effect. For example, Elixir builds on the Erlang VM and focuses on developer productivity and code maintenance &#8211; and that&#8217;s why all of us at Plataformatec are proud of it. If you can get extra performance in production from it, that&#8217;s a nice bonus.</p>
+<p>At the end of the day, the discussion about performance is quite nuanced. It is important to know what to measure and how to interpret the data collected. We have learned that performance and concurrency models matter way beyond your production environment and have a large impact in development and testing. And there are no cost-free solutions, be it adding and maintaining a caching layer or picking up a new programming language.</p>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0em !important;">What&#8217;s new in Ecto 2.1</h3>
+<p style="margin-top: 0.5em !important;">In 11 chapters, this <strong>free ebook</strong> explains how to use Ecto as a data-centric tool and its new features.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/ebook-whats-new-in-ecto-2-0?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-ecto-2-1&#038;utm_content=cta-blog-post-bottom" target="_blank">DOWNLOAD FOR FREE</a>
+</div><p>The post <a href="/2017/07/the-fallacies-of-web-application-performance/">The fallacies of web application performance</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/07/the-fallacies-of-web-application-performance/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Three tips to improve the performance of your test suite</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/</link>
+					<comments>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 Dec 2011 15:41:37 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[capybara]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=1792</guid>
+
+					<description><![CDATA[<p>Three quick short tips to improve the performance of your test suite!</p>
+<p>The post <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/">Three tips to improve the performance of your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We, Rails developers, have always worried about <a href="http://lanyrd.com/2010/windycityrails/szzw/" title="Grease your test suite">improving the performance of our test suites</a>. Today I would like to share three quick tips we employ in our projects that can drastically speed up your test suite.</p>
+<h3>1. Reduce Devise.stretches</h3>
+<p>Add the following to your spec/test helper:</p>
+<pre lang="ruby">
+Devise.stretches = 1
+</pre>
+<p><strong>Explanation: </strong>Devise uses <a href="http://bcrypt-ruby.rubyforge.org/">bcrypt-ruby</a> by default to encrypt your password. Bcrypt is one of the best choices for such job because, different from other hash libraries like MD5, SHA1, SHA2, it was designed to be slow. So if someone steals your database it will take a long time for them to crack each password in it.</p>
+<p>That said, it is expected that Devise will also be slow during tests as many tests are generating and comparing passwords. For this reason, a very easy way to improve your test suite performance is to reduce the value in <code>Devise.stretches</code>, which represents the cost taken while generating a password with bcrypt. This will make your passwords less secure, but that is ok as long as it applies only to the test environment.</p>
+<p>Latest Devise versions already set stretches to one on test environments in your initializer, but if you have an older application, this will yield a nice improvement!</p>
+<h3>2. Increase your log level</h3>
+<p>Add the following to your spec/test helper:</p>
+<pre lang="ruby">
+Rails.logger.level = 4
+</pre>
+<p><strong>Explanation: </strong>Rails by default logs everything that is happening in your test environment to &#8220;log/test.log&#8221;. By increasing the logger level, you will be able to reduce the IO during your tests. The only downside of this approach is that, if a test is failing, you won&#8217;t have anything logged. In such cases, just comment the configuration option above and run your tests again.</p>
+<h3>3. Use shared connection with transactional fixtures</h3>
+<p>If you are using Capybara for javascript tests and Active Record, add the lines below to your spec/test helper and be sure you are running with transactional fixtures equals to true:</p>
+<pre lang="ruby">
+class ActiveRecord::Base
+  mattr_accessor :shared_connection
+  @@shared_connection = nil
+
+  def self.connection
+    @@shared_connection || retrieve_connection
+  end
+end
+
+# Forces all threads to share the same connection. This works on
+# Capybara because it starts the web server in a thread.
+ActiveRecord::Base.shared_connection = ActiveRecord::Base.connection
+</pre>
+<p><strong>Explanation: </strong>A long time ago, when Rails was still in 1.x branch, a new configuration option called <code>use_transactional_fixtures</code> was added to Rails. This feature is very simple: before each test Active Record will issue a begin transaction statement and issue a rollback after the test is executed. This is awesome because Active Record will ensure that no data will be left in our database by simply using transactions, which is really, really fast.</p>
+<p>However, this approach may not work in all cases. Active Record connection pool works by creating a new connection to the database for each thread. And, by default, database connections do not share transactions state. This means that, if you create data inside a transaction in a thread (which has its own database connection), another thread cannot see the data created at all! This is usually not an issue, unless if you are using Capybara with Javascript tests.</p>
+<p>When using Capybara with javascript tests, Capybara starts your Rails application inside a thread so the underlying browser (Selenium, Webkit, Celerity, etc) can access it. Since the test suite and the server are running in different threads, if our test suite is running inside a transaction, all the data created inside the test suite will no longer be available in the server. Alternatively, since the server is outside the transaction, data created by the server won&#8217;t be cleaned up. For this reason, many people turn off <code>use_transactional_fixtures</code> and use Database Cleaner to clean up their database after each test. However, this affects your test suite performance badly.</p>
+<p>The patch above, however, provides a very simple solution to both problems. It forces Active Record to share the same connection between all threads. This is not a problem in your test suite because when the test thread is running, there is no request in the server thread. When the server thread is running, the test thread is waiting for a response from the server. So it is unlikely that both will use the connection at the same time. Therefore, with the patch above, you no longer need to use Database Cleaner (unless you are using another database like Mongo) and, more importantly, you must turn <code>use_transactional_fixtures</code> back to true, which will create a transaction wrapping both your test and server data, providing a great boost in your test suite performance.</p>
+<p>Finally, if any part of your code is using threads to access the database and you need to test it, you can just set <code>ActiveRecord::Base.shared_connection = nil</code> during that specific test and everything should work great!</p>
+<h3>Conclusion</h3>
+<p>That&#8217;s it! I hope you have enjoyed those tips and, if they helped you boost your test suite performance, please let us know in the comments the time your test suite took to run before and after those changes! Also, please share any tips you may have as well!</p><p>The post <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/">Three tips to improve the performance of your test suite</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/feed/</wfw:commentRss>
+			<slash:comments>15</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Run, I18n, run!</title>
+		<link>/2009/12/run-i18n-run/</link>
+					<comments>/2009/12/run-i18n-run/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 29 Dec 2009 22:11:42 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[i18n]]></category>
+		<category><![CDATA[performance]]></category>
+		<category><![CDATA[plugins]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=538</guid>
+
+					<description><![CDATA[<p>A new I18n gem just got released and it comes with two new backends extensions: Fast and InterpolationCompiler. First, what is a backend? I18n.t, I18n.translate, I18n.l and I18n.localize methods are actually just wrappers to I18n.backend, which is actually who does all the heavy lifting. This means that you can change your backend to other stuff, ... <a class="read-more-link" href="/2009/12/run-i18n-run/">»</a></p>
+<p>The post <a href="/2009/12/run-i18n-run/">Run, I18n, run!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A new <a href="http://github.com/svenfuchs/i18n">I18n gem</a> <a href="http://twitter.com/svenfuchs/status/7160682325" target="_blank">just got released</a> and it comes with two new backends extensions: <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/fast.rb" target="_blank">Fast</a> and <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/interpolation_compiler.rb" target="_blank">InterpolationCompiler</a>.</p>
+<h3>First, what is a backend?</h3>
+<p><code>I18n.t</code>, <code>I18n.translate</code>, <code>I18n.l</code> and <code>I18n.localize</code> methods are actually just wrappers to <code>I18n.backend</code>, which is actually who does all the heavy lifting. This means that you can change your backend to other stuff, as long as it respects the required API.</p>
+<p>By default, I18n comes with the <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/simple.rb" target="_blank">Simple backend</a>, but others are available. For example, I18n has an <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/active_record.rb" target="_blank">ActiveRecord</a>, which stores translations in the database. This is useful in cases someone needs to change translations through a web interface. To use it, you just need to do:</p>
+<pre lang="ruby">  I18n.backend = I18n::Backend::ActiveRecord</pre>
+<p>There are a couple other backends, like <a href="http://github.com/svenfuchs/i18n/tree/master/lib/i18n/backend/fallbacks.rb" target="_blank">a backend which implements fallbacks</a>, so if something cannot be found in a specified language, like german (:de), it can fallback to english (:en). You can check <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/" target="_blank">the whole list</a>, but for this while, we are going to focus on the two new backends extensions.</p>
+<h3>Fast</h3>
+<p>Fast, means fast. And oh, boy, this one is fast. This extension flattens translations to speed up the look up. For example, the following hash <code>{ :a =&gt; { :b =&gt; { :c =&gt; :foo } } }</code>, gets flattened to <code>{ :"a.b.c" =&gt; "foo" }</code>, so instead of recursively looking into hashes, it looks just once. The obvious expense is that whenever you are storing translations, you need to flatten the translation hash, and it takes more time than usual.</p>
+<p>In order to measure different backend implementations, I <a href="http://github.com/svenfuchs/i18n/blob/master/benchmark/run.rb">pushed some benchmark setup</a> to the I18n repository. The current setup measures the storage time, the time it takes to translate a key (the depth of the key means how many nested hashes it takes), the time to translate a key falling back to the default key and the time translate a key (at depth 5) and interpolate. The results comparing the Simple backend without and with Fast extension are showed below:</p>
+<p><a href="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-4.50.45-PM.png"><img decoding="async" class="aligncenter size-full wp-image-542" title="Simple vs. Fast" src="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-4.50.45-PM.png" alt="Simple vs. Fast" width="523" height="269" /></a></p>
+<p>In other words, a simple lookup using the Fast extension is 3 to 4 times faster than the Simple one. Besides, configuring your application to use it is very simple:</p>
+<pre lang="ruby">
+  I18n::Backend::Simple.send :include, I18n::Backend::Fast
+</pre>
+<p>Nice!</p>
+<h3>Interpolation compiler</h3>
+<p>The <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/interpolation_compiler.rb" target="_blank">InterpolationCompiler</a> is a backend extension which extracts all required interpolation keys from a string, leaving just the minimum required to runtime. Imagine the following string: <code>"This is a custom blank message for {{model}}: {{attribute}}"</code>. This extension annotates the string so it knows that it needs to interpolate both model and attribute, and points exactly where the interpolation should happen. We can compare the Simple backend without and with the InterpolationCompiler below:</p>
+<p><a href="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.03.25-PM.png"><img decoding="async" src="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.03.25-PM.png" alt="Simple vs. Interpol" title="Simple vs. Interpol" width="517" height="260" class="aligncenter size-full wp-image-544" /></a></p>
+<p>The InterpolationCompiler just changes the time taken when we have interpolation keys, without affecting too much the other translations. You can add it to your app as easy as the Fast backend:</p>
+<pre lang="ruby">
+  I18n::Backend::Simple.send :include, I18n::Backend::InterpolationCompiler
+</pre>
+<h3>Run, I18n, run!</h3>
+<p>But the best is still coming! <strong>Fast and InterpolationCompiler can actually be used together</strong>, to achieve unseen performance in I18n. The benchmark speaks for itself:</p>
+<p><a href="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.07.37-PM.png"><img loading="lazy" decoding="async" src="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.07.37-PM.png" alt="Simple vs. FastInterpol" title="Simple vs. FastInterpol" width="511" height="262" class="aligncenter size-full wp-image-545" /></a></p>
+<p>While we speed up the performance in around four times in simple lookups, <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/fast.rb" target="_blank">Fast</a> and <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/interpolation_compiler.rb" target="_blank">InterpolationCompiler</a> improvements get combined whenever we need to use interpolation, becoming around six times faster!</p>
+<p>As said previously, both extensions increase the time taken to store translations as side-effect. Such can be viewed below:</p>
+<p><a href="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.26.00-PM.png"><img loading="lazy" decoding="async" src="/wp-content/uploads/2009/12/Screen-shot-2009-12-29-at-5.26.00-PM.png" alt="Store" title="Store" width="388" height="239" class="aligncenter size-full wp-image-546" /></a></p>
+<p>The yaml hash used in for the benchmark, is relatively slow, but it shows how the time taken to store translations grows with such extensions. But remember, you are constantly storing translations only in development (before each request is processed). In production, the translations are stored at startup and that is it.</p>
+<h3>Using within Rails</h3>
+<p>You should be able to use such features today in Rails 2.3.5 and it will also be possible in Rails 3. You just need to install the <a href="http://github.com/svenfuchs/i18n">I18n</a> gem and configure it in your environment.</p>
+<h3>Why care?</h3>
+<p>All the times shown are in miliseconds. In other words, why care? If you are building a simple application, using just one language, those improvements likely won&#8217;t change anything. But in an application which relies on I18n, during a request/response lifecycle, I18n is invoked many times: error messages for models, flash messages, page titles, e-mail subjects, page content, date and time localization, pluralization rules and even in many of ActionView helpers. So in such cases, it&#8217;s worth to give such extensions a try.</p>
+<h3>Running benchmarks on your own</h3>
+<p>If you want to run benchmarks on your own, it&#8217;s quite simple. You just need to do:</p>
+<pre lang="bash">git clone git://github.com/svenfuchs/i18n.git
+cd i18n
+ruby benchmark/run.rb</pre>
+<h3>Credits</h3>
+<p>The possibility to have backends and such extensions is due to <a href="http://github.com/svenfuchs" target="_blank">Sven Fuchs</a>, which leads the I18n group quite well.</p>
+<p>Many of the backends were added by I18n community, and the <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/fast.rb" target="_blank">Fast</a> and <a href="http://github.com/svenfuchs/i18n/blob/master/lib/i18n/backend/interpolation_compiler.rb" target="_blank">InterpolationCompiler</a> were created by <a href="http://github.com/thedarkone" target="_blank">thedarkone</a>.</p>
+<p>Guys, I owe you a beer! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Enjoy!</p><p>The post <a href="/2009/12/run-i18n-run/">Run, I18n, run!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/12/run-i18n-run/feed/</wfw:commentRss>
+			<slash:comments>16</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>releases « Plataformatec Blog</title>
+	<atom:link href="/tag/releases/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 01 May 2019 08:23:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>What&#8217;s new in Elixir &#8211; Apr/19</title>
+		<link>/2019/04/whats-new-in-elixir-apr-19/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 29 Apr 2019 13:31:54 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[releases]]></category>
+		<guid isPermaLink="false">/?p=8985</guid>
+
+					<description><![CDATA[<p>Hi everyone, we are back with another edition of What&#8217;s new in Elixir! Let&#8217;s get started. mix release has been added! Besides basic releases support, it supports runtime configuration, customization via templates files, custom steps, and more. A huge thank you to both Distillery and Relx teams for the prior work that made releases in ... <a class="read-more-link" href="/2019/04/whats-new-in-elixir-apr-19/">»</a></p>
+<p>The post <a href="/2019/04/whats-new-in-elixir-apr-19/">What’s new in Elixir – Apr/19</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Hi everyone, we are back with another edition of What&#8217;s new in Elixir! Let&#8217;s get started.</p>
+<ul>
+<li><a href="https://github.com/elixir-lang/elixir/pull/8677" target="_blank" rel="noopener noreferrer"><code>mix release</code> has been added!</a> Besides basic releases support, it supports runtime configuration, customization via templates files, custom steps, and more. A huge thank you to both <a href="https://github.com/bitwalker/distillery" target="_blank" rel="noopener noreferrer">Distillery</a> and <a href="https://github.com/erlware/relx" target="_blank" rel="noopener noreferrer">Relx</a> teams for the prior work that made releases in Elixir itself possible. <a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html" target="_blank" rel="noopener noreferrer">See the docs</a> for a complete rundown on the available features. Give it a try!</li>
+<li><a href="https://github.com/elixir-lang/elixir/pull/8932" target="_blank" rel="noopener noreferrer">Config changes in <code>mix new</code></a>: Configuration has been a recurring topic in the Elixir community and Elixir v1.9.0 aims to further guide the community towards best practices. The first change is that we will no longer generate <code>config/config.exs</code> for projects generated with <code>mix new</code>. <a href="https://hexdocs.pm/elixir/master/library-guidelines.html#avoid-application-configuration" target="_blank" rel="noopener noreferrer">Relying on configuration is undesired for most libraries</a> and the generated <code>config</code> files pushed library authors in the wrong direction. Furthermore, <code>mix new --umbrella</code> will no longer generate a configuration for each child app, instead all configuration should be declared in the umbrella root. That&#8217;s how it has always behaved, we are now making it explicit.</li>
+<li><a href="https://github.com/elixir-lang/elixir/pull/8957" target="_blank" rel="noopener noreferrer">A new <code>Config</code> module has been added to Elixir</a>. Since releases may have their own configuration and since we do not want releases to depend on Mix (which is a build tool), <code>use Mix.Config</code> has been soft-deprecated in favor of the new <code>import Config</code> which is part of Elixir itself.</li>
+<li>Logger is now more efficient to compute <a href="https://github.com/elixir-lang/elixir/pull/8567" target="_blank" rel="noopener noreferrer">when messages have to be discarded</a>. Performance has also been generally improved for those <a href="https://github.com/elixir-lang/elixir/pull/8977" target="_blank" rel="noopener noreferrer">running in recent Erlang/OTP versions</a> (21.2+).</li>
+<li><a href="https://github.com/elixir-lang/elixir/pull/8824" target="_blank" rel="noopener noreferrer">A <code>~U</code> sigil for UTC date times</a> has been added.</li>
+<li><a href="https://github.com/elixir-lang/elixir/pull/3798" target="_blank" rel="noopener noreferrer"><code>System.get_env/2</code>, <code>System.fetch_env/1</code>, and <code>System.fetch_env!/1</code> have been added</a> for those looking forward to simplify their config files.</li>
+</ul>
+<p>Plus many other enhancements and bug fixes. If you want to give those features a try, you can always <a href="https://elixir-lang.org/install.html#compiling-from-source-unix-and-mingw" target="_blank" rel="noopener noreferrer">compile Elixir from source</a>. If you are using version managers, such as <code>asdf</code>, they likely have built-in mechanisms to compile from master too.</p>
+<p>As usual, in the last weeks we have done extensive work on the issues tracker, bringing the number of open issues to below 10 and the number of pending PRs to below 5 (at the time of writing). We are always proud of how much work and care goes into the issues tracker, thanks everyone who contributed! For a complete listing of all changes, <a href="https://github.com/elixir-lang/elixir/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer">see the CHANGELOG</a>.</p><p>The post <a href="/2019/04/whats-new-in-elixir-apr-19/">What’s new in Elixir – Apr/19</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

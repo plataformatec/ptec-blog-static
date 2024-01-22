@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Coding can make you a better project manager	</title>
+	<atom:link href="/2015/07/coding-can-make-you-a-better-project-manager/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/07/coding-can-make-you-a-better-project-manager/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 28 Aug 2015 22:11:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: David Murphy		</title>
+		<link>/2015/07/coding-can-make-you-a-better-project-manager/comment-page-1/#comment-1514</link>
+
+		<dc:creator><![CDATA[David Murphy]]></dc:creator>
+		<pubDate>Fri, 28 Aug 2015 22:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4836#comment-1514</guid>
+
+					<description><![CDATA[The principle is sound but the two main risks I see are:
+1).  When you don&#039;t code regularly the overhead of learning or relearning can be very high, and the costs of mistakes also high.  I worked as a programmer years ago but truth be told I was never great at it - adequate would be a good description.   
+2).  As a manager your main role is to ensure the team can do what it needs to do - you as manager run interference, facilitate, remove blockers, keep the external stakeholders happy and off the team&#039;s backs etc - this is usually pretty much full time.  if you get distracted into coding you risk not doing the coding well, becoming an impediment yourself and doing a less than optimal job of managing the issues that can negatively affect the team.
+
+
+Years ago I wa a programmer on a project that ht some troubles and the project manager (who had started as a programmer on that system years before) got involved with coding. What he wrote worked as such, but left sub-optimal code and also obscure defects that took weeks to work through.  His contribution had some value when he did it (got us over a hump)_ but left longer term issues that probably outweighed his involvement.
+
+
+Not saying you should not get involved but bear in mind the potential downsides as well as the potential upsides.]]></description>
+			<content:encoded><![CDATA[<p>The principle is sound but the two main risks I see are:<br />
+1).  When you don&#8217;t code regularly the overhead of learning or relearning can be very high, and the costs of mistakes also high.  I worked as a programmer years ago but truth be told I was never great at it &#8211; adequate would be a good description.<br />
+2).  As a manager your main role is to ensure the team can do what it needs to do &#8211; you as manager run interference, facilitate, remove blockers, keep the external stakeholders happy and off the team&#8217;s backs etc &#8211; this is usually pretty much full time.  if you get distracted into coding you risk not doing the coding well, becoming an impediment yourself and doing a less than optimal job of managing the issues that can negatively affect the team.</p>
+<p>Years ago I wa a programmer on a project that ht some troubles and the project manager (who had started as a programmer on that system years before) got involved with coding. What he wrote worked as such, but left sub-optimal code and also obscure defects that took weeks to work through.  His contribution had some value when he did it (got us over a hump)_ but left longer term issues that probably outweighed his involvement.</p>
+<p>Not saying you should not get involved but bear in mind the potential downsides as well as the potential upsides.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Wesley Tiago Zapellini		</title>
+		<link>/2015/07/coding-can-make-you-a-better-project-manager/comment-page-1/#comment-1507</link>
+
+		<dc:creator><![CDATA[Wesley Tiago Zapellini]]></dc:creator>
+		<pubDate>Fri, 24 Jul 2015 21:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4836#comment-1507</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/07/coding-can-make-you-a-better-project-manager/comment-page-1/#comment-1506&quot;&gt;Rodrigo Cardoso Vieira&lt;/a&gt;.
+
+Hi Rodrigo!
+
+That&#039;s a very good point. It can happen if the manager becomes the person responsible for unpleasant tasks related to code. As you said it can hide pain points.
+
+A good approach is to treat coding as another tool in a manager&#039;s toolbox. The idea is not to transform the manager into a chore guy, is to make him capable to help in a new way when is reasonable to do so.
+
+Thanks for the feedback :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/07/coding-can-make-you-a-better-project-manager/comment-page-1/#comment-1506">Rodrigo Cardoso Vieira</a>.</p>
+<p>Hi Rodrigo!</p>
+<p>That&#8217;s a very good point. It can happen if the manager becomes the person responsible for unpleasant tasks related to code. As you said it can hide pain points.</p>
+<p>A good approach is to treat coding as another tool in a manager&#8217;s toolbox. The idea is not to transform the manager into a chore guy, is to make him capable to help in a new way when is reasonable to do so.</p>
+<p>Thanks for the feedback 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Cardoso Vieira		</title>
+		<link>/2015/07/coding-can-make-you-a-better-project-manager/comment-page-1/#comment-1506</link>
+
+		<dc:creator><![CDATA[Rodrigo Cardoso Vieira]]></dc:creator>
+		<pubDate>Fri, 24 Jul 2015 16:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4836#comment-1506</guid>
+
+					<description><![CDATA[Hi Wesley. I agree with you that coding can put you closer to the developers, that it can make both of you speeking the same language. But, as a scrum master or agile coach, don´t you feel that when you code you are not permiting the developers to learn something about their jobs or to improve how they do their jobs? 
+
+
+I think that we improve the way we do our jobs when we feel some pain. Example: outdate manifests, eventually, would cause pain to developers. Devs would do some boring work updating manifests. Devs could start to think in a way to automate this part of their jobs.]]></description>
+			<content:encoded><![CDATA[<p>Hi Wesley. I agree with you that coding can put you closer to the developers, that it can make both of you speeking the same language. But, as a scrum master or agile coach, don´t you feel that when you code you are not permiting the developers to learn something about their jobs or to improve how they do their jobs? </p>
+<p>I think that we improve the way we do our jobs when we feel some pain. Example: outdate manifests, eventually, would cause pain to developers. Devs would do some boring work updating manifests. Devs could start to think in a way to automate this part of their jobs.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

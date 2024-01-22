@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>review « Plataformatec Blog</title>
+	<atom:link href="/tag/review/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 30 Dec 2010 17:53:02 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>2010 &#8211; A year in review</title>
+		<link>/2010/12/2010-a-year-in-review/</link>
+					<comments>/2010/12/2010-a-year-in-review/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 17:18:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[dsl]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railsconf]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1612</guid>
+
+					<description><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few. Open Source The year has begun on fire. In February, José Valim made his way into the Rails Core team and has been ... <a class="read-more-link" href="/2010/12/2010-a-year-in-review/">»</a></p>
+<p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few.</p>
+<h3>Open Source</h3>
+<p>The year has begun on fire. In February, <a href="http://weblog.rubyonrails.org/2010/2/13/jos-e-valim-and-carl-lerche-joins-rails-core">José Valim made his way into the Rails Core team</a> and has been doing a great work since then, including many contributions to the Rails 3 release.</p>
+<p>We are also really proud with <a href="http://www.github.com/plataformatec/devise">Devise</a>. It got very mature, achieving the 1.0 version this February. Since then, Devise is becoming one of the best solutions for authentication in Rails and also one of the most watched repositories on GitHub. </p>
+<p>In August, <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1</a> was released with Rails 3 support and a bunch of cool features. Recently, a lot of work is being done towards the 1.2 version, which includes full support to the awesome <a href="http://www.github.com/intridea/omniauth">OmniAuth</a> gem.</p>
+<p>We also released <a href="http://www.github.com/plataformatec/simple_form">SimpleForm</a> this year. SimpleForm is our take on building forms in a simplified way lead by Carlos Antônio who recently did a great work on HTML 5 support.</p>
+<p>Other gems were released, such as <a href="/2010/03/show-your-objects-baby/">ShowFor</a>, which is a DSL to simplify how you show your objects in views and also <a href="https://github.com/plataformatec/responders">Responders</a>, a collection of Rails 3 responders.</p>
+<h3>Book</h3>
+<p>Eariler this month, José Valim&#8217;s book entitled <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> has been released by the highly acclaimed publisher <a href="http://www.pragprog.com/">Pragmatic Bookstore</a>! The book covers internal aspects of Rails 3 and how you can bend it to your will. The reviews and buzz has been great so far, even though still in beta. <a href="http://plataformatec.com.br/crafting-rails-applications/">Grab your copy now!</a></p>
+<h3>Events</h3>
+<p>This year was also very productive in terms of events. We&#8217;ve been to a lot of events, heck, George was even able to go to RailsConf, in Baltimore! Also, José Valim has spoken in various events, including <a href="/2010/06/dsl-or-nodsl-at-euruko-2010/">Euruko 2010 (includes video)</a>, <a href="http://vimeo.com/17088248">RubyConf Brazil 2010 (talk in portuguese)</a> and OxenteRails 2010. </p>
+<p>Carlos, Hugo and George did their share as well, speaking at various events, from smaller and user-group events to bigger ones such as OxenteRails, RS on Rails and QCon SP.</p>
+<h3>Company</h3>
+<p>The company itself is getting more mature and increasing. At January 2010, PlataformaTec was composed of 6 people, and up until December 2010, 5 other people joined the company (including myself)! We also have started playing with iOS development, something we believe to have a great future, expect future blog posts on the subject.</p>
+<h3>Great 2011!</h3>
+<p>Have a great New Year! We wish you all the best for year to come. We have high expectations for 2011, so stay tuned!</p><p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/2010-a-year-in-review/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

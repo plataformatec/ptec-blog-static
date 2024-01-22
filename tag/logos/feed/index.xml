@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>logos « Plataformatec Blog</title>
+	<atom:link href="/tag/logos/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 26 Feb 2013 21:23:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Take a look at Simple Form and Devise brand new logos</title>
+		<link>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/</link>
+					<comments>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 26 Feb 2013 21:23:48 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[design]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[logos]]></category>
+		<category><![CDATA[simple form]]></category>
+		<guid isPermaLink="false">/?p=3422</guid>
+
+					<description><![CDATA[<p>We are very glad to announce the logos for two of our favorite Rails open source projects&#8230; Simple Form: And Devise: We would like to congratulate our designer, Bruna Kochi, who was able to capture the essence of each project in their logos. We will write about their design process soon! Those projects have been ... <a class="read-more-link" href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">»</a></p>
+<p>The post <a href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">Take a look at Simple Form and Devise brand new logos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We are very glad to announce the logos for two of our favorite Rails open source projects&#8230;</p>
+<p><a href="https://github.com/plataformatec/simple_form">Simple Form</a>:</p>
+<div style="margin: 20px auto; text-align: center;">
+   <img decoding="async" src="https://raw.github.com/plataformatec/simple_form/master/simple_form.png" alt="Simple Form Logo">
+</div>
+<p>And <a href="https://github.com/plataformatec/devise">Devise</a>:</p>
+<div style="margin: 20px auto; text-align: center;">
+   <img decoding="async" src="https://raw.github.com/plataformatec/devise/master/devise.png" alt="Devise Logo">
+</div>
+<p>We would like to congratulate our designer, <a href="https://twitter.com/brutiko">Bruna Kochi</a>, who was able to capture the essence of each project in their logos. We will write about their design process soon!</p>
+<p>Those projects have been in the Rails community for almost 4 years and it was about time for them to have their own visual identity! We would like to thank all contributors and users who have helped those projects to be more robust, flexible and popular!</p><p>The post <a href="/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/">Take a look at Simple Form and Devise brand new logos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/02/take-a-look-at-simple-form-and-devise-brand-new-logos/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Filtering examples in RSpec	</title>
+	<atom:link href="/2012/10/filtering-examples-in-rspec/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/10/filtering-examples-in-rspec/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 25 Oct 2012 16:57:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1286</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 16:57:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3147#comment-1286</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1283&quot;&gt;Cainã Costa&lt;/a&gt;.
+
+Thanks for sharing!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1283">Cainã Costa</a>.</p>
+<p>Thanks for sharing!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1285</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 14:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3147#comment-1285</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1284&quot;&gt;John Beynon&lt;/a&gt;.
+
+John Beynon, the goal of the tests above is to actually hit the server since once in a while to guarantee the contract between the application and the external service is still valid.
+
+That said VCR is still a good option since it allows you to hit the server by simply cleaning up the cassettes cache and SOAP can be used over HTTP. But depending on the type of external service, you don&#039;t have automatic tools like VCR, so the tip above is still handy.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1284">John Beynon</a>.</p>
+<p>John Beynon, the goal of the tests above is to actually hit the server since once in a while to guarantee the contract between the application and the external service is still valid.</p>
+<p>That said VCR is still a good option since it allows you to hit the server by simply cleaning up the cassettes cache and SOAP can be used over HTTP. But depending on the type of external service, you don&#8217;t have automatic tools like VCR, so the tip above is still handy.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: John Beynon		</title>
+		<link>/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1284</link>
+
+		<dc:creator><![CDATA[John Beynon]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 14:18:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3147#comment-1284</guid>
+
+					<description><![CDATA[Why would you not use something like VCR to store the SOAP response so you don&#039;t have to hit the external service in your tests?]]></description>
+			<content:encoded><![CDATA[<p>Why would you not use something like VCR to store the SOAP response so you don&#8217;t have to hit the external service in your tests?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Cainã Costa		</title>
+		<link>/2012/10/filtering-examples-in-rspec/comment-page-1/#comment-1283</link>
+
+		<dc:creator><![CDATA[Cainã Costa]]></dc:creator>
+		<pubDate>Thu, 25 Oct 2012 13:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3147#comment-1283</guid>
+
+					<description><![CDATA[You can add this flag to automatically convert symbols to hash with true values, so you can create an example like this:
+
+RSpec.configure do &#124;c&#124;
+  c.treat_symbols_as_metadata_keys_with_true_values = true
+end
+
+it &quot;works&quot;, :focus do
+  should be_nice
+end
+
+You can also add a name to your subject:
+
+subject(:serializer) { Serializer.new(foo) }
+
+it &quot;serializes&quot; do
+  expect(serializer).to be_serializable # this works
+  should be_serializable # this too!
+end
+
+And I really like this &quot;should something&quot; syntax.]]></description>
+			<content:encoded><![CDATA[<p>You can add this flag to automatically convert symbols to hash with true values, so you can create an example like this:</p>
+<p>RSpec.configure do |c|<br />
+  c.treat_symbols_as_metadata_keys_with_true_values = true<br />
+end</p>
+<p>it &#8220;works&#8221;, :focus do<br />
+  should be_nice<br />
+end</p>
+<p>You can also add a name to your subject:</p>
+<p>subject(:serializer) { Serializer.new(foo) }</p>
+<p>it &#8220;serializes&#8221; do<br />
+  expect(serializer).to be_serializable # this works<br />
+  should be_serializable # this too!<br />
+end</p>
+<p>And I really like this &#8220;should something&#8221; syntax.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

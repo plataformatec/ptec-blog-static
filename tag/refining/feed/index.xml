@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>refining « Plataformatec Blog</title>
+	<atom:link href="/tag/refining/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 08 Dec 2017 16:02:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Estoques no desenvolvimento de software</title>
+		<link>/2017/12/estoques-no-desenvolvimento-de-software/</link>
+		
+		<dc:creator><![CDATA[Guilherme Fré]]></dc:creator>
+		<pubDate>Fri, 08 Dec 2017 14:32:41 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[product backlog]]></category>
+		<category><![CDATA[refining]]></category>
+		<category><![CDATA[user story]]></category>
+		<guid isPermaLink="false">/?p=7003</guid>
+
+					<description><![CDATA[<p>Sempre ouvi e li que os grandes vilões da produtividade de um sistema são os delays ocasionados pelo tempo de espera em filas. Tenho certeza que você também já ouviu ou leu algo sobre isso. Da mesma forma, os estoques representam uma das maiores causas de desperdício, especialmente para a manufatura. Mas, pensando em desenvolvimento ... <a class="read-more-link" href="/2017/12/estoques-no-desenvolvimento-de-software/">»</a></p>
+<p>The post <a href="/2017/12/estoques-no-desenvolvimento-de-software/">Estoques no desenvolvimento de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Sempre ouvi e li que os grandes vilões da produtividade de um sistema são os <em>delays</em> ocasionados pelo tempo de espera em filas. Tenho certeza que você também já ouviu ou leu algo sobre isso. Da mesma forma, os estoques representam uma das maiores causas de desperdício, especialmente para a manufatura.</p>
+<p>Mas, pensando em desenvolvimento de software, será que as filas e estoques de demandas (qualquer item de trabalho de uma equipe de software, como histórias de usuários, bugs, etc&#8230;) se comportam da mesma maneira e trazem as mesmas consequências em todos os estágios do fluxo de desenvolvimento? Serão essas consequências sempre negativas?</p>
+<p>Para respondermos essas questões, consideremos uma equipe que trabalha com o <em>workflow</em> composto pelas seguintes etapas:</p>
+<ul>
+<li><strong>Backlog</strong>: Itens já escritos pelo PO (<em>Product Owner</em>) e que ainda precisam ser refinados com a equipe;</li>
+<li><strong>Ready to Dev</strong>: Itens que já foram refinados com a equipe e estão aguardando o início do desenvolvimento;</li>
+<li><strong>In Development</strong>: Itens em desenvolvimento;</li>
+<li><strong>Ready to Test</strong>: Itens desenvolvidos e aguardando testes;</li>
+<li><strong>Testing</strong>: Itens sendo testados pelo time de QA (<em>Quality Assurance</em>);</li>
+<li><strong>Ready to Deploy</strong>: Itens já aprovados por QA e aguardando o deploy em produção;</li>
+<li><strong>In Production</strong>: Itens em produção.</li>
+</ul>
+<p>Da lista acima, conseguimos identificar algumas etapas de filas, onde seria possível acumular estoques de demandas aguardando as próximas etapas. São elas: <em>Backlog</em>, <em>Ready to Dev</em>, <em>Ready to Test</em> e <em>Ready to Deploy</em>.</p>
+<p>Como será que os estoques se comportam em cada uma dessas etapas?</p>
+<h3>Estoque em <em>Backlog</em>?</h3>
+<p><em>Cenário: como já tinha uma ideia do que seria trabalhado pelos próximos meses, o PO da equipe decidiu escrever uma grande quantidade de histórias de usuário.</em></p>
+<p>Para este cenário, há um risco considerável de desperdício do esforço do PO e até das histórias de usuário escritas, uma vez que que podem ocorrer mudanças na estratégia do produto. Por exemplo, um concorrente lançou uma nova feature que não estava mapeada e decidiu-se implementá-la também. Novas histórias precisarão ser escritas e outras possivelmente serão fechadas como obsoletas.</p>
+<h3>Estoque em <em>Ready to Dev</em>?</h3>
+<p><em>Cenário: o PO da equipe sairá de férias nos próximos dias e não haverá um substituto. Nos últimos dias de trabalho antes do descanso, o PO e a equipe se esforçaram para refinar uma grande quantidade de histórias de usuário para que a equipe trabalhasse durante o período.</em></p>
+<p>Neste caso, há um risco maior de que os acordos entre PO e equipe, discutidos durante os refinamentos, sejam esquecidos com o passar do tempo (é sempre melhor que esses acordos estejam frescos na cabeça da equipe).</p>
+<p>Porém, trata-se de uma opção bastante interessante para que a equipe não sofra de <em>starvation</em> durante a ausência do PO. Além de ser uma opção melhor do que deixar as histórias de usuários na etapa anterior (<em>Backlog</em>), o que poderia elevar o risco de desalinhamento entre o que era planejeado e o que será desenvolvido.</p>
+<p>No geral, é importante ter bem claro quem pode tomar as decisões do produto em caso de ausência do PO, pois, mesmo com a adoção dessa estratégia de estoque, dúvidas e incertezas certamente surgirão na sequência do processo. Em muitos casos, essa responsabilidade acaba ficando com alguém da equipe de design, um facilitador do processo ou mesmo com a própria equipe de desenvolvimento, que pode tomar as decisões em conjunto.</p>
+<h3>Estoque em <em>Ready to Test</em>?</h3>
+<p><em>Cenário: o responsável pelo QA da equipe ficará ausente por algumas semanas para realização de uma cirurgia. A equipe optou por continuar o desenvolvimento das histórias de usuário e deixá-las acumulando em &#8216;Ready to Test&#8217; até o retorno do QA.</em></p>
+<p>Para esta abordagem, como as funcionalidades não serão testadas até o retorno do responsável pelo QA, o ciclo de feedback será mais longo. Isso trará desvantagens como:</p>
+<ol>
+<li><strong>Aumento no WIP (trabalho em progresso)</strong>: das filas que discutimos até aqui, esta é a primeira em que há código em progresso sendo estocado (nas anteriores, já havia esforço de análise e design). Com isso, a quantidade de WIP no sistema tende a aumentar, e o Wesley Zapellini já nos explicou em seu e-book <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software">&#8220;5 Estratégias para otimizar o fluxo de desenvolvimento de software&#8221;</a> os principais efeitos colaterais de ter o WIP alto.</li>
+<li><strong>Redução da visibilidade do processo</strong>: com mais tarefas no board da equipe, tende a ficar mais complicado ter visibilidade do que está realmente em andamento.</li>
+<li><strong>Redução da previsibilidade do processo</strong>: com a pausa do processo de testes, todas as tarefas que estiverem ou chegarem na fila de <em>Ready to Test</em> durante o período de ausência do responsável de QA ficarão por lá até o retorno dele, é claro. O <em>lead time</em> do processo (tempo entre o início do trabalho da equipe na demanda e o término dela) será, portanto, impactado.</li>
+<li><strong>Aumento no número de bugs e não conformidades</strong>: como já mencionado no e-book <a href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software">&#8220;5 Estratégias para otimizar o fluxo de desenvolvimento de software&#8221;</a>, o aumento do WIP tende a impactar diretamente na qualidade do software. Neste cenário, há ainda um ponto adicional: a falta de feedback quanto à conformidade das histórias desenvolvidas faz com que histórias sejam iniciadas com uma base já fora de conformidade, o que tende a sobrepor os problemas.</li>
+</ol>
+<p>As imagens a seguir apresentam a distribuição do <em>lead time</em> das demandas da equipe imediatamente antes e após as férias do profissional de QA (para entender melhor os gráficos, recomendo o blogpost do Raphael Albino <a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/">&#8220;Métricas Ágeis: o que Lead Time fala sobre seu projeto&#8221;</a>). Na primeira delas, antes do início das férias do profissional, é possível ver que há pouca variabilidade no <em>lead time</em> das entregas e pouco WIP.</p>
+<p><img fetchpriority="high" decoding="async" class="alignleft size-full wp-image-7004" src="/wp-content/uploads/2017/12/ready-to-qa-before.png" alt="Antes das férias" width="1919" height="907" srcset="/wp-content/uploads/2017/12/ready-to-qa-before.png 1919w, /wp-content/uploads/2017/12/ready-to-qa-before-300x142.png 300w, /wp-content/uploads/2017/12/ready-to-qa-before-768x363.png 768w, /wp-content/uploads/2017/12/ready-to-qa-before-1024x484.png 1024w" sizes="(max-width: 1919px) 100vw, 1919px" /></p>
+<p>Já após as férias, é possível perceber uma tendência de aumento no <em>lead time</em> (média projetada já bastante acima do percentil 95%), o que deve contribuir para uma redução na previsibilidade das entregas. Além disso, é possível ver que a quantidade de trabalho em progresso também teve um aumento considerável:</p>
+<p><img decoding="async" class="alignleft size-full wp-image-7006" src="/wp-content/uploads/2017/12/ready-to-qa-after.png" alt="Após as férias" width="1919" height="907" srcset="/wp-content/uploads/2017/12/ready-to-qa-after.png 1919w, /wp-content/uploads/2017/12/ready-to-qa-after-300x142.png 300w, /wp-content/uploads/2017/12/ready-to-qa-after-768x363.png 768w, /wp-content/uploads/2017/12/ready-to-qa-after-1024x484.png 1024w" sizes="(max-width: 1919px) 100vw, 1919px" /></p>
+<p>Já vimos os possíveis impactos dessa estratégia, mas o que podemos fazer em uma situação como esta? Supondo que não haja outro profissional de QA disponível para a equipe, alguém do time pode assumir essa atividade ou, o que temos feito com sucesso em alguns contextos, a equipe como um todo pode se dividir para realizar os testes: sempre que alguém mover uma demanda para QA, antes de iniciar uma nova, pode verificar se há alguma pendente de testes e já puxá-la. A única sugestão é para que uma demanda não seja testada pela mesma pessoa que a desenvolveu.</p>
+<h3>Estoque em <em>Ready to Deploy</em>?</h3>
+<p><em>Cenário: por opção do PO, decidiu-se que todas as histórias mapeadas inicialmente precisariam estar prontas para que as novas features fossem para produção.</em></p>
+<p>Neste caso, o maior impacto do ponto de vista do processo é que será preciso garantir que essas histórias praticamente prontas não criem um empecilho para que outras linhas de desenvolvimento integrem código em produção. De maneira geral, a sugestão é integrar código pronto em produção sempre que possível (há técnicas para se fazer isso sem necessariamente liberar as funcionalidades para os usuários, como a técnica de <em>Feature Toggle</em>). Além de desbloquear futuros deploys que precisem &#8220;passar na frente&#8221; (como <em>bug fixes</em>, por exemplo), essa estratégia ainda permitirá que os deploys sejam mais tranquilos e sem grandes riscos.</p>
+<p>Do ponto de vista de produto, e considerando o Cost of Delay conforme nos apresentou o Lucas Colucci em seu blog post <a href="/2017/06/quanto-a-empresa-perde-financeiramente-quando-o-projeto-atrasa/">&#8220;Quanto a empresa perde financeiramente quando o projeto atrasa?&#8221;</a> sobre o assunto, é sempre interessante disponibilizar as novas features para o cliente, mesmo que todas as features planejadas no escopo de um projeto não tenham sido finalizadas.</p>
+<p>Um outro cenário muito comum, especialmente em equipes maiores, é o da existência de janelas e filas para deploy. Geralmente, essa estratégia é adotada quando:<br />
+1. o ferramental de deploy/rollback exige tempo e trabalho manual (frequentemente, com recursos compartilhados por várias equipes),<br />
+2. quando há falta de confiança quanto à qualidade do que está sendo colocado no ar (alguém se perguntaria: <em>será que o código está adicionando bugs?</em>)<br />
+3. ou quando há muitas equipes trabalhando em um mesmo produto.</p>
+<p>Essa burocracia para o deploy (horários pré-definidos, dias da semana permitidos, comitês para decidir o que vai e o que não vai pro ar&#8230;) contribuirá para atrasar a entrada das novas funcionalidades em produção. Para reverter esse cenário, o ideal é investir em cobertura de testes e em automações em geral (tanto da execução dos testes, quanto de deploy/rollback), o que fará com que o processo de colocar código novo no ar se torne mais simples e <em>indolor</em>, tanto para quem faz o deploy quanto para quem usa o produto.</p>
+<h2>Conclusão</h2>
+<p>Em geral, as filas e estoques no desenvolvimento de software, especialmente em contextos ágeis, trazem como consequência aumento no risco de desperdício de esforço e de oportunidades de negócio representadas pelas demandas em estoque, principalmente as que já estão mais próximas de serem finalizadas e que poderiam gerar receitas para a empresa ou melhorias para os usuários.</p>
+<p>Porém, como vimos acima, há também outras consequências que variam conforme o estágio do fluxo de desenvolvimento em que a demanda está, podendo impactar na qualidade do código e aumentar o número de bugs, ou até evitar uma possível situação de <em>starvation</em> da equipe.</p>
+<p>E você? Quais situações já enfrentou com estoques e filas em suas equipes? Deixe seus relatos e comentários abaixo!</p>
+<div style="border: 1px solid #009eaa; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+E-book gratuito:<br />
+<span style="font-size: 1.4em; line-height: 1.3em;">5 Estratégias para otimizar o fluxo de desenvolvimento de software</span><br />
+<a style="background: #009eaa; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 18px; padding: 8px 16px; text-align: center; text-decoration: none; font-weight: bold; letter-spacing: 0.05em;" href="http://pages.plataformatec.com.br/5-estrategias-para-otimizar-fluxo-de-desenvolvimento-de-software?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=ebook-5-estratgias-para-fluxo&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener">BAIXAR E-BOOK</a>
+</div><p>The post <a href="/2017/12/estoques-no-desenvolvimento-de-software/">Estoques no desenvolvimento de software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>O que aprendi sobre o Refining de User Stories em projetos</title>
+		<link>/2017/05/aprendi-sobre-refining-user-stories-em-projetos/</link>
+		
+		<dc:creator><![CDATA[Breno Campos]]></dc:creator>
+		<pubDate>Wed, 24 May 2017 22:22:57 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[metodologia ágil]]></category>
+		<category><![CDATA[refining]]></category>
+		<category><![CDATA[user story]]></category>
+		<guid isPermaLink="false">/?p=6364</guid>
+
+					<description><![CDATA[<p>&#8220;Eu sou responsável pelo que escrevo, não pelo que você entende.&#8221; — Não!!! A responsabilidade da clareza de comunicação é de todos. E o refining é sobre isso: alinhamento, comunicação clara e objetiva! Constantemente ao conversar com alguns amigos que estão adotando a agilidade, ou ao chegar em alguns clientes, percebo que há dúvidas quanto ... <a class="read-more-link" href="/2017/05/aprendi-sobre-refining-user-stories-em-projetos/">»</a></p>
+<p>The post <a href="/2017/05/aprendi-sobre-refining-user-stories-em-projetos/">O que aprendi sobre o Refining de User Stories em projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>&#8220;<em>Eu sou responsável pelo que escrevo, não pelo que você entende.</em>&#8221; — <strong>Não</strong>!!! A responsabilidade da clareza de comunicação é de todos. E o refining é sobre isso: alinhamento, comunicação clara e objetiva!</p>
+<p>Constantemente ao conversar com alguns amigos que estão adotando a agilidade, ou ao chegar em alguns clientes, percebo que há dúvidas quanto à execução do refinamento dos cards (<strong>refining</strong> ou grooming, este último tem entrado em desuso, dado que em alguns países de língua inglesa a expressão tem sido relacionada a casos de assédio. Inclusive o <a href="'http://www.scrumguides.org/scrum-guide.html'">Scrum Guide</a> abandonou o uso da palavra em 2013).</p>
+<p>Também há dúvidas quanto a importância deste processo: &#8220;<em>Por qual razão devo usar no meu time?&#8221;</em> , &#8220;<em>É realmente útil?&#8221;</em>. Acredito que o processo de refining é extremamente importante para o bom andamento de um projeto. Sua principal função é deixar as user stories melhor descritas, com o menor número de incertezas possíveis. Sua execução visa criar um maior alinhamento das expectativas das partes interessadas, deixando claro para todos o que será construído. Gera uma série de benefícios, como:</p>
+<ul>
+<li>Com user stories melhor descritas a previsibilidade de conclusão é mais clara;</li>
+<li>A chance de um imprevisto surgir durante o desenvolvimento e criar um bloqueio se torna menor;</li>
+<li>Todos do time de desenvolvimento ficam cientes do passo a passo para conclusão do requisito, por exemplo.</li>
+</ul>
+<p>O ponto é que ainda é nebuloso para muitas pessoas a escrita de cards e a respectiva execução do levantamento.</p>
+<p>Um entendimento que podemos ter acerca do assunto e que defendo é:</p>
+<ul>
+<li>Se o levantamento do card ocorre todo no mesmo momento, seja de planejamento, replenishment, refining ou outro nome que você costume usar. E começa a escrever o card ali, adicionando dúvidas, critérios de aceite e tudo <strong>nesse</strong> momento. Então sim, concordo que seu <strong>refining é uma reunião</strong> (ainda que toda reunião seja &#8211; ou deveria ser- um processo, hehe).</li>
+<li>Se o levantamento do card vem sendo feito antes da reunião, alguns dias antes você começa a levantar os impedimentos, dúvidas, critérios de aceite, possíveis bloqueios, integrações, etc para chegar com o card escrito. Ou seja, está fazendo um <strong>processo</strong> de levantamento do card, logo, <strong>refining se torna um processo</strong>.</li>
+</ul>
+<p>A ideia deste texto é explicar, e defender, quais as vantagens de tratar o refining como um processo e não como uma reunião. Mas antes, o que é um processo? Um dos possíveis significados para <strong>processo é</strong>: <a href="https://www.significados.com.br/processo/"><em>&#8220;&#8230;um método, sistema, maneira de agir ou conjunto de medidas tomadas para atingir algum objetivo.&#8221;</em></a>. No caso, <strong>o objetivo de um processo de refining é gerar user stories prontas para serem desenvolvidas</strong>.</p>
+<p>Agora, vamos começar a parte <em>legal</em>. Qual a razão de transformar o refining num processo, e não uma reunião?</p>
+<p>Acredito que haja algumas razões que façam com que o processo se sobressaia à reunião e crie um output com user stories melhores escritas ao final. Essas razões oneram menos o time de desenvolvimento, trazem um peso maior sobre a agenda do responsável pelo produto e do responsável pelo processo, entretanto flexibiliza para o restante do time. [Ok! Mas, como?]</p>
+<p>Quando se define um processo de refining, deixando claro os passos para antes e depois da reunião, conseguimos atingir alguns pontos cruciais:</p>
+<ul>
+<li>Melhor preparo para a reunião com o time: [como?] Bem, ao saber que você terá uma reunião você normalmente se prepara (espero que sim), correto? Definindo o processo corretamente, você sabe quais passos precisará tomar, para estar preparado para o refining. Uma boa reunião, acredito que seja influenciada por alguns fatores: uma pauta bem definida, um time box fechado e um facilitador para que a reunião seja fluida;</li>
+<li>Otimizar o tempo do time: quando você se prepara para um refining, escrevendo os cards antes, realizando pesquisas e levantando possíveis dúvidas, você está reduzindo o tempo em que todos precisarão ficar juntos para fazer isso. Otimizando o tempo de todos os envolvidos;</li>
+<li>Reduz possibilidade de devaneios: quantas vezes você esteve refinando uma user story, e do nada alguém começou a devanear durante a reunião? Levando uma user story melhor descrita para o momento da discussão reduz as chances de alguém começar a puxar um debate de algo que não está no escopo do card.</li>
+</ul>
+<h2>Que ótimo, como eu realizo um refining?</h2>
+<p>Você deve estar se perguntando, não?</p>
+<p>Uma coisa imprescindível é definir um processo para o refining (para não sermos muito &#8220;disruptivos&#8221;), e reduzir a confusão na cabeça de algumas pessoas. Costumamos dizer aqui na Plataformatec que dividimos o refining em duas etapas, sendo que ambas fazem parte do <strong>processo de refining</strong>: pré-refining e o refining em sí, isto é, o encontro para que o time feche o entendimento do que foi escrito na user story.</p>
+<h3>Opa, maravilha. Pré-refining e refining, mas o que seriam?</h3>
+<p>Chamamos de <strong>pré-refining</strong> todo o preparo tido para que a user story chegue mais redonda para o time. Costumamos começá-lo mais assíncrono, e realizando alguns passos.</p>
+<p>Primeiro, como responsável pelo processo e auxiliando a pessoa de produto, costumo estudar o escopo de negócio para entender do que se trata a user story, de forma a ter o mínimo de conhecimento para escrever e questionar critérios de aceite, ou formas de implementação (falando de negócio, não de código). Os critérios de aceite são adicionados à user story, de forma que fique claro para todos os envolvidos o que é necessário para que o card seja tido como completo, ou seja, que a user story seja aceita como pronta.</p>
+<p>Desta forma, é possível que já sejam levantadas dúvidas do produto dentro da user story. E esse é o segundo passo, conversar com a pessoa de negócio, passando o primeiro filtro no card, e anotando dúvidas que possam surgir relativo ao escopo do projeto ou da user story. Esses questionamentos ficam anotados no card, de forma que todo o time possa ver.</p>
+<p>Em seguida, procuro algum dos desenvolvedores e converso sobre a user story, demonstrando o que já foi levantado, para que passemos por um segundo filtro da escrita. Nesta conversa com o desenvolvedor surgem as dúvidas mais técnicas, dúvidas de integrações, por exemplo.</p>
+<p>A ideia neste passo, como dito anteriormente, é deixar a user story minimamente escrita de forma a otimizar o tempo de todos. Como o especialista em negócio e um dos especialistas técnico do projeto já foram consultados, em teoria os cards já possuem informações suficientes para que sejam levados para o refining. Caso ainda existam dúvidas que não foram sanadas, com grande risco de não serem respondidas durante o encontro, o ideal é que essas respostas sejam obtidas antes do mesmo.</p>
+<h3>Levantei todas as dúvidas, deixei o card pronto! O desenvolvedor pode puxar a user story?</h3>
+<p>Opa! Calma lá jovem Padawan, não é bem assim! Você validou a hipótese do card com apenas duas pessoas! O seu time provavelmente possui bem mais pessoas que isso! Agora sim, vamos ao encontro para refining!</p>
+<p>Agora é onde há o acordo do time, que aquilo que está escrito na user story faz sentido, e é entregável! É o momento em que o responsável pelo negócio dá sua palavra de que é aquilo que ele espera como produto do card desenvolvido, e também é o quando analistas de qualidade e desenvolvedores entram em acordo do que será construído e testado.</p>
+<h3>Quais os passos de um refining?</h3>
+<p>Calma! Queria apenas deixar claro o que faremos a partir de agora! Já que estamos entendidos, vejamos agora algumas dicas de como fazer isso!</p>
+<p>Primeiro de tudo, há algo muito importante que eu defendo: <strong>traga as pessoas certas para as reuniões certas</strong>. No caso, como estaremos falando do desenvolvimento, é imprescindível a participação de desenvolvedores. Falaremos também de testes, então um analista de qualidade é muito importante! E também falaremos de incrementos ao negócio, logo, a participação do responsável pelo produto é essencial! Entretanto, não há a necessidade de participarem todos os desenvolvedores, por exemplo. A user story deve estar escrita de forma clara o suficiente para que alguém que não participou do encontro seja capaz de ler e compreender o que deve ser feito. Na equipe que trabalho atualmente, utilizamos o valor máximo de 50% dos desenvolvedores na reunião. Veja bem: <strong>máximo</strong>, há momentos em que participam menos.</p>
+<p>É indispensável que este momento seja síncrono! De forma que estejam todos alinhados no mesmo momento, e saiam sem dúvidas quanto ao que foi discutido (as chances de restarem dúvidas são maiores em uma discussão assíncrona, por exemplo). Com um encontro síncrono, as pessoas costumam entender melhor o que está sendo discutido.</p>
+<p>Outro dois pontos cruciais que devem andar juntos: objetivo e time box! Antes de entrar na discussão do refining deixe bem claro qual o objetivo da conversa, e qual o time box vocês terão para isso. Algo como: <em>&#8220;Pessoal! Temos 3 user stories que precisam ser refinadas! Usaremos 20 minutos para cada uma!&#8221;</em>. Desta forma, o time sabe que precisará otimizar seu tempo para que a discussão gere frutos dentro deste tempo definido. Outra coisa bem legal de se fazer, é deixar um computador com um timer regressivo contando este time box (basta dar um <a href="'https://www.google.com.br/search?q=google+20+minutes+timer&amp;oq=google+20+minutes+timer&amp;aqs=chrome..69i57j0l2j69i64.5838j0j7&amp;sourceid=chrome&amp;ie=UTF-8'">Google com o termo &#8220;timer&#8221;</a> e pronto! Mágica realizada!). Desta maneira, a medida que o time evolui, haverá alguém atento a isso e cobrando os demais.</p>
+<p>Lembre-se, este é o momento de entendimento do time. É onde todos devem estar comprometidos quanto ao que será entregue, e como será entregue. As user stories devem sair bem descritas para que entrem dentro do ciclo de desenvolvimento. Aconselho fortemente que, caso ao final destes 20 minutos ainda restem muitas dúvidas, incertezas ou que o time não esteja seguro quanto a entrega, que o card não entre no ciclo de desenvolvimento, e passe por um novo processo de refining. Não queremos cards com alto grau de incerteza dentro do processo, queremos?</p>
+<p>E você, como lida com o refining dentro do seu time? Você acha que é uma reunião? Um evento? Um processo? Conta pra gente aí nos comentários como você lida com isso dentro do seu time!</p>
+<p><a href="http://pages.plataformatec.com.br/ebook-como-lidar-com-prazos-em-projetos-de-software?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=ebook-como-lidar-com-prazos&#038;utm_content=cta-blog-post-bottom" target=_blank""><br />
+<img decoding="async" src="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg" alt="Como lidar com prazo em projetos de software [e-book gratuito]" width="831" height="147" class="aligncenter size-full wp-image-6158" srcset="/wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos.jpg 831w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-300x53.jpg 300w, /wp-content/uploads/2017/03/CTA-blog-ebook-como-lidar-com-prazos-768x136.jpg 768w" sizes="(max-width: 831px) 100vw, 831px" /><br />
+</a></p><p>The post <a href="/2017/05/aprendi-sobre-refining-user-stories-em-projetos/">O que aprendi sobre o Refining de User Stories em projetos</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

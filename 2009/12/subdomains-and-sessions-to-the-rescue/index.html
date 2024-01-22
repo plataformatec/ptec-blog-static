@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Subdomains and sessions to the rescue! « Plataformatec Blog</title>
+		<meta name="description" content="We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2009/12/subdomains-and-sessions-to-the-rescue/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Subdomains and sessions to the rescue! « Plataformatec Blog">
+		<meta property="og:description" content="We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several">
+		<meta property="og:url" content="/2009/12/subdomains-and-sessions-to-the-rescue/">
+		<meta property="article:published_time" content="2009-12-16T18:48:31+00:00">
+		<meta property="article:modified_time" content="2009-12-16T22:06:21+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Subdomains and sessions to the rescue! « Plataformatec Blog">
+		<meta name="twitter:description" content="We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#article","name":"Subdomains and sessions to the rescue! « Plataformatec Blog","headline":"Subdomains and sessions to the rescue!","author":{"@id":"\/author\/carlosantonio\/#author"},"publisher":{"@id":"\/#organization"},"datePublished":"2009-12-16T16:48:31-02:00","dateModified":"2009-12-16T20:06:21-02:00","inLanguage":"en-US","commentCount":33,"mainEntityOfPage":{"@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#webpage"},"isPartOf":{"@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#webpage"},"articleSection":"English, rails, session, subdomain"},{"@type":"BreadcrumbList","@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"\/#listItem","position":1,"name":"Home","item":"\/","nextItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/#listItem","position":2,"name":"2009","item":"\/2009\/","nextItem":"\/2009\/12\/#listItem","previousItem":"\/#listItem"},{"@type":"ListItem","@id":"\/2009\/12\/#listItem","position":3,"name":"December","item":"\/2009\/12\/","nextItem":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#listItem","previousItem":"\/2009\/#listItem"},{"@type":"ListItem","@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#listItem","position":4,"name":"Subdomains and sessions to the rescue!","previousItem":"\/2009\/12\/#listItem"}]},{"@type":"Organization","@id":"\/#organization","name":"Plataformatec Blog","url":"\/"},{"@type":"Person","@id":"\/author\/carlosantonio\/#author","url":"\/author\/carlosantonio\/","name":"Carlos Antônio","image":{"@type":"ImageObject","@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/77237b97a465ae5a293ad323b7296837?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Carlos Antônio"}},{"@type":"WebPage","@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#webpage","url":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/","name":"Subdomains and sessions to the rescue! « Plataformatec Blog","description":"We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several","inLanguage":"en-US","isPartOf":{"@id":"\/#website"},"breadcrumb":{"@id":"\/2009\/12\/subdomains-and-sessions-to-the-rescue\/#breadcrumblist"},"author":{"@id":"\/author\/carlosantonio\/#author"},"creator":{"@id":"\/author\/carlosantonio\/#author"},"datePublished":"2009-12-16T16:48:31-02:00","dateModified":"2009-12-16T20:06:21-02:00"},{"@type":"WebSite","@id":"\/#website","url":"\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Subdomains and sessions to the rescue! Comments Feed" href="/2009/12/subdomains-and-sessions-to-the-rescue/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/481">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=481">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F12%2Fsubdomains-and-sessions-to-the-rescue%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2F2009%2F12%2Fsubdomains-and-sessions-to-the-rescue%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-481 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2009/12/subdomains-and-sessions-to-the-rescue/" rel="bookmark">Subdomains and sessions to the rescue!</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2009-12-16T16:48:31-02:00">Dec 16, 2009</time>
+      <p class="post-author">
+        <img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=7" title="Posts by Carlos Antônio">Carlos Antônio</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>We have been working on an application that allows administrators to create accounts for their users. Each account will be accessible under a subdomain, so we needed to setup a subdomain environment inside our application, and also in our development machine. In addition, we must be able to let the users signed in among several subdomains, as a user can access other accounts when allowed.</p>
+<p>After some research we decided to go with the <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> gem, which is great to give your application the ability of handling subdomains. Another great resource we have used is Ryan Bates&#8217; <a title="Subdomains Railscast" href="http://railscasts.com/episodes/123-subdomains">screencast</a> about the subject. But they did not solve our problem completely, so here we are going to document a few steps to help you get up and running easily with subdomains and sessions.</p>
+<h3>Setup a development environment</h3>
+<p>As we need to test all the subdomain stuff in our application while developing it, we are going to need some extra setup for our development environment. However, our local machine knows nothing about subdomains, so how do we do that? We need to tell our machine which subdomains we will be using, manually. You can do this by editing your hosts file, located at <code>/etc/hosts</code>, and configuring the subdomains you are goint to need:</p>
+<pre>127.0.0.1     localhost local.host test.local.host subdomain.local.host xxx.local.host</pre>
+<p>We are making explicit all domains and subdomains that will point to our local machine, under IP 127.0.0.1. By default <code>localhost</code> was already there, so we have just added the needed subdomains. When working with this subdomains I personally like to create a domain like <code>my_app.local</code>, and point subdomains to it like <code>sub.my_app.local</code>. There are some other ways to create this setup, but we would rather go with this due to readability and easy configuration.</p>
+<p>To make sure everything is fine we need to clear our dns cache:</p>
+<p>Under linux:</p>
+<pre>/etc/init.d/dns-clean start</pre>
+<p>Under OS X:</p>
+<pre>dscacheutil -flushcache</pre>
+<p>And that is it. Restart your application and try it out. Access it under the new domain or subdomain you have created, for instance <code>local.host:3000</code>, to see if everything is working fine.</p>
+<p>You may be asking why we could not be using just <code>subdomain.localhost</code> instead of <code>subdomain.local.host</code> as subdomain configuration. And you are right, we could use it, and it should work fine to access subdomains. However, there are some &#8220;bumps in the road&#8221; while sharing sessions, so keep reading!</p>
+<h3>Installing subdomain-fu</h3>
+<p><a href="http://gemcutter.org/gems/subdomain-fu">Subdomain-fu</a> is easy to install as any other gem:</p>
+<pre>gem install subdomain-fu</pre>
+<p>Configure it in your environment:</p>
+<pre lang="ruby">config.gem 'subdomain-fu', :version => '0.5.3'</pre>
+<p>Then we are going to need a config file to setup <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a>, with basically the following code:</p>
+<pre lang="ruby">SubdomainFu.tld_sizes = {
+  :development => 1, # local.host
+  :test => 1,
+  :production => 1 # my_app.com
+}</pre>
+<p>This config file can be placed at <code>config/initializers</code> folder. Basically it tells <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> the sizes of the domain for each environment, i.e. 0 for <code>localhost</code>, 1 for <code>foo.com</code>, 2 for <code>foo.bar.com</code>.</p>
+<p>The gem gives you some special powers through the <code>current_subdomain</code> method in your controllers, and also some adds to your routes like using the <code>:subdomain</code> option: <code>root_url(:subdomain => 'foo') #=> foo.local.host.</code></p>
+<h3>Routing</h3>
+<p>Chances are you are going to need specific actions to be handled only under subdomains, but not in the root domain or a specific subdomain, like <code>admin.foo.com</code>. And <a href="http://gemcutter.org/gems/subdomain-fu">subdomain-fu</a> will help you here: you just need to setup your routes using the :subdomain condition, like the example below:</p>
+<pre lang="ruby">ActionController::Routing::Routes.draw do |map|
+  map.with_options :conditions => { :subdomain => /^[A-Za-z0-9-]+$/ } do |app|
+    app.resources :posts
+    app.root :controller => 'posts'
+  end
+  # ... other routes
+end</pre>
+<p>This will ensure your routes require a subdomain to be recognized.</p>
+<p>Finally, everything is perfect, you are now able to test subdomains in your environment, create some filters to ensure the subdomain exists and your user has access to it, sessions work as expected, and so on, right? Nope. We are not ready yet. Sessions are our pain.</p>
+<h3>Sharing sessions between subdomains</h3>
+<p>Due to security issues, browsers do not allow sharing cookies using only <code>.com</code>, just under the complete domain like <code>foo.com</code>, and of course it is totally right. Could you imagine sharing sessions between <code><a href="http://gmail.com/">gmail.com</a></code> and <code><a href="http://hotmail.com/">hotmail.com</a></code>, just because they are both <code>.com</code>? I could not. The same rule applies while trying to share sessions using <code>localhost</code> only. Browsers will not allow you sharing sessions between subdomains under <code>localhost</code>, and some weird issues may appear. We have had <code>AuthenticityToken</code> errors while trying to use <code>localhost</code>.</p>
+<p>Anyway, we were smart enough to create our own subdomain configuration using <code>local.host</code> instead of <code>localhost</code>, remember? Our configuration actually simulates a full domain like the <code>foo.com</code> example instead of <code>.com</code> only. Think this way: <code>localhost => com</code>, <code>local.host => foo.com</code>.</p>
+<p>We are going to use this setup now. To enable sharing sessions in your application you need to configure the <code>:domain</code> option in your session config hash, for each environment. Here is how to do it in development config:</p>
+<pre lang="ruby">config.action_controller.session = { :domain => '.local.host' }</pre>
+<p>Please note the dot prepended to the domain. It will enable sharing sessions between all subdomains in your application. Think about it as <code>*.local.host</code>, including <code>local.host</code> itself. By doing this, you are now able to sign a user in one subdomain, or even the root domain, and redirect it to any other subdomain, for instance. The session will be kept and the user will stay signed in as expected.</p>
+<p>Do not forget to setup the production environment with the same config, pointing to the real domain of your application.</p>
+<h3>Testing</h3>
+<p>We are using <a href="http://cukes.info/">cucumber</a> in this application together with <a href="http://gemcutter.org/gems/celerity">celerity</a>/<a href="http://gemcutter.org/gems/culerity">culerity</a>, and at the beginning it was kind of pain to get it up and running. The first thing you must bear in mind is that you always have to setup the host you are testing. By default, cucumber uses host <code>example.com</code>. And that is okay for default Rails integration tests, except when we use &#8220;real browsers&#8221; tests like <a href="http://gemcutter.org/gems/celerity">celerity</a> or <a href="http://seleniumhq.org/">selenium</a>. You have to set it up by yourself. Just create two steps like this:</p>
+<pre lang="ruby">Given /^I am visiting the root application$/ do
+  host! 'local.host'
+end
+
+Given /^I am visiting the subdomain "([^\"]*)"$/ do |subdomain|
+  host! "#{subdomain}.local.host"
+end</pre>
+<p>And use then inside your features:</p>
+<pre lang="ruby">Given I am visiting the subdomain "my_sub"</pre>
+<p>That should do the trick. Make sure you use only subdomains you have configured in your hosts file, or you will get some weird errors =).</p>
+<h3>Mailers</h3>
+<p>We had some issues while creating mailers with links pointing to the subdomain. As our users has many subdomains, we don&#8217;t know where we should point the user inside the mailer, due to default lack of request context as we have in the controller. To solve this we could not use any class accessor, because they are not thread safe. So we decided to go with <code>Thread.current</code>. Just create a filter in your application controller:</p>
+<pre lang="ruby">before_filter :set_current_subdomain
+protected
+  def set_current_subdomain
+    Thread.current[:current_subdomain] = current_subdomain
+  end</pre>
+<p>Then create a new helper called <code>MailHelper</code> inside your <code>app/helpers</code> folder, adding a method to obtain the subdomain:</p>
+<pre lang="ruby">def current_subdomain
+  Thread.current[:current_subdomain]
+end</pre>
+<p>This <code>MailHelper</code> is a module provided by Rails which is included in all mailers. Now you are able to create links inside your mailers using the <code>current_subdomain</code> method, just like you do in your controllers:</p>
+<pre lang="ruby">link_to "Go to application", root_url(:subdomain => current_subdomain)</pre>
+<h3>What about Devise?</h3>
+<p>Devise has been doing a great work while authenticating a user under a specific subdomain. There are two cases to be handled: the first one is when your <code>User</code> model has a <code>subdomain</code> attribute and you want the authentication process take into account this <code>subdomain</code> with the <code>current_subdomain</code>. First of all you need to update devise call inside your user model to add the <code>:authentication_keys</code> option:</p>
+<pre lang="ruby">devise :all, :authentication_keys => [:email, :subdomain]</pre>
+<p>This will tell devise to find the user based on both <code>subdomain</code> and <code>email</code>. Then you have to add the subdomain to your sign in form as a <code>hidden field</code>, so Devise will be able to get this information easily from params while authenticating the user:</p>
+<pre lang="ruby">f.hidden_field :subdomain, :value => current_subdomain</pre>
+<p>The second case happens when your subdomain data is inside another model associatied with the user, let&#8217;s say a user has many accesses. In addition to what we have done in the first case, we must override a class method from Devise to add our own condition for finding the user:</p>
+<pre lang="ruby">def self.find_for_authentication(conditions={})
+  conditions[:accesses] = { :subdomain => conditions.delete(:subdomain) }
+  find(:first, :conditions => conditions, :joins => :accesses)
+end</pre>
+<p>Devise is now totally capable of handling authentication based on subdomains. <strong>Remember</strong>: Devise is managing authentication, so it will not be able to do anything after the user signs in. Be sure to also add filters to your controllers to ensure a user will never access a subdomain it has no access.</p>
+<h3>Here we go!</h3>
+<p>A few steps are needed to get our development machine up and running to create an application using subdomains, but they are key steps to ensure you are not going to have problems while starting. </p>
+<p>What about you? Have you ever developed an application using subdomains? Have you run through any of these issues, or maybe another you want to share? Do you have any tip?</p>
+<div id="_mcePaste" style="overflow: hidden; position: absolute; left: -10000px; top: 1611px; width: 1px; height: 1px;">
+<a href="http://gemcutter.org/gems/celerity">celerity</a>/<a href="http://gemcutter.org/gems/culerity">culerity</a>
+</div>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/rails/" rel="tag">rails</a>, <a href="/tag/session/" rel="tag">session</a>, <a href="/tag/subdomain/" rel="tag">subdomain</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comments"><span class="dsq-postid" data-dsqidentifier="481 http://blog.plataformatec.com.br/?p=481">33 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		33 responses to &#8220;Subdomains and sessions to the rescue!&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-892">
+				<div id="div-comment-892" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/bcfb57d114debaa051d23db9604bd731?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/bcfb57d114debaa051d23db9604bd731?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://twitter.com/rodrigo3n" class="url" rel="ugc external nofollow">rodrigo3n</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-892">December 16, 2009 at 9:46 pm</a>		</div>
+
+		<p>Very good article, I definitely should try Culerity and Devise.<br>
+Ahh, we don&#8217;t need *gem sources -a <a href="http://gemcutter.org*/" rel="nofollow ugc">http://gemcutter.org*</a> anymore, remember gems.rubyforge.org now points to gemcutter.org 😀</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-400">
+				<div id="div-comment-400" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/bcfb57d114debaa051d23db9604bd731?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/bcfb57d114debaa051d23db9604bd731?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://twitter.com/rodrigo3n" class="url" rel="ugc external nofollow">rodrigo3n</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-400">December 16, 2009 at 7:46 pm</a>		</div>
+
+		<p>Very good article, I definitely should try Culerity and Devise.<br>
+Ahh, we don&#8217;t need *gem sources -a <a href="http://gemcutter.org*/" rel="nofollow ugc">http://gemcutter.org*</a> anymore, remember gems.rubyforge.org now points to gemcutter.org 😀</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-893">
+				<div id="div-comment-893" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-893">December 16, 2009 at 10:04 pm</a>		</div>
+
+		<p>Sure, I always forget it.. bad habit =)..<br>
+Thanks for the tip, I&#8217;ll update the post.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-carlosantonio bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-401">
+				<div id="div-comment-401" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-401">December 16, 2009 at 8:04 pm</a>		</div>
+
+		<p>Sure, I always forget it.. bad habit =)..<br>
+Thanks for the tip, I&#8217;ll update the post.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-894">
+				<div id="div-comment-894" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/73af4fece11ee3767dc13e89cdc08500?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/73af4fece11ee3767dc13e89cdc08500?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.danielfischer.com/" class="url" rel="ugc external nofollow">Daniel Fischer</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-894">December 17, 2009 at 12:10 am</a>		</div>
+
+		<p>Try to fix that whitespace under &#8220;Configure it in your environment&#8221; it made me think there is no more content (a friend said this too&#8230;)</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-402">
+				<div id="div-comment-402" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/73af4fece11ee3767dc13e89cdc08500?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/73af4fece11ee3767dc13e89cdc08500?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.danielfischer.com/" class="url" rel="ugc external nofollow">Daniel Fischer</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-402">December 16, 2009 at 10:10 pm</a>		</div>
+
+		<p>Try to fix that whitespace under &#8220;Configure it in your environment&#8221; it made me think there is no more content (a friend said this too&#8230;)</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-895">
+				<div id="div-comment-895" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-895">December 17, 2009 at 1:43 am</a>		</div>
+
+		<p>In one of our applications, we actually had the need to have different domains alltogether, so the way we work around that is to append a &#8220;development sufix&#8221; to the domain name, and just strip it off.</p>
+<p>So, /etc/hosts could look like<br>
+127.0.0.1 <a href="http://www.infinum.hr-local/" rel="nofollow ugc">http://www.infinum.hr-local</a><br>
+127.0.0.1 <a href="http://www.google.com-local/" rel="nofollow ugc">http://www.google.com-local</a><br>
+etc.</p>
+<p>you access it locally with<br>
+<a href="http://www.infinum.hr-local:3000/" rel="nofollow ugc">http://www.infinum.hr-local:3000</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-403">
+				<div id="div-comment-403" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-403">December 16, 2009 at 11:43 pm</a>		</div>
+
+		<p>In one of our applications, we actually had the need to have different domains alltogether, so the way we work around that is to append a &#8220;development sufix&#8221; to the domain name, and just strip it off.</p>
+<p>So, /etc/hosts could look like<br>
+127.0.0.1 <a href="http://www.infinum.hr-local/" rel="nofollow ugc">http://www.infinum.hr-local</a><br>
+127.0.0.1 <a href="http://www.google.com-local/" rel="nofollow ugc">http://www.google.com-local</a><br>
+etc.</p>
+<p>you access it locally with<br>
+<a href="http://www.infinum.hr-local:3000/" rel="nofollow ugc">http://www.infinum.hr-local:3000</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-896">
+				<div id="div-comment-896" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-896">December 17, 2009 at 1:46 am</a>		</div>
+
+		<p>Also, Carlos, did you find a way to dynamically generate the contents of the /etc/hosts file?</p>
+<p>I don&#8217;t like that I have to enter manually each subdomain/domain I&#8217;d like to test into /etc/hosts.</p>
+<p>Something like this in /etc/hosts would be perfect:<br>
+include /home/myapp/config/hosts</p>
+<p>And then I could just generate the file with subdomains/domains from the database and include it in /etc/hosts.</p>
+<p>I could probably append to the /etc/hosts file, but that would require sudo, and wouldn&#8217;t be alltogether automatic&#8230;</p>
+<p>It&#8217;s not a big thing I know, but it makes you happy 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-404">
+				<div id="div-comment-404" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-404">December 16, 2009 at 11:46 pm</a>		</div>
+
+		<p>Also, Carlos, did you find a way to dynamically generate the contents of the /etc/hosts file?</p>
+<p>I don&#8217;t like that I have to enter manually each subdomain/domain I&#8217;d like to test into /etc/hosts.</p>
+<p>Something like this in /etc/hosts would be perfect:<br>
+include /home/myapp/config/hosts</p>
+<p>And then I could just generate the file with subdomains/domains from the database and include it in /etc/hosts.</p>
+<p>I could probably append to the /etc/hosts file, but that would require sudo, and wouldn&#8217;t be alltogether automatic&#8230;</p>
+<p>It&#8217;s not a big thing I know, but it makes you happy 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-897">
+				<div id="div-comment-897" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-897">December 17, 2009 at 2:24 am</a>		</div>
+
+		<p>@tomislav I think applications won&#8217;t require that much subdomains to test while in development. Actually I&#8217;m using just 3, and one of them is also configured in our test environment so tests always run in a &#8220;real&#8221; configured subdomain. Due to it we decided to go manually edit /etc/hosts.</p>
+<p>In addition, instead of editing your /etc/hosts file each time you need a new subdomain, you could also create a PAC file and setup your browser to use it as a proxy. There is an example of a file like this in the railscast I&#8217;ve linked in the text. That should do the trick.<br>
+I hope that helps =).<br>
+Thanks, Carlos.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-carlosantonio bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-406">
+				<div id="div-comment-406" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-406">December 17, 2009 at 12:24 am</a>		</div>
+
+		<p>@tomislav I think applications won&#8217;t require that much subdomains to test while in development. Actually I&#8217;m using just 3, and one of them is also configured in our test environment so tests always run in a &#8220;real&#8221; configured subdomain. Due to it we decided to go manually edit /etc/hosts.</p>
+<p>In addition, instead of editing your /etc/hosts file each time you need a new subdomain, you could also create a PAC file and setup your browser to use it as a proxy. There is an example of a file like this in the railscast I&#8217;ve linked in the text. That should do the trick.<br>
+I hope that helps =).<br>
+Thanks, Carlos.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-898">
+				<div id="div-comment-898" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">George Guimarães</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-898">December 17, 2009 at 2:33 am</a>		</div>
+
+		<p>@tomislav</p>
+<p>You can use DNS to do that. Instead of local.host that Carlos used, you can use a real DNS domain, like local.infinum.hr.</p>
+<p>It&#8217;s possible to use a wildcard to map all *.local.infinum.hr to 127.0.0.1. So, there would be no reason to dinamically mess with /etc/hosts. Sure&#8230; this may be a bit overwhelming but it&#8217;s a simple DNS-hack that works.</p>
+<p>Here at Plataforma we have never used such config, but I have personally used this when building/testing some personal projects.</p>
+<p>Another aproach would be configuring an local DNS resolver, but that&#8217;s even more cumbersome.. =D</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-georgeguimaraes odd alt thread-odd thread-alt depth-1" id="comment-407">
+				<div id="div-comment-407" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/ed4bd2b2407bb9c79cf9f3f1072ba0d1?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">George Guimarães</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-407">December 17, 2009 at 12:33 am</a>		</div>
+
+		<p>@tomislav</p>
+<p>You can use DNS to do that. Instead of local.host that Carlos used, you can use a real DNS domain, like local.infinum.hr.</p>
+<p>It&#8217;s possible to use a wildcard to map all *.local.infinum.hr to 127.0.0.1. So, there would be no reason to dinamically mess with /etc/hosts. Sure&#8230; this may be a bit overwhelming but it&#8217;s a simple DNS-hack that works.</p>
+<p>Here at Plataforma we have never used such config, but I have personally used this when building/testing some personal projects.</p>
+<p>Another aproach would be configuring an local DNS resolver, but that&#8217;s even more cumbersome.. =D</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-899">
+				<div id="div-comment-899" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-899">December 17, 2009 at 3:02 am</a>		</div>
+
+		<p>Ok, thanks Carlos and George, I&#8217;m sure I&#8217;ll implement one of these solutions.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-408">
+				<div id="div-comment-408" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/585738e1791e0bcd695cabd0fb22b885?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.infinum.hr/" class="url" rel="ugc external nofollow">Tomislav Car</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-408">December 17, 2009 at 1:02 am</a>		</div>
+
+		<p>Ok, thanks Carlos and George, I&#8217;m sure I&#8217;ll implement one of these solutions.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-900">
+				<div id="div-comment-900" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-900">December 17, 2009 at 7:51 am</a>		</div>
+
+		<p>@Daniel Yeah, fixed. I already tried to fix that several times, but for some reason today I could handle that in 5 minutes. Thanks for the motivation 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-josevalim odd alt thread-odd thread-alt depth-1" id="comment-409">
+				<div id="div-comment-409" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">José Valim</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-409">December 17, 2009 at 5:51 am</a>		</div>
+
+		<p>@Daniel Yeah, fixed. I already tried to fix that several times, but for some reason today I could handle that in 5 minutes. Thanks for the motivation 😉</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-901">
+				<div id="div-comment-901" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/41e886921e8a87caa647dfdf9acdf2d4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/41e886921e8a87caa647dfdf9acdf2d4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.enlightsolutions.com/" class="url" rel="ugc external nofollow">Dan Pickett</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-901">December 17, 2009 at 6:46 pm</a>		</div>
+
+		<p>Ghost is an awesome gem for managing hostnames when testing:</p>
+<p><a href="http://github.com/bjeanes/ghost/" rel="nofollow ugc">http://github.com/bjeanes/ghost/</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-410">
+				<div id="div-comment-410" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/41e886921e8a87caa647dfdf9acdf2d4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/41e886921e8a87caa647dfdf9acdf2d4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.enlightsolutions.com/" class="url" rel="ugc external nofollow">Dan Pickett</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-410">December 17, 2009 at 4:46 pm</a>		</div>
+
+		<p>Ghost is an awesome gem for managing hostnames when testing:</p>
+<p><a href="http://github.com/bjeanes/ghost/" rel="nofollow ugc">http://github.com/bjeanes/ghost/</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-902">
+				<div id="div-comment-902" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/0b11666f57da006de032c38c462c7f3a?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/0b11666f57da006de032c38c462c7f3a?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://danielkehoe.com/" class="url" rel="ugc external nofollow">Daniel Kehoe</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-902">December 18, 2009 at 1:12 am</a>		</div>
+
+		<p>I wonder if you looked at Matthew Hollingworth&#8217;s <a href="http://code.matthewhollingworth.net/articles/2009-06-02-adding-subdomains-to-rails-routing" rel="nofollow">subdomain_routes</a> gem as an alternative to the subdomain-fu gem. He says it&#8217;s useful in URL generation, route recognition, and better for route definition. The subdomain_routes code for the routes.rb file looks simpler than what&#8217;s needed for subdomain-fu.</p>
+<p>I&#8217;m about to start a project which requires subdomains (and uses Devise), so I&#8217;m curious if you made a choice (and why) between subdomain_routes and subdomain-fu.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-411">
+				<div id="div-comment-411" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/0b11666f57da006de032c38c462c7f3a?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/0b11666f57da006de032c38c462c7f3a?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://danielkehoe.com/" class="url" rel="ugc external nofollow">Daniel Kehoe</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-411">December 17, 2009 at 11:12 pm</a>		</div>
+
+		<p>I wonder if you looked at Matthew Hollingworth&#8217;s <a href="http://code.matthewhollingworth.net/articles/2009-06-02-adding-subdomains-to-rails-routing" rel="nofollow">subdomain_routes</a> gem as an alternative to the subdomain-fu gem. He says it&#8217;s useful in URL generation, route recognition, and better for route definition. The subdomain_routes code for the routes.rb file looks simpler than what&#8217;s needed for subdomain-fu.</p>
+<p>I&#8217;m about to start a project which requires subdomains (and uses Devise), so I&#8217;m curious if you made a choice (and why) between subdomain_routes and subdomain-fu.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-903">
+				<div id="div-comment-903" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-903">December 18, 2009 at 3:08 pm</a>		</div>
+
+		<p>@Daniel I haven&#8217;t looked at subdomain_routes, but it seems to be a nice library for handling subdomains. I&#8217;ll definitely take a closer look at this library.</p>
+<p>Anyway, subdomain_routes should do the trick as well as subdomain-fu did. You shouldn&#8217;t have issues with both. The main difference I can see for your code is the way you&#8217;ll be using routes, as subdomain full requires you to use :subdomain key instead of adding it to the named route. And you just need to test whether the model-based subdomains will work as expected for you specific case.<br>
+I&#8217;d encourage you to give it a try with subdomain_routes. Also, you could provide some feedback here again if you decide so.</p>
+<p>Thanks, Carlos</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-carlosantonio bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-412">
+				<div id="div-comment-412" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-412">December 18, 2009 at 1:08 pm</a>		</div>
+
+		<p>@Daniel I haven&#8217;t looked at subdomain_routes, but it seems to be a nice library for handling subdomains. I&#8217;ll definitely take a closer look at this library.</p>
+<p>Anyway, subdomain_routes should do the trick as well as subdomain-fu did. You shouldn&#8217;t have issues with both. The main difference I can see for your code is the way you&#8217;ll be using routes, as subdomain full requires you to use :subdomain key instead of adding it to the named route. And you just need to test whether the model-based subdomains will work as expected for you specific case.<br>
+I&#8217;d encourage you to give it a try with subdomain_routes. Also, you could provide some feedback here again if you decide so.</p>
+<p>Thanks, Carlos</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-904">
+				<div id="div-comment-904" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fee80fad857baeb14ff106d71eab5332?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/fee80fad857baeb14ff106d71eab5332?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.areacriacoes.com.br/" class="url" rel="ugc external nofollow">Daniel Lopes</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-904">December 19, 2009 at 3:35 pm</a>		</div>
+
+		<p>Really good post, as always. I also use Ghost for my local machine too.</p>
+<p>In case of mailer I normally store the subdomain with another account data in database table, so when a rake taks or cron call a mailer I allways query for account and pass that account as body param to mailer. But your aproach with Threads are great too, thanks.</p>
+<p>For wildcard subdomains is really easy to setup like George said, but you should remember if you release it on web you will need a wildcard ssl certiface and it will cost to you arround $200 year.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-413">
+				<div id="div-comment-413" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fee80fad857baeb14ff106d71eab5332?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/fee80fad857baeb14ff106d71eab5332?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.areacriacoes.com.br/" class="url" rel="ugc external nofollow">Daniel Lopes</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-413">December 19, 2009 at 1:35 pm</a>		</div>
+
+		<p>Really good post, as always. I also use Ghost for my local machine too.</p>
+<p>In case of mailer I normally store the subdomain with another account data in database table, so when a rake taks or cron call a mailer I allways query for account and pass that account as body param to mailer. But your aproach with Threads are great too, thanks.</p>
+<p>For wildcard subdomains is really easy to setup like George said, but you should remember if you release it on web you will need a wildcard ssl certiface and it will cost to you arround $200 year.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-905">
+				<div id="div-comment-905" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/0f1fa6b6ea69391ae1d1f64b33cb77b8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/0f1fa6b6ea69391ae1d1f64b33cb77b8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.locallygrown.net/" class="url" rel="ugc external nofollow">Eric Wagoner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-905">December 19, 2009 at 3:58 pm</a>		</div>
+
+		<p>One thing about subdomains that I never see addressed:</p>
+<p>You&#8217;ll want to make <a href="http://www.subdomain.domain/" rel="nofollow ugc">http://www.subdomain.domain</a> act the same as subdomain.domain, especially if you&#8217;re writing an application that will be used by the general public. A very large percent of the population think everything on the web has to start with &#8220;www.&#8221; even if you tell them otherwise. The press will do the same thing, no matter how much effort you put into giving them the correct URL.</p>
+<p>So, save yourself from a lot of headache, and your users from a lot of confusion, by just making the two equivalent in your application.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-414">
+				<div id="div-comment-414" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/0f1fa6b6ea69391ae1d1f64b33cb77b8?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/0f1fa6b6ea69391ae1d1f64b33cb77b8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.locallygrown.net/" class="url" rel="ugc external nofollow">Eric Wagoner</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-414">December 19, 2009 at 1:58 pm</a>		</div>
+
+		<p>One thing about subdomains that I never see addressed:</p>
+<p>You&#8217;ll want to make <a href="http://www.subdomain.domain/" rel="nofollow ugc">http://www.subdomain.domain</a> act the same as subdomain.domain, especially if you&#8217;re writing an application that will be used by the general public. A very large percent of the population think everything on the web has to start with &#8220;www.&#8221; even if you tell them otherwise. The press will do the same thing, no matter how much effort you put into giving them the correct URL.</p>
+<p>So, save yourself from a lot of headache, and your users from a lot of confusion, by just making the two equivalent in your application.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-906">
+				<div id="div-comment-906" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fade36e7de5b2169930903afec9e4f21?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/fade36e7de5b2169930903afec9e4f21?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Andrew Coleman</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-906">December 23, 2009 at 8:13 am</a>		</div>
+
+		<p>I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: <a href="http://github.com/penguincoder/acts_as_restricted_subdomain" rel="nofollow ugc">http://github.com/penguincoder/acts_as_restricted_subdomain</a></p>
+<p>There is a fork that has support for recognizing the entire domain, as well so you aren&#8217;t limited to just subdomains.</p>
+<p>I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-417">
+				<div id="div-comment-417" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/fade36e7de5b2169930903afec9e4f21?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/fade36e7de5b2169930903afec9e4f21?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Andrew Coleman</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-417">December 23, 2009 at 6:13 am</a>		</div>
+
+		<p>I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: <a href="http://github.com/penguincoder/acts_as_restricted_subdomain" rel="nofollow ugc">http://github.com/penguincoder/acts_as_restricted_subdomain</a></p>
+<p>There is a fork that has support for recognizing the entire domain, as well so you aren&#8217;t limited to just subdomains.</p>
+<p>I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-907">
+				<div id="div-comment-907" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-907">December 23, 2009 at 11:02 am</a>		</div>
+
+		<p>@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.</p>
+<p>@eric Thanks for the tip.</p>
+<p>@andrew Nice plugin, I&#8217;ll take a look at it. Thanks.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment byuser comment-author-carlosantonio bypostauthor odd alt thread-odd thread-alt depth-1" id="comment-418">
+				<div id="div-comment-418" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/77237b97a465ae5a293ad323b7296837?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://carlosantoniodasilva.wordpress.com/" class="url" rel="ugc external nofollow">Carlos Antônio</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-418">December 23, 2009 at 9:02 am</a>		</div>
+
+		<p>@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.</p>
+<p>@eric Thanks for the tip.</p>
+<p>@andrew Nice plugin, I&#8217;ll take a look at it. Thanks.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1030">
+				<div id="div-comment-1030" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="https://secure.gravatar.com/avatar/05b0a44aad8e60f4bbb07c104d5b04d4?s=32&#038;d=mm&#038;r=pg" srcset="https://secure.gravatar.com/avatar/05b0a44aad8e60f4bbb07c104d5b04d4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Anonymous</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2009/12/subdomains-and-sessions-to-the-rescue/#comment-1030">July 5, 2010 at 7:47 am</a>		</div>
+
+		<p>Interesting! Gives me lots to think about! I learn something (usually more than one) new every day here!<a href="http://questionaries.org/" rel="nofollow ugc">http://questionaries.org</a></p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/" rel="prev">Classificação de textos no Dev in Sampa 2009</a>          <a href="/2009/12/one-in-three-inherited-resources-has-scope-and-responders/" rel="next">One in Three: Inherited Resources, Has Scope and Responders</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

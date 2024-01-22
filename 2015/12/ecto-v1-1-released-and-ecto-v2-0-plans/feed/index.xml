@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ecto v1.1 released and Ecto v2.0 plans	</title>
+	<atom:link href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 23 Feb 2016 01:41:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Aaron Tinio		</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1573</link>
+
+		<dc:creator><![CDATA[Aaron Tinio]]></dc:creator>
+		<pubDate>Tue, 23 Feb 2016 01:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4944#comment-1573</guid>
+
+					<description><![CDATA[I&#039;m so glad callbacks are being removed! Thank you guys for making the right, tough choices!]]></description>
+			<content:encoded><![CDATA[<p>I&#8217;m so glad callbacks are being removed! Thank you guys for making the right, tough choices!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1556</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 01 Feb 2016 08:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4944#comment-1556</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1555&quot;&gt;Chasm&lt;/a&gt;.
+
+Thank you! I would say a month from now is not an unreasonable expectation, at least for a beta release.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1555">Chasm</a>.</p>
+<p>Thank you! I would say a month from now is not an unreasonable expectation, at least for a beta release.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chasm		</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1555</link>
+
+		<dc:creator><![CDATA[Chasm]]></dc:creator>
+		<pubDate>Mon, 01 Feb 2016 01:39:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4944#comment-1555</guid>
+
+					<description><![CDATA[When I first encountered the Phoenix Framework about a year or so ago I was very dismayed that it appeared to be trying to rebuild Rails in Elixir. Why, why, why would anyone try to shoehorn an OOP framework into FP? Recently, I decided I&#039;d better learn Phoenix anyway (how bad could it be?), and began reading the excellent new book.
+
+I&#039;m delighted to report that I was totally wrong about Phoenix. In almost every way, it does things right, which is to say the FP way. Awesome. Models, however, were one area that still seemed a bit suspect. I think that getting rid of them is a capital idea, and am very much looking forward to Ecto 2. Any idea when it might be ready?]]></description>
+			<content:encoded><![CDATA[<p>When I first encountered the Phoenix Framework about a year or so ago I was very dismayed that it appeared to be trying to rebuild Rails in Elixir. Why, why, why would anyone try to shoehorn an OOP framework into FP? Recently, I decided I&#8217;d better learn Phoenix anyway (how bad could it be?), and began reading the excellent new book.</p>
+<p>I&#8217;m delighted to report that I was totally wrong about Phoenix. In almost every way, it does things right, which is to say the FP way. Awesome. Models, however, were one area that still seemed a bit suspect. I think that getting rid of them is a capital idea, and am very much looking forward to Ecto 2. Any idea when it might be ready?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Chris		</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1538</link>
+
+		<dc:creator><![CDATA[Chris]]></dc:creator>
+		<pubDate>Sat, 16 Jan 2016 22:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4944#comment-1538</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1530&quot;&gt;stevegrossi&lt;/a&gt;.
+
+Unless I am mistaken, Daniel still leverage Ecto Callbacks in his GenEvent solution.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1530">stevegrossi</a>.</p>
+<p>Unless I am mistaken, Daniel still leverage Ecto Callbacks in his GenEvent solution.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: stevegrossi		</title>
+		<link>/2015/12/ecto-v1-1-released-and-ecto-v2-0-plans/comment-page-1/#comment-1530</link>
+
+		<dc:creator><![CDATA[stevegrossi]]></dc:creator>
+		<pubDate>Tue, 15 Dec 2015 17:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4944#comment-1530</guid>
+
+					<description><![CDATA[Awesome work! I&#039;m actually excited for the removal of callbacks. Few features of Rails have given me more pain that those.
+
+I&#039;d like to bring attention to a very timely post by Daniel Berkompas on replacing Ecto callbacks with GenEvents: http://blog.danielberkompas.com/2015/12/08/use-gen-event-with-ecto-callbacks.html. His approach adds some complexity, but also gives you more control and could be a good replacement for anyone looking to migrate their Ecto callbacks before 2.0.]]></description>
+			<content:encoded><![CDATA[<p>Awesome work! I&#8217;m actually excited for the removal of callbacks. Few features of Rails have given me more pain that those.</p>
+<p>I&#8217;d like to bring attention to a very timely post by Daniel Berkompas on replacing Ecto callbacks with GenEvents: <a href="http://blog.danielberkompas.com/2015/12/08/use-gen-event-with-ecto-callbacks.html" rel="nofollow ugc">http://blog.danielberkompas.com/2015/12/08/use-gen-event-with-ecto-callbacks.html</a>. His approach adds some complexity, but also gives you more control and could be a good replacement for anyone looking to migrate their Ecto callbacks before 2.0.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

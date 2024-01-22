@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>REST « Plataformatec Blog</title>
+	<atom:link href="/tag/rest/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Mar 2014 21:46:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Embracing REST with mind, body and soul</title>
+		<link>/2009/08/embracing-rest-with-mind-body-and-soul/</link>
+					<comments>/2009/08/embracing-rest-with-mind-body-and-soul/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 07 Aug 2009 18:35:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[http]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[respond_with]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[REST]]></category>
+		<guid isPermaLink="false">/?p=49</guid>
+
+					<description><![CDATA[<p>UPDATE: ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes. About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about RESTful admiration and HTTP Lovefest. Since then we&#8217;ve added map.resources to our ... <a class="read-more-link" href="/2009/08/embracing-rest-with-mind-body-and-soul/">»</a></p>
+<p>The post <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">Embracing REST with mind, body and soul</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><strong>UPDATE:</strong> ActionController::Renderer was renamed to ActionController::Responder, so this post was changed to properly reflect such changes.</p>
+<p>About two and a half years ago, resources started to be a first class citizen in Rails when version 1.2 was released and it was all about <a href="http://weblog.rubyonrails.org/2007/1/19/rails-1-2-rest-admiration-http-lovefest-and-utf-8-celebrations" target="_blank">RESTful admiration and HTTP Lovefest</a>. Since then we&#8217;ve added <em>map.resources</em> to our routes, started to use different formats in <em>respond_to</em> and really learned how to love all HTTP verbs.</p>
+<p>Your application entry point (the router) has become completely RESTful, but it still haven&#8217;t reached ActionPack core. Today we are bringing the missing ingredient: make your controllers more resource aware.</p>
+<h3>The first step: respond_with(@resource)</h3>
+<p>About one week ago <a href="http://github.com/rails/rails/commit/09de34ca56598ae5d0302a14715b2a11b6cc9845" target="_blank">the first step was given</a>. We brought Merb&#8217;s provide/display into Rails, <a href="http://loudthinking.com/posts/37-bringing-merbs-providesdisplay-into-rails-3" target="_blank">just as DHH proposed</a>: you can define supported formats at the class level and tell in the instance the resource to be represented by those formats. Let&#8217;s see some code:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+  end</pre>
+<p>It works like this: when a request comes, for example with format xml, it will first search for a template at users/index.xml. If the template is not available, it tries to render the resource given (in this case, @users) by calling :to_xml on it. Before Rails 3.0, the equivalent to the index action above would be:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+  end</pre>
+<p>The gain with respond_with introduction is more obvious if you compare index, new and show actions:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    respond_to :html, :xml, :json
+
+    def index
+      @users = User.all
+      respond_with(@users)
+    end
+
+    def new
+      @user = User.new
+      respond_with(@user)
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_with(@user)
+    end
+  end</pre>
+<p>With older version:</p>
+<pre lang="ruby">  class UsersController &lt; ApplicationController
+    def index
+      @users = User.all
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @users }
+        format.json { render :json =&gt; @users }
+      end
+    end
+
+    def new
+      @user = User.new
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+
+    def show
+      @user = User.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.xml { render :xml =&gt; @user }
+        format.json { render :json =&gt; @user }
+      end
+    end
+  end</pre>
+<p>However, even if respond_with is full featured (Ryan Daigle has done <a href="http://ryandaigle.com/articles/2009/8/6/what-s-new-in-edge-rails-cleaner-restful-controllers-w-respond_with/" target="_blank">an excellent job covering all respond_with features</a>), it started to show some flaws on create, update and destroy actions. A default create action could be written with respond_with as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    if @user.save
+      flash[:notice] = "User was created successfully."
+      respond_with(@user, :status =&gt; :created, :location =&gt; @user) do |format|
+        format.html { redirect_to @user }
+      end
+    else
+      respond_with(@user.errors, :status =&gt; :unprocessable_entity) do |format|
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>You can notice that:</p>
+<ol>
+<li>You have to call respond_with twice;</li>
+<li>On the first respond_with, you have to give the location twice. One as a hash and other as parameter to redirect_to;</li>
+<li>And by giving a block to respond_with, you focus more on the exception than on the default behavior.</li>
+</ol>
+<p>Suddenly we realized that respond_with is useful just for GET requests. There was no HTTP Lovefest, it was more like HTTP monotheism.</p>
+<h3>2. Second step: Love all</h3>
+<p>At this point, we started to ask ourselves: why can&#8217;t respond_with include HTTP verb semantics? Isn&#8217;t that what RESTful is all about?</p>
+<p>After <a href="http://github.com/rails/rails/commit/5b7e81efec649b424037c68a93bddad1bc4e0c23" target="_blank">this commit</a>, we brought all HTTP verbs to respond_with, but only for resourceful formats like xml and json (ie. formats that don&#8217;t need to render a template). Then our create action with POST request could be rewritten as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    respond_with(@user) do |format|
+      if @user.save
+        flash[:notice] = "User was created successfully."
+        format.html { redirect_to @user }
+      else
+        format.html { render :action =&gt; :new }
+      end
+    end
+  end</pre>
+<p>Internally, when a xml request happened, respond_with would check the current request method (in this case, POST) and whether the resource has errors or not. Depending on these values, it will render the resource or the resource errors, setting accordingly the status and location headers. Now we just have to worry with non-RESTful requests, like html, mobile and iphone&#8230; (which we call navigational formats).</p>
+<p>Personally, I was quite happy with the results at this iteration, since it solves two of the three problems exposed previously. However, Jeremy Kemper and Yehuda Katz wanted more. And they were right, yeah!</p>
+<h3>3. Third step: Responder</h3>
+<p>In step 2, we were able to abstract POST, PUT and DELETE requests for formats like xml and json, but we still would have to repeat html behavior through all controllers, even if almost all of them behave similarly.</p>
+<p>So what we want is a simple way to tell the controller <strong>how to render our resources depending on the format AND HTTP verb</strong>. <a href="http://github.com/rails/rails/commit/aed135d3e261cbee153a35fcfbeb47e2e02b12e4" target="_blank">In this commit</a>, we&#8217;ve added <strong>ActionController::Responder</strong>.</p>
+<p>By default, ActionController::Responder holds all formats behavior in a method called to_format. It&#8217;s similar to this:</p>
+<pre lang="ruby">  def to_format
+    return render unless resource.respond_to?(:"to_#{format}")
+
+    if get?
+      render format =&gt; resource
+    elsif has_errors?
+      render format =&gt; resource.errors, :status =&gt; :unprocessable_entity
+    elsif post?
+      render format =&gt; resource, :status =&gt; :created, :location =&gt; resource
+    else
+      head :ok
+    end
+  end</pre>
+<p>As you can see, it renders the resource based on the HTTP verb and whether it has errors or not. If some format, like :html, does not fall into the to_format behavior, we just need to define a to_html in ActionController::Responder, which by default is:</p>
+<pre lang="ruby">  def to_html
+    if get?
+      render
+    elsif has_errors?
+      render :action =&gt; (post? ? :new : :edit)
+    else
+      redirect_to resource
+    end
+  end</pre>
+<p>As result, you have your resources representation encapsulated in one place. Your controller code just have to send the resource using <strong>respond_with(@resource)</strong> and respond_with will call <strong>ActionController::Responder</strong> which will know what to do. Our create action (POST request) can then be written as:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user)
+  end</pre>
+<p>If you need to change the redirect URL, you can overwrite just the html behavior:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user) do |format|
+      format.html { redirect_to user_confirmation_url }
+    end
+  end</pre>
+<p>On the other hand, if you want to change the redirect url and the Location header for XML and JSON, you can simply give :location as option:</p>
+<pre lang="ruby">  def create
+    @user = User.new(params[:user])
+    flash[:notice] = "User was created successfully." if @user.save
+    respond_with(@user, :location =&gt; user_confirmation_url)
+  end</pre>
+<p>The best of all is that the responder implementation is quite simple and straight-forward, but still powerful. We haven&#8217;t enforced any restriction in the API. Anything that responds to :call can be a responder, so you can create your custom classes or even give procs, fibers and so on.</p>
+<p>Embrace REST in your design and enjoy a consistent behavior through all your controllers. Spread the word!</p><p>The post <a href="/2009/08/embracing-rest-with-mind-body-and-soul/">Embracing REST with mind, body and soul</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2009/08/embracing-rest-with-mind-body-and-soul/feed/</wfw:commentRss>
+			<slash:comments>34</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

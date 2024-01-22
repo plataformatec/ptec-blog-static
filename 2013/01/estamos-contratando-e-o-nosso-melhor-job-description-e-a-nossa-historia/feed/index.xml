@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Estamos contratando! E o nosso melhor job description é a nossa história.	</title>
+	<atom:link href="/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 23 Jan 2013 03:15:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Bui Thien Huong		</title>
+		<link>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/comment-page-1/#comment-1295</link>
+
+		<dc:creator><![CDATA[Bui Thien Huong]]></dc:creator>
+		<pubDate>Wed, 23 Jan 2013 03:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3272#comment-1295</guid>
+
+					<description><![CDATA[ bom]]></description>
+			<content:encoded><![CDATA[<p> bom</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vinicius Baggio Fuentes		</title>
+		<link>/2013/01/estamos-contratando-e-o-nosso-melhor-job-description-e-a-nossa-historia/comment-page-1/#comment-1293</link>
+
+		<dc:creator><![CDATA[Vinicius Baggio Fuentes]]></dc:creator>
+		<pubDate>Thu, 10 Jan 2013 14:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3272#comment-1293</guid>
+
+					<description><![CDATA[&#060;3 PlataformaTec &#060;3]]></description>
+			<content:encoded><![CDATA[<p>&lt;3 PlataformaTec &lt;3</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>extensions « Plataformatec Blog</title>
+	<atom:link href="/tag/extensions/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 19 Sep 2014 16:07:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Comparing protocols and extensions in Swift and Elixir</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/</link>
+					<comments>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 10 Jun 2014 13:55:16 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[clojure]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[extensions]]></category>
+		<category><![CDATA[protocols]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[swift]]></category>
+		<guid isPermaLink="false">/?p=4046</guid>
+
+					<description><![CDATA[<p>Swift has been recently announced by Apple and I have been reading the docs and playing with the language out of curiority. I was pleasantly surprised with many features in the language, like the handling of optional values (and types) and with immutability being promoted throughout the language. The language also feels extensible. For extensibility, ... <a class="read-more-link" href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/">»</a></p>
+<p>The post <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/">Comparing protocols and extensions in Swift and Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="https://developer.apple.com/swift/">Swift</a> has been recently announced by Apple and I have been reading the docs and playing with the language out of curiority. I was pleasantly surprised with many features in the language, like the handling of optional values (and types) and with immutability being promoted throughout the language.</p>
+<p>The language also feels extensible. For extensibility, I am using the same criteria we use for <a href="http://elixir-lang.org/">Elixir</a>, which is the ability to implement language constructs using the language itself.</p>
+<p>For example, in many languages the short-circuiting <code>&amp;&amp;</code> operator is defined as special part of the language. In those languages, you can&#8217;t reimplement the operator using the constructs provided by the language.</p>
+<p>In Elixir, however, you can implement the <code>&amp;&amp;</code> operator as a macro:</p>
+<pre lang='elixir'>
+defmacro left && right do
+  quote do
+    case unquote(left) do
+      false -> false
+      _ -> unquote(right)
+    end
+  end
+end
+</pre>
+<p>In Swift, you can also implement operators and easily define the <code>&amp;&amp;</code> operator with the help of the <code>@auto_closure</code> attribute:</p>
+<pre lang='swift'>
+func &&(lhs: LogicValue, rhs: @auto_closure () -> LogicValue) -> Bool {
+    if lhs {
+        if rhs() == true {
+            return true
+        }
+    }
+    return false
+}
+</pre>
+<p>The <code>@auto_closure</code> attribute automatically wraps the tagged argument in a closure, allowing you to control when it is executed and therefore implement the short-circuiting property of the <code>&amp;&amp;</code> operator.</p>
+<p>However, one of the features I suspect that will actually hurt extensibility in Swift is the <strong>Extensions</strong> feature. I have compared the protocols implementation in Swift with the ones found in Elixir and Clojure on Twitter and, as developers have asked for a more detailed explanation, I am writing this blog post as result!</p>
+<h2>Extensions</h2>
+<p>The extension feature in Swift has many use cases. You can read them all in more detail in <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html">their documentation</a>. For now, we will cover the general case and discuss the protocol case, which is the bulk of this blog post.</p>
+<p>Following the example in Apple documentation itself:</p>
+<pre lang='swift'>
+extension Double {
+    var km: Double { return self * 1_000.0 }
+    var m: Double { return self }
+    var cm: Double { return self / 100.0 }
+    var mm: Double { return self / 1_000.0 }
+    var ft: Double { return self / 3.28084 }
+}
+
+let oneInch = 25.4.mm
+println("One inch is \(oneInch) meters")
+// prints "One inch is 0.0254 meters"
+
+let threeFeet = 3.ft
+println("Three feet is \(threeFeet) meters")
+// prints "Three feet is 0.914399970739201 meters"
+</pre>
+<p>In the example above, we are extending the Double type, adding our own computed properties. Those extensions are global and, if you are Ruby developer, it will remind you of monkey patching in Ruby. However, in Ruby classes are always open, and here the extension is always explicit (which I personally consider to be a benefit).</p>
+<p>What troubles extensions is exactly the fact they are <strong>global</strong>. While I understand some extensions would be useful to define globally, they always come with the possibility of namespace pollution and name conflicts. Two libraries can define the same extensions to the Double type that behave slightly different, leading to bugs.</p>
+<p>This has always been a hot topic in the Ruby community with <a href="http://timelessrepo.com/refinements-in-ruby">Refinements</a> being proposed in late 2010 as a solution to the problem. At this moment, it is unclear if extensions can be scoped in any way in Swift.</p>
+<h2>The case for protocols</h2>
+<p>Protocols are a fantastic feature in Swift. <a href="https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html">Per the documentation</a>: &#8220;a protocol defines a blueprint of methods, properties, and other requirements that suit a particular task or piece of functionality&#8221;.</p>
+<p>Let&#8217;s see their example:</p>
+<pre lang='swift'>
+protocol FullyNamed {
+    var fullName: String { get }
+}
+
+struct Person: FullyNamed {
+    var fullName: String
+}
+
+let john = Person(fullName: "John Appleseed")
+// john.fullName is "John Appleseed"
+</pre>
+<p>In the example above we defined a <code>FullyNamed</code> protocol and implemented it while defining the <code>Person</code> struct. The benefit of protocols is that the compiler can now guarantee the struct complies with the definitions specified in the protocol. In case the protocol changes in the future, you will know immediately by recompiling your project.</p>
+<p>I have been long advocating this feature for Ruby. For example, imagine you have the following Ruby code:</p>
+<pre lang='ruby'>
+class Person
+  attr_accessor :first, :last
+
+  def full_name
+    first + " " + last
+  end
+end
+</pre>
+<p>And you have a method somewhere that expects an object that implements <code>full_name</code>:</p>
+<pre lang='ruby'>
+def print_full_name(obj)
+  puts obj.full_name
+end
+</pre>
+<p>At some point, you may want to print the title too:</p>
+<pre lang='ruby'>
+def print_full_name(obj)
+  if title = obj.title
+    puts title + " " + obj.full_name
+  else
+    puts obj.full_name
+  end
+end
+</pre>
+<p>Your contract has now changed but there is no mechanism to notify implementations of such change. This is particularly cumbersome because sometimes such changes are done by accident, when you don&#8217;t want to actually modify the contract.</p>
+<p>This issue has happened multiple times in Rails. Before Rails 3, there was no official contract between the controller and the model and between the view and the model. This meant that, while Rails worked fine with Active Record (Rails&#8217; built-in model layer), every Rails release could possibly break integration with other models because the contract suddenly became larger due to changes in the implementation.</p>
+<p>Since Rails 3, we actually define a contract for those interactions, but there is still no way to:</p>
+<ul>
+<li>guarantee an object complies with the contract (besides extensive use of tests)</li>
+<li>guarantee controllers and views obey the contract (besides extensive use of tests)</li>
+</ul>
+<p>Similar to real-life contracts, unless you write it down and sign it, there is no guarantee both parts will actually maintain it.</p>
+<p>The ideal solution is to be able to define multiple, tiny protocols. Someone using Swift would rather define multiple protocols for the controller and view layers:</p>
+<pre lang='swift'>
+protocol URL {
+    func toParam() -> String
+}
+
+protocol FormErrors {
+    var errors: Dict<String, Array[String]>
+}
+</pre>
+<p>The interesting aspect about Swift protocols is that you can define and implement protocols for any given type, at any time. The trouble though is that the implementation of the protocols are defined in the class/struct itself and, as such, they change the class/struct globally.</p>
+<h2>Protocols and Extensions</h2>
+<p>Since protocols in Swift are implemented directly in the class/struct, be it during definition or via extension, the protocol implementation ends up changing the class/struct globally. To see the issue with this, imagine that you have two different libraries relying on different JSON protocols:</p>
+<pre lang='swift'>
+protocol JSONA {
+    func toJSON(precision: Integer) -> String
+}
+
+protocol JSONB {
+    func toJSON(scale: Integer) -> String
+}
+</pre>
+<p>If the protocols above have different specifications on how the precision argument must be handled, we will be able to implement <strong>only one</strong> of the two protocols above. That&#8217;s because implementing any of the protocols above means adding a <code>toJSON(Integer)</code> method to the class/struct and there can be only one of them per class/struct.</p>
+<p>Furthermore, if implementing protocols means globally adding method to classes and structs, it can actually hinder the use of protocols as a whole, as the concerns to avoid name clashes and to avoid namespace pollution will speak louder than the protocol benefits.</p>
+<p>Let&#8217;s contrast this with protocols in Elixir:</p>
+<pre lang='elixir'>
+defprotocol JSONA do
+  def to_json(data, precision)
+end
+
+defprotocol JSONB do
+  def to_json(data, scale)
+end
+
+defimpl JSONA, for: Integer do
+  def to_json(data, _precision) do
+    Integer.to_string(data)
+  end
+end
+
+JSONA.to_json(1, 10)
+#=> 1
+</pre>
+<p>Elixir protocols are heavily influenced by <a href="http://clojure.org/protocols">Clojure protocols</a> where the implementation of a protocol is tied to the protocol itself and not to the data type implementing the protocol. This means you can implement both JSONA and JSONB protocols for the same data types and they won&#8217;t clash!</p>
+<p>Protocols in Elixir work by dispatching on the first argument of the protocol function. So when you invoke <code>JSONA.to_json(1, 10)</code>, Elixir checks the first argument, sees it is an integer and dispatches to the appropriate implementation.</p>
+<p>What is interesting is that we can actually emulate this functionality in Swift! In Swift we can define the same method multiple times, as long as the type signatures do not clash. So if we use static methods and extension, we can emulate the behaviour above:</p>
+<pre lang='swift'>
+// Define a class to act as protocol dispatch
+class JSON {
+}
+
+// Implement it for Double
+extension JSON {
+    class func toJSON(double: Double) -> String {
+        return String(double)
+    }
+}
+
+// Someone may implement it later for Float too
+extension JSON {
+    class func toJSON(float: Float) -> String {
+        return String(float)
+    }
+}
+
+JSON.toJSON(2.3)
+</pre>
+<p>The example above emulates the dynamic dispatch ability found in Elixir and Clojure which guarantees no clashes in multiple implementations. After all, if someone defines a JSONB class, all the implementations would live in the JSONB class.</p>
+<p>Since dynamic dispatch is already available, we hope protocols in Swift are improved to support local implementations instead of changing classes/structs globally.</p>
+<h2>Summing up</h2>
+<p>Swift is a very new language and in active development. The documentation so far doesn&#8217;t cover topics like exceptions, the module system and concurrency, which indicates there are many more exciting aspects to build, discuss and develop.</p>
+<p>It is the first time I am excited to do some mobile development. Plus the Swift playground may become a fantastic way to introduce programming.</p>
+<p>Finally, I would personally love if Swift protocols evolved to support non-global implementations. Protocols are a very extensible mechanism to define and implement contracts and it would be a pity to see their potential hindered due to the global side-effects it may cause to the codebase.</p><p>The post <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/">Comparing protocols and extensions in Swift and Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

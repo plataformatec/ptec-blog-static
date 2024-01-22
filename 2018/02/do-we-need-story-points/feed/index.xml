@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Do we need Story Points?	</title>
+	<atom:link href="/2018/02/do-we-need-story-points/feed/" rel="self" type="application/rss+xml" />
+	<link>/2018/02/do-we-need-story-points/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 15 Feb 2018 16:10:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lucas Colucci		</title>
+		<link>/2018/02/do-we-need-story-points/comment-page-1/#comment-1778</link>
+
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Thu, 15 Feb 2018 16:10:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7182#comment-1778</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2018/02/do-we-need-story-points/comment-page-1/#comment-1777&quot;&gt;Mathias Stjernström&lt;/a&gt;.
+
+Great comment @mathiasstjernstrm:disqus , thanks!!! That is an awesome use of the points :)
+We do something like that during the &quot;Task Breakdown&quot;  meeting that I mentioned in the text!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2018/02/do-we-need-story-points/comment-page-1/#comment-1777">Mathias Stjernström</a>.</p>
+<p>Great comment @mathiasstjernstrm:disqus , thanks!!! That is an awesome use of the points 🙂<br />
+We do something like that during the &#8220;Task Breakdown&#8221;  meeting that I mentioned in the text!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mathias Stjernström		</title>
+		<link>/2018/02/do-we-need-story-points/comment-page-1/#comment-1777</link>
+
+		<dc:creator><![CDATA[Mathias Stjernström]]></dc:creator>
+		<pubDate>Wed, 14 Feb 2018 19:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7182#comment-1777</guid>
+
+					<description><![CDATA[I find them usefull during Sprint planning, to check that the whole team has the same image of what&#039;s the story is all about. When. Developers rates an story completely different, its a sure sign that we aren&#039;t on the same page.]]></description>
+			<content:encoded><![CDATA[<p>I find them usefull during Sprint planning, to check that the whole team has the same image of what&#8217;s the story is all about. When. Developers rates an story completely different, its a sure sign that we aren&#8217;t on the same page.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

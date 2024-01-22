@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Improve remember me cookie expiration in Devise (CVE-2015-8314)	</title>
+	<atom:link href="/2016/01/improve-remember-me-cookie-expiration-in-devise/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 08 Feb 2016 09:17:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Richard Baptist		</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1559</link>
+
+		<dc:creator><![CDATA[Richard Baptist]]></dc:creator>
+		<pubDate>Mon, 08 Feb 2016 09:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4996#comment-1559</guid>
+
+					<description><![CDATA[Is there a mailing list for security announcements on the Devise gem? Have you considered posting this in the Ruby security announcements Ruby group?]]></description>
+			<content:encoded><![CDATA[<p>Is there a mailing list for security announcements on the Devise gem? Have you considered posting this in the Ruby security announcements Ruby group?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1542</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 11:55:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4996#comment-1542</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1541&quot;&gt;Rodrigo Rosenfeld Rosas&lt;/a&gt;.
+
+Hmm, I just realized we used a custom strategy for our own rememberable code which is not affected by this exploit. In our case the cookie is signed and contains the expire_at key. It seems I have created this strategy exactly due to this issue because this is the single comment in the code:
+
+# make sure no permanent hacked cookie could be used:
+
+
+
+Actually, I think this was initially created due to another issue regarding expiration handling but when I wrote the new strategy I noticed that the expire_at cookie should be signed.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1541">Rodrigo Rosenfeld Rosas</a>.</p>
+<p>Hmm, I just realized we used a custom strategy for our own rememberable code which is not affected by this exploit. In our case the cookie is signed and contains the expire_at key. It seems I have created this strategy exactly due to this issue because this is the single comment in the code:</p>
+<p># make sure no permanent hacked cookie could be used:</p>
+<p>Actually, I think this was initially created due to another issue regarding expiration handling but when I wrote the new strategy I noticed that the expire_at cookie should be signed.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1541</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 10:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4996#comment-1541</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1540&quot;&gt;josevalim&lt;/a&gt;.
+
+Oh, I always thought the expire was set in the cookie and signed. Thanks for letting us know, will upgrade immediately!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1540">josevalim</a>.</p>
+<p>Oh, I always thought the expire was set in the cookie and signed. Thanks for letting us know, will upgrade immediately!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1540</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 10:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4996#comment-1540</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1539&quot;&gt;Rodrigo Rosenfeld Rosas&lt;/a&gt;.
+
+The 2 weeks is stored in the client, as part of the &quot;Expires&quot; value in the Set-Cookie header. So anyone can strip the Expires from the cookie and continue using it. That&#039;s why we have decided to move the expire date to inside the cookie and sign it, so the server has control over the expires and users will no longer be able to fiddle with it.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1539">Rodrigo Rosenfeld Rosas</a>.</p>
+<p>The 2 weeks is stored in the client, as part of the &#8220;Expires&#8221; value in the Set-Cookie header. So anyone can strip the Expires from the cookie and continue using it. That&#8217;s why we have decided to move the expire date to inside the cookie and sign it, so the server has control over the expires and users will no longer be able to fiddle with it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Rodrigo Rosenfeld Rosas		</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/comment-page-1/#comment-1539</link>
+
+		<dc:creator><![CDATA[Rodrigo Rosenfeld Rosas]]></dc:creator>
+		<pubDate>Tue, 19 Jan 2016 10:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4996#comment-1539</guid>
+
+					<description><![CDATA[Hi, sorry but it&#039;s not clear to me. Even if the user can steal the cookies, why would them be able to access the application indefinitely? If the remember-me cookie is valid for 2 weeks, for example, shouldn&#039;t the cookie become invalid after that even if it is stolen?]]></description>
+			<content:encoded><![CDATA[<p>Hi, sorry but it&#8217;s not clear to me. Even if the user can steal the cookies, why would them be able to access the application indefinitely? If the remember-me cookie is valid for 2 weeks, for example, shouldn&#8217;t the cookie become invalid after that even if it is stolen?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

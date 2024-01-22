@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: How to do remote meetings effectively	</title>
+	<atom:link href="/2016/01/how-to-do-remote-meetings-effectively/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/01/how-to-do-remote-meetings-effectively/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 29 Jan 2016 14:01:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lindas Frases		</title>
+		<link>/2016/01/how-to-do-remote-meetings-effectively/comment-page-1/#comment-1553</link>
+
+		<dc:creator><![CDATA[Lindas Frases]]></dc:creator>
+		<pubDate>Fri, 29 Jan 2016 14:01:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4999#comment-1553</guid>
+
+					<description><![CDATA[Great! what really worked for us was to use ScreenSharing capability. Have a conversation leader (kind of a Scrum Master) who would cut the middle talk and get back focus of all the group to the topic. Meetings should be short so people do not get distracted. I hope this helps!]]></description>
+			<content:encoded><![CDATA[<p>Great! what really worked for us was to use ScreenSharing capability. Have a conversation leader (kind of a Scrum Master) who would cut the middle talk and get back focus of all the group to the topic. Meetings should be short so people do not get distracted. I hope this helps!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Juquinha		</title>
+		<link>/2016/01/how-to-do-remote-meetings-effectively/comment-page-1/#comment-1543</link>
+
+		<dc:creator><![CDATA[Juquinha]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2016 13:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4999#comment-1543</guid>
+
+					<description><![CDATA[It&#039;s unbelievable that simple rules can make routine tasks a lot better.
+Great post, thanks.]]></description>
+			<content:encoded><![CDATA[<p>It&#8217;s unbelievable that simple rules can make routine tasks a lot better.<br />
+Great post, thanks.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>security fix « Plataformatec Blog</title>
+	<atom:link href="/tag/security-fix/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 17:22:49 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Improve remember me cookie expiration in Devise (CVE-2015-8314)</title>
+		<link>/2016/01/improve-remember-me-cookie-expiration-in-devise/</link>
+					<comments>/2016/01/improve-remember-me-cookie-expiration-in-devise/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 18 Jan 2016 17:10:38 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=4996</guid>
+
+					<description><![CDATA[<p>A security bug (CVE-2015-8314) has been reported in Devise&#8217;s remember me system. Devise implements the &#8220;Remember me&#8221; functionality by using cookies. While this functionality works across multiple devices, Devise ended-up generating the same cookie for all devices. Consequently, if a malicious user was able to steal a remember me cookie, the cookie could be used ... <a class="read-more-link" href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">»</a></p>
+<p>The post <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">Improve remember me cookie expiration in Devise (CVE-2015-8314)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>A security bug (CVE-2015-8314) has been reported in Devise&#8217;s remember me system.</p>
+<p>Devise implements the &#8220;Remember me&#8221; functionality by using cookies. While this functionality works across multiple devices, Devise ended-up generating the same cookie for all devices. Consequently, if a malicious user was able to steal a remember me cookie, the cookie could be used to gain access to the application indefinitely unless the user changed his password (which may not be a frequent event).</p>
+<p>Although all Devise versions are vulnerable to this bug, the bug can only be exploited if the attacker can steal cookies in the first place. Regardless, we recommend all users to upgrade to the latest Devise version.</p>
+<h2>Releases</h2>
+<p>Devise 3.5.4 has been released with a fix. This release adds a timestamp to the cookie, guaranteeing cookies can be expired on a case-by-case basis instead of an all or nothing approach.</p>
+<p>We also have made <a href="https://gist.github.com/josevalim/924ce7cc4c0e5039fd79">a patch available for those running on older versions</a>.</p>
+<h2>Acknowledgements</h2>
+<p>We want to thank Alfredo Ramirez (bonds0097@gmail.com) from VSR for reporting the issue and working with us on a fix.</p><p>The post <a href="/2016/01/improve-remember-me-cookie-expiration-in-devise/">Improve remember me cookie expiration in Devise (CVE-2015-8314)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2016/01/improve-remember-me-cookie-expiration-in-devise/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>XSS vulnerability on Simple Form</title>
+		<link>/2014/11/xss-vulnerability-on-simple-form-2/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 26 Nov 2014 15:18:28 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[security fix]]></category>
+		<category><![CDATA[simple form]]></category>
+		<guid isPermaLink="false">/?p=4316</guid>
+
+					<description><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options. Versions affected: >= 2.0.0 Not affected: &#60; 2.0.0 Fixed versions: 3.1.0, 3.0.3, 2.1.2 Impact When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided ... <a class="read-more-link" href="/2014/11/xss-vulnerability-on-simple-form-2/">»</a></p>
+<p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options.</p>
+<ul>
+<li>Versions affected: >= 2.0.0</li>
+<li>Not affected: &lt; 2.0.0</li>
+<li>Fixed versions: 3.1.0, 3.0.3, 2.1.2</li>
+</ul>
+<h2>Impact</h2>
+<p>When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided by the users, malicious values can be provided and Simple Form will mark them as safe.</p>
+<h2>Changes at the behavior</h2>
+<p>To fix this vulnerability error messages are now always escaped. If users need to mark them as safe they will need to use explicitly the <code>:error</code> option:</p>
+<pre><code class="ruby">f.input :name, error: raw("My &lt;b&gt;error&lt;/b&gt;")
+</code></pre>
+<h2>Releases</h2>
+<p>The 3.1.0, 3.0.3 and 2.1.2 releases are available at the regular locations.</p>
+<h2>Workarounds</h2>
+<p>There are no feasible workarounds for this issue. We recommend all users to upgrade as soon as possible.</p>
+<h2>Patches</h2>
+<p>To aid users who aren&#8217;t able to upgrade immediately we have provided patches. They are in git-am format and consist of a single changeset.</p>
+<ul>
+<li><a href="https://gist.github.com/rafaelfranca/843f7ec77cec39aabe75">Patch for 3.0 series</a></li>
+<li><a href="https://gist.github.com/rafaelfranca/dc65bb34659e6027c24e">Patch for 2.1 series</a></li>
+</ul>
+<h2>Credits</h2>
+<p>Thanks to Jake Goulding, from WhiteHat Security and Nicholas Rutherford from Medify Ltd. for reporting the issue and working with us in a fix.</p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>XSS vulnerability on Simple Form</title>
+		<link>/2013/11/xss-vulnerability-on-simple-form/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Fri, 29 Nov 2013 15:55:41 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[security fix]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3658</guid>
+
+					<description><![CDATA[<p>There is a XSS vulnerability on Simple Form's label, hint and error options. Fixed versions: 3.0.1, 2.1.1</p>
+<p>The post <a href="/2013/11/xss-vulnerability-on-simple-form/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s label, hint and error options.</p>
+<p>Versions affected: >= 1.1.1<br />
+Not affected: &lt; 1.1.1<br />
+Fixed versions: 3.0.1, 2.1.1</p>
+<h3>Impact</h3>
+<p>When Simple Form creates a label, hint or error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the text of these helpers can be provided by the users, malicious values can be provided and Simple Form will mark it as safe.</p>
+<h3>Releases</h3>
+<p>The 3.0.1 and 2.1.1 releases are available at the normal locations.</p>
+<h3>Workarounds</h3>
+<p>If you are unable to upgrade, you can change your code to escape the input before sending to Simple Form</p>
+<pre lang="ruby">
+f.input :name, label: html_escape(params[:label])
+</pre>
+<h3>Patches</h3>
+<p>To aid users who aren&#8217;t able to upgrade immediately we have provided patches. They are in git-am format and consist of a single changeset.</p>
+<ul>
+<li><a href="https://gist.github.com/rafaelfranca/ff2c89e7ca9da63aaf34/raw/e7ba922991b99c64e052304879109e20cd8b64e2/3-0-xss-fix.patch">3-0-xss-fix.patch</a> &#8211; Patch for 3.0 series </li>
+<li><a href="https://gist.github.com/rafaelfranca/a5d4a703a09e1f37c7dd/raw/1f48c75090b5d4e84ddea2fc8688fdfffb815a4f/2-1-xss-fix.patch">2-1-xss-fix.patch</a> &#8211; Patch for 2.1 series</li>
+</ul>
+<h3>Credits</h3>
+<p>Thank you to Paul McMahon from Doorkeeper for reporting the issue and working with us in a fix.</p><p>The post <a href="/2013/11/xss-vulnerability-on-simple-form/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>E-mail enumeration in Devise in paranoid mode</title>
+		<link>/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Wed, 13 Nov 2013 13:26:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=3639</guid>
+
+					<description><![CDATA[<p>It has been reported that malicious users can do e-mail enumeration on sign in via timing attacks despite paranoid mode being enabled. Whenever you try to reset your password or confirm your account, Devise gives you precise information on how to proceed, if the e-mail given is valid, if the token has not expired and ... <a class="read-more-link" href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">»</a></p>
+<p>The post <a href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">E-mail enumeration in Devise in paranoid mode</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It has been reported that malicious users can do e-mail enumeration on sign in via timing attacks despite paranoid mode being enabled.</p>
+<p>Whenever you try to reset your password or confirm your account, Devise gives you precise information on how to proceed, if the e-mail given is valid, if the token has not expired and so on. This means that, by trying any given e-mail, a third-party person can know if a particular e-mail is registered in that website or not.</p>
+<p>While this is not a problem for many applications, some applications would like to keep their user information completely private, even if it means loss of usability on features like account confirmation. For such use cases, Devise supports something called paranoid mode, which has been reported to still be vulnerable to enumeration on sign in.</p>
+<h3>Releases</h3>
+<p>Only applications using Devise paranoid mode need to update. New releases have been made for Devise branches 3.2 (3.2.1), 3.1 (3.1.2), 3.0 (3.0.4) and 2.2 (2.2.8).</p>
+<p>Users running on those branches and cannot upgrade immediately can fix this issue <a href="https://gist.github.com/josevalim/1c3fb13862ae17a45acb" target="_blank">by applying this patch</a>. Users running on older versions are recommended to upgrade to a supported branch immediately.</p>
+<h3>Acknowledgements</h3>
+<p>We want to thank <a href="http://www.youdo.co.nz/" target="_blank">Tim Goddard, from YouDo Ltd</a> for reporting the issue and working with us on a fix.</p><p>The post <a href="/2013/11/e-mail-enumeration-in-devise-in-paranoid-mode/">E-mail enumeration in Devise in paranoid mode</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Devise 3.1: Now with more secure defaults</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/</link>
+					<comments>/2013/08/devise-3-1-now-with-more-secure-defaults/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 Aug 2013 17:40:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=3598</guid>
+
+					<description><![CDATA[<p>We are glad to announce that Devise 3.1.0.rc is out. On this version, we have focused on some security enhancements regarding our defaults and the deprecation of TokenAuthenticatable. This blog post explains the rationale behind those changes and how to upgrade. Devise 3.1.0.rc runs on both Rails 3.2 and Rails 4.0. There is a TL;DR ... <a class="read-more-link" href="/2013/08/devise-3-1-now-with-more-secure-defaults/">»</a></p>
+<p>The post <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/">Devise 3.1: Now with more secure defaults</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>We are glad to announce that Devise 3.1.0.rc is out. On this version, we have focused on some security enhancements regarding our defaults and the deprecation of <code>TokenAuthenticatable</code>. This blog post explains the rationale behind those changes and how to upgrade.</p>
+<p>Devise 3.1.0.rc runs on both Rails 3.2 and Rails 4.0. There is a TL;DR for upgrading at the end of this post.</p>
+<p><strong>Note:</strong> We have yanked 3.1.0.rc and released to 3.1.0.rc2 which fixes some regressions. Thanks everyone for trying out the release candidates!</p>
+<h3>Do not sign the user in after confirmation</h3>
+<p>In previous Devise versions, the user was automatically signed in after confirmation. This meant that anyone that could access the confirmation e-mail could sign into someone&#8217;s account by simply clicking the link.</p>
+<p>Automatically signing the user in could also be harmful in the e-mail reconfirmation workflow. Imagine that a user decides to change his e-mail address and, while doing so, he makes a typo on the new e-mail address. An e-mail will be sent to another address which, with the token in hands, would be able to sign in into that account.</p>
+<p>If the user corrects the e-mail straight away, no harm will be done. But if not, someone else could sign into that account and the user would not know that it happened.</p>
+<p>For this reason, <strong>Devise 3.1 no longer signs the user automatically in after confirmation</strong>. You can temporarily bring the old behavior back after upgrading by setting the following in your <code>config/initializers/devise.rb</code>:</p>
+<pre lang="ruby">
+config.allow_insecure_sign_in_after_confirmation = true
+</pre>
+<p>This option will be available only temporarily to aid migration.</p>
+<p>Thanks to <a href="http://themoll.com/">Andri Möll</a> for reporting this issue.</p>
+<h3>Do not confirm account after password reset</h3>
+<p>In previous Devise versions, resetting the password automatically confirmed user accounts. This worked fine in previous Devise versions which confirmed the e-mail just on sign up, so the e-mail both confirmation and password reset tokens would be sent to were guaranteed to be the same. With the addition of reconfirmable, this setup change and Devise will no longer confirm the account after password reset.</p>
+<p>Thanks to <a href="http://themoll.com/">Andri Möll</a> for reporting this issue and working with us on a fix.</p>
+<h3>CSRF on sign in</h3>
+<p>Devise&#8217;s sign in page was vulnerable to CSRF attacks when used with the rememberable feature. Note that the CSRF vulnerability is restricted only to the sign in page, allowing an attacker to sign the user in an account controlled by the attacker. This vulnerability does not allow the attacker to access or change a user account in any way.</p>
+<p>This issue is fixed on Devise 3.1.0 as well as 3.0.2 and 2.2.6. Users on previous Devise versions can patch their application by simply defining the following in their <code>ApplicationController</code>:</p>
+<pre lang="ruby">
+def handle_unverified_request
+  super
+  Devise.mappings.each_key do |key|
+    cookies.delete "remember_#{key}_token"
+  end
+end
+</pre>
+<p>Thanks to Kevin Dew for reporting this issue and working with us on a fix.</p>
+<h3>Store digested tokens in the database</h3>
+<p>In previous versions, Devise stored the tokens for confirmation, reset password and unlock directly in the database. This meant that somebody with read access to the database could use such tokens to sign in as someone else by, for example, resetting their password.</p>
+<p>In Devise 3.1, we store an encrypted token in the database and the actual token is sent only via e-mail to the user. This means that:</p>
+<ul>
+<li>Devise now requires a <code>config.secret_key</code> configuration. As soon as you boot your application under Devise 3.1, you will get an error with information about how to proceed;</li>
+<li>Every time the user asks a token to be resent, a new token will be generated;</li>
+<li>The Devise mailer now receives one extra token argument on each method. If you have customized the Devise mailer, you will have to update it. All mailers views also need to be updated to use <code>@token</code>, <a href="https://github.com/plataformatec/devise/blob/2a8d0f9beeb31cd2287094c5dcf843d0bd069eb8/app/views/devise/mailer/reset_password_instructions.html.erb#L5">as shown here</a>, instead of getting the token directly from the resource;</li>
+<li>Any previously stored token in the database will no longer work unless you set <code>config.allow_insecure_token_lookup = true</code> in your Devise initializer. We recomend users upgrading to set this option on production only for a couple days, allowing users that just requested a token to get their job done.</li>
+</ul>
+<p>Thanks to Stephen Touset for reporting this issue and working with us on a solution.</p>
+<h3>Token Authenticatable</h3>
+<p>Jay Feldblum also wrote to us to let us know that our tokens lookup are also vulnerable to timing attacks. Although we haven&#8217;t heard of any exploit via timing attacks on database tokens, there is a lot of research happening in this area and some attacks have been successful over the local network. For this reason, we have decided to protect applications using Devise from now on.</p>
+<p>By digesting the confirmation, reset password and unlock tokens, as described in the previous section, we automatically protected those tokens from timing attacks.</p>
+<p>However, we cannot digest the authentication token provided by <code>TokenAuthenticatable</code>, as they are often part of APIs where the token is used many times. Since the usage of the authenticatable token can vary considerably in between applications, each requiring different safety guarantees, we have decided to remove <code>TokenAuthenticatable</code> from Devise, allowing users to pick the best option. <a href="https://gist.github.com/josevalim/fb706b1e933ef01e4fb6">This gist describes two of the available solutions</a>.</p>
+<p>Thanks to Jay Feldblum for reporting this issue and working with us on a solution.</p>
+<h3>TL;DR for upgrading</h3>
+<p>As soon as you update Devise, you will get a warning asking you to set your <code>config.secret_key</code>. By upgrading Devise, your previous confirmation, reset and unlock tokens in the database will no longer work unless you set the following option to true in your Devise initializer:</p>
+<pre lang="ruby">
+config.allow_insecure_token_lookup = true
+</pre>
+<p>It is recommended to leave this option on just for a couple days, just to allow recently generated tokens by your application to be consumed by users. <code>TokenAuthenticable</code> has not been affected by those changes, however it has been deprecated and you will have to move to your <a href="https://gist.github.com/josevalim/fb706b1e933ef01e4fb6">own token authentication mechanisms</a>.</p>
+<p>Furthermore, the Devise mailer now receives an extra token argument on each method. If you have customized the Devise mailer, you will have to update it. All mailers views also need to be updated to use <code>@token</code>, <a href="https://github.com/plataformatec/devise/blob/2a8d0f9beeb31cd2287094c5dcf843d0bd069eb8/app/views/devise/mailer/reset_password_instructions.html.erb#L5">as shown here</a>, instead of getting the token directly from the resource.</p>
+<p>With those changes, we hope to provide an even more secure authentication solution for Rails developers, while maintaining the flexibility expected from Devise.</p><p>The post <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/">Devise 3.1: Now with more secure defaults</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/08/devise-3-1-now-with-more-secure-defaults/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>CSRF token fixation attacks in Devise</title>
+		<link>/2013/08/csrf-token-fixation-attacks-in-devise/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 02 Aug 2013 21:33:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[security fix]]></category>
+		<guid isPermaLink="false">/?p=3536</guid>
+
+					<description><![CDATA[<p>Devise has been reported to be vulnerable to CSRF token fixation attacks. The attack can only be exploited if the attacker can set the target session, either by subdomain cookies (similar to described here) or by fixation over the same Wi-Fi network. If the user knows the CSRF token, cross-site forgery requests can be made. ... <a class="read-more-link" href="/2013/08/csrf-token-fixation-attacks-in-devise/">»</a></p>
+<p>The post <a href="/2013/08/csrf-token-fixation-attacks-in-devise/">CSRF token fixation attacks in Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Devise has been reported to be vulnerable to CSRF token fixation attacks.</p>
+<p>The attack can only be exploited if the attacker can set the target session, either by subdomain cookies (similar to <a href="http://en.wikipedia.org/wiki/Session_fixation#Attack_scenarios">described here</a>) or by fixation over the same Wi-Fi network. If the user knows the CSRF token, cross-site forgery requests can be made. More information can be <a href="http://homakov.blogspot.com.es/2013/06/cookie-forcing-protection-made-easy.html">found here</a>.</p>
+<p>Note Devise is <strong>not</strong> vulnerable to session fixation attacks (i.e. the user cannot steal another user session by fixating the session id).</p>
+<h3>Releases</h3>
+<p>Devise 3.0.1 and 2.2.5 have been released with fixes for the attack.</p>
+<p>If you can&#8217;t upgrade, you must protect your Devise application by adding the next three lines to a Rails initializer:</p>
+<pre lang='ruby'>
+Warden::Manager.after_authentication do |record, warden, options|
+  warden.request.session.try(:delete, :_csrf_token)
+end
+</pre>
+<p>Notice the code above and the updated Devise versions will clean up the CSRF Token after any authentication (sign in, sign up, reset password, etc). So if you are using AJAX for such features, you will need to fetch a new CSRF token from the server.</p>
+<h3>Acknowledgements</h3>
+<p>We want to thank Egor Homakov for reporting the issue and working with us on a fix.</p><p>The post <a href="/2013/08/csrf-token-fixation-attacks-in-devise/">CSRF token fixation attacks in Devise</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

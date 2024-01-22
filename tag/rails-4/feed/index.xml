@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rails 4 « Plataformatec Blog</title>
+	<atom:link href="/tag/rails-4/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 14 Jul 2014 21:34:32 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Rails 4 and PostgreSQL Arrays</title>
+		<link>/2014/07/rails-4-and-postgresql-arrays/</link>
+					<comments>/2014/07/rails-4-and-postgresql-arrays/#comments</comments>
+		
+		<dc:creator><![CDATA[Bernardo Chaves]]></dc:creator>
+		<pubDate>Tue, 15 Jul 2014 12:00:20 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[postgresql]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=4115</guid>
+
+					<description><![CDATA[<p>Rails 4 supports arrays fields for PostgreSQL in a nice way, although it is not a very known feature. In order to demonstrate its usage it&#8217;s useful to explain the context where this was used. PostgreSQL Arrays and Rails Migrations Suppose we have a Product model with the following fields: name, category_id and tags. The ... <a class="read-more-link" href="/2014/07/rails-4-and-postgresql-arrays/">»</a></p>
+<p>The post <a href="/2014/07/rails-4-and-postgresql-arrays/">Rails 4 and PostgreSQL Arrays</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 4 supports arrays fields for PostgreSQL in a nice way, although it is not a very known feature. In order to demonstrate its usage it&#8217;s useful to explain the context where this was used.</p>
+<h3>PostgreSQL Arrays and Rails Migrations</h3>
+<p>Suppose we have a <i>Product model</i> with the following fields: <i>name</i>, <i>category_id</i> and <i>tags</i>. The <i>name </i>field will be a simple string, <i>category_id </i>will be the <i>foreign key</i> of a record in the <i>Category model </i>and <i>tags </i>will be created by inputting a string of comma-separated words, so: <i>&#8220;one, two, forty two&#8221;</i> will become the tags: <i>&#8220;one&#8221;</i>,<i> &#8220;two&#8221; </i>and<i> &#8220;forty two&#8221; </i>respectively<i>.</i></p>
+<p>Creating these tables via migrations is nothing new, except for the column <i>tags </i>which will have the Array type in this case. To create this kind of column we use the following syntax in our migration:</p>
+<pre lang="ruby">create_table :categories do |t|
+  t.string :name, null: false
+end
+
+create_table :products do |t|
+  t.string :name, null: false
+  t.references :category, null: false
+  t.text :tags, array: true, default: []
+end
+</pre>
+<p>Let&#8217;s explore what we can do with this kind of field using the postgres console:</p>
+<pre lang="plsql">$ rails db
+> insert into products(name, category_id, tags) values('T-Shirt', 3, '{clothing, summer}');
+> insert into products(name, category_id, tags) values('Sweater', 3, ARRAY['clothing', 'winter']);
+> select * from products;
+1  |  T-Shirt  |  3  | {clothing, summer}
+2  |  Sweater  |  3  | {clothing, winter}
+</pre>
+<p>As we can see we need to specify each tag following this syntax:</p>
+<p><i>&#8216;{ val1, val2, … }&#8217; </i>or <i>ARRAY[&#8216;val1&#8217;, &#8216;val2&#8217;, &#8230;]</i></p>
+<p>Let&#8217;s play a little more to understand how this column behaves when queried:</p>
+<pre lang="plsql">
+> select * from products where tags = '{clothing, summer}';
+1  |  T-Shirt  |  3  | {clothing, summer}
+
+> select * from products where tags = '{summer, clothing}';
+(0 rows)
+
+> select * from products where 'winter' = ANY(tags);
+2  |  Sweater  |  3  |  {clothing, winter}
+</pre>
+<p>As this example demonstrates, searching for records by an array with its values in the order they were inserted works, but with the same values in a different order does not. We were also able to find a record searching for a specific tag using the ANY function.</p>
+<p>There&#8217;s a lot more to talk about arrays in PostgreSQL, but for our example this is enough. You can find more information at the PostgreSQL official documentation about <a href="http://www.postgresql.org/docs/current/static/arrays.html">arrays</a> and its <a href="http://www.postgresql.org/docs/current/static/functions-array.html">functions</a>.</p>
+<h3>How Rails treats PostgreSQL arrays</h3>
+<p>It&#8217;s also valuable to see how to use the array field within Rails, let&#8217;s try:</p>
+<pre lang="rails">$ rails c
+
+Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b', 'c'])
+#> 
+
+Product.find(26).tags
+#> ["a", "b", "c"]
+</pre>
+<p>So Rails treats an array column in PostgreSQL as an Array in Ruby, pretty reasonable!</p>
+<h3>Validations</h3>
+<p>We want each product to be unique, let&#8217;s see some examples to clarify this concept.</p>
+<p>Given we have the following product:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b', 'c'])
+</pre>
+<p>We can easily create another one if we change the <i>name</i> attribute:</p>
+<pre lang="rails">Product.create(name: 'Slippers', category: Category.first, tags: ['a', 'b', 'c'])
+</pre>
+<p>We can also create another product with different tags:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'b'])
+</pre>
+<p>But we don&#8217;t want to create a product with the same attributes, even if the tags are in a different order:</p>
+<pre lang="rails">Product.create(name: 'Shoes', category: Category.first, tags: ['a', 'c', 'b'])
+#> false
+</pre>
+<p>As PostgreSQL only finds records by tags given the exact order in which they were inserted, then how can we ensure the uniqueness of a product with tags in an order-independent way?</p>
+<p>After much thought we decided that a good approach would involve creating an unique index with all the columns in the products table but with tags sorted when a row is inserted in the database. Something like:</p>
+<pre lang="plsql">CREATE UNIQUE INDEX index_products_on_category_id_and_name_and_tags
+ON products USING btree (category_id, name, sort_array(tags));
+</pre>
+<p>And <i>sort_array </i>is our custom function responsible for sorting the array, since PostgreSQL does not have a built in function like this.</p>
+<h3>Creating a custom function in PostgreSQL using PL/pgSQL</h3>
+<p>To create a custom function we used the <i>PL/pgSQL</i> language, and since we are adding database specific code like this we can&#8217;t use the default <i>schema.rb </i>anymore. Let&#8217;s change this in <i>config/application.rb</i>:</p>
+<pre lang="rails"># Use SQL instead of AR schema dumper when creating the database
+config.active_record.schema_format = :sql
+</pre>
+<p>With this configuration set, our <i>schema.rb</i> file will be replaced by a <i>structure.sql</i> file without side effects, our current migrations don&#8217;t need to be changed at all. Now we can create a migration with our <i>sort_array </i>code:</p>
+<pre lang="rails">
+def up
+  execute <<-SQL
+    CREATE FUNCTION sort_array(unsorted_array anyarray) RETURNS anyarray AS $$
+      BEGIN
+        RETURN (SELECT ARRAY_AGG(val) AS sorted_array
+        FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+      END;
+    $$ LANGUAGE plpgsql IMMUTABLE STRICT;
+
+    CREATE UNIQUE INDEX index_products_on_category_id_and_name_and_tags ON products USING btree (category_id, name, sort_array(tags));
+  SQL
+end
+
+def down
+  execute <<-SQL
+    DROP INDEX IF EXISTS index_products_on_category_id_and_name_and_tags;
+    DROP FUNCTION IF EXISTS sort_array(unsorted_array anyarray);
+  SQL
+end
+</pre>
+<p>Now, let's take it slow and understand step by step</p>
+<pre lang="plsql">CREATE FUNCTION sort_array(unsorted_array anyarray) RETURNS anyarray
+</pre>
+<p>The line above tells that we are creating a function named <i>sort_array </i>and that it receives a parameter named <i>unsorted_array </i>of type <i>anyarray </i>and returns something of this same type. This <i>anyarray,</i> in fact, is a <i>pseudo-type </i>that indicates that a function accepts any array data type.</p>
+<pre lang="plsql">RETURN (SELECT ARRAY_AGG(val) AS sorted_array
+FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+</pre>
+<p>The trick here is the use of the function <i>unnest </i>that expands an Array to a set of rows. Now we can order these rows and after that we use another function called <i>array_agg </i>that concatenates the input into a new Array.</p>
+<pre lang="plsql">$$ LANGUAGE plpgsql IMMUTABLE STRICT;
+</pre>
+<p>The last trick is the use of the keywords <i>IMMUTABLE</i>  and <i>STRICT</i>. With the first one we guarantee that our function will always return the same output given the same input, we can't use it in our index if we don't specify so. The other one tells that our function will always return <i>null </i>if some of the parameters are not specified.</p>
+<p>And that's it! With this we can check for uniqueness in a performant way with some method like:</p>
+<pre lang="rails">def duplicate_product_exists?
+  relation = self.class.
+    where(category_id: category_id).
+    where('lower(name) = lower(?)', name).
+    where('sort_array(tags) = sort_array(ARRAY[?])', tags)
+
+  relation = relation.where.not(id: id) if persisted?
+
+  relation.exists?
+end
+</pre>
+<h3>Case insensitive arrays</h3>
+<p>There is still a problem with our code though, the index is not case insensitive!  What if a user inserts a product with tags ['a', 'b'] and another one inserts the same product but with tags ['A', 'b']? Now we have duplication in our database! We have to deal with this, but unfortunately this will increase the complexity of our <i>sort_array </i>function a little bit. To fix this problem we only need to change one single line:</p>
+<p>From this:</p>
+<pre lang="plsql">
+FROM (SELECT UNNEST(unsorted_array) AS val ORDER BY val) AS sorted_vals);
+</pre>
+<p>To:</p>
+<pre lang="plsql">
+FROM
+(SELECT
+  UNNEST(string_to_array(lower(array_to_string(unsorted_array, ',')), ','))
+  AS val ORDER BY val)
+AS sorted_vals);
+</pre>
+<p>The difference is that instead of passing unsorted_array directly to the function <i>unnest </i>we are transforming it in an String, calling lower on it and transforming it back to an Array before passing it on. With this change it doesn't matter if the user inserts ['a'] or ['A'], every tag will be saved in lowercase in the index. Problem solved!</p>
+<p>As we can see, it's not an easy task to deal with uniqueness and arrays in the database, but the overall result was great.</p>
+<p><i>Would you solve this problem in a different way? Share with us!</i></p>
+<p style="text-align: center;">
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt="" /></a></span></span></p><p>The post <a href="/2014/07/rails-4-and-postgresql-arrays/">Rails 4 and PostgreSQL Arrays</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/07/rails-4-and-postgresql-arrays/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Devise and Rails 4</title>
+		<link>/2013/05/devise-and-rails-4/</link>
+					<comments>/2013/05/devise-and-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 10 May 2013 20:36:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[mail_form]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3440</guid>
+
+					<description><![CDATA[<p>Devise 3.0 rc version with Rails 4 compatibility and new 2.2.4 stable version. Simple Form, Responders, Show For and Mail Form versions with Rails 4 compatibility.</p>
+<p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This week we released the first release candidate version of Devise that is fully compatible with Rails 4, and we&#8217;re bumping its version to 3.0. This version completely drops support for Rails 3.1 and Ruby 1.8.7, only keeping compatibility with both Rails 3.2 and Rails 4, running with Ruby 1.9.3 and 2.0.</p>
+<p>This rc version took some time to get ready, we&#8217;ve been running a <em>rails4</em> branch for some time already and one of the reasons was because of the changes required to <a href="https://github.com/plataformatec/devise/commit/c63483ae2409ba44889756796930f5d45630d7b3">make it compatible with the new <strong>strong parameters</strong> API from Rails 4</a>. We are aware that some people have been using this branch since Rails 4.0 beta1 with success, and we&#8217;re now inviting you to try 3.0 rc with the <a href="http://weblog.rubyonrails.org/2013/5/1/Rails-4-0-release-candidate-1/">recent release of Rails 4.0 rc1</a>.</p>
+<h3>Devise stable</h3>
+<p>Together with the 3.0 beta version, we&#8217;ve released Devise 2.2.4 with a few enhancements and bug fixes, make sure to <a href="https://github.com/plataformatec/devise/blob/v2.2.4/CHANGELOG.rdoc">check the changelog</a> to see the new goodies. All changes are also included in the rc version.</p>
+<h3>Simple Form</h3>
+<p>Simple Form has been running a 3.0 rc version for a couple months already, fully compatible with Rails 4 as well, and today we are releasing its release candidate version. In Simple Form master we just dropped support to the 3.x Rails series, focusing our work on Rails 4 compatibility from now on, due to a series of improvements in Rails 4 regarding form helpers &#8211; but don&#8217;t worry, we will be keeping a v2.1 branch with Rails 3.2 compatibility for a while.</p>
+<p>We have some cool plans to improve the wrappers API even further, but that&#8217;s subject for another blog post :).</p>
+<h3>Responders</h3>
+<p>Responders has been around for quite some time already and we use it in most of our projects, so today we&#8217;re celebrating its 1.0 release candidate version, specially to support Rails 4.</p>
+<h3>Show For</h3>
+<p>Show For just got a new stable release, v0.2.6, with all the enhancements and bug fixes that were in master, plus a v0.3.0 rc version that adds Rails 4 support.</p>
+<h3>Mail Form</h3>
+<p>Mail Form also got a new 1.5 rc release with Rails 4.0 compatibility. Nothing else has changed from the current 1.4 version.</p>
+<h3>Has Scope</h3>
+<p>Has Scope is getting a new 0.6 rc version with Rails 4.0 compatibility, including a couple of fixes that were already present in master.</p>
+<h2>Compatibility</h2>
+<p>All these new releases are officially dropping support to Rails 3.0 and 3.1, and Ruby 1.8.7. We&#8217;ll keep compatibility with Rails 3.2 and 4.0 from now on, all of them on the same branches except for Simple Form which has different branches for each Rails version.</p>
+<h2>Wrapping up</h2>
+<p>We&#8217;ve got new hot releases for you to try out with Rails 4, please give them a try and let us know if you find any issue or have any feedback.</p>
+<p>We&#8217;d also like to specially thank everyone involved in helping us getting these projects up and running in Rails 4, without you folks that&#8217;d have never been possible.</p>
+<p>Enjoy &lt;3</p><p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/devise-and-rails-4/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Active Record scopes vs class methods</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/</link>
+					<comments>/2013/02/active-record-scopes-vs-class-methods/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Thu, 07 Feb 2013 17:51:06 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 3.2]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[scopes]]></category>
+		<guid isPermaLink="false">/?p=3354</guid>
+
+					<description><![CDATA[<p>One of the recent topics in our discussions at Plataformatec was about whether we should use scopes or class methods throughout the project to be consistent. It's also not hard to find discussions about it all over the internet. This is an attempt to show the differences between scopes and class methods, to help you understanding what scopes can give you for free and deciding what makes you feel more comfortable when writing your code.</p>
+<p>The post <a href="/2013/02/active-record-scopes-vs-class-methods/">Active Record scopes vs class methods</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#8217;s also not hard to <a href="http://lmgtfy.com/?q=rails+%2B+scope+vs+class+method">find discussions about it all over the internet</a>. The classic comment usually boils down to <em>&#8220;there is no difference between them&#8221;</em> or <em>&#8220;it is a matter of taste&#8221;</em>. I tend to agree with both sentences, but I&#8217;d like to show some slight differences that exist between both.</p>
+<h2>Defining a scope</h2>
+<p>First of all, lets get a better understanding about how scopes are used. In Rails 3 you can define a scope in two ways:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :published, where(status: 'published')
+  scope :draft, -> { where(status: 'draft') } 
+end
+</pre>
+<p>The main difference between both usages is that the <code>:published</code> condition is evaluated when the class is first loaded, whereas the <code>:draft</code> one is lazy evaluated when it is called. Because of that, in Rails 4 the first way is going to be deprecated which means you will always need to declare scopes with a callable object as argument. This is to avoid issues when trying to declare a scope with some sort of Time argument:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :published_last_week, where('published_at >= ?', 1.week.ago)
+end
+</pre>
+<p>Because this won&#8217;t work as expected: <code>1.week.ago</code> will be evaluated when the class is loaded, not every time the scope is called.</p>
+<h2>Scopes are just class methods</h2>
+<p>Internally Active Record converts a scope into a class method. Conceptually, its simplified implementation in Rails master looks something like this:</p>
+<pre lang="ruby">
+def self.scope(name, body)
+  singleton_class.send(:define_method, name, &body)
+end
+</pre>
+<p>Which ends up as a class method with the given name and body, like this:</p>
+<pre lang="ruby">
+def self.published
+  where(status: 'published')
+end
+</pre>
+<p>And I think that&#8217;s why most people think: <em>&#8220;Why should I use a scope if it is just syntax sugar for a class method?&#8221;</em>. So here are some interesting examples for you to think about.</p>
+<h2>Scopes are always chainable</h2>
+<p>Lets use the following scenario: users will be able to filter posts by statuses, ordering by most recent updated ones. Simple enough, lets write scopes for that:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :by_status, -> status { where(status: status) }
+  scope :recent, -> { order("posts.updated_at DESC") }
+end
+</pre>
+<p>And we can call them freely like this:</p>
+<pre lang="ruby">
+Post.by_status('published').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Or with a user provided param:</p>
+<pre lang="ruby">
+Post.by_status(params[:status]).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>So far, so good. Now lets move them to class methods, just for the sake of comparing:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  def self.by_status(status)
+    where(status: status)
+  end
+  
+  def self.recent
+    order("posts.updated_at DESC")
+  end
+end
+</pre>
+<p>Besides using a few extra lines, no big improvements. But now what happens if the <code>:status</code> parameter is <code>nil</code> or <code>blank</code>?</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" IS NULL 
+#   ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = '' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Oooops, I don't think we wanted to allow these queries, did we? With scopes, we can easily fix that by adding a presence condition to our scope:</p>
+<pre lang="ruby">
+scope :by_status, -> status { where(status: status) if status.present? }
+</pre>
+<p>There we go:</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>Awesome. Now lets try to do the same with our beloved class method:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  def self.by_status(status)
+    where(status: status) if status.present?
+  end
+end
+</pre>
+<p>Running this:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+NoMethodError: undefined method `recent' for nil:NilClass
+</pre>
+<p>And :bomb:. The difference is that a scope will always return a relation, whereas our simple class method implementation will not. The class method should look like this instead:</p>
+<pre lang="ruby">
+def self.by_status(status)
+  if status.present?
+    where(status: status)
+  else
+    all
+  end
+end
+</pre>
+<p>Notice that I'm returning <code>all</code> for the <code>nil/blank</code> case, which in Rails 4 returns a relation (it previously returned the Array of items from the database). In Rails 3.2.x, you should use <code>scoped</code> there instead. And there we go:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>So the advice here is: never return <code>nil</code> from a class method that should work like a scope, otherwise you're breaking the chainability condition implied by scopes, that always return a relation.</p>
+<h2>Scopes are extensible</h2>
+<p>Lets get pagination as our next example and I'm going to use the <a href="https://github.com/amatsuda/kaminari">kaminari</a> gem as basis. The most important thing you need to do when paginating a collection is to tell which page you want to fetch:</p>
+<pre lang="ruby">
+Post.page(2)
+</pre>
+<p>After doing that you might want to say how many records per page you want:</p>
+<pre lang="ruby">
+Post.page(2).per(15)
+</pre>
+<p>And you may to know the total number of pages, or whether you are in the first or last page:</p>
+<pre lang="ruby">
+posts = Post.page(2)
+posts.total_pages # => 2
+posts.first_page? # => false
+posts.last_page?  # => true
+</pre>
+<p>This all makes sense when we call things in this order, but it doesn't make any sense to call these methods in a collection that is not paginated, does it? When you write scopes, you can add specific extensions that will only be available in your object if that scope is called. In case of kaminari, it only adds the <code>page</code> scope to your Active Record models, and <a href="https://github.com/amatsuda/kaminari/blob/v0.14.1/lib/kaminari/models/active_record_model_extension.rb#L12-L17">relies on the scope extensions feature to add all other functionality when <code>page</code> is called</a>. Conceptually, the code would look like this:</p>
+<pre lang="ruby">
+scope :page, -> num { # some limit + offset logic here for pagination } do
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>Scope extensions is a powerful and flexible technique to have in our toolchain. But of course, we can always go wild and get all that with class methods too:</p>
+<pre lang="ruby">
+def self.page(num)
+  scope = # some limit + offset logic here for pagination
+  scope.extend PaginationExtensions
+  scope
+end
+
+module PaginationExtensions
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>It is a bit more verbose than using a scope, but it yields the same results. And the advice here is: pick what works better for you but make sure you know what the framework provides before reinventing the wheel.</p>
+<h2>Wrapping up</h2>
+<p>I personally tend to use scopes when the logic is very small, for simple where/order clauses, and class methods when it involves a bit more complexity, but whether it receives an argument or not doesn't really matter much to me. I also tend to rely more on scopes when doing extensions like showed here, since it's a feature that Active Record already gives us for free.</p>
+<p>I think it's important to clarify the main differences between scopes and class methods, so that you can pick the <em>right tool for the job</em><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" />, or the tool that makes you more <em>comfortable</em>. Whether you use one or another, I don't think it really matters, as long as you write them clear and consistently throughout your application.</p>
+<p>Do you have any thought about using scopes vs class methods? Make sure to leave a comment below telling us what you think, we'd love to hear.</p><p>The post <a href="/2013/02/active-record-scopes-vs-class-methods/">Active Record scopes vs class methods</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/02/active-record-scopes-vs-class-methods/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Talks da RubyConf Brasil 2012</title>
+		<link>/2012/09/talks-da-rubyconf-brasil-2012/</link>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Tue, 04 Sep 2012 16:27:25 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3091</guid>
+
+					<description><![CDATA[<p>A Plataformatec esteve presente na RubyConf Brasil 2012 com palestras e lightning talks. O evento teve mais de 750 participantes e mais de 500 pessoas assistindo online. As palestras foram: Vamos falar sobre Concorrência, por José Valim; Escrevendo Aplicações Melhores com Active Model, por Carlos Antonio; e Conhecendo as Entranhas do Rails, por Rafael França. E os lightning talks foram: Contribuindo para o Rails, por Carlos Galdino; I18nAlchemy, por Lucas Mazza; e Copyright, Licenças Open Source e você!, por George Guimarães.</p>
+<p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos dias 30 e 31 de Agosto de 2012, aconteceu o maior evento de Ruby da América Latina: a <a href="http://rubyconf.com.br/" title="RubyConf Brasil">RubyConf Brasil</a>, e a Plataformatec marcou presença com palestras e lightning talks. O evento foi um sucesso, com mais de 750 participantes durante a conferência, e mais de 500 pessoas assistindo o evento online através do site da <a href="http://www.eventials.com/rubyconfbr2012" title="RubyConfBR 2012 - Vídeos">Eventials</a>.</p>
+<p><a href="/2012/09/talks-da-rubyconf-brasil-2012/ptec_team/" rel="attachment wp-att-3100"><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2012/09/ptec_team.jpg" alt="Plataformatec Team" title="Plataformatec Team" width="600" height="398" class="aligncenter size-full wp-image-3100" srcset="/wp-content/uploads/2012/09/ptec_team.jpg 600w, /wp-content/uploads/2012/09/ptec_team-300x199.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>Abaixo você pode ver os temas, com links para os slides e vídeos:</p>
+<h3>Palestras</h3>
+<h4>Vamos falar sobre Concorrência</h4>
+<p><script async class="speakerdeck-embed" data-id="5046019de76a640002006e42" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por José Valim. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTk_3D" title="Vamos falar sobre Concorrência - José Valim - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Escrevendo Aplicações Melhores com Active Model</h4>
+<p><script async class="speakerdeck-embed" data-id="5046049ee76a6400020080b4" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Antonio. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDI_3D" title="Escrevendo Aplicações Melhores com Active Model - Carlos Antonio - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h4>Conhecendo as Entranhas do Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="504605d9e76a640002008854" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Rafael França. <a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEzMDM_3D" title="Conhecendo as Entranhas do Rails - Rafael França - RubyConf Brasil 2012">Confira o vídeo</a>.</p>
+<h3>Lightning Talks</h3>
+<h4>Contribuindo para o Rails</h4>
+<p><script async class="speakerdeck-embed" data-id="50460791dd297e0002009176" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Carlos Galdino.</p>
+<h4>I18nAlchemy</h4>
+<p><script async class="speakerdeck-embed" data-id="504607d0e76a640002009384" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por Lucas Mazza.</p>
+<h4>Copyright, Licenças Open Source e você!</h4>
+<p><script async class="speakerdeck-embed" data-id="5046081cdd297e00020094f3" data-ratio="1.3333333333333333" src="//speakerdeck.com/assets/embed.js"></script></p>
+<p>Por George Guimarães.</p>
+<p><a href="http://www.eventials.com/rubyconfbr2012/recorded/M2UzZTJkMzY2MzdiNTg2NTUxNWM1MzI3NWY1YjRhMzYjIzEyOTg_3D" title="Lightning Talks - RubyConf Brasil 2012">Confira o vídeo das Lightning Talks</a>.</p>
+<p>Sinta-se à vontade para ver e rever os slides e vídeos das palestras, e nos passar seu feedback através dos comentários. Não deixe também de conferir as outras palestras disponíveis, e se você escreveu um post sobre o evento em seu blog, adoraríamos ver um comentário com um link compartilhando seu post.</p>
+<p>Gostaríamos também de agradecer e parabenizar o Fábio Akita e a Locaweb pela ótima organização e alta qualidade do evento, tudo funcionou perfeitamente para que todos pudessem aproveitar ao máximo a conferência.</p>
+<p>E nos vemos na RubyConf Brasil 2013!</p><p>The post <a href="/2012/09/talks-da-rubyconf-brasil-2012/">Talks da RubyConf Brasil 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Plataformatec na RubyConf 2012</title>
+		<link>/2012/08/plataformatec-na-ruby-conf-2012/</link>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 18:17:47 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[activemodel]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[copyright]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<category><![CDATA[talks]]></category>
+		<guid isPermaLink="false">/?p=3059</guid>
+
+					<description><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na Ruby Conf Brasil com três palestrantes! No dia 31, às 9h40, José Valim falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações. Às 11h, na sala 2, Carlos Antonio falará sobre como usar Active Model ... <a class="read-more-link" href="/2012/08/plataformatec-na-ruby-conf-2012/">»</a></p>
+<p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Nos próximos dias 30 e 31 de agosto, estaremos presentes na <a href="http://www.rubyconf.com.br/">Ruby Conf Brasil</a> com três palestrantes!</p>
+<p>No dia 31, às 9h40, <a href="http://www.rubyconf.com.br/pt-BR/speakers/jose-valim">José Valim</a> falará na Sala 1 sobre concorrência e sobre o papel e a importância disso no desenvolvimento de aplicações.</p>
+<p>Às 11h, na sala 2, <a href="http://www.rubyconf.com.br/pt-BR/speakers/carlos-antonio-da-silva">Carlos Antonio</a> falará sobre como usar Active Model para escrevermos aplicações melhores.</p>
+<p>Por fim, às 11h50, na sala 1, <a href="http://www.rubyconf.com.br/pt-BR/speakers/rafael-franca">Rafael França</a> falará sobre as entranhas do Rails e as grandes novidades do Rails 4.</p>
+<p>Não deixe também de votar em nossos Lightning Talks, que serão realizados no primeiro dia, a partir das 18h20:</p>
+<ul>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/517">Contribuindo para o Rails</a>, do Carlos Galdino</li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/518">I18nAlchemy</a>, do Lucas Mazza </li>
+<li><a href="http://call4paperz.com/events/lightning-talk-rubyconf-brasil-2012/proposals/516">Copyright, Licenças Open Source e você!</a>, do George Guimarães</li>
+</ul>
+<p>Nos vemos lá!</p><p>The post <a href="/2012/08/plataformatec-na-ruby-conf-2012/">Plataformatec na RubyConf 2012</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Flushing content blocks with Rails 4</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/</link>
+					<comments>/2012/07/flushing-content-blocks-with-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Fri, 27 Jul 2012 18:24:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[actionpack]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=2987</guid>
+
+					<description><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems ... <a class="read-more-link" href="/2012/07/flushing-content-blocks-with-rails-4/">»</a></p>
+<p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems that I&#8217;ve found recently is an improvement on the <code>content_for</code> helper to flush and replace previous chunks of HTML with new ones.</p>
+<h3>The <code>content_for</code> that we are used to</h3>
+<p>The <code>content_for</code> method is an old friend of every Rails developer, and it&#8217;s a pretty simple and flexible helper. You can store a chunk of HTML from a String or a block, and grab it somewhere else in your views or <code>yield</code> it directly into your templates. It&#8217;s a pretty handy trick to move data from your views into your layouts, like page titles, custom meta tags or specific <code>script</code> tags that your page needs to include.</p>
+<pre lang='rails'>
+# On your 'application.html.erb' layout, inside the '<head>' tag.
+<%= yield :metatags %>
+
+# Then, into a specific view
+<% content_for :metatags do %>
+  <meta property="og:image" content="http://example.com/image.jpg" />
+<% end %>
+</pre>
+<p>Multiple calls of the <code>content_for</code> helper using the same identifier will concatenate them and output them together when you read it back on your views, as:</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example do %>
+  <h1>This will be rendered too!</h1>
+<% end %>
+</pre>
+<p>On some scenarios this behavior might not be desired, and with Rails 4 you can flush out the stored pieces of an identifier and replace it instead of adding more content to it: using the <code>flush: true</code> option. The <a href="https://github.com/rails/rails/pull/4226">first implementation</a> used an extra <code>true</code> argument, but <a href="https://github.com/rails/rails/pull/7150">we changed</a> to use a Hash instead, so the <code>flush</code> key can express better the behavior we&#8217;re expecting.</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example, flush: true do %>
+  <h1>But this will override everything on the ':example' block.</h1>
+<% end %>
+</pre>
+<h3>The gallery situation</h3>
+<p>I&#8217;ve stumbled upon this on a recent project, where we had a somewhat classic scenario: a partial named <code>_gallery</code>, responsible for rendering the piece of HTML to display a gallery of images that also supplies a <code>content_for</code> block with a <code>script</code> tag to include the required libraries to put the gallery to work.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% content_for :scripts, javascript_include_tag('gallery') %>
+</pre>
+<p>It works like a charm. But with an updated requirement we had the case where multiple galleries could be present on the same page, rendering the <code>_gallery</code> partial several times. The required HTML would be present, but the <code>gallery.js</code> script would be included multiple times into the rendered page. Instead of working this out using instance variables to check that the partial was rendered at least once, we could let Rails do all the hard work for us, using the <code>flush</code> option when including the <code>gallery.js</code> script.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% # We can render this partial several times and this script will be included just once %>
+<% content_for :scripts, javascript_include_tag('gallery'), flush: true %>
+</pre>
+<h3>Back to the present: Rails 3.2</h3>
+<p>Well, while this seems to be a perfect solution to my problem, this feature isn&#8217;t available on Rails 3.2 or on the <code>3-2-stable</code> branch &#8211; it&#8217;s only available on the <code>master</code> branch that will be released with Rails 4. But, backporting this feature into a 3.x application is pretty simple, using a helper of your own.</p>
+<pre lang='ruby'>
+def single_content_for(name, content = nil, &block)
+  @view_flow.set(name, ActiveSupport::SafeBuffer.new)
+  content_for(name, content, &block)
+end
+</pre>
+<p>After some source diving into the ActionPack source code we&#8217;re done &#8211; it just needs to replace any present content with a brand new <code>SafeBuffer</code> instance before storing the piece of HTML.</p>
+<p>What do you think about this little addition to Rails 4? Can you think of a similar problem that could be solved with this instead of a custom hack?</p><p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/flushing-content-blocks-with-rails-4/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>activerecord « Plataformatec Blog</title>
+	<atom:link href="/tag/activerecord/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 07 Feb 2013 17:51:06 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Active Record scopes vs class methods</title>
+		<link>/2013/02/active-record-scopes-vs-class-methods/</link>
+					<comments>/2013/02/active-record-scopes-vs-class-methods/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Thu, 07 Feb 2013 17:51:06 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[rails 3.2]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[scopes]]></category>
+		<guid isPermaLink="false">/?p=3354</guid>
+
+					<description><![CDATA[<p>One of the recent topics in our discussions at Plataformatec was about whether we should use scopes or class methods throughout the project to be consistent. It's also not hard to find discussions about it all over the internet. This is an attempt to show the differences between scopes and class methods, to help you understanding what scopes can give you for free and deciding what makes you feel more comfortable when writing your code.</p>
+<p>The post <a href="/2013/02/active-record-scopes-vs-class-methods/">Active Record scopes vs class methods</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Here at Plataformatec we use Github Pull Requests a lot for code review and this usually yields tons of constructive comments and excellent discussions from time to time. One of the recent topics was about whether we should use scopes or class methods throughout the project to be consistent. It&#8217;s also not hard to <a href="http://lmgtfy.com/?q=rails+%2B+scope+vs+class+method">find discussions about it all over the internet</a>. The classic comment usually boils down to <em>&#8220;there is no difference between them&#8221;</em> or <em>&#8220;it is a matter of taste&#8221;</em>. I tend to agree with both sentences, but I&#8217;d like to show some slight differences that exist between both.</p>
+<h2>Defining a scope</h2>
+<p>First of all, lets get a better understanding about how scopes are used. In Rails 3 you can define a scope in two ways:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :published, where(status: 'published')
+  scope :draft, -> { where(status: 'draft') } 
+end
+</pre>
+<p>The main difference between both usages is that the <code>:published</code> condition is evaluated when the class is first loaded, whereas the <code>:draft</code> one is lazy evaluated when it is called. Because of that, in Rails 4 the first way is going to be deprecated which means you will always need to declare scopes with a callable object as argument. This is to avoid issues when trying to declare a scope with some sort of Time argument:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :published_last_week, where('published_at >= ?', 1.week.ago)
+end
+</pre>
+<p>Because this won&#8217;t work as expected: <code>1.week.ago</code> will be evaluated when the class is loaded, not every time the scope is called.</p>
+<h2>Scopes are just class methods</h2>
+<p>Internally Active Record converts a scope into a class method. Conceptually, its simplified implementation in Rails master looks something like this:</p>
+<pre lang="ruby">
+def self.scope(name, body)
+  singleton_class.send(:define_method, name, &body)
+end
+</pre>
+<p>Which ends up as a class method with the given name and body, like this:</p>
+<pre lang="ruby">
+def self.published
+  where(status: 'published')
+end
+</pre>
+<p>And I think that&#8217;s why most people think: <em>&#8220;Why should I use a scope if it is just syntax sugar for a class method?&#8221;</em>. So here are some interesting examples for you to think about.</p>
+<h2>Scopes are always chainable</h2>
+<p>Lets use the following scenario: users will be able to filter posts by statuses, ordering by most recent updated ones. Simple enough, lets write scopes for that:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  scope :by_status, -> status { where(status: status) }
+  scope :recent, -> { order("posts.updated_at DESC") }
+end
+</pre>
+<p>And we can call them freely like this:</p>
+<pre lang="ruby">
+Post.by_status('published').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Or with a user provided param:</p>
+<pre lang="ruby">
+Post.by_status(params[:status]).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = 'published' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>So far, so good. Now lets move them to class methods, just for the sake of comparing:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  def self.by_status(status)
+    where(status: status)
+  end
+  
+  def self.recent
+    order("posts.updated_at DESC")
+  end
+end
+</pre>
+<p>Besides using a few extra lines, no big improvements. But now what happens if the <code>:status</code> parameter is <code>nil</code> or <code>blank</code>?</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" IS NULL 
+#   ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" WHERE "posts"."status" = '' 
+#   ORDER BY posts.updated_at DESC
+</pre>
+<p>Oooops, I don't think we wanted to allow these queries, did we? With scopes, we can easily fix that by adding a presence condition to our scope:</p>
+<pre lang="ruby">
+scope :by_status, -> status { where(status: status) if status.present? }
+</pre>
+<p>There we go:</p>
+<pre lang="ruby">
+Post.by_status(nil).recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>Awesome. Now lets try to do the same with our beloved class method:</p>
+<pre lang="ruby">
+class Post < ActiveRecord::Base
+  def self.by_status(status)
+    where(status: status) if status.present?
+  end
+end
+</pre>
+<p>Running this:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+NoMethodError: undefined method `recent' for nil:NilClass
+</pre>
+<p>And :bomb:. The difference is that a scope will always return a relation, whereas our simple class method implementation will not. The class method should look like this instead:</p>
+<pre lang="ruby">
+def self.by_status(status)
+  if status.present?
+    where(status: status)
+  else
+    all
+  end
+end
+</pre>
+<p>Notice that I'm returning <code>all</code> for the <code>nil/blank</code> case, which in Rails 4 returns a relation (it previously returned the Array of items from the database). In Rails 3.2.x, you should use <code>scoped</code> there instead. And there we go:</p>
+<pre lang="ruby">
+Post.by_status('').recent
+# SELECT "posts".* FROM "posts" ORDER BY posts.updated_at DESC
+</pre>
+<p>So the advice here is: never return <code>nil</code> from a class method that should work like a scope, otherwise you're breaking the chainability condition implied by scopes, that always return a relation.</p>
+<h2>Scopes are extensible</h2>
+<p>Lets get pagination as our next example and I'm going to use the <a href="https://github.com/amatsuda/kaminari">kaminari</a> gem as basis. The most important thing you need to do when paginating a collection is to tell which page you want to fetch:</p>
+<pre lang="ruby">
+Post.page(2)
+</pre>
+<p>After doing that you might want to say how many records per page you want:</p>
+<pre lang="ruby">
+Post.page(2).per(15)
+</pre>
+<p>And you may to know the total number of pages, or whether you are in the first or last page:</p>
+<pre lang="ruby">
+posts = Post.page(2)
+posts.total_pages # => 2
+posts.first_page? # => false
+posts.last_page?  # => true
+</pre>
+<p>This all makes sense when we call things in this order, but it doesn't make any sense to call these methods in a collection that is not paginated, does it? When you write scopes, you can add specific extensions that will only be available in your object if that scope is called. In case of kaminari, it only adds the <code>page</code> scope to your Active Record models, and <a href="https://github.com/amatsuda/kaminari/blob/v0.14.1/lib/kaminari/models/active_record_model_extension.rb#L12-L17">relies on the scope extensions feature to add all other functionality when <code>page</code> is called</a>. Conceptually, the code would look like this:</p>
+<pre lang="ruby">
+scope :page, -> num { # some limit + offset logic here for pagination } do
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>Scope extensions is a powerful and flexible technique to have in our toolchain. But of course, we can always go wild and get all that with class methods too:</p>
+<pre lang="ruby">
+def self.page(num)
+  scope = # some limit + offset logic here for pagination
+  scope.extend PaginationExtensions
+  scope
+end
+
+module PaginationExtensions
+  def per(num)
+    # more logic here
+  end
+  
+  def total_pages
+    # some more here
+  end
+  
+  def first_page?
+    # and a bit more
+  end
+  
+  def last_page?
+    # and so on
+  end
+end
+</pre>
+<p>It is a bit more verbose than using a scope, but it yields the same results. And the advice here is: pick what works better for you but make sure you know what the framework provides before reinventing the wheel.</p>
+<h2>Wrapping up</h2>
+<p>I personally tend to use scopes when the logic is very small, for simple where/order clauses, and class methods when it involves a bit more complexity, but whether it receives an argument or not doesn't really matter much to me. I also tend to rely more on scopes when doing extensions like showed here, since it's a feature that Active Record already gives us for free.</p>
+<p>I think it's important to clarify the main differences between scopes and class methods, so that you can pick the <em>right tool for the job</em><img src="https://s.w.org/images/core/emoji/14.0.0/72x72/2122.png" alt="™" class="wp-smiley" style="height: 1em; max-height: 1em;" />, or the tool that makes you more <em>comfortable</em>. Whether you use one or another, I don't think it really matters, as long as you write them clear and consistently throughout your application.</p>
+<p>Do you have any thought about using scopes vs class methods? Make sure to leave a comment below telling us what you think, we'd love to hear.</p><p>The post <a href="/2013/02/active-record-scopes-vs-class-methods/">Active Record scopes vs class methods</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/02/active-record-scopes-vs-class-methods/feed/</wfw:commentRss>
+			<slash:comments>18</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Active Record loves blocks</title>
+		<link>/2012/07/active-record-loves-blocks/</link>
+					<comments>/2012/07/active-record-loves-blocks/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 18 Jul 2012 19:46:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[blocks]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=2949</guid>
+
+					<description><![CDATA[<p>When creating an Active Record object, either by using `new` or `create`/`create!`, or even through a `belongs_to` or `has_many` association, you can give a block straight to the method call instead of relying on `tap`. It is possible to avoid doing manual work, sometimes simple stuff such as using `tap` with methods like these, or sometimes more complicated things, by getting to know what a framework like Rails can give us for free.</p>
+<p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;d like to start with a question: Have you ever seen code like this?</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+end
+
+User.new.tap do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>I have. But what few developers know is that many methods in Active Record already accept a block, so you don't need to invoke <code>tap</code> in the first place. And that's all because Active Record loves blocks! Let's go through some examples.</p>
+<h3>Using blocks with Active Record</h3>
+<p>When creating an Active Record object, either by using <code>new</code> or <code>create</code>/<code>create!</code>, you can give a block straight to the method call instead of relying on <code>tap</code>:</p>
+<pre lang="ruby">
+User.new do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+
+User.create do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>And you can mix and match with hash initialization:</p>
+<pre lang="ruby">
+User.new(name: "John Doe") do |user|
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>All these methods, when receiving a block, <a href="https://github.com/rails/rails/blob/v3.2.6/activerecord/lib/active_record/base.rb#L500"><code>yield</code> the current object to the block</a> so that you can do whatever you want with it. It's basically the same effect as using <code>tap</code>. And it all happens after the attributes hash have been assigned and other internal Active Record code has been run during the object initialization, except by the <code>after_initialize</code> callbacks.</p>
+<p>That's neat. That means we can stop using <code>tap</code> in a few places now. But wait, there's more.</p>
+<h3>Active Record associations also love blocks</h3>
+<p>We talked about using blocks when building an Active Record object using <code>new</code> or <code>create</code>, but associations like <code>belongs_to</code> or <code>has_many</code> also work with that, when calling <code>build</code> or <code>create</code> on them:</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+  has_many :posts
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
+end
+
+# has_many
+user = User.first
+user.posts.build do |post|
+  post.title = "Active Record <3 Blocks"
+  post.body  = "I can give tap a break! <3 <3 <3"
+end
+
+# belongs_to
+post = Post.first
+post.build_user do |user|
+  user.name     = "John Doe <3 blocks"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>That's even better. That means we can stop using <code>tap</code> in a few more places.</p>
+<h3>Wrapping up: Active Record &lt;3 blocks</h3>
+<p>It is possible to avoid extra work, sometimes simple stuff such as using <code>tap</code> with methods like <code>new</code> and <code>create</code>, other times more complicated ones, by getting to know what the framework can give us for free.</p>
+<p>There are other places inside Active Record that accept blocks, for instance <code> first_or_initialize</code> and friends will execute the given block when the record is not found, to initialize the new one.</p>
+<p>In short, next time you need a block when creating records using Active Record, take a minute to see if you can avoid using <code>tap</code> by using an already existing feature. Remember: Active Record &lt;3 blocks. And don't do that with blocks only, the main idea here is that you can learn more about the framework, and let it do more work for you.</p>
+<p>How about you, do you have any small trick in Ruby or Rails that makes your work easier? Take a minute to share it with others in the comments. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/active-record-loves-blocks/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>About the composed_of removal</title>
+		<link>/2012/06/about-the-composed_of-removal/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 20 Jun 2012 14:53:56 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[composed_of]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=2841</guid>
+
+					<description><![CDATA[<p>In this post we talk about the motivation of the composed_of removal in the Rails 4.0 and the possible replacements</p>
+<p>The post <a href="/2012/06/about-the-composed_of-removal/">About the composed_of removal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<h3>Update 08/13/2012</h3>
+<p>Since the new <a href="https://twitter.com/rails/status/230724881900261378">deprecation policy</a> the <code>composed_of</code> removal was reverted. We are still discussing the future of this feature.</p>
+<h3>The reason</h3>
+<p>A few days ago we started a discussion about the <a href="https://github.com/rails/rails/pull/6743">removal of the <code>composed_of</code></a> method from Active Record. I started this discussion because when I was tagging every Rails issue according to its framework, I found <a href="https://github.com/rails/rails/issues/1513">some</a> of <a href="https://github.com/rails/rails/pull/3807">them</a> <a href="https://github.com/rails/rails/pull/1436">related</a> to <a href="https://github.com/rails/rails/issues/2084"><code>composed_of</code></a>, that are not only hard to fix but would add more complexity for a feature that, in my opinion, is not adding any visible value to the framework.</p>
+<p><a href="http://confreaks.com/videos/880-railsconf2012-keynote-i-ve-made-a-huge-mistake">In this presentation</a>, <a href="https://twitter.com/tenderlove">Aaron Patterson</a> talks about three types of features: Cosmetic, Refactoring, and Course Correction. Aaron defines cosmetic features as a feature that adds dubious value and unknown debt (I highly recommend that you watch the whole presentation to see more about these types of features). This is exactly what I think about <code>composed_of</code>. At this time this feature is adding more debt than value to the Rails code base and applications, so the Rails team have decided to remove this method.</p>
+<h3>The plan</h3>
+<p>The removal plan is simple, deprecate in 3.2 and remove in 4.0. This means that you need to stop using this feature and implement it in another way.</p>
+<p>The Rails team have chosen this path because this feature can be implemented using plain ruby methods for getters and setters. You will see how in the next section.</p>
+<h3>Implementation</h3>
+<p>In the simplest case, when you have only one attribute and needs to instantiate an object with the value of this attribute, you can use the <code>serialize</code> feature with a custom serializer:</p>
+<pre lang="ruby">
+class MoneySerializer
+  def dump(money)
+    money.value
+  end
+
+  def load(value)
+    Money.new(value)
+  end
+end
+
+class Account < ActiveRecord::Base
+  serialize :balance, MoneySerializer.new
+end
+</pre>
+<p>To use it with multiple attributes you can do the following:</p>
+<pre lang="ruby">
+class Person < ActiveRecord::Base
+  def address
+    @address ||= Address.new(address_street, address_city)
+  end
+
+  def address=(address)
+    self[:address_street] = address.street
+    self[:address_city]   = address.city
+    
+    @address = address
+  end
+end
+</pre>
+<h3>Benefits for Rails developers</h3>
+<p>I already talked about what this removal can provide to Rails maintainers, but what benefits does it bring to Rails developers?</p>
+<p>I think that the best advantages are:</p>
+<ul>
+<li>It is easier to test the composite objects;</li>
+<li>It is easier to understand the lazy methods;</li>
+<li>It is easier to customize it without resorting to options like <code>:converter</code>, <code>:constructor</code> and <code>:allow_nil</code>.</li>
+</ul>
+<h3>Wrapping up</h3>
+<p>I strongly recommend that you read the whole discussion in the <a href="https://github.com/rails/rails/pull/6743">pull request</a>. You will find more examples and additional information there.</p>
+<p>Also, I want to thank <a href="https://twitter.com/steveklabnik">@steveklabnik</a> for working on this feature and the awesome work that he has been doing on the Rails Issues Team.</p>
+<p>Finally, I want to invite you to help the Rails team to fix, test, and track issues. About half of the issues are related to the Active Record framework and we need to work on them. As a regular Rails contributor and Rails developer, I think there is still a lot we can do to improve the Rails code base, so join us.</p><p>The post <a href="/2012/06/about-the-composed_of-removal/">About the composed_of removal</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>New Active Record scoping syntax</title>
+		<link>/2010/07/new-active-record-scoping-syntax/</link>
+					<comments>/2010/07/new-active-record-scoping-syntax/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 15:19:46 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[arel]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[scopes]]></category>
+		<guid isPermaLink="false">/?p=1181</guid>
+
+					<description><![CDATA[<p>You probably know that Active Record got a facelift and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, a small incompatibility between the old and new syntax was found. This post explains this incompatibility and how ... <a class="read-more-link" href="/2010/07/new-active-record-scoping-syntax/">»</a></p>
+<p>The post <a href="/2010/07/new-active-record-scoping-syntax/">New Active Record scoping syntax</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You probably know that <a href="http://www.railsdispatch.com/posts/activerelation" target="_blank">Active Record got a facelift</a> and is now powered by Active Relation. A new chainable-award-winning-lazy API was added and received great feedback! However, as more and more people are trying Rails 3 beta, <a href="https://rails.lighthouseapp.com/projects/8994/tickets/3838" target="_blank">a small incompatibility between the old and new syntax was found</a>. This post explains this incompatibility and how it was solved.</p>
+<h3>The issue</h3>
+<p>Quoting the Lighthouse ticket, imagine the following scenario in Rails 2.3:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope :conditions => { :deleted_at => nil }
+
+  def self.deleted
+    with_exclusive_scope :find => { :conditions => "pages.deleted_at IS NOT NULL" } do
+      all
+    end
+  end
+end
+</pre>
+<p>If you rewrite it to the new 3.0 syntax, your first attempt would probably be:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope where(:deleted_at => nil)
+
+  def self.deleted
+    with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+      all
+    end
+  end
+end
+</pre>
+<p>However, if you try it out on console, you will find out it does not work as expected:</p>
+<pre lang="ruby">
+Page.all         #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL)
+Page.deleted.all #=> SELECT "pages".* FROM "pages" WHERE ("pages"."deleted_at" IS NULL) AND ("pages"."deleted_at" IS NOT NULL)
+</pre>
+<p>To understand why it does not work, let&#8217;s take a look at the source code!</p>
+<h3>Investigating the issue</h3>
+<p>With Active Relation, Active Record is no longer responsible to build queries. That said, <code>ActiveRecord::Base</code> is not the one that implements <code>where()</code> and friends, in fact, it simply delegates to an <code>ActiveRecord::Relation</code> object. From <a href="http://github.com/rails/rails/blob/master/activerecord/lib/active_record/base.rb" target="_blank">ActiveRecord::Base source code</a>:</p>
+<pre lang="ruby">
+delegate :select, :group, :order, :limit, :joins, :where, :preload, :eager_load, :includes, :from, :lock, :readonly, :having, :create_with, :to => :scoped
+</pre>
+<p>And the <code>scoped</code> implementation is shown below:</p>
+<pre lang="ruby">
+def scoped(options = nil)
+  if options.present?
+    scoped.apply_finder_options(options)
+  else
+    current_scoped_methods ? relation.merge(current_scoped_methods) : relation.clone
+  end
+end
+
+def relation
+  @relation ||= ActiveRecord::Relation.new(self, arel_table)
+  finder_needs_type_condition? ? @relation.where(type_condition) : @relation
+end
+</pre>
+<p>As you can see, <code>scoped</code> always returns an ActiveRecord::Relation that you build your query on top of (notice that <a href="http://metautonomo.us/2010/05/11/activerecord-relation-vs-arel/">ARel::Relation is not the same as ActiveRecord::Relation</a>).</p>
+<p>Besides, if there is any <code>current_scoped_methods</code>, the <code>scoped</code> method is responsible to merge this current scope into the raw relation. This is where things get interesting.</p>
+<p>When you create your model, <code>current_scoped_methods</code> returns by default nil. However, when you define a <code>default_scope</code>, the current scope now becomes the relation given to <code>default_scope</code>, meaning that, every time you call <code>scoped</code>, it returns the raw relation merged with your default scope.</p>
+<p>The whole idea of <code>with_exclusive_scope</code> is to be able to make a query without taking the default scope into account, just the relation you give in as argument. That said, it basically sets the <code>current_scope_methods</code> back to nil, so every time you call <code>scoped</code> to build your queries, it will be built on top of the raw relation without the default scope.</p>
+<p>With that in mind, if we look again at the code which we were trying to port from Rails 2.3, we can finally understand what was happening:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope :find => where('pages.deleted_at IS NOT NULL') do
+    self
+  end
+end
+</pre>
+<p>When we called <code>where('pages.deleted_at IS NOT NULL')</code> above, we were doing the same as: <code>scoped.where('pages.deleted_at IS NOT NULL')</code>. But, as <code>scoped</code> was called <strong>outside</strong> the <code>with_exclusive_scope</code> block, it means that the relation given as argument to <code>:find</code> was built on top of <code>default_scope</code> explaining the query we saw as results.</p>
+<p>For example, the following syntax would work as expected:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>Since we are calling <code>where</code> inside the block, the <code>scoped</code> method no longer takes the default scope into account. However, moving the relation inside the block is not the same as specifying it to <code>:find</code>, because if we were doing three queries inside the block, we would have to specify the same relation three times (or refactor the whole code to always do a query on top of this new relation).</p>
+<p>That said, it seems the previous <code>with_exclusive_scope</code> syntax does not suit very well with ActiveRecord&#8217;s new API. Maybe is it time for change? Can we provide a better API? Which are the use cases?</p>
+<h3>Identifying the use cases</h3>
+<p>The <code>with_exclusive_scope</code> method has mainly two use cases. The first one, which we just discussed above, is to allow us to make a query without taking the default scope into account inside our models:</p>
+<pre lang="ruby">
+def self.deleted
+  with_exclusive_scope do
+    where('pages.deleted_at IS NOT NULL').all
+  end
+end
+</pre>
+<p>While this code looks ok, if we think about relations, we will realize that we don&#8217;t need to give a block to achieve the behavior we want. If the <code>scoped</code> method returns a raw relation with the default scope, couldn&#8217;t we have a method that always returns the raw relation? Allowing us to build our query without taking the default scope into account?</p>
+<p>In fact, this method was already implemented in Active Record and it is called <code>unscoped</code>. That said, the code above could simply be rewritten as:</p>
+<pre lang="ruby">
+def self.deleted
+  unscoped.where('pages.deleted_at IS NOT NULL').all
+end
+</pre>
+<p>Much simpler! So, it seems that we don&#8217;t need to support the block usage at all, confirm?</p>
+<p>Deny! Going back to the <code>Page</code> example above, it seems we should never see deleted pages, that&#8217;s why we set the <code>default_scope</code> to <code>:deleted_at => nil</code>. However, if this application has an admin section, the admin may want to see all pages, including the deleted ones.</p>
+<p>That said, what we could do is to have one controller for the normal User and another for the Admin. In the former, we would always use <code>Page.all</code>, and <code>Page.unscoped.all</code> in the latter.</p>
+<p>However, if these controllers and views are very similar, you may not want do duplicate everything. Maybe it would be easier if we do something like this:</p>
+<pre lang="ruby">def resource_class
+  if current_user.is_admin?
+    Page.unscoped
+  else
+    Page
+  end
+end</pre>
+<p>And, instead of always referencing the <code>Page</code> class directly in our actions, we could call <code>resource_class</code>. While this solution is also ok, there is a final alternative, that would require no changes to the current code. If you want to use the same controller for different roles, but changing the scope of what they are allowed to see, you could simply use an <code>around_filter</code> to change the model scope during the execution of an action. Here is an example:</p>
+<pre lang="ruby">
+class PagesController < ApplicationController
+  around_filter :apply_scope
+
+  # some code ...
+
+  protected
+
+  def apply_scope
+    if current_user.admin?
+      Page.with_exclusive_scope { yield }
+    else
+      yield
+    end
+  end
+end</pre>
+<p>That said, being allowed to give a block to <code>with_exclusive_scope</code> is actually useful and since we want to deprecate <code>with_exclusive_scope</code> in favor of <code>unscoped</code> in the future, we brought this very same syntax to <code>unscoped</code> as well:</p>
+<pre lang="ruby">def apply_scope
+  if current_user.admin?
+    Page.unscoped { yield }
+  else
+    yield
+  end
+end</pre>
+<h3>Tidying it up</h3>
+<p>Well, after the behavior in <code>with_exclusive_scope</code> was properly ported to the new API, we need to be sure we are not forgetting about anything... wait, actually we are.</p>
+<p><code>with_exclusive_scope</code> has an evil twin brother called <code>with_scope</code> which behaves very similarly, except that it always build the query on top of the <code>scoped</code> relation. It works like this:</p>
+<pre lang="ruby">
+class Page < ActiveRecord::Base
+  default_scope where(:deleted_at => nil)
+end
+
+Page.with_scope :find => { :conditions => { :active => true } } do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>However, this feels way too hash-ish. Of course, we could use relations to make it a bit prettier:</p>
+<pre lang="ruby">
+Page.with_scope :find => where(:active => true) do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>This is ok, but it seems that we could improve it even more. That said, we added a new method to relations, called <code>scoping</code>:</p>
+<pre lang="ruby">
+Page.where(:active => true).scoping do
+  Page.all #=> Bring all active pages that were not deleted
+end
+</pre>
+<p>Yeah! Sign me up 'cause this looks way better than the previous syntax! And, if you check <a href="http://github.com/rails/rails/commit/bd1666ad1de88598ed6f04ceffb8488a77be4385">the original commit</a>, you will notice the <code>unscoped</code> method with a block simply delegates <code>scoping</code>:</p>
+<pre lang="ruby">
+def unscoped
+  block_given? ? relation.scoping { yield } : relation
+end
+</pre>
+<p>So, with <code>unscoped</code> and <code>scoping</code> implemented, we just need to commit, git push and be happy, confirm? Deny! There is one last case to check.</p>
+<h3>create_with</h3>
+<p>If you payed attention properly, you can notice that every time we called <code>with_exclusive_scope</code> and <code>with_scope</code>, we always passed <code>{ :find => relation }</code> as hash, instead of simply giving the relation. This happens because these methods accept two hash keys: find and create.</p>
+<p>As you may expect, one specifies the behavior for create and the other for finding. In most of the cases, they are exactly the same and work with the new syntax:</p>
+<pre lang="ruby">
+page = Page.where(:active => true).new
+page.active #=> true
+</pre>
+<p>However, for obvious reasons, this only works if the conditions are given as a hash. Consider this case:</p>
+<pre lang="ruby">
+page = Page.where("active = true").new
+page.active #=> nil
+</pre>
+<p>That said, there may be a few scenarios where you want to specify the creation conditions on its own, explaining the :find and :create options in <code>with_exclusive_scope</code> and <code>with_scope</code> methods. So, how can I achieve it with the new syntax? Easy!</p>
+<pre lang="ruby">
+page = Page.create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>If you provide both conditions as a hash and <code>create_with</code>, <code>create_with</code> always have higher priority:</p>
+<pre lang="ruby">
+page = Page.where(:active => false).create_with(:active => true).new
+page.active #=> true
+</pre>
+<p>Note this syntax already existed, we are just making it explicit now as part of the new API! That said, commit, push and be happy!</p>
+<h3>Wrapping up</h3>
+<p>All in all, <code>with_exclusive_scope</code> and <code>with_scope</code> are now part of the old ActiveRecord API giving place to the new, strong and vibrant <code>unscoped</code> and <code>scoping</code> methods!</p>
+<p>However, they are not going to be deprecated now. They will follow the same <a href="http://m.onkey.org/2010/1/22/active-record-query-interface" target="_blank">deprecation strategy as all the current methods</a>.</p>
+<p>And you? What do you think about this new scoping API?</p><p>The post <a href="/2010/07/new-active-record-scoping-syntax/">New Active Record scoping syntax</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/07/new-active-record-scoping-syntax/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

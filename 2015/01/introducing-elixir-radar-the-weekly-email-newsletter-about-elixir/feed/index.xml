@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Introducing Elixir Radar: the weekly email newsletter about Elixir	</title>
+	<atom:link href="/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 29 Jan 2015 19:13:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Hugo Baraúna		</title>
+		<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1464</link>
+
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 19:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4405#comment-1464</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1462&quot;&gt;marcogomes&lt;/a&gt;.
+
+Thank you Marcos!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1462">marcogomes</a>.</p>
+<p>Thank you Marcos!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Hugo Baraúna		</title>
+		<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1465</link>
+
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 19:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4405#comment-1465</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1463&quot;&gt;Alan Andrade&lt;/a&gt;.
+
+Thank you Alan!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1463">Alan Andrade</a>.</p>
+<p>Thank you Alan!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alan Andrade		</title>
+		<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1463</link>
+
+		<dc:creator><![CDATA[Alan Andrade]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 18:29:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4405#comment-1463</guid>
+
+					<description><![CDATA[You&#039;re always producing useful things. Thank you so much for that and congratulations on Elixr&#039;s evolution.]]></description>
+			<content:encoded><![CDATA[<p>You&#8217;re always producing useful things. Thank you so much for that and congratulations on Elixr&#8217;s evolution.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: marcogomes		</title>
+		<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1462</link>
+
+		<dc:creator><![CDATA[marcogomes]]></dc:creator>
+		<pubDate>Thu, 29 Jan 2015 17:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4405#comment-1462</guid>
+
+					<description><![CDATA[Congratulations guys :)]]></description>
+			<content:encoded><![CDATA[<p>Congratulations guys 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: edwnest		</title>
+		<link>/2015/01/introducing-elixir-radar-the-weekly-email-newsletter-about-elixir/comment-page-1/#comment-1461</link>
+
+		<dc:creator><![CDATA[edwnest]]></dc:creator>
+		<pubDate>Wed, 28 Jan 2015 20:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4405#comment-1461</guid>
+
+					<description><![CDATA[Thanks. I&#039;m looking forward to Elixir Radar.]]></description>
+			<content:encoded><![CDATA[<p>Thanks. I&#8217;m looking forward to Elixir Radar.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

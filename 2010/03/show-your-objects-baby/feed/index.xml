@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Show your objects baby!	</title>
+	<atom:link href="/2010/03/show-your-objects-baby/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/03/show-your-objects-baby/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 22 Apr 2010 17:55:40 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Carlos Antônio		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-546</link>
+
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Sat, 20 Mar 2010 19:09:42 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-546</guid>
+
+					<description><![CDATA[@Vineyard yes, it should work normally.. There is nothing in ShowFor talking about your database, it&#039;s only a better way of showing data.]]></description>
+			<content:encoded><![CDATA[<p>@Vineyard yes, it should work normally.. There is nothing in ShowFor talking about your database, it&#8217;s only a better way of showing data.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antonio		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-988</link>
+
+		<dc:creator><![CDATA[Carlos Antonio]]></dc:creator>
+		<pubDate>Sat, 20 Mar 2010 19:09:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-988</guid>
+
+					<description><![CDATA[@Vineyard yes, it should work normally.. There is nothing in ShowFor talking about your database, it&#039;s only a better way of showing data.]]></description>
+			<content:encoded><![CDATA[<p>@Vineyard yes, it should work normally.. There is nothing in ShowFor talking about your database, it&#8217;s only a better way of showing data.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vineyard		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-545</link>
+
+		<dc:creator><![CDATA[Vineyard]]></dc:creator>
+		<pubDate>Sat, 20 Mar 2010 18:52:54 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-545</guid>
+
+					<description><![CDATA[Does this work with MongoMapper?]]></description>
+			<content:encoded><![CDATA[<p>Does this work with MongoMapper?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vineyard		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-987</link>
+
+		<dc:creator><![CDATA[Vineyard]]></dc:creator>
+		<pubDate>Sat, 20 Mar 2010 18:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-987</guid>
+
+					<description><![CDATA[Does this work with MongoMapper?]]></description>
+			<content:encoded><![CDATA[<p>Does this work with MongoMapper?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ingemar		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-543</link>
+
+		<dc:creator><![CDATA[Ingemar]]></dc:creator>
+		<pubDate>Mon, 15 Mar 2010 16:17:09 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-543</guid>
+
+					<description><![CDATA[It would be neat if one could just pass in the record and then it would output all attributes listed in attr_accessible]]></description>
+			<content:encoded><![CDATA[<p>It would be neat if one could just pass in the record and then it would output all attributes listed in attr_accessible</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ingemar		</title>
+		<link>/2010/03/show-your-objects-baby/comment-page-1/#comment-986</link>
+
+		<dc:creator><![CDATA[Ingemar]]></dc:creator>
+		<pubDate>Mon, 15 Mar 2010 16:17:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=817#comment-986</guid>
+
+					<description><![CDATA[It would be neat if one could just pass in the record and then it would output all attributes listed in attr_accessible]]></description>
+			<content:encoded><![CDATA[<p>It would be neat if one could just pass in the record and then it would output all attributes listed in attr_accessible</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

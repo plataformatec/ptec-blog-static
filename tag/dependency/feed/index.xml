@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>dependency « Plataformatec Blog</title>
+	<atom:link href="/tag/dependency/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 31 Mar 2016 18:38:25 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Inspecting, changing and debugging Elixir project dependencies</title>
+		<link>/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/</link>
+		
+		<dc:creator><![CDATA[Igor Florian]]></dc:creator>
+		<pubDate>Thu, 31 Mar 2016 14:20:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[debug]]></category>
+		<category><![CDATA[dependency]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[phoenix]]></category>
+		<guid isPermaLink="false">/?p=5261</guid>
+
+					<description><![CDATA[<p>You have probably heard that Elixir is very explicit and I’d say the same! One of the things I really like in Elixir projects is that its dependencies are all explicitly included in the deps/ directory. Every time we’re curious about how a dependency works, we can just look at deps/lib-name. After working on a ... <a class="read-more-link" href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">»</a></p>
+<p>The post <a href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">Inspecting, changing and debugging Elixir project dependencies</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You have probably heard that Elixir is very explicit and I’d say the same!</p>
+<p>One of the things I really like in Elixir projects is that its dependencies are all explicitly included in the <code>deps/</code> directory. Every time we’re curious about how a dependency works, we can just look at <code>deps/lib-name</code>.</p>
+<p>After working on a project for a while, I’ve noticed a strange behavior in one of our dependencies. I&#8217;ve opened the <code>deps/lib-name</code> directory in my editor, inserted a couple <code>IO.inspect</code> calls, and recompiled my dependencies with:</p>
+<pre><code>mix deps.compile
+</code></pre>
+<p>That seems logical, doesn’t it? For my surprise, I didn’t get the expected behavior. The reason is straight-forward. Elixir projects (and its dependencies) are by default compiled for <code>dev</code>, <code>test</code> and <code>prod</code> environments. These compiled files are located in <code>_build/</code>, in a directory that holds the environment name (<code>_build/dev/</code>, <code>_build/test/</code> and <code>_build/prod/</code>). Accessing the applied changes in the source code depends on which environment we’re running it.</p>
+<p>The kind of task we execute is deterministic. Running a test will make our <code>_build/test/</code> compiled files to be used, just like <code>iex -S mix</code> would use <code>build/dev/</code> files and so on.</p>
+<p>What I did before would work if I tried to call the function I was inspecting through <code>iex -S mix</code>. That’s only because Elixir’s default environment is <code>dev</code>. In order to make those changes to be visible in my tests, I’d have to:</p>
+<pre><code>MIX_ENV=test mix deps.compile
+</code></pre>
+<p>There’s a simple test we can run to understand this better:</p>
+<ol>
+<li>Create a simple Elixir project with <code>mix new project</code></li>
+<li>Run <code>iex -S mix</code></li>
+<li>Take a look at the <code>_build</code> directory and notice that we now have a <code>_build/dev</code> directory with that project&#8217;s compiled file</li>
+<li>Run <code>mix test</code> and notice that we now have a <code>_build/test</code></li>
+</ol>
+<h2>Using <code>:path</code> option</h2>
+<p>Instead of running <code>mix deps.compile</code> for every change, there is a more convenient alternative.</p>
+<p>When we declare our dependencies in the <code>mix.exs</code> file we need to give it the library name and its version. We can also give it some extra options, among them there is a specific option that will help us when debugging dependencies: <code>path</code>.</p>
+<pre><code class="elixir">  defp deps do
+    [{:plug, path: "deps/plug"},
+     ...]
+  end
+</code></pre>
+<p>When we set <code>:path</code>, our dependency will be automatically recompiled by our project, as mentioned in <a href="http://elixir-lang.org/docs/stable/mix/Mix.Tasks.Deps.html">Mix.Tasks.Deps docs</a> (we can also access it through <code>mix help deps</code>).</p>
+<blockquote><p>
+  <strong><em>Path and in umbrella dependencies are automatically recompiled by the parent project whenever they change.</em></strong>
+</p></blockquote>
+<p>This way, every time I make a change and run a Mix task like <code>mix test</code> or <code>iex -S mix</code>, the dependency will be recompiled without having to run the compile task over and over again. With the <code>path</code> option we can also omit the version because it&#8217;ll be retrieved from the project being addressed.</p>
+<p>An important consideration here is that we can inform any path in this option, it doesn’t need to be a source code in the <code>deps/</code> directory. It could, for example, point to a checkout of a dependency in our machine. This is an excellent option when we’re working on an open source project. We can test the changes we intend to submit (or to find an issue) inside a real project more easily.</p>
+<h2>A dependency of other dependencies</h2>
+<p>We know that Phoenix Framework uses <code>Plug</code> for managing its requests but it’s not listed in our project dependencies. That’s because <a href="https://github.com/phoenixframework/phoenix/blob/v1.1/mix.exs#L42">Plug is a Phoenix dependency</a>.</p>
+<p>In order to inspect <code>Plug</code> we’d have to include it on our <code>deps</code> function and use the <code>override: true</code> option. Otherwise Mix will warn us that there is a dependency conflict.</p>
+<pre><code class="elixir">  defp deps do
+    [{:phoenix, "~&gt; 1.1.4"},
+     {:postgrex, "&gt;= 0.0.0"},
+     {:phoenix_ecto, "~&gt; 2.0"},
+     {:phoenix_html, "~&gt; 2.4"},
+     {:phoenix_live_reload, "~&gt; 1.0", only: :dev},
+     {:cowboy, "~&gt; 1.0"},
+     {:plug, path: "deps/plug", override: true}]
+  end
+</code></pre>
+<h2>Conclusion</h2>
+<p>I believe that Elixir has already proven that explicitness is a great asset. Keeping project&#8217;s dependencies in <code>deps/</code> has already proved useful when searching for code and documentation.</p>
+<p>In case you find a bug in any of your dependencies, we strongly recommend that you submit a pull request back to its repository. You’ll help other developers that are going through the same issue and you&#8217;ll he the community growth.</p>
+<p>What about you? Are there any tips you’d like to share for debugging Elixir dependencies?</p>
+<p><a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=elixir-radar&amp;utm_content=elixir-radar-cta-blog-post-bottom"><br />
+<img decoding="async" style="border: 0;" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" /><br />
+</a></p><p>The post <a href="/2016/03/inspecting-changing-and-debugging-elixir-project-dependencies/">Inspecting, changing and debugging Elixir project dependencies</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

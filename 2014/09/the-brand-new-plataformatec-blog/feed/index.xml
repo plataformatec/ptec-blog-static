@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: The brand new Plataformatec blog	</title>
+	<atom:link href="/2014/09/the-brand-new-plataformatec-blog/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/09/the-brand-new-plataformatec-blog/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 30 Sep 2014 16:55:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Rafael Rinaldi		</title>
+		<link>/2014/09/the-brand-new-plataformatec-blog/comment-page-1/#comment-1441</link>
+
+		<dc:creator><![CDATA[Rafael Rinaldi]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 16:55:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4235#comment-1441</guid>
+
+					<description><![CDATA[Great job, man. Looking good!]]></description>
+			<content:encoded><![CDATA[<p>Great job, man. Looking good!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Marcelo Cajueiro		</title>
+		<link>/2014/09/the-brand-new-plataformatec-blog/comment-page-1/#comment-1440</link>
+
+		<dc:creator><![CDATA[Marcelo Cajueiro]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 16:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4235#comment-1440</guid>
+
+					<description><![CDATA[So much better! Congratz.]]></description>
+			<content:encoded><![CDATA[<p>So much better! Congratz.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Sócrates		</title>
+		<link>/2014/09/the-brand-new-plataformatec-blog/comment-page-1/#comment-1439</link>
+
+		<dc:creator><![CDATA[Sócrates]]></dc:creator>
+		<pubDate>Tue, 30 Sep 2014 13:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4235#comment-1439</guid>
+
+					<description><![CDATA[Congratulations to yall!]]></description>
+			<content:encoded><![CDATA[<p>Congratulations to yall!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

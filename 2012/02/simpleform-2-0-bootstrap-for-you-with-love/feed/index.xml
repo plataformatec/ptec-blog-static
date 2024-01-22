@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: SimpleForm 2.0 + Bootstrap: for you with love	</title>
+	<atom:link href="/2012/02/simpleform-2-0-bootstrap-for-you-with-love/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 10 Mar 2012 00:03:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: mvilrokx		</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/comment-page-1/#comment-1208</link>
+
+		<dc:creator><![CDATA[mvilrokx]]></dc:creator>
+		<pubDate>Sat, 10 Mar 2012 00:03:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2469#comment-1208</guid>
+
+					<description><![CDATA[Love it, using it on 
+http://bpgraph.com/, thx!]]></description>
+			<content:encoded><![CDATA[<p>Love it, using it on <br />
+<a href="http://bpgraph.com/" rel="nofollow ugc">http://bpgraph.com/</a>, thx!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Christophe Belpaire		</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/comment-page-1/#comment-1201</link>
+
+		<dc:creator><![CDATA[Christophe Belpaire]]></dc:creator>
+		<pubDate>Thu, 01 Mar 2012 15:45:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2469#comment-1201</guid>
+
+					<description><![CDATA[The twitter bootstrap is pure awsomness!
+Thanks for the great work !!]]></description>
+			<content:encoded><![CDATA[<p>The twitter bootstrap is pure awsomness!<br />
+Thanks for the great work !!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pavel Forkert		</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/comment-page-1/#comment-1200</link>
+
+		<dc:creator><![CDATA[Pavel Forkert]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2012 13:00:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2469#comment-1200</guid>
+
+					<description><![CDATA[Using SimpleForm 2.0 since it wasn&#039;t even RC. Guys, you are awesome! For many people it is now MUCH easier to develop simple websites with Bootstrap and Simple Form.]]></description>
+			<content:encoded><![CDATA[<p>Using SimpleForm 2.0 since it wasn&#8217;t even RC. Guys, you are awesome! For many people it is now MUCH easier to develop simple websites with Bootstrap and Simple Form.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Thibaut Assus		</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/comment-page-1/#comment-1199</link>
+
+		<dc:creator><![CDATA[Thibaut Assus]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2012 11:54:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2469#comment-1199</guid>
+
+					<description><![CDATA[you&#039;re amazing !!
+I love simple form !!]]></description>
+			<content:encoded><![CDATA[<p>you&#8217;re amazing !!<br />
+I love simple form !!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jack Dempsey		</title>
+		<link>/2012/02/simpleform-2-0-bootstrap-for-you-with-love/comment-page-1/#comment-1198</link>
+
+		<dc:creator><![CDATA[Jack Dempsey]]></dc:creator>
+		<pubDate>Fri, 24 Feb 2012 08:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=2469#comment-1198</guid>
+
+					<description><![CDATA[Awesome. Love the project, think integrating with bootstrap is an excellent decision. ]]></description>
+			<content:encoded><![CDATA[<p>Awesome. Love the project, think integrating with bootstrap is an excellent decision. </p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

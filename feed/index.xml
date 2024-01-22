@@ -1,0 +1,1136 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Plataformatec Blog</title>
+	<atom:link href="/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 06 Jan 2021 11:34:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Important information about our Elixir and Ruby Open Source projects</title>
+		<link>/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 06 Jan 2020 21:20:55 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=9631</guid>
+
+					<description><![CDATA[<p>You may have heard that Nubank has acqui-hired Plataformatec. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements ... <a class="read-more-link" href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">»</a></p>
+<p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You may have heard that <a href="https://medium.com/building-nubank/tech-perspectives-behind-nubanks-first-acquisition-deal-what-this-business-move-means-and-how-it-d7d1233c72b8">Nubank has acqui-hired Plataformatec</a>. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements through better-planned teams using innovative metrics and more reliable estimates. The acquisition is a recognition of the work we displayed over the last 11 years to clients in Brazil and across the globe.</p>
+<p>In the last decade, Plataformatec has also created and maintained a range of open source projects. In the next paragraphs, I will describe what the next steps are for the open source projects currently owned by Plataformatec.</p>
+<p>We are very proud of the contributions we have made to open source communities throughout our history. We have built important projects in the Rails community, such as <a href="https://github.com/plataformatec/devise">Devise</a>, <a href="https://github.com/plataformatec/simple_form">Simple Form</a>, among others. We have also developed the <a href="https://elixir-lang.org/">Elixir programming language</a>, which started as a Research &amp; Development project inside Plataformatec, and today is used by companies around the world.</p>
+<p>So what will happen with these projects from now on?</p>
+<p>All of the projects above have one thing in common: they were created and maintained by passionate individuals who wanted to make positive contributions to their communities. Without these individuals and their efforts, these projects would not have become what they are today. Therefore, it is only fair that Plataformatec gives these individuals control of these projects moving forward.</p>
+<p>For the Elixir programming language in particular, José Valim and the Elixir Core Team will continue developing and maintaining the programming language in the same capacity as they have been doing over the last few years, independently from Plataformatec and Nubank. We are in touch with the Elixir Core Team to transfer all assets, including the existing trademarks and the Elixir website, to their control. The remaining Elixir projects will be transferred to José Valim and his team at <a href="https://dashbit.co/">Dashbit</a>.</p>
+<p>For all other Open Source projects <a href="https://github.com/plataformatec/">under the Plataformatec organization on GitHub</a>, we will reach out to the current maintainers and take the necessary steps to transfer the ownership of all relevant assets, including names, source code, and logos of such projects.</p>
+<p>We are thankful to these communities for all the support and feedback they&#8217;ve given us throughout the years. We are glad to have been the home to these projects and to have worked with the teams that will continue shaping these projects from now on.</p><p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir: What about tests?</title>
+		<link>/2020/01/elixir-what-about-tests/</link>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Thu, 02 Jan 2020 16:22:45 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=9593</guid>
+
+					<description><![CDATA[<p>There is no arguing about how important tests are for our application. But from time to time, when we are dealing with it, some questions came up on a daily basis. A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test ... <a class="read-more-link" href="/2020/01/elixir-what-about-tests/">»</a></p>
+<p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="1024" src="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg" alt="" class="wp-image-9594" srcset="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg 1024w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-300x300.jpg 300w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-150x150.jpg 150w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-768x768.jpg 768w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1536x1536.jpg 1536w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-2048x2048.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>There is no arguing about how important tests are for our application.</p>
+
+
+
+<p>But from time to time, when we are dealing with it, some questions came up on a daily basis.</p>
+
+
+
+<p>A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test suite to do is to access the external world.</p>
+
+
+
+<p>This can lead us to many undesired scenarios, for example: if we have a connection problem on an API test that hits the internet, the test will fail, causing our test suite to be intermittent.</p>
+
+
+
+<h3 class="wp-block-heading">How do we mock or stub a request?</h3>
+
+
+
+<p>Some libs can help us, I will talk about two of them.</p>
+
+
+
+<h3 class="wp-block-heading">Bypass</h3>
+
+
+
+<p>The first one I wanna talk about is <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a>.<br>
+It is a lib that simulates an External Server, it works to stub the layer closer to the request. The idea is that you remove the external layer and start to call Bypass, so now, instead of talking to the internet, you are talking to a local server that you have control of. This way you can keep your tests protected.</p>
+
+
+
+<p>Let&#8217;s think about an example, we will build an application that needs to fetch data from an API, and we will create a <code>LastfmClient</code> module that will be responsible for doing that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @api_url <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span>
+
+  def search(term, url \\ @api_url) <span class="hljs-keyword">do</span>
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+end</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>What this client does is fetch the tracks from our API and according to the type of the response return something. Not that different from most of the clients we wrote on a daily basis. Let&#8217;s test it now.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span> <span class="hljs-keyword">do</span>
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the problem with this test?</h3>
+
+
+
+<p>It seems pretty straight forward we exercise the <a href="https://en.wikipedia.org/wiki/System_under_test">SUT</a> and verify the expected outcome, but this is a fragile test because it is accessing the external world.</p>
+
+
+
+<p>Every time we call the <code>Client.search/2</code> we are hitting the internet. A lot of problems can happen here: if the internet is down the test will fail, if the internet is slow your suit test will be slow, you won&#8217;t have the feedback as fast as you need and will be less inclined to run the test suit, or your suit test will become intermittent and you won&#8217;t trust your tests anymore, meaning that when a real failure happens you won&#8217;t care.</p>
+
+
+
+<h3 class="wp-block-heading">How can we fix it?</h3>
+
+
+
+<p>And that&#8217;s when <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a> comes to our aid.</p>
+
+
+
+<p>First, you will need to setup Bypass in your tests.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">setup <span class="hljs-keyword">do</span>
+  bypass = Bypass.open()
+
+  {:ok, <span class="hljs-attr">bypass</span>: bypass}
+end</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in your test, you will set up which scenarios you want to test. Is it a success call? A not found? How should your code behave in each scenario? Tell Bypass that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span>, %{bypass: bypass} <span class="hljs-keyword">do</span>
+    Bypass.expect bypass, fn conn -&gt;
+      Plug.Conn.resp(conn, <span class="hljs-number">200</span>, payload())
+    end
+
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>, <span class="hljs-string">"http://localhost:/#{bypass.port}/"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end
+
+defp payload <span class="hljs-keyword">do</span>
+  ~s(
+    {
+      <span class="hljs-string">"results"</span>: {
+        <span class="hljs-string">"@attr"</span>: {},
+        <span class="hljs-string">"opensearch:Query"</span>: {
+          <span class="hljs-string">"#text"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"role"</span>: <span class="hljs-string">"request"</span>,
+          <span class="hljs-string">"startPage"</span>: <span class="hljs-string">"1"</span>
+        },
+        <span class="hljs-string">"opensearch:itemsPerPage"</span>: <span class="hljs-string">"20"</span>,
+        <span class="hljs-string">"opensearch:startIndex"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-string">"opensearch:totalResults"</span>: <span class="hljs-string">"51473"</span>,
+        <span class="hljs-string">"trackmatches"</span>: {
+          <span class="hljs-string">"track"</span>: [
+            {
+              <span class="hljs-string">"artist"</span>: <span class="hljs-string">"The Kooks"</span>,
+              <span class="hljs-string">"image"</span>: [
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"small"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"medium"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"large"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"extralarge"</span>
+                }
+              ],
+              <span class="hljs-string">"listeners"</span>: <span class="hljs-string">"851783"</span>,
+              <span class="hljs-string">"mbid"</span>: <span class="hljs-string">"c9b89088-01cd-4d98-a1f4-3e4a00519320"</span>,
+              <span class="hljs-string">"name"</span>: <span class="hljs-string">"Seaside"</span>,
+              <span class="hljs-string">"streamable"</span>: <span class="hljs-string">"FIXME"</span>,
+              <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+            }
+          ]
+        }
+      }
+    }
+  )
+end</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">When to use Bypass?</h3>
+
+
+
+<p>When you have code that needs to make an HTTP request. You need to know how your application will behave. For instance, if the API is down, will your application stop working?</p>
+
+
+
+<p>But then comes some questions, if I have a module that depends on this <code>Client</code> implementation, will I need to repeat this Bypass code every time in my tests?<br>
+Why does another module need to know these implementation details if it is not dealing with the request?</p>
+
+
+
+<h3 class="wp-block-heading">Mox</h3>
+
+
+
+<p><a href="https://github.com/plataformatec/mox">Mox</a> can help us with that. It forces you to implement explicit contracts in your application so we know what to expect.</p>
+
+
+
+<p>Going back to our example, let&#8217;s implement a module called <code>Playlist</code> that will be responsible for fetching a list of songs by artist and give it a name.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  alias MyApp.Lastfm.Client
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = Client.search(name)
+
+    %{
+      <span class="hljs-attr">name</span>: <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-attr">songs</span>: songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The simplest test we can write to this code would be something like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Since the <code>Playlist</code> depends on the <code>Client</code>, to have an accurate test we would need to stub the request with the payload response from the Lastfm API so we can make sure the <code>Playlist</code> behaves accordingly.</p>
+
+
+
+<p>You don&#8217;t need to stub all the <code>Client</code> requests in the <code>Playlist</code> tests, you need to know what it returns and handle the responses, you need to have a <a href="/2015/10/mocks-and-explicit-contracts/">explicit contract</a>.</p>
+
+
+
+<p>Let&#8217;s see how we can implement those contracts.</p>
+
+
+
+<h3 class="wp-block-heading">Behaviours</h3>
+
+
+
+<p>Elixir uses <a href="https://elixir-lang.org/getting-started/typespecs-and-behaviours.html#behaviours">behaviours</a> as a way to define a set of functions that have to be implemented by a module. You can compare them to <a href="https://en.wikipedia.org/wiki/Interface_(computing)">interfaces</a> in OOP.</p>
+
+
+
+<p>Let&#8217;s create a file at <code>lib/my_app/music.ex</code> that says what our <code>Client</code> expects as an argument and what it returns:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Music <span class="hljs-keyword">do</span>
+  @callback search(<span class="hljs-built_in">String</span>.t()) :: map()
+end</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/config.exs</code> file, let&#8217;s include two lines. The first one says which client we are using and the second one is the Lastfm API that we will remove from the default argument, just to keep the callback simple.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">config :my_app, :music, MyApp.Lastfm.Client
+<span class="hljs-attr">config</span> :my_app, :lastfm_api, <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/test.exs</code> file, let&#8217;s include our mock module.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">config</span> <span class="hljs-selector-pseudo">:my_app</span>, <span class="hljs-selector-pseudo">:music</span>, <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In the <code>test/test_helper</code> file, let&#8217;s tell Mox which is the mock module that is responsible for mocking the calls to our behaviour.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">Mox</span><span class="hljs-selector-class">.defmock</span>(<span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span>, <span class="hljs-selector-tag">for</span>: <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.Music</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Let&#8217;s go back to our <code>Playlist</code> module, and let&#8217;s change the way we call the <code>Client</code> module, to use the config we just created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  @music Application.get_env(:my_app, :music)
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = @music.search(name)
+
+    %{
+      <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-string">"songs"</span> =&gt; songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>Client</code> module let&#8217;s adopt the behaviour we created, and let&#8217;s change the API url to fetch from the config we created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @behaviour MyApp.Music
+
+  def search(term) <span class="hljs-keyword">do</span>
+    url = lastfm_api_url()
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+
+  defp lastfm_api_url <span class="hljs-keyword">do</span>
+    Application.get_env(:my_app, :lastfm_api)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>We will need to change the <code>test/my_app/lastfm/client_test.exs</code> to change the env config for the API url on the setup of the test, but I&#8217;ll leave it to you to do that.</p>
+
+
+
+<p>Finally, in our <code>PlaylistTest</code> we will need to import <code>Mox</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">import Mox
+
+<span class="hljs-comment"># Make sure mocks are verified when the test exits</span>
+setup :verify_on_exit!</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in our test, we need to tell our <code>MusicMock</code> what is expected to return.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    MusicMock
+    |&gt; expect(:search, fn _name -&gt;
+      {
+        :ok,
+        [
+          %{
+            <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+            <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+            <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+          }
+        ]
+      }
+    end)
+
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the difference?</h3>
+
+
+
+<p>Looking at the code it seems that we still need to pass the list of music in the tests. But there is a difference, the music&#8217;s list is a dependency of the <code>Playlist</code> module, but we don&#8217;t know its internals, we don&#8217;t know from where we are fetching it, how the request response works, and all these details. The only thing we need to know at the <code>Playlist</code> module is that it depends on a list of songs.</p>
+
+
+
+<h3 class="wp-block-heading">One last thing before we go</h3>
+
+
+
+<p>We went through all that trouble to make sure the tests are protected from the outside world, but you know, Elixir has this amazing <code>Doctest</code> feature, and one can argue that this replaces the application tests.</p>
+
+
+
+<p>That&#8217;s not the case, <code>Doctests</code> are not <code>tests</code> and you shouldn&#8217;t rely on it to make sure your application behaves the way you expect it to. Make sure you don&#8217;t use any code that hits the external world when you are writing your documentation, there is no way to mock calls and this can cause all the problems we already discussed.</p>
+
+
+
+<h3 class="wp-block-heading">That&#8217;s all folks</h3>
+
+
+
+<p>The code from this example can be found <a href="https://github.com/amandasposito/my_app">here</a>, I hope it helps!</p><p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</title>
+		<link>/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/</link>
+		
+		<dc:creator><![CDATA[Raphael Albino]]></dc:creator>
+		<pubDate>Wed, 18 Dec 2019 16:46:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[OKR]]></category>
+		<guid isPermaLink="false">/?p=9570</guid>
+
+					<description><![CDATA[<p>Depois do sucesso do livro&#160;Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs&#160;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados. Assim como qualquer modelo,&#160;framework&#160;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato ... <a class="read-more-link" href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">»</a></p>
+<p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Depois do sucesso do livro&nbsp;<a href="https://www.amazon.com/Measure-What-Matters-Google-Foundation/dp/0525536221">Measure What Matters: How Google, Bono, and the Gates Foundation Rock the World with OKRs</a>&nbsp;de John Doerr, praticamente toda organização vem buscando utilizar OKR como forma de desdobrar seus objetivos e medir os avanços dos resultados.</p>
+
+
+
+<p>Assim como qualquer modelo,&nbsp;<em>framework</em>&nbsp;ou ferramenta, existe uma tendência natural das pessoas acreditarem que o artefato resolverá os problemas organizacionais simplesmente por estar sendo aplicado. A partir das minhas andanças como consultor, me deparei com diversas situações onde as pessoas disseram que tentaram aplicar os OKRs e não obtiveram sucesso.</p>
+
+
+
+<p>No texto a seguir, compartilharei um compilado de aprendizados e dicas para quem já lida com o&nbsp;<em>framework</em>&nbsp;ou para quem está considerando levá-lo para o seu dia a dia.</p>
+
+
+
+<p></p>
+
+
+
+<h2 class="wp-block-heading">1) Qual a relação entre OKR e pensamento estratégico?</h2>
+
+
+
+<p>Um grande desafio nas organizações diz respeito a como decompor sua estratégia. Tudo começa com a construção de um pensamento estratégico que, em linhas gerais, passa por três grandes etapas: (1) coleta de informações; (2) formulação de ideias; (3) planejamento das ações (essas diretrizes e mais dicas podem ser vistas em&nbsp;<a href="https://www.amazon.com/Strategic-Thinking-Step-step-Leadership-ebook/dp/B00AXDJJ38">Strategic Thinking: A Step-by-step Approach to Strategy and Leadership</a>).</p>
+
+
+
+<p>É fundamental que a organização entenda o que está mudando no mercado em que ela atua, como a concorrência tem se posicionado diante de tais mudanças e como a organização está operando hoje.</p>
+
+
+
+<p>Passada a etapa de entendimento do contexto, o próximo passo de um pensamento estratégico é o levantamento de desejos, hipóteses e necessidades. É importante que a organização crie uma visão futura inspiradora e que garanta a sustentabilidade do negócio diante dos desafios que ela enfrentará.</p>
+
+
+
+<p>O último passo é o planejamento daquilo que será feito. A organização precisa compreender quais são as opções de ações e, com muita clareza, deverá escolher o que será feito e o que não será. Neste momento, é essencial que haja uma clareza do que é prioridade dentro de uma perspectiva de curto, médio e longo prazo. Costumo dizer que prioridade é uma palavra que não deveria ser colocada no plural porque quando tudo é prioridade, nada é prioridade.<br></p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="652" height="444" src="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png" alt="" class="wp-image-9566" srcset="/wp-content/uploads/2019/12/imagem_pensamento_estrategico.png 652w, /wp-content/uploads/2019/12/imagem_pensamento_estrategico-300x204.png 300w" sizes="(max-width: 652px) 100vw, 652px" /></figure>
+
+
+
+<p><strong>Pois bem, então o que OKR tem a ver com o pensamento estratégico exposto acima?</strong><br></p>
+
+
+
+<p>Quando falamos que o OKR é a composição do que desejo alcançar (objetivo) e como vou medir o progresso (conjunto de resultados-chave), precisamos partir de uma referência, que no caso do pensamento estratégico se dá através da coleta de informações. Se eu não conheço meu contexto atual, como eu posso definir onde eu quero chegar?</p>
+
+
+
+<p>Além do mais, uma visão clara é necessária para orientar o processo de criação dos OKRs. Quando a organização não consegue estabelecer seu norte, qualquer caminho (ou no caso OKR) servirá. O problema dessa condição é que ela gera desperdício de dinheiro, esforço e energia.</p>
+
+
+
+<p>Por fim, os OKRs nos forçam a fazer escolhas quando precisamos pensar no que será o foco de um trimestre, por exemplo. Ao definir poucos objetivos, estamos garantindo que a organização estará voltada naquilo que é o mais importante para o horizonte de tempo determinado.</p>
+
+
+
+<p><strong>Portanto, lembre-se:</strong>&nbsp;sem estratégia, não faz sentido a aplicação de OKR.</p>
+
+
+
+<h2 class="wp-block-heading">2) Quais problemas você pode resolver com OKRs?</h2>
+
+
+
+<p>Se você deseja comunicar a estratégia da organização, melhorar a transparência, trazer senso de propósito para as equipes e conectar o trabalho das pessoas com os resultados do negócio, OKR pode ser uma boa forma de você chegar lá.</p>
+
+
+
+<p><strong>2.1 &#8211; Comunicação da estratégia</strong></p>
+
+
+
+<p>A partir do momento em que a organização tem a sua estratégia estabelecida, os OKRs que serão desenhados pelas equipes deverão se comunicar com a mesma. Em outras palavras, caso existam OKRs que não estão conectados com as diretrizes estratégicas do negócio, eles deveriam ser descartados.</p>
+
+
+
+<p><strong>2.2 Transparência</strong></p>
+
+
+
+<p>Ao acompanhar semanalmente o progresso dos resultados-chave, validar e comunicar mensalmente os resultados dos OKRs e refinar trimestralmente os avanços em um momento de inspeção e adaptação, a organização reduzirá uma natural assimetria de informação que existe nas hierarquias e nos silos departamentais. Ficou na dúvida de como aumentar a transparência? Siga o fluxo abaixo.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-15 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img decoding="async" width="960" height="720" src="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" alt="" data-id="9568" data-full-url="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png" data-link="/imagem_fluxo_cadencia_okr/" class="wp-image-9568" srcset="/wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr.png 960w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-300x225.png 300w, /wp-content/uploads/2019/12/imagem_fluxo_cadencia_okr-768x576.png 768w" sizes="(max-width: 960px) 100vw, 960px" /></figure></li></ul></figure>
+
+
+
+<p>Ao atingirmos as cadências mencionadas na imagem acima, aumentamos a visibilidade do que está acontecendo no negócio e deixamos os problemas palpáveis para serem tratados.</p>
+
+
+
+<p><strong>2.3 Conexão do trabalho com os resultados</strong></p>
+
+
+
+<p>Ao atrelar as iniciativas (ex: projetos, evoluções de um produto) com os resultados do negócio, trazemos um senso de propósito que pode motivar e engajar as pessoas no trabalho que está sendo feito.</p>
+
+
+
+<p>Como exercício, tenho proposto uma amarração onde toda iniciativa trabalhada por uma equipe (ex: projeto, história de usuário etc.) deve ter um objetivo e uma clareza do impacto no negócio, além da sua descrição e critério de término.</p>
+
+
+
+<p>O exemplo abaixo é uma situação de uma equipe que, a priori, tinha recebido a “demanda” de contratar uma solução de força de vendas. Ao conectar tal demanda com o objetivo do negócio e com os resultados-chave, a equipe conseguiu ter maior entendimento da importância do trabalho que seria feito.</p>
+
+
+
+<figure class="wp-block-gallery columns-1 is-cropped wp-block-gallery-16 is-layout-flex wp-block-gallery-is-layout-flex"><ul class="blocks-gallery-grid"><li class="blocks-gallery-item"><figure><img loading="lazy" decoding="async" width="774" height="474" src="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" alt="" data-id="9569" data-full-url="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png" data-link="/imagem_exemplo_aplicacao_okr_iniciativa/" class="wp-image-9569" srcset="/wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa.png 774w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-300x184.png 300w, /wp-content/uploads/2019/12/imagem_exemplo_aplicacao_okr_iniciativa-768x470.png 768w" sizes="(max-width: 774px) 100vw, 774px" /></figure></li></ul></figure>
+
+
+
+<p>Ao unir a entrega com o resultado, você garantirá a necessidade das pessoas olharem os números e os dados da organização. Além disso, você evitará que a equipe invista tempo e esforço para atender uma demanda que não gera impacto nos objetivos do negócio. E em último caso, mas nem por isso menos importante, você forçará a equipe se questionar o porquê de estarem fazendo algo que não impacta diretamente nos objetivos do negócio.</p>
+
+
+
+<h2 class="wp-block-heading">3) Qual a importância das métricas na definição dos OKRs?</h2>
+
+
+
+<p>Indicadores de negócio são as melhores medidas para avaliar o progresso em direção aos objetivos. Se você está em busca de sair de um modelo onde há uma cobrança por entregas (<em>output</em>) e deseja ser cobrado por resultado (<em>outcome</em>), defina resultados-chave (<em>key results</em>) que se acoplem com os&nbsp;<a href="https://www.klipfolio.com/resources/articles/what-is-a-key-performance-indicator">indicadores de performance (KPI)</a>&nbsp;da organização.</p>
+
+
+
+<p>Lembrando que a sigla OKR é composta de duas partes (objetivos e resultados-chave), um KPI que precisa ser melhorado será um excelente ponto de partida para criar um OKR e se tornará um resultado-chave para um objetivo.</p>
+
+
+
+<p><strong>Lembre-se:</strong>&nbsp;OKR e KPI funcionarão perfeitamente juntos dado que os KPIs ajudam a monitorar o desempenho e a identificar problemas e áreas de melhoria no modo atual de operar da organização. Já os OKRs, contribuem na resolução de problemas, na melhoria de processos e no impulsionamento de inovações.</p>
+
+
+
+<p>Para exemplificar, gostaria de compartilhar um caso real de uma organização que tinha como objetivo “Expandir os talentos da área de produto” e possuía como indicadores de performance o tempo médio de contratação, o número de vagas ocupadas e a pesquisa de satisfação. Depois de uma sessão de definição, saímos com o seguinte OKR:</p>
+
+
+
+<p><strong>Objetivo:</strong>&nbsp;Expandir os talentos da área de produto.</p>
+
+
+
+<p><strong>Resultados-chave:</strong></p>
+
+
+
+<ul><li>Contratar 4 novas pessoas de desenvolvimento para aumentar a senioridade da equipe.</li><li>Aumentar o resultado da pesquisa de satisfação de 75% (resultado no último trimestre) para 85%.</li><li>Reduzir o tempo médio de contratação de 45 dias para 30 dias.</li></ul>
+
+
+
+<h2 class="wp-block-heading">4) Dicas práticas</h2>
+
+
+
+<p>Antes de finalizar o texto gostaria, de compartilhar 6 dicas práticas para você revisar sua estratégia de adoção de OKR:</p>
+
+
+
+<ol><li><strong>Tenha o apoio executivo:</strong>&nbsp;OKR, assim como qualquer outra mudança organizacional precisa do suporte executivo para acontecer. Acreditar que apenas movimentos locais (debaixo para cima) farão com que a transformação aconteça é começar o jogo perdendo. Portanto, é fundamental que os OKRs da empresa se desdobrem para os times.</li><li><strong>Não defina muitos objetivos:</strong>&nbsp;independente do contexto (empresa, equipe, tribo etc.), tenha de 2 até 3 objetivos para garantir que as pessoas estejam focadas naquilo que importa durante o trimestre.</li><li><strong>Tenha resultados-chave mensuráveis:</strong>&nbsp;se você não consegue medir, você não saberá se está alcançado o seu objetivo. Não criei resultados-chave para métricas que não existem. Se você quer ter bons OKRs, coloque um esforço para ter as métricas disponíveis.</li><li><strong>Não tenha mais do que 3 resultados-chave por objetivo:</strong>&nbsp;se é muito difícil de medir um objetivo talvez ela possa ser repensando, reescrito ou reestruturado.</li><li><strong>Deixe os resultados visíveis para todas as pessoas da organização:</strong>&nbsp;visibilidade é alma para um melhor alinhamento e para que os problemas que surgirem de fato sejam resolvidos.</li><li><strong>Evite resultados-chave orientados por tarefas (ex: entrega de projetos):</strong>&nbsp;foque em resultados orientados ao negócio porque isso ajudará a organização a traduzir os benefícios de uma nova abordagem de trabalho e suportará a ideia de equipes multidisciplinares.</li></ol>
+
+
+
+<h2 class="wp-block-heading">Conclusão<br><a href="https://github.com/plataformatec/blog-posts/blob/master/2019-12-OKR-licoes-aprendidas.md#conclus%C3%A3o"></a></h2>
+
+
+
+<p>OKR é uma ótima forma de pensar de forma estratégica e fazer com que as pessoas colaborem na execução daquilo que a organização busca conquistar. O&nbsp;<em>framework</em>&nbsp;em si é bem simples, porém sua adoção, nem tanto.</p>
+
+
+
+<p>Pensando em sistematizar a mensagem deste <em>post</em>, resolvi criar um Canvas que te ajudará no momento de desenvolver os OKRs na sua organização.</p>
+
+
+
+<p>Basta seguir os passos sinalizados pelas setas e responder às perguntas necessárias em cada um dos quadrantes. Comece pela estratégia, defina os objetivos, crie os resultados-chave, priorize as iniciativas e defina as áreas que precisarão colaborar com aquele OKR. Cada linha do quadro representará um OKR.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="662" height="422" src="/wp-content/uploads/2019/12/imagem_okr_canvas.png" alt="" class="wp-image-9567" srcset="/wp-content/uploads/2019/12/imagem_okr_canvas.png 662w, /wp-content/uploads/2019/12/imagem_okr_canvas-300x191.png 300w" sizes="(max-width: 662px) 100vw, 662px" /></figure>
+
+
+
+<p>E você, quais têm sido os desafios e os principais aprendizados com OKRs? O que achou do OKR Canvas?</p>
+
+
+
+<p>Compartilhe comigo sua opinião nos comentários abaixo!</p>
+
+
+
+<p>Referências:</p>
+
+
+
+<ul><li><a href="/2017/09/dilemas-de-po-como-definir-okrs-em-equipes-ageis/">Como definir OKRs em equipes ágeis?</a></li><li><a href="http://eleganthack.com/the-art-of-the-okr/">The Art of the OKR</a></li><li><a href="https://felipecastro.com/en/blog/">Blog do Felipe Castro</a></li></ul><p>The post <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Dívida técnica: Por que fazer, quando fazer e como priorizar</title>
+		<link>/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/</link>
+		
+		<dc:creator><![CDATA[Bruno Zanutto]]></dc:creator>
+		<pubDate>Wed, 27 Nov 2019 16:35:20 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9558</guid>
+
+					<description><![CDATA[<p>O primeiro passo é admitir: existe dívida técnica no seu sistema. Seja por decisões estratégicas para acelerar um lançamento e ganhar mercado, seja por mudanças tecnológicas ou novas práticas que pedem que código antigo seja revisitado.</p>
+<p>The post <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>O primeiro passo é admitir: existe dívida técnica no seu sistema. Seja por decisões estratégicas para acelerar um lançamento e ganhar mercado, seja por mudanças tecnológicas ou novas práticas que pedem que código antigo seja revisitado.</p>
+
+
+
+<p>Em praticamente todas as empresas que já trabalhei, existia (e imagino que ainda exista) algum tipo de dívida técnica. Em algumas, para não falar todas, presenciei o cabo-de-guerra entre a equipe técnica, desejando tratar esses itens e defendendo o porque são importantes, e os responsáveis pelo produto, promovendo a criação de novas features.</p>
+
+
+
+<p>Neste post eu vou te dar pelo menos um bom motivo para pagar dívidas técnicas, deixar uma dica de quando fazê-las e uma sugestão de como priorizá-las.</p>
+
+
+
+<h2 class="wp-block-heading" id="porque-fazer">Porque fazer</h2>
+
+
+
+<p>Facilidade de manutenção, ganho de performance, compatibilidade com novas tecnologias, diminuir o tempo que o time gasta lidando com os sintomas dessa dívida técnica (e claro, o tempo que seu time passa lidando com esses sintomas, ele está perdendo de fazer novas features, que melhorariam seu time-to-market)… Existem vários ótimos motivos pra investir esforço e resolver a causa raíz, mas eu vou falar só de um.</p>
+
+
+
+<p>Quando todos argumentos se esgotarem e ainda assim ficar a impressão de que “isso é capricho de desenvolvedor”, ainda vale a pena. Por quê? Pela satisfação dos seus funcionários.</p>
+
+
+
+<p>Qualquer empregador vai falar que achar mão de obra especializada é difícil. Será que não vale incluir um item no seu backlog pra manter um bom empregado?<br>Você ralou para achar um especialista, e agora que o encontrou, negligenciar a opinião dele pode gerar insatisfação.</p>
+
+
+
+<p>Recentemente conversei com um gerente de produto de uma startup, e ele disse que uma das perguntas da entrevista que passou era: “se um desenvolvedor ameaçar sair caso um item X não seja desenvolvido, o que você faz?”<br>Segundo ele, várias respostas estariam certas na linha de entender esse item X, mas existe uma resposta errada:&nbsp;<strong>“é só um desenvolvedor, eu deixo sair”</strong>.</p>
+
+
+
+<p>Talvez você não seja surpreendido com um funcionário falando isso explicitamente, mas ligue seu radar se a equipe reclamar muito de dívida técnica. Às vezes isso já é um indicativo da infelicidade desses profissionais e currículos podem já estar sendo disparados para outras empresas.</p>
+
+
+
+<h2 class="wp-block-heading" id="quando-fazer">Quando fazer</h2>
+
+
+
+<p>Se você leu a seção acima e ficou convencido, ou já começou o texto com a intenção de lidar com dívida técnica, a partir daqui eu posso te ajudar.</p>
+
+
+
+<p>Aceitar que vamos trabalhar com dívida técnica não significa que vamos parar tudo e ficar semanas focados nesses itens.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Importante: estou considerando aqui que os “juros” dessa dívida técnica estejam sob controle. Se não estamos fazendo nada da dívida e seria apenas uma melhoria para o processo, essa sugestão se aplica. Agora, se você tem um incêndio, talvez você precise de um plano de ação mais agressivo, incluindo talvez parar e trabalhar apenas na dívida técnica.</p></blockquote>
+
+
+
+<p>No universo do Scrum, o termo “hardening sprint” é usado para designar uma sprint inteira dedicada a consertar bugs e resolver dívidas técnicas. Deixo claro que por mais que o termo seja usado, o Scrum desaconselha totalmente essa prática, sugerindo por exemplo, considerar uma parte do esforço da sprint para tratar esses itens.</p>
+
+
+
+<p>Recentemente estive com um time que tinha uma quantidade considerável de dívida técnica e, por alguns meses, até se dedicaram a trabalhar apenas nelas. Foi um período de insatisfação tanto das pessoas desenvolvedoras, quanto das pessoas de produto. Com o tempo, eles voltaram ao desenvolvimento de features, e o backlog de dívida técnica ficou parado, onerando capacity do time com pequenas demandas originadas das mesmas. Eles não trabalhavam com Scrum, nem nenhuma outra metodologia/framework. Existia, porém, um quadro&nbsp;<strong>tipo</strong>&nbsp;kanban (k minúsculo aqui).</p>
+
+
+
+<p>A solução então para garantir que dívida técnica seria endereçada sem paralisar totalmente a entrega de features foi usar limites de WIP (Work in Progress).</p>
+
+
+
+<p>O time não utilizava Kanban, nem limites de WIP (e nem era algo para se implantar no momento), mas chegamos num combinado:<br>Em qualquer dado momento, existirá um item de dívida técnica no quadro do time, sendo trabalhado.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/HHM1Imd.png" alt=""/></figure>
+
+
+
+<p>Essa estrutura garantiu que existia um espaço para trabalhar em resolver dívida técnica, e tranquilizou stakeholders no sentido de mostrar que não iríamos “parar tudo” para trabalhar nesses itens.</p>
+
+
+
+<p>Dependendo do tamanho do seu time e da sua necessidade, esse limite de WIP pode ser diferente de 1.</p>
+
+
+
+<p>Essa ideia pode ser adaptada para um time com Kanban propriamente dito, com a criação de uma raia dedicada e limite de WIP considerando o&nbsp;<a href="/2019/01/tipos-de-demanda-e-classes-de-servico-afinal-e-tudo-a-mesma-coisa/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">tipo de demanda</a>&nbsp;da “dívida técnica”.</p>
+
+
+
+<h2 class="wp-block-heading" id="como-priorizar">Como priorizar</h2>
+
+
+
+<p>Não é só porque garantimos um espaço pra resolver itens de dívida técnica que não precisamos priorizá-las.</p>
+
+
+
+<p>Se foi trazida a necessidade de fazer, é porque vamos ganhar alguma coisa, e se estamos falando de&nbsp;<strong>valor</strong>, podemos priorizar de alguma forma.</p>
+
+
+
+<p>Dívida técnica, por natureza, não é algo que vai gerar valor para seu cliente ou usuário, pelo menos não diretamente &#8211; se gera valor, deveria estar com o resto do backlog para priorização. Como priorizar, então?</p>
+
+
+
+<p>Dado esse dilema, achei na literatura referências à matriz GUT. Em resumo, avalia-se o backlog em Gravidade, Urgência e Tendência. Cada item recebe uma nota nessas três categorias, e o problema com somatória mais alta seria o mais prioritário. Porém isso não me atendia.</p>
+
+
+
+<p>A maioria dos problemas não tinham gravidade mensuráveis, e urgência era só quando a bomba estourava. A tendência era uma incógnita.</p>
+
+
+
+<p>Usei então a estrutura de BVP: <em>Business Value Points</em>. Seria a definição de critérios que faziam sentido para o time, com pesos ponderados.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/0aseY9m.png" alt=""/></figure>
+
+
+
+<p>Note que esses critérios só fazem sentido para a equipe que estava trabalhando comigo. Você pode usá-los como referência, mas pergunte-se se refletem totalmente a necessidade do seu time.</p>
+
+
+
+<p>Existe um critério nessa lista ligado à valor monetário, mas seu peso é o menor, dado que os itens aqui não tem a natureza de impactar financeiramente a empresa, mas ainda assim pode ser relevante (até como desempate).</p>
+
+
+
+<p>Daí, foi só jogar os itens e ver o resultado dado a média, considerando os pesos (dados fictícios):</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://i.imgur.com/YhE46Kf.png" alt=""/></figure>
+
+
+
+<p>O time então pegou o primeiro item da lista e começou a desenvolvê-lo.<br>Durante as cerimônias de planejamento, a matriz é revista e atualizada, para que assim que o item em WIP for finalizado, puxarmos o próximo.</p>
+
+
+
+<p>Achou que este artigo te ajudou? Tem problemas com dívida técnica e não cobrimos aqui? Deixe nos comentários!</p><p>The post <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Relation between Story Points and Development Time (Lead Time)</title>
+		<link>/2019/11/relation-between-story-points-and-development-time-lead-time/</link>
+		
+		<dc:creator><![CDATA[Otávio Silvério]]></dc:creator>
+		<pubDate>Fri, 08 Nov 2019 16:01:56 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<guid isPermaLink="false">/?p=9534</guid>
+
+					<description><![CDATA[<p>Frequently I hear speculations about&#160;story points&#160;and their relation with the development time. Questions like: “Why a 3 points card took so much time to be developed” “How long it takes to deliver an 8 points card?”, “Why the team took so long to deliver only this amount of points?” and others are frequent. However, when ... <a class="read-more-link" href="/2019/11/relation-between-story-points-and-development-time-lead-time/">»</a></p>
+<p>The post <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Frequently I hear speculations about&nbsp;<a href="https://www.mountaingoatsoftware.com/blog/what-are-story-points" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">story points</a>&nbsp;and their relation with the development time. Questions like: “Why a 3 points card took so much time to be developed” “How long it takes to deliver an 8 points card?”, “Why the team took so long to deliver only this amount of points?” and others are frequent. However, when searching about story points and development time, there is a series of comments about this relationship where: some people will tell you story points measure only the effort to implement a card, others consider a relation between days (or even hours) and the points, while others only compare sizes between the cards and so on.</p>
+
+
+
+<p>Trying to get a better understanding of this subject to talk to clients and stakeholders in general, I decided to collect real project data and analyze the relation between amount of story points of the cards and the time it took for each to be developed, counting since the time they started to be developed until the moment they are delivered to production, the famous&nbsp;<a href="/2017/08/metricas-ageis-o-que-lead-time-fala-sobre-seu-projeto/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Lead Time</a>.</p>
+
+
+
+<h2 class="wp-block-heading" id="disclaimers">Disclaimers</h2>
+
+
+
+<p>Before we start, some disclaimers about the context of the project:</p>
+
+
+
+<ul><li>Right in the first few weeks of the project we already had the first big problem with story points: subjectivity in estimate the cards. Why this card is worth 3? How do I know this card is twice or thrice the size of the X card? What do I consider in this estimative?</li><li>Thus, it was suggested to the team to utilize some criteria to estimate, intending to reduce this subjectivity.</li><li>My friend and colleague&nbsp;<a href="https://www.linkedin.com/in/henriqueadeoliveira/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Henrique Oliveira</a>&nbsp;suggested a Fibonacci-like matrix, taking into account T-Shirt Size estimates, to estimate the cards, that helped the team a lot. Check it below:</li></ul>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="875" src="/wp-content/uploads/2019/11/image-1-1024x875.png" alt="" class="wp-image-9538" srcset="/wp-content/uploads/2019/11/image-1-1024x875.png 1024w, /wp-content/uploads/2019/11/image-1-300x256.png 300w, /wp-content/uploads/2019/11/image-1-768x656.png 768w, /wp-content/uploads/2019/11/image-1.png 1098w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ul><li>Cards estimated as 13 points or higher were broken into smaller cards, as the only time we worked with a card with 13 points, it exceeded the timebox of the sprint, which was 10 business days. So we decide to do not let any card with 13 or more story points to be added to the sprint backlog.</li><li>Cards were broken down into smaller cards in a way that they delivered something functional in production, so that the backend and frontend stayed together on the same card.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="a-look-into-the-data">A look into the data</h2>
+
+
+
+<p>I began by collecting the data of the project as a whole and analyzing the lead time graph with all cards that had already been finished or that were in production.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="446" src="/wp-content/uploads/2019/09/grafico-lt-all-1024x446.png" alt="" class="wp-image-9381" srcset="/wp-content/uploads/2019/09/grafico-lt-all-1024x446.png 1024w, /wp-content/uploads/2019/09/grafico-lt-all-300x131.png 300w, /wp-content/uploads/2019/09/grafico-lt-all-768x335.png 768w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>After acquiring this data, I segmented them by the amount of story points and analyzed them individually, having the following graphs:</p>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-1-story-point">Cards with 1 story point</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-1-sp-1024x405.png" alt="" class="wp-image-9382" srcset="/wp-content/uploads/2019/09/grafico-lt-1-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-1-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-1-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-1-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-2-story-points">Cards with 2 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-2-sp-1024x405.png" alt="" class="wp-image-9383" srcset="/wp-content/uploads/2019/09/grafico-lt-2-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-2-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-2-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-2-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-3-story-points">Cards with 3 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-3-sp-1024x405.png" alt="" class="wp-image-9384" srcset="/wp-content/uploads/2019/09/grafico-lt-3-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-3-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-3-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-3-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-5-story-points">Cards with 5 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-5-sp-1024x405.png" alt="" class="wp-image-9385" srcset="/wp-content/uploads/2019/09/grafico-lt-5-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-5-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-5-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-5-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-8-story-points">Cards with 8 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-8-sp-1024x405.png" alt="" class="wp-image-9386" srcset="/wp-content/uploads/2019/09/grafico-lt-8-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-8-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-8-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-8-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading" id="cards-with-13-story-points">Cards with 13 story points</h4>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="1024" height="405" src="/wp-content/uploads/2019/09/grafico-lt-13-sp-1024x405.png" alt="" class="wp-image-9387" srcset="/wp-content/uploads/2019/09/grafico-lt-13-sp-1024x405.png 1024w, /wp-content/uploads/2019/09/grafico-lt-13-sp-300x119.png 300w, /wp-content/uploads/2019/09/grafico-lt-13-sp-768x304.png 768w, /wp-content/uploads/2019/09/grafico-lt-13-sp.png 1242w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h2 class="wp-block-heading" id="data-analysis">Data Analysis</h2>
+
+
+
+<p>After analyzing the data, I reached some conclusions:</p>
+
+
+
+<ul><li>It’s possible to verify that cards worthing 3, 5 or 8 points have a development time (lead time) similar, not being possible to find a correlation between time and the number of story points (it is not scalar).</li><li>If we take a category with plenty of samples, like the cards with 5 points, it’s evident they differ a lot, not being possible to make some affirmations such as “a card worth 5 points takes between X and Y days to finish” when X and Y a small interval of days (1 to 3 days). The same happens with cards with 3 and 8 points.</li></ul>
+
+
+
+<p><strong>Observation:</strong>&nbsp;Data referring to cards worth 1, 2 or 13 story points were excluded from the individual analysis, because there was little data to be analyzed individually.</p>
+
+
+
+<h2 class="wp-block-heading" id="other-analysis-beyond-story-points-x-lead-time">Other Analysis beyond story points x lead time</h2>
+
+
+
+<p>I reached more conclusions about the use of story points that I would like to share with you all:</p>
+
+
+
+<ul><li>At the beginning of the project, when we started to use story points, the subjectivity was very high. By establishing some criteria for estimation, we were able to stabilize it, making the time of development vary a lot less, increasing predictability. If you want to develop this with your team, consider checking out this article from&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.mountaingoatsoftware.com/blog/what-are-story-points" target="_blank">Mike Cohn</a>.</li><li>With the addition of more scoring criteria, like test complexity, dependency on people that are not in the team (internal or external to the company), risks related to the cards and more, we lowered the lead time variability and increased the card delivery rate by breaking the card into smaller ones.</li><li>Many times people relate story points with only the development effort, and this makes the team consider only the time of the Execution of a task. Another point is that the testers/QAs and UXs/designers, have little to no involvement in the estimatives. Making the team think not only about development, but also about the duration of the process as a whole (considering the steps of code review, tests, deploy, etc) and inviting more people to share their concerns about the estimatives helps to improve the predictability of the team.</li><li>With help from metrics like&nbsp;<a href="/2017/10/metricas-ageis-cumulative-flow-diagrams-e-lead-time-breakdown/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">lead time breakdown and CFD</a>, the process of stabilizing the scoring was much easier, as it made the team think about the whole process and showed in which step of the process the team was spending the most time with.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="conclusions">Conclusions</h2>
+
+
+
+<p>The major conclusions I had were:</p>
+
+
+
+<ul><li>It wasn’t possible to relate time of development (lead time) with Story Points directly, as the goal of the study was.</li><li>It is important to say Story Points should be used inside the team level. If you want to know more about this subject, I recommend the&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://observablehq.com/@troymagennis/story-point-velocity-or-throughput-forecasting-does-it-mat" target="_blank">reading of this text from Troy Magennis.</a></li><li>It was possible to increase the predictability of team delivery and stabilize the process of development using story points with other tools at the same time.</li><li>There are indications that, when you add more criteria to the estimation to breakdown the cards into smaller cards, the smaller the risk/effort/complexity will be and, consequently, the predictability you also increase.</li><li>An important point here is that story points and other estimative methods consider only the moments in which a demand is being worked on, and not consider/can&#8217;t predict the time that a demand will be staying in waiting to be worked on. Basically, the team considers how long it will take for a demand to be developed and tested, but don’t consider in this estimatives (as it is not possible to predict some points in the middle of the development) how long the demand will be staying in waiting to be tested, to be deployed or how long it will take to resolve a hypothetical impediment. In other words, the&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://observablehq.com/@troymagennis/how-does-utilization-impact-lead-time-of-work?collection=@troymagennis/agile-software-development" target="_blank">process efficiency</a>&nbsp;will impact your lead time, and consequently, the relation between story points with the time of development. This way, it’s plausible that a user story of 1 story point takes the same amount of days that a 13 points user story to be delivered, because of the flow efficiency. If you would like to know more about process efficiency,&nbsp;<a href="https://observablehq.com/@troymagennis/story-point-velocity-or-throughput-forecasting-does-it-mat" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">check this article</a>.</li></ul>
+
+
+
+<h2 class="wp-block-heading" id="and-if-you-were-asked-if-you-would-use-story-points-to-estimate-a-deadline-for-a-delivery-of-a-project-or-card-what-would-you-respond">And if you were asked if you would use story points to estimate a deadline for a delivery of a project or card, what would you respond?</h2>
+
+
+
+<p>I would say that story points, like the&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="/2017/01/requisitos-em-equipes-ageis-falando-sobre-complexidade-e-incerteza/" target="_blank">matrix for complexity and uncertainty (T-shirt Size)</a>, are excellent tools to instigate your team in better breaking user stories down and help with improvements in the processes, however, to estimate deadlines, I prefer to utilize process metrics and other tools, like a&nbsp;<a href="/2019/10/monte-carlo-in-practice-finding-the-ideal-iteration-value/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Monte Carlo simulation</a>&nbsp;to help predict when a set of cards will be delivered.</p>
+
+
+
+<p>What about you? Do you have any experience with Story Points and time estimates? Have you passed through any similar scenario? What’s your opinion about what I shared in this text? Share with us commenting below or in this email&nbsp;<a href="/wp-admin/contagil@plataformatec.com.br">contagil@plataformatec.com.br</a></p><p>The post <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>O Papel do Líder de Produto</title>
+		<link>/2019/10/o-papel-do-lider-de-produto/</link>
+		
+		<dc:creator><![CDATA[Marta Teixeira]]></dc:creator>
+		<pubDate>Wed, 30 Oct 2019 18:50:30 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[liderança]]></category>
+		<guid isPermaLink="false">/?p=9487</guid>
+
+					<description><![CDATA[<p>Qual a sua teoria favorita sobre o papel de um líder? Para mim um resumo perfeito é esta fala do Jack Welch em&#160;What is the role of a leader. Em resumo, sem a pretensão de captar a emoção de ouvi-lo: Ser o “Chief Meaning Officer”! Deixar claro para todas as pessoas à sua volta: para ... <a class="read-more-link" href="/2019/10/o-papel-do-lider-de-produto/">»</a></p>
+<p>The post <a href="/2019/10/o-papel-do-lider-de-produto/">O Papel do Líder de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p></p>
+
+
+
+<p>Qual a sua teoria favorita sobre o papel de um líder? Para mim um resumo perfeito é esta fala do Jack Welch em&nbsp;<a href="https://www.youtube.com/watch?v=ojkOs8Gatsg" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">What is the role of a leader</a>. Em resumo, sem a pretensão de captar a emoção de ouvi-lo:</p>
+
+
+
+<ol><li>Ser o “Chief Meaning Officer”! Deixar claro para todas as pessoas à sua volta: para onde você está indo, por que você está indo e, mais importante, o que haverá para elas quando elas chegarem lá com você.</li><li>Remover os impedimentos do caminho para que as pessoas possam agir e fazer as coisas acontecerem. Quebre os silos, se livre das burocracias.</li><li>Ser generoso. Vibrar com o sucesso das pessoas.</li><li>Ser o “Chief Fun Officer”. Dê seus pulos para tornar o trabalho divertido!</li></ol>
+
+
+
+<p>E qual o papel de um líder em uma empresa de produtos digitais? Não deve ser nada diferente disso, certo? Mas afinal, como traduzir estes conceitos para a realidade de uma empresa de produtos?</p>
+
+
+
+<p>Trazendo para este contexto, quem melhor traduz o papel de um líder é o Marty Cagan em&nbsp;<a href="https://svpg.com/empowered-product-teams/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Empowered Product Teams</a>. Na minha opinião, este conteúdo é o mais relevante que ele publicou direcionado para líderes que estão à frente de empresas de produtos digitais. E por que é tão relevante? Porque coloca de uma forma mais tangível estratégia e cultura, temas muito falados mas pouco colocados em prática.</p>
+
+
+
+<h3 class="wp-block-heading">Motivos de resistência da liderança</h3>
+
+
+
+<p>Um tópico bem interessante deste artigo é a explicação do por que líderes resistem tanto para empoderar seus times e continuam mantendo o estilo comando-controle.</p>
+
+
+
+<p>Segundo ele, existem duas formas de gerenciar uma empresa de produto:</p>
+
+
+
+<ul><li>O jeito errado: “Na maioria das empresas, os times de tecnologia existem para atender o negócio”. De alguma forma, líderes de outras áreas de negócios (vendas, marketing, CEO) acabam direcionando o produto, que é apenas construído pelo time de tecnologia.</li><li>O jeito certo: “Em empresa com forte cultura de produto, times de produto existem para um propósito muito diferente. Eles existem para atender os clientes, de formas que também atendam às necessidades do negócio”. Ou seja, o foco é o cliente e não <em>stakeholders</em> internos. Mas obviamente o produto também tem que ser sustentável para o negócio.&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://medium.com/@gibsonbiddle/intro-to-product-strategy-60bdf72b17e3" target="_blank">Gibson Biddle</a>&nbsp;diz algo semelhante de uma forma mais poética “encantar clientes, de maneiras que sejam lucrativas e difíceis de copiar”.</li></ul>
+
+
+
+<p>Marty Cagan conta que conversou com CEOs de várias empresas para entender porque eles continuam trabalhando do jeito errado com desenvolvimento de produtos, mesmo conhecendo o jeito certo. A resposta foi “falta de confiança” no time. A crença é que este modelo de trabalho (o jeito certo) só funciona em empresas que podem contratar profissionais extraordinários, como os do Google, Netflix, etc.</p>
+
+
+
+<p>O curioso é que já existem muitos estudos que comprovam que times de alto desempenho não são formados por estrelas, mas sim por pessoas comuns. Aliás, estrelas muitas vezes atrapalham!</p>
+
+
+
+<p>“They would be surprised at how ordinary the vast majority of the members of these company’s product teams actually are, and that maybe the important difference lies elsewhere.”</p>
+
+
+
+<p>Outra justificativa comum para não empoderar os times é “pessoas de tecnologia não entendem de negócios”! Quem de tecnologia já não precisou respirar bem fundo quando ouviu esta frase? Times de produto precisam do contexto de negócio, para que possam descobrir a melhor forma de resolver problemas dos clientes.</p>
+
+
+
+<p>A falta de confiança certamente não é um problema fácil de resolver, já que em muitas situações os times são de fato muito inexperientes. Mas é importante caminhar nesta direção, desenvolvendo as pessoas para que elas possam atuar do jeito certo. Definitivamente, entrar em um ciclo vicioso de falta de estratégia, time inexperiente e comando-controle, não é um bom caminho!</p>
+
+
+
+<h3 class="wp-block-heading">Papel do líder no “jeito certo” de trabalhar</h3>
+
+
+
+<p>Trazendo para o contexto de empresas de produto, como ser o “Chief Meaning Officer”? Ou seja, como deixar claro para as pessoas para onde você está indo e por que. A Visão e Estratégia de produto são essenciais para trazer este significado e dar um direcionamento ao time, para ele possa trabalhar de forma autônoma.</p>
+
+
+
+<h4 class="wp-block-heading">Visão de Produto</h4>
+
+
+
+<p>A visão de produto descreve o futuro que queremos criar, em 2 a 5 anos. A importância desta visão é setar um norte inspirador e delimitar um contexto de atuação. Em <em>startups</em>, é muito comum o foco do produto principal ir se perdendo ou o escopo de atuação ficar muito amplo. Isto acontece principalmente quando empresas recebem investimentos e começam a diversificar o portfólio. Sem uma visão para guiar e delimitar as fronteiras, os times de produto podem ficar sem foco, não atingirem resultados e a liderança voltar a assumir o estilo comando-controle.</p>
+
+
+
+<h4 class="wp-block-heading">Estratégia de Produto</h4>
+
+
+
+<p>A estratégia define qual caminho precisa ser seguido para se alcançar a visão. Um erro comum na definição da estratégia é não fazer uma reflexão do momento atual e traçar uma estratégia pouco realista. Em&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.youtube.com/watch?v=DmJXpI7OJuY" target="_blank">Escaping the Building Trap</a>, Melissa Peri apresenta um <em>framework</em> bem interessante para definição de estratégia.</p>
+
+
+
+<p>Outro artefato, o&nbsp;<a href="https://svpg.com/the-product-manifesto/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Product Principles</a>, também ajuda a delimitar o contexto e facilita decisões em priorização. Os princípios descrevem a natureza dos produtos que pretendemos desenvolver e reflexões sobre nossas crenças sobre o que é importante.</p>
+
+
+
+<p>Exemplo de coisas que podem ser interessantes explicitar no <em>Product Principles</em>:</p>
+
+
+
+<ul><li>Vamos aceitar desenvolver customizações (features específicas para alguns clientes)?</li><li>Se o produto tem mais de um cliente (vendedores e compradores, por ex), quem vamos priorizar?</li><li>O que é mais importante, velocidade ou qualidade?</li><li>Queremos desenvolver tudo sozinhos ou vamos fazer parcerias?</li></ul>
+
+
+
+<p>Uma vez que a Visão e Estratégia estejam definidas, como garantir que elas sejam seguidas? Em empresas com muitos times, como desdobrar a estratégia para os diversos times e manter o alinhamento? No artigo&nbsp;<a href="https://medium.com/@gibsonbiddle/how-to-run-a-quarterly-product-strategy-meeting-a-board-meeting-for-product-3a14c4d53d1b" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">How to Run a Quarterly Product Strategy Meeting</a>, Gibson Biddle, apresenta um processo bem interessante para definição de estratégia de times e também um passo a passo de como estruturar uma reunião de “review” de produto.</p>
+
+
+
+<h3 class="wp-block-heading">Mais sobre o jeito certo de trabalhar</h3>
+
+
+
+<p>Outras fontes interessantes para entender este jeito certo de trabalhar:</p>
+
+
+
+<ul><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.youtube.com/watch?v=DmJXpI7OJuY" target="_blank">Escaping the Building Trap</a>, Melissa Perri. Apresenta uma boa explicação da relação entre Customer, Business e o papel do Product Manager em Product-led e Sales-led organizations. As dicas para desenhar estratégia também são valiosas.</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/product-vs-feature-teams/" target="_blank">Product team vs Feature Team</a>, Marty Cagan. Reforça de forma bem didática e enfática os conceitos já apresentados em&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/empowered-product-teams/" target="_blank">Empowered Product Teams</a>. Feature team é o jeito errado de se trabalhar, no qual os times de produto existem somente para entregar features já priorizadas em um roadmap.</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://svpg.com/coaching-customer-centricity/" target="_blank">Coach &#8211; Customer Centricity</a>, Marty Cagan. Explica quem são os verdadeiros clientes de um Product Manager: as pessoas que usam o produto! Stakeholders internos (vendas, CEO, etc) não podem ser considerados clientes. Afinal, o time de produto não existe para servir ao negócio!</li><li><a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.linkedin.com/pulse/digital-traditional-joaquim-torres-joca-/" target="_blank">Digital or Traditional</a>, Joca Torres. Reflete sobre a diferença do escopo de atuação do Product Manager em empresas Digitais (que tem como core do negócio um software), empresas Tradicionais (que tem como core outros tipos de produto) e empresas que não vendem software, mas tem o software como parte vital do negócio, denominadas <em>born-digital traditional company</em>.</li></ul>
+
+
+
+<h3 class="wp-block-heading">Resumindo</h3>
+
+
+
+<p>Uma das responsabilidade principais de um líder de produto é definir um norte para o produto e garantir que toda empresa esteja alinhada à ele. Para isso:</p>
+
+
+
+<ul><li>Defina a visão e estratégia de produtos.</li><li>Divulgue para toda a empresa, não apenas para os times de Produto e Engenharia.</li><li>Desdobre a estratégia para todos times.</li><li>Crie cerimônias para garantir o alinhamento entre todos os times.</li></ul>
+
+
+
+<p>Caso isso já esteja sendo feito, mas mesmo assim os times não estejam trabalhando com autonomia e alcançando resultados, vale refletir:</p>
+
+
+
+<ul><li>Existe resistência da liderança para empoderar os times?</li><li>Existe um entendimento sobre o papel de um time de produto?</li><li>Se não existe confiança no time, qual é o plano para desenvolver e empoderar este time?</li></ul>
+
+
+
+<p>Como tem sido a liderança de produto na sua empresa? Deixe sua impressão nos comentários abaixo.</p>
+
+
+
+ [<a href="/2019/10/o-papel-do-lider-de-produto/">See image gallery at blog.plataformatec.com.br</a>]<p>The post <a href="/2019/10/o-papel-do-lider-de-produto/">O Papel do Líder de Produto</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

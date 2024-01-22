@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Monitoring Delayed Job with Bluepill and Capistrano	</title>
+	<atom:link href="/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 16 Apr 2010 19:00:15 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Weekend Links &#171; a work on process		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-510</link>
+
+		<dc:creator><![CDATA[Weekend Links &#171; a work on process]]></dc:creator>
+		<pubDate>Sun, 21 Feb 2010 13:04:55 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-510</guid>
+
+					<description><![CDATA[[...] been very helpful, but it sounds as if Bluepill might be worth a look as a possible alternative. Hugo Baraúna has written up a tutorial on monitoring delayed_job using it.   Tags: AJAX, flickr, html5, lessql, mobile world congress, [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] been very helpful, but it sounds as if Bluepill might be worth a look as a possible alternative. Hugo Baraúna has written up a tutorial on monitoring delayed_job using it.   Tags: AJAX, flickr, html5, lessql, mobile world congress, [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jon Kinney		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-506</link>
+
+		<dc:creator><![CDATA[Jon Kinney]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2010 01:11:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-506</guid>
+
+					<description><![CDATA[Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?]]></description>
+			<content:encoded><![CDATA[<p>Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jon Kinney		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-937</link>
+
+		<dc:creator><![CDATA[Jon Kinney]]></dc:creator>
+		<pubDate>Wed, 17 Feb 2010 01:11:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-937</guid>
+
+					<description><![CDATA[Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?]]></description>
+			<content:encoded><![CDATA[<p>Why do we need to stop and re-start bluepill after a deploy? Aside from it not working properly for me on OpenSUSE 11, I would think that an init script that starts when the server starts would be the way to go, no?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Caffeine Driven Development &#187; Blog Archive &#187; L33t Links #79		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-491</link>
+
+		<dc:creator><![CDATA[Caffeine Driven Development &#187; Blog Archive &#187; L33t Links #79]]></dc:creator>
+		<pubDate>Sat, 13 Feb 2010 14:14:35 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-491</guid>
+
+					<description><![CDATA[[...] Monitoring Delayed Job with Bluepill and Capistrano [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Monitoring Delayed Job with Bluepill and Capistrano [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Frederic		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-490</link>
+
+		<dc:creator><![CDATA[Frederic]]></dc:creator>
+		<pubDate>Sat, 13 Feb 2010 13:08:33 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-490</guid>
+
+					<description><![CDATA[My solution was missing an &quot;export RAILS_ENV;&quot; to work properly (but the rest of the comment is still correct: &quot;sh -c&quot; (hidden in a Kernel.exec(&quot;cmd-string&quot;) call) does not accept bash specific syntax.)
+
+Chris&#039; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).
+
+Bash syntax &quot;VAR=val cmd&quot; is just a shortcut for &quot;env VAR=val cmd&quot; when you do not need to use the -i option of the env command to have it &quot;to completly ignore the environment it inherits&quot; -- env(1).]]></description>
+			<content:encoded><![CDATA[<p>My solution was missing an &#8220;export RAILS_ENV;&#8221; to work properly (but the rest of the comment is still correct: &#8220;sh -c&#8221; (hidden in a Kernel.exec(&#8220;cmd-string&#8221;) call) does not accept bash specific syntax.)</p>
+<p>Chris&#8217; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).</p>
+<p>Bash syntax &#8220;VAR=val cmd&#8221; is just a shortcut for &#8220;env VAR=val cmd&#8221; when you do not need to use the -i option of the env command to have it &#8220;to completly ignore the environment it inherits&#8221; &#8212; env(1).</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Frederic		</title>
+		<link>/2010/02/monitoring-delayed-job-with-bluepill-and-capistrano/comment-page-1/#comment-936</link>
+
+		<dc:creator><![CDATA[Frederic]]></dc:creator>
+		<pubDate>Sat, 13 Feb 2010 13:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=714#comment-936</guid>
+
+					<description><![CDATA[My solution was missing an &quot;export RAILS_ENV;&quot; to work properly (but the rest of the comment is still correct: &quot;sh -c&quot; (hidden in a Kernel.exec(&quot;cmd-string&quot;) call) does not accept bash specific syntax.)
+
+Chris&#039; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).
+
+Bash syntax &quot;VAR=val cmd&quot; is just a shortcut for &quot;env VAR=val cmd&quot; when you do not need to use the -i option of the env command to have it &quot;to completly ignore the environment it inherits&quot; -- env(1).]]></description>
+			<content:encoded><![CDATA[<p>My solution was missing an &#8220;export RAILS_ENV;&#8221; to work properly (but the rest of the comment is still correct: &#8220;sh -c&#8221; (hidden in a Kernel.exec(&#8220;cmd-string&#8221;) call) does not accept bash specific syntax.)</p>
+<p>Chris&#8217; solution is neater and shorter, but it can even be made shorter by not prefixing env with its path ;-).</p>
+<p>Bash syntax &#8220;VAR=val cmd&#8221; is just a shortcut for &#8220;env VAR=val cmd&#8221; when you do not need to use the -i option of the env command to have it &#8220;to completly ignore the environment it inherits&#8221; &#8212; env(1).</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

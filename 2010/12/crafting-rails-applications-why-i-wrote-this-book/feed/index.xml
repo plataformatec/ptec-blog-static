@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Crafting Rails Applications: Why I wrote this book	</title>
+	<atom:link href="/2010/12/crafting-rails-applications-why-i-wrote-this-book/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 29 Oct 2012 20:59:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Endy		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1067</link>
+
+		<dc:creator><![CDATA[Endy]]></dc:creator>
+		<pubDate>Wed, 15 Dec 2010 08:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1067</guid>
+
+					<description><![CDATA[Magic is technical debt, it gets you through tight spots in the beginning, but later you have to study the magic to get further.]]></description>
+			<content:encoded><![CDATA[<p>Magic is technical debt, it gets you through tight spots in the beginning, but later you have to study the magic to get further.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Michael Reed		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1066</link>
+
+		<dc:creator><![CDATA[Michael Reed]]></dc:creator>
+		<pubDate>Tue, 14 Dec 2010 23:42:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1066</guid>
+
+					<description><![CDATA[Just bought the beta of your book. Thanks. 3 months into learning rails after a decade of web + other stuff development and I love it. Thankful for the magic and for the education about what&#039;s behind it. 
+
+I also appreciate devise.]]></description>
+			<content:encoded><![CDATA[<p>Just bought the beta of your book. Thanks. 3 months into learning rails after a decade of web + other stuff development and I love it. Thankful for the magic and for the education about what&#8217;s behind it. </p>
+<p>I also appreciate devise.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Kirk Quesnelle		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1065</link>
+
+		<dc:creator><![CDATA[Kirk Quesnelle]]></dc:creator>
+		<pubDate>Tue, 14 Dec 2010 18:12:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1065</guid>
+
+					<description><![CDATA[Just picked this up.. cannot wait to dig into this.
+
+Thanks José 
+
+]]></description>
+			<content:encoded><![CDATA[<p>Just picked this up.. cannot wait to dig into this.</p>
+<p>Thanks José </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Kirk Quesnelle		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1064</link>
+
+		<dc:creator><![CDATA[Kirk Quesnelle]]></dc:creator>
+		<pubDate>Tue, 14 Dec 2010 18:12:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1064</guid>
+
+					<description><![CDATA[Just picked this up.. cannot wait to dig into this.
+
+Thanks José 
+
+]]></description>
+			<content:encoded><![CDATA[<p>Just picked this up.. cannot wait to dig into this.</p>
+<p>Thanks José </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: aaron blohowiak		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1062</link>
+
+		<dc:creator><![CDATA[aaron blohowiak]]></dc:creator>
+		<pubDate>Tue, 14 Dec 2010 09:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1062</guid>
+
+					<description><![CDATA[Convention over configuration: sane default values.  magic: changing the scope in which a block is eval&#039;d so you can inject BlankSlates that have method_missing defined on them that then do some string manipulation in order to pick which code path to take.
+
+]]></description>
+			<content:encoded><![CDATA[<p>Convention over configuration: sane default values.  magic: changing the scope in which a block is eval&#8217;d so you can inject BlankSlates that have method_missing defined on them that then do some string manipulation in order to pick which code path to take.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/comment-page-1/#comment-1063</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Tue, 14 Dec 2010 09:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1558#comment-1063</guid>
+
+					<description><![CDATA[Good article, Valim. 
+
+Check out Docco.js for documenting code. You might find that you can use it to help your readers through the code examples and activities in your book. This is worth looking into as the big weakness in the Pragmatic Programmers series is their site. The forums and wikis are poorly frequented and stuff gets out of date on their too fast and posting questions on their is an exercise in futility, since few people frequent the site often enough to answer questions in a timely manner.]]></description>
+			<content:encoded><![CDATA[<p>Good article, Valim. </p>
+<p>Check out Docco.js for documenting code. You might find that you can use it to help your readers through the code examples and activities in your book. This is worth looking into as the big weakness in the Pragmatic Programmers series is their site. The forums and wikis are poorly frequented and stuff gets out of date on their too fast and posting questions on their is an exercise in futility, since few people frequent the site often enough to answer questions in a timely manner.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

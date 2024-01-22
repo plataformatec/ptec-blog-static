@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Working with Ecto associations and embeds	</title>
+	<atom:link href="/2015/08/working-with-ecto-associations-and-embeds/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/08/working-with-ecto-associations-and-embeds/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 01 Dec 2016 11:32:06 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Tallak tveide		</title>
+		<link>/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1513</link>
+
+		<dc:creator><![CDATA[Tallak tveide]]></dc:creator>
+		<pubDate>Wed, 12 Aug 2015 12:28:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4878#comment-1513</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1512&quot;&gt;josevalim&lt;/a&gt;.
+
+perhaps delete the comment then :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1512">josevalim</a>.</p>
+<p>perhaps delete the comment then 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1512</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 12 Aug 2015 12:09:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4878#comment-1512</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1511&quot;&gt;Tallak tveide&lt;/a&gt;.
+
+Ah yes, on line 5! Sorry, I will fix it ASAP. Thank you!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1511">Tallak tveide</a>.</p>
+<p>Ah yes, on line 5! Sorry, I will fix it ASAP. Thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tallak tveide		</title>
+		<link>/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1511</link>
+
+		<dc:creator><![CDATA[Tallak tveide]]></dc:creator>
+		<pubDate>Wed, 12 Aug 2015 11:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4878#comment-1511</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1510&quot;&gt;josevalim&lt;/a&gt;.
+
+I was thinking about: 
+    changeset = Ecto.Changeset.put_change(post, :permalinks,
+perhaps should be
+    changeset = Ecto.Changeset.put_change(changeset, :permalinks,
+
+As according to Ecto.Changeset docs:
+
+
+    
+put_change(changeset, key, value)
+
+
+
+    Specs:
+
+    put_change(t, atom, term) :: t]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1510">josevalim</a>.</p>
+<p>I was thinking about:<br />
+    changeset = Ecto.Changeset.put_change(post, :permalinks,<br />
+perhaps should be<br />
+    changeset = Ecto.Changeset.put_change(changeset, :permalinks,</p>
+<p>As according to Ecto.Changeset docs:</p>
+<p>put_change(changeset, key, value)</p>
+<p>    Specs:</p>
+<p>    put_change(t, atom, term) :: t</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1510</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 12 Aug 2015 11:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4878#comment-1510</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1509&quot;&gt;Tallak tveide&lt;/a&gt;.
+
+As the documentation for Repo.insert! says, it receives a model (post) or a changeset and it always returns the model (post) in case of success. It raises on failures.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1509">Tallak tveide</a>.</p>
+<p>As the documentation for Repo.insert! says, it receives a model (post) or a changeset and it always returns the model (post) in case of success. It raises on failures.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Tallak tveide		</title>
+		<link>/2015/08/working-with-ecto-associations-and-embeds/comment-page-1/#comment-1509</link>
+
+		<dc:creator><![CDATA[Tallak tveide]]></dc:creator>
+		<pubDate>Wed, 12 Aug 2015 11:39:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4878#comment-1509</guid>
+
+					<description><![CDATA[# Generate a changeset for the post
+changeset = Ecto.Changeset.change(post)
+
+# Let&#039;s track the new permalinks
+changeset = Ecto.Changeset.put_change(post, :permalinks,
+  [%Permalink{url: &quot;example.com/thebest&quot;},
+   %Permalink{url: &quot;another.com/mostaccessed&quot;}]
+)
+
+# Now let&#039;s insert the post with permalinks at once!
+post = Repo.insert!(changeset)
+
+---
+
+Should the post on line 5 be changeset?]]></description>
+			<content:encoded><![CDATA[<p># Generate a changeset for the post<br />
+changeset = Ecto.Changeset.change(post)</p>
+<p># Let&#8217;s track the new permalinks<br />
+changeset = Ecto.Changeset.put_change(post, :permalinks,<br />
+  [%Permalink{url: &#8220;example.com/thebest&#8221;},<br />
+   %Permalink{url: &#8220;another.com/mostaccessed&#8221;}]<br />
+)</p>
+<p># Now let&#8217;s insert the post with permalinks at once!<br />
+post = Repo.insert!(changeset)</p>
+<p>&#8212;</p>
+<p>Should the post on line 5 be changeset?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

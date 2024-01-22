@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rails 3.1 « Plataformatec Blog</title>
+	<atom:link href="/tag/rails-3-1/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 04 Apr 2011 20:39:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Default views in Rails 3.0 with custom resolvers</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/</link>
+					<comments>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 18:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[resolvers]]></category>
+		<category><![CDATA[template inheritance]]></category>
+		<guid isPermaLink="false">/?p=1959</guid>
+
+					<description><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the Admin namespace and you would like each action to fallback to a default template. So if you are rendering the index action for Admin::PostsController and &#8220;app/views/admin/posts/index.html.*&#8221; ... <a class="read-more-link" href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">»</a></p>
+<p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the <code>Admin</code> namespace and you would like each action to fallback to a default template. So if you are rendering the index action for <code>Admin::PostsController</code> and &#8220;app/views/admin/posts/index.html.*&#8221; is not available, it should then render &#8220;app/views/admin/defaults/index.html&#8221;.</p>
+<p>There are several ways to implement this feature at the controller level. It mainly relies on trying to render the original template and then rescue <code>ActionView::MissingTemplate</code>. If this error is rescued, you then render the default one. However, there is a considerable performance overhead in this approach as it needs to pass through the rendering and template lookup stack twice.</p>
+<p>Luckily, since Rails 3.0, we have a new abstraction called <strong>resolvers</strong> that holds the logic to find a template. I explain comprehensively how resolvers work and their API in my book <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>. So here I would just show the basics to get this functionality working.<br />
+First, we need to define a <code>DefaultResolver</code>, it could be done inside the lib directory:</p>
+<pre lang="ruby">
+class MyResolver < ::ActionView::FileSystemResolver
+  def initialize
+    super("app/views")
+  end
+
+  def find_templates(name, prefix, partial, details)
+    super(name, "admin/defaults", partial, details)
+  end
+end
+</pre>
+<p>Our new resolver simply inherits from <code>ActionView::FileSystemResolver</code> and does two changes: Overrides the <code>initialize</code> method so the view path defaults to "app/views" inside our application and overrides <code>find_templates</code>. The <code>find_templates</code> method receives the template name, a prefix (i.e. the controller path), a boolean marking if the template is a partial or not and a hash of details. In the example above, we simply ignore the prefix given and hardcode it to "admin/defaults".</p>
+<p>Now, assuming that all controllers inside the Admin namespace inherit from an <code>Admin::ApplicationController</code>, we can add default views to all of them by adding the following line:</p>
+<pre lang="ruby">
+class Admin::ApplicationController < ActionController::Base
+  append_view_path MyResolver.new
+end
+</pre>
+<p>And we are done! The <code>view_paths</code> holds a list of paths and/or resolvers that the controller will look for templates until one is found. If none is found, an <code>ActionView::MissingTemplate</code> is raised. Since we used <code>append_view_paths</code>, our resolver was added after the "app/views" path, used by default in all controllers.</p>
+<p>As you may have guessed, resolvers are a powerful abstraction that allows you to retrieve templates from anywhere, including the database, which is the example given in <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>.</p>
+<p>Finally, template inheritance was a feature recently added to Rails master (upcoming Rails 3.1), so you won't need to create your custom resolver as above. <a href="http://edgerails.info/articles/what-s-new-in-edge-rails/2011/01/12/template-inheritance/index.html">There is a good wrap up about this feature in Rails Edge</a>.</p><p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rails 3.1 talks are on the way!</title>
+		<link>/2010/09/rails-3-1-talks-are-on-the-way/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 03 Sep 2010 13:09:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<guid isPermaLink="false">/?p=1405</guid>
+
+					<description><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk and, as Ruby Summer of Code ... <a class="read-more-link" href="/2010/09/rails-3-1-talks-are-on-the-way/">»</a></p>
+<p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was <a href="http://37signals.com/svn/posts/2399-davids-talk-at-railsconf-2010" target="_blank">the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk</a> and, as <a href="http://rubysoc.org/" target="_blank">Ruby Summer of Code</a> is close to its end, we are able to see the work of several students getting solid enough to be an important part of Rails 3.1 release.</p>
+<p>In between all this work, I was invited to participate in three important conferences in the following months and lately I&#8217;ve prepared enough material to give a talk entitled &#8220;<strong>Rails 2.3, 3.0 and 3.1: Past, Present and Future</strong>&#8220;!</p>
+<p>In this talk I plan to discuss many of the conceptual changes done in Rails 3 and how these changes were given life in the Rails source code, comparing, as much as possible, with Rails 2.3. After the current and past scenarios are throughly discussed, I will show how much of the work done in Rails 3 can still be improved and how several Ruby Summer of Code Projects are helping us to achieve it. And if you ever wondered how much Merb affected the Rails community, you will have a few surprises while watching this talk!</p>
+<p>The three different conferences I mentioned above will be held in Ukraine, Brasil and Sweden. But I&#8217;m not sure if there will be anyone recording them, so I&#8217;d suggest you not to miss any of them. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here they are&#8230;</p>
+<h3>1) RubyConfUA (Ukraine): 16th and 17th October</h3>
+<p>If you have never been to Kyiv before (just like me), here&#8217;s a great opportunity to visit it for the first time! It will be <a href="http://rubylang.org.ua/" target="_blank">two days of deep immersion into Ruby</a> with nice city visits during the night!</p>
+<p><a href="/wp-content/uploads/2010/09/kiev.jpg"><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2010/09/kiev.jpg" alt="Kiev" title="Kiev" width="500" height="327" class="aligncenter size-full wp-image-1439" /></a></p>
+<p>Other active developers in the community as <a href="http://oleganza.tumblr.com/" target="_blank">Oleg Andreev</a> and <a href="http://piotrsarnacki.com/" target="_blank">Piotr Sarnacki</a> will be present as well.  By the way, <a href="http://rubylang.org.ua/" target="_blank">RubyConf Ukraine</a> is still accepting both sponsors and talk proposals! We are waiting for you!</p>
+<h3>2) RubyConf (Brasil): 26th and 27th October</h3>
+<p>Right after RubyConf Ukraine, I&#8217;ll be flying back to Brasil to present a portuguese version of this talk. <a href="http://www.rubyconf.com.br/en/" target="_blank">RubyConf Brasil</a> is the former &#8220;Rails Summit Latin America&#8221; (which has been the largest Ruby and Rails conference in Latin America for the last two years). And this year it won&#8217;t be different. Several Ruby and Rails developers (like Yehuda Katz, Charles Nutter, Evan Phoenix and many others) have confirmed their presence. If  you get the chance, don&#8217;t miss it!</p>
+<h3>3) Oredev (Sweden): 8th to 12th November</h3>
+<p>And finally, my last stop will be in Sweden at the <a href="http://oredev.org/2010" target="_blank">developer conference held in Malmö</a>. This will be different from the previous two, since it is not focused in Ruby nor Rails. It&#8217;s a multitrack conference that hosts different technologies (by the way, the keynotes and tutorials programme is very interesting!). Since I&#8217;m expecting several non-Rails developers in the audience, I will slightly change my talk to focus more on the conceptual side and less on technical discussions. Also, I&#8217;ll be hosting a a workshop about Rails 3, where I&#8217;ll demonstrate a few of @plataformatec&#8217;s <a title="Plataforma Tec Open Source Projects" href="http://github.com/plataformatec">open source projects</a>.</p>
+<p>If you are coming to any of these events, please let me know in the comments!</p><p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

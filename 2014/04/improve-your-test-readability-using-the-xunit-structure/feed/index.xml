@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Improve your test readability using the xUnit structure	</title>
+	<atom:link href="/2014/04/improve-your-test-readability-using-the-xunit-structure/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 07 Apr 2014 14:25:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: hugobarauna		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1368</link>
+
+		<dc:creator><![CDATA[hugobarauna]]></dc:creator>
+		<pubDate>Mon, 07 Apr 2014 14:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1368</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1367&quot;&gt;Mauro George&lt;/a&gt;.
+
+&lt;blockquote&gt;I will duplicate the setup and exercise? Or 
+create a helper method?&lt;/blockquote&gt;
+I prefer to remove duplications just from the setup phase. If all a test contain is the verify phase, it can be difficult to understand the cause and effect relationship.
+
+
+The worst thing that can happen to a test is not the it isn&#039;t following DRY, it is not making the cause and effect relationship explicit and easy to understand.
+
+
+But as you yourself said, it&#039;s all about tradeoffs. But, when thinking in tradeoffs in the tests world, I don&#039;t usually favor DRY, I favor readability.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1367">Mauro George</a>.</p>
+<blockquote><p>I will duplicate the setup and exercise? Or<br />
+create a helper method?</p></blockquote>
+<p>I prefer to remove duplications just from the setup phase. If all a test contain is the verify phase, it can be difficult to understand the cause and effect relationship.</p>
+<p>The worst thing that can happen to a test is not the it isn&#8217;t following DRY, it is not making the cause and effect relationship explicit and easy to understand.</p>
+<p>But as you yourself said, it&#8217;s all about tradeoffs. But, when thinking in tradeoffs in the tests world, I don&#8217;t usually favor DRY, I favor readability.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Mauro George		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1367</link>
+
+		<dc:creator><![CDATA[Mauro George]]></dc:creator>
+		<pubDate>Sun, 06 Apr 2014 12:21:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1367</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1365&quot;&gt;hugobarauna&lt;/a&gt;.
+
+Awesome post! I really understand your points, Joe Ferris talked about this, using the let[1] as the  problem. 
+
+Today I follow more like Myron[2], like the karlentwistle showed.
+
+In your example you showed a simple test, and whem I have lot of 
+tests of the same method. I will duplicate the setup and exercise? Or 
+create a helper mehtod?
+
+About the Mystery Guest, Joe Ferris uses simple helper methods, but is no real difference between a let and a helper that not receive a single param. This 2 guys, probably are a mistery guest, since all are defined outiside the test example, the difference is one uses the RSpec DSL.
+ 
+I guess it is all about tradeoffs we can repeat, this way we are not DRY and are without any Mistery Guest.
+
+Or we can have a Mistery Guest and be DRY.
+
+Today I really prefer be DRY.
+
+[1]: http://robots.thoughtbot.com/lets-not
+[2]: http://stackoverflow.com/questions/5359558/when-to-use-rspec-let/5359979#5359979]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1365">hugobarauna</a>.</p>
+<p>Awesome post! I really understand your points, Joe Ferris talked about this, using the let[1] as the  problem. </p>
+<p>Today I follow more like Myron[2], like the karlentwistle showed.</p>
+<p>In your example you showed a simple test, and whem I have lot of<br />
+tests of the same method. I will duplicate the setup and exercise? Or<br />
+create a helper mehtod?</p>
+<p>About the Mystery Guest, Joe Ferris uses simple helper methods, but is no real difference between a let and a helper that not receive a single param. This 2 guys, probably are a mistery guest, since all are defined outiside the test example, the difference is one uses the RSpec DSL.</p>
+<p>I guess it is all about tradeoffs we can repeat, this way we are not DRY and are without any Mistery Guest.</p>
+<p>Or we can have a Mistery Guest and be DRY.</p>
+<p>Today I really prefer be DRY.</p>
+<p>[1]: <a href="http://robots.thoughtbot.com/lets-not" rel="nofollow ugc">http://robots.thoughtbot.com/lets-not</a><br />
+[2]: <a href="http://stackoverflow.com/questions/5359558/when-to-use-rspec-let/5359979#5359979" rel="nofollow ugc">http://stackoverflow.com/questions/5359558/when-to-use-rspec-let/5359979#5359979</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Jeff Dickey		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1366</link>
+
+		<dc:creator><![CDATA[Jeff Dickey]]></dc:creator>
+		<pubDate>Fri, 04 Apr 2014 08:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1366</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1363&quot;&gt;Felipe Rinaldi&lt;/a&gt;.
+
+But if you discover a manual test that yields interesting results, such as a failure of the code under test, you should automate that and add it to your test suite. Tests are &lt;em&gt;useless at best&lt;/em&gt; unless they&#039;re repeatable, just as code is unknown at best until it&#039;s been proven to work as expected. Technical debt is a &lt;em&gt;trailing&lt;/em&gt; indicator of project failure; deal with it before you hit bankruptcy (project failure). Full test coverage also allows you to refactor at will and prove that your refactoring didn&#039;t break anything. Without full coverage, you&#039;ve only proven that any bugs are in the code that hasn&#039;t been proven to work.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1363">Felipe Rinaldi</a>.</p>
+<p>But if you discover a manual test that yields interesting results, such as a failure of the code under test, you should automate that and add it to your test suite. Tests are <em>useless at best</em> unless they&#8217;re repeatable, just as code is unknown at best until it&#8217;s been proven to work as expected. Technical debt is a <em>trailing</em> indicator of project failure; deal with it before you hit bankruptcy (project failure). Full test coverage also allows you to refactor at will and prove that your refactoring didn&#8217;t break anything. Without full coverage, you&#8217;ve only proven that any bugs are in the code that hasn&#8217;t been proven to work.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: hugobarauna		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1365</link>
+
+		<dc:creator><![CDATA[hugobarauna]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 16:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1365</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1364&quot;&gt;karlentwistle&lt;/a&gt;.
+
+I understand the motivation and style, but I would prefer not going this direction, let me tell you why.
+
+A test is readable and clear when the reader can understand the relation of cause and effect from the setup to the verify phase. That said, the more test phases are contained inside the test, the better.
+
+Since we&#039;re using RSpec, the ideal thing the do is putting every test phase inside the `it` block:
+
+&lt;code&gt;
+it &quot;puts an element at the top of the stack&quot; do
+  # setup
+  # exercise
+  # verify
+end
+&lt;/code&gt;
+
+There are even some test smells that are related to not having everything inside your test, like the &lt;a href=&quot;http://xunitpatterns.com/Obscure%20Test.html&quot; rel=&quot;nofollow&quot;&gt;mystery guest&lt;/a&gt; one.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1364">karlentwistle</a>.</p>
+<p>I understand the motivation and style, but I would prefer not going this direction, let me tell you why.</p>
+<p>A test is readable and clear when the reader can understand the relation of cause and effect from the setup to the verify phase. That said, the more test phases are contained inside the test, the better.</p>
+<p>Since we&#8217;re using RSpec, the ideal thing the do is putting every test phase inside the `it` block:</p>
+<p><code><br />
+it "puts an element at the top of the stack" do<br />
+  # setup<br />
+  # exercise<br />
+  # verify<br />
+end<br />
+</code></p>
+<p>There are even some test smells that are related to not having everything inside your test, like the <a href="http://xunitpatterns.com/Obscure%20Test.html" rel="nofollow">mystery guest</a> one.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: karlentwistle		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1364</link>
+
+		<dc:creator><![CDATA[karlentwistle]]></dc:creator>
+		<pubDate>Wed, 02 Apr 2014 15:20:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1364</guid>
+
+					<description><![CDATA[How about this? http://pastie.org/8988937]]></description>
+			<content:encoded><![CDATA[<p>How about this? <a href="http://pastie.org/8988937" rel="nofollow ugc">http://pastie.org/8988937</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Felipe Rinaldi		</title>
+		<link>/2014/04/improve-your-test-readability-using-the-xunit-structure/comment-page-1/#comment-1363</link>
+
+		<dc:creator><![CDATA[Felipe Rinaldi]]></dc:creator>
+		<pubDate>Tue, 01 Apr 2014 22:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3688#comment-1363</guid>
+
+					<description><![CDATA[Automated tests is a great practice, specially to check code regressions in every new software build. If I could add my 2 cents, it is also great to do some manual alpha testing. Mess up with the product, specially new features. Mess with inputs, try unusual use cases, mess with the order you do things, click buttons you&#039;re not expected to click, overload your system, see if the time it takes is reasonable, be very criterious of subjective aspects of your software and take notes constantly of how your software could improve, even if it works satisfactorily. I believe this practice can greatly improve the quality of your deliveries, now and in the future.]]></description>
+			<content:encoded><![CDATA[<p>Automated tests is a great practice, specially to check code regressions in every new software build. If I could add my 2 cents, it is also great to do some manual alpha testing. Mess up with the product, specially new features. Mess with inputs, try unusual use cases, mess with the order you do things, click buttons you&#8217;re not expected to click, overload your system, see if the time it takes is reasonable, be very criterious of subjective aspects of your software and take notes constantly of how your software could improve, even if it works satisfactorily. I believe this practice can greatly improve the quality of your deliveries, now and in the future.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Dynamic forms with Phoenix	</title>
+	<atom:link href="/2016/09/dynamic-forms-with-phoenix/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/09/dynamic-forms-with-phoenix/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 15 Dec 2016 09:02:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Pranav Singh		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1680</link>
+
+		<dc:creator><![CDATA[Pranav Singh]]></dc:creator>
+		<pubDate>Thu, 15 Dec 2016 09:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1680</guid>
+
+					<description><![CDATA[Thanks Jose! Great post.]]></description>
+			<content:encoded><![CDATA[<p>Thanks Jose! Great post.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1663</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 17 Nov 2016 15:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1663</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1662&quot;&gt;Andrew Phillipo&lt;/a&gt;.
+
+Thanks, fixed.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1662">Andrew Phillipo</a>.</p>
+<p>Thanks, fixed.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Phillipo		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1662</link>
+
+		<dc:creator><![CDATA[Andrew Phillipo]]></dc:creator>
+		<pubDate>Thu, 17 Nov 2016 15:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1662</guid>
+
+					<description><![CDATA[The link &quot;Ecto 2.0 allows us to use schemas to map to any data source&quot; should link here rather than 404: /2016/05/ectos-insert_all-and-schemaless-queries/]]></description>
+			<content:encoded><![CDATA[<p>The link &#8220;Ecto 2.0 allows us to use schemas to map to any data source&#8221; should link here rather than 404: <a href="/2016/05/ectos-insert_all-and-schemaless-queries/" rel="ugc">/2016/05/ectos-insert_all-and-schemaless-queries/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Alex Maslakov		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1654</link>
+
+		<dc:creator><![CDATA[Alex Maslakov]]></dc:creator>
+		<pubDate>Sat, 15 Oct 2016 03:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1654</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1653&quot;&gt;Matthew Lehner&lt;/a&gt;.
+
+Yes, man. This is all about computers.... computers! They&#039;re everywhere....]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1653">Matthew Lehner</a>.</p>
+<p>Yes, man. This is all about computers&#8230;. computers! They&#8217;re everywhere&#8230;.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Matthew Lehner		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1653</link>
+
+		<dc:creator><![CDATA[Matthew Lehner]]></dc:creator>
+		<pubDate>Wed, 12 Oct 2016 18:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1653</guid>
+
+					<description><![CDATA[Whoa, implementing the core functionality of Simple Form for Phoenix in a single blog post! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f60d.png" alt="😍" class="wp-smiley" style="height: 1em; max-height: 1em;" />
+
+Great post!]]></description>
+			<content:encoded><![CDATA[<p>Whoa, implementing the core functionality of Simple Form for Phoenix in a single blog post! 😍</p>
+<p>Great post!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Keith Salisbury		</title>
+		<link>/2016/09/dynamic-forms-with-phoenix/comment-page-1/#comment-1652</link>
+
+		<dc:creator><![CDATA[Keith Salisbury]]></dc:creator>
+		<pubDate>Tue, 11 Oct 2016 22:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5709#comment-1652</guid>
+
+					<description><![CDATA[Beautiful, thanks José!]]></description>
+			<content:encoded><![CDATA[<p>Beautiful, thanks José!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Eager loading for greater good	</title>
+	<atom:link href="/2012/08/eager-loading-for-greater-good/feed/" rel="self" type="application/rss+xml" />
+	<link>/2012/08/eager-loading-for-greater-good/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 29 Aug 2012 20:06:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1280</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 20:06:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1280</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1279&quot;&gt;divoxx&lt;/a&gt;.
+
+I think Matz wanted to deprecate it because it could not be made threadsafe. However, it seems the JRuby guys were able to. I don&#039;t know where the proposal to deprecate it stands right now.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1279">divoxx</a>.</p>
+<p>I think Matz wanted to deprecate it because it could not be made threadsafe. However, it seems the JRuby guys were able to. I don&#8217;t know where the proposal to deprecate it stands right now.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: divoxx		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1279</link>
+
+		<dc:creator><![CDATA[divoxx]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 19:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1279</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1278&quot;&gt;trans&lt;/a&gt;.
+
+Yeah, as far as I know autoload is deprecated. Has that changed Valim?]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1278">trans</a>.</p>
+<p>Yeah, as far as I know autoload is deprecated. Has that changed Valim?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: trans		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1278</link>
+
+		<dc:creator><![CDATA[trans]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 19:24:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1278</guid>
+
+					<description><![CDATA[Last I heard autoload was basically deprecated. But it won&#039;t be removed for a while, its marked for Ruby 3.0.
+]]></description>
+			<content:encoded><![CDATA[<p>Last I heard autoload was basically deprecated. But it won&#8217;t be removed for a while, its marked for Ruby 3.0.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1277</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 13:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1277</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1276&quot;&gt;Christian Lallemand&lt;/a&gt;.
+
+Yes, this is a good point I haven&#039;t talked about in the blog post. It will improve Sidekiq (and any other solution depending on threads) too.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1276">Christian Lallemand</a>.</p>
+<p>Yes, this is a good point I haven&#8217;t talked about in the blog post. It will improve Sidekiq (and any other solution depending on threads) too.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Christian Lallemand		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1276</link>
+
+		<dc:creator><![CDATA[Christian Lallemand]]></dc:creator>
+		<pubDate>Wed, 29 Aug 2012 13:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1276</guid>
+
+					<description><![CDATA[Many thanks for this post ... i think this explains why sidekiq often fails to load my modules ]]></description>
+			<content:encoded><![CDATA[<p>Many thanks for this post &#8230; i think this explains why sidekiq often fails to load my modules </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Nando Vieira		</title>
+		<link>/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1275</link>
+
+		<dc:creator><![CDATA[Nando Vieira]]></dc:creator>
+		<pubDate>Tue, 28 Aug 2012 21:19:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3043#comment-1275</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1274&quot;&gt;josevalim&lt;/a&gt;.
+
+That&#039;s nice! &#060;3]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2012/08/eager-loading-for-greater-good/comment-page-1/#comment-1274">josevalim</a>.</p>
+<p>That&#8217;s nice! &lt;3</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

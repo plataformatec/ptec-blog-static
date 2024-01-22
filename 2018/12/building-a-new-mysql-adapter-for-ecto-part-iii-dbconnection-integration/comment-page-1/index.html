@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Building a new MySQL adapter for Ecto, Part III: DBConnection Integration « Plataformatec Blog</title>
+		<meta name="description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding Part III: DBConnection Integration (you&#039;re here!) Part IV: Ecto Integration In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.">
+		<meta name="robots" content="noindex, nofollow, max-image-preview:large">
+		<link rel="canonical" href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/comment-page-1/#comments">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Building a new MySQL adapter for Ecto, Part III: DBConnection Integration « Plataformatec Blog">
+		<meta property="og:description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding Part III: DBConnection Integration (you&#039;re here!) Part IV: Ecto Integration In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.">
+		<meta property="og:url" content="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/comment-page-1/#comments">
+		<meta property="article:published_time" content="2018-12-21T16:36:56+00:00">
+		<meta property="article:modified_time" content="2019-01-04T20:08:06+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Building a new MySQL adapter for Ecto, Part III: DBConnection Integration « Plataformatec Blog">
+		<meta name="twitter:description" content="Welcome to the &quot;Building a new MySQL adapter for Ecto&quot; series: Part I: Hello World Part II: Encoding/Decoding Part III: DBConnection Integration (you&#039;re here!) Part IV: Ecto Integration In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#article","name":"Building a new MySQL adapter for Ecto, Part III: DBConnection Integration « Plataformatec Blog","headline":"Building a new MySQL adapter for Ecto, Part III: DBConnection Integration","author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/wojtek-mach\/#author"},"publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"},"image":{"@type":"ImageObject","url":"http:\/\/blog.plataformatec.com.br\/wp-content\/uploads\/2016\/05\/admin-ajax-1.png","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#articleImage","width":1024,"height":213},"datePublished":"2018-12-21T14:36:56-02:00","dateModified":"2019-01-04T18:08:06-02:00","inLanguage":"en-US","commentCount":1,"mainEntityOfPage":{"@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#webpage"},"isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#webpage"},"articleSection":"English, ecto, elixir"},{"@type":"BreadcrumbList","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/#listItem","position":1,"name":"Home","item":"http:\/\/blog.plataformatec.com.br\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2018\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2018\/#listItem","position":2,"name":"2018","item":"http:\/\/blog.plataformatec.com.br\/2018\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2018\/12\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/#listItem","position":3,"name":"December","item":"http:\/\/blog.plataformatec.com.br\/2018\/12\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/2018\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#listItem","position":4,"name":"Building a new MySQL adapter for Ecto, Part III: DBConnection Integration","previousItem":"http:\/\/blog.plataformatec.com.br\/2018\/12\/#listItem"}]},{"@type":"Organization","@id":"http:\/\/blog.plataformatec.com.br\/#organization","name":"Plataformatec Blog","url":"http:\/\/blog.plataformatec.com.br\/"},{"@type":"Person","@id":"http:\/\/blog.plataformatec.com.br\/author\/wojtek-mach\/#author","url":"http:\/\/blog.plataformatec.com.br\/author\/wojtek-mach\/","name":"Wojtek Mach","image":{"@type":"ImageObject","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#authorImage","url":"http:\/\/2.gravatar.com\/avatar\/84ef665236afa8310820dd00f1d710f8?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Wojtek Mach"}},{"@type":"WebPage","@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#webpage","url":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/","name":"Building a new MySQL adapter for Ecto, Part III: DBConnection Integration « Plataformatec Blog","description":"Welcome to the \"Building a new MySQL adapter for Ecto\" series: Part I: Hello World Part II: Encoding\/Decoding Part III: DBConnection Integration (you're here!) Part IV: Ecto Integration In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/#website"},"breadcrumb":{"@id":"http:\/\/blog.plataformatec.com.br\/2018\/12\/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration\/#breadcrumblist"},"author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/wojtek-mach\/#author"},"creator":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/wojtek-mach\/#author"},"datePublished":"2018-12-21T14:36:56-02:00","dateModified":"2019-01-04T18:08:06-02:00"},{"@type":"WebSite","@id":"http:\/\/blog.plataformatec.com.br\/#website","url":"http:\/\/blog.plataformatec.com.br\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Building a new MySQL adapter for Ecto, Part III: DBConnection Integration Comments Feed" href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.plataformatec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/8158">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=8158">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2018%2F12%2Fbuilding-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2018%2F12%2Fbuilding-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration%2F#038;format=xml">
+                                                                                                                        </head>
+  <body class="post-template-default single single-post postid-8158 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/" rel="bookmark">Building a new MySQL adapter for Ecto, Part III: DBConnection Integration</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2018-12-21T14:36:56-02:00">Dec 21, 2018</time>
+      <p class="post-author">
+        <img alt="" src="http://2.gravatar.com/avatar/84ef665236afa8310820dd00f1d710f8?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/84ef665236afa8310820dd00f1d710f8?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=70" title="Posts by Wojtek Mach">Wojtek Mach</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>Welcome to the &#8220;Building a new MySQL adapter for Ecto&#8221; series:</p>
+<ul>
+<li><a href="/2018/11/building-a-new-mysql-adapter-for-ecto-part-i-hello-world/" target="_blank" rel="noopener">Part I: Hello World</a></li>
+<li><a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-ii-encoding-decoding/" target="_blank" rel="noopener">Part II: Encoding/Decoding</a></li>
+<li>
+<a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/">Part III: DBConnection Integration</a> (you&#8217;re here!)</li>
+<li><a href="/2019/01/building-a-new-mysql-adapter-for-ecto-part-iv-ecto-integration/" target="_blank" rel="noopener">Part IV: Ecto Integration</a></li>
+</ul>
+<p>In the first two articles of the series we have learned the basic building blocks for interacting with a MySQL server using its binary protocol over TCP.</p>
+<p>To have a production-quality driver, however, there&#8217;s more work to do. Namely, we need to think about:</p>
+<ul>
+<li>maintaining a connection pool to talk to the DB efficiently from multiple processes</li>
+<li>not overloading the DB</li>
+<li>attempting to re-connect to the DB if connection is lost</li>
+<li>supporting common DB features like prepared statements, transactions, and streaming</li>
+</ul>
+<p>In short, we need: reliability, performance, and first-class support for common DB features. This is where <a href="https://github.com/elixir-ecto/db_connection" target="_blank" rel="noopener">DBConnection</a>&nbsp;comes in.</p>
+<h2>DBConnection</h2>
+<p>DBConnection is a behaviour module for implementing efficient database connection client processes, pools and transactions. It has been created by Elixir and Ecto Core Team member James Fish and has been introduced in Ecto v2.0.</p>
+<p>Per <a href="https://hexdocs.pm/db_connection/DBConnection.html" target="_blank" rel="noopener">DBConnection documentation</a>&nbsp;we can see how it addresses concerns mentioned above:</p>
+<blockquote>
+<p>
+  DBConnection handles callbacks differently to most behaviours. Some callbacks will be called in the calling process, with the state copied to and from the calling process. This is useful when the data for a request is large and means that a calling process can interact with a socket directly.</p>
+<p>A side effect of this is that query handling can be written in a simple blocking fashion, while the connection process itself will remain responsive to OTP messages and can enqueue and cancel queued requests.</p>
+<p>If a request or series of requests takes too long to handle in the client process a timeout will trigger and the socket can be cleanly disconnected by the connection process.</p>
+<p>If a calling process waits too long to start its request it will timeout and its request will be cancelled. This prevents requests building up when the database cannot keep up.</p>
+<p>If no requests are received for a period of time the connection will trigger an idle timeout and the database can be pinged to keep the connection alive.</p>
+<p>Should the connection be lost, attempts will be made to reconnect with (configurable) exponential random backoff to reconnect. All state is lost when a connection disconnects but the process is reused.</p>
+<p>The <code>DBConnection.Query</code> protocol provide utility functions so that queries can be prepared or encoded and results decoding without blocking the connection or pool.</p>
+</blockquote>
+<p>Let&#8217;s see how we can use it!</p>
+<h2>DBConnection Integration</h2>
+<p>We will first create a module responsible for implementing DBConnection callbacks:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  use DBConnection
+end
+</code></pre>
+<p>When we compile it, we&#8217;ll get a bunch of warnings about callbacks that we haven&#8217;t implemented yet.</p>
+<p>Let&#8217;s start with the <a href="https://hexdocs.pm/db_connection/DBConnection.html#c:connect/1" target="_blank" rel="noopener"><code>connect/1</code></a>&nbsp;callback and while at it, add some supporting code:</p>
+<pre><code class="elixir">defmodule MyXQL.Error do
+  defexception [:message]
+end
+
+defmodule MyXQL.Protocol do
+  @moduledoc false
+  use DBConnection
+  import MyXQL.Messages
+  defstruct [:sock]
+
+  @impl true
+  def connect(opts) do
+    hostname = Keyword.get(opts, :hostname, "localhost")
+    port = Keyword.get(opts, :port, 3306)
+    timeout = Keyword.get(opts, :timeout, 5000)
+    username = Keyword.get(opts, :username, System.get_env("USER")) || raise "username is missing"
+    sock_opts = [:binary, active: false]
+
+    case :gen_tcp.connect(String.to_charlist(hostname), port, sock_opts) do
+      {:ok, sock} -&gt;
+        handshake(username, timeout, %__MODULE__{sock: sock})
+
+      {:error, reason} -&gt;
+        {:error, %MyXQL.Error{message: "error when connecting: #{inspect(reason)}"}}
+
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when performing handshake: #{message}"}}
+    end
+  end
+
+  @impl true
+  def checkin(state) do
+    {:ok, state}
+  end
+
+  @impl true
+  def checkout(state) do
+    {:ok, state}
+  end
+
+  @impl true
+  def ping(state) do
+    {:ok, state}
+  end
+
+  defp handshake(username, timeout, state) do
+    with {:ok, data} &lt;- :gen_tcp.recv(state.sock, 0, timeout),
+         initial_handshake_packet() = decode_initial_handshake_packet(data),
+         data = encode_handshake_response_packet(username),
+         :ok &lt;- :gen_tcp.send(state.sock, data),
+         {:ok, data} &lt;- :gen_tcp.recv(state.sock, 0, timeout),
+         ok_packet() &lt;- decode_handshake_response_packet(data) do 
+      {:ok, sock}
+    end
+  end
+end
+
+defmodule MyXQL do
+  @moduledoc "..."
+
+  @doc "..."
+  def start_link(opts) do 
+    DBConnection.start_link(MyXQL.Protocol, opts)
+  end
+end
+</code></pre>
+<p>That&#8217;s a lot to unpack so let&#8217;s break this down:</p>
+<ul>
+<li>per documentation, <code>connect/1</code> must return <code>{:ok, state}</code> on success and <code>{:error, exception}</code> on failure. Our connection state for now will be just the socket. (In a complete driver we&#8217;d use the state to manage prepared transaction references, status of transaction etc.) On error, we return an exception.</li>
+<li>we extract configuration from keyword list <code>opts</code> and provide sane defaults * we try to connect to the TCP server and if successful, perform the handshake.</li>
+<li>as we&#8217;ve learned in part I, the handshake goes like this: after connecting to the socket, we receive the &#8220;Initial Handshake Packet&#8221;. Then, we send &#8220;Handshake Response&#8221; packet. At the end, we receive the response and decode the result which can be an &#8220;OK Pacet&#8221; or an &#8220;ERR Packet&#8221;. If we receive any socket errors, we ignore them for now. We&#8217;ll talk about handling them better later on.</li>
+<li>finally, we introduce a public <code>MyXQL.start_link/1</code> that is an entry point to the driver</li>
+<li>we also provide minimal implementations for <code>checkin/1</code>, <code>checkout/1</code> and <code>ping/1</code> callbacks</li>
+</ul>
+<p>It&#8217;s worth taking a step back at looking at our overall design:</p>
+<ul>
+<li>
+<code>MyXQL</code> module exposes a small public API and calls into an internal module</li>
+<li>
+<code>MyXQL.Protocol</code> implements <code>DBConnection</code> behaviour and is the place where all side-effects are being handled</li>
+<li>
+<code>MyXQL.Messages</code> implements pure functions for encoding and decoding packets This separation is really important. By keeping protocol <em>data</em> separate from protocol <em>interactions</em> code we have a codebase that&#8217;s much easier to understand and maintain.</li>
+</ul>
+<h2>Prepared Statements</h2>
+<p>Let&#8217;s take a look at <code>handle_prepare/3</code> and <code>handle_execute/4</code> callbacks that are used to<br>
+handle prepared statements:</p>
+<pre><code>iex&gt; b DBConnection.handle_prepare
+@callback handle_prepare(query(), opts :: Keyword.t(), state :: any()) ::
+            {:ok, query(), new_state :: any()}
+            | {:error | :disconnect, Exception.t(), new_state :: any()}
+
+Prepare a query with the database. Return {:ok, query, state} where query is a
+query to pass to execute/4 or close/3, {:error, exception, state} to return an
+error and continue or {:disconnect, exception, state} to return an error and
+disconnect.
+
+This callback is intended for cases where the state of a connection is needed
+to prepare a query and/or the query can be saved in the database to call later.
+
+This callback is called in the client process.
+</code></pre>
+<pre><code>iex&gt; b DBConnection.handle_execute
+@callback handle_execute(query(), params(), opts :: Keyword.t(), state :: any()) ::
+            {:ok, query(), result(), new_state :: any()}
+            | {:error | :disconnect, Exception.t(), new_state :: any()}
+
+Execute a query prepared by c:handle_prepare/3. Return {:ok, query, result,
+state} to return altered query query and result result and continue, {:error,
+exception, state} to return an error and continue or {:disconnect, exception,
+state} to return an error and disconnect.
+
+This callback is called in the client process.
+</code></pre>
+<p>Notice the callbacks reference types like: <code>query()</code>, <code>result()</code> and <code>params()</code>.<br>
+Let&#8217;s take a look at them too:</p>
+<pre><code>iex&gt; t DBConnection.result
+@type result() :: any()
+
+iex&gt; t DBConnection.params
+@type params() :: any()
+
+iex&gt; t DBConnection.query
+@type query() :: DBConnection.Query.t()
+</code></pre>
+<p>As far as DBConnection is concerned, <code>result()</code> and <code>params()</code> can be any term (it&#8217;s up to us to define these) and the <code>query()</code> must implement the <a href="https://hexdocs.pm/db_connection/DBConnection.Query.html"><code>DBConnection.Query</code></a> protocol.</p>
+<p><code>DBConnection.Query</code> is used for preparing queries, encoding their params, and decoding their<br>
+results. Let&#8217;s define query and result structs as well as minimal protocol implementation.</p>
+<pre><code class="elixir">defmodule MyXQL.Result do
+  defstruct [:columns, :rows]
+end
+
+defmodule MyXQL.Query do
+  defstruct [:statement, :statement_id]
+
+  defimpl DBConnection.Query do
+    def parse(query, _opts), do: query
+
+    def describe(query, _opts), do: query
+
+    def encode(_query, params, _opts), do: params
+
+    def decode(_query, result, _opts), do: result
+  end
+end
+</code></pre>
+<p>Let&#8217;s define the first callback, <code>handle_prepare/3</code>:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  # ...
+
+  @impl true
+  def handle_prepare(%MyXQL.Query{statement: statement}, _opts, state) do
+    data = encode_com_stmt_prepare(query.statement)
+
+    with :ok &lt;- sock_send(data, state),
+         {:ok, data} &lt;- sock_recv(state),
+         com_stmt_prepare_ok(statement_id: statement_id) &lt;- decode_com_stmt_prepare_response(data) do
+      query = %{query | statement_id: statement_id}
+      {:ok, query, state}
+    else
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when preparing query: #{message}"}, state}
+
+      {:error, reason} -&gt;
+        {:disconnect, %MyXQL.Error{message: "error when preparing query: #{inspect(reason)}"}, state}
+    end
+  end
+
+  defp sock_send(data, state), do: :gen_tcp.recv(state.sock, data, :infinity)
+
+  defp sock_recv(state), do: :gen_tcp.recv(state.sock, :infinity)
+end
+</code></pre>
+<p>The callback receives <code>query</code>, <code>opts</code> (which we ignore), and <code>state</code>. We encode the query statement into <a href="https://dev.mysql.com/doc/internals/en/com-stmt-prepare.html"><code>COM_STMT_PREPARE</code></a> packet, send it, receive response, decode the <a href="https://dev.mysql.com/doc/internals/en/com-stmt-prepare-response.html"><code>COM_STMT_PREPARE Response</code></a>, and put the retrieved <code>statement_id</code> into our query struct.</p>
+<p>If we receive an <a href="https://dev.mysql.com/doc/internals/en/packet-ERR_Packet.html"><code>ERR Packet</code></a>, we put the error message into our <code>MyXQL.Error</code> exception and return that.</p>
+<p>The only places that we could get <code>{:error, reason}</code> tuple is we could get it from are the <code>gen_tcp.send,recv</code> calls &#8211; if we get an error there it means there might be something wrong with the socket. By returning <code>{:disconnect, _, _}</code>, DBConnection will take care of closing the socket and will attempt to re-connect with a new one.</p>
+<p>Note, we set <code>timeout</code> to <code>:infinity</code> on our send/recv calls. That&#8217;s because DBConnection is managing the process these calls will be executed in and it maintains it&#8217;s own timeouts. (And if we hit these timeouts, it cleans up the socket automatically.)</p>
+<p>Let&#8217;s now define the <code>handle_execute/4</code> callback:</p>
+<pre><code class="elixir">defmodule MyXQL.Protocol do
+  # ...
+
+  @impl true
+  def handle_execute(%{statement_id: statement_id} = query, params, _opts, state)
+      when is_integer(statement_id) do
+    data = encode_com_stmt_execute(statement_id, params)
+
+    with :ok &lt;- sock_send(state, data),
+         {:ok, data} &lt;- sock_recv(state),
+         resultset(columns: columns, rows: rows) = decode_com_stmt_execute_response() do
+      columns = Enum.map(columns, &amp;column_definition(&amp;1, :name))
+      result = %MyXQL.Result{columns: columns, rows: rows}
+      {:ok, query, result, state}
+    else
+      err_packet(message: message) -&gt;
+        {:error, %MyXQL.Error{message: "error when preparing query: #{message}"}, state}
+
+      {:error, reason} -&gt;
+        {:disconnect, %MyXQL.Error{message: "error when preparing query: #{inspect(reason)}"}, state}
+    end
+  end
+end
+
+defmodule MyXQL.Messages do
+  # ...
+
+  # https://dev.mysql.com/doc/internals/en/com-query-response.html#packet-ProtocolText::Resultset
+  defrecord :resultset, [:column_count, :columns, :row_count, :rows, :warning_count, :status_flags]
+
+  def decode_com_stmt_prepare_response(data) do
+    # ...
+    resultset(...)
+  end
+
+  # https://dev.mysql.com/doc/internals/en/com-query-response.html#packet-Protocol::ColumnDefinition41
+  defrecord :column_definition, [:name, :type]
+end
+</code></pre>
+<p>Let&#8217;s break this down.</p>
+<p><code>handle_execute/4</code> receives an already prepared query, <code>params</code> to encode, opts, and the state.</p>
+<p>Similarly to <code>handle_prepare/3</code>, we encode the <a href="https://dev.mysql.com/doc/internals/en/com-stmt-execute.html" target="_blank" rel="noopener"><code>COM_STMT_EXECUTE</code></a>&nbsp;packet, send it and receive a response, decode <a href="https://dev.mysql.com/doc/internals/en/com-stmt-execute-response.html" target="_blank" rel="noopener"><code>COM_STMT_EXECUTE Response</code></a>, into a <code>resultset</code> record, and finally build the result struct.</p>
+<p>Same as last time, if we get an <code>ERR Packet</code> we return an <code>{:error, _, _}</code> response; on socket problems, we simply disconnect and let DBConnection handle re-connecting at later time.</p>
+<p>We&#8217;ve mentioned that the <code>DBConnection.Query</code> protocol is used to prepare queries, and in fact we could perform encoding of params and decoding the result in implementation functions. We&#8217;ve left that part out for brevity.</p>
+<p>Finally, let&#8217;s add a public function that users of the driver will use:</p>
+<pre><code class="elixir">defmodule MyXQL do
+  # ...
+
+  def prepare_execute(conn, statement, params, opts) do
+    query = %MyXQL.Query{statement: statement}
+    DBConnection.prepare_execute(conn, query, params, opts)
+  end
+end
+</code></pre>
+<p>and see it all working.</p>
+<pre><code class="elixir">iex&gt; {:ok, pid} = MyXQL.start_link([])
+iex&gt; MyXQL.prepare_execute(pid, "SELECT ?", [42], [])
+{:ok, %MyXQL.Query{statement: "SELECT ? + ?", statement_id: 1},
+%MyXQL.Result{columns: ["? + ?"], rows: [[5]]}}
+</code></pre>
+<p>Arguments to <code>MyXQL.start_link</code> are passed down to<br>
+<a href="https://hexdocs.pm/db_connection/DBConnection.html#start_link/2" target="_blank" rel="noopener"><code>DBConnection.start_link/2</code></a>,<br>
+so starting a pool of 2 connections is as simple as:</p>
+<pre><code class="elixir">iex&gt; {:ok, pid} = MyXQL.start_link(pool_size: 2)
+</code></pre>
+<h2>Conclusion</h2>
+<p>In this article, we&#8217;ve seen a sneak peek of integration with the DBConnection library. It gave us<br>
+many benefits:</p>
+<ul>
+<li>a battle-tested connection pool without writing a single line of pooling code</li>
+<li>we can use blocking <code>:gen_tcp</code> functions without worrying about OTP messages and timeouts;<br>
+DBConnection will handle these</li>
+<li>automatic re-connection, backoff etc</li>
+<li>a way to structure our code</li>
+</ul>
+<p>With this, we&#8217;re almost done with our adapter series. In the final article we&#8217;ll use our driver as an Ecto adapter. Stay tuned!</p>
+<p><a href="https://pages.plataformatec.com.br/elixir-development-subscription" target="_blank" rel="noopener"><img fetchpriority="high" decoding="async" class="aligncenter wp-image-8124 size-full" src="/wp-content/uploads/2016/05/admin-ajax-1.png" alt="" width="1024" height="213" srcset="/wp-content/uploads/2016/05/admin-ajax-1.png 1024w, /wp-content/uploads/2016/05/admin-ajax-1-300x62.png 300w, /wp-content/uploads/2016/05/admin-ajax-1-768x160.png 768w" sizes="(max-width: 1024px) 100vw, 1024px"></a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/ecto/" rel="tag">ecto</a>, <a href="/tag/elixir/" rel="tag">elixir</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/#comments"><span class="dsq-postid" data-dsqidentifier="8158 http://blog.plataformatec.com.br/?p=8158">1 Comment &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		One response to &#8220;Building a new MySQL adapter for Ecto, Part III: DBConnection Integration&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1812">
+				<div id="div-comment-1812" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://1.gravatar.com/avatar/463554fcb43c18437ef429e51012b7e0?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/463554fcb43c18437ef429e51012b7e0?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://www.luo.la/" class="url" rel="ugc external nofollow">luo.la</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2018/12/building-a-new-mysql-adapter-for-ecto-part-iii-dbconnection-integration/comment-page-1/#comment-1812">December 29, 2018 at 12:35 am</a>		</div>
+
+		<p>Ye ! This Is A Good Blog!</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2018/12/monte-carlo-na-pratica-encontrando-o-valor-de-iteracoes-ideal/" rel="prev">Monte Carlo na Prática: Encontrando o valor de iterações ideal</a>          <a href="/2019/01/an-agilists-guide-analyzing-process-health/" rel="next">An Agilist&#8217;s Guide: Analyzing Process health</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+                                                                                                                            <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

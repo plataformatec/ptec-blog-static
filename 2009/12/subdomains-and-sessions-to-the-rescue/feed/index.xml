@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Subdomains and sessions to the rescue!	</title>
+	<atom:link href="/2009/12/subdomains-and-sessions-to-the-rescue/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/12/subdomains-and-sessions-to-the-rescue/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 05 Jul 2010 07:47:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Anonymous		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-1030</link>
+
+		<dc:creator><![CDATA[Anonymous]]></dc:creator>
+		<pubDate>Mon, 05 Jul 2010 07:47:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-1030</guid>
+
+					<description><![CDATA[Interesting! Gives me lots to think about! I learn something (usually more than one) new every day here!http://questionaries.org]]>/</description>
+			<content:encoded><![CDATA[<p>Interesting! Gives me lots to think about! I learn something (usually more than one) new every day here!<a href="http://questionaries.org/" rel="nofollow ugc">http://questionaries.org/</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antônio		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-418</link>
+
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 11:02:04 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-418</guid>
+
+					<description><![CDATA[@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.
+
+@eric Thanks for the tip.
+
+@andrew Nice plugin, I&#039;ll take a look at it. Thanks.]]></description>
+			<content:encoded><![CDATA[<p>@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.</p>
+<p>@eric Thanks for the tip.</p>
+<p>@andrew Nice plugin, I&#8217;ll take a look at it. Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Carlos Antônio		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-907</link>
+
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 11:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-907</guid>
+
+					<description><![CDATA[@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.
+
+@eric Thanks for the tip.
+
+@andrew Nice plugin, I&#039;ll take a look at it. Thanks.]]></description>
+			<content:encoded><![CDATA[<p>@daniel Thanks, Ghost is really a nice tool. Storing the mail in the database seems great when you use rake tasks or cron jobs, or even a background job to send emails.</p>
+<p>@eric Thanks for the tip.</p>
+<p>@andrew Nice plugin, I&#8217;ll take a look at it. Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Coleman		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-417</link>
+
+		<dc:creator><![CDATA[Andrew Coleman]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 08:13:52 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-417</guid>
+
+					<description><![CDATA[I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: http://github.com/penguincoder/acts_as_restricted_subdomain
+
+There is a fork that has support for recognizing the entire domain, as well so you aren&#039;t limited to just subdomains.
+
+I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.]]></description>
+			<content:encoded><![CDATA[<p>I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: <a href="http://github.com/penguincoder/acts_as_restricted_subdomain" rel="nofollow ugc">http://github.com/penguincoder/acts_as_restricted_subdomain</a></p>
+<p>There is a fork that has support for recognizing the entire domain, as well so you aren&#8217;t limited to just subdomains.</p>
+<p>I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Coleman		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-906</link>
+
+		<dc:creator><![CDATA[Andrew Coleman]]></dc:creator>
+		<pubDate>Wed, 23 Dec 2009 08:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-906</guid>
+
+					<description><![CDATA[I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: http://github.com/penguincoder/acts_as_restricted_subdomain
+
+There is a fork that has support for recognizing the entire domain, as well so you aren&#039;t limited to just subdomains.
+
+I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.]]></description>
+			<content:encoded><![CDATA[<p>I wrote a slightly similar plugin for dealing with segregated data sets. I had similar needs but nobody should be able to share any data with any other subdomain. Check it out: <a href="http://github.com/penguincoder/acts_as_restricted_subdomain" rel="nofollow ugc">http://github.com/penguincoder/acts_as_restricted_subdomain</a></p>
+<p>There is a fork that has support for recognizing the entire domain, as well so you aren&#8217;t limited to just subdomains.</p>
+<p>I use the plugin in a medical environment and it works great for keeping everything separate while allowing for a multi-homed application.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Eric Wagoner		</title>
+		<link>/2009/12/subdomains-and-sessions-to-the-rescue/comment-page-1/#comment-414</link>
+
+		<dc:creator><![CDATA[Eric Wagoner]]></dc:creator>
+		<pubDate>Sat, 19 Dec 2009 15:58:32 +0000</pubDate>
+		<guid isPermaLink="false">/?p=481#comment-414</guid>
+
+					<description><![CDATA[One thing about subdomains that I never see addressed:
+
+You&#039;ll want to make www.subdomain.domain act the same as subdomain.domain, especially if you&#039;re writing an application that will be used by the general public. A very large percent of the population think everything on the web has to start with &quot;www.&quot; even if you tell them otherwise. The press will do the same thing, no matter how much effort you put into giving them the correct URL.
+
+So, save yourself from a lot of headache, and your users from a lot of confusion, by just making the two equivalent in your application.]]></description>
+			<content:encoded><![CDATA[<p>One thing about subdomains that I never see addressed:</p>
+<p>You&#8217;ll want to make <a href="http://www.subdomain.domain/" rel="nofollow ugc">http://www.subdomain.domain/</a> act the same as subdomain.domain, especially if you&#8217;re writing an application that will be used by the general public. A very large percent of the population think everything on the web has to start with &#8220;www.&#8221; even if you tell them otherwise. The press will do the same thing, no matter how much effort you put into giving them the correct URL.</p>
+<p>So, save yourself from a lot of headache, and your users from a lot of confusion, by just making the two equivalent in your application.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

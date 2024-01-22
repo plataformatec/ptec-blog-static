@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Classificação de textos no Dev in Sampa 2009	</title>
+	<atom:link href="/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 01 Dec 2009 16:22:23 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Cobertura do Dev in Sampa 2009 - Atualizado		</title>
+		<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/comment-page-1/#comment-384</link>
+
+		<dc:creator><![CDATA[Cobertura do Dev in Sampa 2009 - Atualizado]]></dc:creator>
+		<pubDate>Tue, 01 Dec 2009 16:18:54 +0000</pubDate>
+		<guid isPermaLink="false">/?p=444#comment-384</guid>
+
+					<description><![CDATA[[...] Apresentação - Post sobre o evento escrito pelo Valim [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Apresentação &#8211; Post sobre o evento escrito pelo Valim [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: agaelebe		</title>
+		<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/comment-page-1/#comment-383</link>
+
+		<dc:creator><![CDATA[agaelebe]]></dc:creator>
+		<pubDate>Tue, 01 Dec 2009 15:41:21 +0000</pubDate>
+		<guid isPermaLink="false">/?p=444#comment-383</guid>
+
+					<description><![CDATA[E o vídeo da palestra:
+http://blip.tv/file/2912901]]></description>
+			<content:encoded><![CDATA[<p>E o vídeo da palestra:<br />
+<a href="http://blip.tv/file/2912901" rel="nofollow ugc">http://blip.tv/file/2912901</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: agaelebe		</title>
+		<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/comment-page-1/#comment-890</link>
+
+		<dc:creator><![CDATA[agaelebe]]></dc:creator>
+		<pubDate>Tue, 01 Dec 2009 15:41:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=444#comment-890</guid>
+
+					<description><![CDATA[E o vídeo da palestra:
+http://blip.tv/file/2912901]]></description>
+			<content:encoded><![CDATA[<p>E o vídeo da palestra:<br />
+<a href="http://blip.tv/file/2912901" rel="nofollow ugc">http://blip.tv/file/2912901</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Helder Santana		</title>
+		<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/comment-page-1/#comment-382</link>
+
+		<dc:creator><![CDATA[Helder Santana]]></dc:creator>
+		<pubDate>Mon, 30 Nov 2009 12:50:32 +0000</pubDate>
+		<guid isPermaLink="false">/?p=444#comment-382</guid>
+
+					<description><![CDATA[To vendo que meu atraso custou caro hehe
+
+Conteúdo excelente da palestra, parabéns!]]></description>
+			<content:encoded><![CDATA[<p>To vendo que meu atraso custou caro hehe</p>
+<p>Conteúdo excelente da palestra, parabéns!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Helder Santana		</title>
+		<link>/2009/11/classificacao-de-textos-no-dev-in-sampa-2009/comment-page-1/#comment-889</link>
+
+		<dc:creator><![CDATA[Helder Santana]]></dc:creator>
+		<pubDate>Mon, 30 Nov 2009 12:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=444#comment-889</guid>
+
+					<description><![CDATA[To vendo que meu atraso custou caro hehe
+
+Conteúdo excelente da palestra, parabéns!]]></description>
+			<content:encoded><![CDATA[<p>To vendo que meu atraso custou caro hehe</p>
+<p>Conteúdo excelente da palestra, parabéns!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

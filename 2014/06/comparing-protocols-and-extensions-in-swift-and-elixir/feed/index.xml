@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Comparing protocols and extensions in Swift and Elixir	</title>
+	<atom:link href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/feed/" rel="self" type="application/rss+xml" />
+	<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 19 Sep 2014 16:07:48 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1408</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 08:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4046#comment-1408</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1407&quot;&gt;pcasaretto&lt;/a&gt;.
+
+Well, I have no idea. I have heard rumours of Apple planning to invest on the language to run on other platforms and that would definitely be a step into this direction, similar to how Microsoft has done to F#. But there isn&#039;t anything official and it is still a long road to go.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1407">pcasaretto</a>.</p>
+<p>Well, I have no idea. I have heard rumours of Apple planning to invest on the language to run on other platforms and that would definitely be a step into this direction, similar to how Microsoft has done to F#. But there isn&#8217;t anything official and it is still a long road to go.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: pcasaretto		</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1407</link>
+
+		<dc:creator><![CDATA[pcasaretto]]></dc:creator>
+		<pubDate>Mon, 07 Jul 2014 01:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4046#comment-1407</guid>
+
+					<description><![CDATA[Do you think Swift can overcome the lack of Cocoa?
+I&#039;ve really curious but hesitant to try the languange because I&#039;m afraid it will not survive outside iOS/OSX apps.]]></description>
+			<content:encoded><![CDATA[<p>Do you think Swift can overcome the lack of Cocoa?<br />
+I&#8217;ve really curious but hesitant to try the languange because I&#8217;m afraid it will not survive outside iOS/OSX apps.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jernfrost		</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1399</link>
+
+		<dc:creator><![CDATA[jernfrost]]></dc:creator>
+		<pubDate>Thu, 12 Jun 2014 15:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4046#comment-1399</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1398&quot;&gt;josevalim&lt;/a&gt;.
+
+I guess Swift has some limitations in what directions it can go needing to maintain a decent level of compatibility with Objective-C. It is by no means going to be a perfect language, but on paper what they have put together looks quite impressive to me.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1398">josevalim</a>.</p>
+<p>I guess Swift has some limitations in what directions it can go needing to maintain a decent level of compatibility with Objective-C. It is by no means going to be a perfect language, but on paper what they have put together looks quite impressive to me.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1398</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Thu, 12 Jun 2014 07:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4046#comment-1398</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1397&quot;&gt;jernfrost&lt;/a&gt;.
+
+Thanks for the comment @jemfrost.
+
+You are right, I didn&#039;t cover implementing protocols with extensions, I just mentioned it still does not change the global semantics.
+
+Regarding the argument names, as far as I know, they would be considered different if they expect distinct types. This is somehow what we covered in the last section. Different names were not enough, the compiler complains I am effectively redeclaring a function. Even though this helps alleviate name clashes, it still does not solve the issue of name polluting.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1397">jernfrost</a>.</p>
+<p>Thanks for the comment @jemfrost.</p>
+<p>You are right, I didn&#8217;t cover implementing protocols with extensions, I just mentioned it still does not change the global semantics.</p>
+<p>Regarding the argument names, as far as I know, they would be considered different if they expect distinct types. This is somehow what we covered in the last section. Different names were not enough, the compiler complains I am effectively redeclaring a function. Even though this helps alleviate name clashes, it still does not solve the issue of name polluting.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: jernfrost		</title>
+		<link>/2014/06/comparing-protocols-and-extensions-in-swift-and-elixir/comment-page-1/#comment-1397</link>
+
+		<dc:creator><![CDATA[jernfrost]]></dc:creator>
+		<pubDate>Thu, 12 Jun 2014 06:23:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4046#comment-1397</guid>
+
+					<description><![CDATA[It would have been cool if you had covered implementing protocols with extensions. You can specify protocols after and extension. Have not not contemplated all the implications of this. I am wondering if the toJSON methods will be treated as different because they have different argument names. At least in Objective-C, the argument names are part of the whole method name, so if the argument names are different the method names are different.]]></description>
+			<content:encoded><![CDATA[<p>It would have been cool if you had covered implementing protocols with extensions. You can specify protocols after and extension. Have not not contemplated all the implications of this. I am wondering if the toJSON methods will be treated as different because they have different argument names. At least in Objective-C, the argument names are part of the whole method name, so if the argument names are different the method names are different.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

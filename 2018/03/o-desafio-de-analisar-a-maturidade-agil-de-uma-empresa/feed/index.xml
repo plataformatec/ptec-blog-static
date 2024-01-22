@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: O desafio de analisar a maturidade ágil de uma empresa	</title>
+	<atom:link href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/feed/" rel="self" type="application/rss+xml" />
+	<link>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 03 Apr 2018 21:30:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Raphael		</title>
+		<link>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/comment-page-1/#comment-1791</link>
+
+		<dc:creator><![CDATA[Raphael]]></dc:creator>
+		<pubDate>Tue, 03 Apr 2018 21:30:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7330#comment-1791</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/comment-page-1/#comment-1786&quot;&gt;Pablo&lt;/a&gt;.
+
+Valeu ;)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/comment-page-1/#comment-1786">Pablo</a>.</p>
+<p>Valeu 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Pablo		</title>
+		<link>/2018/03/o-desafio-de-analisar-a-maturidade-agil-de-uma-empresa/comment-page-1/#comment-1786</link>
+
+		<dc:creator><![CDATA[Pablo]]></dc:creator>
+		<pubDate>Thu, 29 Mar 2018 16:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=7330#comment-1786</guid>
+
+					<description><![CDATA[Excelente texto!]]></description>
+			<content:encoded><![CDATA[<p>Excelente texto!</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

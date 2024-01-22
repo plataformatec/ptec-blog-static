@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>book « Plataformatec Blog</title>
+	<atom:link href="/tag/book/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 04 Jul 2018 18:53:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Long projects in your free time</title>
+		<link>/2018/07/long-projects-in-your-free-time/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Wed, 04 Jul 2018 18:53:45 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=7683</guid>
+
+					<description><![CDATA[<p>This year The Pragmatic Bookshelf and I released the Learn Functional Programming With Elixir book, and its first chapter is available here. It took me one year and a half to finish the book. Yeah, it took a long time! Why did it take that long? I think the main reason is: all my researching, ... <a class="read-more-link" href="/2018/07/long-projects-in-your-free-time/">»</a></p>
+<p>The post <a href="/2018/07/long-projects-in-your-free-time/">Long projects in your free time</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><span style="font-weight: 400;">This year The Pragmatic Bookshelf and I released the <strong>Learn Functional Programming With Elixir</strong> book, and its first chapter is available </span><a href="http://pages.plataformatec.com.br/chapter-thinking-functionally-of-learn-functional-programming-with-elixir"><span style="font-weight: 400;">here</span></a><span style="font-weight: 400;">. It took me one year and a half to finish the book. Yeah, it took a long time! Why did it take that long? I think the main reason is: all my researching, learning and producing efforts happened in my free time. It means that after a long day working on my full-time job, I went home and also worked on my personal project. I&#8217;m here to share my experience, things that worked for me. I hope it might help you to run your own longtime project in your free time.</span></p>
+<h2><b>Define when it should end</b></h2>
+<p><span style="font-weight: 400;">I think the most important thing is to know when your project will be done. When you start a journey where you don&#8217;t know where to go, any path is an option. You can easily lose your focus and walk in circles. When you define your final destination, you can build the path to there. In my experience, it helped a lot. I had to write a proposal before writing the book. The proposal helped me to create the scope of the book. That scope wasn&#8217;t written in rocks, I could change it. However, functional programming is a large subject, drafting the table of contents first helped me to see how far the book would go and what the readers would learn.</span></p>
+<h2><b>Breakdown your tasks</b></h2>
+<p><span style="font-weight: 400;">&#8220;How long to finish your book?&#8221; I&#8217;ve lost count of how many times I&#8217;ve been asked this. It is very hard to answer that question, especially when some tasks are out of your control. But, at least, you can get an idea of how far you&#8217;re close to the end.</span></p>
+<p><span style="font-weight: 400;">When you have your final destination, it&#8217;s time to break down your path to there. There are many </span><a href="https://en.wikipedia.org/wiki/SMART_criteria"><span style="font-weight: 400;">techniques</span></a><span style="font-weight: 400;"> of breakdown and </span><a href="https://www.wunderlist.com/pt/"><span style="font-weight: 400;">tools</span></a><span style="font-weight: 400;"> to keep track of your tasks. You don&#8217;t need to invest too much time in planning your project, things can change and you might need the flexibility to change your direction.</span></p>
+<p><span style="font-weight: 400;">In my experience, writing a basic summary of each chapter helped me to have an idea of how big they would be. Then, before start writing a chapter, I wrote all the chapter sections&#8217; titles to give the chapter a structure and to define how it should end. Breaking down the book in chapters and chapters in sections, helped me to answer the question &#8220;how long to finish?&#8221;. Now, I could answer for example with &#8220;there are 2 missing sections to finish this chapter&#8221;, or &#8220;there are two missing chapters to finish the book&#8221;.</span></p>
+<h2><b>Create a routine and ask help to protect it</b></h2>
+<p><span style="font-weight: 400;">If you want to finish your project, you need to work on it. How many hours per day? How many days per week? It depends on which type of work you are doing. I suggest you to find a space to work on the project every day, but save 1 day per week to rest. You need a routine and you need to protect it to finish your project.</span></p>
+<p><span style="font-weight: 400;">It can sound tough, I know. However, it reminds me of when I was studying in college. I worked during all the day and studied at night. If you had done something similar in your life, you&#8217;ll know what I&#8217;m talking about. But this time, for me, it wasn&#8217;t study and work, it was work and work. You don&#8217;t need to face this journey alone. You can ask support from family, partner, kids, and friends to help you to protect your routine.</span></p>
+<p><span style="font-weight: 400;">Some people will be tempted to avoid work every day and will try to work many hours on weekends. The problem is if you can&#8217;t work one weekend, you will lose an entire week of progress. When you miss a week, it’s easier to lose motivation because it&#8217;s harder to recover from that. If you work a little bit on your project every day, it helps you to keep progressing. One day that you miss, won&#8217;t be a huge impact on your routine.</span></p>
+<p><span style="font-weight: 400;">Creating a routine to work on your personal project is not an easy task. You might stop doing some other stuff in your life. Don&#8217;t get too stressed trying to do everything you had been doing. Admit soon that you&#8217;re not a superhero. You might need to stop or slow down in other activities in your life to work on your personal project. Like a </span><a href="https://twitter.com/diegorv"><span style="font-weight: 400;">friend</span></a><span style="font-weight: 400;"> said, &#8220;life is an exchange&#8221;.</span></p>
+<h2><b>Look for Feedbacks</b></h2>
+<p><span style="font-weight: 400;">If your project will impact people, show it to people. Don&#8217;t spend too much time working just for your eyes. Everyone has blind spots, so you can be making mistakes that other people with a fresh mind can easily spot.</span></p>
+<p><span style="font-weight: 400;">First, look out for your target audience. Invite them to review what you are doing. Also, look for professionals, people that are experts in the field that can help you. When I was writing my book, I had help, not just from excellent developers, but also from book writers and English experts.</span></p>
+<p><span style="font-weight: 400;">Sometimes you can get upset if some people that you asked support didn&#8217;t help you, even though they said that they would. People have their life, their stuff to do, your work is not their priority. Just don&#8217;t put all your eggs in one basket and you&#8217;ll be fine. In some cases, you may need to invest some money to have a expert feedback that you need.</span></p>
+<h2><b>Time to rest</b></h2>
+<p><a href="https://en.wikipedia.org/wiki/All_work_and_no_play_makes_Jack_a_dull_boy"><span style="font-weight: 400;">&#8220;All work and no play makes Jack a dull boy&#8221;</span></a><span style="font-weight: 400;">. Some people are fully committed to their project and they forget to rest. They can do that for one week, maybe one month. Sooner or later, they&#8217;ll burn out and give up on their project. It could be avoided by using their free time to relax.</span></p>
+<p><span style="font-weight: 400;">When you are stressed and tired, it will start impacting your full-time job. If our personal project impacts our job, you obviously will give up your project to work on the most important one. The job that pays your bills.</span></p>
+<p><span style="font-weight: 400;">Managing your energy is a hard task, try to save at least one day to rest. If you are thinking about scheduling your next vacation to work on your project, please don&#8217;t. Especially if your project can take a year. It&#8217;s something that I wouldn&#8217;t personally do anymore. Time is one of the most precious things you have in your life. Vacations are a special moment to rest and spend time with your family and friends. You would never have that same moment again in your life. If I had to choose again, I would have chosen to enjoy my vacation.</span></p>
+<h2><b>Recovering is more important than having no failures</b></h2>
+<p><span style="font-weight: 400;">If you are running a personal project that can take several months to finish, you can fail. You can burn out and give up on your project. It happens. It happened to me.</span></p>
+<p><span style="font-weight: 400;">It&#8217;s very important to create strategies to manage your energy and maintain your routine. But, the most important in my opinion, is how you will recover from a failure. You may need to take some time to rest, maybe you should talk to your trustworthy friends about what how miserable you are feeling. You need to figure out what you did wrong and learn from your mistakes. Then, finally, go back to work when you have energy again.</span></p>
+<p><span style="font-weight: 400;">I don&#8217;t know if it works for you, but it&#8217;s a relief to me, every time that I remember that I can fail and try again.</span></p>
+<p><span style="font-weight: 400;">I hoped you liked my personal experience and lessons learned from running a long project in my free time. Have you tried to work on a personal long project? Do you have some lessons learned to share? Something that helped you? Please, let me know in the comments below.</span></p>
+<p><span style="font-weight: 400;">One last thing, my long project was Learn Functional Programming with Elixir book. You can have the e-book or the printed version on </span><strong><a href="https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir">The Pragmatic Bookshelf</a></strong><span style="font-weight: 400;"> or </span><strong><a href="https://www.amazon.com/Functional-Programming-Elixir-Ulisses-Almeida/dp/168050245X">Amazon</a></strong><span style="font-weight: 400;">. You can have a free chapter by following the instructions of this </span><strong><a href="http://pages.plataformatec.com.br/chapter-thinking-functionally-of-learn-functional-programming-with-elixir">link</a>.</strong></p>
+<p>&nbsp;</p><p>The post <a href="/2018/07/long-projects-in-your-free-time/">Long projects in your free time</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Thinking Functionally</title>
+		<link>/2017/10/thinking-functionally/</link>
+		
+		<dc:creator><![CDATA[Sheila Chang]]></dc:creator>
+		<pubDate>Tue, 31 Oct 2017 22:35:43 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir for beginners]]></category>
+		<category><![CDATA[functional programming]]></category>
+		<guid isPermaLink="false">/?p=6894</guid>
+
+					<description><![CDATA[<p>The creation of the Elixir language happened inside Plataformatec&#8217;s walls. Since its inception, our team is always figuring out new ways to contribute to the ecosystem. That&#8217;s how the idea of writing a new book came out. A couple of months ago, our team member Ulisses Almeida blogged about the release of his book, Learn Functional Programming with Elixir. It&#8217;s still ... <a class="read-more-link" href="/2017/10/thinking-functionally/">»</a></p>
+<p>The post <a href="/2017/10/thinking-functionally/">Thinking Functionally</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>The creation of the Elixir language happened inside Plataformatec&#8217;s walls. Since its inception, our team is always figuring out new ways to contribute to the ecosystem. That&#8217;s how the idea of writing a new book came out.</p>
+<p>A couple of months ago, <a href="/2017/08/book-release-learn-functional-programming-with-elixir/">our team member Ulisses Almeida blogged about the release of his book, <strong>Learn Functional Programming with Elixir</strong></a>. It&#8217;s still in beta and you can buy it on <a href="https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir">The Pragmatic Bookshelf website</a>. To celebrate this occasion, we have something special for you.</p>
+<p>We have reached out to Ulisses and PragProg and they allowed us <a style="color: #cc51de; text-decoration: underline;" href="http://pages.plataformatec.com.br/chapter-thinking-functionally-of-learn-functional-programming-with-elixir?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=chap-thinking-functionally&amp;utm_content=link">to give away the first chapter of the book: <strong>Thinking Functionally</strong></a>. \o/</p>
+<h2>What&#8217;s there for you</h2>
+<p>This chapter focuses on functional programming concepts. You&#8217;ll understand the mindset required to program functionally with Elixir, and you&#8217;ll learn these three core principles:</p>
+<ul>
+<li>Immutable Data</li>
+<li>Functions</li>
+<li>Declarative code</li>
+</ul>
+<p>Above all, this book is for who wants to learn Elixir and functional programming from the very beginning.</p>
+<p><img fetchpriority="high" decoding="async" class="alignnone" style="border: none; margin-left: 20px !important;" src="/wp-content/uploads/2017/10/book-learn-functional-programming-with-elixir.png" alt="Learn Functional Programming with Elixir" width="400" height="327" align="right" /></p>
+<p>If you know absolutely nothing or a little bit of Elixir (the same for functional programming), this book is definitely for you; or if you gave up learning Elixir because it&#8217;s different from the programming language you use at work like ASP, PHP, Java and so on, this book is perfect for you, too.</p>
+<p>After reading it, you&#8217;ll be able to think functionally.</p>
+<p>Click the button below to get the first chapter of the book <strong>Learn Functional Programming with Elixir</strong>.</p>
+<p><a style="background-color: #67af5b; border-radius: 3px; font-family: sans-serif; display: inline-block; padding: 5px 20px; margin-bottom: 50px; text-align: center; text-decoration: none; width: auto; color: #fff;" href="http://pages.plataformatec.com.br/chapter-thinking-functionally-of-learn-functional-programming-with-elixir?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=chap-thinking-functionally&amp;utm_content=button" target="_blank" rel="noopener noreferrer">Download <strong>Thinking Functionally</strong> for free</a> <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2017/10/thinking-functionally/">Thinking Functionally</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Book Release: Learn Functional Programming with Elixir</title>
+		<link>/2017/08/book-release-learn-functional-programming-with-elixir/</link>
+					<comments>/2017/08/book-release-learn-functional-programming-with-elixir/#comments</comments>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Fri, 25 Aug 2017 21:04:50 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[book]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[elixir for beginners]]></category>
+		<category><![CDATA[functional programming]]></category>
+		<guid isPermaLink="false">/?p=6637</guid>
+
+					<description><![CDATA[<p>Last week, The Pragmatic Bookshelf started the sales of Learn Functional Programming with Elixir written by me, now in beta. After one year of hard work, we are finally publishing the beta version of the book. In this blog post, I&#8217;ll tell you about the motivation for writing a book, its contents and its future. ... <a class="read-more-link" href="/2017/08/book-release-learn-functional-programming-with-elixir/">»</a></p>
+<p>The post <a href="/2017/08/book-release-learn-functional-programming-with-elixir/">Book Release: Learn Functional Programming with Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last week, The Pragmatic Bookshelf started the sales of <a href="https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir">Learn Functional Programming with Elixir</a> written by <a href="/?author=31">me</a>, now in beta. After one year of hard work, we are finally publishing the beta version of the book. In this blog post, I&#8217;ll tell you about the motivation for writing a book, its contents and its future.</p>
+<h2>Why Writing a Book?</h2>
+<p>Last year, we were, company-wise, looking for different ways to contribute to the Elixir community. At some point, <a href="/?author=5">Hugo Barauna</a> reached out to me and said: &#8220;Why don&#8217;t you write a book?&#8221;. I must tell you: I wasn&#8217;t ready.</p>
+<p>I&#8217;m Brazilian and Portuguese is my native language. Writing a book in English is a great challenge. I thought about everything that I would have to give up to write a book (goodbye, video game nights) and then&#8230; I accepted it.</p>
+<p>Once Hugo told me The Pragmatic Bookshelf was behind it, I felt motivated. I had a big challenge in front of me, but I knew I wouldn&#8217;t be alone. But most of all, what made me most excited about the book was the opportunity to present a different way of learning Elixir that might help people that are stuck in their journey.</p>
+<h2>Why Functional Programming with Elixir?</h2>
+<p>After accepting the challenge, I had to write a book proposal. It’s a document outlining the book topics. The Pragmatic Bookshelf is one of the most important technical publishers. Your proposal must stand out if you want to be accepted. One of the ways to stand out is to figure out exactly what the other books are missing.</p>
+<p>We have great Elixir books. Some of them are for expert programmers, others are for beginners. These books usually focus on Elixir features and OTP. But they don’t slow down and explain functional programming. Then, observing that functional programming was missing in these books, I came up with an idea of a book that has a balanced level of Functional Programming and Elixir.</p>
+<p>I had to do my homework in order to explain why teaching functional programming and Elixir together is a good idea. To write a book, you need to read books. I had to read beyond all of the Elixir books out there. I used dynamic reading, looking for content that authors weren&#8217;t talking about.</p>
+<p><a href="https://pragprog.com/book/cdc-elixir/learn-functional-programming-with-elixir" target="_blank" rel="noopener noreferrer"><img decoding="async" class="wp-image-6643 size-full" style="margin-right: 15px !important; margin-top: 15px !important;" src="/wp-content/uploads/2017/08/book-Learn-Functional-Programming-with-Elixir-by-Ulisses-Almeida-e1503690749508.png" alt="Book: Learn Functional Programming with Elixir" width="350" height="420" align="left" /></a></p>
+<h2>What’s in the Book?</h2>
+<p>You’ll find a beginner’s guide to functional programming concepts, at the same time, you&#8217;ll be introduced to Elixir. You’ll learn:</p>
+<div style="float: left; display: block-inline;">
+<ul style="margin: 0 !important; padding-left: 22px !important;">
+<li>Immutability,</li>
+<li>Declarative coding,</li>
+<li>Impure and pure functions,</li>
+<li>Anonymous and named functions,</li>
+<li>Closures,</li>
+<li>Pattern matching,</li>
+<li>Recursion,</li>
+<li>High-order functions,</li>
+<li>Behaviours,</li>
+<li>and Protocols.</li>
+</ul>
+</div>
+<div style="clear: both;"></div>
+<p>The book introduces functional programming while teaching Elixir in the proper pace. For example, in other books, the recursion concepts are presented fast in two or three pages. Meanwhile, in Learn Functional Programming with Elixir, you’ll have an entire chapter with more than twenty pages explaining many concepts, like <strong>unbounded and bounded recursion</strong>, <strong>divide and conquer</strong>, and <strong>tail call optimization</strong>.</p>
+<h2>The Next Months</h2>
+<p>Before the release of the book&#8217;s final version, we&#8217;ll release two more chapters. We&#8217;ll refine the book with all suggestions and errata from readers during this beta phase. Soon, the book will reach its final stage and it&#8217;ll also have a printed version.</p>
+<p>Thanks to Jackie Carter and Bruce Tate from The Pragmatic Bookshelf, Plataformatec, technical reviewers, beta readers, and friends, we’re building a great book.</p>
+<p>If you bought it and you are reading it, I’m counting on your feedback. For now I have to go, I have a lot of work to do! XD</p>
+<div style="margin:20px 0 60px;">
+<a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=elixir-radar-channel&#038;utm_content=cta-blog-post-bottom"><img decoding="async" src="/wp-content/uploads/2016/09/blog-cta-elixir-radar-channel.jpg" alt="Elixir Radar" style="max-width:100%;"></a>
+</div><p>The post <a href="/2017/08/book-release-learn-functional-programming-with-elixir/">Book Release: Learn Functional Programming with Elixir</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/08/book-release-learn-functional-programming-with-elixir/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

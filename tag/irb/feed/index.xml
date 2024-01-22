@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>irb « Plataformatec Blog</title>
+	<atom:link href="/tag/irb/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 05 May 2010 17:14:44 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Accented chars in IRB with RVM and ruby 1.8.7</title>
+		<link>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/</link>
+					<comments>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/#comments</comments>
+		
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Wed, 05 May 2010 17:14:44 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[irb]]></category>
+		<category><![CDATA[ruby]]></category>
+		<category><![CDATA[rvm]]></category>
+		<category><![CDATA[unicode]]></category>
+		<guid isPermaLink="false">/?p=990</guid>
+
+					<description><![CDATA[<p>Since moving to Mac, I always find it surprising that the default Mac OS X Ruby and IRB doesn&#8217;t allow inputs with accented characters. So, you cannot do name = "George Guimarães" This is annoying for brazilians and anyone who uses non-ASCII characters. The problem is that the default Ruby in Mac OS X isn&#8217;t ... <a class="read-more-link" href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">»</a></p>
+<p>The post <a href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">Accented chars in IRB with RVM and ruby 1.8.7</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Since moving to Mac, I always find it surprising that the default Mac OS X Ruby and IRB doesn&#8217;t allow inputs with accented characters. So, you cannot do</p>
+<pre lang="ruby">
+name = "George Guimarães"
+</pre>
+<p>This is annoying for brazilians and anyone who uses non-ASCII characters. The problem is that the default Ruby in Mac OS X isn&#8217;t linked against readline. A simple solution is to compile readline on your system, and then compile your own ruby binaries. A better one is to use tools that automate this process. </p>
+<p><a href="http://www.codeography.com/2010/03/29/fix-snow-leopard-ruby-with-homebrew-readline.html">This post by Christopher Sexton</a> uses homebrew to compile readline-0.6 but compiles ruby by hand. Since <a href="/2010/04/rails-3-with-rvm-ftw">we love RVM</a>, we&#8217;ll use it too.</p>
+<p>If you use <a href="http://github.com/mxcl/homebrew">Homebrew</a> (and you *should*), just do</p>
+<pre lang="bash">
+brew install readline
+brew link readline
+</pre>
+<p><strong>Beware</strong>: linking readline into your system may break other tools that depends on readline source to compile. It was harmless on my system.</p>
+<p>Ok, so now we want to build a new ruby and irb binaries. I wanted to use ruby 1.8.7-p248, so:</p>
+<pre lang="bash">
+rvm install 1.8.7-p248 -C --enable-shared,--with-readline-dir=/usr/local
+</pre>
+<p>This tells the configure script to enable shared library linking (it is the default), and to search for readline in <code>/usr/local</code> (homebrew has just linked readline there). You may have to use <code>--force</code> if you already have this ruby version compiled. Newer versions of RVM do not need <code>--force</code>.</p>
+<p>Now you can use accented and unicode characters on keyboard input in IRB using ruby 1.8.7.</p>
+<p>And you? Do you have any tricks with IRB that you may want to share? Do you use <a href="http://github.com/blackwinter/wirble">Wirble</a>, <a href="http://github.com/gilesbowkett/utility-belt">Utility Belt</a> or others?</p><p>The post <a href="/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/">Accented chars in IRB with RVM and ruby 1.8.7</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/05/accented-chars-in-irb-with-rvm-and-ruby-1-8-7/feed/</wfw:commentRss>
+			<slash:comments>5</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

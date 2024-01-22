@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>events « Plataformatec Blog</title>
+	<atom:link href="/tag/events/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Fri, 28 Dec 2018 19:48:05 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Plataformatec at Erlang Factory San Francisco 2015</title>
+		<link>/2015/04/plataformatec-at-erlang-factory-san-francisco-2015/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Thu, 16 Apr 2015 12:00:38 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[events]]></category>
+		<guid isPermaLink="false">/?p=4480</guid>
+
+					<description><![CDATA[<p>Two weeks ago José Valim and I went to Erlang Factory San Francisco and we had a great time. Erlang Factory San Francisco is one of the biggest events in the Erlang community. One of the things that got me most excited about it was how many people were excited and talking about Elixir throughout ... <a class="read-more-link" href="/2015/04/plataformatec-at-erlang-factory-san-francisco-2015/">»</a></p>
+<p>The post <a href="/2015/04/plataformatec-at-erlang-factory-san-francisco-2015/">Plataformatec at Erlang Factory San Francisco 2015</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><img decoding="async" src="/wp-content/uploads/2015/04/erlang-factory-2015.png" alt="Erlang Factory"/></p>
+<p>Two weeks ago José Valim and I went to Erlang Factory San Francisco and we had a great time. Erlang Factory San Francisco is one of the biggest events in the Erlang community. One of the things that got me most excited about it was how many people were excited and talking about Elixir throughout the event.</p>
+<h2>Elixir talks</h2>
+<p>The event itself had a whole track dedicated to Elixir. I may be biased but the talk that I liked the most was Valim’s one. In his talk, he explains what Elixir is about and how the language foundation is enabling Elixir maintainers to explore different strategies for laziness, parallelism and distribution. You should definitely watch it:</p>
+<div style="text-align: center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Lqo9-pQuRKE" frameborder="0" allowfullscreen></iframe>
+</div>
+<p>Besides Valim’s talk, there were many others. Jamie Winsor shared his experience in <a href="https://www.youtube.com/watch?v=_i6n-eWiVn4">developing a whole Massively Multiplayer Online Game platform using Elixir</a>. In another room, Frank Hunleth introduced the <a href="https://www.youtube.com/watch?v=tCg1LakJF3g&amp;index=26&amp;list=PLWbHc_FXPo2h0sJW6X2RZDtT1ndw6KKpQ">Nerves Project to run Elixir in embedded devices</a>.</p>
+<p>I’ll not comment on each one of the talks because this week&#8217;s Elixir Radar will be a special edition focusing only on the Elixir talks at Erlang Factory. <a href="http://plataformatec.com.br/elixir-radar">Subscribe to Elixir</a> Radar and stay tuned! Also, you can go ahead and watch <a href="https://www.youtube.com/playlist?list=PLA9E5Lsig6GTBPb2BRf_2ONIcnRTU5Iy0">all of the those Elixir talks on Youtube</a>.</p>
+<h2>People using Elixir in production</h2>
+<p>The highlight of the event was chatting with other Elixir developers. It was awesome to see how many developers are falling in love with Elixir.</p>
+<p>Not only that, many of them are already running Elixir in production! So Valim and I decided to grab our phones, order a microphone from Amazon and record some video interviews to show their experience running Elixir in different environments, from marketing and video companies to messaging systems and embedded devices.</p>
+<p>We’re still editing those videos, but as soon as we get them done, we’re going to publish them in <a href="https://www.youtube.com/user/plataformatectv">our Youtube channel</a> and will announce them here and in our <a href="https://twitter.com/plataformatec">Twitter account</a>.</p>
+<p>Stay tuned for more <a href="http://plataformatec.com.br/elixir-radar">Elixir news</a>!</p>
+<p><strong>Update (04/23/2015)</strong><br />
+We already have a video teaser of the <a href="https://www.youtube.com/watch?v=ls97Fbc4z3A">interviews we did with companies using Elixir in production</a>. <a href="https://www.youtube.com/watch?v=ls97Fbc4z3A">Check it out</a>!</p>
+<p><a href="http://plataformatec.com.br/elixir-radar"><img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:none;" /></a></p><p>The post <a href="/2015/04/plataformatec-at-erlang-factory-san-francisco-2015/">Plataformatec at Erlang Factory San Francisco 2015</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Agile trends</title>
+		<link>/2014/05/agile-trends/</link>
+		
+		<dc:creator><![CDATA[Rafael Ozaki]]></dc:creator>
+		<pubDate>Wed, 21 May 2014 12:00:47 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[events]]></category>
+		<guid isPermaLink="false">/?p=3939</guid>
+
+					<description><![CDATA[<p>Last month our team went to Agile Trends, an event in São Paulo where discussions revolved mainly around Agility in software projects. Starting the event activities, Niels Pflaeging presented a keynote where he defends Agile alone is not sufficient to taking organizations to the Knowledge Era, and that deeper transformations are necessary for doing that. ... <a class="read-more-link" href="/2014/05/agile-trends/">»</a></p>
+<p>The post <a href="/2014/05/agile-trends/">Agile trends</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Last month our team went to <a title="Agile Trends 2014" href="http://agiletrendsbr.com/2014" target="_blank">Agile Trends</a>, an event in São Paulo where discussions revolved mainly around Agility in software projects.</p>
+<p><a href="/wp-content/uploads/2014/05/IMG_6551.jpg"><img fetchpriority="high" decoding="async" class="wp-image-3994 size-medium aligncenter" src="/wp-content/uploads/2014/05/IMG_6551-300x225.jpg" alt="IMG_6551" width="300" height="225" srcset="/wp-content/uploads/2014/05/IMG_6551-300x225.jpg 300w, /wp-content/uploads/2014/05/IMG_6551-1024x768.jpg 1024w, /wp-content/uploads/2014/05/IMG_6551.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Starting the event activities, Niels Pflaeging presented a keynote where he defends Agile alone is not sufficient to taking organizations to the Knowledge Era, and that deeper transformations are necessary for doing that. He started it with an overview of the History of Management, why bigger companies are structured the way we know them and what he believes needs to change so they can adapt to the new reality and remain competitive.</p>
+<p><a href="/wp-content/uploads/2014/05/IMG_6487.jpg"><img decoding="async" class="wp-image-3995 size-medium aligncenter" src="/wp-content/uploads/2014/05/IMG_6487-300x225.jpg" alt="IMG_6487" width="300" height="225" srcset="/wp-content/uploads/2014/05/IMG_6487-300x225.jpg 300w, /wp-content/uploads/2014/05/IMG_6487-1024x768.jpg 1024w, /wp-content/uploads/2014/05/IMG_6487.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>After the keynote, the so-called &#8220;Trend talks&#8221; started. Each Trend Talk session was composed of two 18min talks revolving the same theme, followed by a 20min discussion round. In the Trend talks, most of what was presented and discussed was related to the challenges companies face when adopting agile.</p>
+<p>During such presentations, most of the success cases presented how companies have adopted the Agile principles but adapted the practices to their own realities, be it a startup or a bigger corporation. Which is similar to what we&#8217;ve been doing in our own projects: whenever we start a new engagement we use our custom methodology as a Starting Point and, as we get to know more about our clients, we adapt it to better suit their realities.</p>
+<p>Other presentations also showcased some of the Change Management challenges that companies have to face in order to make this work. These topics are similar to our own challenges when engaging client projects, and it was interesting hearing the struggles from other professionals so we can make sure to always keep our toolbox up to date.</p>
+<p><a href="/wp-content/uploads/2014/05/IMG_6498.jpg"><img loading="lazy" decoding="async" class="size-medium wp-image-3997 aligncenter" src="/wp-content/uploads/2014/05/IMG_6498-300x225.jpg" alt="IMG_6498" width="300" height="225" srcset="/wp-content/uploads/2014/05/IMG_6498-300x225.jpg 300w, /wp-content/uploads/2014/05/IMG_6498-1024x768.jpg 1024w, /wp-content/uploads/2014/05/IMG_6498.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>The event also contemplated some workshops, and we joined one that had Kanban as its theme. In this workshop, we honed our skills while running an imaginary pizza place (too bad the pizzas weren’t real) and as we progressed in the game, we could also buy adjustments to our workflow in an &#8220;upgrade store&#8221; using the cash we made. The point was to get us thinking about how our decisions affected the business’ performance and profitability. Besides that, we also joined a workshop about Learning 3.0, where the participants were divided in small groups and each group had a real problem to work on. We had to understand, share experiences related to the problem and discuss ideas about how to solve it. In this workshop we had the opportunity to work with people from other companies with different backgrounds, which contributed to bringing different perspectives to the discussions.</p>
+<p>Finally, we also attended some interesting Keynotes addressing themes that were not directly related to Agile, such as Internet Privacy and the Internet of Things. Even though not directly related to project management methodologies, they were nice in the sense they help us keep our minds open to other trends related to the tech landscape.</p>
+<p><a href="/wp-content/uploads/2014/05/IMG_6542.jpg"><img loading="lazy" decoding="async" class="size-medium wp-image-3996 aligncenter" src="/wp-content/uploads/2014/05/IMG_6542-300x225.jpg" alt="IMG_6542" width="300" height="225" srcset="/wp-content/uploads/2014/05/IMG_6542-300x225.jpg 300w, /wp-content/uploads/2014/05/IMG_6542-1024x768.jpg 1024w, /wp-content/uploads/2014/05/IMG_6542.jpg 1280w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+<p>Being part of the event was a great opportunity to see how events related to Agile have gained increased traction during the past couple of years. It was also nice meeting old friends there, as well as meet new people.</p>
+<p>Have you also been to Agile Trends? Did any of the talks catch your attention in special? Please let us know it in the comments.</p><p>The post <a href="/2014/05/agile-trends/">Agile trends</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>RailsConf 2014</title>
+		<link>/2014/05/railsconf-2014/</link>
+					<comments>/2014/05/railsconf-2014/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 07 May 2014 14:53:59 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[events]]></category>
+		<guid isPermaLink="false">/?p=3955</guid>
+
+					<description><![CDATA[<p>This year&#8217;s RailsConf was held in Chicago, from April 22 to 25, and Plataformatec was there, as in previous years, and this time it was represented by George Guimarães, Lucas Mazza, Rafael França, and myself included. Even though I&#8217;ve attended the last 5 RubyConf / Rails Summit here in Brazil, this was my first time ... <a class="read-more-link" href="/2014/05/railsconf-2014/">»</a></p>
+<p>The post <a href="/2014/05/railsconf-2014/">RailsConf 2014</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This year&#8217;s RailsConf was held in Chicago, from April 22 to 25, and Plataformatec was there, as in previous years, and this time it was represented by George Guimarães, Lucas Mazza, Rafael França, and myself included. Even though I&#8217;ve attended the last 5 RubyConf / Rails Summit here in Brazil, this was my first time at RailsConf in the US, and I have only one word to TL;DR it: <em>awesome</em>.</p>
+<p>Chicago is a welcoming city, there are lots of nice tourist attractions to visit, and the conference was a great opportunity to meet new people, share ideas, collaborate, and learn new things from the well selected list of talks. But all of this is quite hard to explain in words, so I&#8217;ll go with the <em>a picture is worth a thousand words</em> motto and show you a series of pictures, hopefully they will show you better what I mean.</p>
+<h2>The conference</h2>
+<p>The highlight of the first day was DHH&#8217;s keynote about clarity, patterns and TDD, which sparked many conversations/discussions during the day. Farrah Bostic also gave a nice keynote at the end of the day, entitled <em>What Happens to Everyone, When Everyone Learns to Code</em>, which added even more to the topic DHH had covered.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140422_094954/" rel="attachment wp-att-3966"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3966" src="/wp-content/uploads/2014/05/IMG_20140422_094954-e1399472288546.jpg" alt="RailsConf 2014 - DHH's keynote - TDD" width="600" height="450" /></a></p>
+<p><a href="/2014/05/railsconf-2014/attachment/1398193531211/" rel="attachment wp-att-3956"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3956" src="/wp-content/uploads/2014/05/1398193531211.jpg" alt="RailsConf 2014 - Plataformatec" width="600" height="450" srcset="/wp-content/uploads/2014/05/1398193531211.jpg 600w, /wp-content/uploads/2014/05/1398193531211-300x225.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>In the second day I was a bit nervous, since I was going to give my very first talk in English, <a href="https://speakerdeck.com/carlosantoniodasilva/tricks-that-rails-didnt-tell-you-about-at-railsconf-2014"><em>Tricks that Rails didn&#8217;t tell you about</em></a>. I received awesome feedback from a lot of people after the talk and in the following days of the event, thank you everyone for that &lt;3. You can check the embedded slides at the end of this post.</p>
+<p><a href="/2014/05/railsconf-2014/attachment/1398281310749/" rel="attachment wp-att-3957"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3957" src="/wp-content/uploads/2014/05/1398281310749.jpg" alt="RailsConf 2014 - Tricks that Rails didn't tell you about" width="600" height="450" srcset="/wp-content/uploads/2014/05/1398281310749.jpg 600w, /wp-content/uploads/2014/05/1398281310749-300x225.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>By afternoon we participated in the Community Office Hours sponsored by Heroku, where we gathered a lot of Rails Contributors to answer questions and help the community with any Rails issue they could be having. It was an opportunity to talk to different people and understand how they use the framework and the real problems they have, but it was not a very busy time for everyone, so some contributors had time to sit together and hack some stuff. What came out of that is <a href="https://github.com/rafaelfranca/rails-tools/blob/master/bin/mark_stale_issues">a script to label stale issues on the Rails repository</a>, marking them to be closed later in case no feedback is given in a timely fashion. Great stuff.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140423_170605/" rel="attachment wp-att-3967"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3967" src="/wp-content/uploads/2014/05/IMG_20140423_170605-e1399472300733.jpg" alt="RailsConf 2014 - Community Office Hours - Rails Contributors" width="600" height="450" /></a></p>
+<p>On Wednesday night we went to the Basecamp Open House event, and we took the opportunity to take a picture of most of the Rails Contributors present at RailsConf.</p>
+<p><a href="/2014/05/railsconf-2014/attachment/1398359479413/" rel="attachment wp-att-3959"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3959" src="/wp-content/uploads/2014/05/1398359479413.jpg" alt="RailsConf 2014 - Rails Contributors" width="600" height="400" srcset="/wp-content/uploads/2014/05/1398359479413.jpg 600w, /wp-content/uploads/2014/05/1398359479413-300x200.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>But we missed some folks on this picture, so we decided to take another. However, DHH was not present anymore, thankfully we had someone skilled enough to draw his double:</p>
+<p><a href="/2014/05/railsconf-2014/attachment/1398308914607/" rel="attachment wp-att-3958"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3958" src="/wp-content/uploads/2014/05/1398308914607.jpg" alt="RailsConf 2014 - Rails Contributors and DHH double" width="600" height="444" srcset="/wp-content/uploads/2014/05/1398308914607.jpg 600w, /wp-content/uploads/2014/05/1398308914607-300x222.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>The third day was very important for us, but specially for my friend and coworker Rafael França: he got a Ruby Hero award &lt;3 &lt;3 &lt;3.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140424_093410/" rel="attachment wp-att-3968"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3968" src="/wp-content/uploads/2014/05/IMG_20140424_093410-e1399472312318.jpg" alt="RailsConf 2014 - Ruby Hero Award - Rafael França" width="600" height="450" /></a></p>
+<p>As most of you probably know, Rafael has been doing an amazing work with Rails and all the surrounding environment, working on all fronts, solving issues, releasing gems, and being super present on discussions everywhere you can think of. Besides that, he dedicates some time to maintain our Open Source projects, for example lately he did some work to add Bootstrap 3 support to Simple Form (<a href="/2014/04/bootstrap-3-support-for-simple-form/">check the latest 3.1.0.rc1 version</a> :D).</p>
+<p><a href="/2014/05/railsconf-2014/img-20140428-wa0011/" rel="attachment wp-att-3972"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3972" src="/wp-content/uploads/2014/05/IMG-20140428-WA0011-e1399472339423.jpg" alt="RailsConf 2014 - Ruby Hero Award - Rafael França" width="600" height="450" /></a></p>
+<p>You deserve it, congratulations!</p>
+<p>On Thursday afternoon we had the second turn of the Community Office Hours, this time it was busier and we were able to help many developers having issues. I hope we can do something like that during the next RubyConf Brazil. At night we went to Code Climate&#8217;s after party and had some beers. Rafael returned to Brazil on this day, heading to Recife for the Abril Pro Ruby conference where he was speaking (expect another blog post on this soon).</p>
+<p>On the last day the closing keynote was a super awesome talk by <a href="https://twitter.com/tenderlove">@tenderlove</a>, where he showed us that there&#8217;s a real need for science on our work, and then he merged AdequateRecord to Rails master while on stage! Well, not really on stage, but it&#8217;s merged :D. We also handed on our last Devise, Simple Form, Elixir, and Hacking Beautiful Code stickers. If you got one, please tweet a picture to <a href="https://twitter.com/plataformatec">@plataformatec</a>, we&#8217;ll appreciate that.</p>
+<div id="attachment_3973" style="width: 572px" class="wp-caption aligncenter"><a href="/2014/05/railsconf-2014/img-20140428-wa0000-2/" rel="attachment wp-att-3973"><img loading="lazy" decoding="async" aria-describedby="caption-attachment-3973" class="size-full wp-image-3973" src="/wp-content/uploads/2014/05/IMG-20140428-WA00001.jpg" alt="Devise, Simple Form, Elixir, Hacking Beautiful Code stickers" width="562" height="597" srcset="/wp-content/uploads/2014/05/IMG-20140428-WA00001.jpg 562w, /wp-content/uploads/2014/05/IMG-20140428-WA00001-282x300.jpg 282w" sizes="(max-width: 562px) 100vw, 562px" /></a><p id="caption-attachment-3973" class="wp-caption-text">Devise, Simple Form, Elixir, Hacking Beautiful Code stickers</p></div>
+<p>Finally, on Friday night we met with our friend David Chelimsky for a night of conversation and brazilian music on a place called Revolver. It was the perfect night to close the conference.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140425_235405/" rel="attachment wp-att-3969"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3969" src="/wp-content/uploads/2014/05/IMG_20140425_235405-e1399472321506.jpg" alt="RailsConf 2014 - David Chelimsky" width="600" height="450" /></a></p>
+<h2>The tourism</h2>
+<p>We arrived a couple of days before the event, and left the Sunday after, so we had some free time to visit Chicago and enjoy some tourist stuff.</p>
+<p>We started by visiting the Skydeck on Saturday night. It was a breathtaking view, I had never seen anything like that before, it&#8217;s super worth the visit.</p>
+<p><a href="/2014/05/railsconf-2014/img_7005094607453/" rel="attachment wp-att-3970"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3970" src="/wp-content/uploads/2014/05/IMG_7005094607453-e1399472329683.jpeg" alt="RailsConf 2014 - Skydeck" width="600" height="450" /></a></p>
+<p>On Sunday we went to the Navy Pier, and did the architectural tour. We spent almost 1h30 hour learning about Chicago, its architecture, the great fire, batman, transformers, and much more, definitely recommended.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_114830/" rel="attachment wp-att-3961"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3961" src="/wp-content/uploads/2014/05/IMG_20140420_114830-e1399472171201.jpg" alt="RailsConf 2014 - Navy Pier" width="600" height="450" /></a></p>
+<p>After the Pier we decided to go to the Shedd Aquarium. Most of us had never been to an aquarium before, and it was such a great experience. You never know what you can find under the water, right?</p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_145911/" rel="attachment wp-att-3977"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3977" src="/wp-content/uploads/2014/05/IMG_20140420_145911.jpg" alt="RailsConf 2014 - Shedd Aquarium - Octopus" width="600" height="800" srcset="/wp-content/uploads/2014/05/IMG_20140420_145911.jpg 600w, /wp-content/uploads/2014/05/IMG_20140420_145911-225x300.jpg 225w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_155453/" rel="attachment wp-att-3962"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3962" src="/wp-content/uploads/2014/05/IMG_20140420_155453-e1399472186639.jpg" alt="RailsConf 2014 - Shedd Aquarium - Penguins" width="600" height="450" /></a></p>
+<p>We were very tired at this point but wanted more, so we went to the Adler Planetarium, which was unfortunately about to close &#8211; it was around 5PM. So we took a picture that could be easily transformed into a music album cover, and headed to a nice coffee place near the Millenium Park.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_164957/" rel="attachment wp-att-3978"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3978" src="/wp-content/uploads/2014/05/IMG_20140420_164957.jpg" alt="RailsConf 2014 - Plataformatec Music Album Cover" width="600" height="450" srcset="/wp-content/uploads/2014/05/IMG_20140420_164957.jpg 600w, /wp-content/uploads/2014/05/IMG_20140420_164957-300x225.jpg 300w" sizes="(max-width: 600px) 100vw, 600px" /></a></p>
+<p>We couldn&#8217;t go back to the hotel without taking the famous picture on &#8220;The Bean&#8221; steel sculpture in the Millenium Park, so here it is:</p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_180621/" rel="attachment wp-att-3963"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3963" src="/wp-content/uploads/2014/05/IMG_20140420_180621-e1399472200877.jpg" alt="RailsConf 2014 - Millenium Park - The Bean" width="600" height="450" /></a></p>
+<p>Monday, the day before the conference, was marked by the visit to the Adler Planetarium (we made it!), which is a cool place to go if you enjoy such things as we do.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140421_132231/" rel="attachment wp-att-3964"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3964" src="/wp-content/uploads/2014/05/IMG_20140421_132231-e1399472232210.jpg" alt="RailsConf 2014 - Adler Planetarium" width="600" height="450" /></a></p>
+<p>We also went to the Field Museum, which is another must place to go, where you can easily get lost in all those sections, it seems like a big maze, but it&#8217;s very enjoyable to walk through and learn more about all kinds of history. And we closed the day having dinner with some Rails Contributors and Basecamp folks.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140421_152821/" rel="attachment wp-att-3965"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3965" src="/wp-content/uploads/2014/05/IMG_20140421_152821-e1399472244953.jpg" alt="RailsConf 2014 - Field Museum - T-Rex" width="600" height="450" /></a></p>
+<p>Finally, on the Saturday after the conference we did some Shopping, and during the afternoon George and Lucas went to a Comic Conference that was happening in Chicago.</p>
+<p>Besides that, I couldn&#8217;t end this post without commenting about the great breakfasts we had, I think I can say with certainty that we all particularly enjoyed these two places: Eggsperience Pancakes &amp; Cafe and Meli Cafe. Definitely recommended.</p>
+<p><a href="/2014/05/railsconf-2014/img_20140420_101857/" rel="attachment wp-att-3960"><img loading="lazy" decoding="async" class="aligncenter size-full wp-image-3960" src="/wp-content/uploads/2014/05/IMG_20140420_101857-e1399472133600.jpg" alt="RailsConf 2014 - Breakfast" width="600" height="450" /></a></p>
+<p>There&#8217;s nothing like eggs &amp; bacon to start your day :).</p>
+<h2>Wrapping up</h2>
+<p>I hope I could show you at least a little bit how RailsConf was awesome for us. Conferences are always great to do networking, and RailsConf in particular allowed us to share and collaborate a lot with other people from the community. I like to think this is the main point of events like that, it&#8217;s where most of the good things come from, sharing and discussing ideas.</p>
+<p>And Chicago is really a great city for tourism, there are lots of nice places to go, hopefully I will be able to go back there someday, visit some of these again and some other places, plus visiting some of the folks we met from Chicago would be cool too.</p>
+<p>Here are the slides of my talk, <em>Tricks that Rails didn&#8217;t tell you about</em>:</p>
+<p><script class="speakerdeck-embed" src="//speakerdeck.com/assets/embed.js" async="" data-id="0afeac90ad3b01311d313e814ed3dd4c" data-ratio="1.77777777777778"></script></p>
+<p>I&#8217;ll update this post with the video as soon as it is online. In addition to that, we&#8217;ll be preparing another blog post with some of the talks we enjoyed the most after the videos are available, so we can link everything properly.</p>
+<p>I want to thank again everyone that came to talk to me or tweeted about about my talk, I really appreciate every single feedback I&#8217;ve received. And also thanks to everyone who came to say thanks for our <a href="http://plataformatec.com.br/open-source">Open Source projects</a>, we appreciate it a lot, it keeps us motivated to work more and more on these projects so that everyone can benefit from them.</p>
+<p>How about you? Did you go to RailsConf? Did you enjoy it? Or are you planning to go next year? Remember, it&#8217;ll be in Atlanta, hopefully we&#8217;ll see you there.</p><p>The post <a href="/2014/05/railsconf-2014/">RailsConf 2014</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/05/railsconf-2014/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Join other entrepreneurs! Startup Weekend is back to São Paulo</title>
+		<link>/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/</link>
+		
+		<dc:creator><![CDATA[Marcelo Park]]></dc:creator>
+		<pubDate>Wed, 16 Nov 2011 12:11:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[startups]]></category>
+		<guid isPermaLink="false">/?p=2391</guid>
+
+					<description><![CDATA[<p>Startup Weekend is a global network of passionate leaders and entrepreneurs on a mission to inspire, educate, and empower individuals, teams and communities. And when they say global, they really mean it! There are Startup Weekends in Germany, France, Poland, Malasya, China, Uruguay, USA and many other countries, incluing Brazil. It is the time and ... <a class="read-more-link" href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">»</a></p>
+<p>The post <a href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">Join other entrepreneurs! Startup Weekend is back to São Paulo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Startup Weekend is a global network of passionate leaders and entrepreneurs on a mission to inspire, educate, and empower individuals, teams and communities. And when they say global, they really mean it! There are Startup Weekends in Germany, France, Poland, Malasya, China, Uruguay, USA and many other countries, incluing Brazil.</p>
+<p>It is the time and place where developers, designers, product managers and startup enthusiasts gather to build products and launch startups. And now, it is São Paulo&#8217;s turn! <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>The &#8216;paulista&#8217; edition will be hosted at ESPM in the next weekend (November 18th, 19th and 20th) and we will be there too. Don&#8217;t miss this opportunity. Bring your ideas and coding skills. Let&#8217;s share experiences and meet other entrepreneurs.</p>
+<p>Watch the video below or take a look into <a title="Startup Weekend São Paulo" href="http://saopaulo.startupweekend.org/">http://saopaulo.startupweekend.org/</a> for more information.</p>
+<p><object width="560" height="315" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0"><param name="allowFullScreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="src" value="http://www.youtube.com/v/7ymvKiAKgzU?version=3&amp;hl=en_US" /><param name="allowfullscreen" value="true" /></object></p><p>The post <a href="/2011/11/join-other-entrepreneurs-startup-weekend-is-back-to-sao-paulo/">Join other entrepreneurs! Startup Weekend is back to São Paulo</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>PlataformaTec at RailsConf 2011!</title>
+		<link>/2011/05/plataformatec-at-railsconf-2011/</link>
+					<comments>/2011/05/plataformatec-at-railsconf-2011/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Wed, 25 May 2011 17:05:53 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[railsconf]]></category>
+		<guid isPermaLink="false">/?p=2111</guid>
+
+					<description><![CDATA[<p>This year me and José Valim had the pleasure of going to Baltimore, in the US, to one of the biggest Rails events of the world! RailsConf is definitely the best place to have the opportunity of meeting and talking to a lot of great Rubyists and Railers, and also attending their talks. Not only ... <a class="read-more-link" href="/2011/05/plataformatec-at-railsconf-2011/">»</a></p>
+<p>The post <a href="/2011/05/plataformatec-at-railsconf-2011/">PlataformaTec at RailsConf 2011!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p style="text-align: left;">This year me and José Valim had the pleasure of going to Baltimore, in the US, to one of the biggest Rails events of the world! RailsConf is definitely the best place to have the opportunity of meeting and talking to a lot of great Rubyists and Railers, and also attending their talks.</p>
+<p>Not only that, we also participated (though briefly) in BohConf, the official RailsConf unconference, which was great and very well organized! The talks covered a myriad of topics, guided the exploration on some technologies and counted with the presence of the Ruby Mendicant University students. José Valim presented a tutorial on his own <a rel="nofollow" href="https://github.com/josevalim/elixir">Elixir</a>, showing how to build a chat server using some cool stuff that both Elixir and Erlang provide. The code used on the tutorial is available on <a href="https://github.com/josevalim/elixir-websockets-demo">Valim&#8217;s GitHub</a>.</p>
+<p>Also, José Valim presented a talk on the ongoing Rails refactoring, guiding through the SOLID Principles and the changes in rails&#8217; own code. You can get the slides at <a href="http://en.oreilly.com/rails2011/public/schedule/detail/19579">his RailsConf page</a>. While you&#8217;re at it, please rate and give your feedback if you watched it live!</p>
+<p>In this edition of RailsConf, DHH presented the &#8220;assets revolution&#8221; part of Rails 3.1 and why CoffeeScript was adopted. It doesn&#8217;t matter if you&#8217;re into CoffeeScript or not, Rails now has amazing internals to deal with assets, raising them as &#8220;first-class citizens&#8221;. You can have this on the latest Release Candidate that was released last week. The keynote is available on <a href="http://www.youtube.com/watch?v=cGdCI2HhfAU">Youtube</a>.</p>
+<p>Regarding Keynotes, RailsConf 2011 had amazing ones. I strongly recommend you to watch <a href="http://www.youtube.com/watch?v=IVBVZGfzkVM">Eric Reies&#8217; Lessons Learned</a>, regarding delivering products and learning from your mistakes, from his upcoming book with the same title.</p>
+<p>Tenderlove (or sometimes known as Aaron Patterson) presented a very good talk about database query caching and proposed a future Rails refactoring to restructure the rack middleware stack in order to make it better and faster. A must watch talk! Check it on Youtube: <a href="http://www.youtube.com/watch?=vIVBVZGfzkVM">Aaron Patterson&#8217;s Double Dream Hands: So Intense!</a> (fast forward to minute 40 or so for a surprise)!</p>
+<p>The talks themselves were good, in general. Highlights, in my opinion, are:</p>
+<ul>
+<li><a href="http://en.oreilly.com/rails2011/public/schedule/detail/18051">Aman Gupta&#8217;s Rails Performance Tools</a> was the first time I saw Aman Gupta&#8217;s presentation live. Even though he got his slides from other conferences, I have to say I was very impressed. He really knows what he is talking about and the examples were very applicable to everyday&#8217;s work. You definitely should check it out.</li>
+<li><a href="http://en.oreilly.com/rails2011/public/schedule/detail/17762">Jim Weirich and Matt Yoho&#8217;s Securing your rails application</a> began slowly, showing easy-to-avoid security issues, but it picked up nicely, showing live examples on how to replicate the security issues described, very cool!</li>
+<li><a href="http://en.oreilly.com/rails2011/public/schedule/detail/19434">Joe Ferris&#8217; Testing the Impossible</a> was a very good talk. At PlataformaTec we always discuss the best ways to test code and it was very nice to see someone else&#8217;s effort on the subject, I was able to confirm some ideas and learn new ones!</li>
+<li><a href="http://en.oreilly.com/rails2011/public/schedule/detail/18047">Yehuda Katz&#8217; Building Rails Apps For the Rick Client</a> explained why Rails is much more than simple view helpers and then moved on to discuss API implementations. The proposed <a href="https://github.com/drogus/bulk_api">bulk api</a> was particularly interesting and is a good example of a private protocol between the client (SproutCore) and server side (Rails) for advanced transactions and performance!</li>
+</ul>
+<p>All in all, it was a great RailsConf! I had a blast, meeting people and having drinks at the parties was also one of the best parts of the conference! And what about you? What is your opinion about RailsConf, did you like it? Which were your favorite talks?</p>
+<p>See you in 2012!</p><p>The post <a href="/2011/05/plataformatec-at-railsconf-2011/">PlataformaTec at RailsConf 2011!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/05/plataformatec-at-railsconf-2011/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rails 3.1 talks are on the way!</title>
+		<link>/2010/09/rails-3-1-talks-are-on-the-way/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 03 Sep 2010 13:09:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<guid isPermaLink="false">/?p=1405</guid>
+
+					<description><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk and, as Ruby Summer of Code ... <a class="read-more-link" href="/2010/09/rails-3-1-talks-are-on-the-way/">»</a></p>
+<p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was <a href="http://37signals.com/svn/posts/2399-davids-talk-at-railsconf-2010" target="_blank">the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk</a> and, as <a href="http://rubysoc.org/" target="_blank">Ruby Summer of Code</a> is close to its end, we are able to see the work of several students getting solid enough to be an important part of Rails 3.1 release.</p>
+<p>In between all this work, I was invited to participate in three important conferences in the following months and lately I&#8217;ve prepared enough material to give a talk entitled &#8220;<strong>Rails 2.3, 3.0 and 3.1: Past, Present and Future</strong>&#8220;!</p>
+<p>In this talk I plan to discuss many of the conceptual changes done in Rails 3 and how these changes were given life in the Rails source code, comparing, as much as possible, with Rails 2.3. After the current and past scenarios are throughly discussed, I will show how much of the work done in Rails 3 can still be improved and how several Ruby Summer of Code Projects are helping us to achieve it. And if you ever wondered how much Merb affected the Rails community, you will have a few surprises while watching this talk!</p>
+<p>The three different conferences I mentioned above will be held in Ukraine, Brasil and Sweden. But I&#8217;m not sure if there will be anyone recording them, so I&#8217;d suggest you not to miss any of them. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here they are&#8230;</p>
+<h3>1) RubyConfUA (Ukraine): 16th and 17th October</h3>
+<p>If you have never been to Kyiv before (just like me), here&#8217;s a great opportunity to visit it for the first time! It will be <a href="http://rubylang.org.ua/" target="_blank">two days of deep immersion into Ruby</a> with nice city visits during the night!</p>
+<p><a href="/wp-content/uploads/2010/09/kiev.jpg"><img loading="lazy" decoding="async" src="/wp-content/uploads/2010/09/kiev.jpg" alt="Kiev" title="Kiev" width="500" height="327" class="aligncenter size-full wp-image-1439" /></a></p>
+<p>Other active developers in the community as <a href="http://oleganza.tumblr.com/" target="_blank">Oleg Andreev</a> and <a href="http://piotrsarnacki.com/" target="_blank">Piotr Sarnacki</a> will be present as well.  By the way, <a href="http://rubylang.org.ua/" target="_blank">RubyConf Ukraine</a> is still accepting both sponsors and talk proposals! We are waiting for you!</p>
+<h3>2) RubyConf (Brasil): 26th and 27th October</h3>
+<p>Right after RubyConf Ukraine, I&#8217;ll be flying back to Brasil to present a portuguese version of this talk. <a href="http://www.rubyconf.com.br/en/" target="_blank">RubyConf Brasil</a> is the former &#8220;Rails Summit Latin America&#8221; (which has been the largest Ruby and Rails conference in Latin America for the last two years). And this year it won&#8217;t be different. Several Ruby and Rails developers (like Yehuda Katz, Charles Nutter, Evan Phoenix and many others) have confirmed their presence. If  you get the chance, don&#8217;t miss it!</p>
+<h3>3) Oredev (Sweden): 8th to 12th November</h3>
+<p>And finally, my last stop will be in Sweden at the <a href="http://oredev.org/2010" target="_blank">developer conference held in Malmö</a>. This will be different from the previous two, since it is not focused in Ruby nor Rails. It&#8217;s a multitrack conference that hosts different technologies (by the way, the keynotes and tutorials programme is very interesting!). Since I&#8217;m expecting several non-Rails developers in the audience, I will slightly change my talk to focus more on the conceptual side and less on technical discussions. Also, I&#8217;ll be hosting a a workshop about Rails 3, where I&#8217;ll demonstrate a few of @plataformatec&#8217;s <a title="Plataforma Tec Open Source Projects" href="http://github.com/plataformatec">open source projects</a>.</p>
+<p>If you are coming to any of these events, please let me know in the comments!</p><p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

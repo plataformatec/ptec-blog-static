@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Build embedded and start permanent in Elixir 1.0.4	</title>
+	<atom:link href="/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/feed/" rel="self" type="application/rss+xml" />
+	<link>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 14:23:33 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/comment-page-1/#comment-1475</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Fri, 10 Apr 2015 20:27:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4454#comment-1475</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/comment-page-1/#comment-1474&quot;&gt;X4lldux&lt;/a&gt;.
+
+Great catch. It has been fixed, thank you!]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/comment-page-1/#comment-1474">X4lldux</a>.</p>
+<p>Great catch. It has been fixed, thank you!</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: X4lldux		</title>
+		<link>/2015/04/build-embedded-and-start-permanent-in-elixir-1-0-4/comment-page-1/#comment-1474</link>
+
+		<dc:creator><![CDATA[X4lldux]]></dc:creator>
+		<pubDate>Fri, 10 Apr 2015 20:04:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=4454#comment-1474</guid>
+
+					<description><![CDATA[Shouldn&#039;t that be?:
+
+
+    defprotocol JSON do
+      def encode(data)
+    end
+    
+    *defimpl* JSON, for: List do
+      def encode(list) do
+        # ...
+      end
+    end]]></description>
+			<content:encoded><![CDATA[<p>Shouldn&#8217;t that be?:</p>
+<p>    defprotocol JSON do<br />
+      def encode(data)<br />
+    end</p>
+<p>    *defimpl* JSON, for: List do<br />
+      def encode(list) do<br />
+        # &#8230;<br />
+      end<br />
+    end</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

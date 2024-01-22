@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>reescrita de código « Plataformatec Blog</title>
+	<atom:link href="/tag/reescrita-de-codigo/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 08 Aug 2017 21:13:24 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>8 pontos-chave para reescrever um software</title>
+		<link>/2017/07/8-pontos-chaves-para-reescrever-um-software/</link>
+		
+		<dc:creator><![CDATA[Hugo Baraúna]]></dc:creator>
+		<pubDate>Sat, 29 Jul 2017 00:34:15 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[business]]></category>
+		<category><![CDATA[CTO]]></category>
+		<category><![CDATA[reescrita de código]]></category>
+		<category><![CDATA[rewrite]]></category>
+		<category><![CDATA[tomada de decisão]]></category>
+		<guid isPermaLink="false">/?p=6576</guid>
+
+					<description><![CDATA[<p>O terceiro post da série Baixa Qualidade Interna de Software. Assim como uma refatoração grande, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software. 1. As duas plataformas existirão juntas por um determinado período ou ... <a class="read-more-link" href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">»</a></p>
+<p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em style="color: #999; font-size: 0.8em; display: block; text-align: center;">O terceiro post da série Baixa Qualidade Interna de Software.</em></p>
+<p>Assim como uma <a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">refatoração grande</a>, reescrever um software não é algo simples. Após vários anos, adquirimos experiência suficiente para indicar o que você deve considerar ao planejar e executar um processo para reescrever software.</p>
+<h2>1. As duas plataformas existirão juntas por um determinado período ou não?</h2>
+<p>Você planeja manter a versão de legado e a nova versão em produção? Caso positivo, por quanto tempo? Você deve evitar manter duas versões em produção por muito tempo devido aos custos operacionais e de oportunidade.</p>
+<h2>2. Quem trabalhará na reescrita do código e quem trabalhará na versão do legado?</h2>
+<p>Geralmente, os desenvolvedores preferem trabalhar em projetos <em>greenfield</em>. Você deve considerar isto ao planejar quem trabalhará na versão do legado e quem trabalhará na nova.</p>
+<h2>3. É inviável reescrever todas as funcionalidades ao mesmo tempo</h2>
+<p>Mapear cada funcionalidade entre a versão do legado e a nova é inviável. Dito isto, que funcionalidades devem ser as primeiras a serem reescritas?</p>
+<p>Leve em consideração como os clientes atuais serão afetados por um produto com menos funcionalidades.</p>
+<h2>4. Reescrever o software diminuirá ou interromperá o lançamento de novas funcionalidades na versão do legado</h2>
+<p>É provável que você não lance novos recursos na versão legada durante o processo de reescrita do código. Assim como os usuários finais, os clientes internos (comercial, produtos, financeiro) não terão novas funcionalidades. Seus clientes internos e outras partes interessadas vão pressioná-lo para entregar novas funcionalidades.</p>
+<p>Certifique-se que a comunicação antes e durante o processo de reescrita do software seja clara e que cada stakeholder esteja alinhado com as metas.</p>
+<h2>5. O processo deve ser secreto ou público?</h2>
+<p>Imagine que você é um cliente potencial de um produto de software. Você planeja comprá-lo, mas descobriu que uma versão completamente nova será lançada em três meses. Você compraria a versão do legado ou esperaria por três meses? Multiplique isso por dezenas ou centenas de potenciais compradores. O fornecedor pode perder muito dinheiro.</p>
+<p>Por isso, se você é o fornecedor, deve pensar cuidadosamente sobre como e quando divulgar o lançamento da nova versão.</p>
+<h2>6. Migração de dados</h2>
+<p>O processo de reescrever um software não envolve apenas o desenvolvimento de funcionalidades. Você também precisa planejar a migração de dados. As pessoas costumam subestimar a complexidade e o esforço necessários para migrar dados da versão do legado para a nova versão. Essa atividade não deve ser apenas mais uma tarefa em seu quadro, chamado &#8220;migração de dados&#8221;. É muito maior que isso.</p>
+<p>Por exemplo, imagine que você precisa migrar as contas de seus usuários. Se a sua versão de legado é gerenciada por um terceiro, é provável que você não tenha acesso às senhas criptografadas dos usuários, portanto, não será possível migrá-las. Você terá de solicitar a cada usuário para redefinir a senha na nova versão. Isso também faz parte do processo de migração de dados.</p>
+<h2>7. Prepare-se para uma possível redução nas taxas de conversão</h2>
+<p>Você lançará uma nova versão com menos recursos. Quem garante que as taxas de conversão permanecerão as mesmas? As taxas de conversão são essenciais em algumas indústrias, como no e-commerce.</p>
+<p>Preferencialmente, você deve manter o suporte à versão legada e à nova por um tempo para que, no caso de redução drástica nas taxas de conversão, você tenha um plano de backup.</p>
+<h2>8. Planeje treinamento para os usuários internos</h2>
+<p>Este é outro ponto negligenciado. O plano de reescrever o software precisa ter uma fase de treinamento de usuários internos antes de disponibilizar seu novo produto em produção. Não subestime a importância deste item. Pode demorar algum tempo, pois seus usuários internos darão feedback sobre pontos que talvez precisem ser alterados.</p>
+<p>Usuários internos podem ser encontrados em várias áreas, como help desk e vendas.</p>
+<hr style="margin-top: 50px;" />
+<h3 style="margin-bottom: 0 !important;">Leia os outros posts da série Baixa Qualidade Interna de Software</h3>
+<ol>
+<li><a href="/2017/05/sintomas-da-baixa-qualidade-interna-de-software/">Sintomas da Baixa Qualidade Interna de Software</a></li>
+<li><a href="/2017/06/9-pontos-chaves-ao-se-fazer-uma-refatoracao-grande-de-software/">9 Pontos-chaves ao se fazer uma refatoração grande de software</a></li>
+<li>8 pontos-chaves para reescrever um software <spam style="background-color:#23ceff;color:#fff;padding:3px 5px 3px;border-radius:3px; text-transform:uppercase;font-size:10px;font-family:sans-serif;font-weight:bold;">você está lendo</spam></li>
+</ol>
+<div style="background-color: #fffdf9; border: 1px solid #e9af35; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">
+<h3 style="font-size: 1.4em; line-height: 1.3em; margin-top: 0.5em !important;">Migração de Plataforma Tecnológica</h3>
+<p style="margin-top: 0.5em !important;">Bionexo e Locaweb compartilham neste webinar a experiência que tiveram ao migrarem de plataforma e os fatores cruciais para que essa operação fosse bem sucedida.</p>
+<p><a style="background: #e9af35; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 5px; padding: 8px 16px; text-align: center; text-decoration: none; letter-spacing: 0.1em;" href="http://pages.plataformatec.com.br/webinar-migracao-de-plataforma-tecnologica?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=webinar-migracao-plataforma&amp;utm_content=cta-blog-post-bottom" target="_blank" rel="noopener noreferrer">ASSISTIR WEBINAR</a></p>
+</div><p>The post <a href="/2017/07/8-pontos-chaves-para-reescrever-um-software/">8 pontos-chave para reescrever um software</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

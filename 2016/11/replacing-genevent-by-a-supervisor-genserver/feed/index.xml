@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Replacing GenEvent by a Supervisor + GenServer	</title>
+	<atom:link href="/2016/11/replacing-genevent-by-a-supervisor-genserver/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sun, 27 Nov 2016 19:36:00 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1669</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sun, 27 Nov 2016 19:36:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5886#comment-1669</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1668&quot;&gt;Petri Kero&lt;/a&gt;.
+
+Shedding load is the responsibility of each Logger backend at the moment. I would recommend any logger that needs to go over the network to batch those requests in the handler and then send to a separate process that will do the &quot;upload&quot;. The separate process can do the shedding if necessary since it is extremely important that Logger handlers do not block.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1668">Petri Kero</a>.</p>
+<p>Shedding load is the responsibility of each Logger backend at the moment. I would recommend any logger that needs to go over the network to batch those requests in the handler and then send to a separate process that will do the &#8220;upload&#8221;. The separate process can do the shedding if necessary since it is extremely important that Logger handlers do not block.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Petri Kero		</title>
+		<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1668</link>
+
+		<dc:creator><![CDATA[Petri Kero]]></dc:creator>
+		<pubDate>Sun, 27 Nov 2016 17:19:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5886#comment-1668</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1667&quot;&gt;josevalim&lt;/a&gt;.
+
+That&#039;s a fair point. Moving work to the caller also sounds sensible.
+
+Are there recommended patterns for building backends that log over network or can otherwise block for long time? I&#039;ve had my whole system come down because of Logger getting choked to death from too much logging, which timeouted pretty much every process in the whole system. That was obviously my fault, but it sounds like a 10s latency spike in some http-based backend could lead do the same result. Or perhaps are better approaches to the whole logging problem in a cluster environment?
+
+Another potentially very useful feature for Logger would be ability to shed load under massive load (be it from user&#039;s own mistake, some backend stalling, or some cascade of errors). That would result in lost log messages, but at least it would not bring down a lot of processes with it.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1667">josevalim</a>.</p>
+<p>That&#8217;s a fair point. Moving work to the caller also sounds sensible.</p>
+<p>Are there recommended patterns for building backends that log over network or can otherwise block for long time? I&#8217;ve had my whole system come down because of Logger getting choked to death from too much logging, which timeouted pretty much every process in the whole system. That was obviously my fault, but it sounds like a 10s latency spike in some http-based backend could lead do the same result. Or perhaps are better approaches to the whole logging problem in a cluster environment?</p>
+<p>Another potentially very useful feature for Logger would be ability to shed load under massive load (be it from user&#8217;s own mistake, some backend stalling, or some cascade of errors). That would result in lost log messages, but at least it would not bring down a lot of processes with it.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1667</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Sun, 27 Nov 2016 14:09:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5886#comment-1667</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1666&quot;&gt;Petri Kero&lt;/a&gt;.
+
+The Logger is one of the few use cases where a GenEvent seems like a reasonable solution. Because different clients are sending iodata to a different process, you don&#039;t want to copy that iodata to different processes over and over again as in the example above.
+
+We are discussing some solutions where we move most of the work to the client, which would be better to exploit concurrency, but until then we don&#039;t have plans to drop :gen_event from Logger.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1666">Petri Kero</a>.</p>
+<p>The Logger is one of the few use cases where a GenEvent seems like a reasonable solution. Because different clients are sending iodata to a different process, you don&#8217;t want to copy that iodata to different processes over and over again as in the example above.</p>
+<p>We are discussing some solutions where we move most of the work to the client, which would be better to exploit concurrency, but until then we don&#8217;t have plans to drop :gen_event from Logger.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Petri Kero		</title>
+		<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1666</link>
+
+		<dc:creator><![CDATA[Petri Kero]]></dc:creator>
+		<pubDate>Sun, 27 Nov 2016 12:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5886#comment-1666</guid>
+
+					<description><![CDATA[Sounds awesome! Do these GenEvent-related problems also apply to Logger and are there plans to fix it as well? There seem to be plenty of Logger backends that do network accesses, which could take a long time to finish in face of network problems. Is it possible that such a backend could block Logger completely, leading to timeouts in processes calling it?]]></description>
+			<content:encoded><![CDATA[<p>Sounds awesome! Do these GenEvent-related problems also apply to Logger and are there plans to fix it as well? There seem to be plenty of Logger backends that do network accesses, which could take a long time to finish in face of network problems. Is it possible that such a backend could block Logger completely, leading to timeouts in processes calling it?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Stan Bright		</title>
+		<link>/2016/11/replacing-genevent-by-a-supervisor-genserver/comment-page-1/#comment-1665</link>
+
+		<dc:creator><![CDATA[Stan Bright]]></dc:creator>
+		<pubDate>Fri, 25 Nov 2016 08:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5886#comment-1665</guid>
+
+					<description><![CDATA[Thanks for sharing this. I&#039;m sure this has been useful to a lot of people.]]></description>
+			<content:encoded><![CDATA[<p>Thanks for sharing this. I&#8217;m sure this has been useful to a lot of people.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

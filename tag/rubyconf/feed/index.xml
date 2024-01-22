@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rubyconf « Plataformatec Blog</title>
+	<atom:link href="/tag/rubyconf/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 18 Oct 2011 16:16:03 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>RubyConf BR 2011. Estaremos lá!</title>
+		<link>/2011/10/rubyconf-br-2011-estaremos-la/</link>
+					<comments>/2011/10/rubyconf-br-2011-estaremos-la/#comments</comments>
+		
+		<dc:creator><![CDATA[George Guimarães]]></dc:creator>
+		<pubDate>Tue, 18 Oct 2011 16:16:03 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[eventos]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<category><![CDATA[rubyconfbr]]></category>
+		<guid isPermaLink="false">/?p=2306</guid>
+
+					<description><![CDATA[<p>Para quem acompanha a comunidade Ruby brasileira, não é nenhuma novidade que nos dias 3 e 4 de Novembro teremos mais uma edição do RubyConf BR. Assim como no ano passado, o evento acontece no Centro de Convenções Frei Caneca, perto da Av. Paulista e de fácil acesso. Toda a equipe da PlataformaTec estará lá. ... <a class="read-more-link" href="/2011/10/rubyconf-br-2011-estaremos-la/">»</a></p>
+<p>The post <a href="/2011/10/rubyconf-br-2011-estaremos-la/">RubyConf BR 2011. Estaremos lá!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Para quem acompanha a comunidade Ruby brasileira, não é nenhuma novidade que nos dias 3 e 4 de Novembro teremos mais uma edição do <a href="http://www.rubyconf.com.br/" target="_blank">RubyConf BR</a>.</p>
+<p style="text-align: center;"><a href="/wp-content/uploads/2011/10/5142315815_809e992d66_o.jpg"><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-2310" title="5142315815_809e992d66_o" src="/wp-content/uploads/2011/10/5142315815_809e992d66_o.jpg" alt="" width="576" height="324" /></a></p>
+<p>Assim como no ano passado, o evento acontece no Centro de Convenções Frei Caneca, perto da Av. Paulista e de fácil acesso.</p>
+<p>Toda a equipe da <a href="http://www.plataformatec.com.br/">PlataformaTec</a> estará lá. Além disso, José Valim irá nos contar sobre a experiência de criar uma nova linguagem (<a href="https://github.com/josevalim/elixir">Elixir</a>) e como isso o fez aprender mais sobre Ruby. Será no dia 4, às 17h10.</p>
+<p>Não deixe de nos procurar para bater um papo bacana. Aproveite e fique também para o Happy Hour que sempre acontece após o evento. É a oportunidade para conversar e conhecer todo mundo que trabalha com Ruby no Brasil. Vai perder essa?<a href="http://rubyconf2011.akitaonrails.com/br/registration.html"> Inscreva-se</a>!</p><p>The post <a href="/2011/10/rubyconf-br-2011-estaremos-la/">RubyConf BR 2011. Estaremos lá!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/10/rubyconf-br-2011-estaremos-la/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>2010 &#8211; A year in review</title>
+		<link>/2010/12/2010-a-year-in-review/</link>
+					<comments>/2010/12/2010-a-year-in-review/#comments</comments>
+		
+		<dc:creator><![CDATA[Vinicius Baggio]]></dc:creator>
+		<pubDate>Thu, 30 Dec 2010 17:18:12 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[dsl]]></category>
+		<category><![CDATA[euruko]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[railsconf]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[review]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=1612</guid>
+
+					<description><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few. Open Source The year has begun on fire. In February, José Valim made his way into the Rails Core team and has been ... <a class="read-more-link" href="/2010/12/2010-a-year-in-review/">»</a></p>
+<p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This year is coming to an end and it was amazing for us at Plataforma Tecnologia. We are proud to share with you, faithful reader, our accomplishments in 2010, which weren&#8217;t few.</p>
+<h3>Open Source</h3>
+<p>The year has begun on fire. In February, <a href="http://weblog.rubyonrails.org/2010/2/13/jos-e-valim-and-carl-lerche-joins-rails-core">José Valim made his way into the Rails Core team</a> and has been doing a great work since then, including many contributions to the Rails 3 release.</p>
+<p>We are also really proud with <a href="http://www.github.com/plataformatec/devise">Devise</a>. It got very mature, achieving the 1.0 version this February. Since then, Devise is becoming one of the best solutions for authentication in Rails and also one of the most watched repositories on GitHub. </p>
+<p>In August, <a href="/2010/08/devise-1-1-is-out-and-ready-to-rock-with-rails-3/">Devise 1.1</a> was released with Rails 3 support and a bunch of cool features. Recently, a lot of work is being done towards the 1.2 version, which includes full support to the awesome <a href="http://www.github.com/intridea/omniauth">OmniAuth</a> gem.</p>
+<p>We also released <a href="http://www.github.com/plataformatec/simple_form">SimpleForm</a> this year. SimpleForm is our take on building forms in a simplified way lead by Carlos Antônio who recently did a great work on HTML 5 support.</p>
+<p>Other gems were released, such as <a href="/2010/03/show-your-objects-baby/">ShowFor</a>, which is a DSL to simplify how you show your objects in views and also <a href="https://github.com/plataformatec/responders">Responders</a>, a collection of Rails 3 responders.</p>
+<h3>Book</h3>
+<p>Eariler this month, José Valim&#8217;s book entitled <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> has been released by the highly acclaimed publisher <a href="http://www.pragprog.com/">Pragmatic Bookstore</a>! The book covers internal aspects of Rails 3 and how you can bend it to your will. The reviews and buzz has been great so far, even though still in beta. <a href="http://plataformatec.com.br/crafting-rails-applications/">Grab your copy now!</a></p>
+<h3>Events</h3>
+<p>This year was also very productive in terms of events. We&#8217;ve been to a lot of events, heck, George was even able to go to RailsConf, in Baltimore! Also, José Valim has spoken in various events, including <a href="/2010/06/dsl-or-nodsl-at-euruko-2010/">Euruko 2010 (includes video)</a>, <a href="http://vimeo.com/17088248">RubyConf Brazil 2010 (talk in portuguese)</a> and OxenteRails 2010. </p>
+<p>Carlos, Hugo and George did their share as well, speaking at various events, from smaller and user-group events to bigger ones such as OxenteRails, RS on Rails and QCon SP.</p>
+<h3>Company</h3>
+<p>The company itself is getting more mature and increasing. At January 2010, PlataformaTec was composed of 6 people, and up until December 2010, 5 other people joined the company (including myself)! We also have started playing with iOS development, something we believe to have a great future, expect future blog posts on the subject.</p>
+<h3>Great 2011!</h3>
+<p>Have a great New Year! We wish you all the best for year to come. We have high expectations for 2011, so stay tuned!</p><p>The post <a href="/2010/12/2010-a-year-in-review/">2010 – A year in review</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/2010-a-year-in-review/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Rails 3.1 talks are on the way!</title>
+		<link>/2010/09/rails-3-1-talks-are-on-the-way/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 03 Sep 2010 13:09:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[conference]]></category>
+		<category><![CDATA[events]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[rubyconf]]></category>
+		<guid isPermaLink="false">/?p=1405</guid>
+
+					<description><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk and, as Ruby Summer of Code ... <a class="read-more-link" href="/2010/09/rails-3-1-talks-are-on-the-way/">»</a></p>
+<p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3 was released this week but the minds of the Rails Core team members are already focused on the 3.1 release for quite some time. DHH was <a href="http://37signals.com/svn/posts/2399-davids-talk-at-railsconf-2010" target="_blank">the first one to give a hint on what we would like to see in Rails 3.1 in his RailsConf talk</a> and, as <a href="http://rubysoc.org/" target="_blank">Ruby Summer of Code</a> is close to its end, we are able to see the work of several students getting solid enough to be an important part of Rails 3.1 release.</p>
+<p>In between all this work, I was invited to participate in three important conferences in the following months and lately I&#8217;ve prepared enough material to give a talk entitled &#8220;<strong>Rails 2.3, 3.0 and 3.1: Past, Present and Future</strong>&#8220;!</p>
+<p>In this talk I plan to discuss many of the conceptual changes done in Rails 3 and how these changes were given life in the Rails source code, comparing, as much as possible, with Rails 2.3. After the current and past scenarios are throughly discussed, I will show how much of the work done in Rails 3 can still be improved and how several Ruby Summer of Code Projects are helping us to achieve it. And if you ever wondered how much Merb affected the Rails community, you will have a few surprises while watching this talk!</p>
+<p>The three different conferences I mentioned above will be held in Ukraine, Brasil and Sweden. But I&#8217;m not sure if there will be anyone recording them, so I&#8217;d suggest you not to miss any of them. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Here they are&#8230;</p>
+<h3>1) RubyConfUA (Ukraine): 16th and 17th October</h3>
+<p>If you have never been to Kyiv before (just like me), here&#8217;s a great opportunity to visit it for the first time! It will be <a href="http://rubylang.org.ua/" target="_blank">two days of deep immersion into Ruby</a> with nice city visits during the night!</p>
+<p><a href="/wp-content/uploads/2010/09/kiev.jpg"><img decoding="async" src="/wp-content/uploads/2010/09/kiev.jpg" alt="Kiev" title="Kiev" width="500" height="327" class="aligncenter size-full wp-image-1439" /></a></p>
+<p>Other active developers in the community as <a href="http://oleganza.tumblr.com/" target="_blank">Oleg Andreev</a> and <a href="http://piotrsarnacki.com/" target="_blank">Piotr Sarnacki</a> will be present as well.  By the way, <a href="http://rubylang.org.ua/" target="_blank">RubyConf Ukraine</a> is still accepting both sponsors and talk proposals! We are waiting for you!</p>
+<h3>2) RubyConf (Brasil): 26th and 27th October</h3>
+<p>Right after RubyConf Ukraine, I&#8217;ll be flying back to Brasil to present a portuguese version of this talk. <a href="http://www.rubyconf.com.br/en/" target="_blank">RubyConf Brasil</a> is the former &#8220;Rails Summit Latin America&#8221; (which has been the largest Ruby and Rails conference in Latin America for the last two years). And this year it won&#8217;t be different. Several Ruby and Rails developers (like Yehuda Katz, Charles Nutter, Evan Phoenix and many others) have confirmed their presence. If  you get the chance, don&#8217;t miss it!</p>
+<h3>3) Oredev (Sweden): 8th to 12th November</h3>
+<p>And finally, my last stop will be in Sweden at the <a href="http://oredev.org/2010" target="_blank">developer conference held in Malmö</a>. This will be different from the previous two, since it is not focused in Ruby nor Rails. It&#8217;s a multitrack conference that hosts different technologies (by the way, the keynotes and tutorials programme is very interesting!). Since I&#8217;m expecting several non-Rails developers in the audience, I will slightly change my talk to focus more on the conceptual side and less on technical discussions. Also, I&#8217;ll be hosting a a workshop about Rails 3, where I&#8217;ll demonstrate a few of @plataformatec&#8217;s <a title="Plataforma Tec Open Source Projects" href="http://github.com/plataformatec">open source projects</a>.</p>
+<p>If you are coming to any of these events, please let me know in the comments!</p><p>The post <a href="/2010/09/rails-3-1-talks-are-on-the-way/">Rails 3.1 talks are on the way!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

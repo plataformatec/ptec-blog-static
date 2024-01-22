@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>rack « Plataformatec Blog</title>
+	<atom:link href="/tag/rack/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 16 Jun 2012 17:55:05 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Why your web framework should not adopt Rack API</title>
+		<link>/2012/06/why-your-web-framework-should-not-adopt-rack-api/</link>
+					<comments>/2012/06/why-your-web-framework-should-not-adopt-rack-api/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 15 Jun 2012 14:00:36 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[cgi]]></category>
+		<category><![CDATA[rack]]></category>
+		<category><![CDATA[rails]]></category>
+		<category><![CDATA[streaming]]></category>
+		<guid isPermaLink="false">/?p=2820</guid>
+
+					<description><![CDATA[<p>Or, even better, why your web framework should not adopt a CGI-based API. For the past few years I have been studying and observing the development of different emerging languages closely with a special focus on web frameworks/servers. Unfortunately, most of the new web frameworks are following the Rack/WSGI specification which may be a mistake ... <a class="read-more-link" href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/">»</a></p>
+<p>The post <a href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/">Why your web framework should not adopt Rack API</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Or, even better, why your web framework should not adopt a CGI-based API.</p>
+<p>For the past few years I have been studying and observing the development of different emerging languages closely with a special focus on web frameworks/servers. Unfortunately, most of the new web frameworks are following the Rack/WSGI specification which may be a mistake depending on the platform you are targeting (particularly true for Erlang and Node.js which have very strong streaming foundations and is by default part of their stack).</p>
+<p>This blog post is an attempt to detail the limitations in the Rack/CGI-based APIs that the Rails Core Team has found while working with the streaming feature that shipped with Rails 3.1 and why we need better abstractions in the long term.</p>
+<h3>Case in study</h3>
+<p>The use case we have in mind here is streaming. In Rails, we have focused on streaming as a way to quickly return the head of the HTML page to the browser, so the browser can start downloading assets (like javascript and stylesheet) while the server is generating the rest of the page. There is <a href="http://weblog.rubyonrails.org/2011/4/18/why-http-streaming/" target="_blank">a great entry on Rails weblog about streaming in general</a> and <a href="http://railscasts.com/episodes/266-http-streaming" target="_blank">a Railscast if you want to focus on how to use it in your Rails applications</a>. However, streaming is not only limited to HTML responses and can also be useful in API endpoints, for example, to stream search results as they pop-up or to synchronize with mobile devices.</p>
+<h3>The Rack specification in a nutshell</h3>
+<p>In Rack, the response is made by an array with three elements: <code>[status, headers, body]</code></p>
+<p>The body can be any object that responds to the method <code>each</code>. This means streaming can be done by passing an object that will, for example, lazily read a file and stream chunks when <code>each</code> is called.</p>
+<p>A Rack application is any object that implements the method <code>call</code> and receives an environment hash/dictionary with the request information. When I said above that most new web frameworks are following the Rack specification, is because they are introducing an API similar to this one just described.</p>
+<h3>The issue</h3>
+<p>In order to understand the issue, we will consider three entities: the client, the server and the application. The client (for example a browser) sends a request to the server which forwards it to an application. In this case, the server and the application are communicating via the Rack API.</p>
+<p>The issue in streaming cases is that, sending a response back from the application does not mean the application finished processing. For example, consider a middleware (a middleware is an object that sits in between the server and our application) that opens up a connection to the database for the duration of the request and cleans it afterwards:</p>
+<pre lang="ruby">
+def call(env)
+  connection = DB.checkout_connection
+  env["db.connection"] = connection
+  @app.call(env)
+ensure
+  DB.checkin_connection connection
+end
+</pre>
+<p>Without streaming, it would work as follow:</p>
+<ol>
+<li>The server receives a request and passes it down the stack</li>
+<li>The request reaches the middleware</li>
+<li>The middleware checks out the connection</li>
+<li>The application is invoked, renders a view accessing the database using the connection and returns the rendered view as a string</li>
+<li>The middleware checks the connection back in</li>
+<li>The response is sent back to the client</li>
+</ol>
+<p>With streaming, this would happen:</p>
+<ol>
+<li>The server receives a request and passes it down the stack</li>
+<li>The request reaches the middleware</li>
+<li>The middleware checks out the connection</li>
+<li>The app is called but does not render anything. Instead it returns a lazy object as response body that will stream the HTML page in chunks as the `each` method is called</li>
+<li>The middleware checks the connection back in</li>
+<li>Back in the server, we have received the lazy body and will start to stream it</li>
+<li>While streaming the body, since the body is lazily calculated, now is the time it must access the database. But, since the middleware already checked the connection back in, our code will fail with a &#8220;not connected&#8221; exception</li>
+</ol>
+<p>The first reaction to solve this issue is to ensure that all streaming happens inside the application, i.e. the application would have a mechanism to stream the response back and only when it is done it would return the Rack response back. However, if the application does this, any middleware that desires to modify the header or the response body won&#8217;t be able to do so because the response was already streamed from inside the application.</p>
+<p>Our work-around for Rails was to create proxies that wrap the response body:</p>
+<pre lang="ruby">
+def call(env)
+  connection = DB.checkout_connection
+  env["db.connection"] = connection
+  response = @app.call(env)
+  ResponseProxy.new(response).on_close do
+    DB.checkin_connection connection
+  end
+end
+</pre>
+<p>However, this is inefficient and extremely limited (not all middleware can be converted to such approach). In order for streaming to be successful, the underlying server API needs to acknowledge that the headers and the response body can be sent at different times. Not only that, it needs to provide proper callbacks around the response lifecycle (before sending headers, when the response is closed, on each stream, etc).</p>
+<p>The trade-off here is that this can no longer be achieved with an easy API as Rack&#8217;s. In general, we would like to have a response objects that provides several life-cycle hooks. For example, the middleware above could be rewritten as:</p>
+<pre lang="ruby">
+def call(request, response)
+  connection = DB.checkout_connection
+  request.env["db.connection"] = connection
+  response.on_close { DB.checkin_connection(connection) }
+  @app.call(request, response)
+end
+</pre>
+<p>The Java Servlet specification is a good example of how request and response objects could be designed to provide such hooks.</p>
+<h3>Other middleware</h3>
+<p>In the example above I focused on the database connection middleware but this limitation exists, in one way or the other, in the majority of middleware in a stack. For example, a middleware that rescues any exception inside the application to render a 500 page also needs to be adapted. Other middleware simply won&#8217;t work. For instance, Rails ships with a middleware that provides an ETag header based on the body which has to be disabled when streaming.</p>
+<h3>Looking back</h3>
+<p>Does this mean moving to Rack was a mistake? <b>Not at all</b>. Rack appeared when the web development Ruby community was fragmented and the simplicity of the Rack API made it possible to unify the different web frameworks and web servers available. Looking back, I would take the standardization provided by Rack any day regardless of the limitations it brings. Now that we have a standard, we are already working on addressing such issues, which leads us to&#8230;</p>
+<h3>Looking forward</h3>
+<p>Streaming will become more and more important. While working with HTML streaming requires special attention both technically and also in terms of usability, <a href="http://api.rubyonrails.org/classes/ActionController/Streaming.html" target="_blank">as outlined in Rails&#8217; documentation</a>, API endpoints could benefit from it with basically no extra cost. Not only that, features in HTML5 like server-sent events could easily be built on top of streaming without requiring a specific end-point in your application to handle them.</p>
+<p>While CGI was originally streaming friendly, the abstractions we built on top of it (like middleware) are not. I believe web frameworks should be moving towards better connection/socket abstractions and away from the old CGI-based APIs, which served us well but it is finally time for us to let it go.</p>
+<p>PS: Thanks to <a href="http://twitter.com/tenderlove" target="_blank">Aaron Patterson</a> (who has also written about this issue <a href="http://tenderlovemaking.com/2011/03/03/rack-api-is-awkward.html" target="_blank">in his blog</a>), <a href="http://twitter.com/wycats" target="_blank">Yehuda Katz</a>, <a href="http://twitter.com/konstantinhaase" target="_blank">Konstantin Haase</a> and <a href="http://twitter.com/raggi" target="_blank">James Tucker</a> for early review and feedback.</p>
+<h3>F.A.Q.</h3>
+<p>This section was added after the blog post was released based on some common questions.</p>
+<p><b>Q:</b> Isn&#8217;t it a bad idea to mix both streaming and non-streaming behavior in the same stack?</p>
+<p>That depends on the stack. This is definitely not an issue with Erlang and Node.js since both stacks are streaming based. In Ruby, I believe a threaded jRuby or Thin will allow you to get away with keeping a socket open waiting for responses, but it will probably turn out to be a bad idea with other servers since the process holding the socket won&#8217;t be able to respond to any other request.</p>
+<p><b>Q:</b> Is there a need to do everything streaming based when a request/response would be fine?</p>
+<p>No, there is no need. The point of the blog post is <b>not</b> to advocate for streaming only frameworks, but simply state that a Rack API may severely limit your streaming capability in case your platform supports it. Personally, I would like to be able to choose and mix both, if my stack allows me to do so.</p><p>The post <a href="/2012/06/why-your-web-framework-should-not-adopt-rack-api/">Why your web framework should not adopt Rack API</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/06/why-your-web-framework-should-not-adopt-rack-api/feed/</wfw:commentRss>
+			<slash:comments>14</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

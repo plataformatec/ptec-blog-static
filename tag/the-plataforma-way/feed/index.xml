@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>the plataforma way « Plataformatec Blog</title>
+	<atom:link href="/tag/the-plataforma-way/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 07 Mar 2018 16:58:16 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Lançamento do Twitter da Plataformatec Brasil</title>
+		<link>/2018/03/lancamento-do-twitter-da-plataformatec-brasil/</link>
+		
+		<dc:creator><![CDATA[Camila Ferreira]]></dc:creator>
+		<pubDate>Wed, 07 Mar 2018 16:58:16 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[plataformatec]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=7256</guid>
+
+					<description><![CDATA[<p>Com a criação do Elixir e sua crescente adoção, atraímos muitos leitores, seguidores e clientes de todas as partes do mundo. A Elixir Radar, nossa newsletter semanal dedicada a promover conteúdos relevantes e oportunidades de trabalhar com Elixir em empresas de todo o mundo, se tornou um de canal de grande importância para nós. Com ... <a class="read-more-link" href="/2018/03/lancamento-do-twitter-da-plataformatec-brasil/">»</a></p>
+<p>The post <a href="/2018/03/lancamento-do-twitter-da-plataformatec-brasil/">Lançamento do Twitter da Plataformatec Brasil</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Com a criação do Elixir e sua crescente adoção, atraímos muitos leitores, seguidores e clientes de todas as partes do mundo.</p>
+<p>A <a href="http://plataformatec.com.br/elixir-radar?utm_source=our-blog&amp;utm_medium=blog&amp;utm_campaign=blog-post-promotion">Elixir Radar</a>, nossa newsletter semanal dedicada a promover conteúdos relevantes e oportunidades de trabalhar com Elixir em empresas de todo o mundo, se tornou um de canal de grande importância para nós. Com mais de 100 edições, aprendemos muito sobre como podemos trazer mais valor para a comunidade.</p>
+<p>Com esse aprendizado, decidimos tomar mais um passo para a melhorar a experiência de todos que nos acompanham nos nossos canais e redes sociais: vamos criar uma conta no Twitter da Plataformatec Brasil.</p>
+<p>Nesse canal você pode seguir nossos conteúdos em português sobre temas de tecnologia, software e ágil. Além de acompanhar a participação do nosso time em eventos e conhecer um pouco mais sobre a cultura da Plataformatec.</p>
+<div style="border: 1px solid #009eaa; border-radius: 6px; margin: 32px 0; padding: 22px 24px; font-family: sans-serif;">Siga-nos no <strong>Twitter</strong><br />
+<span style="font-size: 1.4em; line-height: 1.3em;">Quer ficar por dentro do que nosso time publica? </span><br />
+<a style="background: #009eaa; border: none; border-radius: 3px; color: #fff; display: inline-block; font-size: 12px; line-height: 1.5; margin-top: 18px; padding: 8px 16px; text-align: center; text-decoration: none; font-weight: bold; letter-spacing: 0.05em;" href="https://twitter.com/plataformatecbr" target="_blank" rel="noopener">QUERO SEGUIR A PLATAFORMATEC BRASIL</a></div><p>The post <a href="/2018/03/lancamento-do-twitter-da-plataformatec-brasil/">Lançamento do Twitter da Plataformatec Brasil</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>How to work with distributed teams</title>
+		<link>/2017/12/how-to-work-with-distributed-teams/</link>
+					<comments>/2017/12/how-to-work-with-distributed-teams/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Wed, 13 Dec 2017 18:25:30 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[how we work]]></category>
+		<category><![CDATA[remote]]></category>
+		<category><![CDATA[team]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<category><![CDATA[timezone]]></category>
+		<guid isPermaLink="false">/?p=7021</guid>
+
+					<description><![CDATA[<p>For most people, especially old-school Agile devotees, distributed work is just impossible. According to some of them, interactions won&#8217;t be as productive, there will be knowledge silos, physical kanbans will not be possible, no one will pay attention to the flow, and everything is going to explode! Well, those are all good points. Really. However, ... <a class="read-more-link" href="/2017/12/how-to-work-with-distributed-teams/">»</a></p>
+<p>The post <a href="/2017/12/how-to-work-with-distributed-teams/">How to work with distributed teams</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>For most people, especially old-school Agile devotees, distributed work is just impossible. According to some of them, interactions won&#8217;t be as productive, there will be knowledge silos, physical kanbans will not be possible, no one will pay attention to the flow, and everything is going to explode!</p>
+<p>Well, those are all good points. Really. However, all of those are remediable. Nowadays you <strong>cannot</strong> say that distributed teams don&#8217;t work. You need to make it work! That is the reality of the world.</p>
+<p>But enough of whys, let&#8217;s get to how. How can we remediate all those problems? Or even avoid them? How can we be agile without ever seeing each other?</p>
+<h2>Communicate, talk, say, share!</h2>
+<p>The first thing that you need to think about when working with distributed teams is <strong>communication</strong>. And since it is already difficult to improve it in a colocated team, you may imagine that the difficulty adjusting it in a distributed team is even higher, right? Not necessarily, actually. Those are different environments, with different challenges. And this difference is the key.</p>
+<p>If you try to adapt what you do in a colocated team to use it in a distributed one, you&#8217;ll likely fail. Things like talking to someone at their desk is not the same as a private message on a channel, for example. In the first example, other people can hear you and enter the conversation if needed. A private message is like going to a sound-proof room with your colleague and talking about something. Therefore, keep an open mind and try new things. Below I list four things that you could change to improve your communication.</p>
+<h3>No more poking</h3>
+<p><a href="https://zachholman.com/posts/remote-first/">Zach Holman</a> calls that &#8220;remote first&#8221;. The idea is that you need to prioritize the use of asynchronous communication tools when in a distributed team. That means that those poking-and-talking meetings will be converted into written discussions, or video conferences, using your preferred communication tool.</p>
+<p><em>&#8220;Oh, but we already use Slack!&#8221;</em></p>
+<p>It is not about using it; it is prioritizing its use. And that is extremely difficult. Let&#8217;s say that you have five people on site and two offshore. Those onsite need to communicate <strong>every</strong> minimally important thing through the communication tool, with the preference for open channels and not private chats. Otherwise, you&#8217;ll develop an information silo, will decrease trust between people from different locations, etc.</p>
+<h3>Online meetings? Really?</h3>
+<p>Ceremonies and meetings are usually a dreadful experience when online, and there&#8217;s not much we can do about that&#8230; After all, the internet connection fails, you need to repeat everything ten times, the audio quality is never perfect, and it is just annoying to not interact with people.</p>
+<p>However, there are some things that you can do to improve that experience. You need to have the right tools, and a clear goal for the meeting, you&#8217;ll find more on that in <a href="/2016/01/how-to-do-remote-meetings-effectively/">this blog post</a>.</p>
+<p>Besides that, each person should preferably be in their own machine, even if you have some people together in the same building. In my experience, people that are together in a room tend to share information while the microphone is muted. However, that information could be useful to the offshore team.</p>
+<p>But one thing that I want to demystify is the necessity of meetings.</p>
+<p>Please, only have meetings if you need them! And that is something to consider even in a colocated team. Most people start working with Scrum, Kanban or whatever methodology that comes with their set of <em>necessary</em> ceremonies. You need to think, and re-think, all the meetings objectives and check if they are necessary for your context. And if they are, check if all invited people are required. Don&#8217;t waste people’s time with unnecessary meetings.</p>
+<h3>But I&#8217;m in LA and she is in China!</h3>
+<p>If you have distributed teams in just one time zone, you are a lucky one. However, people usually have distributed teams across the entire world, going from 1 to sometimes 12 hours of difference. And each team needs to adapt their process to make sure that everyone receives the same information and participates in decisions over the future of the project.</p>
+<p>The important point here is to stay as a team and try to have at least part of the day (or of the week if the time zones are too different), like an hour, that everyone is online. With that synchronized time you can put everyone on the same page.</p>
+<h3>Fly!</h3>
+<p>You&#8217;ll need to meet in person eventually. Not frequently though. Once a month, or even once a year, might be good enough. The idea of this encounter is to humanize people since we will often only interact with faces and texts on screen. That improves trust among everyone and brings the team back together. Think of it as a reset for group relationship. Bringing everyone together will relieve stress and improve interactions.</p>
+<h2>Different places, different cultures</h2>
+<p>Culture is a crucial point to consider when having distributed teams. We often expect people to behave as similarly as we would in the same circumstances, and it can break our expectations, hence, causing stress. I&#8217;ll detail two points that I often face in distributed teams that could help you.</p>
+<h3>Can I invite everyone to Carnival?</h3>
+<p>Whether you are hiring someone that will work remotely or are entering a team that has people from other countries, you need first to understand the countries’ differences. I&#8217;d suggest a comprehensive analysis of the country&#8217;s culture, how people usually behave when facing difficulties, how they say things (if directly or indirectly), what are their working times and related subjects. With all that information, you can manage your expectations and change your actions accordingly.</p>
+<h3>Hola, how você esta?</h3>
+<p>That is a very tough subject to address. What if you are working with team members that don&#8217;t speak the same language? Well, we&#8217;ve been there, and the answer is pretty simple: you need to communicate somehow, and it doesn&#8217;t matter how. Sometimes we opt for a common language, Esperanto most of the time (just kidding), and sometimes we try to learn the other person&#8217;s language if it is possible, like Spanish. But it doesn&#8217;t matter if you speak English, Latin or whatever. What is important is that, at the end of the day, you understood each other.</p>
+<h2>Just give them this bunch of tasks!</h2>
+<p>Especially when you have part of a team distributed in another region, it is common to have them as a &#8220;black-box team.&#8221; It is important to avoid scenarios in which you select demands for that team, instead of having the stories being pulled by whoever is free at the time. It is better not to have this kind of differentiation.</p>
+<h2>Ok, but what tools should I use?!</h2>
+<p>Before surrendering yourself to products that claim to be the silver-bullet for distributed teams, think about your process and how you can improve it. Then, if you need a tool, you&#8217;ll know what to search for.</p>
+<p>However, if you want to know some of the tools you may need, we have an already extensive guide in <a href="/2016/01/how-to-do-remote-meetings-effectively/">this blog post</a>. To make it easier for you, I&#8217;ll just mention some of the tools we use.</p>
+<ul>
+<li>A video conference tool, like <a href="hangouts.google.com">Hangouts</a> with a microphone handler like <a href="http://mizage.com/shush/">Shoosh</a></li>
+<li>An asynchronous conversation tool, like <a href="slack.com">Slack</a></li>
+<li>A place to put findings and documents, like <a href="drive.google.com">Google Drive</a> and/or <a href="basecamp.com">Basecamp</a></li>
+<li>A wiki like <a href="https://www.atlassian.com/software/confluence">Confluence</a> may also be useful</li>
+<li>For your Kanban board, you may use something simpler like <a href="trello.com">Trello</a> or something with more options (but less customizable), like <a href="https://www.atlassian.com/software/jira">Jira</a>.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>The takeaway from this post is to improve communication and have empathy to understand the other. It is all about the process, not the tools you use.</p>
+<p>I presented a <strong>huge</strong> number of things to do in a distributed team. Ergo, if you are seeking perfection you would need all of them, but to be better than yesterday, you just need to implement one at a time. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Do you agree with our approach? Leave your thoughts below!</p>
+<div style="padding: 40px 0 60px;"><a href="/subscribe/?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=blog-subscription&amp;utm_content=cta-blog-post-bottom"><img decoding="async" style="border: none;" src="/wp-content/uploads/2016/03/CTA-subscribe-blog-1.png" alt="Subscribe to our blog" /></a></div><p>The post <a href="/2017/12/how-to-work-with-distributed-teams/">How to work with distributed teams</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/12/how-to-work-with-distributed-teams/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Bringing continuous improvements into your agile process: A different Daily Meeting</title>
+		<link>/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 24 Mar 2017 15:45:58 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[project management]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=6213</guid>
+
+					<description><![CDATA[<p>Congratulations on holding the Reality Check ceremony! You never had the same problem again and now your business plan changes faster according to the nuances of your development plan. (To check what I&#8217;m talking about, check the first blog post of this series: Bringing continuous improvements into your agile process: The Reality Check Ceremony). Your ... <a class="read-more-link" href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">»</a></p>
+<p>The post <a href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">Bringing continuous improvements into your agile process: A different Daily Meeting</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Congratulations on holding the Reality Check ceremony! You never had the same problem again and now your business plan changes faster according to the nuances of your development plan. (To check what I&#8217;m talking about, check the first blog post of this series: <a href="/2017/02/bringing-continuous-improvements-into-your-agile-process-the-reality-check-ceremony/">Bringing continuous improvements into your agile process: The Reality Check Ceremony</a>).</p>
+<p>Your product starts to get fancier, and your clients begin to subscribe&#8230; That is just amazing! However, your team is feeling a little unmotivated. You start participating on their retrospectives to check how you can help and you see a pattern: people are complaining, in other words, the Agile Specialist is micromanaging everyone.</p>
+<p>You decide to closely follow the team during a month, investigating what are the things happening there that are discouraging them. Suddenly, you see yourself in a daily meeting, in which everyone talks about what they did and what they&#8217;ll do. Soon enough you spot the problem: they are using the daily meeting to report work instead of spreading knowledge and removing blocks. But what now? How to achieve those goals without the reporting feeling?</p>
+<hr />
+<p>The feeling of a micromanaging daily ceremony always caught me while working in the industry as a developer. I always thought people wanted me to report what I was doing, with the intention of knowing exactly how efficient I was. That caused different kinds of behaviors, the most common was to do more things at once, to show I was working more.</p>
+<p>However, doing more tasks at the same time might slow everything down, make your work less valuable and affect the rest of the team. More on that subject can be found in these blog posts:<br />
+* <a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a><br />
+* <a href="/2017/02/the-hero-syndrome-and-how-to-deal-with-it/">The Hero Syndrome and how to deal with it</a></p>
+<p>Therefore, to overcome that situation, we at Plataformatec started using a different approach in the daily meeting. We saw that the problem of the &#8220;old way&#8221; was that teams were focusing on what <strong>each person</strong> did instead of on the progress of the project itself. With that in mind, we just changed the focus. Instead of asking people what they did, we started asking cards.</p>
+<p>No, we are not going mad (I guess)&#8230; And of course, we didn&#8217;t talk to a post-it either (even though talking to inanimate objects may help on development, like <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">rubber ducks</a>). However, we changed the way we asked things. Here is how we do it:</p>
+<p>We go over the board, from right to left, asking the whole team how is each card&#8217;s development:</p>
+<ul>
+<li>How is its development? Any technical difficulties?</li>
+<li>Is there anything blocking its development?</li>
+</ul>
+<p>You may say that it is not that different from what a usual Daily Meeting looks like. However, let me point out the differences and their importance:</p>
+<ul>
+<li><strong>We look at the cards on the board, from right to left.</strong> By looking at the card further in the process, we are looking at the feature that will most likely bring value in the short term.</li>
+</ul>
+<p><img fetchpriority="high" decoding="async" src="/wp-content/uploads/2017/03/kanban-en.png" alt="Kanban" width="961" height="462" class="aligncenter size-full wp-image-6216" srcset="/wp-content/uploads/2017/03/kanban-en.png 961w, /wp-content/uploads/2017/03/kanban-en-300x144.png 300w, /wp-content/uploads/2017/03/kanban-en-768x369.png 768w" sizes="(max-width: 961px) 100vw, 961px" /></p>
+<ul>
+<li><strong>The questions are directed to the team, not to a person.</strong> Asking the whole team about a card brings back the team sense that we lose asking individuals. It shows that we don’t care about who is working on it, and how much. We care about that project&#8217;s development.</p>
+</li>
+<li>
+<p><strong>The questions&#8217; subject is not &#8220;you&#8221; anymore, it is &#8220;it&#8221;.</strong> We used to ask things like &#8220;What have <strong>you</strong> done the past day? What are the blocks that <strong>you</strong> had?&#8221; etc. By changing the subject, you reinforce that the focus is on the feature development, and you also make the team talk only about what is important to the project, and not about peripheral topics.</p>
+</li>
+<li>
+<p><strong>Extra: We simply look more at the board.</strong> Yes, that simple. You probably experienced that, with time, people start to not spend as much time as they did at the beginning of the project looking at the board. The simple fact that we are using it to run the ceremony, brings attention to it and we can easily spot when someone is overworking, when a card has been at the same column for too long or other related issues.</p>
+</li>
+</ul>
+<h2>Conclusion</h2>
+<p>What we suggest here is not a big change, actually, is pretty subtle. Instead of focusing on what people did, focus on what is being developed. You&#8217;ll see great improvements in people&#8217;s feelings, everyone will be in touch with the process everyday through the board and, as the famous Lean quote states, people will <em>stop starting tasks and start finishing them</em>.</p>
+<p>What do you think? Would you use this method? Leave your comments below!</p>
+<hr>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/spreadsheet-forecasting-software-project-completion-date?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=monte-carlo-spreadsheet&amp;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2016/08/forecasting-software-project-cta.png" alt="Download: Forecasting software project through Monte Carlo simulation (FREE spreadsheet)"></a>
+</div><p>The post <a href="/2017/03/bringing-continuous-improvements-into-your-agile-process-a-different-daily-meeting/">Bringing continuous improvements into your agile process: A different Daily Meeting</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Desenvolvendo melhoria contínua em seu processo ágil: Um Daily Meeting diferente</title>
+		<link>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/</link>
+					<comments>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 24 Mar 2017 15:12:07 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[gerenciamento de projetos]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=6202</guid>
+
+					<description><![CDATA[<p>Parabéns na adoção da cerimônia de Reality Check! Você nunca teve o mesmo problema novamente e seu plano de negócios agora muda mais rápido de acordo com as nuances do seu plano de desenvolvimento. (Para entender sobre o que estamos falando, dê uma olhada no primeiro blog post desta série: Desenvolvendo melhoria contínua em seu ... <a class="read-more-link" href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/">»</a></p>
+<p>The post <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/">Desenvolvendo melhoria contínua em seu processo ágil: Um Daily Meeting diferente</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Parabéns na adoção da cerimônia de <a href="/2017/02/desenvolvendo-melhoria-continua-em-seu-processo-agil-a-cerimonia-de-reality-check/">Reality Check</a>! Você nunca teve o mesmo problema novamente e seu plano de negócios agora muda mais rápido de acordo com as nuances do seu plano de desenvolvimento. (Para entender sobre o que estamos falando, dê uma olhada no primeiro blog post desta série: <a href="/2017/02/desenvolvendo-melhoria-continua-em-seu-processo-agil-a-cerimonia-de-reality-check/">Desenvolvendo melhoria contínua em seu processo ágil: A cerimônia de Reality Check</a>)</p>
+<p>Seu produto começa a ficar mais robusto, e seus clientes começam a aderir a ideia&#8230; Incrível! No entanto, seu time está se sentindo um pouco desmotivado. Você começa a participar de suas retrospectivas para checar como poderia ajudar, e observa um padrão: as pessoas estão reclamando, com outras palavras, que o Especialista Ágil está micro-gerenciando a todos.</p>
+<p>Você decide acompanhar de perto o time durante um mês, observando o que está ocorrendo em relação a isso. De repente você se vê em uma Daily Meeting, na qual todos falam sobre o que fizeram e o que farão. Você então vê o problema: eles estão usando o Daily para reportar trabalho, ao invés de pulverizar conhecimento e remover bloqueios. Mas e agora? Como conseguir estes objetivos sem a sensação de reporte?</p>
+<hr />
+<p>O sentimento de um Daily micro-gerenciador sempre me acompanhou quando trabalhava como desenvolvedor. Eu sempre pensei que pessoas queriam que eu reportasse o que estava fazendo, com a intenção de saber exatamente o quão eficiente eu era. Isso causava diferentes tipos de comportamento, o mais comum era fazer mais coisas ao mesmo tempo, para mostrar que estava trabalhando mais.</p>
+<p>No entanto, fazer mais tarefas ao mesmo tempo pode trazer lentidão ao processo, tirar valor do que você está fazendo e afetar o resto do time. Mais sobre esse assunto pode ser encontrado nestes blog posts:<br />
+* <a href="/2016/09/case-study-of-a-wip-limit-implementation-why-when-and-how-to-use-wip-limits/">Case Study of a WIP Limit Implementation: Why, When and How to use WIP Limits</a><br />
+* <a href="/2017/02/a-sindrome-do-heroi-e-como-lidar-com-ela/">A síndrome do herói e como lidar com ela</a></p>
+<p>Portanto, para superar essa situação, nós da Plataformatec começamos a usar uma abordagem diferente em nossos Dailies. Nós vimos que o problema do &#8220;método antigo&#8221; era que os times focavam no que <strong>cada pessoa</strong> fazia ao invés de focar no progresso do projeto. Com isso em mente, mudamos o foco. Ao invés de perguntar às pessoas o que fizeram, passamos a perguntar às histórias.</p>
+<p>Não, não estamos ficando loucos (eu acho)&#8230; E obviamente não estamos conversando com post-its (apesar de que falar com objetos inanimados pode ajudar no desenvolvimento, como <a href="https://en.wikipedia.org/wiki/Rubber_duck_debugging">patos de borracha</a>). No entanto, mudamos como perguntamos as coisas. Aqui está nossa versão:</p>
+<p>Começamos olhando o kanban, da direita para a esquerda, perguntando ao time todo como está o desenvolvimento de cada história:</p>
+<ul>
+<li>Como está seu desenvolvimento? Alguma dificuldade técnica?</li>
+<li>Existe algum bloqueio para o seu desenvolvimento?</li>
+</ul>
+<p>Você pode achar que não é tão diferente do Daily usual. No entanto, deixe-me pontuar aqui as diferenças e suas importâncias:</p>
+<ul>
+<li><strong>Nós olhamos para as histórias no quadro da direita para esquerda.</strong> Olhar a história mais a frente no processo nos faz olhar para o que provavelmente nos trará mais valor em um curto período de tempo.</li>
+</ul>
+<p><img decoding="async" src="/wp-content/uploads/2017/03/kanban-pt.png" alt="Kanban" width="961" height="462" class="aligncenter size-full wp-image-6211" srcset="/wp-content/uploads/2017/03/kanban-pt.png 961w, /wp-content/uploads/2017/03/kanban-pt-300x144.png 300w, /wp-content/uploads/2017/03/kanban-pt-768x369.png 768w" sizes="(max-width: 961px) 100vw, 961px" /></p>
+<ul>
+<li><strong>As questões são agora direcionadas ao time, não à uma pessoa.</strong> Perguntar ao time todo sobre uma história traz de volta o sentimento de time, que perdemos quando fazemos perguntas individuais. Mostra que nós não nos importamos com o que cada um está trabalhando, e quanto. Nos importamos com o desenvolvimento do projeto.</p>
+</li>
+<li>
+<p><strong>O sujeito das perguntas não é mais &#8220;Você&#8221;, e sim a história.</strong> Costumávamos a perguntar coisas como &#8220;O que você fez ontem? Algo está te bloqueando?&#8221; e etc. Mudando o sujeito da pergunta, reforçamos o foco no desenvolvimento da história, e também fazemos o time conversar apenas sobre o que é importante ao projeto, e não sobre tópicos periféricos.</p>
+</li>
+<li>
+<p><strong>Extra: Nós simplesmente olhamos mais para o quadro.</strong> Sim, tão simples quanto isso. Você provavelmente já viu que, com o tempo, as pessoas começam a não olhar mais para o quadro como inicialmente. O simples fato de usá-lo como base da cerimônia, traz atenção a ele, fazendo com que possamos facilmente ver quando alguém está trabalhando em excesso, quando uma história está parada na mesma coluna por muito tempo ou outros problemas relacionados.</p>
+</li>
+</ul>
+<h2>Conclusão</h2>
+<p>O que sugerimos aqui não é uma mudança grande, na verdade é bem discreta. Ao invés de focar nas pessoas, foque no que está sendo desenvolvido. Você verá grandes melhoras no sentimento das pessoas, todos estarão em contato diário com o processo através do quadro e, como a famosa citação do Lean diz, as pessoas vão <em>parar de começar tarefas e começar a terminá-las</em>.</p>
+<p>O que achou? Você utilizaria este método? Deixe seus comentários abaixo!</p>
+<hr />
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" style="max-width:90%;" class="aligncenter" src="/wp-content/uploads/2017/02/blog-cta-assinar-contagil.png" alt="Quero assinar a ContÁgil Newsletter"/></a>
+</div><p>The post <a href="/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/">Desenvolvendo melhoria contínua em seu processo ágil: Um Daily Meeting diferente</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2017/03/desenvolvendo-melhoria-continua-em-seu-processo-agil-um-daily-meeting-diferente/feed/</wfw:commentRss>
+			<slash:comments>6</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>ContÁgil: A nossa nova newsletter mensal de agilidade</title>
+		<link>/2017/02/contagil-a-nossa-nova-newsletter-mensal-de-agilidade/</link>
+		
+		<dc:creator><![CDATA[Lucas Colucci]]></dc:creator>
+		<pubDate>Fri, 10 Feb 2017 11:30:54 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=6102</guid>
+
+					<description><![CDATA[<p>TL;DR: Criamos uma nova newsletter mensal com conteúdos sobre agilidade, a ContÁgil! Entre e se inscreva! Como vocês devem ter percebido, nos últimos anos a Plataformatec tem investido cada vez mais na área de processos. A quantidade de conteúdo sobre agilidade que produzimos em 2016 foi superior ao que fizemos em todos os anos anteriores ... <a class="read-more-link" href="/2017/02/contagil-a-nossa-nova-newsletter-mensal-de-agilidade/">»</a></p>
+<p>The post <a href="/2017/02/contagil-a-nossa-nova-newsletter-mensal-de-agilidade/">ContÁgil: A nossa nova newsletter mensal de agilidade</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<div style="border:solid 1px #FFE041; background-color:#FFF9CA; padding:20px; font:13px Gotham, Helvetica Neue, Helvetica, Arial,' sans-serif';"><strong>TL;DR</strong>: Criamos uma nova newsletter mensal com conteúdos sobre agilidade, a <a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=link1" style="text-decoration: underline">ContÁgil</a>! Entre e se inscreva!</div>
+<p>Como vocês devem ter percebido, nos últimos anos a Plataformatec tem investido cada vez mais na área de processos. A quantidade de conteúdo sobre agilidade que produzimos em 2016 foi superior ao que fizemos em todos os anos anteriores <strong>somados</strong>!</p>
+<p>No entanto, temos muito mais a falar do que conseguimos escrever&#8230; Temos muitos assuntos interessantes, abordados no contato diário com nossos clientes, e sentimos que precisamos compartilhar ainda mais as novidades que presenciamos. Com isso, veio a ideia da newsletter mensal de agilidade!</p>
+<p>O propósito da newsletter é compartilhar com vocês blog-posts, artigos e conteúdo em geral que nos impulsionam e nos ajudam a superar os desafios que encontramos no dia-a-dia.</p>
+<h2><em>Ah eu sou dev, o que isso agregará para mim?</em></h2>
+<p>Tenha você um papel de Dev, Product Owner, Gerente de Projetos, Scrum Master, CTO, CEO ou qualquer outro relacionado a tecnologia, essa newsletter é para você. Para você que quer desenvolver softwares melhores de maneira mais ágil. Para você que precisa priorizar melhor as features do seu produto, para gerar valor mais rápido para sua empresa. Pra você que precisa de mais ferramentas para engajar o time e fazer com que a cadência de entrega seja mantida. Seja qual for o seu cargo, se você tem tecnologia no coração e agilidade na veia, essa newsletter é para você.</p>
+<div style="margin:20px 0">
+<a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=cta-blog-post-middle" target="_blank"><img decoding="async" class="aligncenter" src="/wp-content/uploads/2017/02/banner-lateral-blog.png" alt="Quero assinar a ContÁgil Newsletter"/></a>
+</div>
+<h2><em>Mas Colucci, o conteúdo será sobre Scrum? Kanban? XP?</em></h2>
+<p>Bom, como dissemos em nosso blog post &#8220;<a href="/2016/12/nos-nao-somos-necessariamente-ageis-mas-com-certeza-somos-ageis/">Nós não somos necessariamente Ágeis… Mas com certeza somos ágeis!</a>&#8220;, nós consideramos que o futuro do ágil não está em seguir uma ou outra metodologia, e sim adaptar ao seu contexto as práticas que impulsionem seu processo de desenvolvimento. Com isso, não vamos nos prender à metodologias na hora de compartilhar tais conteúdos. Vamos focar em apresentar conteúdo de qualidade, seja de XP, Scrum, Kanban, PMBOK ou outra vertente.</p>
+<h2><em>Então será apenas uma curadoria de conteúdo? Por que não uso o Google?</em></h2>
+<p>Google, e afins, são ótimas fontes de informações (acredito que sem Google, Stackoverflow e Wikipedia o mundo ainda estaria dependendo de máquinas a vapor), mas para usá-los você precisa saber o que não sabe. A nossa intenção é apresentar conteúdos que você não sabia que precisava, trazer um grau de <a href="http://www.dicionarioinformal.com.br/serendipidade/">serendipidade</a> à newsletter.</p>
+<p>No entanto, não é apenas uma curadoria de conteúdo. Em cada edição, um de nossos Agile Consultants vai desenvolver sua análise, opinião e visão acerca de um tema Ágil, baseando-se na experiência da Plataformatec de 8 anos entregando projetos de software e prestando consultoria sobre agile.</p>
+<h2><em>Mas eu não quero minha caixa de entrada do email lotada!</em></h2>
+<p>E nem terá! A nossa newsletter será mensal! Entre um mês e outro você terá tempo de sobra para amadurecer o conteúdo compartilhado.</p>
+<h2><em>E quanto isso vai me custar?</em></h2>
+<p>Nada. Zero. &#8220;De gratis&#8221;. &#8220;0800&#8221;. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<h2><em>Como me inscrevo?!</em></h2>
+<p>Se você se interessou e deseja se inscrever, basta entrar no link da <a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&amp;utm_medium=referral&amp;utm_campaign=contagil-subscription&amp;utm_content=link2">ContÁgil</a> e colocar seu email. Fácil, rápido e indolor.</p>
+<div style="margin:20px 0 60px;">
+<a href="http://pages.plataformatec.com.br/contagil-newsletter-assinatura?utm_source=our-blog&#038;utm_medium=referral&#038;utm_campaign=contagil-subscription&#038;utm_content=cta-blog-post-bottom" target="_blank"><img decoding="async" style="max-width:95%;" class="aligncenter" src="/wp-content/uploads/2017/02/blog-cta-assinar-contagil.png" alt="Quero assinar a ContÁgil Newsletter"/></a>
+</div><p>The post <a href="/2017/02/contagil-a-nossa-nova-newsletter-mensal-de-agilidade/">ContÁgil: A nossa nova newsletter mensal de agilidade</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>6 dicas para mandar bem no código do processo seletivo da Plataformatec</title>
+		<link>/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/</link>
+		
+		<dc:creator><![CDATA[Ulisses Almeida]]></dc:creator>
+		<pubDate>Wed, 23 Mar 2016 16:17:33 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[equipe]]></category>
+		<category><![CDATA[hiring]]></category>
+		<category><![CDATA[the plataforma way]]></category>
+		<guid isPermaLink="false">/?p=5228</guid>
+
+					<description><![CDATA[<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com vagas abertas na Plataformatec! Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia. Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto ... <a class="read-more-link" href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">»</a></p>
+<p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><img decoding="async" style="border: 0; max-width:100% !important;" src="/wp-content/uploads/2016/03/show-me-the-code-plataformatec.png" alt="Etapa: Show me the code" /></p>
+<p>Atenção desenvolvedoras e desenvolvedores, tenho uma ótima notícia. Estamos com <strong><a href="https://goo.gl/xvFz6i" target="_blank">vagas abertas na Plataformatec</a></strong>!</p>
+<p>Não estamos procurando “ninjas” ou “rockstars”. Procuramos pessoas responsáveis, que busquem sempre melhorar suas habilidades em desenvolvimento e gostem de trabalhar com autonomia.</p>
+<p>Para fazer parte do nosso time, você precisará ser aprovado em nosso processo seletivo. Hoje ele é composto por 5 etapas:</p>
+<li>Bate papo inicial</li>
+<li>Entrevista técnica</li>
+<li>Show me the code</li>
+<li>Pair Programming</li>
+<li>Proposta Financeira</li>
+<p>No <strong>Bate papo inicial</strong>, o objetivo é conhecermos melhor os candidatos e apresentarmos quem nós somos; a <strong>Entrevista técnica</strong> tem por meta avaliar o conhecimento sobre desenvolvimento web (em especial, utilizando Ruby e Rails);  já na etapa de <strong>Show me the code</strong> queremos ver seu código; no <strong>Pair programming</strong> avaliamos como os candidatos pensam e se portam ao escreverem seu código. E finalmente, com todas essas informações em mãos, conseguimos fazer a <strong>Proposta financeira</strong>.</p>
+<p>O objetivo desse post é dar dicas sobre como ir bem na terceira etapa. Como já mencionado, a etapa <strong>Show me the code</strong> é o momento que as candidatas ou os candidatos têm para demonstrarem na prática o conhecimento avaliado durante a <strong>Entrevista técnica</strong>. A pessoa precisará desenvolver um aplicativo web de escopo reduzido que deve ser feito no prazo de uma semana.</p>
+<p>Depois de entregue, o aplicativo será revisado por nosso time que buscará as boas práticas de desenvolvimento.</p>
+<p>Vou citar algumas dicas que podem te ajudar a escrever um código com mais confiança e atingir um bom resultado:</p>
+<ul>
+<li>Familiarize-se com a ferramenta</li>
+<li>Comunique-se</li>
+<li>Reflita sobre a segurança</li>
+<li>Busque a simplicidade</li>
+<li>Valorize seu frontend</li>
+<li>Dê atenção a usabilidade</li>
+</ul>
+<h2>Familiarize-se com a ferramenta</h2>
+<p>Somos uma consultoria de Ruby e Ruby On Rails e esperamos que o candidato tenha familiaridade com a tecnologia. Mesmo que você venha de outra linguagem, esperamos que você saiba desenvolver usando as funcionalidades mais comuns do framework. Recomendo ler <a href="http://guides.rubyonrails.org/" target="_blank">Ruby On Rails Guides</a> e fazer o tutorial do livro online <a href="https://www.railstutorial.org/book" target="_blank">Ruby On Rails Tutorial</a>.</p>
+<h2>Comunique-se</h2>
+<p>Comunicação é muito importante para o nosso time. Durante o desenvolvimento, pense nas pessoas que vão revisar seu aplicativo e testá-lo. Pense nelas como se elas estivessem trabalhando junto com você. Valorize suas mensagens de <em>commit</em>, diga o quê e o porquê das mudanças. Uma boa ferramenta de consulta é o <strong>GitHub</strong>, inspire-se em projetos open source que você gosta.</p>
+<h2>Reflita sobre a segurança</h2>
+<p>Um app seguro é essencial para os usuários e conta como pontos positivos. Dê uma lida no <a href="http://guides.rubyonrails.org/security.html" target="_blank">guide sobre segurança do Ruby on Rails</a> e certifique-se se as actions do seu controller estão com as permissões corretas.</p>
+<h2>Busque a simplicidade</h2>
+<p>Sabemos que o tempo para produzir o código para nossa revisão é curto, mas o escopo também não é grande. Portanto, tente não se complicar adicionando muita complexidade. Não deixe de mostrar seus pontos fortes, porém o faça de maneira simples. Por exemplo, se você não domina muito Javascript, não precisa fazer uma single page app, com um framework grande de frontend, integrado com backend Rails conectado em diversos microserviços. Faça o simples que vai dar tudo certo.</p>
+<h2>Valorize seu frontend</h2>
+<p>Nosso foco é desenvolvimento web, portanto conhecimento de HTML, CSS e Javascript são muito importantes. Esperamos que o mesmo carinho que você tem no seu código Ruby tenha também no seu código de frontend.</p>
+<p>Se você manja de HTML e CSS, aproveite essa chance. Como muitas pessoas acabam escolhendo utilizar Bootstrap, essa é a oportunidade de mostrar seu diferencial.</p>
+<h2>Dê atenção a Usabilidade</h2>
+<p>Pense nos usuários que vão usar o aplicativo que você fez. Como a pessoa irá navegar e fazer as tarefas? Está intuitivo? É bom repassar os fluxos da aplicação manualmente para ter certeza de que as pessoas que usarem o aplicativo não irão encontrar erros ou ficarão perdidas.</p>
+<p>Vale lembrar ainda que, pelo sim ou pelo não, sempre te daremos um feedback. Se por algum motivo você não for aprovada(o), te enviaremos uma lista com os pontos onde você poderia ter ido melhor e as respectivas recomendações de estudo. Trabalhe esses pontos e, quando julgar que conseguiu evoluir, se <a href="https://goo.gl/xvFz6i" target="_blank">candidate novamente no nosso processo seletivo</a>. Por curiosidade, algumas pessoas do nosso time participaram do processo seletivo mais de uma vez. Se você for aprovada(o), prometemos muitos desafios e aprendizado.</p>
+<p>Para saber mais como serão seus primeiros meses de trabalho, indico dois posts para você: <em><a href="/2014/05/1-year-working-at-plataformatec/">One year working at plataformatec</a></em> (escrito também por <a href="https://twitter.com/ulissesalmeida" target="_blank">mim</a>) e <em><a href="/2015/04/what-i-have-learned-in-my-first-three-months-at-plataformatec/">What I have learned in my first three months at plataformatec</a></em> (escrito por <a href="https://twitter.com/igorflorianfs" target="_blank">Igor Florian</a>).</p>
+<p>Espero que tenha gostado dessas dicas. Se você gostou e acha que elas se relacionam com a maneira que você gosta de trabalhar, inscreva-se no nosso <a href="https://goo.gl/xvFz6i" target="_blank">processo seletivo</a>.</p>
+<p>Para outras dicas de como mandar bem no desenvolvimento de software, recomendo também dar uma olhada nas palestras <a href="https://speakerdeck.com/flaviafortes/learn-from-my-mistakes" target="_blank">Learn From My Mistakes</a> da <a href="https://twitter.com/FlaFortes" target="_blank">Flavia Fortes</a> e <a href="https://speakerdeck.com/lucas/10-coisas-que-eu-gostaria-de-ter-aprendido-mais-cedo" target="_blank">10 Coisas Que Eu Gostaria de Ter aprendido Mais Cedo</a> do <a href="https://twitter.com/lucasmazza" target="_blank">Lucas Mazza</a>.</p>
+<p>Espero ver seu código em breve <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f609.png" alt="😉" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p style="margin-bottom:5px; margin-top:50px;"><a style="cursor: pointer;" href="https://goo.gl/xvFz6i" target="_blank"><img decoding="async" style="border: 0;" src="/wp-content/uploads/2016/03/estamos-contratando-developers-plataformatec.png" alt="Participar do processo seletivo" target="_blank" /></a></p>
+<div style="text-align:center; margin-bottom:60px;font:13px arial, sans-serif; color:#999;">Quer receber mais informações sobre nossas vagas, <a href="http://eepurl.com/bS0BJr" style="color:#999; text-decoration:underline;" target="_blank">inscreva-se em nossa mailing list</a>.</div><p>The post <a href="/2016/03/6-dicas-para-mandar-bem-no-codigo-do-processo-seletivo-da-plataformatec/">6 dicas para mandar bem no código do processo seletivo da Plataformatec</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

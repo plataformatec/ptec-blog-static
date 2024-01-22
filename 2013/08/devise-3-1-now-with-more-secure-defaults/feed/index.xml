@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Devise 3.1: Now with more secure defaults	</title>
+	<atom:link href="/2013/08/devise-3-1-now-with-more-secure-defaults/feed/" rel="self" type="application/rss+xml" />
+	<link>/2013/08/devise-3-1-now-with-more-secure-defaults/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 24 Sep 2018 17:22:49 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: HappyNoff		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1352</link>
+
+		<dc:creator><![CDATA[HappyNoff]]></dc:creator>
+		<pubDate>Tue, 10 Sep 2013 09:25:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1352</guid>
+
+					<description><![CDATA[Just a note, the article is missing the Devise tag ;)]]></description>
+			<content:encoded><![CDATA[<p>Just a note, the article is missing the Devise tag 😉</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Johnny		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1351</link>
+
+		<dc:creator><![CDATA[Johnny]]></dc:creator>
+		<pubDate>Mon, 19 Aug 2013 17:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1351</guid>
+
+					<description><![CDATA[Why would the user&#039;s email randomly be in the parameters?]]></description>
+			<content:encoded><![CDATA[<p>Why would the user&#8217;s email randomly be in the parameters?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1350</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Wed, 14 Aug 2013 05:49:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1350</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1349&quot;&gt;Steven Harman&lt;/a&gt;.
+
+Steven, if you are sending the e-mail via the interface, there is nothing you can do. One would argue that your current approach is the most correct one, as you are effectively testing the proper e-mail is being sent too.
+
+In any case, you can always send the e-mail manually, which gives you access to the token. For recoverable, here is what you would call: https://github.com/plataformatec/devise/blob/master/lib/devise/models/recoverable.rb#L47]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1349">Steven Harman</a>.</p>
+<p>Steven, if you are sending the e-mail via the interface, there is nothing you can do. One would argue that your current approach is the most correct one, as you are effectively testing the proper e-mail is being sent too.</p>
+<p>In any case, you can always send the e-mail manually, which gives you access to the token. For recoverable, here is what you would call: <a href="https://github.com/plataformatec/devise/blob/master/lib/devise/models/recoverable.rb#L47" rel="nofollow ugc">https://github.com/plataformatec/devise/blob/master/lib/devise/models/recoverable.rb#L47</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Steven Harman		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1349</link>
+
+		<dc:creator><![CDATA[Steven Harman]]></dc:creator>
+		<pubDate>Wed, 14 Aug 2013 02:28:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1349</guid>
+
+					<description><![CDATA[In one of my apps I have some feature specs that relied on grabbing the confirmation/reset_password tokens directly off of the `User` in order to generate the correct URLs for confirming or resetting a password. Those specs suddenly broke.
+
+For now, I&#039;ve resorted to extracting the &quot;raw&quot; tokens out of the sent emails. Is there a better way to do this? https://gist.github.com/stevenharman/6227508]]></description>
+			<content:encoded><![CDATA[<p>In one of my apps I have some feature specs that relied on grabbing the confirmation/reset_password tokens directly off of the `User` in order to generate the correct URLs for confirming or resetting a password. Those specs suddenly broke.</p>
+<p>For now, I&#8217;ve resorted to extracting the &#8220;raw&#8221; tokens out of the sent emails. Is there a better way to do this? <a href="https://gist.github.com/stevenharman/6227508" rel="nofollow ugc">https://gist.github.com/stevenharman/6227508</a></p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1348</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Tue, 13 Aug 2013 18:13:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1348</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1347&quot;&gt;Vermin&lt;/a&gt;.
+
+It depends on how he can access the confirmation e-mail. If he can access the target inbox, then surely. As well if he&#039;s sniffing the target network. In those cases, there is nothing we can do. Now, in case he was mistakenly sent a confirmation e-mail (for example, reconfirmable), there is nothing he can do.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1347">Vermin</a>.</p>
+<p>It depends on how he can access the confirmation e-mail. If he can access the target inbox, then surely. As well if he&#8217;s sniffing the target network. In those cases, there is nothing we can do. Now, in case he was mistakenly sent a confirmation e-mail (for example, reconfirmable), there is nothing he can do.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Vermin		</title>
+		<link>/2013/08/devise-3-1-now-with-more-secure-defaults/comment-page-1/#comment-1347</link>
+
+		<dc:creator><![CDATA[Vermin]]></dc:creator>
+		<pubDate>Tue, 13 Aug 2013 17:58:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=3598#comment-1347</guid>
+
+					<description><![CDATA[If the attacker can access the confirmation e-mail, can&#039;t he just confirm the account and then reset the password to get access?]]></description>
+			<content:encoded><![CDATA[<p>If the attacker can access the confirmation e-mail, can&#8217;t he just confirm the account and then reset the password to get access?</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

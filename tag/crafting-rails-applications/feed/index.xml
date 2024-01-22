@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>crafting rails applications « Plataformatec Blog</title>
+	<atom:link href="/tag/crafting-rails-applications/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 29 Oct 2012 20:59:48 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>My five favorite &#8220;hidden&#8221; features in Rails 3.2</title>
+		<link>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/</link>
+					<comments>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 26 Jan 2012 16:31:32 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[exception handling]]></category>
+		<category><![CDATA[rails 3.2]]></category>
+		<guid isPermaLink="false">/?p=2451</guid>
+
+					<description><![CDATA[<p>Rails 3.2 is out with great features on spotlight: faster development reloading, faster router and explain queries. However, every Rails release ships with minor features that do not get that much attention but still would be a great fit to your application. This blog post is about my five favorites "hidden" features of Rails 3.2.</p>
+<p>The post <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/">My five favorite “hidden” features in Rails 3.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Rails 3.2 is out with <a href="http://weblog.rubyonrails.org/2011/12/20/rails-3-2-rc1-faster-dev-mode-routing-explain-queries-tagged-logger-store" title="Rails 3.2.rc1 announced">great features on spotlight</a>: faster development reloading, faster router and explain queries. However, every Rails release ships with minor features that do not get that much attention but still would be a great fit to your application. This blog post is about my five favorites &#8220;hidden&#8221; features of Rails 3.2.</p>
+<h3>1) Smarter <code>content_tag_for</code></h3>
+<p><a href="https://github.com/rails/rails/pull/2816">This feature written by Prem Sichanugrist</a> provides a very simple but welcome clean up to your views. Both <code>content_tag_for</code> and <code>div_for</code> now accepts an array of records and automatically loop over each record. Therefore, instead of writing this:</p>
+<pre lang="ruby">
+  @posts.each do |post|
+    content_tag_for(:li, post) do
+      ...
+    end
+  end
+</pre>
+<p>You can simply write:</p>
+<pre lang="ruby">
+  content_tag_for(:li, @posts) do |post|
+    ...
+  end
+</pre>
+<h3>2) Smarter migration generators</h3>
+<p>It is funny how some parts of Rails as old as the migration generators continue receiving improvements day after day. Rails 3.1 already added a feature that automatically generate indexes for associations, by simply invoking:</p>
+<p></p>
+<pre>
+rails g scaffold Comment post:references title:string body:text
+</pre>
+<p></p>
+<p>With the above, Rails will detect that post is a reference and it will automatically 1) add a <code>post_id</code> integer column, 2) add an association to your model and 3) add an index to that column.</p>
+<p>Right after 3.1 came out, I have pushed another small feature to the migration generator that simply makes the type attribute default to string. Therefore, you no longer need to write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name:string email:string
+</pre>
+<p></p>
+<p>You could simply write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name email
+</pre>
+<p></p>
+<p>Oddly enough, the idea for this feature came when I was preparing a presentation and the scaffold command could not fit in a slide (the so-called Presentation Driven Development). Anyhow, this small addition would not be enough to make to the best five &#8220;hidden&#8221; features of Rails 3.2. That&#8217;s when Dmitrii Samoilov comes in.</p>
+<p><a href="https://github.com/rails/rails/pull/2555">Dmitrii sent a pull request</a> that allows you to specify which columns should have an (unique) index. So one could write:</p>
+<p></p>
+<pre>
+rails g scaffold Person name:index email:uniq
+</pre>
+<p></p>
+<p>And the generator will automatically generate an index for name and an unique index for e-mail. There are other features there as well, so don&#8217;t forget to checkout the CHANGELOG.</p>
+<h3>3) Flexible exception handling</h3>
+<p>When Rails 3.0 came out, one of the features that people suddenly missed was the ability to better handle exceptions. The issue was: since Rails 3 became a lot more Rack &#8220;fluent&#8221;, we had to move some features to the middleware stack and this forced us to move the whole exceptions handling as well. Rails 3.2 attempts to bring some customization back to the game by allowing you to set your own exceptions rack application that is invoked when a failure happens. For instance, you could set the exceptions application to your own router in your <code>config/application.rb</code>:</p>
+<pre lang="ruby">config.exceptions_app = self.routes</pre>
+<p>Now, every time there is an exception, your router is going to be invoked. Therefore, to render custom 404 pages, you could simply add to your router:</p>
+<pre lang="ruby">match "/404", :to => "errors#not_found"</pre>
+<p>And implement the logic in the controller as you wish! However, there are a few things to keep in mind if you go down this road:</p>
+<ol>
+<li>You need to use <code>match</code> in your routes and not <code>get/post/put/delete</code> because such exceptions can happen in any HTTP request;</li>
+<li>You won&#8217;t be able to see your custom exceptions in development unless you set <code>config.consider_all_requests_local</code> to false in your <code>config/environments/development.rb</code>. The reason is, if the request is considered local, Rails will always favor to show the debug exceptions page;</li>
+<li>You can always access the original exception in the controller at <code>env["action_dispatch.exception"]</code>;</li>
+<li>It is not possible to set cookies, the session nor the flash after an exception happens. They all were already serialized back to the client;</li>
+<li>Finally, the default exceptions application used by Rails that simply renders a page in <code>public/STATUS.html</code> is available here: <a href="https://github.com/rails/rails/blob/master/actionpack/lib/action_dispatch/middleware/public_exceptions.rb">action_dispatch/middleware/public_exceptions.rb</a></li>
+</ol>
+<p>Remember that whatever you do in the errors controller, it should not be anything &#8220;fancy&#8221;. Keep it simple because something already went wrong with your application!</p>
+<h3>4) Custom partial paths</h3>
+<p>In order to render a partial for a given model, Rails 3.0 retrieved the partial name by calling: <code>model.class.model_name.partial_path</code>. <a href="https://github.com/rails/rails/commit/bf812074fd55e7dcfa426d6c9bfd4d8d68922194">Grant Hutchins &#038; Peter Jaros noticed that this was not very flexible</a> because the class was responsible to define the partial path and therefore they decided to move this responsibility to the instance. In order to better understand how you can use this feature, let&#8217;s consider the following practical example.</p>
+<p>Imagine your application have an activity feed and each activity in the feed has a certain type. Usually, each type is rendered differently. For example, if you consider a to-do-list application, activities could be both &#8220;marking a list as favorite&#8221; or &#8220;marking a task as done&#8221;. Usually, applications solve this by looping for each item and rendering its respective partial, something like this:</p>
+<pre lang="ruby">@activities.each do |activity|
+  render :partial => "activities/#{activity.kind}",
+    :locals => { :activity =>  activity }
+end</pre>
+<p>Now, you can solve this problem by defining <code>to_partial_path</code> in the model (the method <code>to_partial_path</code> is part of the ActiveModel API and can be implemented in any object. The example above implements it in the model for convenience, but it could be a presenter, another ORM, etc):</p>
+<pre lang="ruby">
+class Activity < ActiveRecord::Base
+  def to_partial_path() "activities/#{kind}" end
+end
+</pre>
+<p>And then invoking:</p>
+<pre lang="ruby">render :partial => @activities, :as => :activity</pre>
+<p>This will now work on Rails 3.2 because even though all activities are of the same class, each instance is actually responsible for telling Rails which partial should be rendered.</p>
+<p>The difference here is not only in brevity, but also in performance. Although the first snippet works fine, it is slow. In the scenario where only one kind of activity happened, the first snippet will go through the render stack 30 times and lookup the same template in your filesystem 30 times. If you read <a href="http://pragprog.com/book/jvrails/crafting-rails-applications" title="Crafting Rails Applications">Crafting Rails Applications</a> you know that this lookup is cached, but even though it would certainly be faster if we didn't have to do this 30 times, but once.</p>
+<p>That's where <code>render :collection</code> or <code>render :partial</code> with an array comes in. In such cases Rails will retrieve all templates up front skipping duplicates, and this new feature allows us to take advantage of it even if the partial lookup is dynamic. So, in the scenario where all the activities are of the same kind, the template lookup will happen just once and no longer 30 times. In other words, best case scenario becomes <code>O(1)</code>, worst case scenario is still <code>O(n)</code>.</p>
+<h3>5) Filtered chain logging is back</h3>
+<p>Another very small change that will make development more pleasant is that Rails will now log "Filter chain halted as CALLBACK_NAME rendered or redirected" every time a before/around/after filter in your controller halts the request. This was the case in Rails 2.3 but somehow got lost when Rails 3 came out. It is one of those small things you don't know how much you missed until you see it again!</p>
+<p>And what is your favorite Rails 3.2 "hidden" feature? Don't forget to take a good look at the CHANGELOGs and check out many others improvements!</p><p>The post <a href="/2012/01/my-five-favorite-hidden-features-in-rails-3-2/">My five favorite “hidden” features in Rails 3.2</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/01/my-five-favorite-hidden-features-in-rails-3-2/feed/</wfw:commentRss>
+			<slash:comments>14</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Multipart templates with Markerb</title>
+		<link>/2011/06/multipart-templates-with-markerb/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 16 Jun 2011 19:22:38 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[markerb]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=2166</guid>
+
+					<description><![CDATA[<p>When writing Crafting Rails Applications, I knew exactly which parts from Rails I wanted to talk about. However, I didn&#8217;t want the book to simply describe how everything works, I actually wanted everyone to build something useful from each part of Rails. One of the hardest areas to come up with an useful tool as ... <a class="read-more-link" href="/2011/06/multipart-templates-with-markerb/">»</a></p>
+<p>The post <a href="/2011/06/multipart-templates-with-markerb/">Multipart templates with Markerb</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When writing <a href="http://pragprog.com/titles/jvrails/crafting-rails-applications">Crafting Rails Applications</a>, I knew exactly which parts from Rails I wanted to talk about. However, I didn&#8217;t want the book to simply describe how everything works, I actually wanted everyone to build something useful from each part of Rails.</p>
+<p>One of the hardest areas to come up with an useful tool as example was the template handlers. Template handlers are responsible for template compilation and the canonical examples are: ERb and Haml. Obviously, creating something like ERb or Haml from scratch would require a lot of code beyond the Rails integration so it wasn&#8217;t an option. On the other hand, tools that simply render rdoc or markdown templates would be too simple and there are already plenty of gems doing the same out there.</p>
+<p>So I started playing with some options. The first one was something like <a href="https://github.com/markaby/markaby" target="_blank">Why&#8217;s Markaby</a> but that would still require a good amount of code (albeit much less than ERb). Next, <a href="https://gist.github.com/336544" target="_blank">I have played with something called YERb (YAML + ERb)</a> which was an interesting hack but too slow to be of any use. I was almost planning to remove the chapter about template handlers when it finally came to me the idea of <strong>markerb</strong>: markdown + erb (in the book, we did a wordplay and called <strong>merb</strong>). While the idea was simple and easy to implement, it had a great use case: multipart templates.</p>
+<p>With <strong>Markerb</strong>, you can create one template for <strong>ActionMailer</strong> and it will be delivered both as text and HTML. So there is no need to maintain two templates. You write it in markdown, which is delivered as text, but also rendered to be delivered as HTML. Recently, <a href="https://github.com/plataformatec/markerb">I have crafted Markerb in its own gem so everyone can use it</a>.</p>
+<h3>How to use?</h3>
+<p>The usage is quite simple. Assuming you have a notifier as below:</p>
+<pre lang="ruby">class Notifier < ActionMailer::Base
+  def contact(recipient)
+    @recipient = recipient
+    mail(:to => @recipient, :from => "john.doe@example.com") do |format|
+      format.text
+      format.html
+    end
+  end
+end</pre>
+<p>If you create a template at <code>app/views/notifier/contact.markerb</code>:</p>
+<pre lang="html_rails">Multipart templates **rock**, right <%= @recipient %>?!</pre>
+<p>It will generate two parts, one in text and another in HTML when delivered. And that is it! Before we finish, here are a few things you might need to know:</p>
+<ul>
+<li>The &#8220;contact.markerb&#8221; template should not have a format in its name. Adding a format would make it unavailable to be rendered in different formats;
+</li>
+<li>The order of the parts matter. It is important for e-mail clients that you call <code>format.text</code> before you call <code>format.html</code>;</li>
+<li>Notice you can normally use ERb inside the template.</li>
+</ul>
+<p>If you are interested in how Markerb, template handlers and other part of Rails work, check out <a href="http://pragprog.com/titles/jvrails/crafting-rails-applications">Crafting Rails Applications</a>. We also hope to add a generator to Devise that will optionally copy all views as Markerb templates to your application.</p>
+<p>And you? Do you have any use cases for <a href="https://github.com/plataformatec/markerb">Markerb</a>? Do you have any other interesting template handlers you would like to share?</p><p>The post <a href="/2011/06/multipart-templates-with-markerb/">Multipart templates with Markerb</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Default views in Rails 3.0 with custom resolvers</title>
+		<link>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/</link>
+					<comments>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 04 Apr 2011 18:00:26 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<category><![CDATA[rails 3]]></category>
+		<category><![CDATA[rails 3.1]]></category>
+		<category><![CDATA[resolvers]]></category>
+		<category><![CDATA[template inheritance]]></category>
+		<guid isPermaLink="false">/?p=1959</guid>
+
+					<description><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the Admin namespace and you would like each action to fallback to a default template. So if you are rendering the index action for Admin::PostsController and &#8220;app/views/admin/posts/index.html.*&#8221; ... <a class="read-more-link" href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">»</a></p>
+<p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>It is common in Rails 3.0 applications that you want to provide default views for a group of controllers. Let&#8217;s say you have a bunch of controllers inside the <code>Admin</code> namespace and you would like each action to fallback to a default template. So if you are rendering the index action for <code>Admin::PostsController</code> and &#8220;app/views/admin/posts/index.html.*&#8221; is not available, it should then render &#8220;app/views/admin/defaults/index.html&#8221;.</p>
+<p>There are several ways to implement this feature at the controller level. It mainly relies on trying to render the original template and then rescue <code>ActionView::MissingTemplate</code>. If this error is rescued, you then render the default one. However, there is a considerable performance overhead in this approach as it needs to pass through the rendering and template lookup stack twice.</p>
+<p>Luckily, since Rails 3.0, we have a new abstraction called <strong>resolvers</strong> that holds the logic to find a template. I explain comprehensively how resolvers work and their API in my book <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>. So here I would just show the basics to get this functionality working.<br />
+First, we need to define a <code>DefaultResolver</code>, it could be done inside the lib directory:</p>
+<pre lang="ruby">
+class MyResolver < ::ActionView::FileSystemResolver
+  def initialize
+    super("app/views")
+  end
+
+  def find_templates(name, prefix, partial, details)
+    super(name, "admin/defaults", partial, details)
+  end
+end
+</pre>
+<p>Our new resolver simply inherits from <code>ActionView::FileSystemResolver</code> and does two changes: Overrides the <code>initialize</code> method so the view path defaults to "app/views" inside our application and overrides <code>find_templates</code>. The <code>find_templates</code> method receives the template name, a prefix (i.e. the controller path), a boolean marking if the template is a partial or not and a hash of details. In the example above, we simply ignore the prefix given and hardcode it to "admin/defaults".</p>
+<p>Now, assuming that all controllers inside the Admin namespace inherit from an <code>Admin::ApplicationController</code>, we can add default views to all of them by adding the following line:</p>
+<pre lang="ruby">
+class Admin::ApplicationController < ActionController::Base
+  append_view_path MyResolver.new
+end
+</pre>
+<p>And we are done! The <code>view_paths</code> holds a list of paths and/or resolvers that the controller will look for templates until one is found. If none is found, an <code>ActionView::MissingTemplate</code> is raised. Since we used <code>append_view_paths</code>, our resolver was added after the "app/views" path, used by default in all controllers.</p>
+<p>As you may have guessed, resolvers are a powerful abstraction that allows you to retrieve templates from anywhere, including the database, which is the example given in <a href="http://plataformatec.com.br/crafting-rails-applications/" target="_blank">Crafting Rails Applications</a>.</p>
+<p>Finally, template inheritance was a feature recently added to Rails master (upcoming Rails 3.1), so you won't need to create your custom resolver as above. <a href="http://edgerails.info/articles/what-s-new-in-edge-rails/2011/01/12/template-inheritance/index.html">There is a good wrap up about this feature in Rails Edge</a>.</p><p>The post <a href="/2011/04/default-views-in-rails-3-0-with-custom-resolvers/">Default views in Rails 3.0 with custom resolvers</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/default-views-in-rails-3-0-with-custom-resolvers/feed/</wfw:commentRss>
+			<slash:comments>3</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Crafting Rails Applications: Why I wrote this book</title>
+		<link>/2010/12/crafting-rails-applications-why-i-wrote-this-book/</link>
+					<comments>/2010/12/crafting-rails-applications-why-i-wrote-this-book/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 13 Dec 2010 18:37:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[crafting rails applications]]></category>
+		<guid isPermaLink="false">/?p=1558</guid>
+
+					<description><![CDATA[<p>When I first got into Ruby and Rails development, I was impressed about how everything worked. A few lines of code and so much got done. At that time, if I was reading a book or blog post that said: &#8220;just do X and Y will automagically work&#8221;. I would gladly accept those instructions. However, after a while, ... <a class="read-more-link" href="/2010/12/crafting-rails-applications-why-i-wrote-this-book/">»</a></p>
+<p>The post <a href="/2010/12/crafting-rails-applications-why-i-wrote-this-book/">Crafting Rails Applications: Why I wrote this book</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>When I first got into Ruby and Rails development, I was impressed about how everything worked. A few lines of code and so much got done. At that time, if I was reading a book or blog post that said: &#8220;just do X and Y will automagically work&#8221;. I would gladly accept those instructions.</p>
+<p>However, after a while, I wanted to understand how it really worked from the inside, so I started reading the source code from different plugins, including Rails itself. Accusing magic to be the reason for that 200 lines of code to &#8220;just work&#8221; didn&#8217;t feel right anymore.</p>
+<p>Turns out, I was not the only one with this feeling. I have been into a few big conferences this year and asked people outside the Rails community what they think about it. And, for my surprise, some of them mentioned that &#8220;there is too much magic going on&#8221;.</p>
+<p>We have been victims of myths before, as the famous &#8220;Rails can&#8217;t scale&#8221; one, and we strongly fought back. But what about the &#8220;there is too much magic going on&#8221;? Is it myth? Who is there to blame?</p>
+<p>Yes, it is a myth and we (the Rails community) are the ones to blame for spreading it.</p>
+<p>I have already seen people explaining how &#8220;has_many :comments&#8221; works as magic: &#8220;it magically guesses the columns from your database&#8221;. Well, a more appropriate description for that would be &#8220;Convention over Configuration&#8221;. Rails uses a set of conventions so it can properly build your associations without you having to specify all tables and columns.</p>
+<p>Heck, I also did my part in the past. There was a time that <a href="https://github.com/josevalim/inherited_resources">Inherited Resources&#8217; README</a> was filled by words like &#8220;magic&#8221; and  &#8220;automagically&#8221;. Just recently, I replaced all this occurencies with more detailed explanations of how it really works.</p>
+<p>The question is: isn&#8217;t it about time for us to start fighting against the &#8220;magic&#8221; myth?</p>
+<p>When I improved <a href="https://github.com/josevalim/inherited_resources">Inherited Resources&#8217; README</a>, the benefits were clear in my head. People using Inherited Resources would write better code and be more productive because they understood it better. And, as consequence, they would be able to troubleshoot issues easily or even contribute back. This is clearly a win-win situation.</p>
+<p>At the beginning of this year (or more specifically February, 2010) I started to put a lot of effort in writing and understanding Rails 3 architecture. Or as some people would (wrongly) say: I started to unveil the magic. After some time, it was clear that I could write better and faster code and that a lot of people could benefit from this knowledge as well.</p>
+<p>Now, 10 months later, I am happy to say that the beta version of my book <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> is out to spread what I have learned about Rails and its applications. Rails is a framework that allows us to write web applications and an advanced Rails book should consequently be about <strong>crafting</strong> them.</p>
+<p><a href="http://plataformatec.com.br/crafting-rails-applications/"><br />
+<img fetchpriority="high" decoding="async" class="aligncenter" title="Crafting Rails Applications Cover" src="http://plataformatec.com.br/images/crafting-rails-application.png" alt="Crafting Rails Applications Cover" width="283" height="345" /></a></p>
+<p><a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> guides you through seven different tutorials, each of them using test-driven development to build a new Rails extension or application that solves common problems through the new Rails 3 APIs. You will understand how the Rails rendering stack works and customize it to read templates from the database while you learn how to mimic Active Record behavior, like validations, in any other object. You will find out how to write faster, leaner controllers, and you’ll learn how to mix Sinatra applications into your Rails apps, so you can choose the most appropriate tool for the job. In addition, you will improve your productivity by customizing generators and responders.</p>
+<p>From the book cover:</p>
+<blockquote><p>Rails 3 is a huge step forward. You can now easily extend the framework, change its behavior, and replace whole components to bend it to your will, all without messy hacks. This pioneering book is the first resource that deep dives into the new Rails 3 APIs and shows you how use them to write better web applications and make your day-to-day work with Rails more productive.</p></blockquote>
+<p>My goal is that <a href="http://plataformatec.com.br/crafting-rails-applications/">Crafting Rails Applications</a> increases the Rails community thirst for knowledge, that &#8220;magic&#8221; is no longer enough to describe any part of Rails or its ecosystem.</p>
+<p>The benefits are clear: leaner code, faster applications and a well-grounded Rails community. <a href="http://plataformatec.com.br/crafting-rails-applications">Check what people are saying</a> or <a href="http://pragprog.com/titles/jvrails/crafting-rails-applications">get a copy on Pragmatic Programmers web site</a>.</p><p>The post <a href="/2010/12/crafting-rails-applications-why-i-wrote-this-book/">Crafting Rails Applications: Why I wrote this book</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2010/12/crafting-rails-applications-why-i-wrote-this-book/feed/</wfw:commentRss>
+			<slash:comments>16</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

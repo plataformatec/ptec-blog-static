@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Dilemas de PO: priorizar features e projetar entregas	</title>
+	<atom:link href="/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/feed/" rel="self" type="application/rss+xml" />
+	<link>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 05 Sep 2017 17:18:26 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Diego Eis		</title>
+		<link>/2017/04/dilemas-de-uma-equipe-de-produto-desenhando-uma-entrega/comment-page-1/#comment-1732</link>
+
+		<dc:creator><![CDATA[Diego Eis]]></dc:creator>
+		<pubDate>Tue, 25 Apr 2017 00:07:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=6241#comment-1732</guid>
+
+					<description><![CDATA[Faz muito sentido.
+
+É incrível que com um pouco de estatística básica, bem básica mesmo, nós conseguimos ter uma estimativa correta. Acho que é importante que os gestores de software entendam que só ter apenas o número do Lead Time e do Throughput não significa muita coisa, nem tão pouco respondem a pergunta áurea: &quot;Quando vamos entregar isso?&quot;
+Lembrando que nós só queremos responder essa pergunta para entregar valor pro usuário mais cedo e mais frequente. 
+
+Eu tenho tratado os números de Lead Time e Throughput como &quot;raw data&quot; e não como informação final, porque são desses dados que extraímos informações importantes, bem como você mostrou no post. 
+Outro ponto muito importante é que não importa a ferramenta que você utilize, contanto que você consiga medir o LT e o Throughput sem tanto esforço. 
+
+Mais um post matador: simples e objetivo.]]></description>
+			<content:encoded><![CDATA[<p>Faz muito sentido.</p>
+<p>É incrível que com um pouco de estatística básica, bem básica mesmo, nós conseguimos ter uma estimativa correta. Acho que é importante que os gestores de software entendam que só ter apenas o número do Lead Time e do Throughput não significa muita coisa, nem tão pouco respondem a pergunta áurea: &#8220;Quando vamos entregar isso?&#8221;<br />
+Lembrando que nós só queremos responder essa pergunta para entregar valor pro usuário mais cedo e mais frequente. </p>
+<p>Eu tenho tratado os números de Lead Time e Throughput como &#8220;raw data&#8221; e não como informação final, porque são desses dados que extraímos informações importantes, bem como você mostrou no post.<br />
+Outro ponto muito importante é que não importa a ferramenta que você utilize, contanto que você consiga medir o LT e o Throughput sem tanto esforço. </p>
+<p>Mais um post matador: simples e objetivo.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

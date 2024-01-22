@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Happy Birthday Devise	</title>
+	<atom:link href="/2010/02/happy-birthday-devise/feed/" rel="self" type="application/rss+xml" />
+	<link>/2010/02/happy-birthday-devise/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Sat, 27 Feb 2010 07:50:02 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Daniel Kehoe		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-515</link>
+
+		<dc:creator><![CDATA[Daniel Kehoe]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2010 07:50:02 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-515</guid>
+
+					<description><![CDATA[Happy Birthday, Devise!
+
+I&#039;ve put together an example app that shows how to use Devise with
+subdomains:
+
+http://github.com/fortuity/subdomain-authentication
+
+It&#039;s written for Rails 2.3 and uses Matthew Hollingworth&#039;s subdomain_routes gem. It demonstrates the flexibility and ease-of-use of Devise.]]></description>
+			<content:encoded><![CDATA[<p>Happy Birthday, Devise!</p>
+<p>I&#8217;ve put together an example app that shows how to use Devise with<br />
+subdomains:</p>
+<p><a href="http://github.com/fortuity/subdomain-authentication" rel="nofollow ugc">http://github.com/fortuity/subdomain-authentication</a></p>
+<p>It&#8217;s written for Rails 2.3 and uses Matthew Hollingworth&#8217;s subdomain_routes gem. It demonstrates the flexibility and ease-of-use of Devise.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Daniel Kehoe		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-955</link>
+
+		<dc:creator><![CDATA[Daniel Kehoe]]></dc:creator>
+		<pubDate>Sat, 27 Feb 2010 07:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-955</guid>
+
+					<description><![CDATA[Happy Birthday, Devise!
+
+I&#039;ve put together an example app that shows how to use Devise with
+subdomains:
+
+http://github.com/fortuity/subdomain-authentication
+
+It&#039;s written for Rails 2.3 and uses Matthew Hollingworth&#039;s subdomain_routes gem. It demonstrates the flexibility and ease-of-use of Devise.]]></description>
+			<content:encoded><![CDATA[<p>Happy Birthday, Devise!</p>
+<p>I&#8217;ve put together an example app that shows how to use Devise with<br />
+subdomains:</p>
+<p><a href="http://github.com/fortuity/subdomain-authentication" rel="nofollow ugc">http://github.com/fortuity/subdomain-authentication</a></p>
+<p>It&#8217;s written for Rails 2.3 and uses Matthew Hollingworth&#8217;s subdomain_routes gem. It demonstrates the flexibility and ease-of-use of Devise.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-514</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 25 Feb 2010 06:15:45 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-514</guid>
+
+					<description><![CDATA[Off Topic, please use the issues tracker on Github for bug reports.]]></description>
+			<content:encoded><![CDATA[<p>Off Topic, please use the issues tracker on Github for bug reports.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-954</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 25 Feb 2010 06:15:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-954</guid>
+
+					<description><![CDATA[Off Topic, please use the issues tracker on Github for bug reports.]]></description>
+			<content:encoded><![CDATA[<p>Off Topic, please use the issues tracker on Github for bug reports.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Off Topic		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-509</link>
+
+		<dc:creator><![CDATA[Off Topic]]></dc:creator>
+		<pubDate>Fri, 19 Feb 2010 17:22:44 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-509</guid>
+
+					<description><![CDATA[Hi there!
+
+Isn&#039;t the any https://lighthouseapp.com/ account for devise ?
+
+I think I found a bug, using devise 1.1pre on 3.0.0.beta.
+
+When I try to cancel an account (using a :delete method on /users), and if the user had logged in using &quot;remember me&quot;, rails generate a &quot;TypeError (can&#039;t modify frozen hash)&quot;
+
+Trace following:
+
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `[]=&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `write_attribute&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/dirty.rb:57:in `write_attribute&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:13:in `remember_token=&#039;
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/models/rememberable.rb:51:in `forget_me!&#039;
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/hooks/rememberable.rb:27
+
+I have also a &quot;WARNING: Can&#039;t mass-assign these protected attributes: remember_me&quot; on POST &quot;/users/sign_in&quot; having &quot;remember_me&quot;=&#062;&quot;0&quot; in parms.]]></description>
+			<content:encoded><![CDATA[<p>Hi there!</p>
+<p>Isn&#8217;t the any <a href="https://lighthouseapp.com/" rel="nofollow ugc">https://lighthouseapp.com/</a> account for devise ?</p>
+<p>I think I found a bug, using devise 1.1pre on 3.0.0.beta.</p>
+<p>When I try to cancel an account (using a :delete method on /users), and if the user had logged in using &#8220;remember me&#8221;, rails generate a &#8220;TypeError (can&#8217;t modify frozen hash)&#8221;</p>
+<p>Trace following:</p>
+<p>activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `[]=&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `write_attribute&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/dirty.rb:57:in `write_attribute&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:13:in `remember_token=&#8217;<br />
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/models/rememberable.rb:51:in `forget_me!&#8217;<br />
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/hooks/rememberable.rb:27</p>
+<p>I have also a &#8220;WARNING: Can&#8217;t mass-assign these protected attributes: remember_me&#8221; on POST &#8220;/users/sign_in&#8221; having &#8220;remember_me&#8221;=&gt;&#8221;0&#8221; in parms.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Off Topic		</title>
+		<link>/2010/02/happy-birthday-devise/comment-page-1/#comment-953</link>
+
+		<dc:creator><![CDATA[Off Topic]]></dc:creator>
+		<pubDate>Fri, 19 Feb 2010 17:22:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=746#comment-953</guid>
+
+					<description><![CDATA[Hi there!
+
+Isn&#039;t the any https://lighthouseapp.com/ account for devise ?
+
+I think I found a bug, using devise 1.1pre on 3.0.0.beta.
+
+When I try to cancel an account (using a :delete method on /users), and if the user had logged in using &quot;remember me&quot;, rails generate a &quot;TypeError (can&#039;t modify frozen hash)&quot;
+
+Trace following:
+
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `[]=&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `write_attribute&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/dirty.rb:57:in `write_attribute&#039;
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:13:in `remember_token=&#039;
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/models/rememberable.rb:51:in `forget_me!&#039;
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/hooks/rememberable.rb:27
+
+I have also a &quot;WARNING: Can&#039;t mass-assign these protected attributes: remember_me&quot; on POST &quot;/users/sign_in&quot; having &quot;remember_me&quot;=&#062;&quot;0&quot; in parms.]]></description>
+			<content:encoded><![CDATA[<p>Hi there!</p>
+<p>Isn&#8217;t the any <a href="https://lighthouseapp.com/" rel="nofollow ugc">https://lighthouseapp.com/</a> account for devise ?</p>
+<p>I think I found a bug, using devise 1.1pre on 3.0.0.beta.</p>
+<p>When I try to cancel an account (using a :delete method on /users), and if the user had logged in using &#8220;remember me&#8221;, rails generate a &#8220;TypeError (can&#8217;t modify frozen hash)&#8221;</p>
+<p>Trace following:</p>
+<p>activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `[]=&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:26:in `write_attribute&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/dirty.rb:57:in `write_attribute&#8217;<br />
+activerecord-3.0.0.beta/lib/active_record/attribute_methods/write.rb:13:in `remember_token=&#8217;<br />
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/models/rememberable.rb:51:in `forget_me!&#8217;<br />
+.gem/ruby/1.8/gems/devise-1.1.pre/lib/devise/hooks/rememberable.rb:27</p>
+<p>I have also a &#8220;WARNING: Can&#8217;t mass-assign these protected attributes: remember_me&#8221; on POST &#8220;/users/sign_in&#8221; having &#8220;remember_me&#8221;=&gt;&#8221;0&#8221; in parms.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

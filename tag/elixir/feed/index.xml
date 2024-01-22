@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>elixir « Plataformatec Blog</title>
+	<atom:link href="/tag/elixir/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 06 Jan 2021 11:34:47 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Important information about our Elixir and Ruby Open Source projects</title>
+		<link>/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Mon, 06 Jan 2020 21:20:55 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=9631</guid>
+
+					<description><![CDATA[<p>You may have heard that Nubank has acqui-hired Plataformatec. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements ... <a class="read-more-link" href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">»</a></p>
+<p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>You may have heard that <a href="https://medium.com/building-nubank/tech-perspectives-behind-nubanks-first-acquisition-deal-what-this-business-move-means-and-how-it-d7d1233c72b8">Nubank has acqui-hired Plataformatec</a>. Plataformatec has been working with Nubank over the past few months and Nubank saw great value on the practices and expertise shown by our teams. According to Nubank leaders, Plataformatec consultants have provided restructured rituals and new working agreements to its teams, and also brought improvements through better-planned teams using innovative metrics and more reliable estimates. The acquisition is a recognition of the work we displayed over the last 11 years to clients in Brazil and across the globe.</p>
+<p>In the last decade, Plataformatec has also created and maintained a range of open source projects. In the next paragraphs, I will describe what the next steps are for the open source projects currently owned by Plataformatec.</p>
+<p>We are very proud of the contributions we have made to open source communities throughout our history. We have built important projects in the Rails community, such as <a href="https://github.com/plataformatec/devise">Devise</a>, <a href="https://github.com/plataformatec/simple_form">Simple Form</a>, among others. We have also developed the <a href="https://elixir-lang.org/">Elixir programming language</a>, which started as a Research &amp; Development project inside Plataformatec, and today is used by companies around the world.</p>
+<p>So what will happen with these projects from now on?</p>
+<p>All of the projects above have one thing in common: they were created and maintained by passionate individuals who wanted to make positive contributions to their communities. Without these individuals and their efforts, these projects would not have become what they are today. Therefore, it is only fair that Plataformatec gives these individuals control of these projects moving forward.</p>
+<p>For the Elixir programming language in particular, José Valim and the Elixir Core Team will continue developing and maintaining the programming language in the same capacity as they have been doing over the last few years, independently from Plataformatec and Nubank. We are in touch with the Elixir Core Team to transfer all assets, including the existing trademarks and the Elixir website, to their control. The remaining Elixir projects will be transferred to José Valim and his team at <a href="https://dashbit.co/">Dashbit</a>.</p>
+<p>For all other Open Source projects <a href="https://github.com/plataformatec/">under the Plataformatec organization on GitHub</a>, we will reach out to the current maintainers and take the necessary steps to transfer the ownership of all relevant assets, including names, source code, and logos of such projects.</p>
+<p>We are thankful to these communities for all the support and feedback they&#8217;ve given us throughout the years. We are glad to have been the home to these projects and to have worked with the teams that will continue shaping these projects from now on.</p><p>The post <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Elixir: What about tests?</title>
+		<link>/2020/01/elixir-what-about-tests/</link>
+		
+		<dc:creator><![CDATA[Amanda Sposito]]></dc:creator>
+		<pubDate>Thu, 02 Jan 2020 16:22:45 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[tests]]></category>
+		<guid isPermaLink="false">/?p=9593</guid>
+
+					<description><![CDATA[<p>There is no arguing about how important tests are for our application. But from time to time, when we are dealing with it, some questions came up on a daily basis. A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test ... <a class="read-more-link" href="/2020/01/elixir-what-about-tests/">»</a></p>
+<p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="1024" src="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg" alt="" class="wp-image-9594" srcset="/wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1024x1024.jpg 1024w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-300x300.jpg 300w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-150x150.jpg 150w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-768x768.jpg 768w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-1536x1536.jpg 1536w, /wp-content/uploads/2020/01/ben-kolde-H29h6a8j8QM-unsplash-2048x2048.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>There is no arguing about how important tests are for our application.</p>
+
+
+
+<p>But from time to time, when we are dealing with it, some questions came up on a daily basis.</p>
+
+
+
+<p>A very common day-do-day case is our application relying on APIs and external libs, but one of the things we don&#8217;t want our test suite to do is to access the external world.</p>
+
+
+
+<p>This can lead us to many undesired scenarios, for example: if we have a connection problem on an API test that hits the internet, the test will fail, causing our test suite to be intermittent.</p>
+
+
+
+<h3 class="wp-block-heading">How do we mock or stub a request?</h3>
+
+
+
+<p>Some libs can help us, I will talk about two of them.</p>
+
+
+
+<h3 class="wp-block-heading">Bypass</h3>
+
+
+
+<p>The first one I wanna talk about is <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a>.<br>
+It is a lib that simulates an External Server, it works to stub the layer closer to the request. The idea is that you remove the external layer and start to call Bypass, so now, instead of talking to the internet, you are talking to a local server that you have control of. This way you can keep your tests protected.</p>
+
+
+
+<p>Let&#8217;s think about an example, we will build an application that needs to fetch data from an API, and we will create a <code>LastfmClient</code> module that will be responsible for doing that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-1" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @api_url <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span>
+
+  def search(term, url \\ @api_url) <span class="hljs-keyword">do</span>
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+end</code></div><small class="shcb-language" id="shcb-language-1"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>What this client does is fetch the tracks from our API and according to the type of the response return something. Not that different from most of the clients we wrote on a daily basis. Let&#8217;s test it now.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-2" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span> <span class="hljs-keyword">do</span>
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end</code></div><small class="shcb-language" id="shcb-language-2"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the problem with this test?</h3>
+
+
+
+<p>It seems pretty straight forward we exercise the <a href="https://en.wikipedia.org/wiki/System_under_test">SUT</a> and verify the expected outcome, but this is a fragile test because it is accessing the external world.</p>
+
+
+
+<p>Every time we call the <code>Client.search/2</code> we are hitting the internet. A lot of problems can happen here: if the internet is down the test will fail, if the internet is slow your suit test will be slow, you won&#8217;t have the feedback as fast as you need and will be less inclined to run the test suit, or your suit test will become intermittent and you won&#8217;t trust your tests anymore, meaning that when a real failure happens you won&#8217;t care.</p>
+
+
+
+<h3 class="wp-block-heading">How can we fix it?</h3>
+
+
+
+<p>And that&#8217;s when <a href="https://github.com/PSPDFKit-labs/bypass">Bypass</a> comes to our aid.</p>
+
+
+
+<p>First, you will need to setup Bypass in your tests.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-3" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">setup <span class="hljs-keyword">do</span>
+  bypass = Bypass.open()
+
+  {:ok, <span class="hljs-attr">bypass</span>: bypass}
+end</code></div><small class="shcb-language" id="shcb-language-3"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in your test, you will set up which scenarios you want to test. Is it a success call? A not found? How should your code behave in each scenario? Tell Bypass that.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-4" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"search/2"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"searches tracks by the term"</span>, %{bypass: bypass} <span class="hljs-keyword">do</span>
+    Bypass.expect bypass, fn conn -&gt;
+      Plug.Conn.resp(conn, <span class="hljs-number">200</span>, payload())
+    end
+
+    response = Client.search(<span class="hljs-string">"The Kooks"</span>, <span class="hljs-string">"http://localhost:/#{bypass.port}/"</span>)
+
+    assert {:ok, [
+      %{
+        <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+        <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+        <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+      }
+    ]} = response
+  end
+end
+
+defp payload <span class="hljs-keyword">do</span>
+  ~s(
+    {
+      <span class="hljs-string">"results"</span>: {
+        <span class="hljs-string">"@attr"</span>: {},
+        <span class="hljs-string">"opensearch:Query"</span>: {
+          <span class="hljs-string">"#text"</span>: <span class="hljs-string">""</span>,
+          <span class="hljs-string">"role"</span>: <span class="hljs-string">"request"</span>,
+          <span class="hljs-string">"startPage"</span>: <span class="hljs-string">"1"</span>
+        },
+        <span class="hljs-string">"opensearch:itemsPerPage"</span>: <span class="hljs-string">"20"</span>,
+        <span class="hljs-string">"opensearch:startIndex"</span>: <span class="hljs-string">"0"</span>,
+        <span class="hljs-string">"opensearch:totalResults"</span>: <span class="hljs-string">"51473"</span>,
+        <span class="hljs-string">"trackmatches"</span>: {
+          <span class="hljs-string">"track"</span>: [
+            {
+              <span class="hljs-string">"artist"</span>: <span class="hljs-string">"The Kooks"</span>,
+              <span class="hljs-string">"image"</span>: [
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/34s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"small"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"medium"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"large"</span>
+                },
+                {
+                  <span class="hljs-string">"#text"</span>: <span class="hljs-string">"https://lastfm.freetls.fastly.net/i/u/300x300/2a96cbd8b46e442fc41c2b86b821562f.png"</span>,
+                  <span class="hljs-string">"size"</span>: <span class="hljs-string">"extralarge"</span>
+                }
+              ],
+              <span class="hljs-string">"listeners"</span>: <span class="hljs-string">"851783"</span>,
+              <span class="hljs-string">"mbid"</span>: <span class="hljs-string">"c9b89088-01cd-4d98-a1f4-3e4a00519320"</span>,
+              <span class="hljs-string">"name"</span>: <span class="hljs-string">"Seaside"</span>,
+              <span class="hljs-string">"streamable"</span>: <span class="hljs-string">"FIXME"</span>,
+              <span class="hljs-string">"url"</span>: <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+            }
+          ]
+        }
+      }
+    }
+  )
+end</code></div><small class="shcb-language" id="shcb-language-4"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">When to use Bypass?</h3>
+
+
+
+<p>When you have code that needs to make an HTTP request. You need to know how your application will behave. For instance, if the API is down, will your application stop working?</p>
+
+
+
+<p>But then comes some questions, if I have a module that depends on this <code>Client</code> implementation, will I need to repeat this Bypass code every time in my tests?<br>
+Why does another module need to know these implementation details if it is not dealing with the request?</p>
+
+
+
+<h3 class="wp-block-heading">Mox</h3>
+
+
+
+<p><a href="https://github.com/plataformatec/mox">Mox</a> can help us with that. It forces you to implement explicit contracts in your application so we know what to expect.</p>
+
+
+
+<p>Going back to our example, let&#8217;s implement a module called <code>Playlist</code> that will be responsible for fetching a list of songs by artist and give it a name.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-5" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  alias MyApp.Lastfm.Client
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = Client.search(name)
+
+    %{
+      <span class="hljs-attr">name</span>: <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-attr">songs</span>: songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-5"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>The simplest test we can write to this code would be something like:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-6" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-6"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Since the <code>Playlist</code> depends on the <code>Client</code>, to have an accurate test we would need to stub the request with the payload response from the Lastfm API so we can make sure the <code>Playlist</code> behaves accordingly.</p>
+
+
+
+<p>You don&#8217;t need to stub all the <code>Client</code> requests in the <code>Playlist</code> tests, you need to know what it returns and handle the responses, you need to have a <a href="/2015/10/mocks-and-explicit-contracts/">explicit contract</a>.</p>
+
+
+
+<p>Let&#8217;s see how we can implement those contracts.</p>
+
+
+
+<h3 class="wp-block-heading">Behaviours</h3>
+
+
+
+<p>Elixir uses <a href="https://elixir-lang.org/getting-started/typespecs-and-behaviours.html#behaviours">behaviours</a> as a way to define a set of functions that have to be implemented by a module. You can compare them to <a href="https://en.wikipedia.org/wiki/Interface_(computing)">interfaces</a> in OOP.</p>
+
+
+
+<p>Let&#8217;s create a file at <code>lib/my_app/music.ex</code> that says what our <code>Client</code> expects as an argument and what it returns:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-7" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">defmodule MyApp.Music <span class="hljs-keyword">do</span>
+  @callback search(<span class="hljs-built_in">String</span>.t()) :: map()
+end</code></div><small class="shcb-language" id="shcb-language-7"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/config.exs</code> file, let&#8217;s include two lines. The first one says which client we are using and the second one is the Lastfm API that we will remove from the default argument, just to keep the callback simple.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-8" data-shcb-language-name="JavaScript" data-shcb-language-slug="javascript"><div><code class="hljs language-javascript">config :my_app, :music, MyApp.Lastfm.Client
+<span class="hljs-attr">config</span> :my_app, :lastfm_api, <span class="hljs-string">"https://ws.audioscrobbler.com/2.0/"</span></code></div><small class="shcb-language" id="shcb-language-8"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">JavaScript</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">javascript</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>config/test.exs</code> file, let&#8217;s include our mock module.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-9" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">config</span> <span class="hljs-selector-pseudo">:my_app</span>, <span class="hljs-selector-pseudo">:music</span>, <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span></code></div><small class="shcb-language" id="shcb-language-9"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In the <code>test/test_helper</code> file, let&#8217;s tell Mox which is the mock module that is responsible for mocking the calls to our behaviour.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-10" data-shcb-language-name="CSS" data-shcb-language-slug="css"><div><code class="hljs language-css"><span class="hljs-selector-tag">Mox</span><span class="hljs-selector-class">.defmock</span>(<span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.MusicMock</span>, <span class="hljs-selector-tag">for</span>: <span class="hljs-selector-tag">MyApp</span><span class="hljs-selector-class">.Music</span>)</code></div><small class="shcb-language" id="shcb-language-10"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">CSS</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">css</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>Let&#8217;s go back to our <code>Playlist</code> module, and let&#8217;s change the way we call the <code>Client</code> module, to use the config we just created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-11" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Playlist <span class="hljs-keyword">do</span>
+  @music Application.get_env(:my_app, :music)
+
+  def artist(name) <span class="hljs-keyword">do</span>
+    {:ok, songs} = @music.search(name)
+
+    %{
+      <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"This is #{name}"</span>,
+      <span class="hljs-string">"songs"</span> =&gt; songs
+    }
+  end
+end</code></div><small class="shcb-language" id="shcb-language-11"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>In our <code>Client</code> module let&#8217;s adopt the behaviour we created, and let&#8217;s change the API url to fetch from the config we created.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-12" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">defmodule MyApp.Lastfm.Client <span class="hljs-keyword">do</span>
+  @moduledoc<span class="hljs-string">""</span><span class="hljs-string">"
+  Search tracks
+
+  https://www.last.fm/api/show/track.search
+  "</span><span class="hljs-string">""</span>
+
+  @behaviour MyApp.Music
+
+  def search(term) <span class="hljs-keyword">do</span>
+    url = lastfm_api_url()
+    response = Mojito.request(method: :get, url: search_url(url, term))
+
+    <span class="hljs-keyword">case</span> response <span class="hljs-keyword">do</span>
+      {:ok, %{status_code: <span class="hljs-number">200</span>, body: body}} -&gt;
+        {:ok, response(body)}
+      {:ok, %{status_code: <span class="hljs-number">404</span>}} -&gt;
+        {:not_found, <span class="hljs-string">"Not found"</span>}
+      {_, response} -&gt;
+        {:error, response}
+    end
+  end
+
+  defp lastfm_api_url <span class="hljs-keyword">do</span>
+    Application.get_env(:my_app, :lastfm_api)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-12"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>We will need to change the <code>test/my_app/lastfm/client_test.exs</code> to change the env config for the API url on the setup of the test, but I&#8217;ll leave it to you to do that.</p>
+
+
+
+<p>Finally, in our <code>PlaylistTest</code> we will need to import <code>Mox</code>.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-13" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">import Mox
+
+<span class="hljs-comment"># Make sure mocks are verified when the test exits</span>
+setup :verify_on_exit!</code></div><small class="shcb-language" id="shcb-language-13"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>And in our test, we need to tell our <code>MusicMock</code> what is expected to return.</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-14" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php">describe <span class="hljs-string">"artist/1"</span> <span class="hljs-keyword">do</span>
+  test <span class="hljs-string">"returns the songs by artist"</span> <span class="hljs-keyword">do</span>
+    MusicMock
+    |&gt; expect(:search, fn _name -&gt;
+      {
+        :ok,
+        [
+          %{
+            <span class="hljs-string">"artist"</span> =&gt; <span class="hljs-string">"The Kooks"</span>,
+            <span class="hljs-string">"name"</span> =&gt; <span class="hljs-string">"Seaside"</span>,
+            <span class="hljs-string">"url"</span> =&gt; <span class="hljs-string">"https://www.last.fm/music/The+Kooks/_/Seaside"</span>
+          }
+        ]
+      }
+    end)
+
+    result = Playlist.artist(<span class="hljs-string">"The Kooks"</span>)
+
+    assert result[<span class="hljs-string">"name"</span>] == <span class="hljs-string">"This is The Kooks"</span>
+    assert Enum.any?(result[<span class="hljs-string">"songs"</span>], fn song -&gt;
+      song[<span class="hljs-string">"artist"</span>] == <span class="hljs-string">"The Kooks"</span>
+    end)
+  end
+end</code></div><small class="shcb-language" id="shcb-language-14"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<h3 class="wp-block-heading">What&#8217;s the difference?</h3>
+
+
+
+<p>Looking at the code it seems that we still need to pass the list of music in the tests. But there is a difference, the music&#8217;s list is a dependency of the <code>Playlist</code> module, but we don&#8217;t know its internals, we don&#8217;t know from where we are fetching it, how the request response works, and all these details. The only thing we need to know at the <code>Playlist</code> module is that it depends on a list of songs.</p>
+
+
+
+<h3 class="wp-block-heading">One last thing before we go</h3>
+
+
+
+<p>We went through all that trouble to make sure the tests are protected from the outside world, but you know, Elixir has this amazing <code>Doctest</code> feature, and one can argue that this replaces the application tests.</p>
+
+
+
+<p>That&#8217;s not the case, <code>Doctests</code> are not <code>tests</code> and you shouldn&#8217;t rely on it to make sure your application behaves the way you expect it to. Make sure you don&#8217;t use any code that hits the external world when you are writing your documentation, there is no way to mock calls and this can cause all the problems we already discussed.</p>
+
+
+
+<h3 class="wp-block-heading">That&#8217;s all folks</h3>
+
+
+
+<p>The code from this example can be found <a href="https://github.com/amandasposito/my_app">here</a>, I hope it helps!</p><p>The post <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Kubernetes and the Erlang VM: orchestration on the large and the small</title>
+		<link>/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/</link>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 01 Oct 2019 17:05:27 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[deployment]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[kubernetes]]></category>
+		<guid isPermaLink="false">/?p=9398</guid>
+
+					<description><![CDATA[<p>If you look at the features listed by Kubernetes (K8s) and compare it to languages that run on the Erlang VM, such as Erlang and Elixir, the impression is that they share many keywords. This sharing often leads to confusion. Do they provide distinct behaviors? Do they overlap? For instance, is there any purpose to Elixir's fault tolerance if Kubernetes also provides self-healing?</p>
+<p>The post <a href="/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/">Kubernetes and the Erlang VM: orchestration on the large and the small</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>If you look at the features listed by Kubernetes (K8s) and compare it to languages that run on the Erlang VM, such as Erlang and Elixir, the impression is that they share many keywords, such as &#8220;self-healing&#8221;, &#8220;horizontal scaling&#8221;, &#8220;distribution&#8221;, etc.</p>
+
+
+
+<p>This sharing often leads to confusion. Do they provide distinct behaviors? Do they overlap? For instance, is there any purpose to Elixir&#8217;s fault tolerance if Kubernetes also provides self-healing?</p>
+
+
+
+<p>In this article, I will go over many of these topics and show how they are mostly complementary and discuss the rare case where they do overlap.</p>
+
+
+
+<h2 class="wp-block-heading">Self-healing</h2>
+
+
+
+<p>Kubernetes automatically restarts or replaces containers that fail. It can also kill containers that don’t respond to your user-defined health check. Similarly, in Erlang and Elixir, you structure your code with the help of supervisors, which automatically restart parts of your application in case of failures.</p>
+
+
+
+<p>Kubernetes provides fault-tolerance within the cluster, Erlang/Elixir provide it within your application. To understand this better, let&#8217;s take an application that has to talk to a database (or any other external system). Most languages handle this by keeping a pool of database connections.</p>
+
+
+
+<p>If your database goes offline, because of a bad configuration or a hardware failure, both the database and the Erlang/Elixir systems will respond negatively to health checks, which would cause Kubernetes to act and potentially relocate them. This is a node-wide failure and Kubernetes got your back.</p>
+
+
+
+<p>However, what happens when part of your connections to the database are sporadically failing? For example, imagine your system is under load and you suddenly started running into connection limits, such as MySQL&#8217;s prepared statement limit. This failure likely won&#8217;t cause any health check to fail but your code will fail whenever one of its many connections reach said limit. Can you reason about this error today in your applications? Can you confidently say that the faulty connection will be dropped? Will another connection be started in place of the faulty one? Can you comfortably say this error won&#8217;t cascade in the application bringing the remaining of the connection pool down?</p>
+
+
+
+<p>Erlang/Elixir&#8217;s abstractions for fault tolerance allow you to reason about those questions at the language level. It provides a mechanism for you to reason about connections, resources, in-memory state, background workers, etc. You can explicitly say how they are started, how they are shut down, and what should happen when things go wrong. These features can also be extremely helpful in face of partial failures. For example, imagine you have a news website and the live stock ticker is down. Should the website continue running, potentially serving stale data, or should everything crash down? The mental model provided by Erlang/Elixir allows us to reason about these scenarios. And of course, you can always let failures bubble up after a few retries, or even immediately, so it becomes a node-wide failure to be handled by K8s.</p>
+
+
+
+<p>In a nutshell, Kubernetes and containers provide isolation and an ability to restart individual nodes when they fail, but it is not a replacement for isolation and fault handling within your own software, regardless of your language of choice. Using K8s and Erlang/Elixir allow you to apply similar self-healing and fault-tolerance principles in the large (cluster) and in the small (language/instance).</p>
+
+
+
+<h2 class="wp-block-heading">Service discovery and Distributed Erlang</h2>
+
+
+
+<p>The Erlang VM also provides Distributed Erlang, which allows you to exchange messages between different instances running on the same or different machines. In Elixir, this is as easy as:</p>
+
+
+<pre class="wp-block-code" aria-describedby="shcb-language-15" data-shcb-language-name="PHP" data-shcb-language-slug="php"><div><code class="hljs language-php"><span class="hljs-keyword">for</span> node &lt;- Node.<span class="hljs-keyword">list</span>() <span class="hljs-keyword">do</span>
+  <span class="hljs-comment"># Send :hello_world message to named process "MyProcess" in each node</span>
+  send {node, MyProcess}, :hello_world
+end</code></div><small class="shcb-language" id="shcb-language-15"><span class="shcb-language__label">Code language:</span> <span class="shcb-language__name">PHP</span> <span class="shcb-language__paren">(</span><span class="shcb-language__slug">php</span><span class="shcb-language__paren">)</span></small></pre>
+
+
+<p>When running in distributed mode (which is not a requirement in any way and you need to explicitly enable it), the Erlang VM will automatically serialize and deserialize the data as well as make sure the connection between nodes is alive, but it does not provide any node discovery. It is the programmer responsibility to say exactly where each node is located and connect the nodes together.</p>
+
+
+
+<p>Luckily, Kubernetes provides service discovery out of the box. This means that, K8s allows us to fully automate the node discovery, which would otherwise be manual and error prone. Libraries like <a href="https://github.com/bitwalker/libcluster" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">libcluster</a> do exactly that (and rolling your own wouldn&#8217;t be complicated either). This is another great example of where Kubernetes and the Erlang VM complement each other!</p>
+
+
+
+<p>However, you may still be wondering, is there a benefit to running Distributed Erlang when Kubernetes&#8217; Service Discovery makes it relatively easy to have systems communicating with each other? Especially when considering RPC protocols such as Thrift, gRPC, and others?</p>
+
+
+
+<p>When we are talking about different languages and different systems communicating with each other, picking one of the existing RPC mechanisms is likely the best choice, and they will also work fine with Erlang/Elixir. The scenario where the Erlang VM really shines, in my opinion, is for building homogeneous systems, i.e. when you have multiple deployments of the same container and they exchange information. For example, imagine you are building a real-time application when you want to track which users are in the same chat room, or in the same city block, or in the same mountain track. As users connect and disconnect and as nodes are brought up and down, you could somehow update the database or communicate via a complex RPC mechanism, while carefully watching the cluster for topology changes.</p>
+
+
+
+<p>With the Erlang VM, you can just broadcast or exchange this information directly, without having to worry about serialization protocols, connection management, etc, as everything is provided by the VM. All without external dependencies. This is one of the many features that <a href="https://phoenixframework.org/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">makes Phoenix a breeze to build distributed web-realtime systems</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Automated rollouts vs Hot code swapping</h2>
+
+
+
+<p>When it comes to deployment, Kubernetes automatically rolls out changes to your application or its configuration, avoiding changing all instances at the same time. At the same time, the Erlang VM supports hot code swapping, which allows you to change the code that is running in production within a single instance without shutting said instance down.</p>
+
+
+
+<p>Those two deployments techniques are obviously conflicting. In fact, hot code swapping does not go well in general with the whole idea of immutable containers. Does it mean that Kubernetes and the Erlang VM are a poor fit? Not really, because <strong>you don&#8217;t have to use hot code swapping</strong>. In fact, most people do not. Most Elixir applications are deployed using blue-green, canary, or similar techniques.</p>
+
+
+
+<p>The truth about hot code swapping is that it is actually complicated to pull off in practice. Let&#8217;s use the database as an example once again. When you are deploying a new version of your software, whenever you update your database, you should never perform destructive changes. For example, if you want to rename a column, you have to add a new column, migrate the data over, and then remove the column. If you just rename the column, then you will have failures whenever doing rollouts, because you will have two versions of the software running at the same (one using the old column and the other using the new one). In hot code swapping, we have precisely the same issue, except it applies to all states inside your application. Companies that use hot code swapping often report they spend as much time developing the software as testing the upgrades themselves.</p>
+
+
+
+<p>Of course, it doesn&#8217;t mean hot code swapping is useless. The Erlang VM development is mostly driven by business needs and there was a legitimate need for hot code swapping. In particular, when building telephone switches, there is never an appropriate moment to shut down an instance for updates, because at any given time a system is full of long running connections, perhaps days or even weeks. So being able to upgrade a live system is extremely helpful. If you have a similar need, then hot code swapping may be an option. Another option is to <a href="https://www.youtube.com/watch?v=5LRDICEETRE" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">have smarter clients and migrate client connections between nodes when deploying</a>.</p>
+
+
+
+<p>Hot code swapping can also be used under other circumstances, such as during development to provide live code loading, without a need to restart your server, or to replace smaller components in production that don&#8217;t require replacing the whole instance.</p>
+
+
+
+<h2 class="wp-block-heading">Configuration management and Configuration providers</h2>
+
+
+
+<p>Another feature provided by both Elixir and Kubernetes is configuration management. However, as seen before, they work at very distinct levels. While Elixir provides a <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://hexdocs.pm/elixir/Config.html" target="_blank">unified API for configuring applications</a>, it is relatively low-level. In a production system, you often want both configuration and secrets to be managed by higher level tools, such as the ones provided by Kubernetes. Luckily, you can incorporate said configuration tools into your deployment workflow with the help of <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://hexdocs.pm/elixir/Config.Provider.html" target="_blank">Configuration Providers</a>. This functionality is part of Elixir releases, which were <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://elixir-lang.org/blog/2019/06/24/elixir-v1-9-0-released/" target="_blank">officially made part of the Elixir language in version 1.9</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Stay alert: pod resources</h2>
+
+
+
+<p>When provisioning Erlang and Elixir with Kubernetes, it is important to stay alert to one particular configuration: pod resources.</p>
+
+
+
+<p>When using other technologies, it is common practice to break a large node into a bunch of small pods/containers. For example, if you have a node with 8 cores, you could allocate half of each CPU to a pod and split the memory equally between them, on a total of 16 pods.</p>
+
+
+
+<p>This approach makes sense in many technologies that cannot exploit CPU and I/O concurrency simultaneously. However, the Erlang VM excels at managing system resources and your system will most likely be more efficient if you assign large pods to your Erlang and Elixir applications instead of breaking it apart into a bunch of small ones.</p>
+
+
+
+<p> If the Erlang VM is sharing a machine with other applications you may want to consider <a href="https://stressgrid.com/blog/beam_cpu_usage/">reducing busy waiting</a>. By doing so, the VM will optimize for lower CPU usage, making it a better neighbor, but with slightly higher latencies.</p>
+
+
+
+<h2 class="wp-block-heading">Summing up</h2>
+
+
+
+<p>Kubernetes and the Erlang VM work at distinct levels. Kubernetes orchestrates within a cluster, the Erlang VM orchestrates at the language level within an instance. Fred Hebert summed up this distinction well in a tweet:</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Still seeing bad comparisons between kubernetes and <a href="https://twitter.com/hashtag/Erlang?src=hash&amp;ref_src=twsrc%5Etfw" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">#Erlang</a>/OTP. K8s is to OTP what region failover is to k8s. They operate on different layers of abstraction and impact distinct components.<br><br>OTP allows handling partial failures WITHIN an instance, something k8s can&#8217;t help with.— Fred Hebert (@mononcqc) <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://twitter.com/mononcqc/status/1122872187894018048?ref_src=twsrc%5Etfw" target="_blank">April 29, 2019</a></p></blockquote>
+
+
+
+<p>If you are using Erlang/Elixir and you wonder how Kubernetes applies compared to other languages, you can use Kubernetes for the Erlang VM as you would with any other technology. Given that Erlang/Elixir software can typically scale both horizontally and vertically, it gives you many options on how you want to allocate your resources within K8s.</p>
+
+
+
+<p>On other areas, Kubernetes and the Erlang VM can nicely complement each other, such as using K8s Service Discovery to connect Erlang VM instances. Of course, Distributed Erlang is not a requirement and Erlang/Elixir are great languages even for stateless apps, thanks to its scalability and reliability.</p>
+
+
+
+<p>If you are one of the few who really need hot code swapping in production, then the Erlang VM may be one of the best platforms to do so, but keep in mind you will be straying away from the common path in both technologies.</p>
+
+
+
+<p>Finally, if you appreciate Kubernetes and its concepts, you may enjoy working with Erlang and Elixir, as they will give you an opportunity to apply similar idioms on the small and on the large.</p>
+
+
+
+<p><em>Thanks to Fernando Tapia Rico, Fred Hebert, George Guimarães, Tristan Sloughter, and Wojtek Mach for reviewing this article.</em></p><p>The post <a href="/2019/10/kubernetes-and-the-erlang-vm-orchestration-on-the-large-and-the-small/">Kubernetes and the Erlang VM: orchestration on the large and the small</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Using Broadway at Hexdocs.pm</title>
+		<link>/2019/09/using-broadway-at-hexdocs-pm/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Tue, 17 Sep 2019 14:17:24 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=9319</guid>
+
+					<description><![CDATA[<p>This is a quick blog post about our experience replacing&#160;Hexdocs.pm’s&#160;GenStage&#160;pipeline with&#160;Broadway. To give some background information,&#160;Hexdocs.pm&#160;started out as basically just static file hosting for documentation. With the&#160;introduction of private Hexdocs&#160;it became a distinct Elixir application. Over time, we have also moved handling of documentation tarballs there to offload API servers. Instead of API servers doing ... <a class="read-more-link" href="/2019/09/using-broadway-at-hexdocs-pm/">»</a></p>
+<p>The post <a href="/2019/09/using-broadway-at-hexdocs-pm/">Using Broadway at Hexdocs.pm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This is a quick blog post about our experience replacing&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="http://hexdocs.pm/" target="_blank">Hexdocs.pm</a>’s&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/elixir-lang/gen_stage" target="_blank">GenStage</a>&nbsp;pipeline with&nbsp;<a href="https://github.com/plataformatec/broadway" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">Broadway</a>.</p>
+
+
+
+<p>To give some background information,&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="http://hexdocs.pm/" target="_blank">Hexdocs.pm</a>&nbsp;started out as basically just static file hosting for documentation. With the&nbsp;<a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://hex.pm/blog/private-hexdocs" target="_blank">introduction of private Hexdocs</a>&nbsp;it became a distinct Elixir application. Over time, we have also moved handling of documentation tarballs there to offload API servers. Instead of API servers doing all the work, they now just upload a tarball to S3 which automatically sends a&nbsp;<a href="https://aws.amazon.com/sqs/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">SQS</a>&nbsp;message which is then picked up by the Hexdocs app. The initial implementation of Hexdocs pipeline was done with a custom GenStage producer and a consumer.</p>
+
+
+
+<p>Updating the pipeline to use Broadway was really straightforward. We’ve completely removed our custom producer and replaced it with&nbsp;<a href="https://hexdocs.pm/broadway_sqs/BroadwaySQS.Producer.html" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">BroadwaySQS.Producer</a>. In terms of consuming messages, our code is pretty much unchanged, instead of implementing&nbsp;<a href="https://hexdocs.pm/gen_stage/GenStage.html#c:handle_events/3"><code>GenStage.handle_events/3</code></a>&nbsp;callback we now implement&nbsp;<a href="https://hexdocs.pm/broadway/Broadway.html#c:handle_message/3"><code>Broadway.handle_message/3</code></a>.</p>
+
+
+
+<p>Previously, we needed to configure our supervision tree to start X producers and Y consumers, and set consumers to be subscribed to producers. With Broadway, we specify the desired topology and it starts all processes under a dedicated supervisor. Not only it’s a more declarative approach, Broadway automatically adds a “Terminator” process to the supervision tree that ensures proper application shutdown. While before the application could abort a job in the middle of processing, now Broadway ensures the job queue is drained before shutting down the app.</p>
+
+
+
+<p>On the testing front, we didn’t start our GenStage pipeline at all during tests to avoid doing network requests, and we tested the logic through internal APIs. Now, we’re conditionally using&nbsp;<a href="https://hexdocs.pm/broadway/Broadway.DummyProducer.html"><code>Broadway.DummyProducer</code></a>, which doesn’t hit the network, and we’re triggering an event in the pipeline using&nbsp;<a href="https://hexdocs.pm/broadway/Broadway.html#test_messages/2"><code>Broadway.test_messages/2</code></a>&nbsp;making the test more realistic.</p>
+
+
+
+<p>Perhaps the biggest win by moving over to Broadway was that it automatically batches and acknowledges messages. This, along with other existing and planned future features like rate-limiting and backoff, is what is most appealing about Broadway &#8211; that the community best practices will usually be the default behaviour or just a matter of configuration.</p>
+
+
+
+<p>Overall, we were very happy with updating Hexdocs to use Broadway and we’ve been running it in production for last few months without issues. Not only we removed a lot of code, we got a couple nice features for free and we will continue to reap the benefits as Broadway gets updated.</p>
+
+
+
+<p>See&nbsp;<a href="https://github.com/hexpm/hexdocs/pull/11/" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">hexpm/hexdocs#11</a>&nbsp;to see all required code changes.</p><p>The post <a href="/2019/09/using-broadway-at-hexdocs-pm/">Using Broadway at Hexdocs.pm</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Announcing MiniRepo, a minimal Hex server</title>
+		<link>/2019/07/announcing-minirepo-a-minimal-hex-server/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Tue, 30 Jul 2019 13:14:31 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=9168</guid>
+
+					<description><![CDATA[<p>In 2017 Hex.pm got support for Private packages and organizations, a way for teams to publish and manage packages without making them public. While this works great for many organizations, some have stricter compliance requirements and need to host packages on their own infrastructure. Today we are happy to announce MiniRepo, a minimal Hex server ... <a class="read-more-link" href="/2019/07/announcing-minirepo-a-minimal-hex-server/">»</a></p>
+<p>The post <a href="/2019/07/announcing-minirepo-a-minimal-hex-server/">Announcing MiniRepo, a minimal Hex server</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>In 2017 Hex.pm got support for <a href="https://hex.pm/blog/private-packages-and-organizations" target="_blank" rel="noopener noreferrer">Private packages and organizations</a>, a way for teams to publish and manage packages without making them public. While this works great for many organizations, some have stricter compliance requirements and need to host packages on their own infrastructure.</p>
+<p>Today we are happy to announce <a href="https://github.com/wojtekmach/mini_repo" target="_blank" rel="noopener noreferrer">MiniRepo</a>, a minimal Hex server that can be used for packages self-hosting.</p>
+<p>MiniRepo ships with the following features:</p>
+<ul>
+<li>Pluggable storage (with built-in adapters for local filesystem and Amazon S3)</li>
+<li>Mirroring</li>
+<li>Publishing packages via HTTP API</li>
+<li>Support for multiple repositories and mirrors</li>
+</ul>
+<p>The goal of MiniRepo is to be minimal so that it can be easy to understand and can serve as a starting point for a more complete solution that may make sense in a given organization.</p>
+<p>See instructions for usage with <a href="https://github.com/wojtekmach/mini_repo#usage-with-mix" target="_blank" rel="noopener noreferrer">Mix</a> and <a href="https://github.com/wojtekmach/mini_repo#usage-with-rebar3" target="_blank" rel="noopener noreferrer">Rebar3</a>.</p>
+<p>Finally, by making it easier to run self-hosted Hex registry we are achieving one of the goals of the <a href="https://erlef.org/building-wg/" target="_blank" rel="noopener noreferrer">Building and Packaging Working Group</a> at <a href="https://erlef.org/" target="_blank" rel="noopener noreferrer">Erlang Ecosystem Foundation</a>, which we are glad to contribute to!</p><p>The post <a href="/2019/07/announcing-minirepo-a-minimal-hex-server/">Announcing MiniRepo, a minimal Hex server</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Updating Hex.pm to use Elixir releases</title>
+		<link>/2019/05/updating-hex-pm-to-use-elixir-releases/</link>
+		
+		<dc:creator><![CDATA[Wojtek Mach]]></dc:creator>
+		<pubDate>Wed, 29 May 2019 13:26:43 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[elixir]]></category>
+		<guid isPermaLink="false">/?p=9051</guid>
+
+					<description><![CDATA[<p>Elixir v1.9 will ship with releases support and in this blog post we want to show how we have used this exciting new feature on the Hex.pm project. Installing Elixir master (Update: This section is no longer relevant since v1.9 is already out!) Since Elixir v1.9 is not out yet, we need to use the ... <a class="read-more-link" href="/2019/05/updating-hex-pm-to-use-elixir-releases/">»</a></p>
+<p>The post <a href="/2019/05/updating-hex-pm-to-use-elixir-releases/">Updating Hex.pm to use Elixir releases</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="/2019/04/whats-new-in-elixir-apr-19/" target="_blank" rel="noopener noreferrer">Elixir v1.9 will ship with releases support</a> and in this blog post we want to show how we have used this exciting new feature on the Hex.pm project.</p>
+<h2>Installing Elixir master</h2>
+<p>(Update: This section is no longer relevant since v1.9 is already out!)</p>
+<p>Since Elixir v1.9 is not out yet, we need to use the development version. Locally, my preferred approach is to use the <a href="https://github.com/asdf-vm/asdf-elixir" target="_blank" rel="noopener noreferrer">Elixir plugin</a> for the <a href="https://github.com/asdf-vm/asdf" target="_blank" rel="noopener noreferrer">asdf-vm</a> version manager.</p>
+<p>Here&#8217;s a couple of ways we may use asdf to install recent development versions:</p>
+<pre><code># install latest master
+$ asdf install elixir master
+$ asdf local elixir master
+
+# or, install particular revision:
+$ asdf install elixir ref:b8b7e5a
+$ asdf local elixir ref:b8b7e5a
+</code></pre>
+<p>Per &#8220;Deployment&#8221; section of <a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html?#module-deployments" target="_blank" rel="noopener noreferrer"><code>mix release</code></a> documentation:</p>
+<blockquote><p>A release is built on a host, a machine which contains Erlang, Elixir, and any other dependencies needed to compile your application. A release is then deployed to a target, potentially the same machine as the host, but usually separate, and often there are many targets (either multiple instances, or the release is deployed to heterogeneous environments).</p></blockquote>
+<p>We deploy Hex.pm using Docker containers and <a href="https://github.com/hexpm/hexpm/blob/master/Dockerfile" target="_blank" rel="noopener noreferrer">we needed to change our Dockerfile</a>. If you&#8217;re deploying using buildpacks (e.g. to Heroku or Gigalixir), it should be as simple as setting <code>elixir_version=master</code> in your <code>elixir_buildpack.config</code>.</p>
+<h2>Setting up releases</h2>
+<p>Elixir 1.9 ships with two new Mix tasks to work with releases:</p>
+<ul>
+<li><a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.Init.html" target="_blank" rel="noopener noreferrer"><code>mix release.init</code></a> &#8211; generates sample files for releases</li>
+<li><a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html" target="_blank" rel="noopener noreferrer"><code>mix release</code></a> &#8211; builds the release</li>
+</ul>
+<p>The sample files generated by <code>mix release.init</code> are optional, if they are not present in your project then the release will be built with default options.</p>
+<p>On Hex.pm, previously we were building releases using <a href="https://hex.pm/packages/distillery" target="_blank" rel="noopener noreferrer">Distillery</a> and to work with Elixir releases we needed to make a few small tweaks. Here are the main ones:</p>
+<ul>
+<li>add <code>:releases</code> section to <code>mix.exs</code> &#8211; this is an optional step but since we don&#8217;t deploy on Windows, we only need to generate executable files for UNIX-like systems</li>
+<li>replace <code>rel/vm.args</code> with <code>rel/vm.args.eex</code></li>
+<li>replace <code>rel/hooks/pre_configure</code> with <code>rel/env.sh.eex</code></li>
+<li>add <code>config/releases.exs</code> for runtime configuration of the release</li>
+<li>remove Distillery dependency (remember to <code>mix deps.unlock</code> it!)</li>
+</ul>
+<p>See the <a href="https://github.com/hexpm/hexpm/pull/801" target="_blank" rel="noopener noreferrer">&#8220;Replace Distillery with Elixir releases&#8221; PR on Hex.pm repo</a> for more details.</p>
+<p>We now have a few files that deal with configuring our app/release, let&#8217;s take a step back and see what they can do:</p>
+<ul>
+<li><a href="https://github.com/hexpm/hexpm/blob/master/config/prod.exs" target="_blank" rel="noopener noreferrer"><code>config/prod.exs</code></a> &#8211; provides build-time application configuration</li>
+<li><a href="https://github.com/hexpm/hexpm/blob/master/config/releases.exs" target="_blank" rel="noopener noreferrer"><code>config/releases.exs</code></a> &#8211; provides runtime application configuration. We&#8217;re using the new <a href="https://hexdocs.pm/elixir/master/Config.html" target="_blank" rel="noopener noreferrer"><code>Config</code></a> module and the <a href="https://hexdocs.pm/elixir/master/System.html?#fetch_env!/1" target="_blank" rel="noopener noreferrer"><code>System.fetch_env!/1</code></a> function, also introduced in Elixir v1.9.0, to conveniently return the environment variable if set, or raise an error.</li>
+<li><a href="https://github.com/hexpm/hexpm/blob/master/rel/vm.args.eex" target="_blank" rel="noopener noreferrer"><code>rel/vm.args.eex</code></a> &#8211; provides a static mechanism for configuring the Erlang Virtual Machine and other runtime flags. For now, we use the defaults but if down the line we&#8217;d tune the VM, we&#8217;d set the options here.</li>
+<li><a href="https://github.com/hexpm/hexpm/blob/master/rel/env.sh.eex" target="_blank" rel="noopener noreferrer"><code>rel/env.sh.eex</code></a> &#8211; provides a dynamic mechanism for setting up the VM, runtime flags, and environment variables.</li>
+</ul>
+<p><code>RELEASE_NODE</code> and <code>RELEASE_COOKIE</code> variables are used by the release script, see <a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html?#module-environment-variables" target="_blank" rel="noopener noreferrer">&#8220;Environment variables&#8221;</a> section in the documentation for all recognized variables. The <code>POD_A_RECORD</code> variable we have there is specific to our deployment environment on Hex.pm, we deploy it to Google Kubernetes Engine.</p>
+<p>See <a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html?#module-application-configuration" target="_blank" rel="noopener noreferrer">&#8220;Application configuration&#8221;</a> and <a href="https://hexdocs.pm/mix/master/Mix.Tasks.Release.html?#module-vm-args-and-env-sh-env-bat" target="_blank" rel="noopener noreferrer">&#8220;vm.args and env.sh (env.bat)&#8221;</a> sections for more information.</p>
+<p>Finally, we use the <code>mix release</code> task to actually assemble the release:</p>
+<pre><code>$ mix release
+* assembling hexpm-0.0.1 on MIX_ENV=dev
+* using config/releases.exs to configure the release at runtime
+* creating _build/dev/rel/hexpm/releases/0.0.1/vm.args
+* creating _build/dev/rel/hexpm/releases/0.0.1/env.sh
+
+Release created at _build/dev/rel/hexpm!
+
+# To start your system
+_build/dev/rel/hexpm/bin/hexpm start
+
+Once the release is running:
+
+# To connect to it remotely
+_build/dev/rel/hexpm/bin/hexpm remote
+
+# To stop it gracefully (you may also send SIGINT/SIGTERM)
+_build/dev/rel/hexpm/bin/hexpm stop
+
+To list all commands:
+
+_build/dev/rel/hexpm/bin/hexpm
+</code></pre>
+<h2>Running the release</h2>
+<p>The generated release script (<code>bin/hexpm</code>) has many commands:</p>
+<pre><code>$ _build/dev/rel/hexpm/bin/hexpm
+Usage: hexpm COMMAND [ARGS]
+
+The known commands are:
+
+start          Starts the system
+start_iex      Starts the system with IEx attached
+daemon         Starts the system as a daemon
+daemon_iex     Starts the system as a daemon with IEx attached
+eval "EXPR"    Executes the given expression on a new, non-booted system
+rpc "EXPR"     Executes the given expression remotely on the running system
+remote         Connects to the running system via a remote shell
+restart        Restarts the running system via a remote command
+stop           Stops the running system via a remote command
+pid            Prints the OS PID of the running system via a remote command
+version        Prints the release name and version to be booted
+</code></pre>
+<p>In our Hex.pm deployment we have used two of these commands for now:</p>
+<ul>
+<li><code>bin/hexpm start</code> &#8211; we use it as the start command to be run in our Docker container</li>
+<li><code>bin/hexpm eval</code> &#8211; we use it to run DB migrations and other maintenance scripts. For migrations, the command is: <code>bin/hexpm eval 'Hexpm.ReleaseTasks.migrate()'</code>.</li>
+</ul>
+<h2>Summary</h2>
+<p>In this blog post we&#8217;ve walked through using Elixir releases on an existing project, Hex.pm. We&#8217;ve installed the development version of Elixir, configured the release, and adjusted our deployment setup to use it. Hex.pm was previously using Distillery, and with minimal changes we were able to update it to use built-in releases support.</p>
+<p>Overall, I’m very happy about this change. We’ve ended up with about the same amount of configuration code, but I think it’s a little bit better structured and more obvious.</p>
+<p>I especially like new conventions around configuration. Where previously we used workarounds like <code>config :app, {:system, "ENV_VAR"}</code> and <code>"${ENV_VAR}"</code> (and <code>REPLACE_OS_VARS=true</code>), we now have a clear distinction between build-time and runtime configuration. <a><code>mix release</code></a> documentation does a really good job of explaining configuration aspects in particular but also the whole release process in general.</p>
+<p>Building the release is now faster too, on my machine ~2.5s now vs ~5.5s before. Granted, it’s probably the least concern but it’s a nice cherry on top nonetheless.</p>
+<p>As of this writing, Hex.pm is already deployed using Elixir releases. Now your turn &#8211; try out releases on your project! (And if something goes wrong, <a href="https://github.com/elixir-lang/elixir/issues/new" target="_blank" rel="noopener noreferrer">submit an issue</a>!)</p><p>The post <a href="/2019/05/updating-hex-pm-to-use-elixir-releases/">Updating Hex.pm to use Elixir releases</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

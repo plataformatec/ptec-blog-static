@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>boxen « Plataformatec Blog</title>
+	<atom:link href="/tag/boxen/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Tue, 23 Jul 2013 16:40:35 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>Using Boxen for automating our development setup</title>
+		<link>/2013/07/using-boxen-for-automating-our-development-setup/</link>
+					<comments>/2013/07/using-boxen-for-automating-our-development-setup/#comments</comments>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Tue, 23 Jul 2013 16:40:35 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[boxen]]></category>
+		<category><![CDATA[puppet]]></category>
+		<category><![CDATA[ruby]]></category>
+		<guid isPermaLink="false">/?p=3498</guid>
+
+					<description><![CDATA[<p>Rafael França shows how Plataformatec manages the development setup using Boxen, a tool created on top of puppet to automate machine setups.</p>
+<p>The post <a href="/2013/07/using-boxen-for-automating-our-development-setup/">Using Boxen for automating our development setup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Setting up a machine for development is always a manual, annoying task. Here at Plataformatec we have a lot of projects that have different software dependencies, so every time one of our members has to start working on a new project, he needs to setup his machine to meet the project&#8217;s requirements, just like every team member of that project already did.</p>
+<p>As such, we always end up with some questions: Is this project using MySQL, PostgreSQL or MongoDB? Do I need to install a JavaScript runtime? What about QT? Which Ruby version do I need?</p>
+<p>Every team member joining an existing project gets stuck on those same questions, while all they want is to do what they do best, write software.</p>
+<p>The problem is even worse when the person is a newcomer, as he may not have any previous knowledge about which software we use.</p>
+<p>So, to help our team mates, the newcomers and to make easier and faster to get things done, we started to automate this setup, initially working in our own tool until the day GitHub released <a href="https://boxen.github.com/">Boxen</a>.</p>
+<h3>About Boxen</h3>
+<p>Boxen is a tool for automating your machine setup. It works on top of the Puppet project and has some utilities and default modules to make easier to provide and set up services and projects.</p>
+<p>Also, Boxen gives you a way to define a personal manifest where you can put personal configurations like you favorite text editor, setting up your dotfiles, or other utility softwares.</p>
+<h3>How we use Boxen</h3>
+<p>As a consultancy company we have more than one project running at the same time. Besides that, one of our practices is team rotation, which means that every now and then people move to different teams. Boxen helped us to make those exchanges smoother.</p>
+<p>Given that one person has already set up his project to use Boxen, the next person who joins the team will only have to run one command to get his machine ready to work.</p>
+<p>The same occurs with problems that someone may have when setting up his machine. Once someone fixes the issue, everyone on the team will take advantage of that fix.</p>
+<p>Right now we have some projects set up to use Boxen, and some of them are open source projects like Rails, Simple Form and Elixir.</p>
+<p>Our <a href="https://github.com/plataformatec/puppet-rails_contributor">Rails project configuration</a> is open source for those who are interested to contribute to Rails.</p>
+<p>Boxen is not only useful for tech people. Every person in the company can use it. Right now we have 10 people using Boxen, where 9 of them are developers and 1 is a project manager.</p>
+<h3>Conclusion</h3>
+<p>We have found Boxen to be very useful for our company and we have made it our default tool to set up our machines. Also, we think it is a great way to spread and perpetuate knowledge across your team about the project&#8217;s infrastructure and configuration.</p>
+<p>I, in particular, learned a lot about systems operation and configuration in the path of making Boxen part of our toolset. Also, I&#8217;m very happy to say that I have been granted commit access to the Boxen organization and we will help the GitHub guys and the Boxen team to move this project forward.</p>
+<p>And you, what is your team using to set up your machines?</p><p>The post <a href="/2013/07/using-boxen-for-automating-our-development-setup/">Using Boxen for automating our development setup</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/07/using-boxen-for-automating-our-development-setup/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

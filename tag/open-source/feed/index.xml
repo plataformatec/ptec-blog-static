@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>open source « Plataformatec Blog</title>
+	<atom:link href="/tag/open-source/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 01 Jun 2015 15:28:45 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>XSS vulnerability on Simple Form</title>
+		<link>/2014/11/xss-vulnerability-on-simple-form-2/</link>
+		
+		<dc:creator><![CDATA[Rafael França]]></dc:creator>
+		<pubDate>Wed, 26 Nov 2014 15:18:28 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[security fix]]></category>
+		<category><![CDATA[simple form]]></category>
+		<guid isPermaLink="false">/?p=4316</guid>
+
+					<description><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options. Versions affected: >= 2.0.0 Not affected: &#60; 2.0.0 Fixed versions: 3.1.0, 3.0.3, 2.1.2 Impact When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided ... <a class="read-more-link" href="/2014/11/xss-vulnerability-on-simple-form-2/">»</a></p>
+<p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>There is a XSS vulnerability on Simple Form&#8217;s error options.</p>
+<ul>
+<li>Versions affected: >= 2.0.0</li>
+<li>Not affected: &lt; 2.0.0</li>
+<li>Fixed versions: 3.1.0, 3.0.3, 2.1.2</li>
+</ul>
+<h2>Impact</h2>
+<p>When Simple Form renders an error message it marks the text as being HTML safe, even though it may contain HTML tags. In applications where the error message can be provided by the users, malicious values can be provided and Simple Form will mark them as safe.</p>
+<h2>Changes at the behavior</h2>
+<p>To fix this vulnerability error messages are now always escaped. If users need to mark them as safe they will need to use explicitly the <code>:error</code> option:</p>
+<pre><code class="ruby">f.input :name, error: raw("My &lt;b&gt;error&lt;/b&gt;")
+</code></pre>
+<h2>Releases</h2>
+<p>The 3.1.0, 3.0.3 and 2.1.2 releases are available at the regular locations.</p>
+<h2>Workarounds</h2>
+<p>There are no feasible workarounds for this issue. We recommend all users to upgrade as soon as possible.</p>
+<h2>Patches</h2>
+<p>To aid users who aren&#8217;t able to upgrade immediately we have provided patches. They are in git-am format and consist of a single changeset.</p>
+<ul>
+<li><a href="https://gist.github.com/rafaelfranca/843f7ec77cec39aabe75">Patch for 3.0 series</a></li>
+<li><a href="https://gist.github.com/rafaelfranca/dc65bb34659e6027c24e">Patch for 2.1 series</a></li>
+</ul>
+<h2>Credits</h2>
+<p>Thanks to Jake Goulding, from WhiteHat Security and Nicholas Rutherford from Medify Ltd. for reporting the issue and working with us in a fix.</p>
+<div style="padding:40px 0 20px;">
+<a href="/subscribe/"><img decoding="async" src="/wp-content/uploads/2014/11/subscribe-to-our-blog.png" alt="Subscribe to our blog" style="border:none;" /></a>
+</div><p>The post <a href="/2014/11/xss-vulnerability-on-simple-form-2/">XSS vulnerability on Simple Form</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Thank you, Carlos Antonio!</title>
+		<link>/2014/08/thank-you-carlos-antonio/</link>
+					<comments>/2014/08/thank-you-carlos-antonio/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Fri, 15 Aug 2014 12:40:00 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[thank you]]></category>
+		<guid isPermaLink="false">/?p=4159</guid>
+
+					<description><![CDATA[<p>Carlos Antônio, our first employee, is moving forward after 5 years at Plataformatec. In this blog post, we share a bit about our story, open source projects, and what Carlos is leaving as legacy to us.</p>
+<p>The post <a href="/2014/08/thank-you-carlos-antonio/">Thank you, Carlos Antonio!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Today we reach the end of a trip. <a href="https://twitter.com/cantoniodasilva">Carlos Antonio</a>, our first employee, is moving forward after 5 years at Plataformatec.</p>
+<p>During this time, we have learned a lot, made some mistakes, grew together as people and as a company. In this blog post, we would like to share a bit of this story and what Carlos is leaving as legacy to us.</p>
+<h3>A story about Open Source</h3>
+<p>Carlos&#8217; relationship with Plataformatec started with Open Source. When Carlos joined our team, back in August 2009, Plataformatec existed as a company only for 6 months and we were very excited to have him aboard. After all, he was the #1 employee.</p>
+<p>At the time, the choice was really clear: Carlos had done many contributions to our only Open Source project at that point, <a href="http://github.com/josevalim/inherited_resources">Inherited Resources</a>, and from his contributions we observed many of the traits that he exhibited throughout his stay at Plataformatec: tidy code, excellent communication skills and a great ability to evaluate trade-offs.</p>
+<p>Being our first employee, Carlos helped us perpetuate those qualities as part of Plataformatec&#8217;s culture.</p>
+<h3>Focused</h3>
+<p>We often promote feedback between our team members and one word that was frequently used to describe Carlos is: focused.</p>
+<p>Focus, on its own, can be a dangerous trait. Some people can focus and, as a consequence, lose the ability to understand how all components fit together. However, that was not Carlos&#8217; case, as he aimed at having a holistic view of his environment and tasks, their causes and consequences. For example:</p>
+<ul>
+<li>
+<p>As the company grew, Carlos was always interested in understanding and participating in its diverse activities</p>
+</li>
+<li>
+<p>At every project he worked, he was attentive to what makes the project important to the client. This often showed up when prioritizing features as Carlos would ask: &#8220;which one brings more value to the client?&#8221;</p>
+</li>
+<li>
+<p>At the code level, Carlos sees how every piece of the application fits the whole design</p>
+</li>
+</ul>
+<p>Then, as a consequence of knowing how the involved components work, Carlos could always focus and reach a particular component to improve, fix or discuss it with precision.</p>
+<h3>Discussing trade-offs</h3>
+<p>My favorite quality in Carlos is his ability to understand and evaluate trade-offs.</p>
+<p>When working together on a project, if I was unsure which solution would be the best to take, I could always call Carlos and have a quick discussion. I would expose the options I had evaluated so far, Carlos would help me expand them, maybe add some options of his own, and we would debate which one would suit best the current project.</p>
+<p>In those discussions, I never had to worry about proposing something silly nor have I heard Carlos saying &#8220;we don&#8217;t do X&#8221;. If something was a bad fit, Carlos often guided me to understand why that was a bad option on my own.</p>
+<p>Of course, this always worked both ways. When Carlos had to call someone to discuss a possible solution, he was always open to the team feedback, suggestions and so on.</p>
+<h3>Farewell?</h3>
+<p>Most of all, Carlos is a great Open Source partner.</p>
+<p>After Carlos joined us, we started a great partnership towards Open Source. Carlos and I were the ones behind the conception of both <a href="https://github.com/plataformatec/devise">Devise</a> and <a href="https://github.com/plataformatec/simple_form">Simple Form</a> which would become the biggest Open Source projects from Plataformatec inside the Rails community.</p>
+<p>Carlos is also a member of the Rails Core Team which means there are still plenty of opportunity for us to work together on Devise, Simple Form, and many other Open Source projects to come.</p>
+<p>This is the end of a trip but definitely not the end of the journey.</p>
+<p>We&#8217;ll see you around, Carlos!</p><p>The post <a href="/2014/08/thank-you-carlos-antonio/">Thank you, Carlos Antonio!</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/08/thank-you-carlos-antonio/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Tips for keeping your Open Source Software issues tracker tidy</title>
+		<link>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/</link>
+					<comments>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/#comments</comments>
+		
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Tue, 13 May 2014 13:10:25 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[burnout]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[elixir]]></category>
+		<category><![CDATA[open source]]></category>
+		<guid isPermaLink="false">/?p=4004</guid>
+
+					<description><![CDATA[<p>Charlie Somerville recently tweeted he wished there was a good guide about maintaining open source software: I wish there was a good guide on maintaining OSS projects. I&#39;m a maintainer of a reasonably popular project and I have NFI what I&#39;m doing. &#8212; Charlie Somerville (@charliesome) April 26, 2014 In between consultancy jobs and building ... <a class="read-more-link" href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">»</a></p>
+<p>The post <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">Tips for keeping your Open Source Software issues tracker tidy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Charlie Somerville recently tweeted he wished there was a good guide about maintaining open source software:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p>I wish there was a good guide on maintaining OSS projects. I&#39;m a maintainer of a reasonably popular project and I have NFI what I&#39;m doing.</p>
+<p>&mdash; Charlie Somerville (@charliesome) <a href="https://twitter.com/charliesome/statuses/459937161593098241">April 26, 2014</a></p></blockquote>
+<p><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+<p>In between consultancy jobs and building projects for our clients, our team is directly involved in many Open Source Projects. So after exchanging some messages, I realized it would be useful to document some of the common practices we do at Plataformatec for maintaining Open Source Software.</p>
+<p>Although this post is not a complete guide, it does share our experience of maintaining and working on the issues tracker of many projects like Rails, Simple Form, Devise, and lately Elixir.</p>
+<h2>Avoid burnout</h2>
+<p>One of the most important things when it comes to OSS is to avoid burnout. This is extremely important for small projects, which mostly depend on one or two contributors. If someone burns out in large projects, there is always someone else to take on the issues tracker and maintenance work until you gather your energy back.</p>
+<p>For small projects though, if you need to step away, it likely means the project will go unmaintained for a while, which will just make the situation worse as issues will continue to arrive.</p>
+<p>So a lot of what we will discuss here is meant to avoid burnout. Here are two examples:</p>
+<ol>
+<li>
+<p>Avoid issues from piling on &#8211; it is likely that, if the issues tracker has 30 open issues, you will feel less and less compelled to work on them;</p>
+</li>
+<li>
+<p>Learn how to say &#8220;no&#8221; &#8211; merging code or features you are not a 100% comfortable with may makes thing worse. Every time there is a bug on that particular feature, you may feel less compelled to work on it or even not be willing to improve/refactor the code in the future, etc;</p>
+</li>
+</ol>
+<p>Of course different developers have different reasons to burnout, so whenever you find yourself lacking the energy to work on a project, try to understand why the energy isn&#8217;t there and find ways to avoid the problem from repeating in the future.</p>
+<h2>Contributing.md file</h2>
+<p>If you are hosting your project on GitHub, GitHub allows you to place a <code>Contributing.md</code> file with instructions on how to contribute to the project. For example, here are the files for <a href="https://github.com/plataformatec/devise/blob/master/CONTRIBUTING.md">Devise</a> and <a href="https://github.com/elixir-lang/elixir/blob/master/CONTRIBUTING.md">Elixir</a> projects.</p>
+<p>Remember the community wants the same as you: the best for your Open Source project. So having detailed instructions on how to collaborate and contribute to the project helps both you and the community. You will have more detailed bug reports, better patches/pull requests, and other developers will find it easier to give back.</p>
+<p>However keep in mind that there will still be incomplete or wrong reports from developers that didn&#8217;t read the <code>Contributing.md</code> file. That leads us to the next tip.</p>
+<h2>ABC (Always Be Closing)</h2>
+<p>If you have ever been to a sales workshop or read about how to improve your sales skills, it is very likely you have seen Alec Baldwin&#8217;s speech from Glengarry Glen Ross:</p>
+<p><iframe width="500" height="375" src="http://www.youtube.com/embed/wVQPY4LlbJ4?feature=oembed" frameborder="0" allowfullscreen></iframe></p>
+<p>Although we are not doing any sales here, I strongly apply the concept of &#8220;Always Be Closing&#8221; to the issues tracker. I am always, actively, closing issues. Here are the main reasons I close open issues:</p>
+<ul>
+<li>
+<p>The user has not read the <code>Contributing.md</code> and have posted a bug report without the relevant information like OS, software versions, stacktraces, etc;</p>
+</li>
+<li>
+<p>Users are asking questions on the issues tracker when a project has a specific channel for those, like a mailing list or a tag on Stack Overflow;</p>
+</li>
+<li>
+<p>The proposed feature is too complex to not be worth the time that it requires to be implemented. Or you don&#8217;t see the possibility for the feature to be implemented in a medium-term plan;</p>
+</li>
+</ul>
+<p>Usually the first thing I do in the morning is to give a quick pass at my inbox looking specifically at open issues. Issues that are invalid or that cannot be acted on are closed with the proper message. In case the user provides the missing information after a bad bug report is closed, the issue will be reopened in the next morning. This activity only takes a couple minutes of your morning, which you can do while you sip your hot coffee. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+<p>Soon after I adopted this workflow, Vasiliy Ermolovich noticed most of the time I was closing issues with similar reasons, and he has created the extremely useful <a href="https://github.com/nashby/jose-vs-oss">José vs OSS</a> project which integrates with Firefox and Chrome to help me close issues more quickly. This project has probably saved me days of work!</p>
+<h2>Ask for contributions</h2>
+<p>The community is there to help you! There are many ways you can reduce your workload by interacting with the community:</p>
+<ul>
+<li>
+<p>Depending on the project, asking a sample application to reproduce the issue is extremely helpful. A lot of bug reports are closed after the reporter tries to reproduce the issue and, in the process, they find out the bug was caused by something specific to their application. It saves you precious hours from trying to reproduce a bug that you would never find!</p>
+</li>
+<li>
+<p>If a user reports a bug, ask the user if he/she feels comfortable to send a pull request with a fix. If you have an idea of where the bug is, send the user links to the relevant part of code, and make it clear you are available in case there are any questions;</p>
+</li>
+<li>
+<p>For Elixir, we are experimenting with <a href="https://github.com/elixir-lang/elixir/issues?state=open">tagging issues with their &#8220;perceived difficulty&#8221;</a>, so users who want to contribute to the language can help you solve existing issues. I often list small/medium features we plan to tackle in there and often they are implemented by the community and sent as pull requests;</p>
+</li>
+</ul>
+<h2>Find out what works for you and the community</h2>
+<p>The important thing is to find out what works for you, the other maintainers and the community. For example, while working on Elixir, I was used to close features requests that I could see that would not be part of the language in the next 6 months, even though they were features I liked too! This eventually led to some questions from the community about the approach taken in our issues tracker.</p>
+<p>The truth is: if the feature is really useful, you will hear about it many more times! I explained the approach to the community and showed how not having such entries in the issues tracker helps us keep focus on actual bug reports and actionable tasks. Which led everyone to agree with this direction.</p>
+<p>Try things and listen to the feedback and hopefully you will find a workflow that works nicely for everyone involved!</p>
+<h2>Be nice!</h2>
+<p>Finally, be nice and be polite! Let your contributors know that you appreciate their work as much as they appreciate yours!</p>
+<p>What about you? Do you have any tips to share regarding OSS projects maintenance?</p><p>The post <a href="/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/">Tips for keeping your Open Source Software issues tracker tidy</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2014/05/tips-for-keeping-your-open-source-software-issues-tracker-tidy/feed/</wfw:commentRss>
+			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Devise and Rails 4</title>
+		<link>/2013/05/devise-and-rails-4/</link>
+					<comments>/2013/05/devise-and-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Fri, 10 May 2013 20:36:15 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[devise]]></category>
+		<category><![CDATA[mail_form]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<category><![CDATA[responders]]></category>
+		<category><![CDATA[show_for]]></category>
+		<category><![CDATA[simple_form]]></category>
+		<guid isPermaLink="false">/?p=3440</guid>
+
+					<description><![CDATA[<p>Devise 3.0 rc version with Rails 4 compatibility and new 2.2.4 stable version. Simple Form, Responders, Show For and Mail Form versions with Rails 4 compatibility.</p>
+<p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>This week we released the first release candidate version of Devise that is fully compatible with Rails 4, and we&#8217;re bumping its version to 3.0. This version completely drops support for Rails 3.1 and Ruby 1.8.7, only keeping compatibility with both Rails 3.2 and Rails 4, running with Ruby 1.9.3 and 2.0.</p>
+<p>This rc version took some time to get ready, we&#8217;ve been running a <em>rails4</em> branch for some time already and one of the reasons was because of the changes required to <a href="https://github.com/plataformatec/devise/commit/c63483ae2409ba44889756796930f5d45630d7b3">make it compatible with the new <strong>strong parameters</strong> API from Rails 4</a>. We are aware that some people have been using this branch since Rails 4.0 beta1 with success, and we&#8217;re now inviting you to try 3.0 rc with the <a href="http://weblog.rubyonrails.org/2013/5/1/Rails-4-0-release-candidate-1/">recent release of Rails 4.0 rc1</a>.</p>
+<h3>Devise stable</h3>
+<p>Together with the 3.0 beta version, we&#8217;ve released Devise 2.2.4 with a few enhancements and bug fixes, make sure to <a href="https://github.com/plataformatec/devise/blob/v2.2.4/CHANGELOG.rdoc">check the changelog</a> to see the new goodies. All changes are also included in the rc version.</p>
+<h3>Simple Form</h3>
+<p>Simple Form has been running a 3.0 rc version for a couple months already, fully compatible with Rails 4 as well, and today we are releasing its release candidate version. In Simple Form master we just dropped support to the 3.x Rails series, focusing our work on Rails 4 compatibility from now on, due to a series of improvements in Rails 4 regarding form helpers &#8211; but don&#8217;t worry, we will be keeping a v2.1 branch with Rails 3.2 compatibility for a while.</p>
+<p>We have some cool plans to improve the wrappers API even further, but that&#8217;s subject for another blog post :).</p>
+<h3>Responders</h3>
+<p>Responders has been around for quite some time already and we use it in most of our projects, so today we&#8217;re celebrating its 1.0 release candidate version, specially to support Rails 4.</p>
+<h3>Show For</h3>
+<p>Show For just got a new stable release, v0.2.6, with all the enhancements and bug fixes that were in master, plus a v0.3.0 rc version that adds Rails 4 support.</p>
+<h3>Mail Form</h3>
+<p>Mail Form also got a new 1.5 rc release with Rails 4.0 compatibility. Nothing else has changed from the current 1.4 version.</p>
+<h3>Has Scope</h3>
+<p>Has Scope is getting a new 0.6 rc version with Rails 4.0 compatibility, including a couple of fixes that were already present in master.</p>
+<h2>Compatibility</h2>
+<p>All these new releases are officially dropping support to Rails 3.0 and 3.1, and Ruby 1.8.7. We&#8217;ll keep compatibility with Rails 3.2 and 4.0 from now on, all of them on the same branches except for Simple Form which has different branches for each Rails version.</p>
+<h2>Wrapping up</h2>
+<p>We&#8217;ve got new hot releases for you to try out with Rails 4, please give them a try and let us know if you find any issue or have any feedback.</p>
+<p>We&#8217;d also like to specially thank everyone involved in helping us getting these projects up and running in Rails 4, without you folks that&#8217;d have never been possible.</p>
+<p>Enjoy &lt;3</p><p>The post <a href="/2013/05/devise-and-rails-4/">Devise and Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2013/05/devise-and-rails-4/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Flushing content blocks with Rails 4</title>
+		<link>/2012/07/flushing-content-blocks-with-rails-4/</link>
+					<comments>/2012/07/flushing-content-blocks-with-rails-4/#comments</comments>
+		
+		<dc:creator><![CDATA[Lucas Mazza]]></dc:creator>
+		<pubDate>Fri, 27 Jul 2012 18:24:07 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[actionpack]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails 4]]></category>
+		<guid isPermaLink="false">/?p=2987</guid>
+
+					<description><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems ... <a class="read-more-link" href="/2012/07/flushing-content-blocks-with-rails-4/">»</a></p>
+<p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>Besides the big and shiny features that Rails 4 holds, there&#8217;s a lot of small improvements on several other sections of the Rails framework &#8211; helpers, core extensions, app configurations and more &#8211; that might not even hit the Changelogs but will somehow make our lifes easier in the future. One of these hidden gems that I&#8217;ve found recently is an improvement on the <code>content_for</code> helper to flush and replace previous chunks of HTML with new ones.</p>
+<h3>The <code>content_for</code> that we are used to</h3>
+<p>The <code>content_for</code> method is an old friend of every Rails developer, and it&#8217;s a pretty simple and flexible helper. You can store a chunk of HTML from a String or a block, and grab it somewhere else in your views or <code>yield</code> it directly into your templates. It&#8217;s a pretty handy trick to move data from your views into your layouts, like page titles, custom meta tags or specific <code>script</code> tags that your page needs to include.</p>
+<pre lang='rails'>
+# On your 'application.html.erb' layout, inside the '<head>' tag.
+<%= yield :metatags %>
+
+# Then, into a specific view
+<% content_for :metatags do %>
+  <meta property="og:image" content="http://example.com/image.jpg" />
+<% end %>
+</pre>
+<p>Multiple calls of the <code>content_for</code> helper using the same identifier will concatenate them and output them together when you read it back on your views, as:</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example do %>
+  <h1>This will be rendered too!</h1>
+<% end %>
+</pre>
+<p>On some scenarios this behavior might not be desired, and with Rails 4 you can flush out the stored pieces of an identifier and replace it instead of adding more content to it: using the <code>flush: true</code> option. The <a href="https://github.com/rails/rails/pull/4226">first implementation</a> used an extra <code>true</code> argument, but <a href="https://github.com/rails/rails/pull/7150">we changed</a> to use a Hash instead, so the <code>flush</code> key can express better the behavior we&#8217;re expecting.</p>
+<pre lang='rails'>
+<% content_for :example, "This will be rendered" %>
+<% content_for :example, flush: true do %>
+  <h1>But this will override everything on the ':example' block.</h1>
+<% end %>
+</pre>
+<h3>The gallery situation</h3>
+<p>I&#8217;ve stumbled upon this on a recent project, where we had a somewhat classic scenario: a partial named <code>_gallery</code>, responsible for rendering the piece of HTML to display a gallery of images that also supplies a <code>content_for</code> block with a <code>script</code> tag to include the required libraries to put the gallery to work.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% content_for :scripts, javascript_include_tag('gallery') %>
+</pre>
+<p>It works like a charm. But with an updated requirement we had the case where multiple galleries could be present on the same page, rendering the <code>_gallery</code> partial several times. The required HTML would be present, but the <code>gallery.js</code> script would be included multiple times into the rendered page. Instead of working this out using instance variables to check that the partial was rendered at least once, we could let Rails do all the hard work for us, using the <code>flush</code> option when including the <code>gallery.js</code> script.</p>
+<pre lang='rails'>
+<section class="gallery">
+  <!-- a truckload of HTML tags -->
+</section>
+<% # We can render this partial several times and this script will be included just once %>
+<% content_for :scripts, javascript_include_tag('gallery'), flush: true %>
+</pre>
+<h3>Back to the present: Rails 3.2</h3>
+<p>Well, while this seems to be a perfect solution to my problem, this feature isn&#8217;t available on Rails 3.2 or on the <code>3-2-stable</code> branch &#8211; it&#8217;s only available on the <code>master</code> branch that will be released with Rails 4. But, backporting this feature into a 3.x application is pretty simple, using a helper of your own.</p>
+<pre lang='ruby'>
+def single_content_for(name, content = nil, &block)
+  @view_flow.set(name, ActiveSupport::SafeBuffer.new)
+  content_for(name, content, &block)
+end
+</pre>
+<p>After some source diving into the ActionPack source code we&#8217;re done &#8211; it just needs to replace any present content with a brand new <code>SafeBuffer</code> instance before storing the piece of HTML.</p>
+<p>What do you think about this little addition to Rails 4? Can you think of a similar problem that could be solved with this instead of a custom hack?</p><p>The post <a href="/2012/07/flushing-content-blocks-with-rails-4/">Flushing content blocks with Rails 4</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/flushing-content-blocks-with-rails-4/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Active Record loves blocks</title>
+		<link>/2012/07/active-record-loves-blocks/</link>
+					<comments>/2012/07/active-record-loves-blocks/#comments</comments>
+		
+		<dc:creator><![CDATA[Carlos Antônio]]></dc:creator>
+		<pubDate>Wed, 18 Jul 2012 19:46:19 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[activerecord]]></category>
+		<category><![CDATA[blocks]]></category>
+		<category><![CDATA[open source]]></category>
+		<category><![CDATA[rails]]></category>
+		<guid isPermaLink="false">/?p=2949</guid>
+
+					<description><![CDATA[<p>When creating an Active Record object, either by using `new` or `create`/`create!`, or even through a `belongs_to` or `has_many` association, you can give a block straight to the method call instead of relying on `tap`. It is possible to avoid doing manual work, sometimes simple stuff such as using `tap` with methods like these, or sometimes more complicated things, by getting to know what a framework like Rails can give us for free.</p>
+<p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p>I&#8217;d like to start with a question: Have you ever seen code like this?</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+end
+
+User.new.tap do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>I have. But what few developers know is that many methods in Active Record already accept a block, so you don't need to invoke <code>tap</code> in the first place. And that's all because Active Record loves blocks! Let's go through some examples.</p>
+<h3>Using blocks with Active Record</h3>
+<p>When creating an Active Record object, either by using <code>new</code> or <code>create</code>/<code>create!</code>, you can give a block straight to the method call instead of relying on <code>tap</code>:</p>
+<pre lang="ruby">
+User.new do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+
+User.create do |user|
+  user.name     = "John Doe"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>And you can mix and match with hash initialization:</p>
+<pre lang="ruby">
+User.new(name: "John Doe") do |user|
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>All these methods, when receiving a block, <a href="https://github.com/rails/rails/blob/v3.2.6/activerecord/lib/active_record/base.rb#L500"><code>yield</code> the current object to the block</a> so that you can do whatever you want with it. It's basically the same effect as using <code>tap</code>. And it all happens after the attributes hash have been assigned and other internal Active Record code has been run during the object initialization, except by the <code>after_initialize</code> callbacks.</p>
+<p>That's neat. That means we can stop using <code>tap</code> in a few places now. But wait, there's more.</p>
+<h3>Active Record associations also love blocks</h3>
+<p>We talked about using blocks when building an Active Record object using <code>new</code> or <code>create</code>, but associations like <code>belongs_to</code> or <code>has_many</code> also work with that, when calling <code>build</code> or <code>create</code> on them:</p>
+<pre lang="ruby">
+class User < ActiveRecord::Base
+  has_many :posts
+end
+
+class Post < ActiveRecord::Base
+  belongs_to :user
+end
+
+# has_many
+user = User.first
+user.posts.build do |post|
+  post.title = "Active Record <3 Blocks"
+  post.body  = "I can give tap a break! <3 <3 <3"
+end
+
+# belongs_to
+post = Post.first
+post.build_user do |user|
+  user.name     = "John Doe <3 blocks"
+  user.username = "john.doe"
+  user.password = "john123"
+end
+</pre>
+<p>That's even better. That means we can stop using <code>tap</code> in a few more places.</p>
+<h3>Wrapping up: Active Record &lt;3 blocks</h3>
+<p>It is possible to avoid extra work, sometimes simple stuff such as using <code>tap</code> with methods like <code>new</code> and <code>create</code>, other times more complicated ones, by getting to know what the framework can give us for free.</p>
+<p>There are other places inside Active Record that accept blocks, for instance <code> first_or_initialize</code> and friends will execute the given block when the record is not found, to initialize the new one.</p>
+<p>In short, next time you need a block when creating records using Active Record, take a minute to see if you can avoid using <code>tap</code> by using an already existing feature. Remember: Active Record &lt;3 blocks. And don't do that with blocks only, the main idea here is that you can learn more about the framework, and let it do more work for you.</p>
+<p>How about you, do you have any small trick in Ruby or Rails that makes your work easier? Take a minute to share it with others in the comments. <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f642.png" alt="🙂" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p><p>The post <a href="/2012/07/active-record-loves-blocks/">Active Record loves blocks</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2012/07/active-record-loves-blocks/feed/</wfw:commentRss>
+			<slash:comments>8</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

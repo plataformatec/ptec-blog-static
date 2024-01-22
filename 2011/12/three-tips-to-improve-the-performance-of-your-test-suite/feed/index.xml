@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Three tips to improve the performance of your test suite	</title>
+	<atom:link href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/feed/" rel="self" type="application/rss+xml" />
+	<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 08 Mar 2012 13:06:41 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Jonathan Nichol		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1182</link>
+
+		<dc:creator><![CDATA[Jonathan Nichol]]></dc:creator>
+		<pubDate>Sun, 01 Jan 2012 18:48:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1182</guid>
+
+					<description><![CDATA[Hello! I just would like to give a huge thumbs up for the great info you have here on this post. I will be coming back to your blog. ]]></description>
+			<content:encoded><![CDATA[<p>Hello! I just would like to give a huge thumbs up for the great info you have here on this post. I will be coming back to your blog. </p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron Jensen		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1181</link>
+
+		<dc:creator><![CDATA[Aaron Jensen]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2011 20:16:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1181</guid>
+
+					<description><![CDATA[Is it possible to use shared connections with Cucumber? Cucumber seems to rely on DatabaseCleaner.]]></description>
+			<content:encoded><![CDATA[<p>Is it possible to use shared connections with Cucumber? Cucumber seems to rely on DatabaseCleaner.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Aaron Jensen		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1180</link>
+
+		<dc:creator><![CDATA[Aaron Jensen]]></dc:creator>
+		<pubDate>Tue, 27 Dec 2011 20:02:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1180</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1176&quot;&gt;Pavel Penkov&lt;/a&gt;.
+
+Saved us 30 seconds on our test run. Some additional tips: http://aaron-jensen.com/post/5019042852/speed-up-your-rspec-cucumber-run]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1176">Pavel Penkov</a>.</p>
+<p>Saved us 30 seconds on our test run. Some additional tips: http://aaron-jensen.com/post/5019042852/speed-up-your-rspec-cucumber-run</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: nicholasmott		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1179</link>
+
+		<dc:creator><![CDATA[nicholasmott]]></dc:creator>
+		<pubDate>Thu, 22 Dec 2011 05:08:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1179</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1175&quot;&gt;Anonymous&lt;/a&gt;.
+
+Try putting it in the each_run block. Worked for me, at least to get rid of the PGError. Still have to check if it will work properly with Capybara in each_run.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1175">Anonymous</a>.</p>
+<p>Try putting it in the each_run block. Worked for me, at least to get rid of the PGError. Still have to check if it will work properly with Capybara in each_run.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Djoga		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1177</link>
+
+		<dc:creator><![CDATA[Andrew Djoga]]></dc:creator>
+		<pubDate>Fri, 16 Dec 2011 09:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1177</guid>
+
+					<description><![CDATA[Also to speed up your Capybara JS specs you can turn off jquery animation (if you use jquery):
+
+$.fx.off = true;
+
+(https://gist.github.com/1471512)
+
+In this case all animations will immediately set elements to their final state when called, rather than displaying an effect.]]></description>
+			<content:encoded><![CDATA[<p>Also to speed up your Capybara JS specs you can turn off jquery animation (if you use jquery):</p>
+<p>$.fx.off = true;</p>
+<p>(<a href="https://gist.github.com/1471512" rel="nofollow ugc">https://gist.github.com/1471512</a>)</p>
+<p>In this case all animations will immediately set elements to their final state when called, rather than displaying an effect.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Andrew Djoga		</title>
+		<link>/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/comment-page-1/#comment-1178</link>
+
+		<dc:creator><![CDATA[Andrew Djoga]]></dc:creator>
+		<pubDate>Fri, 16 Dec 2011 09:14:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=1792#comment-1178</guid>
+
+					<description><![CDATA[Also to speed up your Capybara JS specs you can turn off jquery animation (if you use jquery):
+
+$.fx.off = true;
+
+(https://gist.github.com/1471512)
+
+In this case all animations will immediately set elements to their final state when called, rather than displaying an effect.]]></description>
+			<content:encoded><![CDATA[<p>Also to speed up your Capybara JS specs you can turn off jquery animation (if you use jquery):</p>
+<p>$.fx.off = true;</p>
+<p>(<a href="https://gist.github.com/1471512" rel="nofollow ugc">https://gist.github.com/1471512</a>)</p>
+<p>In this case all animations will immediately set elements to their final state when called, rather than displaying an effect.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

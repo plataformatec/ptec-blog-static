@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Devise: flexible authentication solution for Rails	</title>
+	<atom:link href="/2009/10/devise-flexible-authentication-solution-for-rails/feed/" rel="self" type="application/rss+xml" />
+	<link>/2009/10/devise-flexible-authentication-solution-for-rails/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Thu, 17 Dec 2009 02:16:37 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Mmm&#8230;food &#187; Authentication with Devise and Warden, part 1: Up and Running		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-405</link>
+
+		<dc:creator><![CDATA[Mmm&#8230;food &#187; Authentication with Devise and Warden, part 1: Up and Running]]></dc:creator>
+		<pubDate>Thu, 17 Dec 2009 02:16:37 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-405</guid>
+
+					<description><![CDATA[[...] your model know what&#8217;s going on. In this line from my user.rb file, I include all the parts of Devise except [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] your model know what&#8217;s going on. In this line from my user.rb file, I include all the parts of Devise except [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-380</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 19 Nov 2009 10:43:12 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-380</guid>
+
+					<description><![CDATA[@Trung Lately we already support ActiveRecord and MongoMapper. Take a look at lib/devise/orm/mongo_mapper.rb and you just need a similar file to have it working with Datamapper. The only hack you will need will be in cases where Datamapper does not mimics ActiveRecord API.]]></description>
+			<content:encoded><![CDATA[<p>@Trung Lately we already support ActiveRecord and MongoMapper. Take a look at lib/devise/orm/mongo_mapper.rb and you just need a similar file to have it working with Datamapper. The only hack you will need will be in cases where Datamapper does not mimics ActiveRecord API.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: José Valim		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-866</link>
+
+		<dc:creator><![CDATA[José Valim]]></dc:creator>
+		<pubDate>Thu, 19 Nov 2009 10:43:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-866</guid>
+
+					<description><![CDATA[@Trung Lately we already support ActiveRecord and MongoMapper. Take a look at lib/devise/orm/mongo_mapper.rb and you just need a similar file to have it working with Datamapper. The only hack you will need will be in cases where Datamapper does not mimics ActiveRecord API.]]></description>
+			<content:encoded><![CDATA[<p>@Trung Lately we already support ActiveRecord and MongoMapper. Take a look at lib/devise/orm/mongo_mapper.rb and you just need a similar file to have it working with Datamapper. The only hack you will need will be in cases where Datamapper does not mimics ActiveRecord API.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trung		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-378</link>
+
+		<dc:creator><![CDATA[Trung]]></dc:creator>
+		<pubDate>Thu, 19 Nov 2009 04:50:23 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-378</guid>
+
+					<description><![CDATA[Will this play nice with Datamapper?
+
+Authlogic requires a lot of hack in order to work with datamapper.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Will this play nice with Datamapper?</p>
+<p>Authlogic requires a lot of hack in order to work with datamapper.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Trung		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-865</link>
+
+		<dc:creator><![CDATA[Trung]]></dc:creator>
+		<pubDate>Thu, 19 Nov 2009 04:50:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-865</guid>
+
+					<description><![CDATA[Will this play nice with Datamapper?
+
+Authlogic requires a lot of hack in order to work with datamapper.
+
+Thanks.]]></description>
+			<content:encoded><![CDATA[<p>Will this play nice with Datamapper?</p>
+<p>Authlogic requires a lot of hack in order to work with datamapper.</p>
+<p>Thanks.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Devise - Autenticação flexível para desenvolvedores Rails pragmáticos		</title>
+		<link>/2009/10/devise-flexible-authentication-solution-for-rails/comment-page-2/#comment-377</link>
+
+		<dc:creator><![CDATA[Devise - Autenticação flexível para desenvolvedores Rails pragmáticos]]></dc:creator>
+		<pubDate>Wed, 18 Nov 2009 14:25:06 +0000</pubDate>
+		<guid isPermaLink="false">/?p=365#comment-377</guid>
+
+					<description><![CDATA[[...] Devise (repositório no GitHub) é uma nova biblioteca/engine de autenticação para Rails desenvolvida [...]]]></description>
+			<content:encoded><![CDATA[<p>[&#8230;] Devise (repositório no GitHub) é uma nova biblioteca/engine de autenticação para Rails desenvolvida [&#8230;]</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

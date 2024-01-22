@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>Introducing reducees « Plataformatec Blog</title>
+		<meta name="description" content="The design decisions behind Reducees, the abstraction that powers both Elixir&#039;s Enum and Stream modules.">
+		<meta name="robots" content="max-image-preview:large">
+		<link rel="canonical" href="/2015/05/introducing-reducees/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="Introducing reducees « Plataformatec Blog">
+		<meta property="og:description" content="The design decisions behind Reducees, the abstraction that powers both Elixir&#039;s Enum and Stream modules.">
+		<meta property="og:url" content="/2015/05/introducing-reducees/">
+		<meta property="article:published_time" content="2015-05-21T12:00:34+00:00">
+		<meta property="article:modified_time" content="2016-07-13T15:26:29+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="Introducing reducees « Plataformatec Blog">
+		<meta name="twitter:description" content="The design decisions behind Reducees, the abstraction that powers both Elixir&#039;s Enum and Stream modules.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#article","name":"Introducing reducees « Plataformatec Blog","headline":"Introducing reducees","author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/josevalim\/#author"},"publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"},"image":{"@type":"ImageObject","url":"http:\/\/blog.plataformatec.com.br\/wp-content\/uploads\/2015\/05\/elixir-radar-subscribe.png","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#articleImage","width":831,"height":207,"caption":"Subscribe to Elixir Radar"},"datePublished":"2015-05-21T09:00:34-03:00","dateModified":"2016-07-13T12:26:29-03:00","inLanguage":"en-US","commentCount":2,"mainEntityOfPage":{"@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#webpage"},"isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#webpage"},"articleSection":"English, elixir"},{"@type":"BreadcrumbList","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/#listItem","position":1,"name":"Home","item":"http:\/\/blog.plataformatec.com.br\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2015\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2015\/#listItem","position":2,"name":"2015","item":"http:\/\/blog.plataformatec.com.br\/2015\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2015\/05\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/#listItem","position":3,"name":"May","item":"http:\/\/blog.plataformatec.com.br\/2015\/05\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/2015\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#listItem","position":4,"name":"Introducing reducees","previousItem":"http:\/\/blog.plataformatec.com.br\/2015\/05\/#listItem"}]},{"@type":"Organization","@id":"http:\/\/blog.plataformatec.com.br\/#organization","name":"Plataformatec Blog","url":"http:\/\/blog.plataformatec.com.br\/"},{"@type":"Person","@id":"http:\/\/blog.plataformatec.com.br\/author\/josevalim\/#author","url":"http:\/\/blog.plataformatec.com.br\/author\/josevalim\/","name":"José Valim","image":{"@type":"ImageObject","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#authorImage","url":"http:\/\/2.gravatar.com\/avatar\/e837f6b7fd146ab16ed3d663476c063e?s=96&d=mm&r=pg","width":96,"height":96,"caption":"José Valim"}},{"@type":"WebPage","@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#webpage","url":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/","name":"Introducing reducees « Plataformatec Blog","description":"The design decisions behind Reducees, the abstraction that powers both Elixir's Enum and Stream modules.","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/#website"},"breadcrumb":{"@id":"http:\/\/blog.plataformatec.com.br\/2015\/05\/introducing-reducees\/#breadcrumblist"},"author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/josevalim\/#author"},"creator":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/josevalim\/#author"},"datePublished":"2015-05-21T09:00:34-03:00","dateModified":"2016-07-13T12:26:29-03:00"},{"@type":"WebSite","@id":"http:\/\/blog.plataformatec.com.br\/#website","url":"http:\/\/blog.plataformatec.com.br\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Introducing reducees Comments Feed" href="/2015/05/introducing-reducees/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.plataformatec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/4628">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=4628">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2015%2F05%2Fintroducing-reducees%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2015%2F05%2Fintroducing-reducees%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-4628 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2015/05/introducing-reducees/" rel="bookmark">Introducing reducees</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2015-05-21T09:00:34-03:00">May 21, 2015</time>
+      <p class="post-author">
+        <img alt="" src="http://2.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/e837f6b7fd146ab16ed3d663476c063e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=4" title="Posts by José Valim">José Valim</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>Elixir provides the concept of collections, which may be in-memory data structures, as well as events, I/O resources and more. Those collections are supported by the Enumerable protocol, which is an implementation of an abstraction we call &#8220;reducees&#8221;.</p>
+<p>In this article, we will outline the design decisions behind such abstraction, often exploring ideas from Haskell, Clojure and Scala that eventually led us to develop this new abstraction called reducees, focusing specially on the constraints and performance characteristics of the Erlang Virtual Machine.</p>
+<h2>Recursion and Elixir</h2>
+<p><a href="http://elixir-lang.org/">Elixir is a functional programming language</a> that runs on the Erlang VM. All the examples on this article will be written in Elixir although we will introduce the concepts bit by bit.</p>
+<p>Elixir provides linked-lists. Lists can hold many items and, with pattern matching, it is easy to extract the head (the first item) and the tail (the rest) of a list:</p>
+<pre><code class="iex">iex&gt; [h|t] = [1, 2, 3]
+iex&gt; h
+1
+iex&gt; t
+[2, 3]
+</code></pre>
+<p>An empty list won&#8217;t match the pattern <code>[h|t]</code>:</p>
+<pre><code class="iex">[h|t] = []
+** (MatchError) no match of right hand side value: []
+</code></pre>
+<p>Suppose we want to recurse every element in the list, multiplying each element by 2. Let&#8217;s write a double function:</p>
+<pre><code class="elixir">defmodule Recursion do
+  def double([h|t]) do
+    [h*2|double(t)]
+  end
+
+  def double([]) do
+    []
+  end
+end
+</code></pre>
+<p>The function above recursively traverses the list, doubling the head at each step and invoking itself with the tail. We could define a similar function if we wanted to triple every element in the list but it makes more sense to abstract our current implementation. Let&#8217;s define a function called <code>map</code> that applies a given function to each element in the list:</p>
+<pre><code class="elixir">defmodule Recursion do
+  def map([h|t], fun) do
+    [fun.(h)|map(t, fun)]
+  end
+
+  def map([], _fun) do
+    []
+  end
+end
+</code></pre>
+<p><code>double</code> could now be defined in terms of <code>map</code> as follows:</p>
+<pre><code class="elixir">def double(list) do
+  map(list, fn x -&gt; x * 2 end)
+end
+</code></pre>
+<p>Manually recursing the list is straight-forward but it doesn&#8217;t really compose. Imagine we would like to implement other functional operations like <code>filter</code>, <code>reduce</code>, <code>take</code> and so on for lists. Then we introduce sets, dictionaries, and queues into the language and we would like to provide the same operations for all of them.</p>
+<p>Instead of manually implementing all of those operations for each data structure, it is better to provide an abstraction that allows us to define those operations only once, and they will work with different data structures.</p>
+<p>That&#8217;s our next step.</p>
+<h2>Introducing Iterators</h2>
+<p>The idea behind iterators is that we ask the data structure what is the next item until the data structure no longer has items to emit.</p>
+<p>Let&#8217;s implement iterators for lists. This time, we will be using Elixir documentation and doctests to detail how we expect iterators to work:</p>
+<pre><code class="elixir">defmodule Iterator do
+  @doc """
+  Each step needs to return a tuple containing
+  the next element and a payload that will be
+  invoked the next time around.
+
+      iex&gt; next([1, 2, 3])
+      {1, [2, 3]}
+      iex&gt; next([2, 3])
+      {2, [3]}
+      iex&gt; next([3])
+      {3, []}
+      iex&gt; next([])
+      :done
+  """
+  def next([h|t]) do
+    {h, t}
+  end
+
+  def next([]) do
+    :done
+  end
+end
+</code></pre>
+<p>We can implement <code>map</code> on top of <code>next</code>:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  map_next(next(collection), fun)
+end
+
+defp map_next({h, t}, fun) do
+  [fun.(h)|map_next(next(t), fun)]
+end
+
+defp map_next(:done, _fun) do
+  []
+end
+</code></pre>
+<p>Since <code>map</code> uses the <code>next</code> function, as long as we implement <code>next</code> for a new data structure, <code>map</code> (and all future functions) should work out of the box. This brings the polymorphism we desired but it has some downsides.</p>
+<p>Besides not having ideal performance, it is quite hard to make iterators work with resources (events, I/O, etc), leading to messy and error-prone code.</p>
+<p>The trouble with resources is that, if something goes wrong, we need to tell the resource that it should be closed. After all, we don&#8217;t want to leave file descriptors or database connections open. This means we need to extend our <code>next</code> contract to introduce at least one other function called <code>halt</code>.</p>
+<p><code>halt</code> should be called if the iteration is interrupted suddenly, either because we are no longer interested in the next items (for example, if someone calls <code>take(collection, 5)</code> to retrieve only the first five items) or because an error happened. Let&#8217;s start with take:</p>
+<pre><code class="elixir">def take(collection, n) do
+  take_next(next(collection), n)
+end
+
+# Invoked on every step
+defp take_next({h, t}, n) when n &gt; 0 do
+  [h|take_next(next(t), n - 1)]
+end
+
+# If we reach this, the collection finished
+defp take_next(:done, _n) do
+  []
+end
+
+# If we reach this, we took all we cared about before finishing
+defp take_next(value, 0) do
+  halt(value) # Invoke halt as a "side-effect" for resources
+  []
+end
+</code></pre>
+<p>Implementing <code>take</code> is somewhat straight-forward. However we also need to modify <code>map</code> since every step in the user supplied function can fail. Therefore we need to make sure we call <code>halt</code> on every possible step in case of failures:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  map_next(next(collection), fun)
+end
+
+defp map_next({h, t}, fun) do
+  [try do
+     fun.(h)
+   rescue
+     e -&gt;
+       # Invoke halt as a "side-effect" for resources
+       # in case of failures and then re-raise
+       halt(t)
+       raise(e)
+   end|map_next(next(t), fun)]
+end
+
+defp map_next(:done, _fun) do
+  []
+end
+</code></pre>
+<p>This is not elegant nor performant. Furthermore, it is very error prone. If we forget to call <code>halt</code> at some particular point, we can end-up with a dangling resource that may never be closed.</p>
+<h2>Introducing reducers</h2>
+<p>Not long ago, Clojure introduced the concept of <a href="http://clojure.com/blog/2012/05/08/reducers-a-library-and-model-for-collection-processing.html">reducers</a>.</p>
+<p>Since Elixir protocols were heavily inspired on Clojure protocols, I was very excited to see their take on collection processing. Instead of imposing a particular mechanism for traversing collections as in iterators, reducers are about sending computations to the collection so the collection applies the computation on itself. From the announcement: &#8220;the only thing that knows how to apply a function to a collection is the collection itself&#8221;.</p>
+<p>Instead of using a <code>next</code> function, reducers expect a <code>reduce</code> implementation. Let&#8217;s implement this <code>reduce</code> function for lists:</p>
+<pre><code class="elixir">defmodule Reducer do
+  def reduce([h|t], acc, fun) do
+    reduce(t, fun.(h, acc), fun)
+  end
+
+  def reduce([], acc, _fun) do
+    acc
+  end
+end
+</code></pre>
+<p>With reduce, we can easily calculate the sum of a collection:</p>
+<pre><code class="elixir">def sum(collection) do
+  reduce(collection, 0, fn x, acc -&gt; x + acc end)
+end
+</code></pre>
+<p>We can also implement map in terms of reduce. The list, however, will be reversed at the end, requiring us to <code>reverse</code> it back:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  reversed = reduce(collection, [], fn x, acc -&gt; [fun.(x)|acc] end)
+  # Call Erlang reverse (implemented in C for performance)
+  :lists.reverse(reversed)
+end
+</code></pre>
+<p>Reducers provide many advantages:</p>
+<ul>
+<li>They are conceptually simpler and faster</li>
+<li>Operations like <code>map</code>, <code>filter</code>, etc are easier to implement than the iterators one since the recursion is pushed to the collection instead of being part of every operation</li>
+<li>It opens the door to parallelism as its operations are no longer serial (in contrast to iterators)</li>
+<li>No conceptual changes are required to support resources as collections</li>
+</ul>
+<p>The last bullet is the most important for us. Because the collection is the one applying the function, we don&#8217;t need to change <code>map</code> to support resources, all we need to do is to implement <code>reduce</code> itself. Here is a pseudo-implementation of reducing a file line by line:</p>
+<pre><code class="elixir">def reduce(file, acc, fun) do
+  descriptor = File.open(file)
+
+  try do
+    reduce_next(IO.readline(descriptor), acc, fun)
+  after
+    File.close(descriptor)
+  end
+end
+
+defp reduce_next({line, descriptor}, acc, fun) do
+  reduce_next(IO.readline(descriptor), fun.(line, acc), fun)
+end
+
+defp reduce_next(:done, acc, _fun) do
+  acc
+end
+</code></pre>
+<p>Even though our file reducer uses something that looks like an iterator, because that&#8217;s the best way to traverse the file, from the <code>map</code> function perspective we don&#8217;t care which operation is used internally. Furthermore, it is guaranteed the file is closed after reducing, regardless of success or failure.</p>
+<p>There are, however, two issues when implementing reducers as proposed in Clojure into Elixir.</p>
+<p>First of all, some operations like <code>take</code> cannot be implemented in a purely functional way. For example, Clojure relies <a href="http://clojure.org/atoms">on reference types</a> on its <a href="https://github.com/clojure/clojure/blob/4964194bae036dc2cddd3f9c03479657aeab6e8c/src/clj/clojure/core/reducers.clj#L234-L246">take implementation</a>. This may not be an issue depending on the language/platform (it certainly isn&#8217;t in Clojure) but it is an issue in Elixir as side-effects would require us to spawn new processes every time take is invoked.</p>
+<p>Another drawback of reducers is, because the collection is the one controlling the reducing, we cannot implement operations like <code>zip</code> that requires taking one item from a collection, then suspending the reduction, then taking an item from another collection, suspending it, and starting again by resuming the first one and so on. Again, at least not in a purely functional way.</p>
+<p>With reducers, we achieve the goal of a single abstraction that works efficiently with in-memory data structures and resources. However, it is limited on the amount of operations we can support efficiently, in a purely functional way, so we had to continue looking.</p>
+<h2>Introducing iteratees</h2>
+<p>It was at Code Mesh 2013 that I first heard about iteratees. <a href="http://www.infoq.com/presentations/io-code-data">I attended a talk by Jessica Kerr</a> and, in the first minutes, she described exactly where my mind was at the moment: iterators and reducers indeed have their limitations, but they have been solved in <a href="https://github.com/scalaz/scalaz-stream">scalaz-stream</a>.</p>
+<p>After the talk, Jessica and I started to explore how scalaz-stream solves those problems, eventually leading us to <a href="https://themonadreader.files.wordpress.com/2010/05/issue16.pdf">the Monad.Reader issue that introduces iteratees</a>. After some experiments, we had a prototype of iteratees working in Elixir.</p>
+<p>With iteratees, we have &#8220;instructions&#8221; going &#8220;up and down&#8221; between the source and the reducing function telling what is the next step in the collection processing:</p>
+<pre><code class="elixir">defmodule Iteratee do
+  @doc """
+  Enumerates the collection with the given instruction.
+
+  If the instruction is a `{:cont, fun}` tuple, the given
+  function will be invoked with `{:some, h}` if there is
+  an entry in the collection, otherwise `:done` will be
+  given.
+
+  If the instruction is `{:halt, acc}`, it means there is
+  nothing to process and the collection should halt.
+  """
+  def enumerate([h|t], {:cont, fun}) do
+    enumerate(t, fun.({:some, h})) 
+  end
+
+  def enumerate([], {:cont, fun}) do
+    fun.(:done)
+  end
+
+  def enumerate(_, {:halt, acc}) do
+    {:halted, acc}
+  end
+end
+</code></pre>
+<p>With <code>enumerate</code> defined, we can write <code>map</code>:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  {:done, acc} = enumerate(collection, {:cont, mapper([], fun)})
+  :lists.reverse(acc)
+end
+
+defp mapper(acc, fun) do
+  fn
+    {:some, h} -&gt; {:cont, mapper([fun.(h)|acc], fun)}
+    :done      -&gt; {:done, acc}
+  end
+end
+</code></pre>
+<p><code>enumerate</code> is called with <code>{:cont, mapper}</code> where <code>mapper</code> will receive <code>{:some, h}</code> or <code>:done</code>, as defined by <code>enumerate</code>. The <code>mapper</code> function then either returns <code>{:cont, mapper}</code>, with a new <code>mapper</code> function, or <code>{:done, acc}</code> when the collection has told no new items will be emitted.</p>
+<p>The Monad.Reader publication defines iteratees as teaching fold (reduce) new tricks. This is precisely what we have done here. For example, while <code>map</code> only returns <code>{:cont, mapper}</code>, it could have returned <code>{:halt, acc}</code> and that would have told the collection to halt. That&#8217;s how <code>take</code> could be implemented with iteratees, we would send <code>cont</code> instructions until we are no longer interested in new elements, finally returning <code>halt</code>.</p>
+<p>So while iteratees allow us to teach reduce new tricks, they are much harder to grasp conceptually. Not only that, functions implemented with iteratees were from 6 to 8 times slower in Elixir when compared to their reducer counterpart.</p>
+<p>In fact, it is even harder to see how iteratees are actually based on reduce since it hides the accumulator inside a closure (the <code>mapper</code> function, in this case). This is also the cause of the performance issues in Elixir: for each mapped element in the collection, we need to generate a new closure, which becomes very expensive when mapping, filtering or taking items multiple times.</p>
+<p>That&#8217;s when we asked: what if we could keep what we have learned with iteratees while maintaining the simplicity and performance characteristics of reduce?</p>
+<h2>Introducing reducees</h2>
+<p>Reducees are similar to iteratees. The difference is that they clearly map to a reduce operation and do not create closures as we traverse the collection. Let&#8217;s implement reducee for a list:</p>
+<pre><code class="elixir">defmodule Reducee do
+  @doc """
+  Reduces the collection with the given instruction,
+  accumulator and function.
+
+  If the instruction is a `{:cont, acc}` tuple, the given
+  function will be invoked with the next item and the
+  accumulator.
+
+  If the instruction is `{:halt, acc}`, it means there is
+  nothing to process and the collection should halt.
+  """
+  def reduce([h|t], {:cont, acc}, fun) do
+    reduce(t, fun.(h, acc), fun) 
+  end
+
+  def reduce([], {:cont, acc}, _fun) do
+    {:done, acc}
+  end
+
+  def reduce(_, {:halt, acc}, _fun) do
+    {:halted, acc}
+  end
+end
+</code></pre>
+<p>Our reducee implementations maps cleanly to the original reduce implementation. The only difference is that the accumulator is always wrapped in a tuple containing the next instruction as well as the addition of a <code>halt</code> checking clause.</p>
+<p>Implementing <code>map</code> only requires us to send those instructions as we reduce:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  {:done, acc} =
+    reduce(collection, {:cont, []}, fn x, acc -&gt;
+      {:cont, [fun.(x)|acc]}
+    end)
+ :lists.reverse(acc)
+end
+</code></pre>
+<p>Compared to the original reduce implementation:</p>
+<pre><code class="elixir">def map(collection, fun) do
+  reversed = reduce(collection, [], fn x, acc -&gt; [fun.(x)|acc] end)
+  :lists.reverse(reversed)
+end
+</code></pre>
+<p>The only difference between both implementations is the accumulator wrapped in tuples. We have effectively replaced the closures in iteratees by two-item tuples in reducees, which provides a considerably speed up in terms of performance.</p>
+<p>The tuple approach allows us to teach new tricks to reducees too. For example, our initial implementation already supports passing <code>{:halt, acc}</code> instead of <code>{:cont, acc}</code>, which we can use to implement <code>take</code> on top of reducees:</p>
+<pre><code class="elixir">def take(collection, n) when n &gt; 0 do
+  {_, {acc, _}} =
+    reduce(collection, {:cont, {[], n}}, fn
+      x, {acc, count} -&gt; {take_instruction(count), {[x|acc], n-1}}
+    end)
+ :lists.reverse(acc)
+end
+
+defp take_instruction(1), do: :halt
+defp take_instruction(n), do: :cont
+</code></pre>
+<p>The accumulator in given to <code>reduce</code> now holds a list, to collect results, as well as the number of elements we still need to take from the collection. Once we have taken the last item (count == 1), we <code>halt</code> the collection.</p>
+<p>At the end of the day, this is the abstraction that ships with Elixir. It solves all requirements outlined so far: it is simple, fast, works with both in-memory data structures and resources as collections, and it supports both <code>take</code> and <code>zip</code> operations in a purely functional way.</p>
+<h2>Eager vs Lazy</h2>
+<p>Elixir developers mostly do not need to worry about the underlying reducees abstraction. Developers work directly with the module <a href="http://elixir-lang.org/docs/master/elixir/#!Enum.html">Enum</a> which provides a series of operations that work with any collection. For example:</p>
+<pre><code class="iex">iex&gt; Enum.map([1, 2, 3], fn x -&gt; x * 2 end)
+[2, 4, 6]
+</code></pre>
+<p>All functions in Enum are eager. The <code>map</code> operation above receives a list and immediately returns a list. None the less, it didn&#8217;t take long for us to add lazy variants of those operations:</p>
+<pre><code class="iex">iex&gt; Stream.map([1, 2, 3], fn x -&gt; x * 2 end)
+#Stream&lt;...&gt;
+</code></pre>
+<p>All the functions in <a href="http://elixir-lang.org/docs/master/elixir/#!Stream.html">Stream</a> are lazy: they only store the computation to be performed, traversing the collection just once after all desired computations have been expressed.</p>
+<p>In addition, the <code>Stream</code> module provides a series of functions for abstracting resources, generating infinite collections and more.</p>
+<p>In other words, in Elixir we use the same abstraction to provide both eager and lazy operations, that accepts both in-memory data structures or resources as collections, all conveniently encapsulated in both <a href="http://elixir-lang.org/docs/stable/elixir/Enum.html">Enum</a> and <a href="http://elixir-lang.org/docs/stable/elixir/Stream.html">Stream</a> modules. This allows developers to migrate from one mode of operation to the other as needed.</p>
+<p><em>P.S.: An enormous thank you to Jessica Kerr for introducing me to iteratees and pairing with me at Code Mesh. Also, thanks to Jafar Husein for the conversations at Code Mesh and the team behind Rx which we are exploring next. Finally, thank you to James Fish, Pater Hamilton, Eric Meadows-Jönsson and Alexei Sholik for the countless reviews, feedback and prototypes regarding Elixir&#8217;s future.</em></p>
+<p><a href="http://plataformatec.com.br/elixir-radar"><br>
+  <img decoding="async" src="/wp-content/uploads/2015/05/elixir-radar-subscribe.png" alt="Subscribe to Elixir Radar" style="border:0"><br>
+</a></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/elixir/" rel="tag">elixir</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2015/05/introducing-reducees/#comments"><span class="dsq-postid" data-dsqidentifier="4628 http://blog.plataformatec.com.br/?p=4628">2 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		2 responses to &#8220;Introducing reducees&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1494">
+				<div id="div-comment-1494" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://2.gravatar.com/avatar/eb2a506c1cc435c6c367f3eb6fcf561b?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/eb2a506c1cc435c6c367f3eb6fcf561b?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">samueltonini</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/05/introducing-reducees/#comment-1494">May 22, 2015 at 7:48 am</a>		</div>
+
+		<p>Great article José! Thanks 🙂</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1495">
+				<div id="div-comment-1495" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://1.gravatar.com/avatar/d95151b6763eb85789ceae4f7c3d783e?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/d95151b6763eb85789ceae4f7c3d783e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Norberto Ortigoza</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2015/05/introducing-reducees/#comment-1495">May 24, 2015 at 11:29 am</a>		</div>
+
+		<p>It&#8217;s great to know that the foundations of Elixir are really solid !!! Thanks Jose.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2015/05/nobody-told-me-minitest-was-this-fun/" rel="prev">Nobody told me Minitest was this fun</a>          <a href="/2015/06/companies-using-elixir-in-production/" rel="next">Companies using Elixir in production</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>

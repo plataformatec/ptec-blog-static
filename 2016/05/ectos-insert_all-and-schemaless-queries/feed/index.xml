@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	
+	>
+<channel>
+	<title>
+	Comments on: Ecto&#8217;s insert_all and schemaless queries	</title>
+	<atom:link href="/2016/05/ectos-insert_all-and-schemaless-queries/feed/" rel="self" type="application/rss+xml" />
+	<link>/2016/05/ectos-insert_all-and-schemaless-queries/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Mon, 16 Jan 2017 21:13:30 +0000</lastBuildDate>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>
+		By: Lance Johnson		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1639</link>
+
+		<dc:creator><![CDATA[Lance Johnson]]></dc:creator>
+		<pubDate>Wed, 20 Jul 2016 00:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1639</guid>
+
+					<description><![CDATA[Thank you for these changes and for the example of using changeset with {data, types}. It was extremely helpful and exactly what I needed for our current project.]]></description>
+			<content:encoded><![CDATA[<p>Thank you for these changes and for the example of using changeset with {data, types}. It was extremely helpful and exactly what I needed for our current project.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Timur		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1624</link>
+
+		<dc:creator><![CDATA[Timur]]></dc:creator>
+		<pubDate>Tue, 24 May 2016 08:37:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1624</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1622&quot;&gt;josevalim&lt;/a&gt;.
+
+Jose, thanks for discarding my concerns! :) Now I see it was just my ignorance of Ecto.]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1622">josevalim</a>.</p>
+<p>Jose, thanks for discarding my concerns! 🙂 Now I see it was just my ignorance of Ecto.</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: josevalim		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1622</link>
+
+		<dc:creator><![CDATA[josevalim]]></dc:creator>
+		<pubDate>Mon, 23 May 2016 08:32:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1622</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1621&quot;&gt;Timur&lt;/a&gt;.
+
+Hi Timur!
+
+&#062; When I need to deserialize some HTTP form data into a Python data structure, I use colander
+
+This would be equivalent to Ecto Changeset. You would define the initial data, the types, and the changeset takes care of validating the input, casting parameters, and give you the parsed and validated data afterwards.
+
+&#062; When I need something like Ecto&#039;s insert_all/3, I use SQLAlchemy core API to define a table object, build an insert query with it and then execute the query providing a list of data structures. 
+
+For talking to the database, you use the Ecto repository and queries. Our insert expects a key-value data-structure in contrast to building an insert query and providing a list of parameters. You are free to map, filter and modify the data in any way before giving it to &quot;insert_all&quot;.
+
+&#062; Also, type/2 seems like duplicating type specification by spreading it all over the code instead of defining in one place, the schema. 
+
+You only need to use type/2 if you are building a query without a schema (i.e. without specifying the types). If you provide a schema then you don&#039;t need to repeat this information.
+
+&#062; Now I see that Ecto tries to combine input deserialization/validation with data source access layer which goes against my instincts.
+
+The idea of this blog post is to show exactly this is not the case. If you define an Ecto schema, as mentioned above, then you can use the same schema (i.e. the same type information) for both input deserialization and data source layers but there is nothing in Ecto forcing you to do it. If you want to break it apart and first deserialize the data using certain schema and then convert the data into something else that you insert into the data store, using a different schema or using just pure Elixir data, you are free to do so.
+
+Now is my turn: where did I miss the point? :)]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1621">Timur</a>.</p>
+<p>Hi Timur!</p>
+<p>&gt; When I need to deserialize some HTTP form data into a Python data structure, I use colander</p>
+<p>This would be equivalent to Ecto Changeset. You would define the initial data, the types, and the changeset takes care of validating the input, casting parameters, and give you the parsed and validated data afterwards.</p>
+<p>&gt; When I need something like Ecto&#8217;s insert_all/3, I use SQLAlchemy core API to define a table object, build an insert query with it and then execute the query providing a list of data structures. </p>
+<p>For talking to the database, you use the Ecto repository and queries. Our insert expects a key-value data-structure in contrast to building an insert query and providing a list of parameters. You are free to map, filter and modify the data in any way before giving it to &#8220;insert_all&#8221;.</p>
+<p>&gt; Also, type/2 seems like duplicating type specification by spreading it all over the code instead of defining in one place, the schema. </p>
+<p>You only need to use type/2 if you are building a query without a schema (i.e. without specifying the types). If you provide a schema then you don&#8217;t need to repeat this information.</p>
+<p>&gt; Now I see that Ecto tries to combine input deserialization/validation with data source access layer which goes against my instincts.</p>
+<p>The idea of this blog post is to show exactly this is not the case. If you define an Ecto schema, as mentioned above, then you can use the same schema (i.e. the same type information) for both input deserialization and data source layers but there is nothing in Ecto forcing you to do it. If you want to break it apart and first deserialize the data using certain schema and then convert the data into something else that you insert into the data store, using a different schema or using just pure Elixir data, you are free to do so.</p>
+<p>Now is my turn: where did I miss the point? 🙂</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Timur		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1621</link>
+
+		<dc:creator><![CDATA[Timur]]></dc:creator>
+		<pubDate>Mon, 23 May 2016 06:26:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1621</guid>
+
+					<description><![CDATA[Glad to see Ecto is going to the next level! I&#039;d like to share some thoughts from my pythonic point of view.
+
+When I need to deserialize some HTTP form data into a Python data structure, I use colander, a library which doesn&#039;t have anything to do with database, to define a schema, declaratively or imperatively, which takes care of type conversion and validation. The same colander schema may be used to serialize a data structure back into HTTP form.
+
+When I need something like Ecto&#039;s insert_all/3, I use SQLAlchemy core API to define a table object, build an insert query with it and then execute the query providing a list of data structures. SQLAlchemy takes care of type conversion and I don&#039;t have to use anything like type/2 because table definition already contains column types and I&#039;ll just use the same standard Python datetime objects that I got after deserialization.
+
+If I want an object-oriented domain model, I use SQLAlchemy ORM which is build on top of SQLAlchemy core and allows me to map my objects to tables.
+
+Now I see that Ecto tries to combine input deserialization/validation with data source access layer which goes against my instincts.
+
+Also, type/2 seems like duplicating type specification by spreading it all over the code instead of defining in one place, the schema. After all the data source already knows the type and even if it&#039;s schemaless we may  still enforce it at the data access library level if we really want.
+
+Where am I missing the point?]]></description>
+			<content:encoded><![CDATA[<p>Glad to see Ecto is going to the next level! I&#8217;d like to share some thoughts from my pythonic point of view.</p>
+<p>When I need to deserialize some HTTP form data into a Python data structure, I use colander, a library which doesn&#8217;t have anything to do with database, to define a schema, declaratively or imperatively, which takes care of type conversion and validation. The same colander schema may be used to serialize a data structure back into HTTP form.</p>
+<p>When I need something like Ecto&#8217;s insert_all/3, I use SQLAlchemy core API to define a table object, build an insert query with it and then execute the query providing a list of data structures. SQLAlchemy takes care of type conversion and I don&#8217;t have to use anything like type/2 because table definition already contains column types and I&#8217;ll just use the same standard Python datetime objects that I got after deserialization.</p>
+<p>If I want an object-oriented domain model, I use SQLAlchemy ORM which is build on top of SQLAlchemy core and allows me to map my objects to tables.</p>
+<p>Now I see that Ecto tries to combine input deserialization/validation with data source access layer which goes against my instincts.</p>
+<p>Also, type/2 seems like duplicating type specification by spreading it all over the code instead of defining in one place, the schema. After all the data source already knows the type and even if it&#8217;s schemaless we may  still enforce it at the data access library level if we really want.</p>
+<p>Where am I missing the point?</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ernesto Cambustón		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1620</link>
+
+		<dc:creator><![CDATA[Ernesto Cambustón]]></dc:creator>
+		<pubDate>Sun, 22 May 2016 01:05:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1620</guid>
+
+					<description><![CDATA[In reply to &lt;a href=&quot;/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1619&quot;&gt;Ernesto Cambustón&lt;/a&gt;.
+
+solved it by modifying my select to:
+```
+select: map(r, [:field1, :field2])
+```]]></description>
+			<content:encoded><![CDATA[<p>In reply to <a href="/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1619">Ernesto Cambustón</a>.</p>
+<p>solved it by modifying my select to:<br />
+&#8220;`<br />
+select: map(r, [:field1, :field2])<br />
+&#8220;`</p>
+]]></content:encoded>
+		
+			</item>
+		<item>
+		<title>
+		By: Ernesto Cambustón		</title>
+		<link>/2016/05/ectos-insert_all-and-schemaless-queries/comment-page-1/#comment-1619</link>
+
+		<dc:creator><![CDATA[Ernesto Cambustón]]></dc:creator>
+		<pubDate>Sat, 21 May 2016 23:52:00 +0000</pubDate>
+		<guid isPermaLink="false">/?p=5364#comment-1619</guid>
+
+					<description><![CDATA[I was playing with schemaless queries. I have a requirement in which a customer needs to define a table, and 2 fields at runtime. For example. I was trying to do a query that looks like:
+```
+ from r in &quot;#{table}&quot;, limit: 1, select: %{ r.&quot;#{field_1}&quot;, r.&quot;#{field2}&quot; }
+```
+....   I guess the metaprogramming behind the DSL makes the compiler cry, but it would be a nice feature to have. Is there any workaround for this?    I would love to avoid implementing a query for each adapter I want to support.]]></description>
+			<content:encoded><![CDATA[<p>I was playing with schemaless queries. I have a requirement in which a customer needs to define a table, and 2 fields at runtime. For example. I was trying to do a query that looks like:<br />
+&#8220;`<br />
+ from r in &#8220;#{table}&#8221;, limit: 1, select: %{ r.&#8221;#{field_1}&#8221;, r.&#8221;#{field2}&#8221; }<br />
+&#8220;`<br />
+&#8230;.   I guess the metaprogramming behind the DSL makes the compiler cry, but it would be a nice feature to have. Is there any workaround for this?    I would love to avoid implementing a query for each adapter I want to support.</p>
+]]></content:encoded>
+		
+			</item>
+	</channel>
+</rss>

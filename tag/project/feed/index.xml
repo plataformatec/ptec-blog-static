@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>project « Plataformatec Blog</title>
+	<atom:link href="/tag/project/feed/" rel="self" type="application/rss+xml" />
+	<link>/</link>
+	<description>Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering</description>
+	<lastBuildDate>Wed, 28 Sep 2016 13:31:14 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.2</generator>
+	<item>
+		<title>PlataformaTec no Agile Tour 2011</title>
+		<link>/2011/11/plataformatec-no-agile-tour-2011/</link>
+		
+		<dc:creator><![CDATA[Eliel Junior]]></dc:creator>
+		<pubDate>Tue, 15 Nov 2011 13:30:12 +0000</pubDate>
+				<category><![CDATA[Português]]></category>
+		<category><![CDATA[Agile]]></category>
+		<category><![CDATA[product owner]]></category>
+		<category><![CDATA[project]]></category>
+		<category><![CDATA[scrum]]></category>
+		<guid isPermaLink="false">/?p=2339</guid>
+
+					<description><![CDATA[<p>Nesse Sábado (19/11), a PlataformaTec estará presente na etapa São Paulo do Agile Tour 2011. O Agile Tour, considerado o maior evento sobre agilidade do mundo, tem como objetivo disseminar a visão, a cultura e as práticas adotadas pela comunidade ágil no desenvolvimento de software através da troca de experiências entre os participante. É uma ... <a class="read-more-link" href="/2011/11/plataformatec-no-agile-tour-2011/">»</a></p>
+<p>The post <a href="/2011/11/plataformatec-no-agile-tour-2011/">PlataformaTec no Agile Tour 2011</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><a href="/wp-content/uploads/2011/11/at2011.jpeg"><img decoding="async" src="/wp-content/uploads/2011/11/at2011.jpeg" alt="Agile Tour 2011" title="Agile Tour 2011" width="255" height="103" class="size-full wp-image-2340" /></a></p>
+<p>Nesse Sábado (19/11), a <a href="http://twitter.com/plataformatec" title="PlataformaTec's twitter">PlataformaTec</a> estará presente na etapa São Paulo do <a href="http://at2011.agiletour.org/en/at2011_saopaulo.html" title="Agile Tour 2011 - São Paulo">Agile Tour 2011</a>.</p>
+<p>O Agile Tour, considerado o maior evento sobre agilidade do mundo, tem como objetivo disseminar a visão, a cultura e as práticas adotadas pela comunidade ágil no desenvolvimento de software através da troca de experiências entre os participante. É uma excelente oportunidade de aprender mais sobre as nuanças do ágil no dia-a-dia dos profissionais.</p>
+<p>Ano passado, em sua terceira edição, o Agile Tour reuniu cerca de 7.500 participantes em 44 cidades espalhadas por 15 países. No Brasil, o evento foi organizado em 5 cidades e atraiu mais de 600 pessoas no total. Esse ano, só no Brasil serão 12 cidades participantes e, com certeza, teremos um recorde no número de inscritos.</p>
+<p>Ao longo do dia teremos nove palestras sobre diferentes temas &#8211; dentre os quais: <strong><em>&#8220;PO, tão simples como dizem?&#8221;</em></strong>, onde estarei representando a PlataformaTec em um bate-papo com o público sobre os skills do <em>Product Owner</em> que nem sempre estão presentes nos projetos ágeis.</p>
+<p>Caso você se interesse pelo assunto, não perca o Agile Tour 2011. Além de ser uma maneira diferente de se aprender mais sobre ágil, é um ótimo canal para conhecer pessoas e ampliar sua rede de contatos.</p>
+<p>Ah, <strong>o evento é gratuito!</strong> Por isso, não perca tempo e se <a href="http://at2011.agiletour.org/en/node/1334" title="Inscrição Agile Tour 2011 - São Paulo">inscreva já</a>!!</p><p>The post <a href="/2011/11/plataformatec-no-agile-tour-2011/">PlataformaTec no Agile Tour 2011</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>A (successful) git branching model</title>
+		<link>/2011/04/a-successful-git-branching-model/</link>
+					<comments>/2011/04/a-successful-git-branching-model/#comments</comments>
+		
+		<dc:creator><![CDATA[Rodrigo Flores]]></dc:creator>
+		<pubDate>Wed, 27 Apr 2011 19:31:09 +0000</pubDate>
+				<category><![CDATA[English]]></category>
+		<category><![CDATA[git]]></category>
+		<category><![CDATA[project]]></category>
+		<category><![CDATA[workflow]]></category>
+		<guid isPermaLink="false">/?p=1985</guid>
+
+					<description><![CDATA[<p>*This blog post tells about how we improved a VCS workflow to another one that suited our and the consumer needs. It was a great result: we minimized the chances of occurring one of the worst problems for a developer in a project: big integration while we maintained an &#8216;almost releasable branch&#8217; all the time ... <a class="read-more-link" href="/2011/04/a-successful-git-branching-model/">»</a></p>
+<p>The post <a href="/2011/04/a-successful-git-branching-model/">A (successful) git branching model</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></description>
+										<content:encoded><![CDATA[<p><em>*This blog post tells about how we improved a VCS workflow to another one that suited our and the consumer needs. It was a great result: we minimized the chances of occurring one of the worst problems for a developer in a project: big integration while we maintained an &#8216;almost releasable branch&#8217; all the time</em></p>
+<p>In the last months we&#8217;ve been working on a project with a mixed development team (Plataformatec&#8217;s team and the customer&#8217;s team). We, of course, used a version control system (specifically git) and we set up a nice git branching model for our team. As agilists, we know that we should not use anything that requires a lot of bureaucracy (things like opening a ticket to integrate a branch into the trunk).</p>
+<p>Using <a href="http://nvie.com/posts/a-successful-git-branching-model/">nvie guide</a> as base, we developed a git workflow. First of all, we had three main branches:</p>
+<ul>
+<li><strong>production</strong>: contains the code that is currently on production. We also have a production server that contains, obviously, the production code up and running.</li>
+<li><strong>staging</strong>: contains the code that is being tested before going to production (we used this branch to deploy to a production-like environment that worked as a final test until production, this environment is also called staging)</li>
+<li><strong>master</strong>: contains the already accepted features. To consider a feature as &#8220;accepted&#8221; we deployed to another environment (called &#8220;dev&#8221;) and asked a QA analyst to test it. Once approved we merged the commits. This &#8220;dev&#8221; environment is used for this kind of approval and also for general purposes like when we say: &#8220;take a look at this new awesome feature we&#8217;re developing&#8221;.</li>
+</ul>
+<p>For each feature that we developed, we created a git branch (almost all of them we pushed it to the remote server to facilitate code review and to deploy to the &#8220;dev&#8221; environment). Everyday, we ran <code>git rebase master</code>, to update our branch code (except for features developed by more than one developer). Once the feature is complete, we rebased master into it, and merge it using &#8211;no-ff (to create a merge commit). For the branches that more than one developer worked on, we usually talked and set up a &#8220;rebase period&#8221; where one does the rebase, forces the push (because you changed your local tree so git does not accept it as a non forced push) and updates the remote branch.</p>
+<p>Close to the production deploy, we merged (always using &#8211;no-ff) master branch into staging branch and deploy to staging. Once approved, we merged to production, and created a tag telling the current version of the application and then we do the deploy. When we deployed to production we also removed the merged branches from the remote repository.</p>
+<p>One of the great advantages of this schema is: Master is always &#8220;almost&#8221; ready for a release. Yeah, some features really deserves to be validated right before the deploy, because another feature can break them, but we kept the master as an &#8220;always releasable stable&#8221; branch (and also we used a continuous integration tool in order to enforce all tests passing). Another great advantage is: as we updated our code everyday, it was very unusual for us to face big integration scenarios.</p>
+<p>For the &#8220;dev&#8221; environment deploy we also set up a capistrano task that asks which branch we want to deploy to be possible to deploy something from any branch.</p>
+<p>This workflow has worked really well for us and maybe it is useful to you (maybe for you to adapt it to something that works better for you as we did with the workflow suggested on <a href="http://nvie.com/posts/a-successful-git-branching-model/">nvie</a>).</p>
+<p>To summarize, this is our git workflow in commands (supposing that we are on master branch):<br />
+<code><br />
+git checkout -b my-awesome-feature</p>
+<h1>(... you do some code and some commits and you go home to have some sleep or maybe play some starcraft 2 ...)</code></h1>
+<p><code>#(arrived at the office on the next day)<br />
+git rebase master</code></p>
+<p><code>#(... continue working and commiting and sleeping (or maybe playing some starcraft 2 ...)<br />
+git rebase master</code></p>
+<p><code># (... some commits ... and voila ... you've finished...)<br />
+git push origin my-awesome-feature<br />
+cap dev deploy<br />
+</code></p>
+<p><code># (...YAY!  QA analyst just approved it ...)<br />
+git pull origin master<br />
+git rebase master<br />
+</code></p>
+<p><code># (run the tests to ensure all of them pass)<br />
+git checkout master<br />
+git pull --rebase origin master<br />
+git merge --no-ff my-awesome-branch<br />
+git push origin master</code></p>
+<p><code>#(... it is time to validate on staging)<br />
+git checkout staging<br />
+git pull origin staging<br />
+git merge --no-ff master<br />
+git push origin staging<br />
+cap staging deploy</code></p>
+<p><code>#(... QA analysts validate the staging ...)<br />
+git checkout production<br />
+git merge --no-ff staging<br />
+git tag -a v1.4.2 -m "Releasing on 13th February"<br />
+git push origin production<br />
+git push --tags origin production<br />
+cap production deploy<br />
+</code></p>
+<p>Well, this is how we improved a git workflow based in another one. As almost everything, there is no bullet proof for it, but we found interesting to share this experience with you as it was a success (every developer on the team enjoyed it). But please, we would like to receive some feedback about it :-). Have you used something similar in your team? Do you have any ideas on how we can improve it?</p><p>The post <a href="/2011/04/a-successful-git-branching-model/">A (successful) git branching model</a> first appeared on <a href="/">Plataformatec Blog</a>.</p>]]></content:encoded>
+					
+					<wfw:commentRss>/2011/04/a-successful-git-branching-model/feed/</wfw:commentRss>
+			<slash:comments>9</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

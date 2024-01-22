@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="utf-8">
+  <meta name="bitly-verification" content="b3acd9a47f4e">
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="emoji:root" content="/wp-content/themes/ptec">
+  <meta name="theme-color" content="#cacaca">
+  
+    <meta name="bitly-verification" content="b3acd9a47f4e">
+  <meta property="og:image" content="/wp-content/themes/ptec/assets/opengraph.png">
+  <link rel="icon" sizes="192x192" href="/wp-content/themes/ptec/assets/icons/chrome-192x.png">
+  <link rel="pingback" href="/xmlrpc.php">
+  
+		<!-- All in One SEO 4.5.4 - aioseo.com -->
+		<title>The new HTML sanitizer in Rails 4.2 « Plataformatec Blog</title>
+		<meta name="description" content="On this post we talk about the revamped HTML sanitizer in Rails 4.2, now based on Loofah.">
+		<meta name="robots" content="max-image-preview:large">
+		<meta name="keywords" content="rails,html sanitizer,loofah">
+		<link rel="canonical" href="/2014/07/the-new-html-sanitizer-in-rails-4-2/">
+		<meta name="generator" content="All in One SEO (AIOSEO) 4.5.4">
+		<meta property="og:locale" content="en_US">
+		<meta property="og:site_name" content="Plataformatec Blog | Plataformatec&#039;s place to talk about Ruby, Ruby on Rails, Elixir, and software engineering">
+		<meta property="og:type" content="article">
+		<meta property="og:title" content="The new HTML sanitizer in Rails 4.2 « Plataformatec Blog">
+		<meta property="og:description" content="On this post we talk about the revamped HTML sanitizer in Rails 4.2, now based on Loofah.">
+		<meta property="og:url" content="/2014/07/the-new-html-sanitizer-in-rails-4-2/">
+		<meta property="article:published_time" content="2014-07-24T12:00:08+00:00">
+		<meta property="article:modified_time" content="2014-07-24T14:05:31+00:00">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:title" content="The new HTML sanitizer in Rails 4.2 « Plataformatec Blog">
+		<meta name="twitter:description" content="On this post we talk about the revamped HTML sanitizer in Rails 4.2, now based on Loofah.">
+		<meta name="google" content="nositelinkssearchbox">
+		<script type="application/ld+json" class="aioseo-schema">{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#article","name":"The new HTML sanitizer in Rails 4.2 « Plataformatec Blog","headline":"The new HTML sanitizer in Rails 4.2","author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/rafaelfranca\/#author"},"publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"},"image":{"@type":"ImageObject","url":"https:\/\/no-cache.hubspot.com\/cta\/default\/378213\/2aeae558-5b72-4df3-bf32-e1119f34d85e.png","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#articleImage"},"datePublished":"2014-07-24T09:00:08-03:00","dateModified":"2014-07-24T11:05:31-03:00","inLanguage":"en-US","commentCount":9,"mainEntityOfPage":{"@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#webpage"},"isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#webpage"},"articleSection":"English, rails"},{"@type":"BreadcrumbList","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/#listItem","position":1,"name":"Home","item":"http:\/\/blog.plataformatec.com.br\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2014\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2014\/#listItem","position":2,"name":"2014","item":"http:\/\/blog.plataformatec.com.br\/2014\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2014\/07\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/#listItem","position":3,"name":"July","item":"http:\/\/blog.plataformatec.com.br\/2014\/07\/","nextItem":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#listItem","previousItem":"http:\/\/blog.plataformatec.com.br\/2014\/#listItem"},{"@type":"ListItem","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#listItem","position":4,"name":"The new HTML sanitizer in Rails 4.2","previousItem":"http:\/\/blog.plataformatec.com.br\/2014\/07\/#listItem"}]},{"@type":"Organization","@id":"http:\/\/blog.plataformatec.com.br\/#organization","name":"Plataformatec Blog","url":"http:\/\/blog.plataformatec.com.br\/"},{"@type":"Person","@id":"http:\/\/blog.plataformatec.com.br\/author\/rafaelfranca\/#author","url":"http:\/\/blog.plataformatec.com.br\/author\/rafaelfranca\/","name":"Rafael França","image":{"@type":"ImageObject","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#authorImage","url":"http:\/\/1.gravatar.com\/avatar\/71a72294fe97dcd5dc521f237b118b87?s=96&d=mm&r=pg","width":96,"height":96,"caption":"Rafael França"}},{"@type":"WebPage","@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#webpage","url":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/","name":"The new HTML sanitizer in Rails 4.2 « Plataformatec Blog","description":"On this post we talk about the revamped HTML sanitizer in Rails 4.2, now based on Loofah.","inLanguage":"en-US","isPartOf":{"@id":"http:\/\/blog.plataformatec.com.br\/#website"},"breadcrumb":{"@id":"http:\/\/blog.plataformatec.com.br\/2014\/07\/the-new-html-sanitizer-in-rails-4-2\/#breadcrumblist"},"author":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/rafaelfranca\/#author"},"creator":{"@id":"http:\/\/blog.plataformatec.com.br\/author\/rafaelfranca\/#author"},"datePublished":"2014-07-24T09:00:08-03:00","dateModified":"2014-07-24T11:05:31-03:00"},{"@type":"WebSite","@id":"http:\/\/blog.plataformatec.com.br\/#website","url":"http:\/\/blog.plataformatec.com.br\/","name":"Plataformatec Blog","description":"Plataformatec's place to talk about Ruby, Ruby on Rails, Elixir, and software engineering","inLanguage":"en-US","publisher":{"@id":"http:\/\/blog.plataformatec.com.br\/#organization"}}]}</script>
+		<!-- All in One SEO -->
+
+
+		<!-- Meta Tag Manager -->
+		<meta name="twitter:label1" content="Plataformatec">
+		<meta name="twitter:data1" content="Professional Consulting and Development for companies using Elixir or Ruby">
+		<!-- / Meta Tag Manager -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Plataformatec Blog &raquo; The new HTML sanitizer in Rails 4.2 Comments Feed" href="/2014/07/the-new-html-sanitizer-in-rails-4-2/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/blog.plataformatec.com.br\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.4.2"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id="wp-emoji-styles-inline-css" type="text/css">img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}</style>
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">.has-text-align-justify{text-align:justify;}</style>
+<link rel="stylesheet" id="mediaelement-css" href="/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.4.2" type="text/css" media="all">
+<style id="classic-theme-styles-inline-css" type="text/css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="webfont-css" href="//fonts.googleapis.com/css?family=Bree+Serif&#038;ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="main-css" href="/wp-content/themes/ptec/style.css?ver=6.4.2" type="text/css" media="all">
+<link rel="stylesheet" id="tablepress-default-css" href="/wp-content/plugins/tablepress/css/build/default.css?ver=2.2.4" type="text/css" media="all">
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/4134">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.4.2">
+<link rel="shortlink" href="/?p=4134">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2014%2F07%2Fthe-new-html-sanitizer-in-rails-4-2%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=http%3A%2F%2F%2F2014%2F07%2Fthe-new-html-sanitizer-in-rails-4-2%2F#038;format=xml">
+</head>
+  <body class="post-template-default single single-post postid-4134 single-format-standard">
+    <div class="site-header">
+      <div class="site-header-background">
+        <header class="site-header-container">
+          <h1 class="site-header-logo">
+            <a href="/">
+              <img src="/wp-content/themes/ptec/assets/plataformatec.svg" height="70" alt="The plataformatec logo">
+            </a>
+          </h1>
+
+          <form class="header-search-form" method="GET" action="/">
+            <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+          </form>
+
+          <ul class="site-nav">
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/services">Services</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/playbook">Playbook</a></li>
+            <li class="site-nav-item handheld-hidden"><a href="http://plataformatec.com.br/forge">Forge</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/careers">Careers</a></li>
+            <li class="site-nav-item"><a href="http://plataformatec.com.br/contact">Contact</a></li>
+          </ul>
+        </header>
+      </div>
+      <nav class="header-nav">
+        <input type="checkbox" id="nav-toggle-checkbox" class="header-nav-checkbox">
+        <label for="nav-toggle-checkbox" class="header-nav-toggle">Topics we write about</label>
+
+        <ul class="header-nav-list" itemscope itemtype="http://schema.org/SiteNavigationElement">
+          <li class="header-nav-item header-search-nav-item">
+            <form class="header-nav-search-form" method="GET" action="/">
+              <input type="search" name="s" placeholder="Search our blog..." class="header-search-input">
+            </form>
+          </li>
+                    <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/elixir" itemprop="url">Elixir</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/rails" itemprop="url">Ruby on Rails</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/devise" itemprop="url">Devise</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/simple_form" itemprop="url">Simple Form</a>
+          </li>
+          <li class="header-nav-item" itemprop="name">
+            <a class="header-nav-link" href="/tag/agile" itemprop="url">Agile</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+<div class="site-container">
+  <div class="page-container">
+                  <section class="post-section">
+  <header class="post-header">
+    <h1 class="post-title">
+      <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/" rel="bookmark">The new HTML sanitizer in Rails 4.2</a>
+    </h1>
+          <time class="post-date-ribbon" datetime="2014-07-24T09:00:08-03:00">Jul 24, 2014</time>
+      <p class="post-author">
+        <img alt="" src="http://1.gravatar.com/avatar/71a72294fe97dcd5dc521f237b118b87?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/71a72294fe97dcd5dc521f237b118b87?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">        Written by <a href="/?author=15" title="Posts by Rafael França">Rafael França</a>.
+      </p>
+        </header>
+
+      <article class="post-body">
+      <p>The article below was originally written by Kasper Timm Hansen (@kaspth on <a href="https://github.com/kaspth">github</a> &amp; <a href="https://twitter.com/kaspth">twitter</a>) about his work during the Google Summer of Code 2013.</p>
+<p>Kasper and I worked a lot changing the underlying implementation of the <code>sanitize</code> helper to give Rails developers a more robust, faster and secure solution to sanitize user input.</p>
+<p>This new implementation should be fully backward compatible, with no changes to the API, which should make the update easier.</p>
+<p>You can see more information about the previous and the new implementation <a href="https://speakerdeck.com/rafaelfranca/rails-the-hidden-parts">on this talk</a> I presented in a Brazillian conference this year (the slides are in English).</p>
+<p>Now, I&#8217;ll let Kasper share his words with you.</p>
+<h3>Scrubbing Rails Free of HTML-scanner</h3>
+<p>Everyone, at least one time, has already needed to use the <a href="http://api.rubyonrails.org/classes/ActionView/Helpers/SanitizeHelper.html#method-i-sanitize"><code>sanitize</code></a> method to scrub some pesky HTML away.</p>
+<pre lang="ruby">
+<% sanitize @article.body %>
+</%></pre>
+<p>If you were to run this on Rails 4.1 (and before) this would take advantage of the html-scanner, a vendored library inside Rails, for the sanitization. Since the summer of 2013 I have been working to destroy that notion by wiping the traces of html-scanner throughout Rails. Before you become concerned of my mental health, I didn&#8217;t do this unwarranted. I&#8217;m one of the <a href="http://weblog.rubyonrails.or/2013/5/27/rails-google-summer-of-code-projects/">Google Summer of Code students</a> working on Ruby on Rails. My <a href="https://github.com/kaspth/gsoc-application">project proposal</a> was to kick html-scanner to the curb (technical term) and grab a hold of <a href="https://github.com/flavorjones/loofah">Loofah</a> instead. Why did the old library need replacing, though?</p>
+<h3>The out washed HTML-scanner</h3>
+<p>html-scanner has been with us for a long time now. The <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/vendor/html-scanner/html/selector.rb#L1-L4">copyright notice</a> in the library clocks it in at 2006, when Assaf Arkin created it. This library <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/vendor/html-scanner/html/tokenizer.rb">relies on Regular Expressions</a> to recognize HTML (and XML) elements. This made the code more brittle. It was easier to introduce errors via <a href="https://github.com/rails/rails/blob/973490a2879358db9269ecf75e03b2777f9c9e24/actionpack/lib/action_view/vendor/html-scanner/html/selector.rb#L522-L680">complex Regular Expressions</a>, which also gave it a higher potential for security issues.</p>
+<p>The Rails Team wanted something more robust and faster, so we picked Loofah. Loofah uses <a href="http://nokogiri.org/">Nokogiri</a> for parsing, which provides a Ruby interface to either a C or Java parser depending on the Ruby implementation you use. This means Loofah is fast. It&#8217;s up to <a href="https://gist.github.com/flavorjones/170193">60 to 100% faster</a> than html-scanner on larger documents and fragments.</p>
+<p>I started by taking a look at the <a href="https://github.com/rails/rails/blob/e8709aef56d46c9b597af05ebd847309231a888c/actionview/lib/action_view/helpers/sanitize_helper.rb"><code>SanitizeHelper</code></a> in Action View, which consists of four methods and some settings. The four methods of the are <code>sanitize</code>, <code>sanitize_css</code>, <code>strip_tags</code> and <code>strip_links</code>.</p>
+<p>Let&#8217;s take a look at the <code>sanitize</code> method.</p>
+<p>Comparing with the old implementation, <code>sanitize</code> still uses the <code>WhiteListSanitizer</code> class to do it&#8217;s HTML stripping. However, since Action View was pulled out of Action Pack and both needed to use this functionality, we&#8217;ve extracted this to it&#8217;s own <a href="https://github.com/rafaelfranca/rails-html-sanitizer">gem</a>.</p>
+<h3>Developers meet Rails::Html::WhiteListSanitizer</h3>
+<p>When you use <code>sanitize</code>, you&#8217;re really using <code>WhiteListSanitizer</code>&#8216;s <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/sanitizer.rb"><code>sanitize</code></a> method. Let me show you the new version.</p>
+<pre lang="ruby">
+def sanitize(html, options = {})
+  return nil unless html
+  return html if html.empty?
+</pre>
+<p>No surprises here.</p>
+<pre lang="ruby">
+  loofah_fragment = Loofah.fragment(html)
+</pre>
+<p>The first trace of Loofah. A <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/html/document_fragment.rb">fragment</a> is a part of a document, but without a DOCTYPE declaration and html and body tags. A piece of a document essentially. Internally Nokogiri creates a document and pulls the parsed html out of the body tag, leaving us with a fragment.</p>
+<pre lang="ruby">
+  if scrubber = options[:scrubber]
+    # No duck typing, Loofah ensures subclass of Loofah::Scrubber
+    loofah_fragment.scrub!(scrubber)
+</pre>
+<p>You can pass your own <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubber.rb"><code>Scrubber</code></a> to <code>sanitize</code>! Giving you the power to choose if and how elements are sanitized. As the comment alludes, any scrubber has to be either a subclass of <code>Loofah::Scrubber</code> or it can wrap a block. I&#8217;ll show an example later.</p>
+<pre lang="ruby">
+  elsif allowed_tags(options) || allowed_attributes(options)
+    @permit_scrubber.tags = allowed_tags(options)
+    @permit_scrubber.attributes = allowed_attributes(options)
+    loofah_fragment.scrub!(@permit_scrubber)
+</pre>
+<p>We have been very keen on maintaining backwards compatibility throughout this project, so you can still supply <code>Enumerable</code>s of tags and attributes to <code>sanitize</code>. That&#8217;s what the <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb"><code>PermitScrubber</code></a> used here handles. It manages these options and makes them work independently. If you pass one it&#8217;ll use the standard behavior for the other. See the <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb#L3-45">documentation</a> on what the standard behavior is.<br>
+You can also set the allowed tags and attributes on the class level. Like this:</p>
+<pre lang="ruby">
+Rails::Html::Sanitizer.allowed_tags = Set.new %w(for your health)
+</pre>
+<p>That&#8217;s simply what <code>allowed_tags</code> and <code>allowed_attributes</code> methods are there for. They&#8217;ll return the tags or attributes from the options and fallback to the class level setting if any.</p>
+<pre lang="ruby">
+  else
+    remove_xpaths(loofah_fragment, XPATHS_TO_REMOVE)
+    loofah_fragment.scrub!(:strip)
+  end
+</pre>
+<p>The <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubbers.rb#L86-96"><code>StripScrubber</code></a> built in to <code>Loofah</code> will strip the tags but leave the contents of elements. Which is usually what we want. We use <code>remove_xpaths</code> to remove elements along with their subtrees in the few instances where we don&#8217;t. If you have trouble with the syntax above, they&#8217;re <a href="https://en.wikipedia.org/wiki/XPath">XPath Selectors</a>.</p>
+<pre lang="ruby">
+  loofah_fragment.to_s
+end
+</pre>
+<p>Lastly we&#8217;ll take the elements and extract the remaining markup with <code>to_s</code>. Internally Nokogiri will call either <a href="https://github.com/sparklemotion/nokogiri/blob/5546170ab7bb789645d8e96ff0eb585d73748636/lib/nokogiri/xml/node.rb#L609-L614"><code>to_xml</code> or <code>to_html</code></a> depending on the kind of document or fragment you have.</p>
+<h3>Rub, buff or clean it off, however you like</h3>
+<p>So there you have it. I could go through how the other sanitizers work, but they&#8217;re not that complex. So go code spelunking in the <a href="https://github.com/rails/rails-html-sanitizer">source</a>.</p>
+<p>If this was the first time you&#8217;ve seen a <code>Loofah::Scrubber</code>, be sure to check out <a href="https://github.com/rails/rails-html-sanitizer/blob/48c0f014c99c90124bd568940060d3fcebb788a6/lib/rails/html/scrubbers.rb">the source</a> for <code>PermitScrubber</code> and see an example of how to implement one. You can also subclass <code>PermitScrubber</code> and get the sanitization you need without worrying about the implementation details of stripping elements and scrubbing attributes. Take a look at <code>TargetScrubber</code> &#8211; the weird <code>PermitScrubber</code> &#8211; and how it uses that to get scrubbing fast.</p>
+<p>Before I scrub off though, I promised you an example of a custom scrubber. I&#8217;ll use the option that wraps a block here, but you could easily create a subclass of <code>Loofah::Scrubber</code> (in a helper maybe?) and override <a href="https://github.com/flavorjones/loofah/blob/51b1e38b81dae4707df181bf5167971d13d976ea/lib/loofah/scrubber.rb#L85-L87"><code>scrub(node)</code></a>. So here goes:</p>
+<pre lang="ruby">
+<% sanitize @article.body scrubber: loofah::scrubber.new |node| node.name="script" %>
+</%></pre>
+<p>The code above changes all the HTML tags included in the article body to be a tag <code>&lt;script&gt;</code>.</p>
+<p><code>&lt;sarcasm&#62;</code><br>
+If you&#8217;re going to introduce bugs, why not make everything a potential risk of running arbitrary code?<br>
+<code>&lt;/sarcasm&#62;</code></p>
+<p style="text-align: center;">
+</p>
+<p><span id="hs-cta-wrapper-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-wrapper"><span id="hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-node hs-cta-2aeae558-5b72-4df3-bf32-e1119f34d85e"> <a href="http://cta-redirect.hubspot.com/cta/redirect/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e"><img decoding="async" id="hs-cta-img-2aeae558-5b72-4df3-bf32-e1119f34d85e" class="hs-cta-img aligncenter" style="border-width: 0px;" src="https://no-cache.hubspot.com/cta/default/378213/2aeae558-5b72-4df3-bf32-e1119f34d85e.png" alt=""></a></span></span><br>
+<!-- end HubSpot Call-to-Action Code --></p>
+    </article>
+  
+      <p class="post-metadata">
+      Tags: <a href="/tag/rails/" rel="tag">rails</a>, Posted in <a href="/category/english/" rel="category tag">English</a>,   <a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comments"><span class="dsq-postid" data-dsqidentifier="4134 http://blog.plataformatec.com.br/?p=4134">9 Comments &#187;</span></a>    </p>
+  </section>
+
+        <div class="comments-thread">
+          
+<!-- You can start editing here. -->
+
+	<h3 id="comments">
+		9 responses to &#8220;The new HTML sanitizer in Rails 4.2&#8221;	</h3>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+	<ol class="commentlist">
+			<li class="comment even thread-even depth-1" id="comment-1424">
+				<div id="div-comment-1424" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://2.gravatar.com/avatar/8cbd31fea81477c4b353eb32209df69f?s=32&#038;d=mm&#038;r=pg" srcset="http://2.gravatar.com/avatar/8cbd31fea81477c4b353eb32209df69f?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn"><a href="http://blog.fxposter.org/" class="url" rel="ugc external nofollow">Pavel Forkert</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1424">July 25, 2014 at 3:27 pm</a>		</div>
+
+		<p>Does this actually mean, that now rails will depend from native dependencies from the start?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1425">
+				<div id="div-comment-1425" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/984bc99759f14efb17e7662275e05ad1?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/984bc99759f14efb17e7662275e05ad1?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" decoding="async">			<cite class="fn">Micah Geisel</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1425">July 27, 2014 at 9:09 pm</a>		</div>
+
+		<p>Yeah, IIRC there was a policy in place for rails (and its dependencies) to be 100% Ruby. Has this changed?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1426">
+				<div id="div-comment-1426" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.rafaelfranca.com.br/" class="url" rel="ugc external nofollow">Rafael Mendonça França</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1426">July 28, 2014 at 11:51 am</a>		</div>
+
+		<p>We do avoid adding native dependencies on the Rails framework but for his case we chose to use they because Nokogiri bundle the dependencies inside the gem and it also already has binary distributions to JRuby and Windows platforms.</p>
+<p>The easy to start / development workflow should not change.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1427">
+				<div id="div-comment-1427" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.rafaelfranca.com.br/" class="url" rel="ugc external nofollow">Rafael Mendonça França</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1427">July 28, 2014 at 11:51 am</a>		</div>
+
+		<p>See the answer above.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1428">
+				<div id="div-comment-1428" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/9a594b33bf5eb20ec4e69b63f787e5c4?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/9a594b33bf5eb20ec4e69b63f787e5c4?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Isaac Andrade</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1428">July 30, 2014 at 12:21 pm</a>		</div>
+
+		<p>Is the change compatible with Rails 4.1?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1429">
+				<div id="div-comment-1429" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.rafaelfranca.com.br/" class="url" rel="ugc external nofollow">Rafael Mendonça França</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1429">July 30, 2014 at 1:31 pm</a>		</div>
+
+		<p>It should be. The Public API is the same and the result in most case are also the same.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1433">
+				<div id="div-comment-1433" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://1.gravatar.com/avatar/d2f0d2b132885be6fcf53d715e16920e?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/d2f0d2b132885be6fcf53d715e16920e?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Mark Nadig</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1433">August 18, 2014 at 8:40 pm</a>		</div>
+
+		<p>Just saw this today, <a href="https://github.com/rgrove/sanitize/blob/master/COMPARISON.md" rel="nofollow ugc">https://github.com/rgrove/sanitize/blob/master/COMPARISON.md</a> any thoughts?</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1434">
+				<div id="div-comment-1434" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=32&#038;d=mm&#038;r=pg" srcset="http://0.gravatar.com/avatar/0525b332aafb83307b32d9747a93de03?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn"><a href="http://www.rafaelfranca.com.br/" class="url" rel="ugc external nofollow">Rafael Mendonça França</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1434">August 18, 2014 at 8:43 pm</a>		</div>
+
+		<p>This seems a cool project. Maybe we will have an adapter for it on Rails later.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-1435">
+				<div id="div-comment-1435" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="http://1.gravatar.com/avatar/ade8cfa763849534297bec7f6f3802da?s=32&#038;d=mm&#038;r=pg" srcset="http://1.gravatar.com/avatar/ade8cfa763849534297bec7f6f3802da?s=64&#038;d=mm&#038;r=pg 2x" class="avatar avatar-32 photo" height="32" width="32" loading="lazy" decoding="async">			<cite class="fn">Yorick</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="/2014/07/the-new-html-sanitizer-in-rails-4-2/#comment-1435">August 20, 2014 at 12:20 pm</a>		</div>
+
+		<p>Is this meant to be working in rails 4.2? I tried calling sanitize but i think it still calls the old deprecated sanitizer. If you look here (<a href="https://github.com/rails/rails-html-sanitizer/blob/master/lib/rails-html-sanitizer.rb#L33" rel="nofollow ugc">https://github.com/rails/rails-html-sanitizer/blob/master/lib/rails-html-sanitizer.rb#L33</a>) it tries to override sanitizer_vendor but this method lives in the ClassMethods module so it has no effect.</p>
+
+		
+				</div>
+				</li>
+<!-- #comment-## -->
+	</ol>
+
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+
+        </div>
+
+        <div class="pagination-section">
+          <a href="/2014/07/rails-4-and-postgresql-arrays/" rel="prev">Rails 4 and PostgreSQL Arrays</a>          <a href="/2014/08/css-at-plataformatec/" rel="next">CSS at Plataformatec</a>        </div>
+        </div>
+  <aside class="sidebar-container">
+  <div class="sidebar-box sidebar-box-divider">
+    <ul class="social-links">
+      <li><a href="/feed/" class="social-link rss-link" title="Subscribe to our RSS" target="_blank">Subscribe to our RSS</a></li>
+      <li><a href="http://twitter.com/plataformatec" class="social-link twitter-link" title="Follow us on Twitter" target="_blank">@plataformatec</a></li>
+      <li><a href="https://github.com/plataformatec" class="social-link github-link" title="Check our code at GitHub" target="_blank">Plataformatec @ GitHub</a></li>
+      <li><a href="http://facebook.com/plataformatec.com.br" class="social-link facebook-link" title="Check our Facebook page" target="_blank">Plataformatec @ Facebook</a></li>
+      <li><a href="http://www.linkedin.com/company/plataformatec" class="social-link linkedin-link" title="Check our LinkedIn page" target="_blank">Plataformatec @ LinkedIn</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box sidebar-box-divider">
+    This is the company blog of <strong>Plataformatec</strong>, a software development and
+    consultancy company, specialized in Elixir, Ruby and Agile.
+  </div>
+
+  <div class="sidebar-box">
+    <ul class="post-list">
+      <li class="post-list-item">
+<a href="/category/english">Posts in english</a> (107)</li>
+      <li class="post-list-item">
+<a href="/category/portugues">Posts em português</a> (33)</li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Recent Posts</h3>
+
+    <ul class="post-list">
+                    <li class="post-list-item">
+          <a href="/2020/01/important-information-about-our-elixir-and-ruby-open-source-projects/">Important information about our Elixir and Ruby Open Source projects</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2020/01/elixir-what-about-tests/">Elixir: What about tests?</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/12/okr-licoes-aprendidas-para-voce-comecar-a-aplica-lo-de-forma-efetiva/">OKR: lições aprendidas para você começar a aplicá-lo de forma efetiva</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/divida-tecnica-por-que-fazer-quando-fazer-e-como-priorizar/">Dívida técnica: Por que fazer, quando fazer e como priorizar</a>
+        </li>
+              <li class="post-list-item">
+          <a href="/2019/11/relation-between-story-points-and-development-time-lead-time/">Relation between Story Points and Development Time (Lead Time)</a>
+        </li>
+          </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Read more about</h3>
+
+    <ul class="post-list">
+      <li class="post-list-item"><a href="/tag/open-source">Open Source</a></li>
+      <li class="post-list-item"><a href="/tag/front-end">Front end</a></li>
+      <li class="post-list-item"><a href="/tag/conference">Conferences</a></li>
+      <li class="post-list-item"><a href="/tag/security-fix">Security fixes</a></li>
+    </ul>
+  </div>
+
+  <div class="sidebar-box">
+    <h3 class="sidebar-title">Check our product</h3>
+    <a class="sidebar-cta-link" href="https://sourcelevel.io/">
+      <img src="/wp-content/themes/ptec/assets/sourcelevel-300.png" width="300" alt="SourceLevel - Analytics for Engineering Ops">
+	</a>
+
+    <p align="center">Analytics for Engineering Ops.</p>
+  </div>
+
+</aside>
+      <footer class="site-footer">
+        <p>
+          <span class="footer-copy">© 2009- 2024 Plataformatec. All rights reserved.</span>
+
+          <a href="http://plataformatec.com.br/">Our site</a> ·
+          <a href="http://plataformatec.com.br/contact">Contact us</a> ·
+          <a href="http://twitter.com/plataformatec">@plataformatec</a>
+        </p>
+      </footer>
+    </div>
+    <script type="text/javascript" src="/wp-content/themes/ptec/application.js?ver=6.4.2" id="application-js"></script>
+  </body>
+</html>
